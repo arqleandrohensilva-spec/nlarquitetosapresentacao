@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { clearAllEdits } from "./Editable";
 import { isEditMode } from "@/lib/edit-mode";
 
@@ -70,16 +71,27 @@ const SectionNav = () => {
             height={40}
           />
         </a>
-        {editing && (
-          <button
-            onClick={() => {
-              if (confirm("Restaurar todos os textos originais?")) clearAllEdits();
-            }}
-            className="pointer-events-auto font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground hover:text-primary transition-colors"
+        <div className="pointer-events-auto flex items-center gap-5">
+          <Link
+            to="/captacao"
+            className={`font-mono text-[10px] uppercase tracking-[0.25em] hover:text-primary transition-colors ${
+              onDarkSection ? "text-foreground/70" : "text-muted-foreground"
+            }`}
           >
-            Restaurar texto
-          </button>
-        )}
+            Apresentação →
+          </Link>
+
+          {editing && (
+            <button
+              onClick={() => {
+                if (confirm("Restaurar todos os textos originais?")) clearAllEdits();
+              }}
+              className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground hover:text-primary transition-colors"
+            >
+              Restaurar texto
+            </button>
+          )}
+        </div>
       </header>
 
       {/* Edit helper toast — only in edit mode */}
