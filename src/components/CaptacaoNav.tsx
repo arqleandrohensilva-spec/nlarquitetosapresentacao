@@ -8,30 +8,32 @@ const LOGO_BRANCA = "/logo-branca.png";
 
 const SECTIONS = [
   { id: "capa", label: "Capa" },
-  { id: "manifesto", label: "Carta" },
-  { id: "apresentacao", label: "Apresentação" },
-  { id: "diagnostico", label: "Diagnóstico" },
-  { id: "case", label: "Casa Costas" },
-  { id: "interiores", label: "Interiores" },
+  { id: "manifesto", label: "Manifesto" },
+  { id: "cores", label: "Cores" },
+  { id: "como-vira", label: "Como vira projeto" },
+  { id: "sobre", label: "Sobre nós" },
+  { id: "pilares", label: "Pilares" },
+  { id: "consolidacao", label: "Consolidação" },
+  { id: "processos", label: "ARQ + INT" },
+  { id: "galeria", label: "Galeria" },
+  { id: "alem", label: "Além do projeto" },
   { id: "portfolio", label: "Portfólio" },
-  { id: "etapas", label: "Etapas do projeto" },
-  { id: "escopo", label: "Escopo técnico" },
-  { id: "pilares", label: "Nossos Pilares" },
-  { id: "cronograma", label: "Cronograma" },
-  { id: "beneficios", label: "Benefícios" },
-  { id: "investimento", label: "Pacotes" },
-  { id: "diferenciais", label: "Diferenciais" },
-  { id: "nota", label: "Nota" },
-  { id: "proximos", label: "Próximos passos" },
-  { id: "encerramento", label: "Encerramento" },
+  { id: "fechamento", label: "Fechamento" },
 ];
 
-const SectionNav = () => {
+const CaptacaoNav = () => {
   const [active, setActive] = useState("capa");
   const [showHelper, setShowHelper] = useState(true);
   const editing = isEditMode();
-  // Seções com fundo escuro — header usa logo branca para garantir contraste
-  const DARK_SECTIONS = new Set(["capa", "diagnostico", "cronograma", "nota", "encerramento"]);
+  // Seções com fundo escuro — header usa logo branca
+  const DARK_SECTIONS = new Set([
+    "capa",
+    "manifesto",
+    "cores",
+    "consolidacao",
+    "alem",
+    "fechamento",
+  ]);
   const onDarkSection = DARK_SECTIONS.has(active);
 
   useEffect(() => {
@@ -56,7 +58,6 @@ const SectionNav = () => {
 
   return (
     <>
-      {/* Top: brand + reset (reset only in edit mode) */}
       <header className="fixed top-0 inset-x-0 z-40 px-6 md:px-10 py-5 flex items-center justify-between pointer-events-none">
         <a
           href="#capa"
@@ -71,14 +72,15 @@ const SectionNav = () => {
             height={40}
           />
         </a>
+
         <div className="pointer-events-auto flex items-center gap-5">
           <Link
-            to="/captacao"
+            to="/"
             className={`font-mono text-[10px] uppercase tracking-[0.25em] hover:text-primary transition-colors ${
               onDarkSection ? "text-foreground/70" : "text-muted-foreground"
             }`}
           >
-            Apresentação →
+            ← Carta Proposta
           </Link>
 
           {editing && (
@@ -94,7 +96,6 @@ const SectionNav = () => {
         </div>
       </header>
 
-      {/* Edit helper toast — only in edit mode */}
       {editing && showHelper && (
         <div data-pdf-hide className="fixed bottom-6 left-6 z-40 max-w-xs animate-fade-in">
           <div className="bg-card border border-border/60 px-4 py-3 backdrop-blur shadow-lg">
@@ -111,4 +112,4 @@ const SectionNav = () => {
   );
 };
 
-export default SectionNav;
+export default CaptacaoNav;
