@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NL Arquitetos · Carta Proposta — Design System
+   Dark warm editorial. Champagne accent. Serif display + neutral sans.
+   All colors HSL.
+*/
+
+@layer base {
+  :root {
+    /* Core warm-dark palette */
+    --background: 30 10% 7%;          /* #14110f profundo, levemente quente */
+    --foreground: 36 25% 90%;         /* off-white quente */
+
+    --surface: 28 12% 9%;             /* card / surface */
+    --surface-elevated: 26 12% 12%;
+
+    --card: 28 12% 9%;
+    --card-foreground: 36 25% 90%;
+
+    --popover: 28 12% 9%;
+    --popover-foreground: 36 25% 90%;
+
+    /* Champagne / brass accent */
+    --primary: 36 38% 62%;            /* champagne dourado */
+    --primary-foreground: 30 15% 8%;
+    --primary-glow: 38 55% 70%;
+
+    --secondary: 28 8% 18%;
+    --secondary-foreground: 36 20% 85%;
+
+    --muted: 28 8% 14%;
+    --muted-foreground: 32 12% 58%;
+
+    --accent: 36 38% 62%;
+    --accent-foreground: 30 15% 8%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 36 25% 95%;
+
+    --border: 30 10% 18%;
+    --input: 30 10% 16%;
+    --ring: 36 38% 62%;
+
+    --radius: 0.25rem;
+
+    /* Editorial gradients & shadows */
+    --gradient-vignette: radial-gradient(ellipse at 70% 30%, hsl(36 25% 18% / 0.55), transparent 60%);
+    --gradient-fade-bottom: linear-gradient(to bottom, transparent 0%, hsl(var(--background)) 100%);
+    --gradient-fade-top: linear-gradient(to top, transparent 0%, hsl(var(--background)) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(36 38% 62%) 0%, hsl(38 55% 75%) 50%, hsl(34 30% 50%) 100%);
+
+    /* Band scrims — unified across breakpoints for editorial harmony.
+       Same warm-dark base, three intensity steps. */
+    --band-scrim-strong: linear-gradient(to top, hsl(var(--background) / 0.92) 0%, hsl(var(--background) / 0.55) 45%, hsl(var(--background) / 0) 100%);
+    --band-scrim-side-left: linear-gradient(to right, hsl(var(--background) / 0.78) 0%, hsl(var(--background) / 0.35) 45%, hsl(var(--background) / 0) 80%);
+    --band-scrim-side-right: linear-gradient(to left, hsl(var(--background) / 0.78) 0%, hsl(var(--background) / 0.35) 45%, hsl(var(--background) / 0) 80%);
+    --band-fade-edge: linear-gradient(to bottom, hsl(var(--background)) 0%, hsl(var(--background) / 0.6) 40%, hsl(var(--background) / 0) 100%);
+
+    --shadow-editorial: 0 30px 80px -20px hsl(0 0% 0% / 0.6);
+    --shadow-soft: 0 10px 40px -10px hsl(0 0% 0% / 0.4);
+
+    --transition-silk: cubic-bezier(0.22, 1, 0.36, 1);
+
+    /* Sidebar (unused but kept) */
+    --sidebar-background: 28 12% 9%;
+    --sidebar-foreground: 36 20% 85%;
+    --sidebar-primary: 36 38% 62%;
+    --sidebar-primary-foreground: 30 15% 8%;
+    --sidebar-accent: 28 8% 14%;
+    --sidebar-accent-foreground: 36 20% 85%;
+    --sidebar-border: 30 10% 18%;
+    --sidebar-ring: 36 38% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    max-width: 100vw;
+    font-weight: 300;
+    font-feature-settings: "ss01", "ss02", "kern";
+    letter-spacing: 0.01em;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.3);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-weight: 300;
+    letter-spacing: -0.015em;
+  }
+
+  .font-mono-edit {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 300;
+  }
+
+  .eyebrow {
+    @apply font-mono-edit text-xs uppercase tracking-[0.3em] text-primary/80;
+  }
+
+  .editorial-line {
+    @apply h-px bg-border w-full;
+  }
+
+  .gold-line {
+    background: var(--gradient-gold);
+    height: 1px;
+  }
+
+  .number-marker {
+    @apply font-mono-edit text-[10px] tracking-[0.2em] text-muted-foreground;
+  }
+
+  /* Editable text affordance */
+  [data-editable]:hover {
+    background: hsl(var(--primary) / 0.06);
+    box-shadow: inset 0 0 0 1px hsl(var(--primary) / 0.25);
+    cursor: text;
+    border-radius: 2px;
+  }
+
+  [data-editable]:focus {
+    outline: none;
+    background: hsl(var(--primary) / 0.08);
+    box-shadow: inset 0 0 0 1px hsl(var(--primary) / 0.5);
+  }
+
+  .vignette {
+    background: var(--gradient-vignette);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .fade-up {
+    animation: fadeUp 1.2s var(--transition-silk) both;
+  }
+
+  .fade-in {
+    animation: fadeIn 1.5s var(--transition-silk) both;
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.5; }
+  50%      { opacity: 1; }
+}
