@@ -9,7 +9,6 @@ const LOGO_BRANCA = "/logo-branca.png";
 const SECTIONS = [
   { id: "capa", label: "Capa" },
   { id: "manifesto", label: "Manifesto" },
-  { id: "cores", label: "Cores" },
   { id: "como-vira", label: "Como vira projeto" },
   { id: "sobre", label: "Sobre nós" },
   { id: "pilares", label: "Pilares" },
@@ -27,9 +26,7 @@ const CaptacaoNav = () => {
   const editing = isEditMode();
   // Seções com fundo escuro — header usa logo branca
   const DARK_SECTIONS = new Set([
-    "capa",
     "manifesto",
-    "cores",
     "consolidacao",
     "alem",
     "fechamento",
