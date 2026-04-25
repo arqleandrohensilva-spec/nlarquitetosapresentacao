@@ -1,6 +1,7 @@
 import Editable from "@/components/Editable";
 import CaptacaoNav from "@/components/CaptacaoNav";
 import { Link } from "react-router-dom";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import imgComoCroqui from "@/assets/como-vira/01-croqui.png";
 import imgComoVolumetria from "@/assets/como-vira/02-volumetria.png";
 import imgComoPlanta from "@/assets/como-vira/03-planta.png";
@@ -618,24 +619,16 @@ const Captacao = () => {
           ============================================================ */}
       <section
         id="consolidacao"
-        className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32"
-        style={{ backgroundColor: "#1A1816", color: "#E8E4DF" }}
+        className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32 bg-secondary text-foreground"
       >
         <div className="max-w-6xl mx-auto w-full">
-          <div
-            className="flex items-baseline gap-6 mb-16 pb-4 border-b"
-            style={{ borderColor: "rgba(139, 115, 85, 0.35)" }}
-          >
-            <span
-              className="font-mono-edit text-[10px] tracking-[0.3em]"
-              style={{ color: "rgba(232, 228, 223, 0.55)" }}
-            >
+          <div className="flex items-baseline gap-6 mb-16 pb-4 border-b border-primary/30">
+            <span className="font-mono-edit text-[10px] tracking-[0.3em] text-foreground/55">
               07
             </span>
             <Editable
               id="cap.consol.eyebrow"
-              className="font-mono-edit text-[10px] uppercase tracking-[0.3em]"
-              style={{ color: "#8B7355" }}
+              className="font-mono-edit text-[10px] uppercase tracking-[0.3em] text-primary"
             >
               Consolidação
             </Editable>
@@ -645,58 +638,228 @@ const Captacao = () => {
             as="h2"
             id="cap.consol.title"
             multiline
-            className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.0] text-balance mb-12 max-w-4xl"
-            style={{ color: "#E8E4DF" }}
+            className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.0] text-balance mb-8 max-w-4xl text-foreground"
           >
-            O momento em que o projeto <em className="not-italic" style={{ color: "#C9A876" }}>vira sua casa.</em>
+            Estrutura e consolidação.
           </Editable>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16">
-            {[
-              { n: "01", t: "Validação", b: "Cada decisão é apresentada e aprovada juntos." },
-              { n: "02", t: "Compatibilização", b: "Arquitetura, interiores e engenharia falam a mesma língua." },
-              { n: "03", t: "Entrega", b: "Você recebe um projeto pronto para ser construído sem surpresas." },
-            ].map((s) => (
-              <div key={s.n}>
-                <span
-                  className="font-mono-edit text-[10px] tracking-[0.3em] block mb-4"
-                  style={{ color: "#8B7355" }}
-                >
-                  {s.n}
-                </span>
-                <div className="h-px w-10 mb-5" style={{ backgroundColor: "#8B7355" }} />
-                <Editable
-                  as="h3"
-                  id={`cap.consol.${s.n}.t`}
-                  className="font-display text-2xl mb-3"
-                  style={{ color: "#E8E4DF" }}
-                >
-                  {s.t}
-                </Editable>
-                <Editable
-                  as="p"
-                  id={`cap.consol.${s.n}.b`}
-                  multiline
-                  className="font-display text-base leading-relaxed"
-                  style={{ color: "rgba(232, 228, 223, 0.7)" }}
-                >
-                  {s.b}
-                </Editable>
-              </div>
-            ))}
+          <Editable
+            as="p"
+            id="cap.consol.subtitle"
+            multiline
+            className="font-display text-lg md:text-xl leading-relaxed max-w-3xl text-foreground/75 mb-20"
+          >
+            Não empilhamos volumes. Consolidamos legados. Cada traço é uma decisão técnica que sustenta a próxima visão.
+          </Editable>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-primary/20">
+            {/* Card 01 — Projetos entregues (estático) */}
+            <div className="bg-secondary p-8 md:p-10 flex flex-col">
+              <div className="h-px w-10 mb-6 bg-primary" />
+              <span className="font-display text-5xl md:text-6xl text-primary leading-none mb-4">
+                +50
+              </span>
+              <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em] text-foreground/70">
+                Projetos entregues
+              </span>
+            </div>
+
+            {/* Card 02 — Anos de mercado (estático) */}
+            <div className="bg-secondary p-8 md:p-10 flex flex-col">
+              <div className="h-px w-10 mb-6 bg-primary" />
+              <span className="font-display text-5xl md:text-6xl text-primary leading-none mb-4">
+                +8
+              </span>
+              <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em] text-foreground/70">
+                Anos de mercado
+              </span>
+            </div>
+
+            {/* Card 03 — Estados de atuação (modal mapa) */}
+            <Dialog>
+              <DialogTrigger asChild>
+                <button className="bg-secondary p-8 md:p-10 flex flex-col text-left transition-colors hover:bg-background group">
+                  <div className="h-px w-10 mb-6 bg-primary transition-all group-hover:w-16" />
+                  <span className="font-display text-5xl md:text-6xl text-primary leading-none mb-4">
+                    2
+                  </span>
+                  <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em] text-foreground/70">
+                    Estados de atuação
+                  </span>
+                  <span className="font-mono-edit text-[9px] uppercase tracking-[0.3em] text-primary/70 mt-3">
+                    + Ver mapa
+                  </span>
+                </button>
+              </DialogTrigger>
+              <DialogContent className="bg-secondary border-primary/30 max-w-2xl">
+                <DialogHeader>
+                  <DialogTitle className="font-display text-2xl text-foreground">
+                    Estados de atuação
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="flex flex-col items-center pt-4">
+                  {/* Mapa simplificado do Brasil em SVG */}
+                  <svg
+                    viewBox="0 0 400 420"
+                    className="w-full max-w-md h-auto"
+                    aria-label="Mapa do Brasil — SP e MG"
+                  >
+                    <path
+                      d="M120 50 L260 40 L320 90 L350 160 L340 240 L300 320 L240 380 L160 390 L100 350 L70 280 L60 200 L80 120 Z"
+                      fill="hsl(var(--muted))"
+                      stroke="hsl(var(--primary) / 0.4)"
+                      strokeWidth="1.5"
+                    />
+                    {/* MG */}
+                    <circle cx="220" cy="210" r="9" fill="hsl(var(--primary))" />
+                    <circle cx="220" cy="210" r="18" fill="hsl(var(--primary) / 0.2)" />
+                    <text
+                      x="240"
+                      y="215"
+                      className="font-mono-edit"
+                      fontSize="11"
+                      fill="hsl(var(--foreground))"
+                    >
+                      MG
+                    </text>
+                    {/* SP */}
+                    <circle cx="190" cy="260" r="11" fill="hsl(var(--primary))" />
+                    <circle cx="190" cy="260" r="22" fill="hsl(var(--primary) / 0.25)" />
+                    <text
+                      x="160"
+                      y="290"
+                      className="font-mono-edit"
+                      fontSize="11"
+                      fill="hsl(var(--foreground))"
+                    >
+                      SP
+                    </text>
+                  </svg>
+                  <div className="mt-6 w-full space-y-3">
+                    <div className="flex items-center gap-3">
+                      <span className="w-2.5 h-2.5 rounded-full bg-primary" />
+                      <span className="font-display text-base text-foreground">
+                        <strong className="font-semibold">São Paulo</strong> · Sede principal
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="w-2.5 h-2.5 rounded-full bg-primary" />
+                      <span className="font-display text-base text-foreground">
+                        <strong className="font-semibold">Minas Gerais</strong> · Atuação em projetos
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+
+            {/* Card 04 — Disciplinas integradas (modal diagrama) */}
+            <Dialog>
+              <DialogTrigger asChild>
+                <button className="bg-secondary p-8 md:p-10 flex flex-col text-left transition-colors hover:bg-background group">
+                  <div className="h-px w-10 mb-6 bg-primary transition-all group-hover:w-16" />
+                  <span className="font-display text-5xl md:text-6xl text-primary leading-none mb-4">
+                    4
+                  </span>
+                  <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em] text-foreground/70">
+                    Disciplinas integradas
+                  </span>
+                  <span className="font-mono-edit text-[9px] uppercase tracking-[0.3em] text-primary/70 mt-3">
+                    + Ver diagrama
+                  </span>
+                </button>
+              </DialogTrigger>
+              <DialogContent className="bg-secondary border-primary/30 max-w-2xl">
+                <DialogHeader>
+                  <DialogTitle className="font-display text-2xl text-foreground">
+                    Disciplinas integradas
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="flex flex-col items-center pt-4">
+                  <svg
+                    viewBox="0 0 400 400"
+                    className="w-full max-w-sm h-auto"
+                    aria-label="Diagrama circular NL · 4 disciplinas"
+                  >
+                    {/* 4 segmentos */}
+                    {[
+                      { start: -45, end: 45, label: "Arquitetura\nResidencial" },
+                      { start: 45, end: 135, label: "Design de\nInteriores" },
+                      { start: 135, end: 225, label: "Arquitetura\nComercial" },
+                      { start: 225, end: 315, label: "Engenharia &\nCompatibilização" },
+                    ].map((seg, i) => {
+                      const cx = 200, cy = 200, rOuter = 170, rInner = 70;
+                      const toRad = (d: number) => (d * Math.PI) / 180;
+                      const x1 = cx + rOuter * Math.cos(toRad(seg.start));
+                      const y1 = cy + rOuter * Math.sin(toRad(seg.start));
+                      const x2 = cx + rOuter * Math.cos(toRad(seg.end));
+                      const y2 = cy + rOuter * Math.sin(toRad(seg.end));
+                      const x3 = cx + rInner * Math.cos(toRad(seg.end));
+                      const y3 = cy + rInner * Math.sin(toRad(seg.end));
+                      const x4 = cx + rInner * Math.cos(toRad(seg.start));
+                      const y4 = cy + rInner * Math.sin(toRad(seg.start));
+                      const path = `M ${x1} ${y1} A ${rOuter} ${rOuter} 0 0 1 ${x2} ${y2} L ${x3} ${y3} A ${rInner} ${rInner} 0 0 0 ${x4} ${y4} Z`;
+                      const mid = (seg.start + seg.end) / 2;
+                      const tr = (rInner + rOuter) / 2;
+                      const tx = cx + tr * Math.cos(toRad(mid));
+                      const ty = cy + tr * Math.sin(toRad(mid));
+                      const lines = seg.label.split("\n");
+                      return (
+                        <g key={i}>
+                          <path
+                            d={path}
+                            fill={i % 2 === 0 ? "hsl(var(--primary) / 0.15)" : "hsl(var(--primary) / 0.28)"}
+                            stroke="hsl(var(--secondary))"
+                            strokeWidth="2"
+                          />
+                          <text
+                            x={tx}
+                            y={ty}
+                            textAnchor="middle"
+                            fontSize="11"
+                            fill="hsl(var(--foreground))"
+                            className="font-display"
+                          >
+                            {lines.map((ln, j) => (
+                              <tspan key={j} x={tx} dy={j === 0 ? -4 : 14}>
+                                {ln}
+                              </tspan>
+                            ))}
+                          </text>
+                        </g>
+                      );
+                    })}
+                    {/* Centro NL */}
+                    <circle cx="200" cy="200" r="55" fill="hsl(var(--primary))" />
+                    <text
+                      x="200"
+                      y="208"
+                      textAnchor="middle"
+                      fontSize="28"
+                      fill="hsl(var(--secondary))"
+                      className="font-display"
+                      fontWeight="600"
+                    >
+                      NL
+                    </text>
+                  </svg>
+                  <p className="font-mono-edit text-[10px] uppercase tracking-[0.3em] text-foreground/60 mt-6 text-center">
+                    Engenharia &amp; Compatibilização — em parceria
+                  </p>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
 
           <div className="mt-24 flex flex-col items-center text-center">
-            <div className="h-px w-16 mb-8" style={{ backgroundColor: "#8B7355" }} />
+            <div className="h-px w-16 mb-8 bg-primary" />
             <Editable
               as="p"
               id="cap.consol.closing"
               multiline
-              className="font-display italic text-xl md:text-2xl max-w-2xl leading-relaxed"
-              style={{ color: "#C9A876" }}
+              className="font-display italic text-xl md:text-2xl max-w-2xl leading-relaxed text-primary"
             >
-              Quando você recebe o projeto, ele já carrega a tranquilidade
-              de saber que cada metro foi pensado para você.
+              A arquitetura como decisão.
             </Editable>
           </div>
         </div>
