@@ -26,9 +26,7 @@ const CaptacaoNav = () => {
   const editing = isEditMode();
   // Seções com fundo escuro — header usa logo branca
   const DARK_SECTIONS = new Set([
-    "capa",
     "manifesto",
-    "cores",
     "consolidacao",
     "alem",
     "fechamento",
