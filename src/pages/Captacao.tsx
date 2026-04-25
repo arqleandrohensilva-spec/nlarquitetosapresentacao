@@ -621,7 +621,7 @@ const Captacao = () => {
           ============================================================ */}
       <section
         id="consolidacao"
-        className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32 bg-secondary text-foreground"
+        className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32 bg-background text-foreground"
       >
         <div className="max-w-6xl mx-auto w-full">
           <div className="flex items-baseline gap-6 mb-16 pb-4 border-b border-primary/30">
@@ -656,7 +656,7 @@ const Captacao = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-primary/20">
             {/* Card 01 — Projetos entregues (estático) */}
-            <div className="bg-secondary p-8 md:p-10 flex flex-col">
+            <div className="bg-background p-8 md:p-10 flex flex-col">
               <div className="h-px w-10 mb-6 bg-primary" />
               <span className="font-display text-5xl md:text-6xl text-primary leading-none mb-4">
                 +50
@@ -667,7 +667,7 @@ const Captacao = () => {
             </div>
 
             {/* Card 02 — Anos de mercado (estático) */}
-            <div className="bg-secondary p-8 md:p-10 flex flex-col">
+            <div className="bg-background p-8 md:p-10 flex flex-col">
               <div className="h-px w-10 mb-6 bg-primary" />
               <span className="font-display text-5xl md:text-6xl text-primary leading-none mb-4">
                 +8
@@ -680,7 +680,7 @@ const Captacao = () => {
             {/* Card 03 — Estados de atuação (modal mapa) */}
             <Dialog>
               <DialogTrigger asChild>
-                <button className="bg-secondary p-8 md:p-10 flex flex-col text-left transition-colors hover:bg-background group">
+                <button className="bg-background p-8 md:p-10 flex flex-col text-left transition-colors hover:bg-secondary/40 group w-full h-full">
                   <div className="h-px w-10 mb-6 bg-primary transition-all group-hover:w-16" />
                   <span className="font-display text-5xl md:text-6xl text-primary leading-none mb-4">
                     2
@@ -706,7 +706,7 @@ const Captacao = () => {
             {/* Card 04 — Disciplinas integradas (modal diagrama) */}
             <Dialog>
               <DialogTrigger asChild>
-                <button className="bg-secondary p-8 md:p-10 flex flex-col text-left transition-colors hover:bg-background group">
+                <button className="bg-background p-8 md:p-10 flex flex-col text-left transition-colors hover:bg-secondary/40 group w-full h-full">
                   <div className="h-px w-10 mb-6 bg-primary transition-all group-hover:w-16" />
                   <span className="font-display text-5xl md:text-6xl text-primary leading-none mb-4">
                     4
