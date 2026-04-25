@@ -466,8 +466,7 @@ const Captacao = () => {
                 as="p"
                 className="font-display italic text-base lg:text-lg leading-relaxed text-foreground/65 max-w-xl"
               >
-                Trabalhamos com poucos clientes por vez. Não por escolha de mercado —
-                por convicção de método.
+                Cada projeto recebe atenção integral dos dois sócios — do briefing à última prancha.
               </Editable>
             </div>
 
