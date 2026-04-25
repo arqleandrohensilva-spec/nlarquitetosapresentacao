@@ -473,8 +473,8 @@ const Captacao = () => {
             <aside className="col-span-12 lg:col-span-6 lg:pl-8 lg:border-l border-border/60">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {[
-                  { id: "leandro", name: "Leandro Henrique", role: "Co-fundador · Arquiteto", img: IMG_LEANDRO },
-                  { id: "neandro", name: "Neandro Jacque", role: "Co-fundador · Arquiteto", img: IMG_NEANDRO },
+                  { id: "leandro", name: "Leandro Henrique", role: "Co-fundador · Arquiteto", cau: "CAU A252250-0", img: IMG_LEANDRO },
+                  { id: "neandro", name: "Neandro Jacque", role: "Co-fundador · Arquiteto", cau: "CAU A264629-3", img: IMG_NEANDRO },
                 ].map((p) => (
                   <div key={p.id} className="bg-surface-elevated overflow-hidden group">
                     <div className="aspect-[3/4] overflow-hidden">
@@ -498,6 +498,12 @@ const Captacao = () => {
                         className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary/70 block"
                       >
                         {p.role}
+                      </Editable>
+                      <Editable
+                        id={`cap.sobre.${p.id}.cau`}
+                        className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground/80 block mt-1"
+                      >
+                        {p.cau}
                       </Editable>
                     </div>
                   </div>
