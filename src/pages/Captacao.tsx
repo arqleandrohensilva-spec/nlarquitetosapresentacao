@@ -1260,6 +1260,50 @@ const Captacao = () => {
                 </div>
               ))}
             </div>
+
+            {/* Faixa de âncora numérica */}
+            <div
+              className="mt-20 pt-10 border-t grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-x-12"
+              style={{ borderColor: "rgba(139, 115, 85, 0.25)" }}
+            >
+              {[
+                { id: "n1", num: "90", unit: "dias", label: "de suporte técnico após a entrega" },
+                { id: "n2", num: "100%", unit: "", label: "das obras acompanhadas em campo" },
+                { id: "n3", num: "0", unit: "", label: "clientes abandonados após a chave" },
+              ].map((m) => (
+                <div key={m.id} className="flex flex-col">
+                  <div className="flex items-baseline gap-2 mb-3">
+                    <Editable
+                      id={`cap.alem.metric.${m.id}.num`}
+                      as="span"
+                      className="font-display text-5xl md:text-6xl leading-none"
+                      style={{ color: "#C9A876" }}
+                    >
+                      {m.num}
+                    </Editable>
+                    {m.unit && (
+                      <Editable
+                        id={`cap.alem.metric.${m.id}.unit`}
+                        as="span"
+                        className="font-mono-edit text-[10px] uppercase tracking-[0.3em]"
+                        style={{ color: "#777777" }}
+                      >
+                        {m.unit}
+                      </Editable>
+                    )}
+                  </div>
+                  <Editable
+                    id={`cap.alem.metric.${m.id}.label`}
+                    as="p"
+                    multiline
+                    className="font-mono-edit text-[11px] leading-relaxed max-w-[240px]"
+                    style={{ color: "#999999" }}
+                  >
+                    {m.label}
+                  </Editable>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
