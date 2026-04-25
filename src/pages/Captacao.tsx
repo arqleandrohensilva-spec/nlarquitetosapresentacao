@@ -826,21 +826,21 @@ const Captacao = () => {
                           )}
                         >
                           <div className="flex items-baseline justify-between mb-6">
-                            <span className="font-mono-edit text-[10px] tracking-[0.3em]" style={{ color: "#3A3A3A" }}>
+                            <span className="font-mono-edit text-[10px] tracking-[0.3em]" style={{ color: "#8B7355" }}>
                               {item.n}
                             </span>
-                            <span className="transition-colors" style={{ color: "#3A3A3A" }}>
+                            <span className="transition-colors" style={{ color: "#8B7355" }}>
                               {item.icon}
                             </span>
                           </div>
-                          <h4 className="font-display text-lg md:text-xl leading-tight mb-3" style={{ color: "#FFFFFF" }}>
+                          <h4 className="font-display text-lg md:text-xl leading-tight mb-3" style={{ color: "#E8E4DF" }}>
                             {item.t}
                           </h4>
-                          <p className="font-display text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
+                          <p className="font-display text-sm leading-relaxed" style={{ color: "rgba(232,228,223,0.70)" }}>
                             {item.d}
                           </p>
                           {item.parceria && (
-                            <span className="font-mono-edit text-[9px] uppercase tracking-[0.3em] mt-4 inline-block" style={{ color: "#3A3A3A" }}>
+                            <span className="font-mono-edit text-[9px] uppercase tracking-[0.3em] mt-4 inline-block" style={{ color: "#8B7355" }}>
                               · em parceria
                             </span>
                           )}
