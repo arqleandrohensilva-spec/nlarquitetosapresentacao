@@ -1215,10 +1215,10 @@ const Captacao = () => {
           <div className="relative">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-y-12 md:gap-x-8 lg:gap-x-12 relative">
               {[
-                { id: "entrega", step: "01", t: "Entrega", b: "Apresentação formal dos cadernos técnicos e orientação para início da obra." },
-                { id: "acompanhamento", step: "02", t: "Acompanhamento", b: "Visitas técnicas durante a execução, garantindo fidelidade ao projeto." },
-                { id: "curadoria", step: "03", t: "Curadoria", b: "Indicamos fornecedores confiáveis e acompanhamos a aprovação de amostras de materiais." },
-                { id: "suporte", step: "04", t: "Suporte", b: "Suporte técnico por 90 dias após a entrega — dúvidas sobre os cadernos e orientações para a equipe de obra." },
+                { id: "entrega", step: "01", t: "Entrega", b: "Sua equipe de obra recebe o projeto com clareza absoluta — sem brechas para interpretação." },
+                { id: "acompanhamento", step: "02", t: "Acompanhamento", b: "Estamos no canteiro nos momentos críticos — onde a decisão errada custa até 5x mais." },
+                { id: "curadoria", step: "03", t: "Curadoria", b: "Você acessa nossa rede de fornecedores testados em obras reais — sem virar cobaia." },
+                { id: "suporte", step: "04", t: "Suporte", b: "Por 90 dias após a entrega, qualquer dúvida da obra passa por nós antes de virar problema." },
               ].map((s) => (
                 <div key={s.id} className="relative">
                   {/* Ponto bronze */}
