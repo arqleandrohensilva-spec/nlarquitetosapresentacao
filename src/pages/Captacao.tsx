@@ -101,10 +101,10 @@ const Captacao = () => {
           ============================================================ */}
       <section
         id="manifesto"
-        className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-28 md:py-36"
+        className="manifesto-section relative min-h-screen flex items-center px-5 sm:px-8 md:px-16 lg:px-24 py-20 sm:py-24 md:py-32 lg:py-36"
         style={{ backgroundColor: "#1A1816", color: "#E8E4DF" }}
       >
-        <div className="grid grid-cols-12 gap-8 w-full max-w-7xl mx-auto">
+        <div className="manifesto-grid grid grid-cols-12 gap-6 md:gap-8 w-full max-w-7xl mx-auto">
           <div className="col-span-12 md:col-span-3">
             <span
               className="font-mono-edit text-[10px] tracking-[0.3em] block mb-2"
@@ -126,7 +126,7 @@ const Captacao = () => {
               as="h2"
               id="cap.manifesto.title"
               multiline
-              className="font-display text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.02] tracking-[-0.01em] mb-14 md:mb-20 text-balance"
+              className="manifesto-title font-display leading-[1.04] tracking-[-0.01em] mb-10 sm:mb-12 md:mb-16 lg:mb-20 text-balance"
               style={{ color: "#E8E4DF" }}
             >
               Antes de desenhar,
@@ -136,12 +136,12 @@ const Captacao = () => {
               </em>
             </Editable>
 
-            <div className="grid md:grid-cols-2 gap-x-14 gap-y-10 max-w-4xl">
+            <div className="manifesto-paragraphs grid md:grid-cols-2 gap-x-10 lg:gap-x-14 gap-y-7 md:gap-y-10 max-w-4xl">
               <Editable
                 id="cap.manifesto.p1"
                 multiline
                 as="p"
-                className="font-display text-[1.0625rem] md:text-lg leading-[1.7] tracking-[0.005em] text-pretty"
+                className="manifesto-paragraph font-display leading-[1.65] tracking-[0.005em] text-pretty"
                 style={{ color: "rgba(232, 228, 223, 0.82)" }}
               >
                 A NL não começa pelo desenho. Começa pela escuta — entendendo o terreno, a família, o modo de viver. Só depois o primeiro traço aparece. E quando aparece, já foi validado.
@@ -150,7 +150,7 @@ const Captacao = () => {
                 id="cap.manifesto.p2"
                 multiline
                 as="p"
-                className="font-display text-[1.0625rem] md:text-lg leading-[1.7] tracking-[0.005em] text-pretty"
+                className="manifesto-paragraph font-display leading-[1.65] tracking-[0.005em] text-pretty"
                 style={{ color: "rgba(232, 228, 223, 0.82)" }}
               >
                 Cada projeto que entregamos existe porque alguém confiou em nós antes de existir uma única parede. Essa confiança não se paga com estética — se honra com método, documentação e resultado previsível.
@@ -158,14 +158,14 @@ const Captacao = () => {
             </div>
 
             <div
-              className="mt-16 md:mt-24 pl-6 md:pl-8 border-l max-w-3xl"
+              className="manifesto-quote-wrap mt-12 sm:mt-16 md:mt-20 lg:mt-24 pl-5 sm:pl-6 md:pl-8 border-l max-w-3xl"
               style={{ borderColor: "rgba(139, 115, 85, 0.5)" }}
             >
               <Editable
                 id="cap.manifesto.quote"
                 multiline
                 as="p"
-                className="font-display italic text-xl md:text-2xl lg:text-[1.75rem] leading-[1.35] tracking-[-0.005em] text-pretty"
+                className="manifesto-quote font-display italic leading-[1.35] tracking-[-0.005em] text-pretty"
                 style={{ color: "#8B7355" }}
               >
                 "Beleza sem método é apenas decoração. Arquitetura é a decisão tomada antes do primeiro traço."
