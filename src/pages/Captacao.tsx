@@ -729,18 +729,18 @@ const Captacao = () => {
                   </span>
                 </button>
               </DialogTrigger>
-              <DialogContent className="border-[#3A3A3A]/30 max-w-3xl p-0 overflow-hidden" style={{ backgroundColor: "#B5A48A" }}>
+              <DialogContent className="border-primary/30 max-w-3xl p-0 overflow-hidden" style={{ backgroundColor: "#1A1816" }}>
                 <div className="p-8 md:p-12">
                   <DialogHeader>
                     <div className="flex items-baseline gap-4 mb-2">
-                      <span className="font-mono-edit text-[10px] tracking-[0.3em]" style={{ color: "#3A3A3A" }}>
+                      <span className="font-mono-edit text-[10px] tracking-[0.3em]" style={{ color: "#8B7355" }}>
                         04
                       </span>
-                      <DialogTitle className="font-display text-2xl md:text-3xl" style={{ color: "#FFFFFF" }}>
+                      <DialogTitle className="font-display text-2xl md:text-3xl" style={{ color: "#E8E4DF" }}>
                         Disciplinas integradas
                       </DialogTitle>
                     </div>
-                    <p className="font-mono-edit text-[10px] uppercase tracking-[0.3em] ml-10" style={{ color: "#3A3A3A" }}>
+                    <p className="font-mono-edit text-[10px] uppercase tracking-[0.3em] ml-10" style={{ color: "#8B7355" }}>
                       Quatro frentes · Uma autoria
                     </p>
                   </DialogHeader>
@@ -750,22 +750,22 @@ const Captacao = () => {
                     {/* linha vertical central */}
                     <div
                       className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 pointer-events-none"
-                      style={{ backgroundColor: "#3A3A3A" }}
+                      style={{ backgroundColor: "#8B7355" }}
                       aria-hidden
                     />
                     {/* linha horizontal central */}
                     <div
                       className="hidden md:block absolute top-1/2 left-0 right-0 h-px -translate-y-1/2 pointer-events-none"
-                      style={{ backgroundColor: "#3A3A3A" }}
+                      style={{ backgroundColor: "#8B7355" }}
                       aria-hidden
                     />
                     {/* NL no encontro */}
                     <div
                       className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full items-center justify-center z-10 pointer-events-none"
-                      style={{ backgroundColor: "#B5A48A", border: "1px solid #3A3A3A" }}
+                      style={{ backgroundColor: "#1A1816", border: "1px solid #8B7355" }}
                       aria-hidden
                     >
-                      <span className="font-display text-xl tracking-tight" style={{ color: "#3A3A3A" }}>
+                      <span className="font-display text-xl tracking-tight" style={{ color: "#E8E4DF" }}>
                         NL
                       </span>
                     </div>
