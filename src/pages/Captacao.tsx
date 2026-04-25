@@ -311,34 +311,39 @@ const Captacao = () => {
             ].map((step) => (
               <figure
                 key={step.id}
-                className="group relative overflow-hidden aspect-[4/3] bg-[#1A1816]"
+                className="group relative overflow-hidden aspect-[4/3] bg-[#1A1816] [will-change:transform] motion-safe:transition-shadow motion-safe:duration-700 hover:shadow-[0_30px_60px_-30px_rgba(0,0,0,0.55)]"
               >
                 {/* imagem */}
                 <img
                   src={step.img}
                   alt={step.title}
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
+                  className="absolute inset-0 w-full h-full object-cover [will-change:transform] motion-safe:transition-transform motion-safe:duration-[1600ms] motion-safe:ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:scale-[1.06]"
                 />
-                {/* gradient overlay para legibilidade */}
+                {/* gradient overlay para legibilidade — fade sutil no hover */}
                 <div
                   aria-hidden
-                  className="absolute inset-0"
+                  className="absolute inset-0 motion-safe:transition-opacity motion-safe:duration-700 motion-safe:ease-out group-hover:opacity-80"
                   style={{
                     background:
                       "linear-gradient(180deg, rgba(26,24,22,0.15) 0%, rgba(26,24,22,0.25) 45%, rgba(26,24,22,0.85) 100%)",
                   }}
                 />
-                {/* moldura bronze sutil */}
+                {/* moldura bronze sutil — intensifica no hover */}
                 <div
                   aria-hidden
-                  className="absolute inset-0 ring-1 ring-inset"
+                  className="absolute inset-0 motion-safe:transition-[box-shadow] motion-safe:duration-700"
                   style={{ boxShadow: "inset 0 0 0 1px rgba(139,115,85,0.18)" }}
+                />
+                <div
+                  aria-hidden
+                  className="absolute inset-0 opacity-0 motion-safe:transition-opacity motion-safe:duration-700 group-hover:opacity-100"
+                  style={{ boxShadow: "inset 0 0 0 1px rgba(139,115,85,0.45)" }}
                 />
                 {/* numeral grande no canto superior */}
                 <span
                   aria-hidden
-                  className="absolute top-6 right-7 font-display leading-none select-none"
+                  className="absolute top-6 right-7 font-display leading-none select-none motion-safe:transition-[color,transform] motion-safe:duration-700 group-hover:-translate-y-0.5"
                   style={{
                     fontSize: "clamp(3.5rem, 6vw, 5.5rem)",
                     color: "rgba(255,255,255,0.10)",
@@ -347,11 +352,11 @@ const Captacao = () => {
                 >
                   {step.id}
                 </span>
-                {/* eyebrow superior */}
-                <figcaption className="absolute inset-0 flex flex-col justify-end p-7 md:p-10">
+                {/* legenda — leve subida no hover */}
+                <figcaption className="absolute inset-0 flex flex-col justify-end p-7 md:p-10 [will-change:transform] motion-safe:transition-transform motion-safe:duration-700 motion-safe:ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:-translate-y-1">
                   <div className="flex items-center gap-3 mb-4">
                     <span
-                      className="h-px w-8"
+                      className="h-px w-8 origin-left motion-safe:transition-transform motion-safe:duration-700 motion-safe:ease-out motion-safe:group-hover:scale-x-[2]"
                       style={{ backgroundColor: "rgba(139, 115, 85, 0.85)" }}
                     />
                     <Editable
