@@ -621,16 +621,18 @@ const Captacao = () => {
           ============================================================ */}
       <section
         id="consolidacao"
-        className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32 bg-background text-foreground"
+        className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32"
+        style={{ backgroundColor: "#FFFFFF", color: "#3A3A3A" }}
       >
         <div className="max-w-6xl mx-auto w-full">
-          <div className="flex items-baseline gap-6 mb-16 pb-4 border-b border-primary/30">
-            <span className="font-mono-edit text-[10px] tracking-[0.3em] text-foreground/55">
+          <div className="flex items-baseline gap-6 mb-16 pb-4 border-b" style={{ borderColor: "rgba(139,115,85,0.3)" }}>
+            <span className="font-mono-edit text-[10px] tracking-[0.3em]" style={{ color: "#777777" }}>
               07
             </span>
             <Editable
               id="cap.consol.eyebrow"
-              className="font-mono-edit text-[10px] uppercase tracking-[0.3em] text-primary"
+              className="font-mono-edit text-[10px] uppercase tracking-[0.3em]"
+              style={{ color: "#8B7355" }}
             >
               Consolidação
             </Editable>
@@ -640,7 +642,8 @@ const Captacao = () => {
             as="h2"
             id="cap.consol.title"
             multiline
-            className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.0] text-balance mb-8 max-w-4xl text-foreground"
+            className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.0] text-balance mb-8 max-w-4xl"
+            style={{ color: "#3A3A3A" }}
           >
             Estrutura e consolidação.
           </Editable>
@@ -649,30 +652,31 @@ const Captacao = () => {
             as="p"
             id="cap.consol.subtitle"
             multiline
-            className="font-display text-lg md:text-xl leading-relaxed max-w-3xl text-foreground/75 mb-20"
+            className="font-display text-lg md:text-xl leading-relaxed max-w-3xl mb-20"
+            style={{ color: "#555555" }}
           >
             Não empilhamos volumes. Consolidamos legados. Cada traço é uma decisão técnica que sustenta a próxima visão.
           </Editable>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-primary/20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style={{ backgroundColor: "rgba(139,115,85,0.25)" }}>
             {/* Card 01 — Projetos entregues (estático) */}
-            <div className="bg-background p-8 md:p-10 flex flex-col">
-              <div className="h-px w-10 mb-6 bg-primary" />
-              <span className="font-display text-5xl md:text-6xl text-primary leading-none mb-4">
+            <div className="p-8 md:p-10 flex flex-col" style={{ backgroundColor: "#FFFFFF" }}>
+              <div className="h-px w-10 mb-6" style={{ backgroundColor: "#8B7355" }} />
+              <span className="font-display text-5xl md:text-6xl leading-none mb-4" style={{ color: "#8B7355" }}>
                 +50
               </span>
-              <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em] text-foreground/70">
+              <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "#3A3A3A" }}>
                 Projetos entregues
               </span>
             </div>
 
             {/* Card 02 — Anos de mercado (estático) */}
-            <div className="bg-background p-8 md:p-10 flex flex-col">
-              <div className="h-px w-10 mb-6 bg-primary" />
-              <span className="font-display text-5xl md:text-6xl text-primary leading-none mb-4">
+            <div className="p-8 md:p-10 flex flex-col" style={{ backgroundColor: "#FFFFFF" }}>
+              <div className="h-px w-10 mb-6" style={{ backgroundColor: "#8B7355" }} />
+              <span className="font-display text-5xl md:text-6xl leading-none mb-4" style={{ color: "#8B7355" }}>
                 +8
               </span>
-              <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em] text-foreground/70">
+              <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "#3A3A3A" }}>
                 Anos de mercado
               </span>
             </div>
@@ -680,15 +684,18 @@ const Captacao = () => {
             {/* Card 03 — Estados de atuação (modal mapa) */}
             <Dialog>
               <DialogTrigger asChild>
-                <button className="bg-background p-8 md:p-10 flex flex-col text-left transition-colors hover:bg-secondary/40 group w-full h-full">
-                  <div className="h-px w-10 mb-6 bg-primary transition-all group-hover:w-16" />
-                  <span className="font-display text-5xl md:text-6xl text-primary leading-none mb-4">
+                <button
+                  className="p-8 md:p-10 flex flex-col text-left transition-colors group w-full h-full hover:bg-[#F7F4EF]"
+                  style={{ backgroundColor: "#FFFFFF" }}
+                >
+                  <div className="h-px w-10 mb-6 transition-all group-hover:w-16" style={{ backgroundColor: "#8B7355" }} />
+                  <span className="font-display text-5xl md:text-6xl leading-none mb-4" style={{ color: "#8B7355" }}>
                     2
                   </span>
-                  <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em] text-foreground/70">
+                  <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "#3A3A3A" }}>
                     Estados de atuação
                   </span>
-                  <span className="font-mono-edit text-[9px] uppercase tracking-[0.3em] text-primary/70 mt-3">
+                  <span className="font-mono-edit text-[9px] uppercase tracking-[0.3em] mt-3" style={{ color: "#8B7355" }}>
                     + Ver mapa
                   </span>
                 </button>
@@ -706,15 +713,18 @@ const Captacao = () => {
             {/* Card 04 — Disciplinas integradas (modal diagrama) */}
             <Dialog>
               <DialogTrigger asChild>
-                <button className="bg-background p-8 md:p-10 flex flex-col text-left transition-colors hover:bg-secondary/40 group w-full h-full">
-                  <div className="h-px w-10 mb-6 bg-primary transition-all group-hover:w-16" />
-                  <span className="font-display text-5xl md:text-6xl text-primary leading-none mb-4">
+                <button
+                  className="p-8 md:p-10 flex flex-col text-left transition-colors group w-full h-full hover:bg-[#F7F4EF]"
+                  style={{ backgroundColor: "#FFFFFF" }}
+                >
+                  <div className="h-px w-10 mb-6 transition-all group-hover:w-16" style={{ backgroundColor: "#8B7355" }} />
+                  <span className="font-display text-5xl md:text-6xl leading-none mb-4" style={{ color: "#8B7355" }}>
                     4
                   </span>
-                  <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em] text-foreground/70">
+                  <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "#3A3A3A" }}>
                     Disciplinas integradas
                   </span>
-                  <span className="font-mono-edit text-[9px] uppercase tracking-[0.3em] text-primary/70 mt-3">
+                  <span className="font-mono-edit text-[9px] uppercase tracking-[0.3em] mt-3" style={{ color: "#8B7355" }}>
                     + Ver diagrama
                   </span>
                 </button>
