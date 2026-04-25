@@ -683,7 +683,7 @@ const Captacao = () => {
                 Anos de experiência combinada
               </span>
               <span className="font-display italic text-xs mt-3" style={{ color: "#777777" }}>
-                experiência combinada · desde 2017
+                desde 2017
               </span>
             </div>
 
