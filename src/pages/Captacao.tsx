@@ -8,6 +8,7 @@ import imgComoCroqui from "@/assets/como-vira/01-croqui.png";
 import imgComoVolumetria from "@/assets/como-vira/02-volumetria.png";
 import imgComoPlanta from "@/assets/como-vira/03-planta.png";
 import imgComoRender from "@/assets/como-vira/04-render.png";
+import imgAlemProjeto from "@/assets/alem-projeto-bg.png";
 
 /* ============================================================================
    NL ARQUITETOS · APRESENTAÇÃO DE CAPTAÇÃO PREMIUM
@@ -1147,7 +1148,18 @@ const Captacao = () => {
         className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32 overflow-hidden"
         style={{ backgroundColor: "#0F0D0B", color: "#E8E4DF" }}
       >
-
+        {/* Imagem de fundo em tela cheia */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${imgAlemProjeto})` }}
+          aria-hidden="true"
+        />
+        {/* Overlay escuro */}
+        <div
+          className="absolute inset-0"
+          style={{ backgroundColor: "rgba(26, 24, 22, 0.75)" }}
+          aria-hidden="true"
+        />
 
         <div className="relative z-10 max-w-7xl mx-auto w-full">
           <div
