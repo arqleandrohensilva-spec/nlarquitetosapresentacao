@@ -520,7 +520,7 @@ const Captacao = () => {
       <section
         id="credenciais"
         aria-labelledby="credenciais-title"
-        className="relative px-6 md:px-16 lg:px-24 py-20 lg:py-24 bg-surface"
+        className="relative px-6 md:px-16 lg:px-24 py-20 lg:py-24 bg-muted"
       >
         {/* filete bronze topo */}
         <div
