@@ -9,8 +9,16 @@ const MapaAtuacao = () => {
   const isActive = (e: Estado) => hover === e;
   const isDimmed = (e: Estado) => hover !== null && hover !== e;
 
+  const frase =
+    hover === "SP"
+      ? { titulo: "Sede principal em SP", sub: "Onde nascem os projetos da NL." }
+      : hover === "MG"
+        ? { titulo: "Atuação em projetos em MG", sub: "Acompanhamento e execução em obra." }
+        : { titulo: "Passe o mouse sobre um estado", sub: "Para ver onde a NL atua." };
+
   return (
-    <div className="flex flex-col items-center pt-4 w-full">
+    <div className="flex flex-col items-start pt-4 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-10 items-center w-full">
       <svg
         viewBox="0 0 600 460"
         className="w-full h-auto"
