@@ -273,8 +273,7 @@ const Captacao = () => {
             multiline
             className="font-display text-3xl md:text-4xl lg:text-[2.6rem] xl:text-5xl leading-[1.05] mb-6 lg:mb-7 text-balance max-w-4xl"
           >
-            Um caminho <em className="text-primary not-italic">claro</em>, do primeiro
-            café ao primeiro traço.
+            Do pensamento à <em className="text-primary not-italic">decisão</em>.
           </Editable>
 
           {/* Grid 2x2 narrativo: croqui → volumetria → planta → render */}
