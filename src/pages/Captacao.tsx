@@ -718,83 +718,123 @@ const Captacao = () => {
                   </span>
                 </button>
               </DialogTrigger>
-              <DialogContent className="bg-secondary border-primary/30 max-w-2xl">
-                <DialogHeader>
-                  <DialogTitle className="font-display text-2xl text-foreground">
-                    Disciplinas integradas
-                  </DialogTitle>
-                </DialogHeader>
-                <div className="flex flex-col items-center pt-4">
-                  <svg
-                    viewBox="0 0 400 400"
-                    className="w-full max-w-sm h-auto"
-                    aria-label="Diagrama circular NL · 4 disciplinas"
-                  >
-                    {/* 4 segmentos */}
-                    {[
-                      { start: -45, end: 45, label: "Arquitetura\nResidencial" },
-                      { start: 45, end: 135, label: "Design de\nInteriores" },
-                      { start: 135, end: 225, label: "Arquitetura\nComercial" },
-                      { start: 225, end: 315, label: "Engenharia &\nCompatibilização" },
-                    ].map((seg, i) => {
-                      const cx = 200, cy = 200, rOuter = 170, rInner = 70;
-                      const toRad = (d: number) => (d * Math.PI) / 180;
-                      const x1 = cx + rOuter * Math.cos(toRad(seg.start));
-                      const y1 = cy + rOuter * Math.sin(toRad(seg.start));
-                      const x2 = cx + rOuter * Math.cos(toRad(seg.end));
-                      const y2 = cy + rOuter * Math.sin(toRad(seg.end));
-                      const x3 = cx + rInner * Math.cos(toRad(seg.end));
-                      const y3 = cy + rInner * Math.sin(toRad(seg.end));
-                      const x4 = cx + rInner * Math.cos(toRad(seg.start));
-                      const y4 = cy + rInner * Math.sin(toRad(seg.start));
-                      const path = `M ${x1} ${y1} A ${rOuter} ${rOuter} 0 0 1 ${x2} ${y2} L ${x3} ${y3} A ${rInner} ${rInner} 0 0 0 ${x4} ${y4} Z`;
-                      const mid = (seg.start + seg.end) / 2;
-                      const tr = (rInner + rOuter) / 2;
-                      const tx = cx + tr * Math.cos(toRad(mid));
-                      const ty = cy + tr * Math.sin(toRad(mid));
-                      const lines = seg.label.split("\n");
-                      return (
-                        <g key={i}>
-                          <path
-                            d={path}
-                            fill={i % 2 === 0 ? "hsl(var(--primary) / 0.15)" : "hsl(var(--primary) / 0.28)"}
-                            stroke="hsl(var(--secondary))"
-                            strokeWidth="2"
-                          />
-                          <text
-                            x={tx}
-                            y={ty}
-                            textAnchor="middle"
-                            fontSize="11"
-                            fill="hsl(var(--foreground))"
-                            className="font-display"
-                          >
-                            {lines.map((ln, j) => (
-                              <tspan key={j} x={tx} dy={j === 0 ? -4 : 14}>
-                                {ln}
-                              </tspan>
-                            ))}
-                          </text>
-                        </g>
-                      );
-                    })}
-                    {/* Centro NL */}
-                    <circle cx="200" cy="200" r="55" fill="hsl(var(--primary))" />
-                    <text
-                      x="200"
-                      y="208"
-                      textAnchor="middle"
-                      fontSize="28"
-                      fill="hsl(var(--secondary))"
-                      className="font-display"
-                      fontWeight="600"
+              <DialogContent className="bg-secondary border-primary/30 max-w-3xl p-0 overflow-hidden">
+                <div className="p-8 md:p-12">
+                  <DialogHeader>
+                    <div className="flex items-baseline gap-4 mb-2">
+                      <span className="font-mono-edit text-[10px] tracking-[0.3em] text-primary">
+                        04
+                      </span>
+                      <DialogTitle className="font-display text-2xl md:text-3xl text-foreground">
+                        Disciplinas integradas
+                      </DialogTitle>
+                    </div>
+                    <p className="font-mono-edit text-[10px] uppercase tracking-[0.3em] text-foreground/55 ml-10">
+                      Quatro frentes · Uma autoria
+                    </p>
+                  </DialogHeader>
+
+                  {/* Grid 2x2 com cruz bronze ao centro e NL no encontro */}
+                  <div className="relative mt-10">
+                    {/* linha vertical central */}
+                    <div
+                      className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-primary/40 -translate-x-1/2 pointer-events-none"
+                      aria-hidden
+                    />
+                    {/* linha horizontal central */}
+                    <div
+                      className="hidden md:block absolute top-1/2 left-0 right-0 h-px bg-primary/40 -translate-y-1/2 pointer-events-none"
+                      aria-hidden
+                    />
+                    {/* NL no encontro */}
+                    <div
+                      className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-secondary border border-primary items-center justify-center z-10 pointer-events-none"
+                      aria-hidden
                     >
-                      NL
-                    </text>
-                  </svg>
-                  <p className="font-mono-edit text-[10px] uppercase tracking-[0.3em] text-foreground/60 mt-6 text-center">
-                    Engenharia &amp; Compatibilização — em parceria
-                  </p>
+                      <span className="font-display text-xl text-primary tracking-tight">
+                        NL
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2">
+                      {[
+                        {
+                          n: "01",
+                          icon: (
+                            <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.2">
+                              <path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6" />
+                            </svg>
+                          ),
+                          t: "Arquitetura Residencial",
+                          d: "Casas que nascem do terreno, da luz e do modo de viver.",
+                        },
+                        {
+                          n: "02",
+                          icon: (
+                            <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.2">
+                              <rect x="3" y="3" width="18" height="18" />
+                              <path d="M3 12h18M12 3v18" />
+                            </svg>
+                          ),
+                          t: "Design de Interiores",
+                          d: "Atmosfera, materialidade e proporção em cada ambiente.",
+                        },
+                        {
+                          n: "03",
+                          icon: (
+                            <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.2">
+                              <path d="M3 21V7l9-4 9 4v14M3 21h18M9 21v-6h6v6M7 11h2M11 11h2M15 11h2" />
+                            </svg>
+                          ),
+                          t: "Arquitetura Comercial",
+                          d: "Espaços que traduzem marca, fluxo e experiência.",
+                        },
+                        {
+                          n: "04",
+                          icon: (
+                            <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.2">
+                              <path d="M4 20l4-4M4 20l-1-3 12-12 3 1 1 3L7 21l-3-1zM14 6l4 4" />
+                            </svg>
+                          ),
+                          t: "Engenharia & Compatibilização",
+                          d: "Estrutura, instalações e detalhamento — em parceria.",
+                          parceria: true,
+                        },
+                      ].map((item, i) => (
+                        <div
+                          key={item.n}
+                          className={cn(
+                            "group relative p-6 md:p-10 transition-colors duration-300 hover:bg-background/60",
+                            // espaçamento para não colidir com o NL central
+                            i === 0 && "md:pr-12 md:pb-12",
+                            i === 1 && "md:pl-12 md:pb-12",
+                            i === 2 && "md:pr-12 md:pt-12",
+                            i === 3 && "md:pl-12 md:pt-12",
+                          )}
+                        >
+                          <div className="flex items-baseline justify-between mb-6">
+                            <span className="font-mono-edit text-[10px] tracking-[0.3em] text-primary">
+                              {item.n}
+                            </span>
+                            <span className="text-primary/70 group-hover:text-primary transition-colors">
+                              {item.icon}
+                            </span>
+                          </div>
+                          <h4 className="font-display text-lg md:text-xl text-foreground leading-tight mb-3">
+                            {item.t}
+                          </h4>
+                          <p className="font-display text-sm text-foreground/65 leading-relaxed">
+                            {item.d}
+                          </p>
+                          {item.parceria && (
+                            <span className="font-mono-edit text-[9px] uppercase tracking-[0.3em] text-primary/70 mt-4 inline-block">
+                              · em parceria
+                            </span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </DialogContent>
             </Dialog>
