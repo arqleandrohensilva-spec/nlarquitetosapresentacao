@@ -683,7 +683,7 @@ const Captacao = () => {
                 Anos de experiência combinada
               </span>
               <span className="font-display italic text-xs mt-3" style={{ color: "#777777" }}>
-                São José dos Campos · desde 2017
+                experiência combinada · desde 2017
               </span>
             </div>
 
