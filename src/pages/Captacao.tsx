@@ -691,62 +691,91 @@ const Captacao = () => {
                   </span>
                 </button>
               </DialogTrigger>
-              <DialogContent className="bg-secondary border-primary/30 max-w-2xl">
+              <DialogContent className="bg-[#1A1816] border-primary/30 max-w-3xl">
                 <DialogHeader>
-                  <DialogTitle className="font-display text-2xl text-foreground">
+                  <DialogTitle className="font-display text-2xl text-[#E8E4DF]">
                     Estados de atuação
                   </DialogTitle>
                 </DialogHeader>
                 <div className="flex flex-col items-center pt-4">
-                  {/* Mapa simplificado do Brasil em SVG */}
+                  {/* Silhuetas reais de MG e SP */}
                   <svg
-                    viewBox="0 0 400 420"
-                    className="w-full max-w-md h-auto"
-                    aria-label="Mapa do Brasil — SP e MG"
+                    viewBox="0 0 600 460"
+                    className="w-full h-auto"
+                    aria-label="Mapa de Minas Gerais e São Paulo"
                   >
-                    <path
-                      d="M120 50 L260 40 L320 90 L350 160 L340 240 L300 320 L240 380 L160 390 L100 350 L70 280 L60 200 L80 120 Z"
-                      fill="hsl(var(--muted))"
-                      stroke="hsl(var(--primary) / 0.4)"
-                      strokeWidth="1.5"
-                    />
-                    {/* MG */}
-                    <circle cx="220" cy="210" r="9" fill="hsl(var(--primary))" />
-                    <circle cx="220" cy="210" r="18" fill="hsl(var(--primary) / 0.2)" />
-                    <text
-                      x="240"
-                      y="215"
-                      className="font-mono-edit"
-                      fontSize="11"
-                      fill="hsl(var(--foreground))"
-                    >
-                      MG
-                    </text>
-                    {/* SP */}
-                    <circle cx="190" cy="260" r="11" fill="hsl(var(--primary))" />
-                    <circle cx="190" cy="260" r="22" fill="hsl(var(--primary) / 0.25)" />
-                    <text
-                      x="160"
-                      y="290"
-                      className="font-mono-edit"
-                      fontSize="11"
-                      fill="hsl(var(--foreground))"
-                    >
-                      SP
-                    </text>
+                    {/* MINAS GERAIS — silhueta aproximada */}
+                    <g>
+                      <path
+                        d="M180,90 C220,70 270,68 320,75 C370,80 420,90 455,110 C480,125 495,150 500,180 C505,210 495,235 475,250 C455,265 425,272 395,272 C375,272 360,278 350,290 C340,302 332,312 318,315 C300,318 282,310 268,298 C254,286 242,275 225,272 C205,268 188,262 175,250 C160,235 150,215 152,190 C154,165 162,140 170,120 C173,108 175,98 180,90 Z"
+                        fill="hsl(var(--primary) / 0.55)"
+                        stroke="hsl(var(--primary))"
+                        strokeWidth="1"
+                      />
+                      <text
+                        x="335"
+                        y="180"
+                        textAnchor="middle"
+                        fontSize="10"
+                        letterSpacing="2"
+                        fill="#E8E4DF"
+                        className="font-mono-edit"
+                      >
+                        MINAS GERAIS
+                      </text>
+                      {/* ponto Belo Horizonte */}
+                      <circle cx="370" cy="225" r="4" fill="hsl(var(--primary))" />
+                      <circle cx="370" cy="225" r="9" fill="hsl(var(--primary) / 0.25)" />
+                    </g>
+
+                    {/* SÃO PAULO — silhueta aproximada */}
+                    <g>
+                      <path
+                        d="M120,310 C150,295 185,290 220,295 C250,298 278,308 305,315 C320,318 332,316 342,308 C352,300 365,300 372,310 C378,318 372,328 360,332 C345,338 330,335 318,338 C305,342 295,352 280,355 C260,358 240,352 222,348 C200,343 180,348 162,345 C145,342 130,335 122,325 C118,320 117,314 120,310 Z"
+                        fill="hsl(var(--primary) / 0.55)"
+                        stroke="hsl(var(--primary))"
+                        strokeWidth="1"
+                      />
+                      <text
+                        x="240"
+                        y="328"
+                        textAnchor="middle"
+                        fontSize="10"
+                        letterSpacing="2"
+                        fill="#E8E4DF"
+                        className="font-mono-edit"
+                      >
+                        SÃO PAULO
+                      </text>
+                      {/* ponto capital SP */}
+                      <circle cx="278" cy="340" r="4" fill="hsl(var(--primary))" />
+                      <circle cx="278" cy="340" r="9" fill="hsl(var(--primary) / 0.25)" />
+                    </g>
                   </svg>
-                  <div className="mt-6 w-full space-y-3">
-                    <div className="flex items-center gap-3">
-                      <span className="w-2.5 h-2.5 rounded-full bg-primary" />
-                      <span className="font-display text-base text-foreground">
-                        <strong className="font-semibold">São Paulo</strong> · Sede principal
-                      </span>
+
+                  {/* legenda */}
+                  <div className="mt-8 w-full border-t border-primary/30 pt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="flex items-start gap-3">
+                      <span className="w-2 h-2 rounded-full bg-primary mt-2" />
+                      <div>
+                        <p className="font-mono-edit text-[10px] uppercase tracking-[0.3em] text-[#E8E4DF]">
+                          São Paulo
+                        </p>
+                        <p className="font-display text-sm text-[#E8E4DF]/70 mt-1">
+                          Sede principal
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <span className="w-2.5 h-2.5 rounded-full bg-primary" />
-                      <span className="font-display text-base text-foreground">
-                        <strong className="font-semibold">Minas Gerais</strong> · Atuação em projetos
-                      </span>
+                    <div className="flex items-start gap-3">
+                      <span className="w-2 h-2 rounded-full bg-primary mt-2" />
+                      <div>
+                        <p className="font-mono-edit text-[10px] uppercase tracking-[0.3em] text-[#E8E4DF]">
+                          Minas Gerais
+                        </p>
+                        <p className="font-display text-sm text-[#E8E4DF]/70 mt-1">
+                          Atuação em projetos
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
