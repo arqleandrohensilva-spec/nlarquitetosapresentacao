@@ -515,8 +515,116 @@ const Captacao = () => {
       </section>
 
       {/* ============================================================
-          06 · PILARES
+          05.1 · CREDENCIAIS (CAU + papéis)
           ============================================================ */}
+      <section
+        id="credenciais"
+        aria-labelledby="credenciais-title"
+        className="relative px-6 md:px-16 lg:px-24 py-20 lg:py-24 bg-muted"
+      >
+        {/* filete bronze topo */}
+        <div
+          aria-hidden
+          className="absolute top-0 left-0 right-0 h-px"
+          style={{ backgroundColor: "rgba(139, 115, 85, 0.3)" }}
+        />
+
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="flex items-baseline justify-between mb-10 pb-3 border-b border-border/60">
+            <div className="flex items-baseline gap-6">
+              <span className="number-marker">05.1</span>
+              <Editable id="cap.cred.eyebrow" className="eyebrow">
+                Credenciais
+              </Editable>
+            </div>
+            <Editable
+              id="cap.cred.tag"
+              className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground hidden md:block"
+            >
+              Conselho de Arquitetura e Urbanismo
+            </Editable>
+          </div>
+
+          <Editable
+            as="h2"
+            id="cap.cred.title"
+            multiline
+            className="font-display text-3xl md:text-4xl lg:text-[2.6rem] leading-[1.05] mb-12 lg:mb-14 max-w-3xl text-balance"
+          >
+            Registro <em className="text-primary not-italic">profissional</em> e atuação.
+          </Editable>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-20 gap-y-12">
+            {[
+              {
+                id: "leandro",
+                name: "Leandro Henrique",
+                cau: "A252250-0",
+                roles: ["Arquitetura", "Compatibilização", "Coordenação técnica"],
+              },
+              {
+                id: "neandro",
+                name: "Neandro Jacque",
+                cau: "A264629-3",
+                roles: ["Interiores", "Atmosfera & materialidade", "Detalhamento"],
+              },
+            ].map((s) => (
+              <article key={s.id} className="relative">
+                <Editable
+                  id={`cap.cred.${s.id}.eyebrow`}
+                  className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80 block mb-3"
+                >
+                  CAU · Brasil
+                </Editable>
+
+                <Editable
+                  as="h3"
+                  id={`cap.cred.${s.id}.name`}
+                  className="font-display text-2xl lg:text-[1.7rem] leading-tight text-foreground mb-1"
+                >
+                  {s.name}
+                </Editable>
+
+                <div className="flex items-baseline gap-3 mb-6">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                    Registro
+                  </span>
+                  <Editable
+                    id={`cap.cred.${s.id}.cau`}
+                    className="font-display text-3xl lg:text-4xl text-primary leading-none tracking-tight"
+                  >
+                    {s.cau}
+                  </Editable>
+                </div>
+
+                <div className="h-px w-12 bg-primary/40 mb-6" />
+
+                <ul className="flex flex-wrap gap-2">
+                  {s.roles.map((r, i) => (
+                    <li key={i}>
+                      <Editable
+                        id={`cap.cred.${s.id}.role.${i}`}
+                        className="inline-block font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/70 border border-border/70 px-3 py-1.5"
+                      >
+                        {r}
+                      </Editable>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+
+          <Editable
+            id="cap.cred.note"
+            className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground/80 mt-12 block"
+          >
+            Atuação conjunta · São José dos Campos · SP
+          </Editable>
+        </div>
+      </section>
+
+      {/* ============================================================
       <section
         id="pilares"
         className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32"
