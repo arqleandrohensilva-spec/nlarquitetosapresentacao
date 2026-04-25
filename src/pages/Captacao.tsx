@@ -698,23 +698,24 @@ const Captacao = () => {
                   </DialogTitle>
                 </DialogHeader>
                 <div className="flex flex-col items-center pt-4">
-                  {/* Silhuetas reais de MG e SP */}
+                  {/* Silhuetas simplificadas, lembrando o contorno real de MG e SP */}
                   <svg
                     viewBox="0 0 600 460"
                     className="w-full h-auto"
                     aria-label="Mapa de Minas Gerais e São Paulo"
                   >
-                    {/* MINAS GERAIS — silhueta aproximada */}
+                    {/* MINAS GERAIS — formato característico (mais largo no leste, "rabo" no triângulo a oeste) */}
                     <g>
                       <path
-                        d="M180,90 C220,70 270,68 320,75 C370,80 420,90 455,110 C480,125 495,150 500,180 C505,210 495,235 475,250 C455,265 425,272 395,272 C375,272 360,278 350,290 C340,302 332,312 318,315 C300,318 282,310 268,298 C254,286 242,275 225,272 C205,268 188,262 175,250 C160,235 150,215 152,190 C154,165 162,140 170,120 C173,108 175,98 180,90 Z"
+                        d="M155,140 L180,118 L215,108 L255,100 L295,95 L335,92 L375,98 L410,108 L440,122 L470,142 L490,168 L502,198 L505,228 L498,255 L478,275 L450,285 L418,288 L395,295 L378,310 L362,322 L345,325 L325,318 L305,308 L285,295 L262,285 L238,278 L215,268 L192,252 L172,232 L158,208 L150,180 Z"
                         fill="hsl(var(--primary) / 0.55)"
                         stroke="hsl(var(--primary))"
-                        strokeWidth="1"
+                        strokeWidth="1.2"
+                        strokeLinejoin="round"
                       />
                       <text
                         x="335"
-                        y="180"
+                        y="195"
                         textAnchor="middle"
                         fontSize="10"
                         letterSpacing="2"
@@ -723,22 +724,23 @@ const Captacao = () => {
                       >
                         MINAS GERAIS
                       </text>
-                      {/* ponto Belo Horizonte */}
-                      <circle cx="370" cy="225" r="4" fill="hsl(var(--primary))" />
-                      <circle cx="370" cy="225" r="9" fill="hsl(var(--primary) / 0.25)" />
+                      {/* ponto Belo Horizonte (sudeste do estado) */}
+                      <circle cx="395" cy="248" r="4" fill="hsl(var(--primary))" />
+                      <circle cx="395" cy="248" r="9" fill="hsl(var(--primary) / 0.25)" />
                     </g>
 
-                    {/* SÃO PAULO — silhueta aproximada */}
+                    {/* SÃO PAULO — formato alongado horizontal, com "ponta" sudoeste */}
                     <g>
                       <path
-                        d="M120,310 C150,295 185,290 220,295 C250,298 278,308 305,315 C320,318 332,316 342,308 C352,300 365,300 372,310 C378,318 372,328 360,332 C345,338 330,335 318,338 C305,342 295,352 280,355 C260,358 240,352 222,348 C200,343 180,348 162,345 C145,342 130,335 122,325 C118,320 117,314 120,310 Z"
+                        d="M105,340 L135,322 L172,315 L210,318 L248,322 L285,328 L320,332 L352,330 L380,322 L405,318 L425,325 L438,340 L432,358 L412,368 L388,372 L362,370 L338,372 L312,378 L288,385 L262,388 L235,385 L208,378 L182,370 L158,362 L132,355 L112,348 Z"
                         fill="hsl(var(--primary) / 0.55)"
                         stroke="hsl(var(--primary))"
-                        strokeWidth="1"
+                        strokeWidth="1.2"
+                        strokeLinejoin="round"
                       />
                       <text
-                        x="240"
-                        y="328"
+                        x="265"
+                        y="350"
                         textAnchor="middle"
                         fontSize="10"
                         letterSpacing="2"
@@ -747,9 +749,9 @@ const Captacao = () => {
                       >
                         SÃO PAULO
                       </text>
-                      {/* ponto capital SP */}
-                      <circle cx="278" cy="340" r="4" fill="hsl(var(--primary))" />
-                      <circle cx="278" cy="340" r="9" fill="hsl(var(--primary) / 0.25)" />
+                      {/* ponto capital SP (leste do estado, próximo ao litoral) */}
+                      <circle cx="372" cy="362" r="4" fill="hsl(var(--primary))" />
+                      <circle cx="372" cy="362" r="9" fill="hsl(var(--primary) / 0.25)" />
                     </g>
                   </svg>
 
