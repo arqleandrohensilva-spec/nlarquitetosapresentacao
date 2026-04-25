@@ -1198,7 +1198,7 @@ const Captacao = () => {
             >
               O projeto termina. O comprometimento, <em className="not-italic" style={{ color: "#C9A876" }}>não.</em>
             </Editable>
-            <div className="h-px w-16 mb-8" style={{ backgroundColor: "#8B7355" }} />
+            <div className="h-px w-10 mb-8" style={{ backgroundColor: "rgba(139, 115, 85, 0.45)" }} />
             <Editable
               as="p"
               id="cap.alem.body"
