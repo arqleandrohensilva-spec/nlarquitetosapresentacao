@@ -11,7 +11,6 @@ const SECTIONS = [
   { id: "manifesto", label: "Manifesto" },
   { id: "como-vira", label: "Como vira projeto" },
   { id: "sobre", label: "Sobre nós" },
-  { id: "credenciais", label: "Credenciais" },
   { id: "pilares", label: "Pilares" },
   { id: "consolidacao", label: "Consolidação" },
   { id: "processos", label: "ARQ + INT" },
