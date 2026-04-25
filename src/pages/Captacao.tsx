@@ -142,7 +142,7 @@ const Captacao = () => {
                 multiline
                 as="p"
                 className="manifesto-paragraph font-display leading-[1.65] tracking-[0.005em] text-pretty"
-                style={{ color: "rgba(232, 228, 223, 0.82)" }}
+                style={{ color: "rgba(232, 228, 223, 0.82)", hyphens: "none", WebkitHyphens: "none" }}
               >
                 A NL não começa pelo desenho. Começa pela escuta — entendendo o terreno, a família, o modo de viver. Só depois o primeiro traço aparece. E quando aparece, já foi validado.
               </Editable>
