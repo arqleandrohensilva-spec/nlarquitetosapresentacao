@@ -1144,10 +1144,28 @@ const Captacao = () => {
           ============================================================ */}
       <section
         id="alem"
-        className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32"
+        className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32 overflow-hidden"
         style={{ backgroundColor: "#0F0D0B", color: "#E8E4DF" }}
       >
-        <div className="max-w-7xl mx-auto w-full">
+        {/* Foto de projeto entregue como fundo */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={IMG_CASE}
+            alt="Projeto entregue · NL Arquitetos"
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+          {/* Overlay escuro para contraste */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(15,13,11,0.92) 0%, rgba(15,13,11,0.86) 50%, rgba(15,13,11,0.94) 100%)",
+            }}
+          />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto w-full">
           <div
             className="flex items-baseline gap-6 mb-16 pb-4 border-b"
             style={{ borderColor: "rgba(139, 115, 85, 0.35)" }}
@@ -1167,60 +1185,88 @@ const Captacao = () => {
             </Editable>
           </div>
 
-          <div className="grid grid-cols-12 gap-x-12 gap-y-12">
-            <div className="col-span-12 lg:col-span-5">
-              <Editable
-                as="h2"
-                id="cap.alem.title"
-                multiline
-                className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.0] text-balance mb-8"
-                style={{ color: "#E8E4DF" }}
-              >
-                Nossa relação não <em className="not-italic" style={{ color: "#C9A876" }}>termina na entrega.</em>
-              </Editable>
-              <div className="h-px w-16 mb-8" style={{ backgroundColor: "#8B7355" }} />
-              <Editable
-                as="p"
-                id="cap.alem.body"
-                multiline
-                className="font-display italic text-lg md:text-xl leading-relaxed max-w-md"
-                style={{ color: "rgba(232, 228, 223, 0.78)" }}
-              >
-                Acompanhamos a obra, ajustamos o que precisa ser ajustado e
-                permanecemos disponíveis para os próximos capítulos da casa.
-              </Editable>
-            </div>
+          <div className="max-w-4xl mb-20">
+            <Editable
+              as="h2"
+              id="cap.alem.title"
+              multiline
+              className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.0] text-balance mb-8"
+              style={{ color: "#E8E4DF" }}
+            >
+              O projeto termina. O comprometimento, <em className="not-italic" style={{ color: "#C9A876" }}>não.</em>
+            </Editable>
+            <div className="h-px w-16 mb-8" style={{ backgroundColor: "#8B7355" }} />
+            <Editable
+              as="p"
+              id="cap.alem.body"
+              multiline
+              className="font-display italic text-lg md:text-xl leading-relaxed max-w-2xl"
+              style={{ color: "rgba(232, 228, 223, 0.78)" }}
+            >
+              Acompanhamos a obra, ajustamos o que precisa ser ajustado e
+              permanecemos disponíveis para os próximos capítulos da casa.
+            </Editable>
+          </div>
 
-            <div className="col-span-12 lg:col-span-7 lg:pl-8">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-12">
-                {[
-                  { id: "obra", t: "Acompanhamento de obra", b: "Visitas técnicas e curadoria de execução, garantindo fidelidade ao projeto." },
-                  { id: "compras", t: "Curadoria de compras", b: "Indicação de fornecedores, aprovação de amostras e acompanhamento de pedidos." },
-                  { id: "decor", t: "Decoração final", b: "Styling, arte, têxteis e os últimos detalhes que dão alma ao ambiente." },
-                  { id: "pos", t: "Pós-entrega", b: "Acompanhamento após mudança e suporte para evoluções futuras." },
-                ].map((s) => (
-                  <div key={s.id}>
-                    <Editable
-                      as="h3"
-                      id={`cap.alem.${s.id}.t`}
-                      className="font-display text-xl md:text-2xl mb-3"
-                      style={{ color: "#E8E4DF" }}
+          {/* Linha do tempo horizontal */}
+          <div className="relative">
+            {/* Linha bronze conectora — desktop */}
+            <div
+              className="hidden md:block absolute top-[11px] left-0 right-0 h-px"
+              style={{ backgroundColor: "rgba(139, 115, 85, 0.45)" }}
+            />
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-y-12 md:gap-x-8 lg:gap-x-12 relative">
+              {[
+                { id: "entrega", step: "01", t: "Entrega", b: "Encerramento formal da obra com vistoria, ajustes finais e entrega das chaves." },
+                { id: "acompanhamento", step: "02", t: "Acompanhamento", b: "Visitas técnicas durante a execução, garantindo fidelidade ao projeto." },
+                { id: "curadoria", step: "03", t: "Curadoria", b: "Indicação de fornecedores, aprovação de amostras e styling final." },
+                { id: "suporte", step: "04", t: "Suporte", b: "Acompanhamento pós-mudança e suporte para evoluções futuras da casa." },
+              ].map((s) => (
+                <div key={s.id} className="relative">
+                  {/* Ponto bronze na linha do tempo */}
+                  <div className="flex items-center gap-4 mb-6 md:block md:mb-8">
+                    <div
+                      className="w-[22px] h-[22px] rounded-full flex items-center justify-center shrink-0"
+                      style={{
+                        backgroundColor: "#0F0D0B",
+                        border: "1px solid #8B7355",
+                      }}
                     >
-                      {s.t}
-                    </Editable>
-                    <div className="h-px w-8 mb-4" style={{ backgroundColor: "rgba(139, 115, 85, 0.6)" }} />
+                      <div
+                        className="w-2 h-2 rounded-full"
+                        style={{ backgroundColor: "#C9A876" }}
+                      />
+                    </div>
                     <Editable
-                      as="p"
-                      id={`cap.alem.${s.id}.b`}
-                      multiline
-                      className="font-display text-base leading-relaxed"
-                      style={{ color: "rgba(232, 228, 223, 0.7)" }}
+                      id={`cap.alem.${s.id}.step`}
+                      className="font-mono-edit text-[10px] uppercase tracking-[0.3em] md:mt-4 block"
+                      style={{ color: "#C9A876" }}
                     >
-                      {s.b}
+                      {s.step}
                     </Editable>
                   </div>
-                ))}
-              </div>
+
+                  <Editable
+                    as="h3"
+                    id={`cap.alem.${s.id}.t`}
+                    className="font-display text-2xl md:text-3xl mb-3"
+                    style={{ color: "#E8E4DF" }}
+                  >
+                    {s.t}
+                  </Editable>
+                  <div className="h-px w-8 mb-4" style={{ backgroundColor: "rgba(139, 115, 85, 0.6)" }} />
+                  <Editable
+                    as="p"
+                    id={`cap.alem.${s.id}.b`}
+                    multiline
+                    className="font-display text-sm md:text-base leading-relaxed"
+                    style={{ color: "rgba(232, 228, 223, 0.7)" }}
+                  >
+                    {s.b}
+                  </Editable>
+                </div>
+              ))}
             </div>
           </div>
         </div>
