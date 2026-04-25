@@ -719,18 +719,18 @@ const Captacao = () => {
                   </span>
                 </button>
               </DialogTrigger>
-              <DialogContent className="bg-secondary border-primary/30 max-w-3xl p-0 overflow-hidden">
+              <DialogContent className="border-[#8B7355]/30 max-w-3xl p-0 overflow-hidden" style={{ backgroundColor: "#E8E4DF" }}>
                 <div className="p-8 md:p-12">
                   <DialogHeader>
                     <div className="flex items-baseline gap-4 mb-2">
-                      <span className="font-mono-edit text-[10px] tracking-[0.3em] text-primary">
+                      <span className="font-mono-edit text-[10px] tracking-[0.3em]" style={{ color: "#8B7355" }}>
                         04
                       </span>
-                      <DialogTitle className="font-display text-2xl md:text-3xl text-foreground">
+                      <DialogTitle className="font-display text-2xl md:text-3xl" style={{ color: "#3A3A3A" }}>
                         Disciplinas integradas
                       </DialogTitle>
                     </div>
-                    <p className="font-mono-edit text-[10px] uppercase tracking-[0.3em] text-foreground/55 ml-10">
+                    <p className="font-mono-edit text-[10px] uppercase tracking-[0.3em] ml-10" style={{ color: "#8B7355" }}>
                       Quatro frentes · Uma autoria
                     </p>
                   </DialogHeader>
@@ -739,20 +739,23 @@ const Captacao = () => {
                   <div className="relative mt-10">
                     {/* linha vertical central */}
                     <div
-                      className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-primary/40 -translate-x-1/2 pointer-events-none"
+                      className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 pointer-events-none"
+                      style={{ backgroundColor: "#8B7355" }}
                       aria-hidden
                     />
                     {/* linha horizontal central */}
                     <div
-                      className="hidden md:block absolute top-1/2 left-0 right-0 h-px bg-primary/40 -translate-y-1/2 pointer-events-none"
+                      className="hidden md:block absolute top-1/2 left-0 right-0 h-px -translate-y-1/2 pointer-events-none"
+                      style={{ backgroundColor: "#8B7355" }}
                       aria-hidden
                     />
                     {/* NL no encontro */}
                     <div
-                      className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-secondary border border-primary items-center justify-center z-10 pointer-events-none"
+                      className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full items-center justify-center z-10 pointer-events-none"
+                      style={{ backgroundColor: "#E8E4DF", border: "1px solid #8B7355" }}
                       aria-hidden
                     >
-                      <span className="font-display text-xl text-primary tracking-tight">
+                      <span className="font-display text-xl tracking-tight" style={{ color: "#8B7355" }}>
                         NL
                       </span>
                     </div>
@@ -805,8 +808,7 @@ const Captacao = () => {
                         <div
                           key={item.n}
                           className={cn(
-                            "group relative p-6 md:p-10 transition-colors duration-300 hover:bg-background/60",
-                            // espaçamento para não colidir com o NL central
+                            "group relative p-6 md:p-10 transition-colors duration-300",
                             i === 0 && "md:pr-12 md:pb-12",
                             i === 1 && "md:pl-12 md:pb-12",
                             i === 2 && "md:pr-12 md:pt-12",
@@ -814,21 +816,21 @@ const Captacao = () => {
                           )}
                         >
                           <div className="flex items-baseline justify-between mb-6">
-                            <span className="font-mono-edit text-[10px] tracking-[0.3em] text-primary">
+                            <span className="font-mono-edit text-[10px] tracking-[0.3em]" style={{ color: "#8B7355" }}>
                               {item.n}
                             </span>
-                            <span className="text-primary/70 group-hover:text-primary transition-colors">
+                            <span className="transition-colors" style={{ color: "#8B7355" }}>
                               {item.icon}
                             </span>
                           </div>
-                          <h4 className="font-display text-lg md:text-xl text-foreground leading-tight mb-3">
+                          <h4 className="font-display text-lg md:text-xl leading-tight mb-3" style={{ color: "#3A3A3A" }}>
                             {item.t}
                           </h4>
-                          <p className="font-display text-sm text-foreground/65 leading-relaxed">
+                          <p className="font-display text-sm leading-relaxed" style={{ color: "#777777" }}>
                             {item.d}
                           </p>
                           {item.parceria && (
-                            <span className="font-mono-edit text-[9px] uppercase tracking-[0.3em] text-primary/70 mt-4 inline-block">
+                            <span className="font-mono-edit text-[9px] uppercase tracking-[0.3em] mt-4 inline-block" style={{ color: "#8B7355" }}>
                               · em parceria
                             </span>
                           )}
