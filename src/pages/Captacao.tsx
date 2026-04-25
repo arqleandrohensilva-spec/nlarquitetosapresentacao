@@ -129,10 +129,10 @@ const Captacao = () => {
               className="font-display text-4xl md:text-6xl lg:text-7xl leading-[1.05] mb-16 text-balance"
               style={{ color: "#E8E4DF" }}
             >
-              Não fazemos casas.
+              Antes de desenhar,
               <br />
               <em className="not-italic" style={{ color: "#8B7355" }}>
-                Compomos lares.
+                escutamos.
               </em>
             </Editable>
 
@@ -144,9 +144,7 @@ const Captacao = () => {
                 className="font-display text-lg md:text-xl leading-relaxed"
                 style={{ color: "rgba(232, 228, 223, 0.82)" }}
               >
-                Acreditamos que arquitetura começa muito antes do desenho — começa
-                na escuta. Entender o ritmo da família, os silêncios, os hábitos
-                que ninguém percebe. É daí que nasce um projeto que pertence.
+                A NL não começa pelo desenho. Começa pela escuta — entendendo o terreno, a família, o modo de viver. Só depois o primeiro traço aparece. E quando aparece, já foi validado.
               </Editable>
               <Editable
                 id="cap.manifesto.p2"
@@ -155,9 +153,7 @@ const Captacao = () => {
                 className="font-display text-lg md:text-xl leading-relaxed"
                 style={{ color: "rgba(232, 228, 223, 0.82)" }}
               >
-                Cada ambiente é uma decisão emocional traduzida em forma. A luz
-                que entra pela manhã, a textura que pede para ser tocada, o canto
-                onde alguém vai querer sentar todos os dias.
+                Cada projeto que entregamos existe porque alguém confiou em nós antes de existir uma única parede. Essa confiança não se paga com estética — se honra com método, documentação e resultado previsível.
               </Editable>
             </div>
 
@@ -170,10 +166,9 @@ const Captacao = () => {
                 multiline
                 as="p"
                 className="font-display italic text-2xl md:text-3xl leading-snug"
-                style={{ color: "#C9A876" }}
+                style={{ color: "#8B7355" }}
               >
-                "Arquitetura é o silêncio entre as paredes — e o som de quem
-                finalmente se sente em casa."
+                "Beleza sem método é apenas decoração. Arquitetura é a decisão tomada antes do primeiro traço."
               </Editable>
             </div>
           </div>
