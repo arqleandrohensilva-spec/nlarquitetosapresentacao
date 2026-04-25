@@ -659,25 +659,31 @@ const Captacao = () => {
           </Editable>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style={{ backgroundColor: "rgba(139,115,85,0.25)" }}>
-            {/* Card 01 — Projetos entregues (estático) */}
+            {/* Card 01 — Projetos no portfólio (estático) */}
             <div className="p-8 md:p-10 flex flex-col" style={{ backgroundColor: "#FFFFFF" }}>
               <div className="h-px w-10 mb-6" style={{ backgroundColor: "#8B7355" }} />
               <span className="font-display text-5xl md:text-6xl leading-none mb-4" style={{ color: "#8B7355" }}>
                 +50
               </span>
               <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "#3A3A3A" }}>
-                Projetos entregues
+                Projetos no portfólio
+              </span>
+              <span className="font-display italic text-xs mt-3" style={{ color: "#777777" }}>
+                residencial · comercial · interiores
               </span>
             </div>
 
-            {/* Card 02 — Anos de mercado (estático) */}
+            {/* Card 02 — Anos de experiência combinada (estático) */}
             <div className="p-8 md:p-10 flex flex-col" style={{ backgroundColor: "#FFFFFF" }}>
               <div className="h-px w-10 mb-6" style={{ backgroundColor: "#8B7355" }} />
               <span className="font-display text-5xl md:text-6xl leading-none mb-4" style={{ color: "#8B7355" }}>
                 +8
               </span>
               <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "#3A3A3A" }}>
-                Anos de mercado
+                Anos de experiência combinada
+              </span>
+              <span className="font-display italic text-xs mt-3" style={{ color: "#777777" }}>
+                São José dos Campos · desde 2017
               </span>
             </div>
 
@@ -695,8 +701,15 @@ const Captacao = () => {
                   <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "#3A3A3A" }}>
                     Estados de atuação
                   </span>
-                  <span className="font-mono-edit text-[9px] uppercase tracking-[0.3em] mt-3" style={{ color: "#8B7355" }}>
-                    + Ver mapa
+                  <span className="font-display italic text-xs mt-3" style={{ color: "#777777" }}>
+                    São Paulo · Minas Gerais
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="text-base mt-3 transition-transform group-hover:translate-x-1"
+                    style={{ color: "#8B7355" }}
+                  >
+                    →
                   </span>
                 </button>
               </DialogTrigger>
@@ -724,8 +737,15 @@ const Captacao = () => {
                   <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "#3A3A3A" }}>
                     Disciplinas integradas
                   </span>
-                  <span className="font-mono-edit text-[9px] uppercase tracking-[0.3em] mt-3" style={{ color: "#8B7355" }}>
-                    + Ver diagrama
+                  <span className="font-display italic text-xs mt-3" style={{ color: "#777777" }}>
+                    arquitetura · interiores · comercial · engenharia
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="text-base mt-3 transition-transform group-hover:translate-x-1"
+                    style={{ color: "#8B7355" }}
+                  >
+                    →
                   </span>
                 </button>
               </DialogTrigger>
@@ -861,7 +881,7 @@ const Captacao = () => {
               multiline
               className="font-display italic text-xl md:text-2xl max-w-2xl leading-relaxed text-primary"
             >
-              A arquitetura como decisão.
+              Cada número aqui é uma decisão tomada no projeto, não na obra.
             </Editable>
           </div>
         </div>
