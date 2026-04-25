@@ -9,7 +9,6 @@ const LOGO_BRANCA = "/logo-branca.png";
 const SECTIONS = [
   { id: "capa", label: "Capa" },
   { id: "manifesto", label: "Manifesto" },
-  { id: "cores", label: "Cores" },
   { id: "como-vira", label: "Como vira projeto" },
   { id: "sobre", label: "Sobre nós" },
   { id: "pilares", label: "Pilares" },
