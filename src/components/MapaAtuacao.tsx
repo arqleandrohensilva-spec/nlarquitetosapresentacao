@@ -118,6 +118,26 @@ const MapaAtuacao = () => {
         </g>
       </svg>
 
+        {/* Frase contextual ao lado do mapa */}
+        <div className="md:w-56 md:border-l md:border-primary/25 md:pl-8 min-h-[120px] flex flex-col justify-center">
+          <p
+            key={hover ?? "idle"}
+            className="font-mono-edit text-[10px] uppercase tracking-[0.3em] text-primary mb-3 animate-fade-in"
+          >
+            {hover ? `· ${hover}` : "· Mapa"}
+          </p>
+          <p
+            key={`t-${hover ?? "idle"}`}
+            className="font-display text-xl md:text-2xl leading-tight text-[#E8E4DF] animate-fade-in"
+          >
+            {frase.titulo}
+          </p>
+          <p className="font-display text-sm text-[#E8E4DF]/60 mt-2 leading-relaxed">
+            {frase.sub}
+          </p>
+        </div>
+      </div>
+
       {/* legenda */}
       <div className="mt-8 w-full border-t border-primary/30 pt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
         <button
