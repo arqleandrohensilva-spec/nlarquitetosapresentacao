@@ -1148,16 +1148,23 @@ const Captacao = () => {
         className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32 overflow-hidden"
         style={{ backgroundColor: "#0F0D0B", color: "#E8E4DF" }}
       >
-        {/* Imagem de fundo em tela cheia */}
+        {/* Imagem de fundo em tela cheia — blur + brightness */}
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${imgAlemProjeto})` }}
+          style={{
+            backgroundImage: `url(${imgAlemProjeto})`,
+            filter: "blur(3px) brightness(0.35)",
+            transform: "scale(1.05)",
+          }}
           aria-hidden="true"
         />
-        {/* Overlay escuro */}
+        {/* Overlay gradiente vertical */}
         <div
           className="absolute inset-0"
-          style={{ backgroundColor: "rgba(26, 24, 22, 0.75)" }}
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(26, 24, 22, 0.55) 0%, rgba(26, 24, 22, 0.78) 50%, rgba(26, 24, 22, 0.96) 100%)",
+          }}
           aria-hidden="true"
         />
 
@@ -1168,14 +1175,14 @@ const Captacao = () => {
           >
             <span
               className="font-mono-edit text-[10px] tracking-[0.3em]"
-              style={{ color: "rgba(232, 228, 223, 0.55)" }}
+              style={{ color: "#8B7355" }}
             >
               10
             </span>
             <Editable
               id="cap.alem.eyebrow"
               className="font-mono-edit text-[10px] uppercase tracking-[0.3em]"
-              style={{ color: "#8B7355" }}
+              style={{ color: "#777777" }}
             >
               Além do projeto
             </Editable>
@@ -1191,7 +1198,7 @@ const Captacao = () => {
             >
               O projeto termina. O comprometimento, <em className="not-italic" style={{ color: "#C9A876" }}>não.</em>
             </Editable>
-            <div className="h-px w-16 mb-8" style={{ backgroundColor: "#8B7355" }} />
+            <div className="h-px w-10 mb-8" style={{ backgroundColor: "rgba(139, 115, 85, 0.45)" }} />
             <Editable
               as="p"
               id="cap.alem.body"
@@ -1204,45 +1211,33 @@ const Captacao = () => {
             </Editable>
           </div>
 
-          {/* Linha do tempo horizontal */}
+          {/* Linha do tempo — cards */}
           <div className="relative">
-            {/* Linha bronze conectora — desktop */}
-            <div
-              className="hidden md:block absolute top-[11px] left-0 right-0 h-px"
-              style={{ backgroundColor: "rgba(139, 115, 85, 0.45)" }}
-            />
-
             <div className="grid grid-cols-1 md:grid-cols-4 gap-y-12 md:gap-x-8 lg:gap-x-12 relative">
               {[
                 { id: "entrega", step: "01", t: "Entrega", b: "Apresentação formal dos cadernos técnicos e orientação para início da obra." },
                 { id: "acompanhamento", step: "02", t: "Acompanhamento", b: "Visitas técnicas durante a execução, garantindo fidelidade ao projeto." },
-                { id: "curadoria", step: "03", t: "Curadoria", b: "Indicação de fornecedores e aprovação de amostras de materiais." },
+                { id: "curadoria", step: "03", t: "Curadoria", b: "Indicamos fornecedores confiáveis e acompanhamos a aprovação de amostras de materiais." },
                 { id: "suporte", step: "04", t: "Suporte", b: "Suporte técnico por 90 dias após a entrega — dúvidas sobre os cadernos e orientações para a equipe de obra." },
               ].map((s) => (
                 <div key={s.id} className="relative">
-                  {/* Ponto bronze na linha do tempo */}
-                  <div className="flex items-center gap-4 mb-6 md:block md:mb-8">
-                    <div
-                      className="w-[22px] h-[22px] rounded-full flex items-center justify-center shrink-0"
-                      style={{
-                        backgroundColor: "#0F0D0B",
-                        border: "1px solid #8B7355",
-                      }}
-                    >
-                      <div
-                        className="w-2 h-2 rounded-full"
-                        style={{ backgroundColor: "#C9A876" }}
-                      />
-                    </div>
-                    <Editable
-                      id={`cap.alem.${s.id}.step`}
-                      className="font-mono-edit text-[10px] uppercase tracking-[0.3em] md:mt-4 block"
-                      style={{ color: "#C9A876" }}
-                    >
-                      {s.step}
-                    </Editable>
-                  </div>
+                  {/* Ponto bronze */}
+                  <div
+                    className="w-2 h-2 rounded-full mb-5"
+                    style={{ backgroundColor: "#8B7355" }}
+                    aria-hidden="true"
+                  />
 
+                  {/* Número */}
+                  <Editable
+                    id={`cap.alem.${s.id}.step`}
+                    className="font-mono-edit text-[10px] uppercase tracking-[0.3em] block mb-4"
+                    style={{ color: "#777777" }}
+                  >
+                    {s.step}
+                  </Editable>
+
+                  {/* Título */}
                   <Editable
                     as="h3"
                     id={`cap.alem.${s.id}.t`}
@@ -1251,13 +1246,14 @@ const Captacao = () => {
                   >
                     {s.t}
                   </Editable>
-                  <div className="h-px w-8 mb-4" style={{ backgroundColor: "rgba(139, 115, 85, 0.6)" }} />
+
+                  {/* Descrição */}
                   <Editable
                     as="p"
                     id={`cap.alem.${s.id}.b`}
                     multiline
-                    className="font-display text-sm md:text-base leading-relaxed"
-                    style={{ color: "rgba(232, 228, 223, 0.7)" }}
+                    className="font-mono-edit text-[11px] leading-relaxed"
+                    style={{ color: "#777777" }}
                   >
                     {s.b}
                   </Editable>
