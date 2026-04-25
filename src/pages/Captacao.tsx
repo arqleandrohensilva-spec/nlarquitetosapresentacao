@@ -546,25 +546,33 @@ const Captacao = () => {
                 id: "escuta",
                 title: "Escuta antes do desenho",
                 body:
-                  "Nenhum traço aparece antes de entender quem vai morar, como vive e o que sonha. O projeto pertence a você — não ao nosso portfólio.",
+                  "Nenhum traço aparece antes de entender quem vai morar, como vive e o que precisa. A escuta é a primeira etapa do projeto.",
+                quote:
+                  "Você não precisa entender de obra. Precisa entender o que está aprovando.",
               },
               {
                 id: "metodo",
                 title: "Método que conduz",
                 body:
                   "Temos um processo claro com etapas definidas e critérios de aprovação. O cliente nunca fica perdido — porque a NL sempre está um passo à frente.",
+                quote:
+                  "A NL conduz — o cliente aprova com segurança.",
               },
               {
                 id: "atemporal",
                 title: "Beleza atemporal",
                 body:
                   "Recusamos modismos. Buscamos materialidade, proporção e luz — os elementos que envelhecem bem e tornam a casa cada vez mais sua.",
+                quote:
+                  "Decidimos com materialidade, proporção e luz — não com tendência.",
               },
               {
                 id: "obra",
                 title: "Decisões antes da obra",
                 body:
                   "Tudo que pode ser resolvido no papel é resolvido no papel. Você entra na obra com clareza, previsibilidade e tranquilidade.",
+                quote:
+                  "Decidir no papel é barato. Decidir no canteiro é caro.",
               },
             ].map((p, i) => (
               <div key={p.id} className="grid grid-cols-12 gap-4">
@@ -589,6 +597,14 @@ const Captacao = () => {
                     className="font-display text-base md:text-lg leading-relaxed text-foreground/70"
                   >
                     {p.body}
+                  </Editable>
+                  <Editable
+                    as="p"
+                    id={`cap.pilares.${p.id}.quote`}
+                    multiline
+                    className="font-display italic text-base md:text-lg leading-relaxed text-primary mt-4"
+                  >
+                    {p.quote}
                   </Editable>
                 </div>
               </div>
