@@ -948,7 +948,7 @@ const Captacao = () => {
                   "Implantação e estudo solar",
                   "Volumetria e composição de fachadas",
                   "Plantas, cortes e elevações",
-                  "Compatibilização estrutural",
+                  "Coordenação técnica com engenheiros parceiros",
                   "Detalhamento construtivo",
                 ].map((item, i) => (
                   <li key={i} className="flex items-baseline gap-4">
@@ -985,7 +985,7 @@ const Captacao = () => {
                 multiline
                 className="font-display text-3xl md:text-4xl leading-tight mb-8 text-foreground"
               >
-                O interior é <em className="text-primary not-italic">a casa que se habita.</em>
+                O interior é <em className="text-primary not-italic">onde a arquitetura encontra a vida.</em>
               </Editable>
               <div className="gold-line w-12 mb-8" />
               <ul className="space-y-4">
