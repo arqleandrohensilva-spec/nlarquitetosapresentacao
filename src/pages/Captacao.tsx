@@ -1147,23 +1147,7 @@ const Captacao = () => {
         className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32 overflow-hidden"
         style={{ backgroundColor: "#0F0D0B", color: "#E8E4DF" }}
       >
-        {/* Foto de projeto entregue como fundo */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src={IMG_CASE}
-            alt="Projeto entregue · NL Arquitetos"
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
-          {/* Overlay escuro para contraste */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(15,13,11,0.92) 0%, rgba(15,13,11,0.86) 50%, rgba(15,13,11,0.94) 100%)",
-            }}
-          />
-        </div>
+
 
         <div className="relative z-10 max-w-7xl mx-auto w-full">
           <div
