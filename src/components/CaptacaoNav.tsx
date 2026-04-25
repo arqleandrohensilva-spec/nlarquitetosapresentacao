@@ -14,7 +14,7 @@ const SECTIONS = [
   { id: "pilares", label: "Pilares" },
   { id: "consolidacao", label: "Consolidação" },
   { id: "processos", label: "ARQ + INT" },
-  { id: "galeria", label: "Galeria" },
+  
   { id: "alem", label: "Além do projeto" },
   { id: "portfolio", label: "Portfólio" },
   { id: "fechamento", label: "Fechamento" },
