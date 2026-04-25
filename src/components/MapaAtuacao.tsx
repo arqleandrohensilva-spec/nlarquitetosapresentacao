@@ -9,8 +9,16 @@ const MapaAtuacao = () => {
   const isActive = (e: Estado) => hover === e;
   const isDimmed = (e: Estado) => hover !== null && hover !== e;
 
+  const frase =
+    hover === "SP"
+      ? { titulo: "Sede principal em SP", sub: "Onde nascem os projetos da NL." }
+      : hover === "MG"
+        ? { titulo: "Atuação em projetos em MG", sub: "Acompanhamento e execução em obra." }
+        : { titulo: "Passe o mouse sobre um estado", sub: "Para ver onde a NL atua." };
+
   return (
-    <div className="flex flex-col items-center pt-4 w-full">
+    <div className="flex flex-col items-start pt-4 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-10 items-center w-full">
       <svg
         viewBox="0 0 600 460"
         className="w-full h-auto"
@@ -109,6 +117,26 @@ const MapaAtuacao = () => {
           )}
         </g>
       </svg>
+
+        {/* Frase contextual ao lado do mapa */}
+        <div className="md:w-56 md:border-l md:border-primary/25 md:pl-8 min-h-[120px] flex flex-col justify-center">
+          <p
+            key={hover ?? "idle"}
+            className="font-mono-edit text-[10px] uppercase tracking-[0.3em] text-primary mb-3 animate-fade-in"
+          >
+            {hover ? `· ${hover}` : "· Mapa"}
+          </p>
+          <p
+            key={`t-${hover ?? "idle"}`}
+            className="font-display text-xl md:text-2xl leading-tight text-[#E8E4DF] animate-fade-in"
+          >
+            {frase.titulo}
+          </p>
+          <p className="font-display text-sm text-[#E8E4DF]/60 mt-2 leading-relaxed">
+            {frase.sub}
+          </p>
+        </div>
+      </div>
 
       {/* legenda */}
       <div className="mt-8 w-full border-t border-primary/30 pt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
