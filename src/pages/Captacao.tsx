@@ -550,9 +550,9 @@ const Captacao = () => {
               },
               {
                 id: "metodo",
-                title: "Método sem rigidez",
+                title: "Método que conduz",
                 body:
-                  "Temos um processo claro, mas que respira. Cada cliente recebe um caminho desenhado para o seu tempo, sua energia e suas decisões.",
+                  "Temos um processo claro com etapas definidas e critérios de aprovação. O cliente nunca fica perdido — porque a NL sempre está um passo à frente.",
               },
               {
                 id: "atemporal",
