@@ -1148,16 +1148,23 @@ const Captacao = () => {
         className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32 overflow-hidden"
         style={{ backgroundColor: "#0F0D0B", color: "#E8E4DF" }}
       >
-        {/* Imagem de fundo em tela cheia */}
+        {/* Imagem de fundo em tela cheia — blur + brightness */}
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${imgAlemProjeto})` }}
+          style={{
+            backgroundImage: `url(${imgAlemProjeto})`,
+            filter: "blur(3px) brightness(0.35)",
+            transform: "scale(1.05)",
+          }}
           aria-hidden="true"
         />
-        {/* Overlay escuro */}
+        {/* Overlay gradiente vertical */}
         <div
           className="absolute inset-0"
-          style={{ backgroundColor: "rgba(26, 24, 22, 0.75)" }}
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(26, 24, 22, 0.55) 0%, rgba(26, 24, 22, 0.78) 50%, rgba(26, 24, 22, 0.96) 100%)",
+          }}
           aria-hidden="true"
         />
 
@@ -1168,14 +1175,14 @@ const Captacao = () => {
           >
             <span
               className="font-mono-edit text-[10px] tracking-[0.3em]"
-              style={{ color: "rgba(232, 228, 223, 0.55)" }}
+              style={{ color: "#8B7355" }}
             >
               10
             </span>
             <Editable
               id="cap.alem.eyebrow"
               className="font-mono-edit text-[10px] uppercase tracking-[0.3em]"
-              style={{ color: "#8B7355" }}
+              style={{ color: "#777777" }}
             >
               Além do projeto
             </Editable>
