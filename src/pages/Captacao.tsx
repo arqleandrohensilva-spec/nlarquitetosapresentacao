@@ -3,6 +3,7 @@ import CaptacaoNav from "@/components/CaptacaoNav";
 import { Link } from "react-router-dom";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import MapaAtuacao from "@/components/MapaAtuacao";
+import { cn } from "@/lib/utils";
 import imgComoCroqui from "@/assets/como-vira/01-croqui.png";
 import imgComoVolumetria from "@/assets/como-vira/02-volumetria.png";
 import imgComoPlanta from "@/assets/como-vira/03-planta.png";
