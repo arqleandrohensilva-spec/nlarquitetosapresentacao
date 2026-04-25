@@ -222,7 +222,7 @@ const Captacao = () => {
           ============================================================ */}
       <section
         id="como-vira"
-        className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32 overflow-hidden"
+        className="relative min-h-screen lg:h-screen flex items-center px-6 md:px-12 lg:px-16 xl:px-20 py-12 lg:py-10 overflow-hidden"
       >
         {/* filete bronze topo */}
         <div
@@ -251,8 +251,8 @@ const Captacao = () => {
           04
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto w-full">
-          <div className="flex items-baseline justify-between mb-16 pb-4 border-b border-border/60">
+        <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col lg:h-full lg:py-2">
+          <div className="flex items-baseline justify-between mb-6 lg:mb-5 pb-3 border-b border-border/60">
             <div className="flex items-baseline gap-6">
               <span className="number-marker">04</span>
               <Editable id="cap.como.eyebrow" className="eyebrow">
@@ -271,14 +271,14 @@ const Captacao = () => {
             as="h2"
             id="cap.como.title"
             multiline
-            className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] mb-20 text-balance max-w-4xl"
+            className="font-display text-3xl md:text-4xl lg:text-[2.6rem] xl:text-5xl leading-[1.05] mb-6 lg:mb-7 text-balance max-w-4xl"
           >
             Um caminho <em className="text-primary not-italic">claro</em>, do primeiro
             café ao primeiro traço.
           </Editable>
 
           {/* Grid 2x2 narrativo: croqui → volumetria → planta → render */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 lg:gap-5 lg:flex-1 lg:min-h-0">
             {[
               {
                 id: "01",
@@ -311,7 +311,7 @@ const Captacao = () => {
             ].map((step) => (
               <figure
                 key={step.id}
-                className="group relative overflow-hidden aspect-[4/3] bg-[#1A1816] [will-change:transform] motion-safe:transition-shadow motion-safe:duration-700 hover:shadow-[0_30px_60px_-30px_rgba(0,0,0,0.55)]"
+                className="group relative overflow-hidden aspect-[4/3] md:aspect-[16/10] lg:aspect-auto lg:min-h-0 bg-[#1A1816] [will-change:transform] motion-safe:transition-shadow motion-safe:duration-700 hover:shadow-[0_30px_60px_-30px_rgba(0,0,0,0.55)]"
               >
                 {/* imagem */}
                 <img
@@ -343,9 +343,9 @@ const Captacao = () => {
                 {/* numeral grande no canto superior */}
                 <span
                   aria-hidden
-                  className="absolute top-6 right-7 font-display leading-none select-none motion-safe:transition-[color,transform] motion-safe:duration-700 group-hover:-translate-y-0.5"
+                  className="absolute top-4 right-5 lg:top-5 lg:right-6 font-display leading-none select-none motion-safe:transition-[color,transform] motion-safe:duration-700 group-hover:-translate-y-0.5"
                   style={{
-                    fontSize: "clamp(3.5rem, 6vw, 5.5rem)",
+                    fontSize: "clamp(2.75rem, 4.5vw, 4.5rem)",
                     color: "rgba(255,255,255,0.10)",
                     letterSpacing: "-0.04em",
                   }}
@@ -353,10 +353,10 @@ const Captacao = () => {
                   {step.id}
                 </span>
                 {/* legenda — leve subida no hover */}
-                <figcaption className="absolute inset-0 flex flex-col justify-end p-7 md:p-10 [will-change:transform] motion-safe:transition-transform motion-safe:duration-700 motion-safe:ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:-translate-y-1">
-                  <div className="flex items-center gap-3 mb-4">
+                <figcaption className="absolute inset-0 flex flex-col justify-end p-5 md:p-6 lg:p-7 [will-change:transform] motion-safe:transition-transform motion-safe:duration-700 motion-safe:ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:-translate-y-1">
+                  <div className="flex items-center gap-3 mb-2.5">
                     <span
-                      className="h-px w-8 origin-left motion-safe:transition-transform motion-safe:duration-700 motion-safe:ease-out motion-safe:group-hover:scale-x-[2]"
+                      className="h-px w-7 origin-left motion-safe:transition-transform motion-safe:duration-700 motion-safe:ease-out motion-safe:group-hover:scale-x-[2]"
                       style={{ backgroundColor: "rgba(139, 115, 85, 0.85)" }}
                     />
                     <Editable
@@ -371,7 +371,7 @@ const Captacao = () => {
                     as="h3"
                     id={`cap.como.step.${step.id}.title`}
                     multiline
-                    className="font-display text-[1.6rem] md:text-[1.95rem] lg:text-[2.15rem] leading-[1.1] tracking-[-0.01em] text-white text-balance mb-3"
+                    className="font-display text-[1.35rem] md:text-[1.55rem] lg:text-[1.7rem] xl:text-[1.85rem] leading-[1.1] tracking-[-0.01em] text-white text-balance mb-1.5"
                   >
                     {step.title}
                   </Editable>
@@ -379,7 +379,7 @@ const Captacao = () => {
                     as="p"
                     id={`cap.como.step.${step.id}.sub`}
                     multiline
-                    className="font-display italic text-base md:text-lg leading-snug text-pretty"
+                    className="font-display italic text-sm md:text-base lg:text-[0.95rem] xl:text-base leading-snug text-pretty"
                     style={{ color: "rgba(181, 164, 138, 0.95)" }}
                   >
                     {step.sub}
@@ -390,22 +390,22 @@ const Captacao = () => {
           </div>
 
           {/* Rodapé citação */}
-          <div className="mt-20 md:mt-24 flex justify-center">
+          <div className="mt-6 lg:mt-5 flex justify-center">
             <div className="max-w-3xl text-center px-6">
               <div
-                className="mx-auto mb-6 h-px w-16"
+                className="mx-auto mb-3 h-px w-12"
                 style={{ backgroundColor: "rgba(139, 115, 85, 0.5)" }}
               />
               <Editable
                 as="p"
                 id="cap.como.note"
                 multiline
-                className="font-display italic text-xl md:text-2xl lg:text-[1.7rem] leading-[1.35] text-foreground/85 text-balance"
+                className="font-display italic text-base md:text-lg lg:text-xl leading-[1.35] text-foreground/85 text-balance"
               >
                 "A forma é consequência da decisão — não da inspiração."
               </Editable>
               <div
-                className="mx-auto mt-6 h-px w-16"
+                className="mx-auto mt-3 h-px w-12"
                 style={{ backgroundColor: "rgba(139, 115, 85, 0.5)" }}
               />
             </div>
