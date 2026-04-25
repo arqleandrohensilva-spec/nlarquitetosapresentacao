@@ -273,8 +273,7 @@ const Captacao = () => {
             multiline
             className="font-display text-3xl md:text-4xl lg:text-[2.6rem] xl:text-5xl leading-[1.05] mb-6 lg:mb-7 text-balance max-w-4xl"
           >
-            Um caminho <em className="text-primary not-italic">claro</em>, do primeiro
-            café ao primeiro traço.
+            Do pensamento à <em className="text-primary not-italic">decisão</em>.
           </Editable>
 
           {/* Grid 2x2 narrativo: croqui → volumetria → planta → render */}
@@ -290,21 +289,21 @@ const Captacao = () => {
               {
                 id: "02",
                 img: imgComoVolumetria,
-                eyebrow: "Volumetria",
+                eyebrow: "DISPOSIÇÃO INTERNA",
                 title: "A forma nasce da decisão.",
                 sub: "Não do acaso — do método.",
               },
               {
                 id: "03",
                 img: imgComoPlanta,
-                eyebrow: "Planta",
+                eyebrow: "VOLUMETRIA",
                 title: "Antes do desenho, existe ordem.",
                 sub: "Fluxo. Relação. Hierarquia.",
               },
               {
                 id: "04",
                 img: imgComoRender,
-                eyebrow: "Render",
+                eyebrow: "ENTREGA",
                 title: "A forma não é criada.",
                 sub: "Ela é consequência.",
               },
