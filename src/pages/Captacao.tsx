@@ -443,7 +443,7 @@ const Captacao = () => {
                 multiline
                 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.0] text-balance mb-8"
               >
-                Um estúdio onde
+                Um escritório onde
                 <br />
                 <em className="text-primary not-italic">cada projeto é tratado como único.</em>
               </Editable>
@@ -456,7 +456,7 @@ const Captacao = () => {
               >
                 A NL nasceu da união entre dois arquitetos com visões complementares —
                 um olhar voltado à composição arquitetônica e outro à atmosfera
-                interior. Juntos, fundamos um estúdio que entrega projetos integrais,
+                interior. Juntos, fundamos um escritório que entrega projetos integrais,
                 onde estrutura e alma caminham lado a lado.
               </Editable>
 
