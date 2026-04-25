@@ -1,6 +1,10 @@
 import Editable from "@/components/Editable";
 import CaptacaoNav from "@/components/CaptacaoNav";
 import { Link } from "react-router-dom";
+import imgComoCroqui from "@/assets/como-vira/01-croqui.png";
+import imgComoVolumetria from "@/assets/como-vira/02-volumetria.png";
+import imgComoPlanta from "@/assets/como-vira/03-planta.png";
+import imgComoRender from "@/assets/como-vira/04-render.png";
 
 /* ============================================================================
    NL ARQUITETOS · APRESENTAÇÃO DE CAPTAÇÃO PREMIUM
@@ -218,9 +222,36 @@ const Captacao = () => {
           ============================================================ */}
       <section
         id="como-vira"
-        className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32"
+        className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32 overflow-hidden"
       >
-        <div className="max-w-7xl mx-auto w-full">
+        {/* filete bronze topo */}
+        <div
+          className="absolute top-0 left-0 right-0 h-px"
+          style={{ backgroundColor: "rgba(139, 115, 85, 0.3)" }}
+        />
+        {/* grain sutil */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-[0.04] mix-blend-multiply"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")",
+          }}
+        />
+        {/* numeral 04 decorativo */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-8 top-16 select-none font-display leading-none"
+          style={{
+            fontSize: "clamp(18rem, 42vw, 38rem)",
+            WebkitTextStroke: "1px rgba(139, 115, 85, 0.08)",
+            color: "transparent",
+          }}
+        >
+          04
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto w-full">
           <div className="flex items-baseline justify-between mb-16 pb-4 border-b border-border/60">
             <div className="flex items-baseline gap-6">
               <span className="number-marker">04</span>
@@ -246,70 +277,133 @@ const Captacao = () => {
             café ao primeiro traço.
           </Editable>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border/40">
+          {/* Grid 2x2 narrativo: croqui → volumetria → planta → render */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {[
               {
                 id: "01",
-                title: "Conversa inicial",
-                body:
-                  "Conhecer você, o terreno, o sonho. Sem pressa, sem fórmula pronta.",
+                img: imgComoCroqui,
+                eyebrow: "Croqui",
+                title: "O projeto começa na escuta.",
+                sub: "Antes do traço, existe uma conversa.",
               },
               {
                 id: "02",
-                title: "Estudo preliminar",
-                body:
-                  "Primeiras volumetrias e referências visuais — para sentir o caminho.",
+                img: imgComoVolumetria,
+                eyebrow: "Volumetria",
+                title: "A forma nasce da decisão.",
+                sub: "Não do acaso — do método.",
               },
               {
                 id: "03",
-                title: "Anteprojeto",
-                body:
-                  "O projeto ganha forma. Plantas, cortes, primeira renderização do espaço.",
+                img: imgComoPlanta,
+                eyebrow: "Planta",
+                title: "Antes do desenho, existe ordem.",
+                sub: "Fluxo. Relação. Hierarquia.",
               },
               {
                 id: "04",
-                title: "Executivo",
-                body:
-                  "Cada detalhe resolvido no papel. A obra começa com tudo decidido.",
+                img: imgComoRender,
+                eyebrow: "Render",
+                title: "A forma não é criada.",
+                sub: "Ela é consequência.",
               },
             ].map((step) => (
-              <div
+              <figure
                 key={step.id}
-                className="bg-background p-8 md:p-10 group hover:bg-surface-elevated transition-colors duration-500"
+                className="group relative overflow-hidden aspect-[4/3] bg-[#1A1816]"
               >
-                <span className="font-mono text-[10px] tracking-[0.3em] text-primary block mb-6">
+                {/* imagem */}
+                <img
+                  src={step.img}
+                  alt={step.title}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
+                />
+                {/* gradient overlay para legibilidade */}
+                <div
+                  aria-hidden
+                  className="absolute inset-0"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, rgba(26,24,22,0.15) 0%, rgba(26,24,22,0.25) 45%, rgba(26,24,22,0.85) 100%)",
+                  }}
+                />
+                {/* moldura bronze sutil */}
+                <div
+                  aria-hidden
+                  className="absolute inset-0 ring-1 ring-inset"
+                  style={{ boxShadow: "inset 0 0 0 1px rgba(139,115,85,0.18)" }}
+                />
+                {/* numeral grande no canto superior */}
+                <span
+                  aria-hidden
+                  className="absolute top-6 right-7 font-display leading-none select-none"
+                  style={{
+                    fontSize: "clamp(3.5rem, 6vw, 5.5rem)",
+                    color: "rgba(255,255,255,0.10)",
+                    letterSpacing: "-0.04em",
+                  }}
+                >
                   {step.id}
                 </span>
-                <div className="gold-line w-8 mb-6" />
-                <Editable
-                  as="h3"
-                  id={`cap.como.step.${step.id}.title`}
-                  className="font-display text-2xl md:text-3xl leading-tight mb-4 text-foreground"
-                >
-                  {step.title}
-                </Editable>
-                <Editable
-                  as="p"
-                  id={`cap.como.step.${step.id}.body`}
-                  multiline
-                  className="font-display text-base leading-relaxed text-foreground/65"
-                >
-                  {step.body}
-                </Editable>
-              </div>
+                {/* eyebrow superior */}
+                <figcaption className="absolute inset-0 flex flex-col justify-end p-7 md:p-10">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span
+                      className="h-px w-8"
+                      style={{ backgroundColor: "rgba(139, 115, 85, 0.85)" }}
+                    />
+                    <Editable
+                      id={`cap.como.step.${step.id}.eyebrow`}
+                      className="font-mono text-[10px] uppercase tracking-[0.3em]"
+                      style={{ color: "rgba(181, 164, 138, 0.95)" }}
+                    >
+                      {step.eyebrow}
+                    </Editable>
+                  </div>
+                  <Editable
+                    as="h3"
+                    id={`cap.como.step.${step.id}.title`}
+                    multiline
+                    className="font-display text-[1.6rem] md:text-[1.95rem] lg:text-[2.15rem] leading-[1.1] tracking-[-0.01em] text-white text-balance mb-3"
+                  >
+                    {step.title}
+                  </Editable>
+                  <Editable
+                    as="p"
+                    id={`cap.como.step.${step.id}.sub`}
+                    multiline
+                    className="font-display italic text-base md:text-lg leading-snug text-pretty"
+                    style={{ color: "rgba(181, 164, 138, 0.95)" }}
+                  >
+                    {step.sub}
+                  </Editable>
+                </figcaption>
+              </figure>
             ))}
           </div>
 
-          <div className="mt-20 pl-8 border-l border-primary/40 max-w-2xl">
-            <Editable
-              as="p"
-              id="cap.como.note"
-              multiline
-              className="font-display italic text-xl md:text-2xl text-foreground/80 leading-snug"
-            >
-              Cada etapa termina com uma decisão tomada juntos — nunca seguimos
-              em frente sem que você esteja confortável.
-            </Editable>
+          {/* Rodapé citação */}
+          <div className="mt-20 md:mt-24 flex justify-center">
+            <div className="max-w-3xl text-center px-6">
+              <div
+                className="mx-auto mb-6 h-px w-16"
+                style={{ backgroundColor: "rgba(139, 115, 85, 0.5)" }}
+              />
+              <Editable
+                as="p"
+                id="cap.como.note"
+                multiline
+                className="font-display italic text-xl md:text-2xl lg:text-[1.7rem] leading-[1.35] text-foreground/85 text-balance"
+              >
+                "A forma é consequência da decisão — não da inspiração."
+              </Editable>
+              <div
+                className="mx-auto mt-6 h-px w-16"
+                style={{ backgroundColor: "rgba(139, 115, 85, 0.5)" }}
+              />
+            </div>
           </div>
         </div>
       </section>
