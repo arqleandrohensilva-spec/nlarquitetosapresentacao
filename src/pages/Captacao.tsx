@@ -101,7 +101,7 @@ const Captacao = () => {
           ============================================================ */}
       <section
         id="manifesto"
-        className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32"
+        className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-28 md:py-36"
         style={{ backgroundColor: "#1A1816", color: "#E8E4DF" }}
       >
         <div className="grid grid-cols-12 gap-8 w-full max-w-7xl mx-auto">
@@ -126,22 +126,22 @@ const Captacao = () => {
               as="h2"
               id="cap.manifesto.title"
               multiline
-              className="font-display text-4xl md:text-6xl lg:text-7xl leading-[1.05] mb-16 text-balance"
+              className="font-display text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.02] tracking-[-0.01em] mb-14 md:mb-20 text-balance"
               style={{ color: "#E8E4DF" }}
             >
               Antes de desenhar,
               <br />
-              <em className="not-italic" style={{ color: "#8B7355" }}>
+              <em className="not-italic font-light" style={{ color: "#8B7355" }}>
                 escutamos.
               </em>
             </Editable>
 
-            <div className="grid md:grid-cols-2 gap-12 max-w-4xl">
+            <div className="grid md:grid-cols-2 gap-x-14 gap-y-10 max-w-4xl">
               <Editable
                 id="cap.manifesto.p1"
                 multiline
                 as="p"
-                className="font-display text-lg md:text-xl leading-relaxed"
+                className="font-display text-[1.0625rem] md:text-lg leading-[1.7] tracking-[0.005em] text-pretty"
                 style={{ color: "rgba(232, 228, 223, 0.82)" }}
               >
                 A NL não começa pelo desenho. Começa pela escuta — entendendo o terreno, a família, o modo de viver. Só depois o primeiro traço aparece. E quando aparece, já foi validado.
@@ -150,7 +150,7 @@ const Captacao = () => {
                 id="cap.manifesto.p2"
                 multiline
                 as="p"
-                className="font-display text-lg md:text-xl leading-relaxed"
+                className="font-display text-[1.0625rem] md:text-lg leading-[1.7] tracking-[0.005em] text-pretty"
                 style={{ color: "rgba(232, 228, 223, 0.82)" }}
               >
                 Cada projeto que entregamos existe porque alguém confiou em nós antes de existir uma única parede. Essa confiança não se paga com estética — se honra com método, documentação e resultado previsível.
@@ -158,14 +158,14 @@ const Captacao = () => {
             </div>
 
             <div
-              className="mt-20 pl-8 border-l max-w-2xl"
+              className="mt-16 md:mt-24 pl-6 md:pl-8 border-l max-w-3xl"
               style={{ borderColor: "rgba(139, 115, 85, 0.5)" }}
             >
               <Editable
                 id="cap.manifesto.quote"
                 multiline
                 as="p"
-                className="font-display italic text-2xl md:text-3xl leading-snug"
+                className="font-display italic text-xl md:text-2xl lg:text-[1.75rem] leading-[1.35] tracking-[-0.005em] text-pretty"
                 style={{ color: "#8B7355" }}
               >
                 "Beleza sem método é apenas decoração. Arquitetura é a decisão tomada antes do primeiro traço."
