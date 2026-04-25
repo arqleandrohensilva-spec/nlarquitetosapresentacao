@@ -920,99 +920,212 @@ const Captacao = () => {
             do volume à atmosfera.
           </Editable>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-border/40">
-            {/* ARQ */}
-            <div className="bg-background p-10 md:p-12">
-              <div className="flex items-baseline justify-between mb-8">
-                <Editable
-                  id="cap.proc.arq.tag"
-                  className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary"
-                >
-                  Arquitetura
-                </Editable>
-                <span className="font-mono text-[10px] tracking-[0.3em] text-muted-foreground">
-                  ARQ
-                </span>
+          {/* ============================================================
+              BLOCO ARQ — formato Casa Costas (imagem grande + texto manifesto)
+              ============================================================ */}
+          <div className="relative -mx-6 md:-mx-16 lg:-mx-24 mb-px bg-border/40">
+            <div className="grid grid-cols-12 min-h-[80vh]">
+              <div className="col-span-12 lg:col-span-7 relative min-h-[60vh] lg:min-h-[80vh] bg-background">
+                <img
+                  src="https://www.dropbox.com/scl/fi/dibhyhod5xpz47v3l9rp3/Gemini_Generated_Image_896gxz896gxz896g-1.png?rlkey=q1ltxbytg9eo2ynmbz0njb0f3&raw=1"
+                  alt="Casa Costas · residência NL Arquitetos · São José dos Campos"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                  width={1920}
+                  height={1280}
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-background/40 lg:to-background" />
+                <div className="absolute bottom-8 left-8 z-10 flex items-center gap-3">
+                  <Editable
+                    id="cap.proc.arq.tag"
+                    className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary"
+                  >
+                    Arquitetura · 01
+                  </Editable>
+                  <span className="h-px w-8 bg-primary/60" />
+                </div>
               </div>
-              <Editable
-                as="h3"
-                id="cap.proc.arq.title"
-                multiline
-                className="font-display text-3xl md:text-4xl leading-tight mb-8 text-foreground"
-              >
-                A casa nasce do <em className="text-primary not-italic">terreno e da luz.</em>
-              </Editable>
-              <div className="gold-line w-12 mb-8" />
-              <ul className="space-y-4">
-                {[
-                  "Implantação e estudo solar",
-                  "Volumetria e composição de fachadas",
-                  "Plantas, cortes e elevações",
-                  "Coordenação técnica com engenheiros parceiros",
-                  "Detalhamento construtivo",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-baseline gap-4">
-                    <span className="font-mono text-[10px] text-primary/60 mt-1">
-                      0{i + 1}
-                    </span>
-                    <Editable
-                      id={`cap.proc.arq.item.${i}`}
-                      className="font-display text-base md:text-lg text-foreground/80 flex-1"
-                    >
-                      {item}
-                    </Editable>
-                  </li>
-                ))}
-              </ul>
-            </div>
 
-            {/* INT */}
-            <div className="bg-background p-10 md:p-12">
-              <div className="flex items-baseline justify-between mb-8">
-                <Editable
-                  id="cap.proc.int.tag"
-                  className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary"
-                >
-                  Interiores
-                </Editable>
-                <span className="font-mono text-[10px] tracking-[0.3em] text-muted-foreground">
-                  INT
-                </span>
+              <div className="col-span-12 lg:col-span-5 relative px-8 md:px-12 lg:px-16 py-16 lg:py-24 flex flex-col justify-center bg-background">
+                <div className="max-w-md">
+                  <span className="number-marker block mb-4">Projeto referência</span>
+                  <Editable
+                    as="h3"
+                    id="cap.proc.arq.title"
+                    multiline
+                    className="font-display text-4xl md:text-5xl leading-[0.95] mb-2"
+                  >
+                    A casa nasce do <em className="text-primary not-italic">terreno e da luz.</em>
+                  </Editable>
+                  <Editable
+                    id="cap.proc.arq.location"
+                    className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground block mb-8"
+                  >
+                    Casa Costas · 300m² · São José dos Campos
+                  </Editable>
+                  <div className="gold-line w-16 mb-8" />
+                  <Editable
+                    id="cap.proc.arq.body"
+                    multiline
+                    as="p"
+                    className="font-display text-base md:text-lg leading-relaxed text-foreground/80 mb-10"
+                  >
+                    O pedido era claro: uma residência que equilibrasse presença e acolhimento.
+                    A fachada em concreto e madeira define o limite entre o público e o privado —
+                    sem abrir mão da luz. Cada detalhe foi validado em projeto antes de qualquer
+                    execução.
+                  </Editable>
+                  <ul className="space-y-3 font-display text-foreground/80 mb-10">
+                    {[
+                      "Implantação e estudo solar",
+                      "Volumetria e composição de fachadas",
+                      "Plantas, cortes e elevações",
+                      "Coordenação técnica com engenheiros parceiros",
+                      "Detalhamento construtivo",
+                    ].map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex gap-4 items-baseline border-b border-border/40 pb-3"
+                      >
+                        <span className="font-mono text-[10px] text-primary/70">
+                          0{i + 1}
+                        </span>
+                        <Editable
+                          id={`cap.proc.arq.item.${i}`}
+                          className="flex-1 text-sm md:text-base"
+                        >
+                          {item}
+                        </Editable>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="grid grid-cols-3 gap-3 sm:gap-6 border-t border-border/60 pt-6">
+                    <div>
+                      <Editable
+                        id="cap.proc.arq.s1.value"
+                        className="font-display text-3xl md:text-4xl text-primary block leading-none mb-2"
+                      >
+                        04
+                      </Editable>
+                      <Editable
+                        id="cap.proc.arq.s1.label"
+                        className="font-mono text-[9px] uppercase tracking-[0.25em] text-muted-foreground"
+                      >
+                        Meses de projeto
+                      </Editable>
+                    </div>
+                    <div>
+                      <Editable
+                        id="cap.proc.arq.s2.value"
+                        className="font-display text-3xl md:text-4xl text-primary block leading-none mb-2"
+                      >
+                        05
+                      </Editable>
+                      <Editable
+                        id="cap.proc.arq.s2.label"
+                        className="font-mono text-[9px] uppercase tracking-[0.25em] text-muted-foreground"
+                      >
+                        Disciplinas
+                      </Editable>
+                    </div>
+                    <div>
+                      <Editable
+                        id="cap.proc.arq.s3.value"
+                        className="font-display text-3xl md:text-4xl text-primary block leading-none mb-2"
+                      >
+                        0
+                      </Editable>
+                      <Editable
+                        id="cap.proc.arq.s3.label"
+                        className="font-mono text-[9px] uppercase tracking-[0.25em] text-muted-foreground"
+                      >
+                        Retrabalho
+                      </Editable>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <Editable
-                as="h3"
-                id="cap.proc.int.title"
-                multiline
-                className="font-display text-3xl md:text-4xl leading-tight mb-8 text-foreground"
-              >
-                O interior é <em className="text-primary not-italic">onde a arquitetura encontra a vida.</em>
-              </Editable>
-              <div className="gold-line w-12 mb-8" />
-              <ul className="space-y-4">
-                {[
-                  "Layout funcional e fluxos",
-                  "Paleta de materiais e acabamentos",
-                  "Marcenaria sob medida",
-                  "Iluminação e atmosfera",
-                  "Curadoria de mobiliário e arte",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-baseline gap-4">
-                    <span className="font-mono text-[10px] text-primary/60 mt-1">
-                      0{i + 1}
-                    </span>
-                    <Editable
-                      id={`cap.proc.int.item.${i}`}
-                      className="font-display text-base md:text-lg text-foreground/80 flex-1"
-                    >
-                      {item}
-                    </Editable>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
 
-          <div className="mt-16 max-w-3xl">
+          {/* ============================================================
+              BLOCO INT — formato Interiores · Camada do habitar
+              ============================================================ */}
+          <div className="relative pt-24 md:pt-32">
+            <div className="grid grid-cols-12 gap-8 items-center">
+              <div className="col-span-12 lg:col-span-5 order-2 lg:order-1">
+                <Editable
+                  id="cap.proc.int.eyebrow"
+                  className="eyebrow mb-8 inline-block"
+                >
+                  Interiores · Camada do habitar
+                </Editable>
+                <Editable
+                  as="h3"
+                  id="cap.proc.int.title"
+                  multiline
+                  className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.0] mb-10 text-balance"
+                >
+                  O interior é onde a <em className="text-primary not-italic">arquitetura</em> encontra a vida.
+                </Editable>
+                <Editable
+                  id="cap.proc.int.body"
+                  multiline
+                  as="p"
+                  className="font-display text-base md:text-lg leading-relaxed text-foreground/75 mb-10"
+                >
+                  Não decoramos espaços — projetamos atmosferas. Cada material é escolhido pelo
+                  modo como envelhece, pelo toque, pelo som que o ambiente faz quando alguém entra.
+                  O resultado: interiores que não datam, que não cansam, e que continuam pertencendo
+                  a você dez anos após a entrega.
+                </Editable>
+                <ul className="space-y-3 font-display text-foreground/80">
+                  {[
+                    ["01", "Layout funcional e fluxos"],
+                    ["02", "Paleta de materiais e acabamentos"],
+                    ["03", "Marcenaria sob medida com detalhamento executivo"],
+                    ["04", "Iluminação cênica e funcional integrada"],
+                    ["05", "Curadoria de mobiliário e arte"],
+                  ].map(([num, txt], i) => (
+                    <li
+                      key={i}
+                      className="flex gap-4 items-baseline border-b border-border/40 pb-3"
+                    >
+                      <span className="font-mono text-xs text-primary/70">{num}</span>
+                      <Editable
+                        id={`cap.proc.int.item.${i}`}
+                        className="flex-1 text-sm md:text-base"
+                      >
+                        {txt}
+                      </Editable>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="col-span-12 lg:col-span-7 order-1 lg:order-2 relative">
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  <img
+                    src="https://www.dropbox.com/scl/fi/hv5ka2it7y3mx78a9plos/tghdfjg.png?rlkey=7gx28a6t2ru8o4s8nz0mea4jp&raw=1"
+                    alt="Espaço Gourmet SJ · NL Arquitetos · interiores"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    loading="lazy"
+                    width={1600}
+                    height={2000}
+                  />
+                </div>
+                <div className="absolute -bottom-4 -left-4 md:-left-8 bg-background border-l-2 border-primary px-5 py-3">
+                  <Editable
+                    id="cap.proc.int.caption"
+                    className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground"
+                  >
+                    Espaço Gourmet SJ · Materialidade e precisão
+                  </Editable>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-24 max-w-3xl">
             <Editable
               as="p"
               id="cap.proc.note"
