@@ -101,10 +101,48 @@ const Captacao = () => {
           ============================================================ */}
       <section
         id="manifesto"
-        className="manifesto-section relative min-h-screen flex items-center px-5 sm:px-8 md:px-16 lg:px-24 py-20 sm:py-24 md:py-32 lg:py-36"
+        className="manifesto-section relative min-h-screen flex items-center px-5 sm:px-8 md:px-16 lg:px-24 py-20 sm:py-24 md:py-32 lg:py-36 overflow-hidden"
         style={{ backgroundColor: "#1A1816", color: "#E8E4DF" }}
       >
-        <div className="manifesto-grid grid grid-cols-12 gap-6 md:gap-8 w-full max-w-7xl mx-auto">
+        {/* Filete bronze fino no topo absoluto */}
+        <div
+          aria-hidden
+          className="absolute top-0 left-0 right-0 h-px"
+          style={{ backgroundColor: "rgba(139, 115, 85, 0.3)" }}
+        />
+
+        {/* Textura grain sutil (≈4%) */}
+        <div
+          aria-hidden
+          className="absolute inset-0 pointer-events-none mix-blend-overlay"
+          style={{
+            opacity: 0.04,
+            backgroundImage:
+              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")",
+            backgroundSize: "240px 240px",
+          }}
+        />
+
+        {/* Numeral 02 gigante em outline bronze como pano de fundo */}
+        <div
+          aria-hidden
+          className="absolute inset-0 pointer-events-none flex items-center justify-end px-5 sm:px-8 md:px-16 lg:px-24"
+        >
+          <span
+            className="font-display font-light leading-none select-none"
+            style={{
+              fontSize: "clamp(18rem, 42vw, 38rem)",
+              color: "transparent",
+              WebkitTextStroke: "1px rgba(139, 115, 85, 0.08)",
+              letterSpacing: "-0.05em",
+              transform: "translateY(-2%)",
+            }}
+          >
+            02
+          </span>
+        </div>
+
+        <div className="manifesto-grid relative z-10 grid grid-cols-12 gap-6 md:gap-8 w-full max-w-7xl mx-auto">
           <div className="col-span-12 md:col-span-3">
             <span
               className="font-mono-edit text-[10px] tracking-[0.3em] block mb-2"
