@@ -1202,10 +1202,10 @@ const Captacao = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-y-12 md:gap-x-8 lg:gap-x-12 relative">
               {[
-                { id: "entrega", step: "01", t: "Entrega", b: "Encerramento formal da obra com vistoria, ajustes finais e entrega das chaves." },
+                { id: "entrega", step: "01", t: "Entrega", b: "Apresentação formal dos cadernos técnicos e orientação para início da obra." },
                 { id: "acompanhamento", step: "02", t: "Acompanhamento", b: "Visitas técnicas durante a execução, garantindo fidelidade ao projeto." },
-                { id: "curadoria", step: "03", t: "Curadoria", b: "Indicação de fornecedores, aprovação de amostras e styling final." },
-                { id: "suporte", step: "04", t: "Suporte", b: "Acompanhamento pós-mudança e suporte para evoluções futuras da casa." },
+                { id: "curadoria", step: "03", t: "Curadoria", b: "Indicação de fornecedores e aprovação de amostras de materiais." },
+                { id: "suporte", step: "04", t: "Suporte", b: "Suporte técnico por 90 dias após a entrega — dúvidas sobre os cadernos e orientações para a equipe de obra." },
               ].map((s) => (
                 <div key={s.id} className="relative">
                   {/* Ponto bronze na linha do tempo */}
