@@ -1215,10 +1215,10 @@ const Captacao = () => {
           <div className="relative">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-y-12 md:gap-x-8 lg:gap-x-12 relative">
               {[
-                { id: "entrega", step: "01", t: "Entrega", b: "Apresentação formal dos cadernos técnicos e orientação para início da obra." },
-                { id: "acompanhamento", step: "02", t: "Acompanhamento", b: "Visitas técnicas durante a execução, garantindo fidelidade ao projeto." },
-                { id: "curadoria", step: "03", t: "Curadoria", b: "Indicamos fornecedores confiáveis e acompanhamos a aprovação de amostras de materiais." },
-                { id: "suporte", step: "04", t: "Suporte", b: "Suporte técnico por 90 dias após a entrega — dúvidas sobre os cadernos e orientações para a equipe de obra." },
+                { id: "entrega", step: "01", t: "Entrega", b: "Sua equipe de obra recebe o projeto com clareza absoluta — sem brechas para interpretação." },
+                { id: "acompanhamento", step: "02", t: "Acompanhamento", b: "Estamos no canteiro nos momentos críticos — onde a decisão errada custa até 5x mais." },
+                { id: "curadoria", step: "03", t: "Curadoria", b: "Você acessa nossa rede de fornecedores testados em obras reais — sem virar cobaia." },
+                { id: "suporte", step: "04", t: "Suporte", b: "Por 90 dias após a entrega, qualquer dúvida da obra passa por nós antes de virar problema." },
               ].map((s) => (
                 <div key={s.id} className="relative">
                   {/* Ponto bronze */}
@@ -1256,6 +1256,50 @@ const Captacao = () => {
                     style={{ color: "#777777" }}
                   >
                     {s.b}
+                  </Editable>
+                </div>
+              ))}
+            </div>
+
+            {/* Faixa de âncora numérica */}
+            <div
+              className="mt-20 pt-10 border-t grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-x-12"
+              style={{ borderColor: "rgba(139, 115, 85, 0.25)" }}
+            >
+              {[
+                { id: "n1", num: "90", unit: "dias", label: "de suporte técnico após a entrega" },
+                { id: "n2", num: "100%", unit: "", label: "das obras acompanhadas em campo" },
+                { id: "n3", num: "0", unit: "", label: "clientes abandonados após a chave" },
+              ].map((m) => (
+                <div key={m.id} className="flex flex-col">
+                  <div className="flex items-baseline gap-2 mb-3">
+                    <Editable
+                      id={`cap.alem.metric.${m.id}.num`}
+                      as="span"
+                      className="font-display text-5xl md:text-6xl leading-none"
+                      style={{ color: "#C9A876" }}
+                    >
+                      {m.num}
+                    </Editable>
+                    {m.unit && (
+                      <Editable
+                        id={`cap.alem.metric.${m.id}.unit`}
+                        as="span"
+                        className="font-mono-edit text-[10px] uppercase tracking-[0.3em]"
+                        style={{ color: "#777777" }}
+                      >
+                        {m.unit}
+                      </Editable>
+                    )}
+                  </div>
+                  <Editable
+                    id={`cap.alem.metric.${m.id}.label`}
+                    as="p"
+                    multiline
+                    className="font-mono-edit text-[11px] leading-relaxed max-w-[240px]"
+                    style={{ color: "#999999" }}
+                  >
+                    {m.label}
                   </Editable>
                 </div>
               ))}
