@@ -1373,7 +1373,7 @@ const Captacao = () => {
                   id={`cap.port.${proj.id}.meta`}
                   className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground block"
                 >
-                  {proj.meta} · {proj.status}
+                  {proj.meta}
                 </Editable>
               </article>
             ))}
