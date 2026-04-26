@@ -1730,15 +1730,32 @@ const Captacao = () => {
         className="relative min-h-screen flex items-center justify-center px-6 md:px-16 lg:px-24 py-32"
         style={{ backgroundColor: "#1A1816", color: "#E8E4DF" }}
       >
-        <div className="relative z-10 max-w-3xl mx-auto text-center w-full">
+        <div className="relative z-10 max-w-5xl mx-auto text-center w-full">
+          {/* Logo NL no topo */}
+          <Editable
+            id="cap.fech.logo"
+            className="font-display text-4xl md:text-5xl mb-16 md:mb-20 inline-block tracking-wide"
+            style={{ color: "rgba(232, 228, 223, 0.95)" }}
+          >
+            NL
+          </Editable>
+
           {/* Eyebrow */}
           <Editable
             id="cap.fech.eyebrow"
-            className="font-mono-edit text-[10px] uppercase tracking-[0.4em] mb-10 md:mb-12 inline-block"
+            className="font-mono-edit text-[10px] uppercase tracking-[0.4em] mb-4 inline-block"
             style={{ color: "#8B7355" }}
           >
             Próximo passo
           </Editable>
+
+          {/* Divisor bronze fino centralizado abaixo do eyebrow */}
+          <div className="flex justify-center mb-10 md:mb-12">
+            <span
+              className="h-px w-16"
+              style={{ backgroundColor: "rgba(139, 115, 85, 0.7)" }}
+            />
+          </div>
 
           {/* Título principal */}
           <Editable
@@ -1758,44 +1775,92 @@ const Captacao = () => {
             as="p"
             id="cap.fech.body"
             multiline
-            className="font-display italic text-lg md:text-xl leading-relaxed mb-14 md:mb-16 max-w-2xl mx-auto"
+            className="font-display italic text-lg md:text-xl leading-relaxed mb-20 md:mb-24 max-w-2xl mx-auto"
             style={{ color: "rgba(232, 228, 223, 0.6)" }}
           >
             Uma Carta Proposta feita para você — pensada, estudada, detalhada. Pronta para ser lida com a mesma calma com que foi escrita.
           </Editable>
 
-          {/* Divisor bronze fino centralizado */}
-          <div className="flex justify-center mb-14 md:mb-16">
+          {/* Divisor superior do bloco de contatos */}
+          <div className="w-full mb-10 md:mb-12">
             <span
-              className="h-px w-24"
-              style={{ backgroundColor: "rgba(139, 115, 85, 0.7)" }}
+              className="block h-px w-full"
+              style={{ backgroundColor: "rgba(232, 228, 223, 0.12)" }}
             />
           </div>
 
-          {/* Bloco de contato */}
-          <div className="flex flex-col items-center gap-3 mb-20 md:mb-24">
+          {/* Bloco de contato — 3 colunas: label bronze + valor itálico */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 mb-20 md:mb-24 max-w-3xl mx-auto">
+            <div className="flex flex-col items-center gap-3">
+              <Editable
+                id="cap.fech.contact.whatsapp.label"
+                className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
+                style={{ color: "#8B7355" }}
+              >
+                WhatsApp
+              </Editable>
+              <Editable
+                id="cap.fech.contact.whatsapp"
+                className="font-display italic text-base md:text-lg"
+                style={{ color: "rgba(232, 228, 223, 0.85)" }}
+              >
+                (12) 99623-5559
+              </Editable>
+            </div>
+
+            <div className="flex flex-col items-center gap-3">
+              <Editable
+                id="cap.fech.contact.email.label"
+                className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
+                style={{ color: "#8B7355" }}
+              >
+                E-mail
+              </Editable>
+              <Editable
+                id="cap.fech.contact.email"
+                className="font-display italic text-base md:text-lg"
+                style={{ color: "rgba(232, 228, 223, 0.85)" }}
+              >
+                contato.nlarquitetos@gmail.com
+              </Editable>
+            </div>
+
+            <div className="flex flex-col items-center gap-3">
+              <Editable
+                id="cap.fech.contact.instagram.label"
+                className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
+                style={{ color: "#8B7355" }}
+              >
+                Instagram
+              </Editable>
+              <Editable
+                id="cap.fech.contact.instagram"
+                className="font-display italic text-base md:text-lg"
+                style={{ color: "rgba(232, 228, 223, 0.85)" }}
+              >
+                @nlarquitetos
+              </Editable>
+            </div>
+          </div>
+
+          {/* Rodapé bipartido: citação à esquerda, assinatura à direita */}
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t" style={{ borderColor: "rgba(232, 228, 223, 0.1)" }}>
             <Editable
-              id="cap.fech.contact.whatsapp"
-              className="font-mono-edit text-[11px] md:text-xs uppercase tracking-[0.3em]"
-              style={{ color: "rgba(232, 228, 223, 0.55)" }}
+              id="cap.fech.rodape.quote"
+              className="font-display italic text-sm md:text-base"
+              style={{ color: "rgba(232, 228, 223, 0.45)" }}
             >
-              WhatsApp (12) 99623-5559
+              "A arquitetura como decisão."
             </Editable>
             <Editable
-              id="cap.fech.contact.email"
-              className="font-mono-edit text-[11px] md:text-xs tracking-[0.3em] normal-case"
-              style={{ color: "rgba(232, 228, 223, 0.55)" }}
+              id="cap.fech.rodape"
+              className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
+              style={{ color: "rgba(232, 228, 223, 0.45)" }}
             >
-              contato.nlarquitetos@gmail.com
-            </Editable>
-            <Editable
-              id="cap.fech.contact.instagram"
-              className="font-mono-edit text-[11px] md:text-xs uppercase tracking-[0.3em]"
-              style={{ color: "rgba(232, 228, 223, 0.55)" }}
-            >
-              @nlarquitetos
+              NL Arquitetos · 2025
             </Editable>
           </div>
+        </div>
 
           {/* Logo NL discreta */}
           <Editable
