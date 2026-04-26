@@ -43,6 +43,15 @@
     --input: 30 10% 16%;
     --ring: 36 38% 62%;
 
+    /* Editorial dark sections (manifesto, consolidação, além, fechamento) */
+    --surface-dark: 24 12% 10%;        /* #1A1816 — pano de fundo dark warm */
+    --surface-deep: 26 14% 6%;         /* #0F0D0B — variação mais profunda */
+    --ink-dark: 36 22% 90%;            /* #E8E4DF — texto sobre surface-dark */
+    --bronze: 28 24% 47%;              /* #8B7355 — bronze mineral */
+    --bronze-glow: 36 39% 63%;         /* #C9A876 — bronze dourado, ênfase */
+    --bronze-soft: 33 27% 57%;         /* #B5956E — bronze claro */
+    --ink-muted: 0 0% 47%;             /* #777777 — texto sutil sobre dark */
+
     --radius: 0.25rem;
 
     /* Editorial gradients & shadows */
