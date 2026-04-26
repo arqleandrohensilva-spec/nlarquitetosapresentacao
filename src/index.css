@@ -122,13 +122,51 @@
     letter-spacing: -0.015em;
   }
 
+  /* Alias semântico — JetBrains Mono (mesma fonte de font-mono).
+     Mantido para retrocompatibilidade. Prefira .font-mono em código novo. */
   .font-mono-edit {
-    font-family: 'JetBrains Mono', monospace;
+    @apply font-mono;
     font-weight: 300;
   }
 
+  /* ============================================================
+     Escala tipográfica editorial unificada
+     Usar essas classes nas seções Capa, Manifesto, Consolidação e Encerramento
+     para garantir consistência. Mudança de escala = 1 lugar.
+     ============================================================ */
+
+  /* Eyebrow caps (label "APRESENTAÇÃO · CONFIDENCIAL", "MANIFESTO", etc) */
+  .eyebrow-editorial {
+    @apply font-mono text-[10px] uppercase tracking-[0.4em];
+  }
+
+  /* H1 da Capa — único momento monumental da apresentação */
+  .display-hero {
+    @apply font-display text-5xl md:text-7xl lg:text-[7.5rem] leading-[0.95] tracking-[-0.01em] text-balance;
+  }
+
+  /* H2 das demais seções — um degrau abaixo da Capa */
+  .display-section {
+    @apply font-display text-4xl md:text-6xl lg:text-7xl leading-[1.0] tracking-[-0.01em] text-balance;
+  }
+
+  /* Subtítulo / lede em itálico Cormorant */
+  .lede-editorial {
+    @apply font-display italic text-xl md:text-2xl leading-[1.4] text-pretty;
+  }
+
+  /* Parágrafo de seção (corpo editorial) */
+  .body-editorial {
+    @apply font-display text-lg md:text-xl leading-relaxed text-pretty;
+  }
+
+  /* Label de metadata / rodapé / contato (mesma família dos eyebrows) */
+  .label-meta {
+    @apply font-mono text-[10px] uppercase tracking-[0.4em];
+  }
+
   .eyebrow {
-    @apply font-mono-edit text-xs uppercase tracking-[0.3em] text-primary/80;
+    @apply eyebrow-editorial text-primary/80;
   }
 
   .editorial-line {
@@ -141,7 +179,7 @@
   }
 
   .number-marker {
-    @apply font-mono-edit text-[10px] tracking-[0.2em] text-muted-foreground;
+    @apply font-mono text-[10px] tracking-[0.2em] text-muted-foreground;
   }
 
   /* Editable text affordance */
@@ -191,32 +229,14 @@
 }
 
 /* ============================================================
-   MANIFESTO · Responsivo dedicado (mobile / tablet / desktop)
-   Tipografia fluida com clamp() para evitar overflow
-   e manter hierarquia visual consistente.
+   MANIFESTO · Layout responsivo (tipografia agora vem das
+   classes utilitárias .display-section, .body-editorial, .lede-editorial).
    ============================================================ */
 .manifesto-section {
   overflow-x: hidden;
   word-break: normal;
   overflow-wrap: break-word;
   hyphens: auto;
-}
-
-.manifesto-title {
-  /* min 2.25rem (36px) → fluido → max 5.5rem (88px) */
-  font-size: clamp(2.25rem, 6.2vw, 5.5rem);
-  line-height: 1.04;
-}
-
-.manifesto-paragraph {
-  /* min 1rem (16px) → fluido → max 1.125rem (18px) */
-  font-size: clamp(1rem, 1.15vw, 1.125rem);
-}
-
-.manifesto-quote {
-  /* min 1.125rem (18px) → fluido → max 1.75rem (28px) */
-  font-size: clamp(1.125rem, 2.1vw, 1.75rem);
-  line-height: 1.4;
 }
 
 /* Mobile: empilhar e remover indentação extra do eyebrow */
@@ -229,20 +249,5 @@
   }
   .manifesto-quote-wrap {
     max-width: 100%;
-  }
-}
-
-/* Tablet: ajustar peso visual do título e respiração */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .manifesto-title {
-    font-size: clamp(3rem, 5.8vw, 4.25rem);
-    line-height: 1.05;
-  }
-  .manifesto-paragraph {
-    font-size: 1.0625rem;
-    line-height: 1.7;
-  }
-  .manifesto-quote {
-    font-size: clamp(1.375rem, 2.4vw, 1.625rem);
   }
 }

@@ -57,7 +57,7 @@ const Captacao = () => {
         <div className="absolute inset-0 vignette opacity-70" />
 
         <div className="relative z-10 max-w-4xl fade-up">
-          <Editable id="cap.capa.eyebrow" className="eyebrow mb-8 inline-block">
+          <Editable id="cap.capa.eyebrow" className="eyebrow-editorial text-primary/80 mb-8 inline-block">
             Apresentação · Confidencial
           </Editable>
 
@@ -65,7 +65,7 @@ const Captacao = () => {
             as="h1"
             id="cap.capa.title"
             multiline
-            className="font-display text-5xl md:text-7xl lg:text-[7.5rem] leading-[0.95] text-foreground mb-8 text-balance"
+            className="display-hero text-foreground mb-8"
           >
             Arquitetura é <em className="text-primary italic font-light">decisão</em>,
             <br />
@@ -77,7 +77,7 @@ const Captacao = () => {
           <Editable
             id="cap.capa.subtitle"
             multiline
-            className="font-display italic text-xl md:text-2xl text-foreground/75 max-w-2xl block"
+            className="lede-editorial text-foreground/75 max-w-2xl block"
           >
             Conduzimos cada projeto com a precisão de quem sabe que a obra é apenas
             a última etapa — e a mais cara para corrigir.
@@ -87,7 +87,7 @@ const Captacao = () => {
             <span className="h-px w-12 bg-primary/40" />
             <Editable
               id="cap.capa.tag"
-              className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80"
+              className="label-meta text-primary/80"
             >
               Apresentação 01 · 12
             </Editable>
@@ -97,13 +97,13 @@ const Captacao = () => {
         <div className="relative z-10 mt-16 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <Editable
             id="cap.capa.client"
-            className="font-mono text-[10px] uppercase tracking-[0.4em] text-foreground/45"
+            className="label-meta text-foreground/45"
           >
             Para · [Nome do Cliente]
           </Editable>
           <Editable
             id="cap.capa.date"
-            className="font-mono text-[10px] uppercase tracking-[0.4em] text-foreground/45"
+            className="label-meta text-foreground/45"
           >
             São José dos Campos · 2026
           </Editable>
@@ -159,14 +159,14 @@ const Captacao = () => {
         <div className="manifesto-grid relative z-10 grid grid-cols-12 gap-6 md:gap-8 w-full max-w-7xl mx-auto">
           <div className="col-span-12 md:col-span-3">
             <span
-              className="font-mono-edit text-[10px] tracking-[0.3em] block mb-2"
+              className="label-meta block mb-2"
               style={{ color: "hsl(var(--ink-dark) / 0.55)" }}
             >
               02
             </span>
             <Editable
               id="cap.manifesto.eyebrow"
-              className="font-mono-edit text-[10px] uppercase tracking-[0.3em]"
+              className="label-meta"
               style={{ color: "hsl(var(--bronze))" }}
             >
               Manifesto
@@ -178,7 +178,7 @@ const Captacao = () => {
               as="h2"
               id="cap.manifesto.title"
               multiline
-              className="manifesto-title font-display leading-[1.04] tracking-[-0.01em] mb-10 sm:mb-12 md:mb-16 lg:mb-20 text-balance"
+              className="display-section mb-10 sm:mb-12 md:mb-16 lg:mb-20"
               style={{ color: "hsl(var(--ink-dark))" }}
             >
               Antes de desenhar,
@@ -193,7 +193,7 @@ const Captacao = () => {
                 id="cap.manifesto.p1"
                 multiline
                 as="p"
-                className="manifesto-paragraph font-display leading-[1.65] tracking-[0.005em] text-pretty"
+                className="body-editorial"
                 style={{ color: "hsl(var(--ink-dark) / 0.82)", hyphens: "none", WebkitHyphens: "none" }}
               >
                 A NL não começa pelo desenho. Começa pela escuta — entendendo o terreno, a família, o modo de viver. Só depois o primeiro traço aparece. E quando aparece, já foi validado.
@@ -202,7 +202,7 @@ const Captacao = () => {
                 id="cap.manifesto.p2"
                 multiline
                 as="p"
-                className="manifesto-paragraph font-display leading-[1.65] tracking-[0.005em] text-pretty"
+                className="body-editorial"
                 style={{ color: "hsl(var(--ink-dark) / 0.82)" }}
               >
                 Cada projeto que entregamos existe porque alguém confiou em nós antes de existir uma única parede. Essa confiança não se paga com estética — se honra com método, documentação e resultado previsível.
@@ -217,7 +217,7 @@ const Captacao = () => {
                 id="cap.manifesto.quote"
                 multiline
                 as="p"
-                className="manifesto-quote font-display italic leading-[1.35] tracking-[-0.005em] text-pretty"
+                className="lede-editorial"
                 style={{ color: "hsl(var(--bronze))" }}
               >
                 “Beleza sem método é apenas decoração. Arquitetura é a decisão tomada antes do primeiro traço.”
@@ -633,12 +633,12 @@ const Captacao = () => {
       >
         <div className="max-w-6xl mx-auto w-full">
           <div className="flex items-baseline gap-6 mb-16 pb-4 border-b" style={{ borderColor: "hsl(var(--bronze) / 0.3)" }}>
-            <span className="font-mono-edit text-[10px] tracking-[0.3em]" style={{ color: "hsl(var(--ink-muted))" }}>
+            <span className="label-meta" style={{ color: "hsl(var(--ink-muted))" }}>
               07
             </span>
             <Editable
               id="cap.consol.eyebrow"
-              className="font-mono-edit text-[10px] uppercase tracking-[0.3em]"
+              className="label-meta"
               style={{ color: "hsl(var(--bronze))" }}
             >
               Consolidação
@@ -649,7 +649,7 @@ const Captacao = () => {
             as="h2"
             id="cap.consol.title"
             multiline
-            className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.0] text-balance mb-8 max-w-4xl"
+            className="display-section mb-8 max-w-4xl"
             style={{ color: "hsl(var(--ink-light))" }}
           >
             Estrutura e consolidação.
@@ -659,7 +659,7 @@ const Captacao = () => {
             as="p"
             id="cap.consol.subtitle"
             multiline
-            className="font-display text-lg md:text-xl leading-relaxed max-w-3xl mb-20"
+            className="body-editorial max-w-3xl mb-20"
             style={{ color: "hsl(var(--ink-light-soft))" }}
           >
             Não empilhamos volumes. Consolidamos legados. Cada traço é uma decisão técnica que sustenta a próxima visão.
@@ -1735,7 +1735,7 @@ const Captacao = () => {
           <div className="flex justify-center mb-4">
             <Editable
               id="cap.fech.eyebrow"
-              className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
+              className="label-meta"
               style={{ color: "hsl(var(--bronze))" }}
             >
               Próximo passo
@@ -1755,7 +1755,7 @@ const Captacao = () => {
             as="h2"
             id="cap.fech.title"
             multiline
-            className="font-display text-4xl md:text-6xl lg:text-7xl leading-[1.05] text-balance mb-10 md:mb-12"
+            className="display-section mb-10 md:mb-12"
             style={{ color: "hsl(var(--ink-dark))" }}
           >
             Em até 48 horas após nossa conversa,
@@ -1768,7 +1768,7 @@ const Captacao = () => {
             as="p"
             id="cap.fech.body"
             multiline
-            className="font-display italic text-lg md:text-xl leading-relaxed mb-20 md:mb-24 max-w-2xl mx-auto"
+            className="lede-editorial mb-20 md:mb-24 max-w-2xl mx-auto"
             style={{ color: "hsl(var(--ink-dark) / 0.6)" }}
           >
             Uma Carta Proposta feita para você — pensada, estudada, detalhada. Pronta para ser lida com a mesma calma com que foi escrita.
@@ -1787,7 +1787,7 @@ const Captacao = () => {
             <div className="flex flex-col items-center gap-3">
               <Editable
                 id="cap.fech.contact.whatsapp.label"
-                className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
+                className="label-meta"
                 style={{ color: "hsl(var(--bronze))" }}
               >
                 WhatsApp
@@ -1804,7 +1804,7 @@ const Captacao = () => {
             <div className="flex flex-col items-center gap-3">
               <Editable
                 id="cap.fech.contact.email.label"
-                className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
+                className="label-meta"
                 style={{ color: "hsl(var(--bronze))" }}
               >
                 E-mail
@@ -1821,7 +1821,7 @@ const Captacao = () => {
             <div className="flex flex-col items-center gap-3">
               <Editable
                 id="cap.fech.contact.instagram.label"
-                className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
+                className="label-meta"
                 style={{ color: "hsl(var(--bronze))" }}
               >
                 Instagram
@@ -1837,24 +1837,24 @@ const Captacao = () => {
           </div>
 
           {/* Rodapé bipartido: citação à esquerda, logo NL + assinatura à direita */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-[hsl(var(--surface))]/10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-[hsl(var(--ink-dark))]/10">
             <Editable
               id="cap.fech.rodape.quote"
-              className="font-display italic text-sm md:text-base text-[hsl(var(--surface))]/45"
+              className="font-display italic text-sm md:text-base text-[hsl(var(--ink-dark))]/45"
             >
               A arquitetura como decisão.
             </Editable>
             <div className="flex items-center gap-4">
               <Editable
                 id="cap.fech.logo"
-                className="font-mono text-[10px] uppercase tracking-[0.4em] leading-none text-[hsl(var(--surface))]/45"
+                className="label-meta leading-none text-[hsl(var(--ink-dark))]/45"
               >
                 NL
               </Editable>
-              <span className="h-4 w-px bg-[hsl(var(--surface))]/20" />
+              <span className="h-4 w-px bg-[hsl(var(--ink-dark))]/20" />
               <Editable
                 id="cap.fech.rodape"
-                className="font-mono text-[10px] uppercase tracking-[0.4em] text-[hsl(var(--surface))]/45"
+                className="label-meta text-[hsl(var(--ink-dark))]/45"
               >
                 NL Arquitetos · 2026
               </Editable>
