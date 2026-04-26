@@ -1731,23 +1731,16 @@ const Captacao = () => {
         style={{ backgroundColor: "#1A1816", color: "#E8E4DF" }}
       >
         <div className="relative z-10 max-w-5xl mx-auto text-center w-full">
-          {/* Logo NL no topo */}
-          <Editable
-            id="cap.fech.logo"
-            className="font-display text-4xl md:text-5xl mb-16 md:mb-20 inline-block tracking-wide"
-            style={{ color: "rgba(232, 228, 223, 0.95)" }}
-          >
-            NL
-          </Editable>
-
-          {/* Eyebrow */}
-          <Editable
-            id="cap.fech.eyebrow"
-            className="font-mono-edit text-[10px] uppercase tracking-[0.4em] mb-4 inline-block"
-            style={{ color: "#8B7355" }}
-          >
-            Próximo passo
-          </Editable>
+          {/* Eyebrow no topo, sozinho e centralizado */}
+          <div className="flex justify-center mb-4">
+            <Editable
+              id="cap.fech.eyebrow"
+              className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
+              style={{ color: "#8B7355" }}
+            >
+              Próximo passo
+            </Editable>
+          </div>
 
           {/* Divisor bronze fino centralizado abaixo do eyebrow */}
           <div className="flex justify-center mb-10 md:mb-12">
@@ -1843,22 +1836,32 @@ const Captacao = () => {
             </div>
           </div>
 
-          {/* Rodapé bipartido: citação à esquerda, assinatura à direita */}
+          {/* Rodapé bipartido: citação à esquerda, logo NL + assinatura à direita */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t" style={{ borderColor: "rgba(232, 228, 223, 0.1)" }}>
             <Editable
               id="cap.fech.rodape.quote"
               className="font-display italic text-sm md:text-base"
               style={{ color: "rgba(232, 228, 223, 0.45)" }}
             >
-              "A arquitetura como decisão."
+              A arquitetura como decisão.
             </Editable>
-            <Editable
-              id="cap.fech.rodape"
-              className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
-              style={{ color: "rgba(232, 228, 223, 0.45)" }}
-            >
-              NL Arquitetos · 2025
-            </Editable>
+            <div className="flex items-center gap-4">
+              <Editable
+                id="cap.fech.logo"
+                className="font-display text-2xl tracking-wide leading-none"
+                style={{ color: "rgba(232, 228, 223, 0.7)" }}
+              >
+                NL
+              </Editable>
+              <span className="h-4 w-px" style={{ backgroundColor: "rgba(232, 228, 223, 0.2)" }} />
+              <Editable
+                id="cap.fech.rodape"
+                className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
+                style={{ color: "rgba(232, 228, 223, 0.45)" }}
+              >
+                NL Arquitetos · 2025
+              </Editable>
+            </div>
           </div>
         </div>
       </section>
