@@ -1783,7 +1783,7 @@ const Captacao = () => {
             </Editable>
             <Editable
               id="cap.fech.contact.email"
-              className="font-mono-edit text-[11px] md:text-xs uppercase tracking-[0.3em]"
+              className="font-mono-edit text-[11px] md:text-xs tracking-[0.3em] normal-case"
               style={{ color: "rgba(232, 228, 223, 0.55)" }}
             >
               contato.nlarquitetos@gmail.com
