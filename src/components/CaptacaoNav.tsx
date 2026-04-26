@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { clearAllEdits } from "./Editable";
 import { isEditMode } from "@/lib/edit-mode";
 
@@ -71,15 +70,6 @@ const CaptacaoNav = () => {
         </a>
 
         <div className="pointer-events-auto flex items-center gap-5">
-          <Link
-            to="/"
-            className={`font-mono text-[10px] uppercase tracking-[0.25em] hover:text-primary transition-colors ${
-              onDarkSection ? "text-foreground/70" : "text-muted-foreground"
-            }`}
-          >
-            ← Carta Proposta
-          </Link>
-
           {editing && (
             <button
               onClick={() => {
