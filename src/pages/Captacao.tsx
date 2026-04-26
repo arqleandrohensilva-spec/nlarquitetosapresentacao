@@ -1304,7 +1304,7 @@ const Captacao = () => {
             Cada projeto é um <em className="text-primary not-italic">capítulo único.</em>
           </Editable>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-24">
             {[
               { id: "casa-costas", img: IMG_CASE, name: "Casa Costas", meta: "Residencial · 300m² · São José dos Campos · 2024", status: "Concluído" },
               { id: "casa-jc", img: imgCasaJC, name: "Casa JC", meta: "Residencial · Jacareí SP · 2025", status: "Em desenvolvimento" },
@@ -1318,13 +1318,9 @@ const Captacao = () => {
                   <DialogTrigger asChild>
                     <button
                       type="button"
-                      className={`relative ${idx % 2 === 0 ? "aspect-[4/5]" : "aspect-[3/4]"} overflow-hidden mb-5 bg-surface-elevated w-full block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
+                      className={`relative ${idx % 2 === 0 ? "aspect-[4/5]" : "aspect-[3/4]"} overflow-hidden mb-6 bg-surface-elevated w-full block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
                       aria-label={`Ampliar imagem do projeto ${proj.name}`}
                     >
-                      {/* Numeração editorial — canto superior direito */}
-                      <span className="pointer-events-none absolute top-4 right-4 z-10 font-mono text-[10px] uppercase tracking-[0.3em] text-background/90 mix-blend-difference">
-                        {String(idx + 1).padStart(2, "0")} / {String(arr.length).padStart(2, "0")}
-                      </span>
                       <img
                         src={proj.img}
                         alt={proj.name}
@@ -1362,10 +1358,15 @@ const Captacao = () => {
                   </DialogContent>
                 </Dialog>
 
+                {/* Numeração editorial — marcador de capítulo (fora da imagem, em Cormorant) */}
+                <span className="font-display italic text-xl text-primary/70 block mb-3 leading-none">
+                  {String(idx + 1).padStart(2, "0")} <span className="text-muted-foreground/50">/ {String(arr.length).padStart(2, "0")}</span>
+                </span>
+
                 <Editable
                   as="h3"
                   id={`cap.port.${proj.id}.name`}
-                  className="font-display text-2xl text-foreground mb-2 transition-colors duration-500 group-hover:text-primary"
+                  className="font-display text-3xl md:text-4xl leading-[1.05] text-foreground mb-3 transition-colors duration-500 group-hover:text-primary"
                 >
                   {proj.name}
                 </Editable>
