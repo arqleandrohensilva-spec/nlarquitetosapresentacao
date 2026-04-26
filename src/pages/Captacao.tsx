@@ -320,7 +320,7 @@ const Captacao = () => {
             ].map((step) => (
               <figure
                 key={step.id}
-                className="group relative overflow-hidden aspect-[4/3] md:aspect-[16/10] lg:aspect-auto lg:min-h-0 bg-[#1A1816] [will-change:transform] motion-safe:transition-shadow motion-safe:duration-700 hover:shadow-[0_30px_60px_-30px_rgba(0,0,0,0.55)]"
+                className="group relative overflow-hidden aspect-[4/3] md:aspect-[16/10] lg:aspect-auto lg:min-h-0 bg-[hsl(var(--surface-dark))] [will-change:transform] motion-safe:transition-shadow motion-safe:duration-700 hover:shadow-[0_30px_60px_-30px_rgba(0,0,0,0.55)]"
               >
                 {/* imagem */}
                 <img
@@ -366,7 +366,7 @@ const Captacao = () => {
                   <div className="flex items-center gap-3 mb-2.5">
                     <span
                       className="h-px w-7 origin-left motion-safe:transition-transform motion-safe:duration-700 motion-safe:ease-out motion-safe:group-hover:scale-x-[2]"
-                      style={{ backgroundColor: "rgba(139, 115, 85, 0.85)" }}
+                      style={{ backgroundColor: "hsl(var(--bronze) / 0.85)" }}
                     />
                     <Editable
                       id={`cap.como.step.${step.id}.eyebrow`}
@@ -720,9 +720,9 @@ const Captacao = () => {
                   </span>
                 </button>
               </DialogTrigger>
-              <DialogContent className="bg-[#1A1816] border-primary/30 max-w-3xl">
+              <DialogContent className="bg-[hsl(var(--surface-dark))] border-primary/30 max-w-3xl">
                 <DialogHeader>
-                  <DialogTitle className="font-display text-2xl text-[#E8E4DF]">
+                  <DialogTitle className="font-display text-2xl text-[hsl(var(--ink-dark))]">
                     Estados de atuação
                   </DialogTitle>
                 </DialogHeader>
@@ -789,7 +789,7 @@ const Captacao = () => {
                     {/* NL no encontro */}
                     <div
                       className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full items-center justify-center z-10 pointer-events-none"
-                      style={{ backgroundColor: "hsl(var(--surface-dark))", border: "1px solid #B5956E" }}
+                      style={{ backgroundColor: "hsl(var(--surface-dark))", border: "1px solid hsl(var(--bronze-soft))" }}
                       aria-hidden
                     >
                       <span className="font-display text-xl tracking-tight" style={{ color: "hsl(var(--ink-dark))" }}>
