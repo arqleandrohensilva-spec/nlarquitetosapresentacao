@@ -299,14 +299,14 @@ const Captacao = () => {
               {
                 id: "02",
                 img: imgComoVolumetria,
-                eyebrow: "DISPOSIÇÃO INTERNA",
+                eyebrow: "Volumetria",
                 title: "A forma nasce da decisão.",
                 sub: "Não do acaso — do método.",
               },
               {
                 id: "03",
                 img: imgComoPlanta,
-                eyebrow: "VOLUMETRIA",
+                eyebrow: "Disposição interna",
                 title: "Antes do desenho, existe ordem.",
                 sub: "Fluxo. Relação. Hierarquia.",
               },
@@ -558,7 +558,7 @@ const Captacao = () => {
                 body:
                   "Nenhum traço aparece antes de entender quem vai morar, como vive e o que precisa. A escuta é a primeira etapa do projeto.",
                 quote:
-                  "Você não precisa entender de obra. Precisa entender o que está aprovando.",
+                  "Antes do partido, a pergunta. Antes da resposta, o silêncio.",
               },
               {
                 id: "metodo",
@@ -566,7 +566,7 @@ const Captacao = () => {
                 body:
                   "Temos um processo claro com etapas definidas e critérios de aprovação. O cliente nunca fica perdido — porque a NL sempre está um passo à frente.",
                 quote:
-                  "A NL conduz — o cliente aprova com segurança.",
+                  "Você não precisa entender de obra. Precisa entender o que está aprovando.",
               },
               {
                 id: "atemporal",
@@ -684,10 +684,10 @@ const Captacao = () => {
             <div className="p-8 md:p-10 flex flex-col" style={{ backgroundColor: "#FFFFFF" }}>
               <div className="h-px w-10 mb-6" style={{ backgroundColor: "#8B7355" }} />
               <span className="font-display text-5xl md:text-6xl leading-none mb-4" style={{ color: "#8B7355" }}>
-                +8
+                +9
               </span>
               <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "#3A3A3A" }}>
-                Anos de experiência combinada
+                Anos de prática autoral
               </span>
               <span className="font-display italic text-xs mt-3" style={{ color: "#777777" }}>
                 desde 2017
@@ -703,13 +703,13 @@ const Captacao = () => {
                 >
                   <div className="h-px w-10 mb-6 transition-all group-hover:w-16" style={{ backgroundColor: "#8B7355" }} />
                   <span className="font-display text-5xl md:text-6xl leading-none mb-4" style={{ color: "#8B7355" }}>
-                    2
+                    SP
                   </span>
                   <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "#3A3A3A" }}>
-                    Estados de atuação
+                    Praça de atuação
                   </span>
                   <span className="font-display italic text-xs mt-3" style={{ color: "#777777" }}>
-                    São Paulo · Minas Gerais
+                    Vale do Paraíba · Serra da Mantiqueira · São Paulo
                   </span>
                   <span
                     aria-hidden="true"
@@ -1856,7 +1856,7 @@ const Captacao = () => {
                 id="cap.fech.rodape"
                 className="font-mono text-[10px] uppercase tracking-[0.4em] text-[hsl(var(--surface))]/45"
               >
-                NL Arquitetos · 2025
+                NL Arquitetos · 2026
               </Editable>
             </div>
           </div>
