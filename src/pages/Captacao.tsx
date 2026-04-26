@@ -1848,8 +1848,8 @@ const Captacao = () => {
             <div className="flex items-center gap-4">
               <Editable
                 id="cap.fech.logo"
-                className="font-display text-2xl tracking-wide leading-none"
-                style={{ color: "rgba(232, 228, 223, 0.7)" }}
+                className="font-display text-sm md:text-base tracking-[0.2em] leading-none"
+                style={{ color: "rgba(232, 228, 223, 0.45)" }}
               >
                 NL
               </Editable>
