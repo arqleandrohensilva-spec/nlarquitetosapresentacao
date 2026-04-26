@@ -89,7 +89,7 @@ const Captacao = () => {
               id="cap.capa.tag"
               className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80"
             >
-              NL Arquitetos · Estúdio
+              NL Arquitetos
             </Editable>
           </div>
         </div>
