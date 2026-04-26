@@ -1313,41 +1313,71 @@ const Captacao = () => {
               { id: "gourmet-jardim", img: imgGourmetJardim, name: "Espaço Gourmet Jardim", meta: "Interiores · 80m² · Jacareí SP · 2025" },
               { id: "gourmet-salinas", img: imgGourmetSalinas, name: "Espaço Gourmet Salinas", meta: "Interiores · 65m² · São José dos Campos SP · 2025" },
             ].map((proj) => (
-              <article key={proj.id} className="group cursor-pointer">
-                <div className="relative aspect-[4/5] overflow-hidden mb-5 bg-surface-elevated">
-                  <img
-                    src={proj.img}
-                    alt={proj.name}
-                    className="w-full h-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
-                    loading="lazy"
-                  />
+              <article key={proj.id} className="group">
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button
+                      type="button"
+                      className="relative aspect-[4/5] overflow-hidden mb-5 bg-surface-elevated w-full block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      aria-label={`Ampliar imagem do projeto ${proj.name}`}
+                    >
+                      <img
+                        src={proj.img}
+                        alt={proj.name}
+                        className="w-full h-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
+                        loading="lazy"
+                      />
 
-                  {/* Overlay gradiente bronze — sobe de baixo */}
-                  <div
-                    className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-700 ease-out group-hover:opacity-100"
-                    style={{
-                      background:
-                        "linear-gradient(to top, hsl(var(--foreground) / 0.78) 0%, hsl(var(--foreground) / 0.35) 45%, transparent 75%)",
-                    }}
-                    aria-hidden="true"
-                  />
+                      {/* Overlay gradiente bronze — sobe de baixo */}
+                      <div
+                        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-700 ease-out group-hover:opacity-100"
+                        style={{
+                          background:
+                            "linear-gradient(to top, hsl(var(--foreground) / 0.78) 0%, hsl(var(--foreground) / 0.35) 45%, transparent 75%)",
+                        }}
+                        aria-hidden="true"
+                      />
 
-                  {/* Filete bronze superior — assinatura editorial */}
-                  <div
-                    className="pointer-events-none absolute top-6 left-6 h-px w-0 bg-primary-glow transition-all duration-700 ease-out group-hover:w-12"
-                    aria-hidden="true"
-                  />
+                      {/* Filete bronze superior — assinatura editorial */}
+                      <div
+                        className="pointer-events-none absolute top-6 left-6 h-px w-0 bg-primary-glow transition-all duration-700 ease-out group-hover:w-12"
+                        aria-hidden="true"
+                      />
 
-                  {/* Caption editorial sobre a imagem */}
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 p-6 translate-y-3 opacity-0 transition-all duration-700 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-                    <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-primary-glow block mb-2">
-                      Ver projeto
-                    </span>
-                    <h4 className="font-display text-2xl leading-tight text-background">
-                      {proj.name}
-                    </h4>
-                  </div>
-                </div>
+                      {/* Caption editorial sobre a imagem */}
+                      <div className="pointer-events-none absolute inset-x-0 bottom-0 p-6 translate-y-3 opacity-0 transition-all duration-700 ease-out group-hover:translate-y-0 group-hover:opacity-100 text-left">
+                        <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-primary-glow block mb-2">
+                          Ampliar imagem
+                        </span>
+                        <h4 className="font-display text-2xl leading-tight text-background">
+                          {proj.name}
+                        </h4>
+                      </div>
+                    </button>
+                  </DialogTrigger>
+
+                  <DialogContent className="max-w-6xl w-[95vw] p-0 bg-background border-border overflow-hidden">
+                    <DialogHeader className="sr-only">
+                      <DialogTitle>{proj.name}</DialogTitle>
+                    </DialogHeader>
+                    <div className="bg-surface-elevated">
+                      <img
+                        src={proj.img}
+                        alt={proj.name}
+                        className="w-full h-auto max-h-[80vh] object-contain"
+                      />
+                    </div>
+                    <div className="px-8 py-6 border-t border-border">
+                      <h3 className="font-display text-3xl text-foreground mb-2">
+                        {proj.name}
+                      </h3>
+                      <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                        {proj.meta}
+                      </p>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+
                 <Editable
                   as="h3"
                   id={`cap.port.${proj.id}.name`}
