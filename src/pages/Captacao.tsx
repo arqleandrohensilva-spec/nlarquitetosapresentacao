@@ -939,33 +939,6 @@ const Captacao = () => {
             </Editable>
           </div>
 
-          {/* ===== TESE DE ABERTURA · MANIFESTO DO MÉTODO ===== */}
-          <div className="mb-24 md:mb-28 py-12 md:py-14 border-y border-border/60 grid grid-cols-12 gap-6 md:gap-10 items-center">
-            <Editable
-              id="cap.etapas.tese.eyebrow"
-              className="col-span-12 md:col-span-2 font-mono text-[10px] uppercase tracking-[0.4em] text-primary"
-            >
-              O método NL
-            </Editable>
-            <Editable
-              as="p"
-              id="cap.etapas.tese.frase"
-              multiline
-              className="col-span-12 md:col-span-6 font-display text-3xl md:text-4xl lg:text-5xl leading-[1.05] text-foreground text-balance"
-            >
-              A obra é a última etapa.
-              {" "}
-              <em className="text-primary not-italic">Não a primeira.</em>
-            </Editable>
-            <Editable
-              as="p"
-              id="cap.etapas.tese.contexto"
-              multiline
-              className="col-span-12 md:col-span-4 text-sm md:text-base text-foreground/70 leading-relaxed md:border-l md:border-border/60 md:pl-6"
-            >
-              Quando a primeira betoneira chega, 90% das decisões já foram tomadas — no papel, em 3D, com tempo e sem pressa.
-            </Editable>
-          </div>
 
           {/* ===== Trilha 01 · ARQUITETURA RESIDENCIAL ===== */}
           <div className="mb-20">
@@ -1067,18 +1040,8 @@ const Captacao = () => {
             </div>
           </div>
 
-          {/* Divisor narrativo — momento editorial com marco visual I → II */}
+          {/* Divisor narrativo — momento editorial */}
           <div className="my-20 md:my-28 max-w-4xl mx-auto">
-            {/* Marco visual: numeração romana grande */}
-            <div className="flex items-center justify-center gap-8 md:gap-12 mb-10 select-none" aria-hidden="true">
-              <span className="font-display italic text-6xl md:text-7xl text-primary/40 leading-none">I</span>
-              <span className="flex items-center gap-3 text-primary/60">
-                <span className="h-px w-10 md:w-16 bg-primary/40" />
-                <span className="font-mono text-[10px] uppercase tracking-[0.4em]">para</span>
-                <span className="h-px w-10 md:w-16 bg-primary/40" />
-              </span>
-              <span className="font-display italic text-6xl md:text-7xl text-primary leading-none">II</span>
-            </div>
 
             {/* Frase-regra centralizada */}
             <div className="text-center">
