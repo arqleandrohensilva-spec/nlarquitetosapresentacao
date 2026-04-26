@@ -1748,9 +1748,9 @@ const Captacao = () => {
             className="font-display text-4xl md:text-6xl lg:text-7xl leading-[1.05] text-balance mb-10 md:mb-12"
             style={{ color: "#E8E4DF" }}
           >
-            A conversa aconteceu.
+            Em 48 horas, a próxima decisão
             <br />
-            A proposta vem a seguir.
+            chega às <em className="not-italic" style={{ color: "#C9A876" }}>suas mãos.</em>
           </Editable>
 
           {/* Parágrafo */}
@@ -1761,7 +1761,7 @@ const Captacao = () => {
             className="font-display italic text-lg md:text-xl leading-relaxed mb-14 md:mb-16 max-w-2xl mx-auto"
             style={{ color: "rgba(232, 228, 223, 0.6)" }}
           >
-            Em até 48 horas você recebe a Carta Proposta com escopo, entregáveis, cronograma e investimento — tudo formalizado para você analisar com calma.
+            Uma Carta Proposta feita para você — pensada, estudada, detalhada. Pronta para ser lida com a mesma calma com que foi escrita.
           </Editable>
 
           {/* Divisor bronze fino centralizado */}
