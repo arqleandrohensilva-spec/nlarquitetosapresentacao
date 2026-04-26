@@ -1060,7 +1060,7 @@ const Captacao = () => {
               ].map((p, i) => (
                 <article
                   key={`int-${i}`}
-                  className="bg-background p-7 md:p-8 flex flex-col group hover:bg-surface/60 transition-colors"
+                  className="bg-background p-7 md:p-8 flex flex-col group hover:bg-surface/60 transition-colors border-r border-b border-border/60"
                 >
                   <div className="flex items-baseline justify-between mb-5">
                     <Editable
