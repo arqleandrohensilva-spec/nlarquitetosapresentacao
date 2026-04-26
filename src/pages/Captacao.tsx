@@ -1212,12 +1212,19 @@ const Captacao = () => {
             </Editable>
           </div>
 
+          {/* Divisor sutil em bronze */}
+          <div
+            className="h-px w-full mb-16"
+            style={{ backgroundColor: "rgba(139, 115, 85, 0.12)" }}
+            aria-hidden="true"
+          />
+
           {/* Linha do tempo — cards */}
           <div className="relative">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-y-12 md:gap-x-8 lg:gap-x-12 relative">
               {[
                 { id: "entrega", step: "01", t: "Entrega", b: "Sua equipe de obra recebe o projeto com clareza absoluta — nada fica aberto à interpretação." },
-                { id: "acompanhamento", step: "02", t: "Presença em campo", b: "Estamos no canteiro nos momentos decisivos — quando uma escolha errada custa até cinco vezes mais." },
+                { id: "acompanhamento", step: "02", t: "Presença em campo", b: "Estamos no canteiro nos momentos decisivos — quando uma escolha errada ainda pode ser corrigida no papel, não no cimento." },
                 { id: "curadoria", step: "03", t: "Indicação", b: "Você acessa uma rede de fornecedores já provada em obras reais — sem ensaios à sua custa." },
                 { id: "suporte", step: "04", t: "Continuidade", b: "Após a entrega, qualquer dúvida da casa passa por nós antes de se tornar um problema." },
               ].map((s) => (
