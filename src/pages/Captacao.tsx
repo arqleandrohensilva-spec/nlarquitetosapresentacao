@@ -1723,101 +1723,98 @@ const Captacao = () => {
       </section>
 
       {/* ============================================================
-          12 · FECHAMENTO
+          12 · FECHAMENTO · PRÓXIMO PASSO
           ============================================================ */}
       <section
         id="fechamento"
-        className="relative min-h-screen flex items-center justify-center px-6 md:px-16 lg:px-24 py-32 overflow-hidden"
+        className="relative min-h-screen flex items-center justify-center px-6 md:px-16 lg:px-24 py-32"
         style={{ backgroundColor: "#1A1816", color: "#E8E4DF" }}
       >
-        {/* Sutil glow dourado de fundo */}
-        <div
-          className="absolute inset-0 opacity-30"
-          style={{
-            background:
-              "radial-gradient(ellipse at center, rgba(201, 168, 118, 0.18) 0%, transparent 60%)",
-          }}
-        />
+        <div className="relative z-10 max-w-3xl mx-auto text-center w-full">
+          {/* Eyebrow */}
+          <Editable
+            id="cap.fech.eyebrow"
+            className="font-mono-edit text-[10px] uppercase tracking-[0.4em] mb-10 md:mb-12 inline-block"
+            style={{ color: "#8B7355" }}
+          >
+            Próximo passo
+          </Editable>
 
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-4 mb-12">
-            <span className="h-px w-16" style={{ backgroundColor: "rgba(201, 168, 118, 0.6)" }} />
-            <Editable
-              id="cap.fech.eyebrow"
-              className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
-              style={{ color: "#C9A876" }}
-            >
-              Convite
-            </Editable>
-            <span className="h-px w-16" style={{ backgroundColor: "rgba(201, 168, 118, 0.6)" }} />
-          </div>
-
+          {/* Título principal */}
           <Editable
             as="h2"
             id="cap.fech.title"
             multiline
-            className="font-display text-4xl md:text-6xl lg:text-7xl leading-[1.0] text-balance mb-12"
+            className="font-display text-4xl md:text-6xl lg:text-7xl leading-[1.05] text-balance mb-10 md:mb-12"
             style={{ color: "#E8E4DF" }}
           >
-            Vamos começar pela <em className="not-italic" style={{ color: "#C9A876" }}>conversa?</em>
+            A conversa aconteceu.
+            <br />
+            A proposta vem a seguir.
           </Editable>
 
+          {/* Parágrafo */}
           <Editable
             as="p"
             id="cap.fech.body"
             multiline
-            className="font-display italic text-xl md:text-2xl leading-relaxed mb-16 max-w-2xl mx-auto"
-            style={{ color: "rgba(232, 228, 223, 0.78)" }}
+            className="font-display italic text-lg md:text-xl leading-relaxed mb-14 md:mb-16 max-w-2xl mx-auto"
+            style={{ color: "rgba(232, 228, 223, 0.6)" }}
           >
-            Antes de qualquer proposta formal, gostamos de sentar, ouvir e
-            entender se há sintonia. Sem compromisso, sem pressa.
+            Em até 48 horas você recebe a Carta Proposta com escopo, entregáveis, cronograma e investimento — tudo formalizado para você analisar com calma.
           </Editable>
 
-          <div className="flex flex-col items-center gap-2 mb-16">
+          {/* Divisor bronze fino centralizado */}
+          <div className="flex justify-center mb-14 md:mb-16">
+            <span
+              className="h-px w-24"
+              style={{ backgroundColor: "rgba(139, 115, 85, 0.7)" }}
+            />
+          </div>
+
+          {/* Bloco de contato */}
+          <div className="flex flex-col items-center gap-3 mb-20 md:mb-24">
             <Editable
-              id="cap.fech.contact.label"
-              className="font-mono-edit text-[10px] uppercase tracking-[0.3em]"
-              style={{ color: "#8B7355" }}
+              id="cap.fech.contact.whatsapp"
+              className="font-mono-edit text-[11px] md:text-xs uppercase tracking-[0.3em]"
+              style={{ color: "rgba(232, 228, 223, 0.55)" }}
             >
-              Para marcar um café
+              WhatsApp (12) 99623-5559
             </Editable>
             <Editable
               id="cap.fech.contact.email"
-              className="font-display text-2xl md:text-3xl mt-2"
-              style={{ color: "#E8E4DF" }}
-            >
-              contato@nlarquitetos.com.br
-            </Editable>
-            <Editable
-              id="cap.fech.contact.phone"
-              className="font-display text-lg md:text-xl mt-1"
-              style={{ color: "rgba(232, 228, 223, 0.7)" }}
-            >
-              +55 (12) 9XXXX-XXXX
-            </Editable>
-          </div>
-
-          <div className="flex items-center justify-center gap-4">
-            <span className="h-px w-12" style={{ backgroundColor: "rgba(201, 168, 118, 0.4)" }} />
-            <Editable
-              id="cap.fech.signature"
-              className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
-              style={{ color: "rgba(201, 168, 118, 0.7)" }}
-            >
-              NL Arquitetos · 2025
-            </Editable>
-            <span className="h-px w-12" style={{ backgroundColor: "rgba(201, 168, 118, 0.4)" }} />
-          </div>
-
-          <div className="mt-20">
-            <Link
-              to="/"
-              className="font-mono text-[10px] uppercase tracking-[0.3em] hover:opacity-70 transition-opacity"
+              className="font-mono-edit text-[11px] md:text-xs uppercase tracking-[0.3em]"
               style={{ color: "rgba(232, 228, 223, 0.55)" }}
             >
-              ← Ver Carta Proposta detalhada
-            </Link>
+              contato.nlarquitetos@gmail.com
+            </Editable>
+            <Editable
+              id="cap.fech.contact.instagram"
+              className="font-mono-edit text-[11px] md:text-xs uppercase tracking-[0.3em]"
+              style={{ color: "rgba(232, 228, 223, 0.55)" }}
+            >
+              @nlarquitetos
+            </Editable>
           </div>
+
+          {/* Logo NL discreta */}
+          <Editable
+            id="cap.fech.logo"
+            className="font-display text-3xl md:text-4xl mb-6 inline-block tracking-wide"
+            style={{ color: "rgba(232, 228, 223, 0.85)" }}
+          >
+            NL
+          </Editable>
+
+          {/* Rodapé mínimo */}
+          <Editable
+            as="p"
+            id="cap.fech.rodape"
+            className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
+            style={{ color: "rgba(232, 228, 223, 0.35)" }}
+          >
+            NL Arquitetos · São José dos Campos · 2025
+          </Editable>
         </div>
       </section>
     </main>
