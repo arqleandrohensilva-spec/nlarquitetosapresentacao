@@ -105,7 +105,7 @@ const Captacao = () => {
             id="cap.capa.date"
             className="font-mono text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase"
           >
-            São José dos Campos · 2025
+            São José dos Campos · 2026
           </Editable>
         </div>
       </section>
