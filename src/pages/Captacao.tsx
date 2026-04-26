@@ -1837,27 +1837,24 @@ const Captacao = () => {
           </div>
 
           {/* Rodapé bipartido: citação à esquerda, logo NL + assinatura à direita */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t" style={{ borderColor: "rgba(232, 228, 223, 0.1)" }}>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-[hsl(var(--surface))]/10">
             <Editable
               id="cap.fech.rodape.quote"
-              className="font-display italic text-sm md:text-base"
-              style={{ color: "rgba(232, 228, 223, 0.45)" }}
+              className="font-display italic text-sm md:text-base text-[hsl(var(--surface))]/45"
             >
               A arquitetura como decisão.
             </Editable>
             <div className="flex items-center gap-4">
               <Editable
                 id="cap.fech.logo"
-                className="font-display text-sm md:text-base tracking-[0.2em] leading-none"
-                style={{ color: "rgba(232, 228, 223, 0.45)" }}
+                className="font-mono text-[10px] uppercase tracking-[0.4em] leading-none text-[hsl(var(--surface))]/45"
               >
                 NL
               </Editable>
-              <span className="h-4 w-px" style={{ backgroundColor: "rgba(232, 228, 223, 0.2)" }} />
+              <span className="h-4 w-px bg-[hsl(var(--surface))]/20" />
               <Editable
                 id="cap.fech.rodape"
-                className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
-                style={{ color: "rgba(232, 228, 223, 0.45)" }}
+                className="font-mono text-[10px] uppercase tracking-[0.4em] text-[hsl(var(--surface))]/45"
               >
                 NL Arquitetos · 2025
               </Editable>
