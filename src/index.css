@@ -52,6 +52,11 @@
     --bronze-soft: 33 27% 57%;         /* #B5956E — bronze claro */
     --ink-muted: 0 0% 47%;             /* #777777 — texto sutil sobre dark */
 
+    /* Editorial light sections (consolidação) */
+    --surface-light: 0 0% 100%;        /* #FFFFFF — pano de fundo light */
+    --ink-light: 0 0% 23%;             /* #3A3A3A — texto sobre surface-light (Deep Graphite) */
+    --ink-light-soft: 0 0% 33%;        /* #555555 — texto secundário light */
+
     --radius: 0.25rem;
 
     /* Editorial gradients & shadows */

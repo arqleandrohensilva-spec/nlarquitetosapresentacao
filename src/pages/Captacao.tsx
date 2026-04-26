@@ -629,7 +629,7 @@ const Captacao = () => {
       <section
         id="consolidacao"
         className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32"
-        style={{ backgroundColor: "#FFFFFF", color: "#3A3A3A" }}
+        style={{ backgroundColor: "hsl(var(--surface-light))", color: "hsl(var(--ink-light))" }}
       >
         <div className="max-w-6xl mx-auto w-full">
           <div className="flex items-baseline gap-6 mb-16 pb-4 border-b" style={{ borderColor: "hsl(var(--bronze) / 0.3)" }}>
@@ -650,7 +650,7 @@ const Captacao = () => {
             id="cap.consol.title"
             multiline
             className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.0] text-balance mb-8 max-w-4xl"
-            style={{ color: "#3A3A3A" }}
+            style={{ color: "hsl(var(--ink-light))" }}
           >
             Estrutura e consolidação.
           </Editable>
@@ -660,19 +660,19 @@ const Captacao = () => {
             id="cap.consol.subtitle"
             multiline
             className="font-display text-lg md:text-xl leading-relaxed max-w-3xl mb-20"
-            style={{ color: "#555555" }}
+            style={{ color: "hsl(var(--ink-light-soft))" }}
           >
             Não empilhamos volumes. Consolidamos legados. Cada traço é uma decisão técnica que sustenta a próxima visão.
           </Editable>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style={{ backgroundColor: "hsl(var(--bronze) / 0.25)" }}>
             {/* Card 01 — Projetos no portfólio (estático) */}
-            <div className="p-8 md:p-10 flex flex-col" style={{ backgroundColor: "#FFFFFF" }}>
+            <div className="p-8 md:p-10 flex flex-col" style={{ backgroundColor: "hsl(var(--surface-light))" }}>
               <div className="h-px w-10 mb-6" style={{ backgroundColor: "hsl(var(--bronze))" }} />
               <span className="font-display text-5xl md:text-6xl leading-none mb-4" style={{ color: "hsl(var(--bronze))" }}>
                 +50
               </span>
-              <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "#3A3A3A" }}>
+              <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "hsl(var(--ink-light))" }}>
                 Projetos no portfólio
               </span>
               <span className="font-display italic text-xs mt-3" style={{ color: "hsl(var(--ink-muted))" }}>
@@ -681,12 +681,12 @@ const Captacao = () => {
             </div>
 
             {/* Card 02 — Anos de experiência combinada (estático) */}
-            <div className="p-8 md:p-10 flex flex-col" style={{ backgroundColor: "#FFFFFF" }}>
+            <div className="p-8 md:p-10 flex flex-col" style={{ backgroundColor: "hsl(var(--surface-light))" }}>
               <div className="h-px w-10 mb-6" style={{ backgroundColor: "hsl(var(--bronze))" }} />
               <span className="font-display text-5xl md:text-6xl leading-none mb-4" style={{ color: "hsl(var(--bronze))" }}>
                 +5
               </span>
-              <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "#3A3A3A" }}>
+              <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "hsl(var(--ink-light))" }}>
                 Anos de prática autoral
               </span>
               <span className="font-display italic text-xs mt-3" style={{ color: "hsl(var(--ink-muted))" }}>
@@ -699,13 +699,13 @@ const Captacao = () => {
               <DialogTrigger asChild>
                 <button
                   className="p-8 md:p-10 flex flex-col text-left transition-colors group w-full h-full hover:bg-[#F7F4EF]"
-                  style={{ backgroundColor: "#FFFFFF" }}
+                  style={{ backgroundColor: "hsl(var(--surface-light))" }}
                 >
                   <div className="h-px w-10 mb-6 transition-all group-hover:w-16" style={{ backgroundColor: "hsl(var(--bronze))" }} />
                   <span className="font-display text-5xl md:text-6xl leading-none mb-4" style={{ color: "hsl(var(--bronze))" }}>
                     SP
                   </span>
-                  <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "#3A3A3A" }}>
+                  <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "hsl(var(--ink-light))" }}>
                     Praça de atuação
                   </span>
                   <span className="font-display italic text-xs mt-3" style={{ color: "hsl(var(--ink-muted))" }}>
@@ -735,13 +735,13 @@ const Captacao = () => {
               <DialogTrigger asChild>
                 <button
                   className="p-8 md:p-10 flex flex-col text-left transition-colors group w-full h-full hover:bg-[#F7F4EF]"
-                  style={{ backgroundColor: "#FFFFFF" }}
+                  style={{ backgroundColor: "hsl(var(--surface-light))" }}
                 >
                   <div className="h-px w-10 mb-6 transition-all group-hover:w-16" style={{ backgroundColor: "hsl(var(--bronze))" }} />
                   <span className="font-display text-5xl md:text-6xl leading-none mb-4" style={{ color: "hsl(var(--bronze))" }}>
                     4
                   </span>
-                  <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "#3A3A3A" }}>
+                  <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "hsl(var(--ink-light))" }}>
                     Disciplinas integradas
                   </span>
                   <span className="font-display italic text-xs mt-3" style={{ color: "hsl(var(--ink-muted))" }}>
