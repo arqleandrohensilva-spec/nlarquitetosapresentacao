@@ -1735,7 +1735,7 @@ const Captacao = () => {
           <div className="flex justify-center mb-4">
             <Editable
               id="cap.fech.eyebrow"
-              className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
+              className="label-meta"
               style={{ color: "hsl(var(--bronze))" }}
             >
               Próximo passo
@@ -1755,7 +1755,7 @@ const Captacao = () => {
             as="h2"
             id="cap.fech.title"
             multiline
-            className="font-display text-4xl md:text-6xl lg:text-7xl leading-[1.05] text-balance mb-10 md:mb-12"
+            className="display-section mb-10 md:mb-12"
             style={{ color: "hsl(var(--ink-dark))" }}
           >
             Em até 48 horas após nossa conversa,
@@ -1768,7 +1768,7 @@ const Captacao = () => {
             as="p"
             id="cap.fech.body"
             multiline
-            className="font-display italic text-lg md:text-xl leading-relaxed mb-20 md:mb-24 max-w-2xl mx-auto"
+            className="lede-editorial mb-20 md:mb-24 max-w-2xl mx-auto"
             style={{ color: "hsl(var(--ink-dark) / 0.6)" }}
           >
             Uma Carta Proposta feita para você — pensada, estudada, detalhada. Pronta para ser lida com a mesma calma com que foi escrita.
