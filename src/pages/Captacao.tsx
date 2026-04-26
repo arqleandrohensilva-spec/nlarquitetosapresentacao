@@ -1393,10 +1393,21 @@ const Captacao = () => {
                   id={`cap.port.${proj.id}.meta`}
                   className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground block"
                 >
-                  {proj.meta}
+                  {proj.meta} · {proj.status}
                 </Editable>
               </article>
             ))}
+          </div>
+
+          {/* Fechamento editorial da seção (E2) */}
+          <div className="mt-24 pt-12 border-t border-border/40 flex justify-center">
+            <Editable
+              as="p"
+              id="cap.port.fechamento"
+              className="font-display italic text-2xl md:text-3xl text-foreground/80 text-center max-w-2xl leading-snug text-balance"
+            >
+              Cada projeto começa com uma conversa — e termina com uma casa que conta a história de quem vive nela.
+            </Editable>
           </div>
         </div>
       </section>
