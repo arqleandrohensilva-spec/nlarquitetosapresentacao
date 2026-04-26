@@ -1206,8 +1206,9 @@ const Captacao = () => {
               className="font-display italic text-lg md:text-xl leading-relaxed max-w-2xl"
               style={{ color: "rgba(232, 228, 223, 0.78)" }}
             >
-              Acompanhamos a obra, ajustamos o que precisa ser ajustado e
-              permanecemos disponíveis para os próximos capítulos da casa.
+              A casa continua viva depois da chave — e nós continuamos por
+              perto, garantindo que cada decisão tomada no projeto se traduza
+              fielmente no que você habita.
             </Editable>
           </div>
 
@@ -1215,10 +1216,10 @@ const Captacao = () => {
           <div className="relative">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-y-12 md:gap-x-8 lg:gap-x-12 relative">
               {[
-                { id: "entrega", step: "01", t: "Entrega", b: "Sua equipe de obra recebe o projeto com clareza absoluta — sem brechas para interpretação." },
-                { id: "acompanhamento", step: "02", t: "Acompanhamento", b: "Estamos no canteiro nos momentos críticos — onde a decisão errada custa até 5x mais." },
-                { id: "curadoria", step: "03", t: "Curadoria", b: "Você acessa nossa rede de fornecedores testados em obras reais — sem virar cobaia." },
-                { id: "suporte", step: "04", t: "Suporte", b: "Por 90 dias após a entrega, qualquer dúvida da obra passa por nós antes de virar problema." },
+                { id: "entrega", step: "01", t: "Entrega", b: "Sua equipe de obra recebe o projeto com clareza absoluta — nada fica aberto à interpretação." },
+                { id: "acompanhamento", step: "02", t: "Presença em campo", b: "Estamos no canteiro nos momentos decisivos — quando uma escolha errada custa até cinco vezes mais." },
+                { id: "curadoria", step: "03", t: "Curadoria", b: "Você acessa uma rede de fornecedores já provada em obras reais — sem ensaios à sua custa." },
+                { id: "suporte", step: "04", t: "Continuidade", b: "Nos primeiros noventa dias, qualquer dúvida da casa passa por nós antes de se tornar um problema." },
               ].map((s) => (
                 <div key={s.id} className="relative">
                   {/* Ponto bronze */}
@@ -1267,9 +1268,9 @@ const Captacao = () => {
               style={{ borderColor: "rgba(139, 115, 85, 0.25)" }}
             >
               {[
-                { id: "n1", num: "90", unit: "dias", label: "de suporte técnico após a entrega" },
-                { id: "n2", num: "100%", unit: "", label: "das obras acompanhadas em campo" },
-                { id: "n3", num: "0", unit: "", label: "clientes abandonados após a chave" },
+                { id: "n1", num: "90", unit: "dias", label: "de continuidade após a entrega das chaves" },
+                { id: "n2", num: "100%", unit: "", label: "das obras acompanhadas presencialmente" },
+                { id: "n3", num: "0", unit: "", label: "clientes deixados sozinhos depois da entrega" },
               ].map((m) => (
                 <div key={m.id} className="flex flex-col">
                   <div className="flex items-baseline gap-2 mb-3">
