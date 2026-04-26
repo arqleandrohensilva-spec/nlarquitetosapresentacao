@@ -968,28 +968,47 @@ const Captacao = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border/60">
               {[
                 { n: "01", t: "Levantamento & Briefing", d: "Escuta profunda, programa de necessidades e leitura do terreno." },
-                { n: "02", t: "Criação do Conceito", d: "Partido arquitetônico, narrativa e diretrizes que guiam todo o projeto." },
-                { n: "03", t: "Estudo Preliminar com 3D", d: "Volumetria, implantação e atmosferas em 3D antes de qualquer técnica." },
+                { n: "02", t: "Criação do Conceito", d: "Partido arquitetônico, narrativa e diretrizes que guiam todo o projeto.", key: true },
+                { n: "03", t: "Estudo Preliminar com 3D", d: "Volumetria, implantação e atmosferas em 3D antes de qualquer técnica.", key: true },
                 { n: "04", t: "Viabilidade Financeira", d: "Orçamento por quantitativos reais — decisão consciente de escopo.", optional: true },
                 { n: "05", t: "Projeto Legal & Aprovações", d: "Prefeitura, concessionárias e órgãos — conduzidos pela NL." },
-                { n: "06", t: "Projeto Executivo", d: "Pranchas, memoriais e detalhamentos prontos para canteiro." },
+                { n: "06", t: "Projeto Executivo", d: "Pranchas, memoriais e detalhamentos prontos para canteiro.", key: true },
                 { n: "07", t: "Compatibilização Técnica", d: "Conduzida em parceria com engenheiros especializados — estrutura e instalações revisadas antes do canteiro." },
                 { n: "08", t: "Acompanhamento de Obra", d: "Visitas técnicas, ajustes e curadoria de fornecedores.", optional: true },
               ].map((p, i) => (
                 <article
                   key={`arq-${i}`}
-                  className="bg-background p-7 md:p-8 flex flex-col group hover:bg-surface/60 transition-colors"
+                  className={cn(
+                    "bg-background p-7 md:p-8 flex flex-col group transition-colors relative",
+                    p.key
+                      ? "border-l-2 border-primary/70 hover:bg-surface/80"
+                      : "hover:bg-surface/60"
+                  )}
                 >
-                  <div className="flex items-baseline justify-between mb-5">
-                    <Editable
-                      id={`cap.etapas.arq.${i}.n`}
-                      className="font-mono text-[11px] tracking-[0.2em] text-primary"
-                    >
-                      {p.n}
-                    </Editable>
+                  <div className="flex items-baseline justify-between mb-5 min-h-[1.5rem]">
+                    {p.key ? (
+                      <Editable
+                        id={`cap.etapas.arq.${i}.n`}
+                        className="font-display italic text-3xl md:text-4xl text-primary leading-none"
+                      >
+                        {p.n}
+                      </Editable>
+                    ) : (
+                      <Editable
+                        id={`cap.etapas.arq.${i}.n`}
+                        className="font-mono text-[11px] tracking-[0.2em] text-primary"
+                      >
+                        {p.n}
+                      </Editable>
+                    )}
                     {p.optional && (
                       <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-muted-foreground/70">
                         Opcional
+                      </span>
+                    )}
+                    {p.key && (
+                      <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary/80">
+                        Decisão-chave
                       </span>
                     )}
                   </div>
@@ -1013,13 +1032,28 @@ const Captacao = () => {
             </div>
           </div>
 
-          {/* Divisor narrativo */}
-          <div className="my-16 md:my-20 flex items-center gap-6">
-            <span className="h-px flex-1 bg-border" />
-            <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-muted-foreground text-center">
-              Após aprovação da arquitetura
-            </span>
-            <span className="h-px flex-1 bg-border" />
+          {/* Divisor narrativo — momento editorial */}
+          <div className="my-20 md:my-24 max-w-3xl mx-auto text-center">
+            <div className="flex items-center gap-5 mb-7">
+              <span className="h-px flex-1 bg-border" />
+              <Editable
+                id="cap.etapas.divisor.eyebrow"
+                className="font-mono text-[10px] uppercase tracking-[0.4em] text-primary"
+              >
+                Regra do método
+              </Editable>
+              <span className="h-px flex-1 bg-border" />
+            </div>
+            <Editable
+              as="p"
+              id="cap.etapas.divisor.frase"
+              multiline
+              className="font-display italic text-2xl md:text-3xl text-foreground/85 leading-snug text-balance"
+            >
+              Interiores não começa enquanto a arquitetura não está aprovada.
+              <br />
+              <em className="not-italic text-primary">É regra, não preferência.</em>
+            </Editable>
           </div>
 
           {/* ===== Trilha 02 · ARQUITETURA DE INTERIORES ===== */}
