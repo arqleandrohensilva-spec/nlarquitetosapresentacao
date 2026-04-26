@@ -1306,21 +1306,25 @@ const Captacao = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-12">
             {[
-              { id: "casa-costas", img: IMG_CASE, name: "Casa Costas", meta: "Residencial · 300m² · São José dos Campos · 2024" },
-              { id: "casa-jc", img: imgCasaJC, name: "Casa JC", meta: "Residencial · Jacareí SP · 2025" },
-              { id: "chale-juruva", img: imgChaleJuruva, name: "Chalé Juruva", meta: "Residencial / Interiores · 60m² · Santo Antônio do Pinhal SP · 2024" },
-              { id: "familia-borges", img: imgFamiliaBorges, name: "Família Borges", meta: "Interiores Residencial · 100m² · Jacareí SP · 2025" },
-              { id: "gourmet-jardim", img: imgGourmetJardim, name: "Espaço Gourmet Jardim", meta: "Interiores · 80m² · Jacareí SP · 2025" },
-              { id: "gourmet-salinas", img: imgGourmetSalinas, name: "Espaço Gourmet Salinas", meta: "Interiores · 65m² · São José dos Campos SP · 2025" },
-            ].map((proj) => (
+              { id: "casa-costas", img: IMG_CASE, name: "Casa Costas", meta: "Residencial · 300m² · São José dos Campos · 2024", status: "Concluído" },
+              { id: "casa-jc", img: imgCasaJC, name: "Casa JC", meta: "Residencial · Jacareí SP · 2025", status: "Em desenvolvimento" },
+              { id: "chale-juruva", img: imgChaleJuruva, name: "Chalé Juruva", meta: "Residencial / Interiores · 60m² · Santo Antônio do Pinhal SP · 2024", status: "Em desenvolvimento" },
+              { id: "familia-borges", img: imgFamiliaBorges, name: "Família Borges", meta: "Interiores Residencial · 100m² · Jacareí SP · 2025", status: "Em desenvolvimento" },
+              { id: "gourmet-jardim", img: imgGourmetJardim, name: "Espaço Gourmet Jardim", meta: "Interiores · 80m² · Jacareí SP · 2025", status: "Em desenvolvimento" },
+              { id: "gourmet-salinas", img: imgGourmetSalinas, name: "Espaço Gourmet Salinas", meta: "Interiores · 65m² · São José dos Campos SP · 2025", status: "Em desenvolvimento" },
+            ].map((proj, idx, arr) => (
               <article key={proj.id} className="group">
                 <Dialog>
                   <DialogTrigger asChild>
                     <button
                       type="button"
-                      className="relative aspect-[4/5] overflow-hidden mb-5 bg-surface-elevated w-full block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      className={`relative ${idx % 2 === 0 ? "aspect-[4/5]" : "aspect-[3/4]"} overflow-hidden mb-5 bg-surface-elevated w-full block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
                       aria-label={`Ampliar imagem do projeto ${proj.name}`}
                     >
+                      {/* Numeração editorial — canto superior direito */}
+                      <span className="pointer-events-none absolute top-4 right-4 z-10 font-mono text-[10px] uppercase tracking-[0.3em] text-background/90 mix-blend-difference">
+                        {String(idx + 1).padStart(2, "0")} / {String(arr.length).padStart(2, "0")}
+                      </span>
                       <img
                         src={proj.img}
                         alt={proj.name}
@@ -1389,10 +1393,21 @@ const Captacao = () => {
                   id={`cap.port.${proj.id}.meta`}
                   className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground block"
                 >
-                  {proj.meta}
+                  {proj.meta} · {proj.status}
                 </Editable>
               </article>
             ))}
+          </div>
+
+          {/* Fechamento editorial da seção (E2) */}
+          <div className="mt-24 pt-12 border-t border-border/40 flex justify-center">
+            <Editable
+              as="p"
+              id="cap.port.fechamento"
+              className="font-display italic text-2xl md:text-3xl text-foreground/80 text-center max-w-2xl leading-snug text-balance"
+            >
+              Cada projeto começa com uma conversa — e termina com uma casa que conta a história de quem vive nela.
+            </Editable>
           </div>
         </div>
       </section>
