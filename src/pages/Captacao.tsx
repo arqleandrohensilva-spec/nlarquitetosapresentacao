@@ -159,14 +159,14 @@ const Captacao = () => {
         <div className="manifesto-grid relative z-10 grid grid-cols-12 gap-6 md:gap-8 w-full max-w-7xl mx-auto">
           <div className="col-span-12 md:col-span-3">
             <span
-              className="font-mono-edit text-[10px] tracking-[0.3em] block mb-2"
+              className="label-meta block mb-2"
               style={{ color: "hsl(var(--ink-dark) / 0.55)" }}
             >
               02
             </span>
             <Editable
               id="cap.manifesto.eyebrow"
-              className="font-mono-edit text-[10px] uppercase tracking-[0.3em]"
+              className="label-meta"
               style={{ color: "hsl(var(--bronze))" }}
             >
               Manifesto
@@ -178,7 +178,7 @@ const Captacao = () => {
               as="h2"
               id="cap.manifesto.title"
               multiline
-              className="manifesto-title font-display leading-[1.04] tracking-[-0.01em] mb-10 sm:mb-12 md:mb-16 lg:mb-20 text-balance"
+              className="display-section mb-10 sm:mb-12 md:mb-16 lg:mb-20"
               style={{ color: "hsl(var(--ink-dark))" }}
             >
               Antes de desenhar,
@@ -193,7 +193,7 @@ const Captacao = () => {
                 id="cap.manifesto.p1"
                 multiline
                 as="p"
-                className="manifesto-paragraph font-display leading-[1.65] tracking-[0.005em] text-pretty"
+                className="body-editorial"
                 style={{ color: "hsl(var(--ink-dark) / 0.82)", hyphens: "none", WebkitHyphens: "none" }}
               >
                 A NL não começa pelo desenho. Começa pela escuta — entendendo o terreno, a família, o modo de viver. Só depois o primeiro traço aparece. E quando aparece, já foi validado.
@@ -202,7 +202,7 @@ const Captacao = () => {
                 id="cap.manifesto.p2"
                 multiline
                 as="p"
-                className="manifesto-paragraph font-display leading-[1.65] tracking-[0.005em] text-pretty"
+                className="body-editorial"
                 style={{ color: "hsl(var(--ink-dark) / 0.82)" }}
               >
                 Cada projeto que entregamos existe porque alguém confiou em nós antes de existir uma única parede. Essa confiança não se paga com estética — se honra com método, documentação e resultado previsível.
@@ -217,7 +217,7 @@ const Captacao = () => {
                 id="cap.manifesto.quote"
                 multiline
                 as="p"
-                className="manifesto-quote font-display italic leading-[1.35] tracking-[-0.005em] text-pretty"
+                className="lede-editorial"
                 style={{ color: "hsl(var(--bronze))" }}
               >
                 “Beleza sem método é apenas decoração. Arquitetura é a decisão tomada antes do primeiro traço.”
