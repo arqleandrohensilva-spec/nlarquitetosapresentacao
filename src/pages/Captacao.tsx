@@ -116,13 +116,13 @@ const Captacao = () => {
       <section
         id="manifesto"
         className="manifesto-section relative min-h-screen flex items-center px-5 sm:px-8 md:px-16 lg:px-24 py-20 sm:py-24 md:py-32 lg:py-36 overflow-hidden"
-        style={{ backgroundColor: "#1A1816", color: "#E8E4DF" }}
+        style={{ backgroundColor: "hsl(var(--surface-dark))", color: "hsl(var(--ink-dark))" }}
       >
         {/* Filete bronze fino no topo absoluto */}
         <div
           aria-hidden
           className="absolute top-0 left-0 right-0 h-px"
-          style={{ backgroundColor: "rgba(139, 115, 85, 0.3)" }}
+          style={{ backgroundColor: "hsl(var(--bronze) / 0.3)" }}
         />
 
         {/* Textura grain sutil (≈4%) */}
@@ -147,7 +147,7 @@ const Captacao = () => {
             style={{
               fontSize: "clamp(18rem, 42vw, 38rem)",
               color: "transparent",
-              WebkitTextStroke: "1px rgba(139, 115, 85, 0.08)",
+              WebkitTextStroke: "1px hsl(var(--bronze) / 0.08)",
               letterSpacing: "-0.05em",
               transform: "translateY(-2%)",
             }}
@@ -160,14 +160,14 @@ const Captacao = () => {
           <div className="col-span-12 md:col-span-3">
             <span
               className="font-mono-edit text-[10px] tracking-[0.3em] block mb-2"
-              style={{ color: "rgba(232, 228, 223, 0.55)" }}
+              style={{ color: "hsl(var(--ink-dark) / 0.55)" }}
             >
               02
             </span>
             <Editable
               id="cap.manifesto.eyebrow"
               className="font-mono-edit text-[10px] uppercase tracking-[0.3em]"
-              style={{ color: "#8B7355" }}
+              style={{ color: "hsl(var(--bronze))" }}
             >
               Manifesto
             </Editable>
@@ -179,11 +179,11 @@ const Captacao = () => {
               id="cap.manifesto.title"
               multiline
               className="manifesto-title font-display leading-[1.04] tracking-[-0.01em] mb-10 sm:mb-12 md:mb-16 lg:mb-20 text-balance"
-              style={{ color: "#E8E4DF" }}
+              style={{ color: "hsl(var(--ink-dark))" }}
             >
               Antes de desenhar,
               <br />
-              <em className="not-italic font-light" style={{ color: "#8B7355" }}>
+              <em className="not-italic font-light" style={{ color: "hsl(var(--bronze))" }}>
                 escutamos.
               </em>
             </Editable>
@@ -194,7 +194,7 @@ const Captacao = () => {
                 multiline
                 as="p"
                 className="manifesto-paragraph font-display leading-[1.65] tracking-[0.005em] text-pretty"
-                style={{ color: "rgba(232, 228, 223, 0.82)", hyphens: "none", WebkitHyphens: "none" }}
+                style={{ color: "hsl(var(--ink-dark) / 0.82)", hyphens: "none", WebkitHyphens: "none" }}
               >
                 A NL não começa pelo desenho. Começa pela escuta — entendendo o terreno, a família, o modo de viver. Só depois o primeiro traço aparece. E quando aparece, já foi validado.
               </Editable>
@@ -203,7 +203,7 @@ const Captacao = () => {
                 multiline
                 as="p"
                 className="manifesto-paragraph font-display leading-[1.65] tracking-[0.005em] text-pretty"
-                style={{ color: "rgba(232, 228, 223, 0.82)" }}
+                style={{ color: "hsl(var(--ink-dark) / 0.82)" }}
               >
                 Cada projeto que entregamos existe porque alguém confiou em nós antes de existir uma única parede. Essa confiança não se paga com estética — se honra com método, documentação e resultado previsível.
               </Editable>
@@ -211,14 +211,14 @@ const Captacao = () => {
 
             <div
               className="manifesto-quote-wrap mt-12 sm:mt-16 md:mt-20 lg:mt-24 pl-5 sm:pl-6 md:pl-8 border-l max-w-3xl"
-              style={{ borderColor: "rgba(139, 115, 85, 0.5)" }}
+              style={{ borderColor: "hsl(var(--bronze) / 0.5)" }}
             >
               <Editable
                 id="cap.manifesto.quote"
                 multiline
                 as="p"
                 className="manifesto-quote font-display italic leading-[1.35] tracking-[-0.005em] text-pretty"
-                style={{ color: "#8B7355" }}
+                style={{ color: "hsl(var(--bronze))" }}
               >
                 "Beleza sem método é apenas decoração. Arquitetura é a decisão tomada antes do primeiro traço."
               </Editable>
@@ -237,7 +237,7 @@ const Captacao = () => {
         {/* filete bronze topo */}
         <div
           className="absolute top-0 left-0 right-0 h-px"
-          style={{ backgroundColor: "rgba(139, 115, 85, 0.3)" }}
+          style={{ backgroundColor: "hsl(var(--bronze) / 0.3)" }}
         />
         {/* grain sutil */}
         <div
@@ -254,7 +254,7 @@ const Captacao = () => {
           className="pointer-events-none absolute -right-8 top-16 select-none font-display leading-none"
           style={{
             fontSize: "clamp(18rem, 42vw, 38rem)",
-            WebkitTextStroke: "1px rgba(139, 115, 85, 0.08)",
+            WebkitTextStroke: "1px hsl(var(--bronze) / 0.08)",
             color: "transparent",
           }}
         >
@@ -335,19 +335,19 @@ const Captacao = () => {
                   className="absolute inset-0 motion-safe:transition-opacity motion-safe:duration-700 motion-safe:ease-out group-hover:opacity-80"
                   style={{
                     background:
-                      "linear-gradient(180deg, rgba(26,24,22,0.15) 0%, rgba(26,24,22,0.25) 45%, rgba(26,24,22,0.85) 100%)",
+                      "linear-gradient(180deg, hsl(var(--surface-dark) / 0.15) 0%, hsl(var(--surface-dark) / 0.25) 45%, hsl(var(--surface-dark) / 0.85) 100%)",
                   }}
                 />
                 {/* moldura bronze sutil — intensifica no hover */}
                 <div
                   aria-hidden
                   className="absolute inset-0 motion-safe:transition-[box-shadow] motion-safe:duration-700"
-                  style={{ boxShadow: "inset 0 0 0 1px rgba(139,115,85,0.18)" }}
+                  style={{ boxShadow: "inset 0 0 0 1px hsl(var(--bronze) / 0.18)" }}
                 />
                 <div
                   aria-hidden
                   className="absolute inset-0 opacity-0 motion-safe:transition-opacity motion-safe:duration-700 group-hover:opacity-100"
-                  style={{ boxShadow: "inset 0 0 0 1px rgba(139,115,85,0.45)" }}
+                  style={{ boxShadow: "inset 0 0 0 1px hsl(var(--bronze) / 0.45)" }}
                 />
                 {/* numeral grande no canto superior */}
                 <span
@@ -371,7 +371,7 @@ const Captacao = () => {
                     <Editable
                       id={`cap.como.step.${step.id}.eyebrow`}
                       className="font-mono text-[10px] uppercase tracking-[0.3em]"
-                      style={{ color: "rgba(181, 164, 138, 0.95)" }}
+                      style={{ color: "hsl(var(--bronze-soft) / 0.95)" }}
                     >
                       {step.eyebrow}
                     </Editable>
@@ -389,7 +389,7 @@ const Captacao = () => {
                     id={`cap.como.step.${step.id}.sub`}
                     multiline
                     className="font-display italic text-sm md:text-base lg:text-[0.95rem] xl:text-base leading-snug text-pretty"
-                    style={{ color: "rgba(181, 164, 138, 0.95)" }}
+                    style={{ color: "hsl(var(--bronze-soft) / 0.95)" }}
                   >
                     {step.sub}
                   </Editable>
@@ -403,7 +403,7 @@ const Captacao = () => {
             <div className="max-w-3xl text-center px-6">
               <div
                 className="mx-auto mb-3 h-px w-12"
-                style={{ backgroundColor: "rgba(139, 115, 85, 0.5)" }}
+                style={{ backgroundColor: "hsl(var(--bronze) / 0.5)" }}
               />
               <Editable
                 as="p"
@@ -415,7 +415,7 @@ const Captacao = () => {
               </Editable>
               <div
                 className="mx-auto mt-3 h-px w-12"
-                style={{ backgroundColor: "rgba(139, 115, 85, 0.5)" }}
+                style={{ backgroundColor: "hsl(var(--bronze) / 0.5)" }}
               />
             </div>
           </div>
@@ -632,14 +632,14 @@ const Captacao = () => {
         style={{ backgroundColor: "#FFFFFF", color: "#3A3A3A" }}
       >
         <div className="max-w-6xl mx-auto w-full">
-          <div className="flex items-baseline gap-6 mb-16 pb-4 border-b" style={{ borderColor: "rgba(139,115,85,0.3)" }}>
-            <span className="font-mono-edit text-[10px] tracking-[0.3em]" style={{ color: "#777777" }}>
+          <div className="flex items-baseline gap-6 mb-16 pb-4 border-b" style={{ borderColor: "hsl(var(--bronze) / 0.3)" }}>
+            <span className="font-mono-edit text-[10px] tracking-[0.3em]" style={{ color: "hsl(var(--ink-muted))" }}>
               07
             </span>
             <Editable
               id="cap.consol.eyebrow"
               className="font-mono-edit text-[10px] uppercase tracking-[0.3em]"
-              style={{ color: "#8B7355" }}
+              style={{ color: "hsl(var(--bronze))" }}
             >
               Consolidação
             </Editable>
@@ -665,31 +665,31 @@ const Captacao = () => {
             Não empilhamos volumes. Consolidamos legados. Cada traço é uma decisão técnica que sustenta a próxima visão.
           </Editable>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style={{ backgroundColor: "rgba(139,115,85,0.25)" }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style={{ backgroundColor: "hsl(var(--bronze) / 0.25)" }}>
             {/* Card 01 — Projetos no portfólio (estático) */}
             <div className="p-8 md:p-10 flex flex-col" style={{ backgroundColor: "#FFFFFF" }}>
-              <div className="h-px w-10 mb-6" style={{ backgroundColor: "#8B7355" }} />
-              <span className="font-display text-5xl md:text-6xl leading-none mb-4" style={{ color: "#8B7355" }}>
+              <div className="h-px w-10 mb-6" style={{ backgroundColor: "hsl(var(--bronze))" }} />
+              <span className="font-display text-5xl md:text-6xl leading-none mb-4" style={{ color: "hsl(var(--bronze))" }}>
                 +50
               </span>
               <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "#3A3A3A" }}>
                 Projetos no portfólio
               </span>
-              <span className="font-display italic text-xs mt-3" style={{ color: "#777777" }}>
+              <span className="font-display italic text-xs mt-3" style={{ color: "hsl(var(--ink-muted))" }}>
                 residencial · comercial · interiores
               </span>
             </div>
 
             {/* Card 02 — Anos de experiência combinada (estático) */}
             <div className="p-8 md:p-10 flex flex-col" style={{ backgroundColor: "#FFFFFF" }}>
-              <div className="h-px w-10 mb-6" style={{ backgroundColor: "#8B7355" }} />
-              <span className="font-display text-5xl md:text-6xl leading-none mb-4" style={{ color: "#8B7355" }}>
+              <div className="h-px w-10 mb-6" style={{ backgroundColor: "hsl(var(--bronze))" }} />
+              <span className="font-display text-5xl md:text-6xl leading-none mb-4" style={{ color: "hsl(var(--bronze))" }}>
                 +9
               </span>
               <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "#3A3A3A" }}>
                 Anos de prática autoral
               </span>
-              <span className="font-display italic text-xs mt-3" style={{ color: "#777777" }}>
+              <span className="font-display italic text-xs mt-3" style={{ color: "hsl(var(--ink-muted))" }}>
                 desde 2017
               </span>
             </div>
@@ -701,20 +701,20 @@ const Captacao = () => {
                   className="p-8 md:p-10 flex flex-col text-left transition-colors group w-full h-full hover:bg-[#F7F4EF]"
                   style={{ backgroundColor: "#FFFFFF" }}
                 >
-                  <div className="h-px w-10 mb-6 transition-all group-hover:w-16" style={{ backgroundColor: "#8B7355" }} />
-                  <span className="font-display text-5xl md:text-6xl leading-none mb-4" style={{ color: "#8B7355" }}>
+                  <div className="h-px w-10 mb-6 transition-all group-hover:w-16" style={{ backgroundColor: "hsl(var(--bronze))" }} />
+                  <span className="font-display text-5xl md:text-6xl leading-none mb-4" style={{ color: "hsl(var(--bronze))" }}>
                     SP
                   </span>
                   <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "#3A3A3A" }}>
                     Praça de atuação
                   </span>
-                  <span className="font-display italic text-xs mt-3" style={{ color: "#777777" }}>
+                  <span className="font-display italic text-xs mt-3" style={{ color: "hsl(var(--ink-muted))" }}>
                     Vale do Paraíba · Serra da Mantiqueira · São Paulo
                   </span>
                   <span
                     aria-hidden="true"
                     className="text-base mt-3 transition-transform group-hover:translate-x-1"
-                    style={{ color: "#8B7355" }}
+                    style={{ color: "hsl(var(--bronze))" }}
                   >
                     →
                   </span>
@@ -737,37 +737,37 @@ const Captacao = () => {
                   className="p-8 md:p-10 flex flex-col text-left transition-colors group w-full h-full hover:bg-[#F7F4EF]"
                   style={{ backgroundColor: "#FFFFFF" }}
                 >
-                  <div className="h-px w-10 mb-6 transition-all group-hover:w-16" style={{ backgroundColor: "#8B7355" }} />
-                  <span className="font-display text-5xl md:text-6xl leading-none mb-4" style={{ color: "#8B7355" }}>
+                  <div className="h-px w-10 mb-6 transition-all group-hover:w-16" style={{ backgroundColor: "hsl(var(--bronze))" }} />
+                  <span className="font-display text-5xl md:text-6xl leading-none mb-4" style={{ color: "hsl(var(--bronze))" }}>
                     4
                   </span>
                   <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "#3A3A3A" }}>
                     Disciplinas integradas
                   </span>
-                  <span className="font-display italic text-xs mt-3" style={{ color: "#777777" }}>
+                  <span className="font-display italic text-xs mt-3" style={{ color: "hsl(var(--ink-muted))" }}>
                     arquitetura · interiores · comercial · engenharia
                   </span>
                   <span
                     aria-hidden="true"
                     className="text-base mt-3 transition-transform group-hover:translate-x-1"
-                    style={{ color: "#8B7355" }}
+                    style={{ color: "hsl(var(--bronze))" }}
                   >
                     →
                   </span>
                 </button>
               </DialogTrigger>
-              <DialogContent className="border-primary/30 max-w-3xl p-0 overflow-hidden" style={{ backgroundColor: "#1A1816" }}>
+              <DialogContent className="border-primary/30 max-w-3xl p-0 overflow-hidden" style={{ backgroundColor: "hsl(var(--surface-dark))" }}>
                 <div className="p-8 md:p-12">
                   <DialogHeader>
                     <div className="flex items-baseline gap-4 mb-2">
-                      <span className="font-mono-edit text-[10px] tracking-[0.3em]" style={{ color: "#B5956E" }}>
+                      <span className="font-mono-edit text-[10px] tracking-[0.3em]" style={{ color: "hsl(var(--bronze-soft))" }}>
                         04
                       </span>
-                      <DialogTitle className="font-display text-2xl md:text-3xl" style={{ color: "#F0EDE8" }}>
+                      <DialogTitle className="font-display text-2xl md:text-3xl" style={{ color: "hsl(var(--ink-dark))" }}>
                         Disciplinas integradas
                       </DialogTitle>
                     </div>
-                    <p className="font-mono-edit text-[10px] uppercase tracking-[0.3em] ml-10" style={{ color: "#B5956E" }}>
+                    <p className="font-mono-edit text-[10px] uppercase tracking-[0.3em] ml-10" style={{ color: "hsl(var(--bronze-soft))" }}>
                       Quatro frentes · Uma autoria
                     </p>
                   </DialogHeader>
@@ -777,22 +777,22 @@ const Captacao = () => {
                     {/* linha vertical central */}
                     <div
                       className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 pointer-events-none"
-                      style={{ backgroundColor: "rgba(181,149,110,0.45)" }}
+                      style={{ backgroundColor: "hsl(var(--bronze-soft) / 0.45)" }}
                       aria-hidden
                     />
                     {/* linha horizontal central */}
                     <div
                       className="hidden md:block absolute top-1/2 left-0 right-0 h-px -translate-y-1/2 pointer-events-none"
-                      style={{ backgroundColor: "rgba(181,149,110,0.45)" }}
+                      style={{ backgroundColor: "hsl(var(--bronze-soft) / 0.45)" }}
                       aria-hidden
                     />
                     {/* NL no encontro */}
                     <div
                       className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full items-center justify-center z-10 pointer-events-none"
-                      style={{ backgroundColor: "#1A1816", border: "1px solid #B5956E" }}
+                      style={{ backgroundColor: "hsl(var(--surface-dark))", border: "1px solid #B5956E" }}
                       aria-hidden
                     >
-                      <span className="font-display text-xl tracking-tight" style={{ color: "#F0EDE8" }}>
+                      <span className="font-display text-xl tracking-tight" style={{ color: "hsl(var(--ink-dark))" }}>
                         NL
                       </span>
                     </div>
@@ -853,21 +853,21 @@ const Captacao = () => {
                           )}
                         >
                           <div className="flex items-baseline justify-between mb-6">
-                            <span className="font-mono-edit text-[10px] tracking-[0.3em]" style={{ color: "#B5956E" }}>
+                            <span className="font-mono-edit text-[10px] tracking-[0.3em]" style={{ color: "hsl(var(--bronze-soft))" }}>
                               {item.n}
                             </span>
-                            <span className="transition-colors" style={{ color: "#B5956E" }}>
+                            <span className="transition-colors" style={{ color: "hsl(var(--bronze-soft))" }}>
                               {item.icon}
                             </span>
                           </div>
-                          <h4 className="font-display text-lg md:text-xl leading-tight mb-3" style={{ color: "#F0EDE8" }}>
+                          <h4 className="font-display text-lg md:text-xl leading-tight mb-3" style={{ color: "hsl(var(--ink-dark))" }}>
                             {item.t}
                           </h4>
                           <p className="font-display text-sm leading-relaxed" style={{ color: "rgba(240,237,232,0.85)" }}>
                             {item.d}
                           </p>
                           {item.parceria && (
-                            <span className="font-mono-edit text-[9px] uppercase tracking-[0.3em] mt-4 inline-block" style={{ color: "#B5956E" }}>
+                            <span className="font-mono-edit text-[9px] uppercase tracking-[0.3em] mt-4 inline-block" style={{ color: "hsl(var(--bronze-soft))" }}>
                               · em parceria
                             </span>
                           )}
@@ -1443,7 +1443,7 @@ const Captacao = () => {
       <section
         id="alem"
         className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32 overflow-hidden"
-        style={{ backgroundColor: "#0F0D0B", color: "#E8E4DF" }}
+        style={{ backgroundColor: "hsl(var(--surface-deep))", color: "hsl(var(--ink-dark))" }}
       >
         {/* Imagem de fundo em tela cheia — blur + brightness */}
         <div
@@ -1460,7 +1460,7 @@ const Captacao = () => {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(26, 24, 22, 0.55) 0%, rgba(26, 24, 22, 0.78) 50%, rgba(26, 24, 22, 0.96) 100%)",
+              "linear-gradient(to bottom, hsl(var(--surface-dark) / 0.55) 0%, hsl(var(--surface-dark) / 0.78) 50%, hsl(var(--surface-dark) / 0.96) 100%)",
           }}
           aria-hidden="true"
         />
@@ -1468,18 +1468,18 @@ const Captacao = () => {
         <div className="relative z-10 max-w-7xl mx-auto w-full">
           <div
             className="flex items-baseline gap-6 mb-16 pb-4 border-b"
-            style={{ borderColor: "rgba(139, 115, 85, 0.35)" }}
+            style={{ borderColor: "hsl(var(--bronze) / 0.35)" }}
           >
             <span
               className="font-mono-edit text-[10px] tracking-[0.3em]"
-              style={{ color: "#8B7355" }}
+              style={{ color: "hsl(var(--bronze))" }}
             >
               10
             </span>
             <Editable
               id="cap.alem.eyebrow"
               className="font-mono-edit text-[10px] uppercase tracking-[0.3em]"
-              style={{ color: "#777777" }}
+              style={{ color: "hsl(var(--ink-muted))" }}
             >
               Além do projeto
             </Editable>
@@ -1491,17 +1491,17 @@ const Captacao = () => {
               id="cap.alem.title"
               multiline
               className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.0] text-balance mb-8"
-              style={{ color: "#E8E4DF" }}
+              style={{ color: "hsl(var(--ink-dark))" }}
             >
-              O projeto termina. O comprometimento, <em className="not-italic" style={{ color: "#C9A876" }}>não.</em>
+              O projeto termina. O comprometimento, <em className="not-italic" style={{ color: "hsl(var(--bronze-glow))" }}>não.</em>
             </Editable>
-            <div className="h-px w-10 mb-8" style={{ backgroundColor: "rgba(139, 115, 85, 0.45)" }} />
+            <div className="h-px w-10 mb-8" style={{ backgroundColor: "hsl(var(--bronze) / 0.45)" }} />
             <Editable
               as="p"
               id="cap.alem.body"
               multiline
               className="font-display italic text-lg md:text-xl leading-relaxed max-w-2xl"
-              style={{ color: "rgba(232, 228, 223, 0.78)" }}
+              style={{ color: "hsl(var(--ink-dark) / 0.78)" }}
             >
               A casa continua viva depois da chave — e nós continuamos por
               perto, garantindo que cada decisão tomada no projeto se traduza
@@ -1512,7 +1512,7 @@ const Captacao = () => {
           {/* Divisor sutil em bronze */}
           <div
             className="h-px w-full mb-16"
-            style={{ backgroundColor: "rgba(139, 115, 85, 0.12)" }}
+            style={{ backgroundColor: "hsl(var(--bronze) / 0.12)" }}
             aria-hidden="true"
           />
 
@@ -1529,7 +1529,7 @@ const Captacao = () => {
                   {/* Ponto bronze */}
                   <div
                     className="w-2 h-2 rounded-full mb-5"
-                    style={{ backgroundColor: "#8B7355" }}
+                    style={{ backgroundColor: "hsl(var(--bronze))" }}
                     aria-hidden="true"
                   />
 
@@ -1537,7 +1537,7 @@ const Captacao = () => {
                   <Editable
                     id={`cap.alem.${s.id}.step`}
                     className="font-mono-edit text-[10px] uppercase tracking-[0.3em] block mb-4"
-                    style={{ color: "#777777" }}
+                    style={{ color: "hsl(var(--ink-muted))" }}
                   >
                     {s.step}
                   </Editable>
@@ -1547,7 +1547,7 @@ const Captacao = () => {
                     as="h3"
                     id={`cap.alem.${s.id}.t`}
                     className="font-display text-2xl md:text-3xl mb-3"
-                    style={{ color: "#E8E4DF" }}
+                    style={{ color: "hsl(var(--ink-dark))" }}
                   >
                     {s.t}
                   </Editable>
@@ -1558,7 +1558,7 @@ const Captacao = () => {
                     id={`cap.alem.${s.id}.b`}
                     multiline
                     className="font-mono-edit text-[11px] leading-relaxed"
-                    style={{ color: "#777777" }}
+                    style={{ color: "hsl(var(--ink-muted))" }}
                   >
                     {s.b}
                   </Editable>
@@ -1728,7 +1728,7 @@ const Captacao = () => {
       <section
         id="fechamento"
         className="relative min-h-screen flex items-center justify-center px-6 md:px-16 lg:px-24 py-32"
-        style={{ backgroundColor: "#1A1816", color: "#E8E4DF" }}
+        style={{ backgroundColor: "hsl(var(--surface-dark))", color: "hsl(var(--ink-dark))" }}
       >
         <div className="relative z-10 max-w-5xl mx-auto text-center w-full">
           {/* Eyebrow no topo, sozinho e centralizado */}
@@ -1736,7 +1736,7 @@ const Captacao = () => {
             <Editable
               id="cap.fech.eyebrow"
               className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
-              style={{ color: "#8B7355" }}
+              style={{ color: "hsl(var(--bronze))" }}
             >
               Próximo passo
             </Editable>
@@ -1746,7 +1746,7 @@ const Captacao = () => {
           <div className="flex justify-center mb-10 md:mb-12">
             <span
               className="h-px w-16"
-              style={{ backgroundColor: "rgba(139, 115, 85, 0.7)" }}
+              style={{ backgroundColor: "hsl(var(--bronze) / 0.7)" }}
             />
           </div>
 
@@ -1756,11 +1756,11 @@ const Captacao = () => {
             id="cap.fech.title"
             multiline
             className="font-display text-4xl md:text-6xl lg:text-7xl leading-[1.05] text-balance mb-10 md:mb-12"
-            style={{ color: "#E8E4DF" }}
+            style={{ color: "hsl(var(--ink-dark))" }}
           >
             Em 48 horas, a próxima decisão
             <br />
-            chega às <em className="not-italic" style={{ color: "#C9A876" }}>suas mãos.</em>
+            chega às <em className="not-italic" style={{ color: "hsl(var(--bronze-glow))" }}>suas mãos.</em>
           </Editable>
 
           {/* Parágrafo */}
@@ -1769,7 +1769,7 @@ const Captacao = () => {
             id="cap.fech.body"
             multiline
             className="font-display italic text-lg md:text-xl leading-relaxed mb-20 md:mb-24 max-w-2xl mx-auto"
-            style={{ color: "rgba(232, 228, 223, 0.6)" }}
+            style={{ color: "hsl(var(--ink-dark) / 0.6)" }}
           >
             Uma Carta Proposta feita para você — pensada, estudada, detalhada. Pronta para ser lida com a mesma calma com que foi escrita.
           </Editable>
@@ -1778,7 +1778,7 @@ const Captacao = () => {
           <div className="w-full mb-10 md:mb-12">
             <span
               className="block h-px w-full"
-              style={{ backgroundColor: "rgba(232, 228, 223, 0.12)" }}
+              style={{ backgroundColor: "hsl(var(--ink-dark) / 0.12)" }}
             />
           </div>
 
@@ -1788,14 +1788,14 @@ const Captacao = () => {
               <Editable
                 id="cap.fech.contact.whatsapp.label"
                 className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
-                style={{ color: "#8B7355" }}
+                style={{ color: "hsl(var(--bronze))" }}
               >
                 WhatsApp
               </Editable>
               <Editable
                 id="cap.fech.contact.whatsapp"
                 className="font-display italic text-base md:text-lg"
-                style={{ color: "rgba(232, 228, 223, 0.85)" }}
+                style={{ color: "hsl(var(--ink-dark) / 0.85)" }}
               >
                 (12) 99623-5559
               </Editable>
@@ -1805,14 +1805,14 @@ const Captacao = () => {
               <Editable
                 id="cap.fech.contact.email.label"
                 className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
-                style={{ color: "#8B7355" }}
+                style={{ color: "hsl(var(--bronze))" }}
               >
                 E-mail
               </Editable>
               <Editable
                 id="cap.fech.contact.email"
                 className="font-display italic text-base md:text-lg"
-                style={{ color: "rgba(232, 228, 223, 0.85)" }}
+                style={{ color: "hsl(var(--ink-dark) / 0.85)" }}
               >
                 contato.nlarquitetos@gmail.com
               </Editable>
@@ -1822,14 +1822,14 @@ const Captacao = () => {
               <Editable
                 id="cap.fech.contact.instagram.label"
                 className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
-                style={{ color: "#8B7355" }}
+                style={{ color: "hsl(var(--bronze))" }}
               >
                 Instagram
               </Editable>
               <Editable
                 id="cap.fech.contact.instagram"
                 className="font-display italic text-base md:text-lg"
-                style={{ color: "rgba(232, 228, 223, 0.85)" }}
+                style={{ color: "hsl(var(--ink-dark) / 0.85)" }}
               >
                 @nlarquitetos
               </Editable>
