@@ -58,7 +58,7 @@ const Int = () => {
 
         <div className="relative z-10 max-w-4xl fade-up">
           <Editable id="int.capa.eyebrow" className="eyebrow-editorial text-primary/80 mb-8 inline-block">
-            Apresentação · Confidencial
+            Projeto de Interiores · Apresentação Confidencial
           </Editable>
 
           <Editable
@@ -67,9 +67,9 @@ const Int = () => {
             multiline
             className="display-hero text-foreground mb-8"
           >
-            Arquitetura é <em className="text-primary italic font-light">decisão</em>,
+            Interiores são <em className="text-primary italic font-light">decisão</em>,
             <br />
-            não desejo.
+            não tendência.
           </Editable>
 
           <div className="gold-line w-32 mb-8" />
@@ -79,8 +79,8 @@ const Int = () => {
             multiline
             className="lede-editorial text-foreground/75 max-w-2xl block"
           >
-            Conduzimos cada projeto com a precisão de quem sabe que a obra é apenas
-            a última etapa — e a mais cara para corrigir.
+            Projetamos cada ambiente com a precisão de quem sabe que marcenaria,
+            iluminação e revestimento mal decididos custam até 5x mais para refazer.
           </Editable>
 
           <div className="mt-12 flex items-center gap-4">
@@ -89,7 +89,7 @@ const Int = () => {
               id="int.capa.tag"
               className="label-meta text-primary/80"
             >
-              NL Arquitetos
+              NL Arquitetos · Interiores
             </Editable>
           </div>
         </div>
