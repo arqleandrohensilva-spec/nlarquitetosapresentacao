@@ -963,10 +963,6 @@ const Captacao = () => {
                   <span className="text-primary">08</span> fases
                 </Editable>
                 <span className="text-border">·</span>
-                <Editable id="cap.etapas.arq.entreg" className="text-muted-foreground hidden md:inline">
-                  <span className="text-primary">~150</span> entregáveis
-                </Editable>
-                <span className="text-border hidden md:inline">·</span>
                 <Editable id="cap.etapas.arq.dur" className="text-muted-foreground">
                   5 a 6 meses
                 </Editable>
@@ -982,7 +978,7 @@ const Captacao = () => {
                 { n: "05", t: "Projeto Legal & Aprovações", d: "Prefeitura, concessionárias e órgãos — conduzidos pela NL." },
                 { n: "06", t: "Projeto Executivo", d: "Pranchas, memoriais e detalhamentos prontos para canteiro.", key: true },
                 { n: "07", t: "Compatibilização Técnica", d: "Conduzida em parceria com engenheiros especializados — estrutura e instalações revisadas antes do canteiro." },
-                { n: "08", t: "Acompanhamento de Obra", d: "Visitas técnicas, ajustes e curadoria de fornecedores.", optional: true },
+                { n: "08", t: "Acompanhamento de Obra", d: "Visitas técnicas, ajustes e indicação de fornecedores.", optional: true },
               ].map((p, i) => (
                 <article
                   key={`arq-${i}`}
@@ -1087,10 +1083,6 @@ const Captacao = () => {
                   <span className="text-primary">07</span> fases
                 </Editable>
                 <span className="text-border">·</span>
-                <Editable id="cap.etapas.int.entreg" className="text-muted-foreground hidden md:inline">
-                  <span className="text-primary">~90</span> entregáveis
-                </Editable>
-                <span className="text-border hidden md:inline">·</span>
                 <Editable id="cap.etapas.int.dur" className="text-muted-foreground">
                   3 a 4 meses
                 </Editable>
@@ -1105,7 +1097,7 @@ const Captacao = () => {
                 { n: "04", t: "Viabilidade Financeira", d: "Orçamento por quantitativos reais — decisão consciente de escopo.", optional: true },
                 { n: "05", t: "Projeto Executivo", d: "Marcenaria, iluminação, revestimentos e pranchas executivas.", key: true },
                 { n: "06", t: "Visitas em Lojas", d: "Indicação e seleção conjunta de mobiliário, acabamentos, arte e têxteis.", optional: true },
-                { n: "07", t: "Acompanhamento de Obra", d: "Visitas técnicas, ajustes finos e curadoria de fornecedores.", optional: true },
+                { n: "07", t: "Acompanhamento de Obra", d: "Visitas técnicas, ajustes finos e indicação de fornecedores.", optional: true },
               ].map((p, i) => (
                 <article
                   key={`int-${i}`}
