@@ -939,33 +939,6 @@ const Captacao = () => {
             </Editable>
           </div>
 
-          {/* ===== TESE DE ABERTURA · MANIFESTO DO MÉTODO ===== */}
-          <div className="mb-24 md:mb-28 py-12 md:py-14 border-y border-border/60 grid grid-cols-12 gap-6 md:gap-10 items-center">
-            <Editable
-              id="cap.etapas.tese.eyebrow"
-              className="col-span-12 md:col-span-2 font-mono text-[10px] uppercase tracking-[0.4em] text-primary"
-            >
-              O método NL
-            </Editable>
-            <Editable
-              as="p"
-              id="cap.etapas.tese.frase"
-              multiline
-              className="col-span-12 md:col-span-6 font-display text-3xl md:text-4xl lg:text-5xl leading-[1.05] text-foreground text-balance"
-            >
-              A obra é a última etapa.
-              {" "}
-              <em className="text-primary not-italic">Não a primeira.</em>
-            </Editable>
-            <Editable
-              as="p"
-              id="cap.etapas.tese.contexto"
-              multiline
-              className="col-span-12 md:col-span-4 text-sm md:text-base text-foreground/70 leading-relaxed md:border-l md:border-border/60 md:pl-6"
-            >
-              Quando a primeira betoneira chega, 90% das decisões já foram tomadas — no papel, em 3D, com tempo e sem pressa.
-            </Editable>
-          </div>
 
           {/* ===== Trilha 01 · ARQUITETURA RESIDENCIAL ===== */}
           <div className="mb-20">
