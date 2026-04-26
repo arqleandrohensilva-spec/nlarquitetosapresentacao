@@ -895,7 +895,220 @@ const Captacao = () => {
       </section>
 
       {/* ============================================================
-          08 · PROCESSOS · ARQ + INT
+          08 · PROCESSOS · DO BRIEFING À ENTREGA
+          ============================================================ */}
+      <section
+        id="etapas"
+        className="relative px-6 md:px-16 lg:px-24 py-28 md:py-32 bg-surface/40"
+      >
+        <div className="max-w-[1400px] mx-auto">
+          {/* Cabeçalho */}
+          <div className="flex items-baseline justify-between mb-12 border-b border-border/60 pb-6">
+            <div className="flex items-baseline gap-6">
+              <span className="number-marker">08</span>
+              <Editable id="cap.etapas.eyebrow" className="eyebrow">
+                Processos · Do briefing à entrega
+              </Editable>
+            </div>
+            <Editable
+              id="cap.etapas.tag"
+              className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground hidden md:block"
+            >
+              Arquitetura → Interiores · Fluxo encadeado
+            </Editable>
+          </div>
+
+          <div className="grid grid-cols-12 gap-8 mb-20">
+            <Editable
+              as="h2"
+              id="cap.etapas.title"
+              multiline
+              className="col-span-12 lg:col-span-7 font-display text-5xl md:text-6xl lg:text-7xl leading-[1.0] text-balance"
+            >
+              Do primeiro traço
+              <br />
+              <em className="text-primary not-italic">ao detalhe final.</em>
+            </Editable>
+            <Editable
+              id="cap.etapas.intro"
+              multiline
+              as="p"
+              className="col-span-12 lg:col-span-5 lg:pt-4 font-display text-lg text-foreground/70 leading-relaxed"
+            >
+              Interiores inicia somente após aprovação integral da etapa de Arquitetura. Cada decisão é tomada na ordem certa — para que nada precise ser refeito depois.
+            </Editable>
+          </div>
+
+          {/* ===== Trilha 01 · ARQUITETURA RESIDENCIAL ===== */}
+          <div className="mb-20">
+            <div className="flex items-baseline justify-between mb-10 pb-5 border-b border-border/60">
+              <div className="flex items-baseline gap-4 md:gap-6 flex-wrap">
+                <Editable
+                  id="cap.etapas.arq.num"
+                  className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary"
+                >
+                  Trilha 01
+                </Editable>
+                <Editable
+                  as="h3"
+                  id="cap.etapas.arq.title"
+                  className="font-display text-3xl md:text-4xl text-foreground leading-tight"
+                >
+                  Arquitetura Residencial
+                </Editable>
+              </div>
+              <Editable
+                id="cap.etapas.arq.dur"
+                className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground hidden md:block"
+              >
+                5 a 6 meses
+              </Editable>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border/60">
+              {[
+                { n: "01", t: "Levantamento & Briefing", d: "Escuta profunda, programa de necessidades e leitura do terreno." },
+                { n: "02", t: "Criação do Conceito", d: "Partido arquitetônico, narrativa e diretrizes que guiam todo o projeto." },
+                { n: "03", t: "Estudo Preliminar com 3D", d: "Volumetria, implantação e atmosferas em 3D antes de qualquer técnica." },
+                { n: "04", t: "Viabilidade Financeira", d: "Orçamento por quantitativos reais — decisão consciente de escopo.", optional: true },
+                { n: "05", t: "Projeto Legal & Aprovações", d: "Prefeitura, concessionárias e órgãos — conduzidos pela NL." },
+                { n: "06", t: "Projeto Executivo", d: "Pranchas, memoriais e detalhamentos prontos para canteiro." },
+                { n: "07", t: "Compatibilização Técnica", d: "Coordenação entre arquitetura, estrutura e instalações." },
+                { n: "08", t: "Acompanhamento de Obra", d: "Visitas técnicas, ajustes e curadoria de fornecedores.", optional: true },
+              ].map((p, i) => (
+                <article
+                  key={`arq-${i}`}
+                  className="bg-background p-7 md:p-8 flex flex-col group hover:bg-surface/60 transition-colors"
+                >
+                  <div className="flex items-baseline justify-between mb-5">
+                    <Editable
+                      id={`cap.etapas.arq.${i}.n`}
+                      className="font-mono text-[11px] tracking-[0.2em] text-primary"
+                    >
+                      {p.n}
+                    </Editable>
+                    {p.optional && (
+                      <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-muted-foreground/70">
+                        Opcional
+                      </span>
+                    )}
+                  </div>
+                  <Editable
+                    as="h4"
+                    id={`cap.etapas.arq.${i}.t`}
+                    className="font-display text-lg md:text-xl text-foreground leading-snug mb-3"
+                  >
+                    {p.t}
+                  </Editable>
+                  <Editable
+                    as="p"
+                    id={`cap.etapas.arq.${i}.d`}
+                    multiline
+                    className="text-sm text-foreground/65 leading-relaxed"
+                  >
+                    {p.d}
+                  </Editable>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          {/* Divisor narrativo */}
+          <div className="my-16 md:my-20 flex items-center gap-6">
+            <span className="h-px flex-1 bg-border" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-muted-foreground text-center">
+              Após aprovação da arquitetura
+            </span>
+            <span className="h-px flex-1 bg-border" />
+          </div>
+
+          {/* ===== Trilha 02 · ARQUITETURA DE INTERIORES ===== */}
+          <div>
+            <div className="flex items-baseline justify-between mb-10 pb-5 border-b border-border/60">
+              <div className="flex items-baseline gap-4 md:gap-6 flex-wrap">
+                <Editable
+                  id="cap.etapas.int.num"
+                  className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary"
+                >
+                  Trilha 02
+                </Editable>
+                <Editable
+                  as="h3"
+                  id="cap.etapas.int.title"
+                  className="font-display text-3xl md:text-4xl text-foreground leading-tight"
+                >
+                  Arquitetura de Interiores
+                </Editable>
+              </div>
+              <Editable
+                id="cap.etapas.int.dur"
+                className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground hidden md:block"
+              >
+                3 a 4 meses · após arquitetura
+              </Editable>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border/60">
+              {[
+                { n: "01", t: "Briefing & Levantamentos", d: "Escuta profunda, leitura do espaço e do estilo de vida." },
+                { n: "02", t: "Criação do Conceito", d: "Atmosfera, paleta e narrativa de interiores que orientam cada decisão." },
+                { n: "03", t: "Concepção 3D", d: "Imagens realistas e vídeo 360° para experimentar o projeto antes da obra." },
+                { n: "04", t: "Viabilidade Financeira", d: "Orçamento por quantitativos reais — decisão consciente de escopo.", optional: true },
+                { n: "05", t: "Projeto Executivo", d: "Marcenaria, iluminação, revestimentos e pranchas executivas." },
+                { n: "06", t: "Visitas em Lojas", d: "Curadoria conjunta de mobiliário, acabamentos, arte e têxteis.", optional: true },
+                { n: "07", t: "Acompanhamento de Obra", d: "Visitas técnicas, ajustes finos e curadoria de fornecedores.", optional: true },
+              ].map((p, i) => (
+                <article
+                  key={`int-${i}`}
+                  className="bg-background p-7 md:p-8 flex flex-col group hover:bg-surface/60 transition-colors"
+                >
+                  <div className="flex items-baseline justify-between mb-5">
+                    <Editable
+                      id={`cap.etapas.int.${i}.n`}
+                      className="font-mono text-[11px] tracking-[0.2em] text-primary"
+                    >
+                      {p.n}
+                    </Editable>
+                    {p.optional && (
+                      <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-muted-foreground/70">
+                        Opcional
+                      </span>
+                    )}
+                  </div>
+                  <Editable
+                    as="h4"
+                    id={`cap.etapas.int.${i}.t`}
+                    className="font-display text-lg md:text-xl text-foreground leading-snug mb-3"
+                  >
+                    {p.t}
+                  </Editable>
+                  <Editable
+                    as="p"
+                    id={`cap.etapas.int.${i}.d`}
+                    multiline
+                    className="text-sm text-foreground/65 leading-relaxed"
+                  >
+                    {p.d}
+                  </Editable>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          {/* Nota de rodapé */}
+          <Editable
+            as="p"
+            id="cap.etapas.nota"
+            multiline
+            className="mt-12 pt-6 border-t border-border/60 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground/80 text-center max-w-2xl mx-auto leading-relaxed"
+          >
+            Cronograma estimado · Pode variar conforme escopo, aprovações de terceiros e disponibilidade do cliente nas etapas de aprovação.
+          </Editable>
+        </div>
+      </section>
+
+      {/* ============================================================
+          09 · ARQ + INT · DUAS DISCIPLINAS
           ============================================================ */}
       <section
         id="processos"
