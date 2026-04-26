@@ -973,7 +973,7 @@ const Captacao = () => {
                 { n: "04", t: "Viabilidade Financeira", d: "Orçamento por quantitativos reais — decisão consciente de escopo.", optional: true },
                 { n: "05", t: "Projeto Legal & Aprovações", d: "Prefeitura, concessionárias e órgãos — conduzidos pela NL." },
                 { n: "06", t: "Projeto Executivo", d: "Pranchas, memoriais e detalhamentos prontos para canteiro." },
-                { n: "07", t: "Compatibilização Técnica", d: "Coordenação entre arquitetura, estrutura e instalações." },
+                { n: "07", t: "Compatibilização Técnica", d: "Conduzida em parceria com engenheiros especializados — estrutura e instalações revisadas antes do canteiro." },
                 { n: "08", t: "Acompanhamento de Obra", d: "Visitas técnicas, ajustes e curadoria de fornecedores.", optional: true },
               ].map((p, i) => (
                 <article
@@ -1048,19 +1048,19 @@ const Captacao = () => {
               </Editable>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border/60">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-l border-t border-border/60">
               {[
                 { n: "01", t: "Briefing & Levantamentos", d: "Escuta profunda, leitura do espaço e do estilo de vida." },
                 { n: "02", t: "Criação do Conceito", d: "Atmosfera, paleta e narrativa de interiores que orientam cada decisão." },
                 { n: "03", t: "Concepção 3D", d: "Imagens realistas e vídeo 360° para experimentar o projeto antes da obra." },
                 { n: "04", t: "Viabilidade Financeira", d: "Orçamento por quantitativos reais — decisão consciente de escopo.", optional: true },
                 { n: "05", t: "Projeto Executivo", d: "Marcenaria, iluminação, revestimentos e pranchas executivas." },
-                { n: "06", t: "Visitas em Lojas", d: "Curadoria conjunta de mobiliário, acabamentos, arte e têxteis.", optional: true },
+                { n: "06", t: "Visitas em Lojas", d: "Indicação e seleção conjunta de mobiliário, acabamentos, arte e têxteis.", optional: true },
                 { n: "07", t: "Acompanhamento de Obra", d: "Visitas técnicas, ajustes finos e curadoria de fornecedores.", optional: true },
               ].map((p, i) => (
                 <article
                   key={`int-${i}`}
-                  className="bg-background p-7 md:p-8 flex flex-col group hover:bg-surface/60 transition-colors"
+                  className="bg-background p-7 md:p-8 flex flex-col group hover:bg-surface/60 transition-colors border-r border-b border-border/60"
                 >
                   <div className="flex items-baseline justify-between mb-5">
                     <Editable
