@@ -1304,81 +1304,120 @@ const Captacao = () => {
             Cada projeto é um <em className="text-primary not-italic">capítulo único.</em>
           </Editable>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-24">
-            {[
-              { id: "casa-costas", img: IMG_CASE, name: "Casa Costas", meta: "Residencial · 300m² · São José dos Campos · 2024", status: "Concluído" },
-              { id: "casa-jc", img: imgCasaJC, name: "Casa JC", meta: "Residencial · Jacareí SP · 2025", status: "Em desenvolvimento" },
-              { id: "chale-juruva", img: imgChaleJuruva, name: "Chalé Juruva", meta: "Residencial / Interiores · 60m² · Santo Antônio do Pinhal SP · 2024", status: "Em desenvolvimento" },
-              { id: "familia-borges", img: imgFamiliaBorges, name: "Família Borges", meta: "Interiores Residencial · 100m² · Jacareí SP · 2025", status: "Em desenvolvimento" },
-              { id: "gourmet-jardim", img: imgGourmetJardim, name: "Espaço Gourmet Jardim", meta: "Interiores · 80m² · Jacareí SP · 2025", status: "Em desenvolvimento" },
-              { id: "gourmet-salinas", img: imgGourmetSalinas, name: "Espaço Gourmet Salinas", meta: "Interiores · 65m² · São José dos Campos SP · 2025", status: "Em desenvolvimento" },
-            ].map((proj, idx, arr) => (
-              <article key={proj.id} className="group">
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <button
-                      type="button"
-                      className={`relative ${idx % 2 === 0 ? "aspect-[4/5]" : "aspect-[3/4]"} overflow-hidden mb-6 bg-surface-elevated w-full block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
-                      aria-label={`Ampliar imagem do projeto ${proj.name}`}
-                    >
-                      <img
-                        src={proj.img}
-                        alt={proj.name}
-                        className="w-full h-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
-                        loading="lazy"
-                      />
+          {(() => {
+            const projects = [
+              { id: "casa-costas", img: IMG_CASE, name: "Casa Costas", typology: "Residencial", place: "São José dos Campos · 300m²", year: "2024" },
+              { id: "casa-jc", img: imgCasaJC, name: "Casa JC", typology: "Residencial", place: "Jacareí · SP", year: "2025" },
+              { id: "chale-juruva", img: imgChaleJuruva, name: "Chalé Juruva", typology: "Residencial / Interiores", place: "Santo Antônio do Pinhal · 60m²", year: "2024" },
+              { id: "familia-borges", img: imgFamiliaBorges, name: "Família Borges", typology: "Interiores Residencial", place: "Jacareí · 100m²", year: "2025" },
+              { id: "gourmet-jardim", img: imgGourmetJardim, name: "Espaço Gourmet Jardim", typology: "Interiores", place: "Jacareí · 80m²", year: "2025" },
+              { id: "gourmet-salinas", img: imgGourmetSalinas, name: "Espaço Gourmet Salinas", typology: "Interiores", place: "São José dos Campos · 65m²", year: "2025" },
+            ];
+            const [anchor, ...rest] = projects;
 
-                      {/* Filete bronze superior — assinatura editorial */}
-                      <div
-                        className="pointer-events-none absolute top-6 left-6 h-px w-0 bg-primary-glow transition-all duration-700 ease-out group-hover:w-12"
-                        aria-hidden="true"
-                      />
-                    </button>
-                  </DialogTrigger>
+            const renderMeta = (proj: typeof projects[number]) => (
+              <div className="space-y-1.5">
+                <Editable
+                  id={`cap.port.${proj.id}.typology`}
+                  className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80 block"
+                >
+                  {proj.typology}
+                </Editable>
+                <Editable
+                  id={`cap.port.${proj.id}.place`}
+                  className="font-display italic text-base text-muted-foreground block"
+                >
+                  {proj.place}
+                </Editable>
+                <Editable
+                  id={`cap.port.${proj.id}.year`}
+                  className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground/70 block"
+                >
+                  {proj.year}
+                </Editable>
+              </div>
+            );
 
-                  <DialogContent className="max-w-6xl w-[95vw] p-0 bg-background border-border overflow-hidden">
-                    <DialogHeader className="sr-only">
-                      <DialogTitle>{proj.name}</DialogTitle>
-                    </DialogHeader>
-                    <div className="bg-surface-elevated">
-                      <img
-                        src={proj.img}
-                        alt={proj.name}
-                        className="w-full h-auto max-h-[80vh] object-contain"
-                      />
+            const renderImage = (proj: typeof projects[number], aspectClass: string) => (
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button
+                    type="button"
+                    className={`relative ${aspectClass} overflow-hidden mb-6 bg-surface-elevated w-full block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
+                    aria-label={`Ampliar imagem do projeto ${proj.name}`}
+                  >
+                    <img
+                      src={proj.img}
+                      alt={proj.name}
+                      className="w-full h-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
+                      loading="lazy"
+                    />
+                    <div
+                      className="pointer-events-none absolute top-6 left-6 h-px w-0 bg-primary-glow transition-all duration-700 ease-out group-hover:w-12"
+                      aria-hidden="true"
+                    />
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="max-w-6xl w-[95vw] p-0 bg-background border-border overflow-hidden">
+                  <DialogHeader className="sr-only">
+                    <DialogTitle>{proj.name}</DialogTitle>
+                  </DialogHeader>
+                  <div className="bg-surface-elevated">
+                    <img src={proj.img} alt={proj.name} className="w-full h-auto max-h-[80vh] object-contain" />
+                  </div>
+                  <div className="px-8 py-6 border-t border-border">
+                    <h3 className="font-display text-3xl text-foreground mb-2">{proj.name}</h3>
+                    <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                      {proj.typology} · {proj.place} · {proj.year}
+                    </p>
+                  </div>
+                </DialogContent>
+              </Dialog>
+            );
+
+            return (
+              <>
+                {/* ÂNCORA EDITORIAL — Casa Costas full-width como abertura do capítulo */}
+                <article className="group mb-32">
+                  <div className="grid grid-cols-1 md:grid-cols-12 gap-x-12 gap-y-8 items-end">
+                    <div className="md:col-span-8">
+                      {renderImage(anchor, "aspect-[16/10]")}
                     </div>
-                    <div className="px-8 py-6 border-t border-border">
-                      <h3 className="font-display text-3xl text-foreground mb-2">
+                    <div className="md:col-span-4 md:pb-4">
+                      <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary block mb-6">
+                        Capa · Projeto destaque
+                      </span>
+                      <Editable
+                        as="h3"
+                        id={`cap.port.${anchor.id}.name`}
+                        className="font-display text-4xl md:text-5xl leading-[1.02] text-foreground mb-6 transition-colors duration-500 group-hover:text-primary"
+                      >
+                        {anchor.name}
+                      </Editable>
+                      {renderMeta(anchor)}
+                    </div>
+                  </div>
+                </article>
+
+                {/* GRID DE COLEÇÃO — demais projetos */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-24">
+                  {rest.map((proj, idx) => (
+                    <article key={proj.id} className="group">
+                      {renderImage(proj, idx % 2 === 0 ? "aspect-[4/5]" : "aspect-[3/4]")}
+                      <Editable
+                        as="h3"
+                        id={`cap.port.${proj.id}.name`}
+                        className="font-display text-3xl md:text-4xl leading-[1.05] text-foreground mb-4 transition-colors duration-500 group-hover:text-primary"
+                      >
                         {proj.name}
-                      </h3>
-                      <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-                        {proj.meta}
-                      </p>
-                    </div>
-                  </DialogContent>
-                </Dialog>
-
-                {/* Numeração editorial — marcador de capítulo (fora da imagem, em Cormorant) */}
-                <span className="font-display italic text-xl text-primary/70 block mb-3 leading-none">
-                  {String(idx + 1).padStart(2, "0")} <span className="text-muted-foreground/50">/ {String(arr.length).padStart(2, "0")}</span>
-                </span>
-
-                <Editable
-                  as="h3"
-                  id={`cap.port.${proj.id}.name`}
-                  className="font-display text-3xl md:text-4xl leading-[1.05] text-foreground mb-3 transition-colors duration-500 group-hover:text-primary"
-                >
-                  {proj.name}
-                </Editable>
-                <Editable
-                  id={`cap.port.${proj.id}.meta`}
-                  className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground block"
-                >
-                  {proj.meta}
-                </Editable>
-              </article>
-            ))}
-          </div>
+                      </Editable>
+                      {renderMeta(proj)}
+                    </article>
+                  ))}
+                </div>
+              </>
+            );
+          })()}
 
           {/* Fechamento editorial da seção (E2) */}
           <div className="mt-24 pt-12 border-t border-border/40 flex justify-center">
