@@ -34,7 +34,7 @@ const IMG_LEANDRO =
 const IMG_NEANDRO =
   "https://www.dropbox.com/scl/fi/6060a867ejklropxdqju3/Neandro.png?rlkey=3z4ynhzr1lq6treoni9h1fqyr&raw=1";
 
-const Captacao = () => {
+const Int = () => {
   return (
     <main className="relative bg-background text-foreground overflow-x-hidden">
       <CaptacaoNav />
@@ -57,13 +57,13 @@ const Captacao = () => {
         <div className="absolute inset-0 vignette opacity-70" />
 
         <div className="relative z-10 max-w-4xl fade-up">
-          <Editable id="cap.capa.eyebrow" className="eyebrow-editorial text-primary/80 mb-8 inline-block">
+          <Editable id="int.capa.eyebrow" className="eyebrow-editorial text-primary/80 mb-8 inline-block">
             Apresentação · Confidencial
           </Editable>
 
           <Editable
             as="h1"
-            id="cap.capa.title"
+            id="int.capa.title"
             multiline
             className="display-hero text-foreground mb-8"
           >
@@ -75,7 +75,7 @@ const Captacao = () => {
           <div className="gold-line w-32 mb-8" />
 
           <Editable
-            id="cap.capa.subtitle"
+            id="int.capa.subtitle"
             multiline
             className="lede-editorial text-foreground/75 max-w-2xl block"
           >
@@ -86,7 +86,7 @@ const Captacao = () => {
           <div className="mt-12 flex items-center gap-4">
             <span className="h-px w-12 bg-primary/40" />
             <Editable
-              id="cap.capa.tag"
+              id="int.capa.tag"
               className="label-meta text-primary/80"
             >
               NL Arquitetos
@@ -96,13 +96,13 @@ const Captacao = () => {
 
         <div className="relative z-10 mt-16 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <Editable
-            id="cap.capa.client"
+            id="int.capa.client"
             className="label-meta text-foreground/45"
           >
             Para · [Nome do Cliente]
           </Editable>
           <Editable
-            id="cap.capa.date"
+            id="int.capa.date"
             className="label-meta text-foreground/45"
           >
             São José dos Campos · 2026
@@ -165,7 +165,7 @@ const Captacao = () => {
               02
             </span>
             <Editable
-              id="cap.manifesto.eyebrow"
+              id="int.manifesto.eyebrow"
               className="label-meta"
               style={{ color: "hsl(var(--bronze))" }}
             >
@@ -176,7 +176,7 @@ const Captacao = () => {
           <div className="col-span-12 md:col-span-9">
             <Editable
               as="h2"
-              id="cap.manifesto.title"
+              id="int.manifesto.title"
               multiline
               className="display-section mb-10 sm:mb-12 md:mb-16 lg:mb-20"
               style={{ color: "hsl(var(--ink-dark))" }}
@@ -190,7 +190,7 @@ const Captacao = () => {
 
             <div className="manifesto-paragraphs grid md:grid-cols-2 gap-x-10 lg:gap-x-14 gap-y-7 md:gap-y-10 max-w-4xl">
               <Editable
-                id="cap.manifesto.p1"
+                id="int.manifesto.p1"
                 multiline
                 as="p"
                 className="body-editorial"
@@ -199,7 +199,7 @@ const Captacao = () => {
                 A NL não começa pelo desenho. Começa pela escuta — entendendo o terreno, a família, o modo de viver. Só depois o primeiro traço aparece. E quando aparece, já foi validado.
               </Editable>
               <Editable
-                id="cap.manifesto.p2"
+                id="int.manifesto.p2"
                 multiline
                 as="p"
                 className="body-editorial"
@@ -214,7 +214,7 @@ const Captacao = () => {
               style={{ borderColor: "hsl(var(--bronze) / 0.5)" }}
             >
               <Editable
-                id="cap.manifesto.quote"
+                id="int.manifesto.quote"
                 multiline
                 as="p"
                 className="lede-editorial"
@@ -265,12 +265,12 @@ const Captacao = () => {
           <div className="flex items-baseline justify-between mb-6 lg:mb-5 pb-3 border-b border-border/60">
             <div className="flex items-baseline gap-6">
               <span className="number-marker">04</span>
-              <Editable id="cap.como.eyebrow" className="eyebrow">
+              <Editable id="int.como.eyebrow" className="eyebrow">
                 Como vira projeto
               </Editable>
             </div>
             <Editable
-              id="cap.como.tag"
+              id="int.como.tag"
               className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground hidden md:block"
             >
               Da conversa ao desenho
@@ -279,7 +279,7 @@ const Captacao = () => {
 
           <Editable
             as="h2"
-            id="cap.como.title"
+            id="int.como.title"
             multiline
             className="font-display text-3xl md:text-4xl lg:text-[2.6rem] xl:text-5xl leading-[1.05] mb-6 lg:mb-7 text-balance max-w-4xl"
           >
@@ -407,7 +407,7 @@ const Captacao = () => {
               />
               <Editable
                 as="p"
-                id="cap.como.note"
+                id="int.como.note"
                 multiline
                 className="font-display italic text-base md:text-lg lg:text-xl leading-[1.35] text-foreground/85 text-balance"
               >
@@ -433,12 +433,12 @@ const Captacao = () => {
           <div className="flex items-baseline justify-between mb-12 border-b border-border/60 pb-4">
             <div className="flex items-baseline gap-6">
               <span className="number-marker">05</span>
-              <Editable id="cap.sobre.eyebrow" className="eyebrow">
+              <Editable id="int.sobre.eyebrow" className="eyebrow">
                 Sobre nós
               </Editable>
             </div>
             <Editable
-              id="cap.sobre.tag"
+              id="int.sobre.tag"
               className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground hidden md:block"
             >
               Dois arquitetos · Uma assinatura
@@ -449,7 +449,7 @@ const Captacao = () => {
             <div className="col-span-12 lg:col-span-6">
               <Editable
                 as="h2"
-                id="cap.sobre.title"
+                id="int.sobre.title"
                 multiline
                 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.0] text-balance mb-8"
               >
@@ -459,7 +459,7 @@ const Captacao = () => {
               </Editable>
 
               <Editable
-                id="cap.sobre.body"
+                id="int.sobre.body"
                 multiline
                 as="p"
                 className="font-display text-base lg:text-lg leading-relaxed text-foreground/75 max-w-xl mb-6"
@@ -471,7 +471,7 @@ const Captacao = () => {
               </Editable>
 
               <Editable
-                id="cap.sobre.body2"
+                id="int.sobre.body2"
                 multiline
                 as="p"
                 className="font-display italic text-base lg:text-lg leading-relaxed text-foreground/65 max-w-xl"
@@ -535,7 +535,7 @@ const Captacao = () => {
           <div className="flex items-baseline justify-between mb-16 pb-4 border-b border-border/60">
             <div className="flex items-baseline gap-6">
               <span className="number-marker">06</span>
-              <Editable id="cap.pilares.eyebrow" className="eyebrow">
+              <Editable id="int.pilares.eyebrow" className="eyebrow">
                 Nossos pilares
               </Editable>
             </div>
@@ -543,7 +543,7 @@ const Captacao = () => {
 
           <Editable
             as="h2"
-            id="cap.pilares.title"
+            id="int.pilares.title"
             multiline
             className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] mb-20 text-balance max-w-4xl"
           >
@@ -637,7 +637,7 @@ const Captacao = () => {
               07
             </span>
             <Editable
-              id="cap.consol.eyebrow"
+              id="int.consol.eyebrow"
               className="label-meta"
               style={{ color: "hsl(var(--bronze))" }}
             >
@@ -647,7 +647,7 @@ const Captacao = () => {
 
           <Editable
             as="h2"
-            id="cap.consol.title"
+            id="int.consol.title"
             multiline
             className="display-section mb-8 max-w-4xl"
             style={{ color: "hsl(var(--ink-light))" }}
@@ -657,7 +657,7 @@ const Captacao = () => {
 
           <Editable
             as="p"
-            id="cap.consol.subtitle"
+            id="int.consol.subtitle"
             multiline
             className="body-editorial max-w-3xl mb-20"
             style={{ color: "hsl(var(--ink-light-soft))" }}
@@ -884,7 +884,7 @@ const Captacao = () => {
             <div className="h-px w-16 mb-8 bg-primary" />
             <Editable
               as="p"
-              id="cap.consol.closing"
+              id="int.consol.closing"
               multiline
               className="font-display italic text-xl md:text-2xl max-w-2xl leading-relaxed text-primary"
             >
@@ -906,12 +906,12 @@ const Captacao = () => {
           <div className="flex items-baseline justify-between mb-12 border-b border-border/60 pb-6">
             <div className="flex items-baseline gap-6">
               <span className="number-marker">08</span>
-              <Editable id="cap.etapas.eyebrow" className="eyebrow">
+              <Editable id="int.etapas.eyebrow" className="eyebrow">
                 Processos · Do briefing à entrega
               </Editable>
             </div>
             <Editable
-              id="cap.etapas.tag"
+              id="int.etapas.tag"
               className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground hidden md:block"
             >
               Arquitetura → Interiores · Fluxo encadeado
@@ -921,7 +921,7 @@ const Captacao = () => {
           <div className="grid grid-cols-12 gap-8 mb-16">
             <Editable
               as="h2"
-              id="cap.etapas.title"
+              id="int.etapas.title"
               multiline
               className="col-span-12 lg:col-span-7 font-display text-5xl md:text-6xl lg:text-7xl leading-[1.0] text-balance"
             >
@@ -930,7 +930,7 @@ const Captacao = () => {
               <em className="text-primary not-italic">ao detalhe final.</em>
             </Editable>
             <Editable
-              id="cap.etapas.intro"
+              id="int.etapas.intro"
               multiline
               as="p"
               className="col-span-12 lg:col-span-5 lg:pt-4 font-display text-lg text-foreground/70 leading-relaxed"
@@ -945,25 +945,25 @@ const Captacao = () => {
             <div className="flex items-baseline justify-between mb-10 pb-5 border-b border-border/60 flex-wrap gap-4">
               <div className="flex items-baseline gap-4 md:gap-6 flex-wrap">
                 <Editable
-                  id="cap.etapas.arq.num"
+                  id="int.etapas.arq.num"
                   className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary"
                 >
                   Trilha 01
                 </Editable>
                 <Editable
                   as="h3"
-                  id="cap.etapas.arq.title"
+                  id="int.etapas.arq.title"
                   className="font-display text-3xl md:text-4xl text-foreground leading-tight"
                 >
                   Arquitetura Residencial
                 </Editable>
               </div>
               <div className="flex items-baseline gap-4 md:gap-6 font-mono text-[10px] uppercase tracking-[0.3em]">
-                <Editable id="cap.etapas.arq.fases" className="text-muted-foreground">
+                <Editable id="int.etapas.arq.fases" className="text-muted-foreground">
                   <span className="text-primary">08</span> fases
                 </Editable>
                 <span className="text-border">·</span>
-                <Editable id="cap.etapas.arq.dur" className="text-muted-foreground">
+                <Editable id="int.etapas.arq.dur" className="text-muted-foreground">
                   5 a 6 meses
                 </Editable>
               </div>
@@ -1042,14 +1042,14 @@ const Captacao = () => {
             {/* Frase-regra centralizada */}
             <div className="text-center">
               <Editable
-                id="cap.etapas.divisor.eyebrow"
+                id="int.etapas.divisor.eyebrow"
                 className="font-mono text-[10px] uppercase tracking-[0.4em] text-primary mb-5 inline-block"
               >
                 Regra do método
               </Editable>
               <Editable
                 as="p"
-                id="cap.etapas.divisor.frase"
+                id="int.etapas.divisor.frase"
                 multiline
                 className="font-display italic text-2xl md:text-3xl text-foreground/85 leading-snug text-balance max-w-3xl mx-auto"
               >
@@ -1065,25 +1065,25 @@ const Captacao = () => {
             <div className="flex items-baseline justify-between mb-10 pb-5 border-b border-border/60 flex-wrap gap-4">
               <div className="flex items-baseline gap-4 md:gap-6 flex-wrap">
                 <Editable
-                  id="cap.etapas.int.num"
+                  id="int.etapas.int.num"
                   className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary"
                 >
                   Trilha 02
                 </Editable>
                 <Editable
                   as="h3"
-                  id="cap.etapas.int.title"
+                  id="int.etapas.int.title"
                   className="font-display text-3xl md:text-4xl text-foreground leading-tight"
                 >
                   Arquitetura de Interiores
                 </Editable>
               </div>
               <div className="flex items-baseline gap-4 md:gap-6 font-mono text-[10px] uppercase tracking-[0.3em]">
-                <Editable id="cap.etapas.int.fases" className="text-muted-foreground">
+                <Editable id="int.etapas.int.fases" className="text-muted-foreground">
                   <span className="text-primary">07</span> fases
                 </Editable>
                 <span className="text-border">·</span>
-                <Editable id="cap.etapas.int.dur" className="text-muted-foreground">
+                <Editable id="int.etapas.int.dur" className="text-muted-foreground">
                   3 a 4 meses
                 </Editable>
               </div>
@@ -1158,14 +1158,14 @@ const Captacao = () => {
           {/* Assinatura de fechamento */}
           <div className="mt-20 md:mt-24 pt-10 border-t border-border/60 max-w-3xl mx-auto text-center">
             <Editable
-              id="cap.etapas.fech.eyebrow"
+              id="int.etapas.fech.eyebrow"
               className="font-mono text-[10px] uppercase tracking-[0.4em] text-primary mb-5 inline-block"
             >
               Assinatura do método
             </Editable>
             <Editable
               as="p"
-              id="cap.etapas.fech.frase"
+              id="int.etapas.fech.frase"
               multiline
               className="font-display italic text-xl md:text-2xl text-foreground/80 leading-snug text-balance mb-6"
             >
@@ -1175,7 +1175,7 @@ const Captacao = () => {
             </Editable>
             <Editable
               as="p"
-              id="cap.etapas.nota"
+              id="int.etapas.nota"
               multiline
               className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground/70 leading-relaxed"
             >
@@ -1196,12 +1196,12 @@ const Captacao = () => {
           <div className="flex items-baseline justify-between mb-16 pb-4 border-b border-border/60">
             <div className="flex items-baseline gap-6">
               <span className="number-marker">09</span>
-              <Editable id="cap.proc.eyebrow" className="eyebrow">
+              <Editable id="int.proc.eyebrow" className="eyebrow">
                 Arquitetura + Interiores
               </Editable>
             </div>
             <Editable
-              id="cap.proc.tag"
+              id="int.proc.tag"
               className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground hidden md:block"
             >
               Dois processos · Uma autoria
@@ -1210,7 +1210,7 @@ const Captacao = () => {
 
           <Editable
             as="h2"
-            id="cap.proc.title"
+            id="int.proc.title"
             multiline
             className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] mb-20 text-balance max-w-5xl"
           >
@@ -1235,7 +1235,7 @@ const Captacao = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-background/40 lg:to-background" />
                 <div className="absolute bottom-8 left-8 z-10 flex items-center gap-3">
                   <Editable
-                    id="cap.proc.arq.tag"
+                    id="int.proc.arq.tag"
                     className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary"
                   >
                     Arquitetura · 01
@@ -1249,21 +1249,21 @@ const Captacao = () => {
                   <span className="number-marker block mb-4">Projeto referência</span>
                   <Editable
                     as="h3"
-                    id="cap.proc.arq.title"
+                    id="int.proc.arq.title"
                     multiline
                     className="font-display text-4xl md:text-5xl leading-[0.95] mb-2"
                   >
                     A casa nasce do <em className="text-primary not-italic">terreno e da luz.</em>
                   </Editable>
                   <Editable
-                    id="cap.proc.arq.location"
+                    id="int.proc.arq.location"
                     className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground block mb-8"
                   >
                     Casa Costas · 300m² · São José dos Campos
                   </Editable>
                   <div className="gold-line w-16 mb-8" />
                   <Editable
-                    id="cap.proc.arq.body"
+                    id="int.proc.arq.body"
                     multiline
                     as="p"
                     className="font-display text-base md:text-lg leading-relaxed text-foreground/80 mb-10"
@@ -1300,13 +1300,13 @@ const Captacao = () => {
                   <div className="grid grid-cols-3 gap-3 sm:gap-6 border-t border-border/60 pt-6">
                     <div>
                       <Editable
-                        id="cap.proc.arq.s1.value"
+                        id="int.proc.arq.s1.value"
                         className="font-display text-3xl md:text-4xl text-primary block leading-none mb-2"
                       >
                         04
                       </Editable>
                       <Editable
-                        id="cap.proc.arq.s1.label"
+                        id="int.proc.arq.s1.label"
                         className="font-mono text-[9px] uppercase tracking-[0.25em] text-muted-foreground"
                       >
                         Meses de projeto
@@ -1314,13 +1314,13 @@ const Captacao = () => {
                     </div>
                     <div>
                       <Editable
-                        id="cap.proc.arq.s2.value"
+                        id="int.proc.arq.s2.value"
                         className="font-display text-3xl md:text-4xl text-primary block leading-none mb-2"
                       >
                         05
                       </Editable>
                       <Editable
-                        id="cap.proc.arq.s2.label"
+                        id="int.proc.arq.s2.label"
                         className="font-mono text-[9px] uppercase tracking-[0.25em] text-muted-foreground"
                       >
                         Disciplinas
@@ -1328,13 +1328,13 @@ const Captacao = () => {
                     </div>
                     <div>
                       <Editable
-                        id="cap.proc.arq.s3.value"
+                        id="int.proc.arq.s3.value"
                         className="font-display text-3xl md:text-4xl text-primary block leading-none mb-2"
                       >
                         0
                       </Editable>
                       <Editable
-                        id="cap.proc.arq.s3.label"
+                        id="int.proc.arq.s3.label"
                         className="font-mono text-[9px] uppercase tracking-[0.25em] text-muted-foreground"
                       >
                         Retrabalho
@@ -1353,21 +1353,21 @@ const Captacao = () => {
             <div className="grid grid-cols-12 gap-8 items-center">
               <div className="col-span-12 lg:col-span-5 order-2 lg:order-1">
                 <Editable
-                  id="cap.proc.int.eyebrow"
+                  id="int.proc.int.eyebrow"
                   className="eyebrow mb-8 inline-block"
                 >
                   Interiores · Camada do habitar
                 </Editable>
                 <Editable
                   as="h3"
-                  id="cap.proc.int.title"
+                  id="int.proc.int.title"
                   multiline
                   className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.0] mb-10 text-balance"
                 >
                   O interior é onde a <em className="text-primary not-italic">arquitetura</em> encontra a vida.
                 </Editable>
                 <Editable
-                  id="cap.proc.int.body"
+                  id="int.proc.int.body"
                   multiline
                   as="p"
                   className="font-display text-base md:text-lg leading-relaxed text-foreground/75 mb-10"
@@ -1413,7 +1413,7 @@ const Captacao = () => {
                 </div>
                 <div className="absolute -bottom-4 -left-4 md:-left-8 bg-background border-l-2 border-primary px-5 py-3">
                   <Editable
-                    id="cap.proc.int.caption"
+                    id="int.proc.int.caption"
                     className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground"
                   >
                     Espaço Gourmet SJ · Materialidade e precisão
@@ -1426,7 +1426,7 @@ const Captacao = () => {
           <div className="mt-24 max-w-3xl">
             <Editable
               as="p"
-              id="cap.proc.note"
+              id="int.proc.note"
               multiline
               className="font-display italic text-lg md:text-xl text-foreground/70 leading-relaxed"
             >
@@ -1477,7 +1477,7 @@ const Captacao = () => {
               10
             </span>
             <Editable
-              id="cap.alem.eyebrow"
+              id="int.alem.eyebrow"
               className="font-mono-edit text-[10px] uppercase tracking-[0.3em]"
               style={{ color: "hsl(var(--ink-muted))" }}
             >
@@ -1488,7 +1488,7 @@ const Captacao = () => {
           <div className="max-w-4xl mb-20">
             <Editable
               as="h2"
-              id="cap.alem.title"
+              id="int.alem.title"
               multiline
               className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.0] text-balance mb-8"
               style={{ color: "hsl(var(--ink-dark))" }}
@@ -1498,7 +1498,7 @@ const Captacao = () => {
             <div className="h-px w-10 mb-8" style={{ backgroundColor: "hsl(var(--bronze) / 0.45)" }} />
             <Editable
               as="p"
-              id="cap.alem.body"
+              id="int.alem.body"
               multiline
               className="font-display italic text-lg md:text-xl leading-relaxed max-w-2xl"
               style={{ color: "hsl(var(--ink-dark) / 0.78)" }}
@@ -1581,7 +1581,7 @@ const Captacao = () => {
           <div className="flex items-baseline justify-between mb-16 pb-4 border-b border-border/60">
             <div className="flex items-baseline gap-6">
               <span className="number-marker">11</span>
-              <Editable id="cap.port.eyebrow" className="eyebrow">
+              <Editable id="int.port.eyebrow" className="eyebrow">
                 Portfólio selecionado
               </Editable>
             </div>
@@ -1589,7 +1589,7 @@ const Captacao = () => {
 
           <Editable
             as="h2"
-            id="cap.port.title"
+            id="int.port.title"
             multiline
             className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] mb-16 text-balance max-w-4xl"
           >
@@ -1713,7 +1713,7 @@ const Captacao = () => {
           <div className="mt-24 pt-12 border-t border-border/40 flex justify-center">
             <Editable
               as="p"
-              id="cap.port.fechamento"
+              id="int.port.fechamento"
               className="font-display italic text-2xl md:text-3xl text-foreground/80 text-center max-w-2xl leading-snug text-balance"
             >
               Cada projeto começa com uma conversa — e termina com uma casa que conta a história de quem vive nela.
@@ -1734,7 +1734,7 @@ const Captacao = () => {
           {/* Eyebrow no topo, sozinho e centralizado */}
           <div className="flex justify-center mb-4">
             <Editable
-              id="cap.fech.eyebrow"
+              id="int.fech.eyebrow"
               className="label-meta"
               style={{ color: "hsl(var(--bronze))" }}
             >
@@ -1753,7 +1753,7 @@ const Captacao = () => {
           {/* Título principal */}
           <Editable
             as="h2"
-            id="cap.fech.title"
+            id="int.fech.title"
             multiline
             className="display-section mb-10 md:mb-12"
             style={{ color: "hsl(var(--ink-dark))" }}
@@ -1766,7 +1766,7 @@ const Captacao = () => {
           {/* Parágrafo */}
           <Editable
             as="p"
-            id="cap.fech.body"
+            id="int.fech.body"
             multiline
             className="lede-editorial mb-20 md:mb-24 max-w-2xl mx-auto"
             style={{ color: "hsl(var(--ink-dark) / 0.6)" }}
@@ -1786,14 +1786,14 @@ const Captacao = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 mb-20 md:mb-24 max-w-3xl mx-auto">
             <div className="flex flex-col items-center gap-3">
               <Editable
-                id="cap.fech.contact.whatsapp.label"
+                id="int.fech.contact.whatsapp.label"
                 className="label-meta"
                 style={{ color: "hsl(var(--bronze))" }}
               >
                 WhatsApp
               </Editable>
               <Editable
-                id="cap.fech.contact.whatsapp"
+                id="int.fech.contact.whatsapp"
                 className="font-display italic text-base md:text-lg"
                 style={{ color: "hsl(var(--ink-dark) / 0.85)" }}
               >
@@ -1803,14 +1803,14 @@ const Captacao = () => {
 
             <div className="flex flex-col items-center gap-3">
               <Editable
-                id="cap.fech.contact.email.label"
+                id="int.fech.contact.email.label"
                 className="label-meta"
                 style={{ color: "hsl(var(--bronze))" }}
               >
                 E-mail
               </Editable>
               <Editable
-                id="cap.fech.contact.email"
+                id="int.fech.contact.email"
                 className="font-display italic text-base md:text-lg"
                 style={{ color: "hsl(var(--ink-dark) / 0.85)" }}
               >
@@ -1820,14 +1820,14 @@ const Captacao = () => {
 
             <div className="flex flex-col items-center gap-3">
               <Editable
-                id="cap.fech.contact.instagram.label"
+                id="int.fech.contact.instagram.label"
                 className="label-meta"
                 style={{ color: "hsl(var(--bronze))" }}
               >
                 Instagram
               </Editable>
               <Editable
-                id="cap.fech.contact.instagram"
+                id="int.fech.contact.instagram"
                 className="font-display italic text-base md:text-lg"
                 style={{ color: "hsl(var(--ink-dark) / 0.85)" }}
               >
@@ -1839,21 +1839,21 @@ const Captacao = () => {
           {/* Rodapé bipartido: citação à esquerda, logo NL + assinatura à direita */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-[hsl(var(--ink-dark))]/10">
             <Editable
-              id="cap.fech.rodape.quote"
+              id="int.fech.rodape.quote"
               className="font-display italic text-sm md:text-base text-[hsl(var(--ink-dark))]/45"
             >
               A arquitetura como decisão.
             </Editable>
             <div className="flex items-center gap-4">
               <Editable
-                id="cap.fech.logo"
+                id="int.fech.logo"
                 className="label-meta leading-none text-[hsl(var(--ink-dark))]/45"
               >
                 NL
               </Editable>
               <span className="h-4 w-px bg-[hsl(var(--ink-dark))]/20" />
               <Editable
-                id="cap.fech.rodape"
+                id="int.fech.rodape"
                 className="label-meta text-[hsl(var(--ink-dark))]/45"
               >
                 NL Arquitetos · 2026
@@ -1866,4 +1866,4 @@ const Captacao = () => {
   );
 };
 
-export default Captacao;
+export default Int;
