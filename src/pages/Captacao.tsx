@@ -633,12 +633,12 @@ const Captacao = () => {
       >
         <div className="max-w-6xl mx-auto w-full">
           <div className="flex items-baseline gap-6 mb-16 pb-4 border-b" style={{ borderColor: "hsl(var(--bronze) / 0.3)" }}>
-            <span className="font-mono-edit text-[10px] tracking-[0.3em]" style={{ color: "hsl(var(--ink-muted))" }}>
+            <span className="label-meta" style={{ color: "hsl(var(--ink-muted))" }}>
               07
             </span>
             <Editable
               id="cap.consol.eyebrow"
-              className="font-mono-edit text-[10px] uppercase tracking-[0.3em]"
+              className="label-meta"
               style={{ color: "hsl(var(--bronze))" }}
             >
               Consolidação
@@ -649,7 +649,7 @@ const Captacao = () => {
             as="h2"
             id="cap.consol.title"
             multiline
-            className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.0] text-balance mb-8 max-w-4xl"
+            className="display-section mb-8 max-w-4xl"
             style={{ color: "hsl(var(--ink-light))" }}
           >
             Estrutura e consolidação.
@@ -659,7 +659,7 @@ const Captacao = () => {
             as="p"
             id="cap.consol.subtitle"
             multiline
-            className="font-display text-lg md:text-xl leading-relaxed max-w-3xl mb-20"
+            className="body-editorial max-w-3xl mb-20"
             style={{ color: "hsl(var(--ink-light-soft))" }}
           >
             Não empilhamos volumes. Consolidamos legados. Cada traço é uma decisão técnica que sustenta a próxima visão.
