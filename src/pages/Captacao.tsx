@@ -1306,21 +1306,25 @@ const Captacao = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-12">
             {[
-              { id: "casa-costas", img: IMG_CASE, name: "Casa Costas", meta: "Residencial · 300m² · São José dos Campos · 2024" },
-              { id: "casa-jc", img: imgCasaJC, name: "Casa JC", meta: "Residencial · Jacareí SP · 2025" },
-              { id: "chale-juruva", img: imgChaleJuruva, name: "Chalé Juruva", meta: "Residencial / Interiores · 60m² · Santo Antônio do Pinhal SP · 2024" },
-              { id: "familia-borges", img: imgFamiliaBorges, name: "Família Borges", meta: "Interiores Residencial · 100m² · Jacareí SP · 2025" },
-              { id: "gourmet-jardim", img: imgGourmetJardim, name: "Espaço Gourmet Jardim", meta: "Interiores · 80m² · Jacareí SP · 2025" },
-              { id: "gourmet-salinas", img: imgGourmetSalinas, name: "Espaço Gourmet Salinas", meta: "Interiores · 65m² · São José dos Campos SP · 2025" },
-            ].map((proj) => (
+              { id: "casa-costas", img: IMG_CASE, name: "Casa Costas", meta: "Residencial · 300m² · São José dos Campos · 2024", status: "Concluído" },
+              { id: "casa-jc", img: imgCasaJC, name: "Casa JC", meta: "Residencial · Jacareí SP · 2025", status: "Em desenvolvimento" },
+              { id: "chale-juruva", img: imgChaleJuruva, name: "Chalé Juruva", meta: "Residencial / Interiores · 60m² · Santo Antônio do Pinhal SP · 2024", status: "Em desenvolvimento" },
+              { id: "familia-borges", img: imgFamiliaBorges, name: "Família Borges", meta: "Interiores Residencial · 100m² · Jacareí SP · 2025", status: "Em desenvolvimento" },
+              { id: "gourmet-jardim", img: imgGourmetJardim, name: "Espaço Gourmet Jardim", meta: "Interiores · 80m² · Jacareí SP · 2025", status: "Em desenvolvimento" },
+              { id: "gourmet-salinas", img: imgGourmetSalinas, name: "Espaço Gourmet Salinas", meta: "Interiores · 65m² · São José dos Campos SP · 2025", status: "Em desenvolvimento" },
+            ].map((proj, idx, arr) => (
               <article key={proj.id} className="group">
                 <Dialog>
                   <DialogTrigger asChild>
                     <button
                       type="button"
-                      className="relative aspect-[4/5] overflow-hidden mb-5 bg-surface-elevated w-full block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      className={`relative ${idx % 2 === 0 ? "aspect-[4/5]" : "aspect-[3/4]"} overflow-hidden mb-5 bg-surface-elevated w-full block cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
                       aria-label={`Ampliar imagem do projeto ${proj.name}`}
                     >
+                      {/* Numeração editorial — canto superior direito */}
+                      <span className="pointer-events-none absolute top-4 right-4 z-10 font-mono text-[10px] uppercase tracking-[0.3em] text-background/90 mix-blend-difference">
+                        {String(idx + 1).padStart(2, "0")} / {String(arr.length).padStart(2, "0")}
+                      </span>
                       <img
                         src={proj.img}
                         alt={proj.name}
