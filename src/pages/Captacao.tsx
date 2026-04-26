@@ -1836,20 +1836,33 @@ const Captacao = () => {
             </div>
           </div>
 
-          {/* Rodapé bipartido: citação à esquerda, assinatura à direita */}
+          {/* Rodapé bipartido: citação à esquerda, logo NL + assinatura à direita */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t" style={{ borderColor: "rgba(232, 228, 223, 0.1)" }}>
             <Editable
               id="cap.fech.rodape.quote"
               className="font-display italic text-sm md:text-base"
               style={{ color: "rgba(232, 228, 223, 0.45)" }}
             >
-              "A arquitetura como decisão."
+              A arquitetura como decisão.
             </Editable>
-            <Editable
-              id="cap.fech.rodape"
-              className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
-              style={{ color: "rgba(232, 228, 223, 0.45)" }}
-            >
+            <div className="flex items-center gap-4">
+              <Editable
+                id="cap.fech.logo"
+                className="font-display text-2xl tracking-wide leading-none"
+                style={{ color: "rgba(232, 228, 223, 0.7)" }}
+              >
+                NL
+              </Editable>
+              <span className="h-4 w-px" style={{ backgroundColor: "rgba(232, 228, 223, 0.2)" }} />
+              <Editable
+                id="cap.fech.rodape"
+                className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
+                style={{ color: "rgba(232, 228, 223, 0.45)" }}
+              >
+                NL Arquitetos · 2025
+              </Editable>
+            </div>
+          </div>
               NL Arquitetos · 2025
             </Editable>
           </div>
