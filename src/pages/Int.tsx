@@ -69,7 +69,7 @@ const Int = () => {
           >
             Interiores são <em className="text-primary italic font-light">decisão</em>,
             <br />
-            não tendência.
+            não decoração.
           </Editable>
 
           <div className="gold-line w-32 mb-8" />
@@ -80,7 +80,8 @@ const Int = () => {
             className="lede-editorial text-foreground/75 max-w-2xl block"
           >
             Projetamos cada ambiente com a precisão de quem sabe que marcenaria,
-            iluminação e revestimento mal decididos custam até 5x mais para refazer.
+            iluminação e revestimento mal decididos são mais caros para refazer
+            do que para acertar desde o início.
           </Editable>
 
           <div className="mt-12 flex items-center gap-4">
