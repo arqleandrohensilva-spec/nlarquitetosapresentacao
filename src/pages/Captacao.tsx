@@ -1306,8 +1306,8 @@ const Captacao = () => {
 
           {(() => {
             const projects = [
-              { id: "casa-costas", img: IMG_CASE, name: "Casa Costas", typology: "Residencial", place: "São José dos Campos · 300m²", year: "2024" },
               { id: "casa-jc", img: imgCasaJC, name: "Casa JC", typology: "Residencial", place: "Jacareí · SP", year: "2025" },
+              { id: "casa-costas", img: IMG_CASE, name: "Casa Costas", typology: "Residencial", place: "São José dos Campos · 300m²", year: "2024" },
               { id: "chale-juruva", img: imgChaleJuruva, name: "Chalé Juruva", typology: "Residencial / Interiores", place: "Santo Antônio do Pinhal · 60m²", year: "2024" },
               { id: "familia-borges", img: imgFamiliaBorges, name: "Família Borges", typology: "Interiores Residencial", place: "Jacareí · 100m²", year: "2025" },
               { id: "gourmet-jardim", img: imgGourmetJardim, name: "Espaço Gourmet Jardim", typology: "Interiores", place: "Jacareí · 80m²", year: "2025" },
@@ -1384,9 +1384,6 @@ const Captacao = () => {
                       {renderImage(anchor, "aspect-[16/10]")}
                     </div>
                     <div className="md:col-span-4 md:pb-4">
-                      <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary block mb-6">
-                        Capa · Projeto destaque
-                      </span>
                       <Editable
                         as="h3"
                         id={`cap.port.${anchor.id}.name`}
