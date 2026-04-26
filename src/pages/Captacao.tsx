@@ -1787,7 +1787,7 @@ const Captacao = () => {
             <div className="flex flex-col items-center gap-3">
               <Editable
                 id="cap.fech.contact.whatsapp.label"
-                className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
+                className="label-meta"
                 style={{ color: "hsl(var(--bronze))" }}
               >
                 WhatsApp
@@ -1804,7 +1804,7 @@ const Captacao = () => {
             <div className="flex flex-col items-center gap-3">
               <Editable
                 id="cap.fech.contact.email.label"
-                className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
+                className="label-meta"
                 style={{ color: "hsl(var(--bronze))" }}
               >
                 E-mail
@@ -1821,7 +1821,7 @@ const Captacao = () => {
             <div className="flex flex-col items-center gap-3">
               <Editable
                 id="cap.fech.contact.instagram.label"
-                className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
+                className="label-meta"
                 style={{ color: "hsl(var(--bronze))" }}
               >
                 Instagram
@@ -1837,24 +1837,24 @@ const Captacao = () => {
           </div>
 
           {/* Rodapé bipartido: citação à esquerda, logo NL + assinatura à direita */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-[hsl(var(--surface))]/10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-[hsl(var(--ink-dark))]/10">
             <Editable
               id="cap.fech.rodape.quote"
-              className="font-display italic text-sm md:text-base text-[hsl(var(--surface))]/45"
+              className="font-display italic text-sm md:text-base text-[hsl(var(--ink-dark))]/45"
             >
               A arquitetura como decisão.
             </Editable>
             <div className="flex items-center gap-4">
               <Editable
                 id="cap.fech.logo"
-                className="font-mono text-[10px] uppercase tracking-[0.4em] leading-none text-[hsl(var(--surface))]/45"
+                className="label-meta leading-none text-[hsl(var(--ink-dark))]/45"
               >
                 NL
               </Editable>
-              <span className="h-4 w-px bg-[hsl(var(--surface))]/20" />
+              <span className="h-4 w-px bg-[hsl(var(--ink-dark))]/20" />
               <Editable
                 id="cap.fech.rodape"
-                className="font-mono text-[10px] uppercase tracking-[0.4em] text-[hsl(var(--surface))]/45"
+                className="label-meta text-[hsl(var(--ink-dark))]/45"
               >
                 NL Arquitetos · 2026
               </Editable>
