@@ -1302,7 +1302,7 @@ const Captacao = () => {
             multiline
             className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] mb-16 text-balance max-w-4xl"
           >
-            Cada projeto é uma <em className="text-primary not-italic">decisão</em> antes de ser uma obra.
+            Antes da obra, <em className="text-primary">a decisão.</em>
           </Editable>
 
           {(() => {
