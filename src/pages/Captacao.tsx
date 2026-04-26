@@ -57,7 +57,7 @@ const Captacao = () => {
         <div className="absolute inset-0 vignette opacity-70" />
 
         <div className="relative z-10 max-w-4xl fade-up">
-          <Editable id="cap.capa.eyebrow" className="eyebrow mb-8 inline-block">
+          <Editable id="cap.capa.eyebrow" className="eyebrow-editorial text-primary/80 mb-8 inline-block">
             Apresentação · Confidencial
           </Editable>
 
@@ -65,7 +65,7 @@ const Captacao = () => {
             as="h1"
             id="cap.capa.title"
             multiline
-            className="font-display text-5xl md:text-7xl lg:text-[7.5rem] leading-[0.95] text-foreground mb-8 text-balance"
+            className="display-hero text-foreground mb-8"
           >
             Arquitetura é <em className="text-primary italic font-light">decisão</em>,
             <br />
@@ -77,7 +77,7 @@ const Captacao = () => {
           <Editable
             id="cap.capa.subtitle"
             multiline
-            className="font-display italic text-xl md:text-2xl text-foreground/75 max-w-2xl block"
+            className="lede-editorial text-foreground/75 max-w-2xl block"
           >
             Conduzimos cada projeto com a precisão de quem sabe que a obra é apenas
             a última etapa — e a mais cara para corrigir.
@@ -87,7 +87,7 @@ const Captacao = () => {
             <span className="h-px w-12 bg-primary/40" />
             <Editable
               id="cap.capa.tag"
-              className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80"
+              className="label-meta text-primary/80"
             >
               Apresentação 01 · 12
             </Editable>
@@ -97,13 +97,13 @@ const Captacao = () => {
         <div className="relative z-10 mt-16 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <Editable
             id="cap.capa.client"
-            className="font-mono text-[10px] uppercase tracking-[0.4em] text-foreground/45"
+            className="label-meta text-foreground/45"
           >
             Para · [Nome do Cliente]
           </Editable>
           <Editable
             id="cap.capa.date"
-            className="font-mono text-[10px] uppercase tracking-[0.4em] text-foreground/45"
+            className="label-meta text-foreground/45"
           >
             São José dos Campos · 2026
           </Editable>
