@@ -1048,7 +1048,7 @@ const Captacao = () => {
               </Editable>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border/60">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border/60 [&>article:last-child:nth-child(4n+3)]:col-span-2 [&>article:last-child:nth-child(4n+3)]:lg:col-span-2">
               {[
                 { n: "01", t: "Briefing & Levantamentos", d: "Escuta profunda, leitura do espaço e do estilo de vida." },
                 { n: "02", t: "Criação do Conceito", d: "Atmosfera, paleta e narrativa de interiores que orientam cada decisão." },
