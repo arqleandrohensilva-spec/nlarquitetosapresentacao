@@ -1067,33 +1067,43 @@ const Captacao = () => {
             </div>
           </div>
 
-          {/* Divisor narrativo — momento editorial */}
-          <div className="my-20 md:my-24 max-w-3xl mx-auto text-center">
-            <div className="flex items-center gap-5 mb-7">
-              <span className="h-px flex-1 bg-border" />
+          {/* Divisor narrativo — momento editorial com marco visual I → II */}
+          <div className="my-20 md:my-28 max-w-4xl mx-auto">
+            {/* Marco visual: numeração romana grande */}
+            <div className="flex items-center justify-center gap-8 md:gap-12 mb-10 select-none" aria-hidden="true">
+              <span className="font-display italic text-6xl md:text-7xl text-primary/40 leading-none">I</span>
+              <span className="flex items-center gap-3 text-primary/60">
+                <span className="h-px w-10 md:w-16 bg-primary/40" />
+                <span className="font-mono text-[10px] uppercase tracking-[0.4em]">para</span>
+                <span className="h-px w-10 md:w-16 bg-primary/40" />
+              </span>
+              <span className="font-display italic text-6xl md:text-7xl text-primary leading-none">II</span>
+            </div>
+
+            {/* Frase-regra centralizada */}
+            <div className="text-center">
               <Editable
                 id="cap.etapas.divisor.eyebrow"
-                className="font-mono text-[10px] uppercase tracking-[0.4em] text-primary"
+                className="font-mono text-[10px] uppercase tracking-[0.4em] text-primary mb-5 inline-block"
               >
                 Regra do método
               </Editable>
-              <span className="h-px flex-1 bg-border" />
+              <Editable
+                as="p"
+                id="cap.etapas.divisor.frase"
+                multiline
+                className="font-display italic text-2xl md:text-3xl text-foreground/85 leading-snug text-balance max-w-3xl mx-auto"
+              >
+                Interiores não começa enquanto a arquitetura não está aprovada.
+                <br />
+                <em className="not-italic text-primary">É regra, não preferência.</em>
+              </Editable>
             </div>
-            <Editable
-              as="p"
-              id="cap.etapas.divisor.frase"
-              multiline
-              className="font-display italic text-2xl md:text-3xl text-foreground/85 leading-snug text-balance"
-            >
-              Interiores não começa enquanto a arquitetura não está aprovada.
-              <br />
-              <em className="not-italic text-primary">É regra, não preferência.</em>
-            </Editable>
           </div>
 
           {/* ===== Trilha 02 · ARQUITETURA DE INTERIORES ===== */}
           <div>
-            <div className="flex items-baseline justify-between mb-10 pb-5 border-b border-border/60">
+            <div className="flex items-baseline justify-between mb-10 pb-5 border-b border-border/60 flex-wrap gap-4">
               <div className="flex items-baseline gap-4 md:gap-6 flex-wrap">
                 <Editable
                   id="cap.etapas.int.num"
@@ -1109,12 +1119,19 @@ const Captacao = () => {
                   Arquitetura de Interiores
                 </Editable>
               </div>
-              <Editable
-                id="cap.etapas.int.dur"
-                className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground hidden md:block"
-              >
-                3 a 4 meses · após arquitetura
-              </Editable>
+              <div className="flex items-baseline gap-4 md:gap-6 font-mono text-[10px] uppercase tracking-[0.3em]">
+                <Editable id="cap.etapas.int.fases" className="text-muted-foreground">
+                  <span className="text-primary">07</span> fases
+                </Editable>
+                <span className="text-border">·</span>
+                <Editable id="cap.etapas.int.entreg" className="text-muted-foreground hidden md:inline">
+                  <span className="text-primary">~90</span> entregáveis
+                </Editable>
+                <span className="text-border hidden md:inline">·</span>
+                <Editable id="cap.etapas.int.dur" className="text-muted-foreground">
+                  3 a 4 meses
+                </Editable>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-l border-t border-border/60">
