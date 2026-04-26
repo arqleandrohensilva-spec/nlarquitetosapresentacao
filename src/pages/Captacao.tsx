@@ -918,7 +918,7 @@ const Captacao = () => {
             </Editable>
           </div>
 
-          <div className="grid grid-cols-12 gap-8 mb-20">
+          <div className="grid grid-cols-12 gap-8 mb-16">
             <Editable
               as="h2"
               id="cap.etapas.title"
@@ -939,9 +939,37 @@ const Captacao = () => {
             </Editable>
           </div>
 
+          {/* ===== TESE DE ABERTURA · MANIFESTO DO MÉTODO ===== */}
+          <div className="mb-24 md:mb-28 py-12 md:py-14 border-y border-border/60 grid grid-cols-12 gap-6 md:gap-10 items-center">
+            <Editable
+              id="cap.etapas.tese.eyebrow"
+              className="col-span-12 md:col-span-2 font-mono text-[10px] uppercase tracking-[0.4em] text-primary"
+            >
+              O método NL
+            </Editable>
+            <Editable
+              as="p"
+              id="cap.etapas.tese.frase"
+              multiline
+              className="col-span-12 md:col-span-6 font-display text-3xl md:text-4xl lg:text-5xl leading-[1.05] text-foreground text-balance"
+            >
+              A obra é a última etapa.
+              {" "}
+              <em className="text-primary not-italic">Não a primeira.</em>
+            </Editable>
+            <Editable
+              as="p"
+              id="cap.etapas.tese.contexto"
+              multiline
+              className="col-span-12 md:col-span-4 text-sm md:text-base text-foreground/70 leading-relaxed md:border-l md:border-border/60 md:pl-6"
+            >
+              Quando a primeira betoneira chega, 90% das decisões já foram tomadas — no papel, em 3D, com tempo e sem pressa.
+            </Editable>
+          </div>
+
           {/* ===== Trilha 01 · ARQUITETURA RESIDENCIAL ===== */}
           <div className="mb-20">
-            <div className="flex items-baseline justify-between mb-10 pb-5 border-b border-border/60">
+            <div className="flex items-baseline justify-between mb-10 pb-5 border-b border-border/60 flex-wrap gap-4">
               <div className="flex items-baseline gap-4 md:gap-6 flex-wrap">
                 <Editable
                   id="cap.etapas.arq.num"
@@ -957,12 +985,19 @@ const Captacao = () => {
                   Arquitetura Residencial
                 </Editable>
               </div>
-              <Editable
-                id="cap.etapas.arq.dur"
-                className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground hidden md:block"
-              >
-                5 a 6 meses
-              </Editable>
+              <div className="flex items-baseline gap-4 md:gap-6 font-mono text-[10px] uppercase tracking-[0.3em]">
+                <Editable id="cap.etapas.arq.fases" className="text-muted-foreground">
+                  <span className="text-primary">08</span> fases
+                </Editable>
+                <span className="text-border">·</span>
+                <Editable id="cap.etapas.arq.entreg" className="text-muted-foreground hidden md:inline">
+                  <span className="text-primary">~150</span> entregáveis
+                </Editable>
+                <span className="text-border hidden md:inline">·</span>
+                <Editable id="cap.etapas.arq.dur" className="text-muted-foreground">
+                  5 a 6 meses
+                </Editable>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border/60">
