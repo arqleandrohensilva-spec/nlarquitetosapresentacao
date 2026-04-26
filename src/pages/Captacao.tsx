@@ -83,13 +83,13 @@ const Captacao = () => {
             a última etapa — e a mais cara para corrigir.
           </Editable>
 
-          <div className="mt-12 flex items-center gap-4 text-muted-foreground">
+          <div className="mt-12 flex items-center gap-4">
             <span className="h-px w-12 bg-primary/40" />
             <Editable
               id="cap.capa.tag"
               className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80"
             >
-              NL Arquitetos
+              Apresentação 01 · 12
             </Editable>
           </div>
         </div>
@@ -220,7 +220,7 @@ const Captacao = () => {
                 className="manifesto-quote font-display italic leading-[1.35] tracking-[-0.005em] text-pretty"
                 style={{ color: "hsl(var(--bronze))" }}
               >
-                "Beleza sem método é apenas decoração. Arquitetura é a decisão tomada antes do primeiro traço."
+                “Beleza sem método é apenas decoração. Arquitetura é a decisão tomada antes do primeiro traço.”
               </Editable>
             </div>
           </div>
@@ -411,7 +411,7 @@ const Captacao = () => {
                 multiline
                 className="font-display italic text-base md:text-lg lg:text-xl leading-[1.35] text-foreground/85 text-balance"
               >
-                "A forma é consequência da decisão — não da inspiração."
+                “A forma é consequência da decisão — não da inspiração.”
               </Editable>
               <div
                 className="mx-auto mt-3 h-px w-12"
@@ -1758,9 +1758,9 @@ const Captacao = () => {
             className="font-display text-4xl md:text-6xl lg:text-7xl leading-[1.05] text-balance mb-10 md:mb-12"
             style={{ color: "hsl(var(--ink-dark))" }}
           >
-            Em 48 horas, a próxima decisão
+            Em até 48 horas após nossa conversa,
             <br />
-            chega às <em className="not-italic" style={{ color: "hsl(var(--bronze-glow))" }}>suas mãos.</em>
+            a próxima decisão chega às <em className="not-italic" style={{ color: "hsl(var(--bronze-glow))" }}>suas mãos.</em>
           </Editable>
 
           {/* Parágrafo */}
