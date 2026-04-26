@@ -89,7 +89,7 @@ const Captacao = () => {
               id="cap.capa.tag"
               className="label-meta text-primary/80"
             >
-              Apresentação 01 · 12
+              NL Arquitetos
             </Editable>
           </div>
         </div>
