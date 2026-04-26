@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { clearAllEdits } from "./Editable";
 import { isEditMode } from "@/lib/edit-mode";
 
@@ -72,15 +71,6 @@ const SectionNav = () => {
           />
         </a>
         <div className="pointer-events-auto flex items-center gap-5">
-          <Link
-            to="/captacao"
-            className={`font-mono text-[10px] uppercase tracking-[0.25em] hover:text-primary transition-colors ${
-              onDarkSection ? "text-foreground/70" : "text-muted-foreground"
-            }`}
-          >
-            Apresentação →
-          </Link>
-
           {editing && (
             <button
               onClick={() => {
