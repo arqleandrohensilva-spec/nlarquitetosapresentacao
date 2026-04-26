@@ -968,28 +968,47 @@ const Captacao = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border/60">
               {[
                 { n: "01", t: "Levantamento & Briefing", d: "Escuta profunda, programa de necessidades e leitura do terreno." },
-                { n: "02", t: "Criação do Conceito", d: "Partido arquitetônico, narrativa e diretrizes que guiam todo o projeto." },
-                { n: "03", t: "Estudo Preliminar com 3D", d: "Volumetria, implantação e atmosferas em 3D antes de qualquer técnica." },
+                { n: "02", t: "Criação do Conceito", d: "Partido arquitetônico, narrativa e diretrizes que guiam todo o projeto.", key: true },
+                { n: "03", t: "Estudo Preliminar com 3D", d: "Volumetria, implantação e atmosferas em 3D antes de qualquer técnica.", key: true },
                 { n: "04", t: "Viabilidade Financeira", d: "Orçamento por quantitativos reais — decisão consciente de escopo.", optional: true },
                 { n: "05", t: "Projeto Legal & Aprovações", d: "Prefeitura, concessionárias e órgãos — conduzidos pela NL." },
-                { n: "06", t: "Projeto Executivo", d: "Pranchas, memoriais e detalhamentos prontos para canteiro." },
+                { n: "06", t: "Projeto Executivo", d: "Pranchas, memoriais e detalhamentos prontos para canteiro.", key: true },
                 { n: "07", t: "Compatibilização Técnica", d: "Conduzida em parceria com engenheiros especializados — estrutura e instalações revisadas antes do canteiro." },
                 { n: "08", t: "Acompanhamento de Obra", d: "Visitas técnicas, ajustes e curadoria de fornecedores.", optional: true },
               ].map((p, i) => (
                 <article
                   key={`arq-${i}`}
-                  className="bg-background p-7 md:p-8 flex flex-col group hover:bg-surface/60 transition-colors"
+                  className={cn(
+                    "bg-background p-7 md:p-8 flex flex-col group transition-colors relative",
+                    p.key
+                      ? "border-l-2 border-primary/70 hover:bg-surface/80"
+                      : "hover:bg-surface/60"
+                  )}
                 >
-                  <div className="flex items-baseline justify-between mb-5">
-                    <Editable
-                      id={`cap.etapas.arq.${i}.n`}
-                      className="font-mono text-[11px] tracking-[0.2em] text-primary"
-                    >
-                      {p.n}
-                    </Editable>
+                  <div className="flex items-baseline justify-between mb-5 min-h-[1.5rem]">
+                    {p.key ? (
+                      <Editable
+                        id={`cap.etapas.arq.${i}.n`}
+                        className="font-display italic text-3xl md:text-4xl text-primary leading-none"
+                      >
+                        {p.n}
+                      </Editable>
+                    ) : (
+                      <Editable
+                        id={`cap.etapas.arq.${i}.n`}
+                        className="font-mono text-[11px] tracking-[0.2em] text-primary"
+                      >
+                        {p.n}
+                      </Editable>
+                    )}
                     {p.optional && (
                       <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-muted-foreground/70">
                         Opcional
+                      </span>
+                    )}
+                    {p.key && (
+                      <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary/80">
+                        Decisão-chave
                       </span>
                     )}
                   </div>
@@ -1013,13 +1032,28 @@ const Captacao = () => {
             </div>
           </div>
 
-          {/* Divisor narrativo */}
-          <div className="my-16 md:my-20 flex items-center gap-6">
-            <span className="h-px flex-1 bg-border" />
-            <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-muted-foreground text-center">
-              Após aprovação da arquitetura
-            </span>
-            <span className="h-px flex-1 bg-border" />
+          {/* Divisor narrativo — momento editorial */}
+          <div className="my-20 md:my-24 max-w-3xl mx-auto text-center">
+            <div className="flex items-center gap-5 mb-7">
+              <span className="h-px flex-1 bg-border" />
+              <Editable
+                id="cap.etapas.divisor.eyebrow"
+                className="font-mono text-[10px] uppercase tracking-[0.4em] text-primary"
+              >
+                Regra do método
+              </Editable>
+              <span className="h-px flex-1 bg-border" />
+            </div>
+            <Editable
+              as="p"
+              id="cap.etapas.divisor.frase"
+              multiline
+              className="font-display italic text-2xl md:text-3xl text-foreground/85 leading-snug text-balance"
+            >
+              Interiores não começa enquanto a arquitetura não está aprovada.
+              <br />
+              <em className="not-italic text-primary">É regra, não preferência.</em>
+            </Editable>
           </div>
 
           {/* ===== Trilha 02 · ARQUITETURA DE INTERIORES ===== */}
@@ -1051,27 +1085,46 @@ const Captacao = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-l border-t border-border/60">
               {[
                 { n: "01", t: "Briefing & Levantamentos", d: "Escuta profunda, leitura do espaço e do estilo de vida." },
-                { n: "02", t: "Criação do Conceito", d: "Atmosfera, paleta e narrativa de interiores que orientam cada decisão." },
-                { n: "03", t: "Concepção 3D", d: "Imagens realistas e vídeo 360° para experimentar o projeto antes da obra." },
+                { n: "02", t: "Criação do Conceito", d: "Atmosfera, paleta e narrativa de interiores que orientam cada decisão.", key: true },
+                { n: "03", t: "Concepção 3D", d: "Imagens realistas e vídeo 360° para experimentar o projeto antes da obra.", key: true },
                 { n: "04", t: "Viabilidade Financeira", d: "Orçamento por quantitativos reais — decisão consciente de escopo.", optional: true },
-                { n: "05", t: "Projeto Executivo", d: "Marcenaria, iluminação, revestimentos e pranchas executivas." },
+                { n: "05", t: "Projeto Executivo", d: "Marcenaria, iluminação, revestimentos e pranchas executivas.", key: true },
                 { n: "06", t: "Visitas em Lojas", d: "Indicação e seleção conjunta de mobiliário, acabamentos, arte e têxteis.", optional: true },
                 { n: "07", t: "Acompanhamento de Obra", d: "Visitas técnicas, ajustes finos e curadoria de fornecedores.", optional: true },
               ].map((p, i) => (
                 <article
                   key={`int-${i}`}
-                  className="bg-background p-7 md:p-8 flex flex-col group hover:bg-surface/60 transition-colors border-r border-b border-border/60"
+                  className={cn(
+                    "bg-background p-7 md:p-8 flex flex-col group transition-colors border-r border-b border-border/60 relative",
+                    p.key
+                      ? "border-l-2 border-l-primary/70 hover:bg-surface/80"
+                      : "hover:bg-surface/60"
+                  )}
                 >
-                  <div className="flex items-baseline justify-between mb-5">
-                    <Editable
-                      id={`cap.etapas.int.${i}.n`}
-                      className="font-mono text-[11px] tracking-[0.2em] text-primary"
-                    >
-                      {p.n}
-                    </Editable>
+                  <div className="flex items-baseline justify-between mb-5 min-h-[1.5rem]">
+                    {p.key ? (
+                      <Editable
+                        id={`cap.etapas.int.${i}.n`}
+                        className="font-display italic text-3xl md:text-4xl text-primary leading-none"
+                      >
+                        {p.n}
+                      </Editable>
+                    ) : (
+                      <Editable
+                        id={`cap.etapas.int.${i}.n`}
+                        className="font-mono text-[11px] tracking-[0.2em] text-primary"
+                      >
+                        {p.n}
+                      </Editable>
+                    )}
                     {p.optional && (
                       <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-muted-foreground/70">
                         Opcional
+                      </span>
+                    )}
+                    {p.key && (
+                      <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary/80">
+                        Decisão-chave
                       </span>
                     )}
                   </div>
@@ -1095,15 +1148,33 @@ const Captacao = () => {
             </div>
           </div>
 
-          {/* Nota de rodapé */}
-          <Editable
-            as="p"
-            id="cap.etapas.nota"
-            multiline
-            className="mt-12 pt-6 border-t border-border/60 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground/80 text-center max-w-2xl mx-auto leading-relaxed"
-          >
-            Cronograma estimado · Pode variar conforme escopo, aprovações de terceiros e disponibilidade do cliente nas etapas de aprovação.
-          </Editable>
+          {/* Assinatura de fechamento */}
+          <div className="mt-20 md:mt-24 pt-10 border-t border-border/60 max-w-3xl mx-auto text-center">
+            <Editable
+              id="cap.etapas.fech.eyebrow"
+              className="font-mono text-[10px] uppercase tracking-[0.4em] text-primary mb-5 inline-block"
+            >
+              Assinatura do método
+            </Editable>
+            <Editable
+              as="p"
+              id="cap.etapas.fech.frase"
+              multiline
+              className="font-display italic text-xl md:text-2xl text-foreground/80 leading-snug text-balance mb-6"
+            >
+              Cada fase tem critério de avanço.
+              <br />
+              <em className="not-italic text-primary">A NL conduz — você aprova com segurança.</em>
+            </Editable>
+            <Editable
+              as="p"
+              id="cap.etapas.nota"
+              multiline
+              className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground/70 leading-relaxed"
+            >
+              Cronograma estimado · Pode variar conforme escopo, aprovações de terceiros e disponibilidade do cliente.
+            </Editable>
+          </div>
         </div>
       </section>
 
