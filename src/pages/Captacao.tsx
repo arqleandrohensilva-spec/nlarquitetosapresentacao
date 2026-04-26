@@ -1731,23 +1731,16 @@ const Captacao = () => {
         style={{ backgroundColor: "#1A1816", color: "#E8E4DF" }}
       >
         <div className="relative z-10 max-w-5xl mx-auto text-center w-full">
-          {/* Logo NL no topo */}
-          <Editable
-            id="cap.fech.logo"
-            className="font-display text-4xl md:text-5xl mb-16 md:mb-20 inline-block tracking-wide"
-            style={{ color: "rgba(232, 228, 223, 0.95)" }}
-          >
-            NL
-          </Editable>
-
-          {/* Eyebrow */}
-          <Editable
-            id="cap.fech.eyebrow"
-            className="font-mono-edit text-[10px] uppercase tracking-[0.4em] mb-4 inline-block"
-            style={{ color: "#8B7355" }}
-          >
-            Próximo passo
-          </Editable>
+          {/* Eyebrow no topo, sozinho e centralizado */}
+          <div className="flex justify-center mb-4">
+            <Editable
+              id="cap.fech.eyebrow"
+              className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
+              style={{ color: "#8B7355" }}
+            >
+              Próximo passo
+            </Editable>
+          </div>
 
           {/* Divisor bronze fino centralizado abaixo do eyebrow */}
           <div className="flex justify-center mb-10 md:mb-12">
