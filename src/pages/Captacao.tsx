@@ -684,13 +684,13 @@ const Captacao = () => {
             <div className="p-8 md:p-10 flex flex-col" style={{ backgroundColor: "#FFFFFF" }}>
               <div className="h-px w-10 mb-6" style={{ backgroundColor: "hsl(var(--bronze))" }} />
               <span className="font-display text-5xl md:text-6xl leading-none mb-4" style={{ color: "hsl(var(--bronze))" }}>
-                +9
+                +5
               </span>
               <span className="font-mono-edit text-[10px] uppercase tracking-[0.3em]" style={{ color: "#3A3A3A" }}>
                 Anos de prática autoral
               </span>
               <span className="font-display italic text-xs mt-3" style={{ color: "hsl(var(--ink-muted))" }}>
-                desde 2017
+                desde 2021
               </span>
             </div>
 
