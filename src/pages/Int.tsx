@@ -182,10 +182,10 @@ const Int = () => {
               className="display-section mb-10 sm:mb-12 md:mb-16 lg:mb-20"
               style={{ color: "hsl(var(--ink-dark))" }}
             >
-              Antes de desenhar,
+              Antes do ambiente,
               <br />
               <em className="not-italic font-light" style={{ color: "hsl(var(--bronze))" }}>
-                escutamos.
+                entendemos quem vive nele.
               </em>
             </Editable>
 
@@ -197,7 +197,7 @@ const Int = () => {
                 className="body-editorial"
                 style={{ color: "hsl(var(--ink-dark) / 0.82)", hyphens: "none", WebkitHyphens: "none" }}
               >
-                A NL não começa pelo desenho. Começa pela escuta — entendendo o terreno, a família, o modo de viver. Só depois o primeiro traço aparece. E quando aparece, já foi validado.
+                A NL não começa pelo estilo. Começa pela escuta — entendendo o modo de viver, os materiais que fazem sentido, a luz que cada ambiente pede. Só depois o conceito aparece. E quando aparece, já foi validado.
               </Editable>
               <Editable
                 id="int.manifesto.p2"
@@ -221,7 +221,7 @@ const Int = () => {
                 className="lede-editorial"
                 style={{ color: "hsl(var(--bronze))" }}
               >
-                “Beleza sem método é apenas decoração. Arquitetura é a decisão tomada antes do primeiro traço.”
+                “O ambiente certo não é o mais bonito. É o que foi pensado para quem vive nele.”
               </Editable>
             </div>
           </div>
