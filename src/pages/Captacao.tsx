@@ -1332,31 +1332,11 @@ const Captacao = () => {
                         loading="lazy"
                       />
 
-                      {/* Overlay gradiente bronze — sobe de baixo */}
-                      <div
-                        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-700 ease-out group-hover:opacity-100"
-                        style={{
-                          background:
-                            "linear-gradient(to top, hsl(var(--foreground) / 0.78) 0%, hsl(var(--foreground) / 0.35) 45%, transparent 75%)",
-                        }}
-                        aria-hidden="true"
-                      />
-
                       {/* Filete bronze superior — assinatura editorial */}
                       <div
                         className="pointer-events-none absolute top-6 left-6 h-px w-0 bg-primary-glow transition-all duration-700 ease-out group-hover:w-12"
                         aria-hidden="true"
                       />
-
-                      {/* Caption editorial sobre a imagem */}
-                      <div className="pointer-events-none absolute inset-x-0 bottom-0 p-6 translate-y-3 opacity-0 transition-all duration-700 ease-out group-hover:translate-y-0 group-hover:opacity-100 text-left">
-                        <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-primary-glow block mb-2">
-                          Ampliar imagem
-                        </span>
-                        <h4 className="font-display text-2xl leading-tight text-background">
-                          {proj.name}
-                        </h4>
-                      </div>
                     </button>
                   </DialogTrigger>
 
