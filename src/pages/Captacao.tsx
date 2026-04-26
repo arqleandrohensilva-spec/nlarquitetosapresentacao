@@ -67,9 +67,9 @@ const Captacao = () => {
             multiline
             className="font-display text-5xl md:text-7xl lg:text-[7.5rem] leading-[0.95] text-foreground mb-8 text-balance"
           >
-            O lar como
+            Arquitetura é <em className="text-primary italic font-light">decisão</em>,
             <br />
-            <em className="text-primary not-italic font-light">obra</em> de uma vida.
+            não desejo.
           </Editable>
 
           <div className="gold-line w-32 mb-8" />
@@ -79,8 +79,8 @@ const Captacao = () => {
             multiline
             className="font-display italic text-xl md:text-2xl text-foreground/75 max-w-2xl block"
           >
-            Arquitetura e interiores conduzidos com método, sensibilidade e o cuidado
-            de quem entende que cada metro carrega uma história.
+            Conduzimos cada projeto com a precisão de quem sabe que a obra é apenas
+            a última etapa — e a mais cara para corrigir.
           </Editable>
 
           <div className="mt-12 flex items-center gap-4 text-muted-foreground">
@@ -105,7 +105,7 @@ const Captacao = () => {
             id="cap.capa.date"
             className="font-mono text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase"
           >
-            São José dos Campos · 2025
+            São José dos Campos · 2026
           </Editable>
         </div>
       </section>
