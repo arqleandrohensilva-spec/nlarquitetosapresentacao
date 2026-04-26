@@ -904,7 +904,7 @@ const Captacao = () => {
         <div className="max-w-7xl mx-auto w-full">
           <div className="flex items-baseline justify-between mb-16 pb-4 border-b border-border/60">
             <div className="flex items-baseline gap-6">
-              <span className="number-marker">08</span>
+              <span className="number-marker">09</span>
               <Editable id="cap.proc.eyebrow" className="eyebrow">
                 Arquitetura + Interiores
               </Editable>
