@@ -1378,22 +1378,23 @@ const Captacao = () => {
             return (
               <>
                 {/* ÂNCORA EDITORIAL — Casa Costas full-width como abertura do capítulo */}
-                <article className="group mb-32">
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-x-12 gap-y-8 items-end">
+                <article className="group mb-40">
+                  <div className="grid grid-cols-1 md:grid-cols-12 gap-x-12 gap-y-8 items-stretch">
                     <div className="md:col-span-8">
-                      {renderImage(anchor, "aspect-[16/10]")}
+                      {renderImage(anchor, "aspect-[4/5] md:aspect-[5/6]")}
                     </div>
-                    <div className="md:col-span-4 md:pb-4">
-                      <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary block mb-6">
+                    <div className="md:col-span-4 flex flex-col justify-center md:py-12">
+                      <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary block mb-8">
                         Capa · Projeto destaque
                       </span>
                       <Editable
                         as="h3"
                         id={`cap.port.${anchor.id}.name`}
-                        className="font-display text-4xl md:text-5xl leading-[1.02] text-foreground mb-6 transition-colors duration-500 group-hover:text-primary"
+                        className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.98] text-foreground mb-8 transition-colors duration-500 group-hover:text-primary"
                       >
                         {anchor.name}
                       </Editable>
+                      <div className="w-12 h-px bg-primary/40 mb-8" aria-hidden="true" />
                       {renderMeta(anchor)}
                     </div>
                   </div>
