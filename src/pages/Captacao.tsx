@@ -1861,26 +1861,6 @@ const Captacao = () => {
             </Editable>
           </div>
         </div>
-
-          {/* Logo NL discreta */}
-          <Editable
-            id="cap.fech.logo"
-            className="font-display text-3xl md:text-4xl mb-6 inline-block tracking-wide"
-            style={{ color: "rgba(232, 228, 223, 0.85)" }}
-          >
-            NL
-          </Editable>
-
-          {/* Rodapé mínimo */}
-          <Editable
-            as="p"
-            id="cap.fech.rodape"
-            className="font-mono-edit text-[10px] uppercase tracking-[0.4em]"
-            style={{ color: "rgba(232, 228, 223, 0.35)" }}
-          >
-            NL Arquitetos · São José dos Campos · 2025
-          </Editable>
-        </div>
       </section>
     </main>
   );
