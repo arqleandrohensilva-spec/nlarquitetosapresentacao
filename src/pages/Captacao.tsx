@@ -94,16 +94,16 @@ const Captacao = () => {
           </div>
         </div>
 
-        <div className="relative z-10 mt-16 flex flex-col md:flex-row md:items-end md:justify-between gap-4 text-muted-foreground">
+        <div className="relative z-10 mt-16 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <Editable
             id="cap.capa.client"
-            className="font-mono text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-primary/80"
+            className="font-mono text-[10px] uppercase tracking-[0.4em] text-foreground/45"
           >
             Para · [Nome do Cliente]
           </Editable>
           <Editable
             id="cap.capa.date"
-            className="font-mono text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase"
+            className="font-mono text-[10px] uppercase tracking-[0.4em] text-foreground/45"
           >
             São José dos Campos · 2026
           </Editable>
