@@ -1313,19 +1313,45 @@ const Captacao = () => {
               { id: "gourmet-jardim", img: imgGourmetJardim, name: "Espaço Gourmet Jardim", meta: "Interiores · 80m² · Jacareí SP · 2025" },
               { id: "gourmet-salinas", img: imgGourmetSalinas, name: "Espaço Gourmet Salinas", meta: "Interiores · 65m² · São José dos Campos SP · 2025" },
             ].map((proj) => (
-              <article key={proj.id} className="group">
-                <div className="aspect-[4/5] overflow-hidden mb-5 bg-surface-elevated">
+              <article key={proj.id} className="group cursor-pointer">
+                <div className="relative aspect-[4/5] overflow-hidden mb-5 bg-surface-elevated">
                   <img
                     src={proj.img}
                     alt={proj.name}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
                     loading="lazy"
                   />
+
+                  {/* Overlay gradiente bronze — sobe de baixo */}
+                  <div
+                    className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-700 ease-out group-hover:opacity-100"
+                    style={{
+                      background:
+                        "linear-gradient(to top, hsl(var(--foreground) / 0.78) 0%, hsl(var(--foreground) / 0.35) 45%, transparent 75%)",
+                    }}
+                    aria-hidden="true"
+                  />
+
+                  {/* Filete bronze superior — assinatura editorial */}
+                  <div
+                    className="pointer-events-none absolute top-6 left-6 h-px w-0 bg-primary-glow transition-all duration-700 ease-out group-hover:w-12"
+                    aria-hidden="true"
+                  />
+
+                  {/* Caption editorial sobre a imagem */}
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 p-6 translate-y-3 opacity-0 transition-all duration-700 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+                    <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-primary-glow block mb-2">
+                      Ver projeto
+                    </span>
+                    <h4 className="font-display text-2xl leading-tight text-background">
+                      {proj.name}
+                    </h4>
+                  </div>
                 </div>
                 <Editable
                   as="h3"
                   id={`cap.port.${proj.id}.name`}
-                  className="font-display text-2xl text-foreground mb-2"
+                  className="font-display text-2xl text-foreground mb-2 transition-colors duration-500 group-hover:text-primary"
                 >
                   {proj.name}
                 </Editable>
