@@ -9,6 +9,11 @@ import imgComoVolumetria from "@/assets/como-vira/02-volumetria.png";
 import imgComoPlanta from "@/assets/como-vira/03-planta.png";
 import imgComoRender from "@/assets/como-vira/04-render.png";
 import imgAlemProjeto from "@/assets/alem-projeto-bg.png";
+import imgCasaJC from "@/assets/portfolio/casa-jc.png";
+import imgChaleJuruva from "@/assets/portfolio/chale-juruva.png";
+import imgFamiliaBorges from "@/assets/portfolio/familia-borges.png";
+import imgGourmetJardim from "@/assets/portfolio/gourmet-jardim.png";
+import imgGourmetSalinas from "@/assets/portfolio/gourmet-salinas.png";
 
 /* ============================================================================
    NL ARQUITETOS · APRESENTAÇÃO DE CAPTAÇÃO PREMIUM
@@ -1302,11 +1307,11 @@ const Captacao = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-12">
             {[
               { id: "casa-costas", img: IMG_CASE, name: "Casa Costas", meta: "Residencial · 300m² · São José dos Campos · 2024" },
-              { id: "ap-vista", img: IMG_HERO, name: "Apartamento Vista", meta: "Interiores · 180m² · São Paulo · 2024" },
-              { id: "casa-mata", img: IMG_CASE, name: "Casa Mata", meta: "Residencial · 420m² · Campos do Jordão · 2023" },
-              { id: "ap-luz", img: IMG_HERO, name: "Apartamento Luz", meta: "Interiores · 145m² · São José dos Campos · 2023" },
-              { id: "casa-jardim", img: IMG_CASE, name: "Casa Jardim", meta: "Residencial · 380m² · Jacareí · 2022" },
-              { id: "ap-sereno", img: IMG_HERO, name: "Apartamento Sereno", meta: "Interiores · 210m² · Taubaté · 2022" },
+              { id: "casa-jc", img: imgCasaJC, name: "Casa JC", meta: "Residencial · Jacareí SP · 2025" },
+              { id: "chale-juruva", img: imgChaleJuruva, name: "Chalé Juruva", meta: "Residencial / Interiores · 60m² · Santo Antônio do Pinhal SP · 2024" },
+              { id: "familia-borges", img: imgFamiliaBorges, name: "Família Borges", meta: "Interiores Residencial · 100m² · Jacareí SP · 2025" },
+              { id: "gourmet-jardim", img: imgGourmetJardim, name: "Espaço Gourmet Jardim", meta: "Interiores · 80m² · Jacareí SP · 2025" },
+              { id: "gourmet-salinas", img: imgGourmetSalinas, name: "Espaço Gourmet Salinas", meta: "Interiores · 65m² · São José dos Campos SP · 2025" },
             ].map((proj) => (
               <article key={proj.id} className="group">
                 <div className="aspect-[4/5] overflow-hidden mb-5 bg-surface-elevated">
