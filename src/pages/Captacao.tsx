@@ -14,6 +14,7 @@ import imgChaleJuruva from "@/assets/portfolio/chale-juruva.png";
 import imgFamiliaBorges from "@/assets/portfolio/familia-borges.png";
 import imgGourmetJardim from "@/assets/portfolio/gourmet-jardim.png";
 import imgGourmetSalinas from "@/assets/portfolio/gourmet-salinas.png";
+import imgCasaOliveira from "@/assets/portfolio/casa-oliveira.png";
 
 /* ============================================================================
    NL ARQUITETOS · APRESENTAÇÃO DE CAPTAÇÃO PREMIUM
@@ -1312,6 +1313,7 @@ const Captacao = () => {
               { id: "familia-borges", img: imgFamiliaBorges, name: "Família Borges", typology: "Interiores Residencial", place: "Jacareí · 100m²", year: "2025" },
               { id: "gourmet-jardim", img: imgGourmetJardim, name: "Espaço Gourmet Jardim", typology: "Interiores", place: "Jacareí · 80m²", year: "2025" },
               { id: "gourmet-salinas", img: imgGourmetSalinas, name: "Espaço Gourmet Salinas", typology: "Interiores", place: "São José dos Campos · 65m²", year: "2025" },
+              { id: "casa-oliveira", img: imgCasaOliveira, name: "Casa Oliveira", typology: "Interiores", place: "Jacareí · SP · 70m²", year: "2025" },
             ];
             const [anchor, ...rest] = projects;
 
