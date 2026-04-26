@@ -1863,9 +1863,6 @@ const Captacao = () => {
               </Editable>
             </div>
           </div>
-              NL Arquitetos · 2025
-            </Editable>
-          </div>
         </div>
       </section>
     </main>
