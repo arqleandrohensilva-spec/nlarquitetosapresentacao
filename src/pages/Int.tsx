@@ -951,7 +951,7 @@ const Int = () => {
                   id="int.etapas.int.num"
                   className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary"
                 >
-                  Trilha 02
+                  Processo
                 </Editable>
                 <Editable
                   as="h3"
