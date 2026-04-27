@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import MapaAtuacao from "@/components/MapaAtuacao";
 import { cn } from "@/lib/utils";
-import imgComoCroqui from "@/assets/como-vira/01-croqui.png";
-import imgComoVolumetria from "@/assets/como-vira/02-volumetria.png";
-import imgComoPlanta from "@/assets/como-vira/03-planta.png";
-import imgComoRender from "@/assets/como-vira/04-render.png";
+import imgComoEscuta from "@/assets/int-como-vira/01-escuta.png";
+import imgComoConceito from "@/assets/int-como-vira/02-conceito.png";
+import imgComoDesenvolvimento from "@/assets/int-como-vira/03-desenvolvimento.png";
+import imgComoEntrega from "@/assets/int-como-vira/04-entrega.png";
 import imgAlemProjeto from "@/assets/alem-projeto-bg.png";
 import imgCasaJC from "@/assets/portfolio/casa-jc.png";
 import imgChaleJuruva from "@/assets/portfolio/chale-juruva.png";
@@ -292,31 +292,31 @@ const Int = () => {
             {[
               {
                 id: "01",
-                img: imgComoCroqui,
-                eyebrow: "Croqui",
-                title: "O projeto começa na escuta.",
-                sub: "Antes do traço, existe uma conversa.",
+                img: imgComoEscuta,
+                eyebrow: "ESCUTA",
+                title: "O ambiente começa na conversa.",
+                sub: "Antes do conceito, existe o modo de viver.",
               },
               {
                 id: "02",
-                img: imgComoVolumetria,
-                eyebrow: "Volumetria",
-                title: "A forma nasce da decisão.",
-                sub: "Não do acaso — do método.",
+                img: imgComoConceito,
+                eyebrow: "CONCEITO",
+                title: "A atmosfera nasce da decisão.",
+                sub: "Não do estilo — do que faz sentido para quem habita.",
               },
               {
                 id: "03",
-                img: imgComoPlanta,
-                eyebrow: "Disposição interna",
-                title: "Antes do desenho, existe ordem.",
-                sub: "Fluxo. Relação. Hierarquia.",
+                img: imgComoDesenvolvimento,
+                eyebrow: "DESENVOLVIMENTO",
+                title: "Cada material tem um porquê.",
+                sub: "Marcenaria, iluminação, revestimento — decididos antes de comprados.",
               },
               {
                 id: "04",
-                img: imgComoRender,
+                img: imgComoEntrega,
                 eyebrow: "ENTREGA",
-                title: "A forma não é criada.",
-                sub: "Ela é consequência.",
+                title: "O ambiente não é decorado.",
+                sub: "É construído com precisão.",
               },
             ].map((step) => (
               <figure
@@ -412,7 +412,7 @@ const Int = () => {
                 multiline
                 className="font-display italic text-base md:text-lg lg:text-xl leading-[1.35] text-foreground/85 text-balance"
               >
-                “A forma é consequência da decisão — não da inspiração.”
+                “O interior certo não é o mais bonito. É o que foi pensado antes de ser executado.”
               </Editable>
               <div
                 className="mx-auto mt-3 h-px w-12"
