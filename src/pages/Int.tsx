@@ -454,9 +454,9 @@ const Int = () => {
                 multiline
                 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.0] text-balance mb-8"
               >
-                Um escritório onde
+                Dois arquitetos no mesmo projeto.
                 <br />
-                <em className="text-primary not-italic">cada projeto é tratado como único.</em>
+                <em className="text-primary not-italic">Sempre.</em>
               </Editable>
 
               <Editable
@@ -465,10 +465,10 @@ const Int = () => {
                 as="p"
                 className="font-display text-base lg:text-lg leading-relaxed text-foreground/75 max-w-xl mb-6"
               >
-                A NL nasceu da união entre dois arquitetos com visões complementares —
-                um olhar voltado à composição arquitetônica e outro à atmosfera
-                interior. Juntos, fundamos um escritório que entrega projetos integrais,
-                onde estrutura e alma caminham lado a lado.
+                A NL nasceu da união entre dois arquitetos com formações complementares —
+                mas com o mesmo método. Cada projeto passa pelos dois: do briefing ao
+                projeto executivo, da primeira conversa à última prancha. Nenhuma etapa
+                é delegada. Nenhum projeto é de só um sócio.
               </Editable>
 
               <Editable
