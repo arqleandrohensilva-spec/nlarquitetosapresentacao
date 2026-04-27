@@ -981,14 +981,16 @@ const Int = () => {
                 { n: "05", t: "Projeto Executivo", d: "Marcenaria, iluminação, revestimentos e pranchas executivas.", key: true },
                 { n: "06", t: "Visitas em Lojas", d: "Indicação e seleção de mobiliário, acabamentos, arte e têxteis.", optional: true },
                 { n: "07", t: "Acompanhamento de Obra", d: "Visitas técnicas, ajustes finos e indicação de fornecedores.", optional: true },
-              ].map((p, i) => (
+              ].map((p, i, arr) => (
                 <article
                   key={`int-${i}`}
                   className={cn(
                     "bg-background p-7 md:p-8 flex flex-col group transition-colors border-r border-b border-border/60 relative",
                     p.key
                       ? "border-l-2 border-l-primary/70 hover:bg-surface/80"
-                      : "hover:bg-surface/60"
+                      : "hover:bg-surface/60",
+                    // último card sozinho na 3ª linha (lg:grid-cols-3) → centraliza
+                    i === arr.length - 1 && "lg:col-start-2"
                   )}
                 >
                   <div className="flex items-baseline justify-between mb-5 min-h-[1.5rem]">
