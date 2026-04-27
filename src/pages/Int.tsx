@@ -1138,13 +1138,13 @@ const Int = () => {
                     multiline
                     className="font-display text-4xl md:text-5xl leading-[0.95] mb-2"
                   >
-                    A casa nasce do <em className="text-primary not-italic">terreno e da luz.</em>
+                    O chalé nasce da <em className="text-primary not-italic">mata e da altitude.</em>
                   </Editable>
                   <Editable
                     id="int.proc.arq.location"
                     className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground block mb-8"
                   >
-                    Casa Costas · 300m² · São José dos Campos
+                    Chalé Juruva · 60m² · Santo Antônio do Pinhal
                   </Editable>
                   <div className="gold-line w-16 mb-8" />
                   <Editable
@@ -1153,10 +1153,10 @@ const Int = () => {
                     as="p"
                     className="font-display text-base md:text-lg leading-relaxed text-foreground/80 mb-10"
                   >
-                    O pedido era claro: uma residência que equilibrasse presença e acolhimento.
-                    A fachada em concreto e madeira define o limite entre o público e o privado —
-                    sem abrir mão da luz. Cada detalhe foi validado em projeto antes de qualquer
-                    execução.
+                    O pedido era um refúgio na Mantiqueira que conversasse com a mata sem
+                    competir com ela. Madeira, pedra e grandes panos de vidro emolduram a
+                    paisagem e capturam a luz da serra. Cada decisão — da implantação ao
+                    caixilho — foi resolvida em projeto, antes da obra começar.
                   </Editable>
                   <ul className="space-y-3 font-display text-foreground/80 mb-10">
                     {[
