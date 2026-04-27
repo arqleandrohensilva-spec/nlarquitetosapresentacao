@@ -1483,7 +1483,7 @@ const Int = () => {
 
           {(() => {
             const projects = [
-              { id: "casa-jc", img: imgCasaJC, name: "Casa JC", typology: "Residencial", place: "Jacareí · SP", year: "2025" },
+              { id: "casa-jc", img: imgCasaJC, name: "Casa JF", typology: "Interiores", place: "Jacareí · SP", year: "2025" },
               { id: "casa-costas", img: IMG_CASE, name: "Casa Costas", typology: "Residencial", place: "São José dos Campos · 300m²", year: "2024" },
               { id: "chale-juruva", img: imgChaleJuruva, name: "Chalé Juruva", typology: "Residencial / Interiores", place: "Santo Antônio do Pinhal · 60m²", year: "2024" },
               { id: "familia-borges", img: imgFamiliaBorges, name: "Família Borges", typology: "Interiores Residencial", place: "Jacareí · 100m²", year: "2025" },
