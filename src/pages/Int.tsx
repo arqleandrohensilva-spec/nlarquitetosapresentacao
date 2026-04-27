@@ -1406,8 +1406,8 @@ const Int = () => {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-y-12 md:gap-x-8 lg:gap-x-12 relative">
               {[
                 { id: "entrega", step: "01", t: "Entrega", b: "Sua equipe de obra recebe o projeto com clareza absoluta — nada fica aberto à interpretação." },
-                { id: "acompanhamento", step: "02", t: "Presença em campo", b: "Estamos no canteiro nos momentos decisivos — quando uma escolha errada ainda pode ser corrigida no papel, não no cimento." },
-                { id: "curadoria", step: "03", t: "Indicação", b: "Você acessa uma rede de fornecedores já provada em obras reais — sem ensaios à sua custa." },
+                { id: "acompanhamento", step: "02", t: "Presença em campo", b: "Estamos no ambiente nos momentos decisivos — quando uma escolha errada ainda pode ser corrigida no papel, não no piso." },
+                { id: "curadoria", step: "03", t: "Indicação", b: "Você acessa uma rede de fornecedores já provada em projetos reais — marceneiros, iluminação, revestimento e têxteis sem ensaios à sua custa." },
                 { id: "suporte", step: "04", t: "Continuidade", b: "Após a entrega, qualquer dúvida da casa passa por nós antes de se tornar um problema." },
               ].map((s) => (
                 <div key={s.id} className="relative">
