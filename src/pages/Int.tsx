@@ -979,7 +979,7 @@ const Int = () => {
                 { n: "03", t: "Concepção 3D", d: "Imagens realistas e vídeo 360° para experimentar o projeto antes da obra.", key: true },
                 { n: "04", t: "Viabilidade Financeira", d: "Orçamento por quantitativos reais — decisão consciente de escopo.", optional: true },
                 { n: "05", t: "Projeto Executivo", d: "Marcenaria, iluminação, revestimentos e pranchas executivas.", key: true },
-                { n: "06", t: "Visitas em Lojas", d: "Indicação e seleção conjunta de mobiliário, acabamentos, arte e têxteis.", optional: true },
+                { n: "06", t: "Visitas em Lojas", d: "Indicação e seleção de mobiliário, acabamentos, arte e têxteis.", optional: true },
                 { n: "07", t: "Acompanhamento de Obra", d: "Visitas técnicas, ajustes finos e indicação de fornecedores.", optional: true },
               ].map((p, i) => (
                 <article
