@@ -941,127 +941,9 @@ const Int = () => {
           </div>
 
 
-          {/* ===== Trilha 01 · ARQUITETURA RESIDENCIAL ===== */}
-          <div className="mb-20">
-            <div className="flex items-baseline justify-between mb-10 pb-5 border-b border-border/60 flex-wrap gap-4">
-              <div className="flex items-baseline gap-4 md:gap-6 flex-wrap">
-                <Editable
-                  id="int.etapas.arq.num"
-                  className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary"
-                >
-                  Trilha 01
-                </Editable>
-                <Editable
-                  as="h3"
-                  id="int.etapas.arq.title"
-                  className="font-display text-3xl md:text-4xl text-foreground leading-tight"
-                >
-                  Arquitetura Residencial
-                </Editable>
-              </div>
-              <div className="flex items-baseline gap-4 md:gap-6 font-mono text-[10px] uppercase tracking-[0.3em]">
-                <Editable id="int.etapas.arq.fases" className="text-muted-foreground">
-                  <span className="text-primary">08</span> fases
-                </Editable>
-                <span className="text-border">·</span>
-                <Editable id="int.etapas.arq.dur" className="text-muted-foreground">
-                  5 a 6 meses
-                </Editable>
-              </div>
-            </div>
+          {/* (Removido: Trilha 01 · Arquitetura Residencial — esta apresentação é dedicada a Interiores) */}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border/60">
-              {[
-                { n: "01", t: "Levantamento & Briefing", d: "Escuta profunda, programa de necessidades e leitura do terreno." },
-                { n: "02", t: "Criação do Conceito", d: "Partido arquitetônico, narrativa e diretrizes que guiam todo o projeto.", key: true },
-                { n: "03", t: "Estudo Preliminar com 3D", d: "Volumetria, implantação e atmosferas em 3D antes de qualquer técnica.", key: true },
-                { n: "04", t: "Viabilidade Financeira", d: "Orçamento por quantitativos reais — decisão consciente de escopo.", optional: true },
-                { n: "05", t: "Projeto Legal & Aprovações", d: "Prefeitura, concessionárias e órgãos — conduzidos pela NL." },
-                { n: "06", t: "Projeto Executivo", d: "Pranchas, memoriais e detalhamentos prontos para canteiro.", key: true },
-                { n: "07", t: "Compatibilização Técnica", d: "Conduzida em parceria com engenheiros especializados — estrutura e instalações revisadas antes do canteiro." },
-                { n: "08", t: "Acompanhamento de Obra", d: "Visitas técnicas, ajustes e indicação de fornecedores.", optional: true },
-              ].map((p, i) => (
-                <article
-                  key={`arq-${i}`}
-                  className={cn(
-                    "bg-background p-7 md:p-8 flex flex-col group transition-colors relative",
-                    p.key
-                      ? "border-l-2 border-primary/70 hover:bg-surface/80"
-                      : "hover:bg-surface/60"
-                  )}
-                >
-                  <div className="flex items-baseline justify-between mb-5 min-h-[1.5rem]">
-                    {p.key ? (
-                      <Editable
-                        id={`cap.etapas.arq.${i}.n`}
-                        className="font-display italic text-3xl md:text-4xl text-primary leading-none"
-                      >
-                        {p.n}
-                      </Editable>
-                    ) : (
-                      <Editable
-                        id={`cap.etapas.arq.${i}.n`}
-                        className="font-mono text-[11px] tracking-[0.2em] text-primary"
-                      >
-                        {p.n}
-                      </Editable>
-                    )}
-                    {p.optional && (
-                      <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-muted-foreground/70">
-                        Opcional
-                      </span>
-                    )}
-                    {p.key && (
-                      <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary/80">
-                        Decisão-chave
-                      </span>
-                    )}
-                  </div>
-                  <Editable
-                    as="h4"
-                    id={`cap.etapas.arq.${i}.t`}
-                    className="font-display text-lg md:text-xl text-foreground leading-snug mb-3"
-                  >
-                    {p.t}
-                  </Editable>
-                  <Editable
-                    as="p"
-                    id={`cap.etapas.arq.${i}.d`}
-                    multiline
-                    className="text-sm text-foreground/65 leading-relaxed"
-                  >
-                    {p.d}
-                  </Editable>
-                </article>
-              ))}
-            </div>
-          </div>
 
-          {/* Divisor narrativo — momento editorial */}
-          <div className="my-20 md:my-28 max-w-4xl mx-auto">
-
-            {/* Frase-regra centralizada */}
-            <div className="text-center">
-              <Editable
-                id="int.etapas.divisor.eyebrow"
-                className="font-mono text-[10px] uppercase tracking-[0.4em] text-primary mb-5 inline-block"
-              >
-                Regra do método
-              </Editable>
-              <Editable
-                as="p"
-                id="int.etapas.divisor.frase"
-                multiline
-                className="font-display italic text-2xl md:text-3xl text-foreground/85 leading-snug text-balance max-w-3xl mx-auto"
-              >
-                Interiores não começa enquanto a arquitetura não está aprovada.
-                <br />
-                <em className="not-italic text-primary">É regra, não preferência.</em>
-              </Editable>
-            </div>
-          </div>
-
-          {/* ===== Trilha 02 · ARQUITETURA DE INTERIORES ===== */}
           <div>
             <div className="flex items-baseline justify-between mb-10 pb-5 border-b border-border/60 flex-wrap gap-4">
               <div className="flex items-baseline gap-4 md:gap-6 flex-wrap">
@@ -1069,7 +951,7 @@ const Int = () => {
                   id="int.etapas.int.num"
                   className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary"
                 >
-                  Trilha 02
+                  Processo
                 </Editable>
                 <Editable
                   as="h3"
