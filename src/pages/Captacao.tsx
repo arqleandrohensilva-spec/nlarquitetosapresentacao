@@ -9,7 +9,7 @@ import imgComoVolumetria from "@/assets/como-vira/02-volumetria.png";
 import imgComoPlanta from "@/assets/como-vira/03-planta.png";
 import imgComoRender from "@/assets/como-vira/04-render.png";
 import imgAlemProjeto from "@/assets/alem-projeto-bg.png";
-import imgCasaJC from "@/assets/portfolio/casa-jc.png";
+import imgCasaJC from "@/assets/portfolio/casa-jc.jpg";
 import imgChaleJuruva from "@/assets/portfolio/chale-juruva.png";
 import imgFamiliaBorges from "@/assets/portfolio/familia-borges.png";
 import imgGourmetJardim from "@/assets/portfolio/gourmet-jardim.png";
