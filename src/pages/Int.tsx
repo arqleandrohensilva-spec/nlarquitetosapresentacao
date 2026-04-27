@@ -10,6 +10,7 @@ import imgComoDesenvolvimento from "@/assets/int-como-vira/03-desenvolvimento.pn
 import imgComoEntrega from "@/assets/int-como-vira/04-entrega.png";
 import imgAlemProjeto from "@/assets/alem-projeto-bg.png";
 import imgCasaJC from "@/assets/portfolio/casa-jc.jpg";
+import imgEspacoGourmet from "@/assets/portfolio/espaco-gourmet-costas.jpg";
 import imgChaleJuruva from "@/assets/portfolio/chale-juruva.png";
 import imgFamiliaBorges from "@/assets/portfolio/familia-borges.png";
 import imgGourmetJardim from "@/assets/portfolio/gourmet-jardim.png";
@@ -1484,7 +1485,7 @@ const Int = () => {
           {(() => {
             const projects = [
               { id: "casa-jc", img: imgCasaJC, name: "Casa JF", typology: "Interiores", place: "Jacareí · SP", year: "2025" },
-              { id: "casa-costas", img: IMG_CASE, name: "Casa Costas", typology: "Residencial", place: "São José dos Campos · 300m²", year: "2024" },
+              { id: "espaco-gourmet", img: imgEspacoGourmet, name: "Espaço Gourmet", typology: "Interiores", place: "Jacareí · 80m²", year: "2025" },
               { id: "chale-juruva", img: imgChaleJuruva, name: "Chalé Juruva", typology: "Residencial / Interiores", place: "Santo Antônio do Pinhal · 60m²", year: "2024" },
               { id: "familia-borges", img: imgFamiliaBorges, name: "Família Borges", typology: "Interiores Residencial", place: "Jacareí · 100m²", year: "2025" },
               { id: "gourmet-jardim", img: imgGourmetJardim, name: "Espaço Gourmet Jardim", typology: "Interiores", place: "Jacareí · 80m²", year: "2025" },
