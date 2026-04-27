@@ -412,7 +412,7 @@ const Int = () => {
                 multiline
                 className="font-display italic text-base md:text-lg lg:text-xl leading-[1.35] text-foreground/85 text-balance"
               >
-                “A forma é consequência da decisão — não da inspiração.”
+                “O interior certo não é o mais bonito. É o que foi pensado antes de ser executado.”
               </Editable>
               <div
                 className="mx-auto mt-3 h-px w-12"
