@@ -1110,8 +1110,8 @@ const Int = () => {
             <div className="grid grid-cols-12 min-h-[80vh]">
               <div className="col-span-12 lg:col-span-7 relative min-h-[60vh] lg:min-h-[80vh] bg-background">
                 <img
-                  src="https://www.dropbox.com/scl/fi/dibhyhod5xpz47v3l9rp3/Gemini_Generated_Image_896gxz896gxz896g-1.png?rlkey=q1ltxbytg9eo2ynmbz0njb0f3&raw=1"
-                  alt="Casa Costas · residência NL Arquitetos · São José dos Campos"
+                  src={imgChaleJuruva}
+                  alt="Chalé Juruva · NL Arquitetos · Santo Antônio do Pinhal"
                   className="absolute inset-0 w-full h-full object-cover"
                   loading="lazy"
                   width={1920}
