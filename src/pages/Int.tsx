@@ -1602,7 +1602,7 @@ const Int = () => {
               id="int.port.fechamento"
               className="font-display italic text-2xl md:text-3xl text-foreground/80 text-center max-w-2xl leading-snug text-balance"
             >
-              Cada projeto começa com uma conversa — e termina com uma casa que conta a história de quem vive nela.
+              Interiores não se decoram. Se projetam.
             </Editable>
           </div>
         </div>
