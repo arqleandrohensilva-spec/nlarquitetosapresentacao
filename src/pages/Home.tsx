@@ -37,7 +37,7 @@ const Home = () => {
         {/* Dois cartões */}
         <div className="grid md:grid-cols-2 gap-px bg-border max-w-5xl">
           <Link
-            to="/arqint"
+            to="/proposta/arqint"
             className="group bg-background p-8 md:p-12 transition-colors hover:bg-muted/40 flex flex-col justify-between min-h-[280px]"
           >
             <div>
@@ -53,13 +53,13 @@ const Home = () => {
               </p>
             </div>
             <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-foreground mt-8 inline-flex items-center gap-2 group-hover:gap-4 transition-all">
-              Acessar /arqint
+              Acessar /proposta/arqint
               <span aria-hidden>→</span>
             </span>
           </Link>
 
           <Link
-            to="/int"
+            to="/proposta/int"
             className="group bg-background p-8 md:p-12 transition-colors hover:bg-muted/40 flex flex-col justify-between min-h-[280px]"
           >
             <div>
@@ -75,7 +75,7 @@ const Home = () => {
               </p>
             </div>
             <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-foreground mt-8 inline-flex items-center gap-2 group-hover:gap-4 transition-all">
-              Acessar /int
+              Acessar /proposta/int
               <span aria-hidden>→</span>
             </span>
           </Link>
