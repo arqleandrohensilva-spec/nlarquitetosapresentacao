@@ -18,11 +18,13 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/proposta/arqint" element={<Captacao />} />
-          <Route path="/proposta/int" element={<Int />} />
+          <Route path="/apresentacao/arqint" element={<Captacao />} />
+          <Route path="/apresentacao/int" element={<Int />} />
           {/* Redirects das rotas antigas */}
-          <Route path="/arqint" element={<Navigate to="/proposta/arqint" replace />} />
-          <Route path="/int" element={<Navigate to="/proposta/int" replace />} />
+          <Route path="/proposta/arqint" element={<Navigate to="/apresentacao/arqint" replace />} />
+          <Route path="/proposta/int" element={<Navigate to="/apresentacao/int" replace />} />
+          <Route path="/arqint" element={<Navigate to="/apresentacao/arqint" replace />} />
+          <Route path="/int" element={<Navigate to="/apresentacao/int" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
