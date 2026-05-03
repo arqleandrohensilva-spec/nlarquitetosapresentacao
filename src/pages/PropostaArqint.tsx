@@ -1198,6 +1198,12 @@ const ComparisonTable = () => (
     <Editable id="proposta-arq.cmp.footnote" multiline as="p" className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground text-center mt-6 leading-relaxed">
       Pacotes podem ser personalizados conforme a complexidade do projeto.
     </Editable>
+    <Editable id="proposta-arq.cmp.footnote2" multiline as="p" className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground text-center mt-3 leading-relaxed">
+      Itens opcionais são formalizados via aditivo de contrato conforme necessidade do projeto.
+    </Editable>
+    <Editable id="proposta-arq.cmp.footnote3" multiline as="p" className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground text-center mt-3 leading-relaxed">
+      No Plano Completo, cada fornecedor recebe o caderno específico da sua execução — sem margem para improviso.
+    </Editable>
   </div>
 );
 
