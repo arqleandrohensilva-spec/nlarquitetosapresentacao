@@ -484,7 +484,7 @@ const PropostaInt = () => {
               <div className="font-mono-edit text-[12px] md:text-[13px] tracking-[0.4em] uppercase mb-5" style={{ color: "#8B7355" }}>Prazo total estimado</div>
               <Editable id={`${PX}.crono.total`} className="font-display leading-none block">
                 <span style={{ color: "#E8E4DF", fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
-                  6 <em className="not-italic" style={{ color: "#8B7355" }}>meses</em>
+                  90 <em className="not-italic" style={{ color: "#8B7355" }}>dias</em>
                 </span>
               </Editable>
             </div>
