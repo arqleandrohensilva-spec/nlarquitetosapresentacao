@@ -4,10 +4,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "./pages/Home.tsx";
-import Captacao from "./pages/Captacao.tsx";
-import Int from "./pages/Int.tsx";
-import PropostaArqint from "./pages/PropostaArqint.tsx";
-import PropostaInt from "./pages/PropostaInt.tsx";
+import Login from "./pages/Login.tsx";
+import Pipeline from "./pages/Pipeline.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
