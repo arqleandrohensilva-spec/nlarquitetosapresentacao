@@ -88,6 +88,9 @@
   .font-mono {
     font-family: 'DM Mono', monospace;
   }
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
 
   /* Alias semântico — JetBrains Mono (mesma fonte de font-mono).
      Mantido para retrocompatibilidade. Prefira .font-mono em código novo. */
