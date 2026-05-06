@@ -55,7 +55,7 @@ const PropostaArqint = () => {
           <div className="mt-12 flex items-center gap-4 text-muted-foreground">
             <span className="h-px w-12 bg-primary/40" />
             <Editable id="proposta-arq.capa.validity" className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80">
-              Validade · 30 dias corridos
+              Validade · {validade}
             </Editable>
           </div>
         </div>
@@ -63,7 +63,7 @@ const PropostaArqint = () => {
         <div className="relative z-10 mt-16 flex flex-col md:flex-row md:items-end md:justify-between gap-4 text-muted-foreground">
           <div className="flex items-center gap-3 md:gap-4 flex-wrap">
             <Editable id="proposta-arq.capa.client" className="font-mono text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-primary/80 break-words">
-              Cliente · [Nome do Cliente]
+              Cliente · {nome}
             </Editable>
           </div>
           <Editable id="proposta-arq.capa.date" className="font-mono text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase break-words">
