@@ -587,8 +587,8 @@ const PropostaArqint = () => {
             </Editable>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <PackageCard id="basic" tier="Plano Executivo" tagline="Arquitetura" price="Sob consulta" priceNote="Sob consulta · conforme escopo" />
-            <PackageCard id="premium" tier="Plano Completo" tagline="Arquitetura + Interiores" price="Sob consulta" priceNote="Sob consulta · conforme escopo" recommended />
+            <PackageCard id="basic" tier="Plano Executivo" tagline="Arquitetura" price={valor_executivo} priceNote="Sob consulta · conforme escopo" />
+            <PackageCard id="premium" tier="Plano Completo" tagline="Arquitetura + Interiores" price={valor_completo} priceNote="Sob consulta · conforme escopo" recommended />
           </div>
           <ComparisonTable />
           <div className="mt-12 border border-border/60 bg-background max-w-5xl mx-auto">
