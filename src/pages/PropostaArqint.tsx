@@ -7,7 +7,6 @@ import SectionNavProposta from "@/components/SectionNavProposta";
 import PdfExportButtonProposta from "@/components/PdfExportButtonProposta";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
-import { usePropostaParams } from "@/hooks/usePropostaParams";
 import scopeMaterials from "@/assets/scope-materials.jpg";
 import propostaCapa from "@/assets/proposta/capa.jpg";
 import propostaLeandro from "@/assets/proposta/leandro.jpg";
@@ -22,7 +21,6 @@ import propostaPortSuite from "@/assets/proposta/gemini-m7jp.jpg";
 const LOGO_BRANCA = "/logo-branca.png";
 
 const PropostaArqint = () => {
-  const { nome, tipo, cidade, estado, area, objetivo, data, valor_executivo, valor_completo, validade } = usePropostaParams();
   return (
     <main className="relative bg-background text-foreground overflow-x-hidden">
       <SectionNavProposta />
@@ -55,7 +53,7 @@ const PropostaArqint = () => {
           <div className="mt-12 flex items-center gap-4 text-muted-foreground">
             <span className="h-px w-12 bg-primary/40" />
             <Editable id="proposta-arq.capa.validity" className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80">
-              Validade · {validade}
+              Validade · 30 dias corridos
             </Editable>
           </div>
         </div>
@@ -63,7 +61,7 @@ const PropostaArqint = () => {
         <div className="relative z-10 mt-16 flex flex-col md:flex-row md:items-end md:justify-between gap-4 text-muted-foreground">
           <div className="flex items-center gap-3 md:gap-4 flex-wrap">
             <Editable id="proposta-arq.capa.client" className="font-mono text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-primary/80 break-words">
-              Cliente · {nome}
+              Cliente · [Nome do Cliente]
             </Editable>
           </div>
           <Editable id="proposta-arq.capa.date" className="font-mono text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase break-words">
@@ -167,12 +165,12 @@ const PropostaArqint = () => {
             <div className="col-span-12 lg:col-span-7 lg:pl-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-0">
                 {[
-                  { id: "cliente", label: "Cliente", value: nome },
-                  { id: "projeto", label: "Projeto", value: tipo },
-                  { id: "localizacao", label: "Localização", value: `${cidade}, ${estado}` },
-                  { id: "metragem", label: "Metragem estimada", value: `${area} m²` },
-                  { id: "objetivo", label: "Objetivo", value: objetivo },
-                  { id: "data", label: "Data", value: data },
+                  { id: "cliente", label: "Cliente", value: "[Nome do Cliente]" },
+                  { id: "projeto", label: "Projeto", value: "[Residencial · Comercial · Interiores]" },
+                  { id: "localizacao", label: "Localização", value: "[Cidade, Estado]" },
+                  { id: "metragem", label: "Metragem estimada", value: "[XXX m²]" },
+                  { id: "objetivo", label: "Objetivo", value: "[Descrição breve do objetivo do cliente]" },
+                  { id: "data", label: "Data", value: "[DD Mês AAAA]" },
                 ].map((field) => (
                   <div key={field.id} className="py-6 border-b" style={{ borderColor: "rgba(139, 115, 85, 0.35)" }}>
                     <Editable id={`proposta-arq.diagnostico.field.${field.id}.label`} className="block mb-3 text-[10px] uppercase tracking-[0.3em]" style={{ color: "#8B7355", fontFamily: '"Courier New", monospace' }}>
@@ -587,8 +585,8 @@ const PropostaArqint = () => {
             </Editable>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <PackageCard id="basic" tier="Plano Executivo" tagline="Arquitetura" price={valor_executivo} priceNote="Sob consulta · conforme escopo" />
-            <PackageCard id="premium" tier="Plano Completo" tagline="Arquitetura + Interiores" price={valor_completo} priceNote="Sob consulta · conforme escopo" recommended />
+            <PackageCard id="basic" tier="Plano Executivo" tagline="Arquitetura" price="Sob consulta" priceNote="Sob consulta · conforme escopo" />
+            <PackageCard id="premium" tier="Plano Completo" tagline="Arquitetura + Interiores" price="Sob consulta" priceNote="Sob consulta · conforme escopo" recommended />
           </div>
           <ComparisonTable />
           <div className="mt-12 border border-border/60 bg-background max-w-5xl mx-auto">
