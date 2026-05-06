@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "./pages/Home.tsx";
 import Login from "./pages/Login.tsx";
 import Pipeline from "./pages/Pipeline.tsx";
+import PropostaArqint from "./pages/PropostaArqint.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
