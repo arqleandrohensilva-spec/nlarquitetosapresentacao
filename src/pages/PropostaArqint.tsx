@@ -7,6 +7,7 @@ import SectionNavProposta from "@/components/SectionNavProposta";
 import PdfExportButtonProposta from "@/components/PdfExportButtonProposta";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
+import { usePropostaParams } from "@/hooks/usePropostaParams";
 import scopeMaterials from "@/assets/scope-materials.jpg";
 import propostaCapa from "@/assets/proposta/capa.jpg";
 import propostaLeandro from "@/assets/proposta/leandro.jpg";
@@ -21,6 +22,7 @@ import propostaPortSuite from "@/assets/proposta/gemini-m7jp.jpg";
 const LOGO_BRANCA = "/logo-branca.png";
 
 const PropostaArqint = () => {
+  const { nome, tipo, cidade, estado, area, objetivo, data, valor_executivo, valor_completo, validade } = usePropostaParams();
   return (
     <main className="relative bg-background text-foreground overflow-x-hidden">
       <SectionNavProposta />
