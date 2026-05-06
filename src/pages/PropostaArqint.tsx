@@ -167,12 +167,12 @@ const PropostaArqint = () => {
             <div className="col-span-12 lg:col-span-7 lg:pl-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-0">
                 {[
-                  { id: "cliente", label: "Cliente", value: "[Nome do Cliente]" },
-                  { id: "projeto", label: "Projeto", value: "[Residencial · Comercial · Interiores]" },
-                  { id: "localizacao", label: "Localização", value: "[Cidade, Estado]" },
-                  { id: "metragem", label: "Metragem estimada", value: "[XXX m²]" },
-                  { id: "objetivo", label: "Objetivo", value: "[Descrição breve do objetivo do cliente]" },
-                  { id: "data", label: "Data", value: "[DD Mês AAAA]" },
+                  { id: "cliente", label: "Cliente", value: nome },
+                  { id: "projeto", label: "Projeto", value: tipo },
+                  { id: "localizacao", label: "Localização", value: `${cidade}, ${estado}` },
+                  { id: "metragem", label: "Metragem estimada", value: `${area} m²` },
+                  { id: "objetivo", label: "Objetivo", value: objetivo },
+                  { id: "data", label: "Data", value: data },
                 ].map((field) => (
                   <div key={field.id} className="py-6 border-b" style={{ borderColor: "rgba(139, 115, 85, 0.35)" }}>
                     <Editable id={`proposta-arq.diagnostico.field.${field.id}.label`} className="block mb-3 text-[10px] uppercase tracking-[0.3em]" style={{ color: "#8B7355", fontFamily: '"Courier New", monospace' }}>
