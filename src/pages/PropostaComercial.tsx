@@ -765,8 +765,9 @@ const PropostaComercial = () => {
         </div>
       </section>
 
-      {/* CONDIÇÕES */}
-      <section className="relative px-6 md:px-16 lg:px-24 py-32">
+      {/* 17 · CONDIÇÕES */}
+      <section id="condicoes" className="relative px-6 md:px-16 lg:px-24 py-32">
+
         <div className="max-w-7xl mx-auto">
           <div className="border-t border-border pt-16">
             <div className="grid grid-cols-12 gap-8">
