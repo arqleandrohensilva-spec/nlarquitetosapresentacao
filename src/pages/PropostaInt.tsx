@@ -405,8 +405,8 @@ const PropostaInt = () => {
                 <span className="font-display italic text-4xl md:text-5xl text-primary/70 leading-none shrink-0 w-10">{p.num}</span>
                 <div className="flex-1 border-l border-border pl-5 md:pl-6">
                   <Editable id={`${PX}.pilares.${p.id}.kicker`} className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground block mb-2">{p.kicker}</Editable>
-                  <Editable as="p" id={`${PX}.pilares.${p.id}.body`} multiline className="text-foreground/80 text-[0.9rem] leading-relaxed mb-3">{p.body}</Editable>
-                  <Editable as="p" id={`${PX}.pilares.${p.id}.quote`} multiline className="font-display italic text-base md:text-lg text-primary leading-snug">"{p.quote}"</Editable>
+                  <Editable as="p" id={`${PX}.pilares.${p.id}.body`} multiline className="font-display text-foreground/75 text-lg leading-relaxed mb-3">{p.body}</Editable>
+                  <Editable as="p" id={`${PX}.pilares.${p.id}.quote`} multiline className="font-display italic text-xl md:text-2xl text-primary leading-snug">"{p.quote}"</Editable>
                 </div>
               </article>
             ))}
