@@ -794,7 +794,7 @@ const PropostaComercial = () => {
           <div className="flex justify-center mb-10">
             <img src={LOGO_BRANCA} alt="NL Arquitetos" className="h-20 md:h-28 w-auto object-contain opacity-95" width={280} height={112} />
           </div>
-          <span className="font-mono-edit text-[10px] tracking-[0.3em] uppercase block mb-6 text-center" style={{ color: "#8B7355" }}>17 · Encerramento</span>
+          <span className="font-mono-edit text-[10px] tracking-[0.3em] uppercase block mb-6 text-center" style={{ color: "#8B7355" }}>18 · Encerramento</span>
           <div className="gold-line w-24 mx-auto mb-12" />
           <Editable as="h2" id={`${PX}.encerramento.title`} multiline className="font-display text-5xl md:text-7xl lg:text-8xl text-center leading-[1.05] mb-12 text-balance max-w-5xl mx-auto">
             <span style={{ color: "#E8E4DF" }}>O espaço que atrai</span>{" "}
