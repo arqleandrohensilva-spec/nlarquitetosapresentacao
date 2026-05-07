@@ -35,6 +35,7 @@ const PropostaComercial = () => {
     <main className="relative bg-background text-foreground overflow-x-hidden">
       <SectionNavProposta />
 
+
       {/* 01 · CAPA */}
       <section id="capa" className="relative min-h-screen flex flex-col justify-end px-6 md:px-16 lg:px-24 py-20">
         <img src={propostaCapa} alt="NL Arquitetos · proposta comercial" className="absolute inset-0 w-full h-full object-cover opacity-90 contrast-110 saturate-125" width={1920} height={1280} />
@@ -658,6 +659,7 @@ const PropostaComercial = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20 max-w-3xl mx-auto">
             <span className="number-marker block mb-6 text-primary/70">15 · NOTA</span>
+
             <Editable id={`${PX}.nota.title`} as="h2" className="font-display text-6xl md:text-7xl lg:text-8xl text-foreground leading-[1.05] text-balance">Nota.</Editable>
             <Editable id={`${PX}.nota.subtitle`} as="p" className="font-display italic text-xl md:text-2xl text-primary/90 mt-4 leading-snug">Transparência antes do início.</Editable>
             <div className="gold-line w-24 mx-auto mt-10 opacity-60" />
@@ -764,8 +766,9 @@ const PropostaComercial = () => {
         </div>
       </section>
 
-      {/* CONDIÇÕES */}
-      <section className="relative px-6 md:px-16 lg:px-24 py-32">
+      {/* 17 · CONDIÇÕES */}
+      <section id="condicoes" className="relative px-6 md:px-16 lg:px-24 py-32">
+
         <div className="max-w-7xl mx-auto">
           <div className="border-t border-border pt-16">
             <div className="grid grid-cols-12 gap-8">
@@ -792,7 +795,7 @@ const PropostaComercial = () => {
           <div className="flex justify-center mb-10">
             <img src={LOGO_BRANCA} alt="NL Arquitetos" className="h-20 md:h-28 w-auto object-contain opacity-95" width={280} height={112} />
           </div>
-          <span className="font-mono-edit text-[10px] tracking-[0.3em] uppercase block mb-6 text-center" style={{ color: "#8B7355" }}>17 · Encerramento</span>
+          <span className="font-mono-edit text-[10px] tracking-[0.3em] uppercase block mb-6 text-center" style={{ color: "#8B7355" }}>18 · Encerramento</span>
           <div className="gold-line w-24 mx-auto mb-12" />
           <Editable as="h2" id={`${PX}.encerramento.title`} multiline className="font-display text-5xl md:text-7xl lg:text-8xl text-center leading-[1.05] mb-12 text-balance max-w-5xl mx-auto">
             <span style={{ color: "#E8E4DF" }}>O espaço que atrai</span>{" "}
