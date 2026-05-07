@@ -53,6 +53,13 @@ const SectionNavProposta = () => {
   const DARK_SECTIONS = new Set(["capa", "diagnostico", "cronograma", "nota", "encerramento"]);
   const onDarkSection = DARK_SECTIONS.has(active);
 
+import { useLocation } from "react-router-dom";
+
+// ... inside the component
+  const location = useLocation();
+  const isCommercial = location.pathname.includes("comercial");
+  const SECTIONS = isCommercial ? SECTIONS_COMMERCIAL : SECTIONS_RESIDENTIAL;
+
   useEffect(() => {
     const obs = new IntersectionObserver(
       (entries) => {
@@ -71,7 +78,8 @@ const SectionNavProposta = () => {
       obs.disconnect();
       clearTimeout(t);
     };
-  }, []);
+  }, [SECTIONS]);
+
 
   return (
     <>
