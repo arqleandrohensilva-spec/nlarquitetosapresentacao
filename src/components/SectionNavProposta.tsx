@@ -81,44 +81,46 @@ const SectionNavProposta = () => {
   return (
     <>
       <header className="fixed top-0 inset-x-0 z-40 px-6 md:px-10 py-5 flex items-center justify-between pointer-events-none">
-        <a
-          href="#capa"
-          className="pointer-events-auto block transition-opacity hover:opacity-70"
-          aria-label="NL Arquitetos"
-        >
-          <img
-            src={onDarkSection ? LOGO_BRANCA : LOGO_PRETA}
-            alt="NL Arquitetos"
-            className="h-8 md:h-10 w-auto object-contain transition-opacity duration-500"
-            width={120}
-            height={40}
-          />
-        </a>
-        <nav className="pointer-events-auto flex items-center gap-4 md:gap-8 overflow-x-auto no-scrollbar max-w-[60vw] md:max-w-none">
-          {SECTIONS.map((s) => (
-            <a
-              key={s.id}
-              href={`#${s.id}`}
-              className={`font-mono text-[9px] md:text-[10px] uppercase tracking-[0.2em] whitespace-nowrap transition-colors hover:text-primary ${
-                active === s.id
-                  ? "text-primary"
-                  : onDarkSection
-                  ? "text-white/40"
-                  : "text-black/40"
-              }`}
-            >
-              {s.label}
-            </a>
-          ))}
-        </nav>
+        <div className="flex items-center gap-6 md:gap-12 w-full">
+          <a
+            href="#capa"
+            className="pointer-events-auto block transition-opacity hover:opacity-70 shrink-0"
+            aria-label="NL Arquitetos"
+          >
+            <img
+              src={onDarkSection ? LOGO_BRANCA : LOGO_PRETA}
+              alt="NL Arquitetos"
+              className="h-7 md:h-9 w-auto object-contain transition-opacity duration-500"
+              width={100}
+              height={36}
+            />
+          </a>
+          <nav className="pointer-events-auto flex items-center gap-4 md:gap-8 overflow-x-auto no-scrollbar py-2">
+            {SECTIONS.map((s) => (
+              <a
+                key={s.id}
+                href={`#${s.id}`}
+                className={`font-mono text-[8px] md:text-[10px] uppercase tracking-[0.2em] whitespace-nowrap transition-colors hover:text-primary ${
+                  active === s.id
+                    ? "text-primary"
+                    : onDarkSection
+                    ? "text-white/40"
+                    : "text-black/40"
+                }`}
+              >
+                {s.label}
+              </a>
+            ))}
+          </nav>
+        </div>
         {editing && (
           <button
             onClick={() => {
               if (confirm("Restaurar todos os textos originais?")) clearAllEdits();
             }}
-            className="pointer-events-auto font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground hover:text-primary transition-colors"
+            className="pointer-events-auto font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground hover:text-primary transition-colors ml-4 shrink-0"
           >
-            Restaurar texto
+            Restaurar
           </button>
         )}
       </header>
