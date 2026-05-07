@@ -36,7 +36,17 @@ const PropostaComercial = () => {
       <SectionNavProposta />
 
 
-      {/* 01 · CAPA */}
+      <div className="fixed top-24 right-6 md:right-10 lg:right-12 z-50 flex items-center gap-4 bg-background/60 backdrop-blur-xl border border-primary/20 px-5 py-2.5 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.4)] transition-all hover:border-primary/50 group overflow-hidden" data-pdf-hide>
+        <div className="absolute inset-0 bg-primary/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+        <span className="relative font-mono text-[9px] md:text-[10px] uppercase tracking-[0.25em] text-primary/90 font-medium">Trilha Comercial</span>
+        <div className="relative flex items-center justify-center">
+          <span className="absolute w-2 h-2 rounded-full bg-primary/40 animate-ping" />
+          <span className="relative w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_12px_rgba(var(--primary),0.8)]" />
+        </div>
+      </div>
+
+
+
       <section id="capa" className="relative min-h-screen flex flex-col justify-end px-6 md:px-16 lg:px-24 py-20">
         <img src={propostaCapa} alt="NL Arquitetos · proposta comercial" className="absolute inset-0 w-full h-full object-cover opacity-90 contrast-110 saturate-125" width={1920} height={1280} />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/10 to-background/95" />
