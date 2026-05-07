@@ -659,6 +659,7 @@ const PropostaComercial = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20 max-w-3xl mx-auto">
             <span className="number-marker block mb-6 text-primary/70">15 · NOTA</span>
+
             <Editable id={`${PX}.nota.title`} as="h2" className="font-display text-6xl md:text-7xl lg:text-8xl text-foreground leading-[1.05] text-balance">Nota.</Editable>
             <Editable id={`${PX}.nota.subtitle`} as="p" className="font-display italic text-xl md:text-2xl text-primary/90 mt-4 leading-snug">Transparência antes do início.</Editable>
             <div className="gold-line w-24 mx-auto mt-10 opacity-60" />
