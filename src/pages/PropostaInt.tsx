@@ -1,4 +1,4 @@
-import { useState, useRef, useLayoutEffect } from "react";
+import { useState, useRef, useLayoutEffect, useEffect } from "react";
 import bandMaterial from "@/assets/band-material.jpg";
 import bandBlueprint from "@/assets/band-blueprint.jpg";
 import bandIntermezzo02 from "@/assets/band-intermezzo-02.jpg";
@@ -17,11 +17,20 @@ import propostaPortFachada from "@/assets/proposta/casa-jf.png";
 import propostaPortLiving from "@/assets/proposta/nomo-result-2062.jpg";
 import propostaPortLazer from "@/assets/proposta/nomo-result-1759.jpg";
 import propostaPortSuite from "@/assets/proposta/gemini-m7jp.jpg";
-const LOGO_BRANCA = "/logo-branca.png";
+import { usePropostaParams } from "@/hooks/use-proposta-params";
 
+const LOGO_BRANCA = "/logo-branca.png";
 const PX = "proposta-int";
 
 const PropostaInt = () => {
+  const params = usePropostaParams();
+
+  useEffect(() => {
+    if (params.nome !== '[Nome do Cliente]') {
+      document.title = `Proposta NL Arquitetos · ${params.nome}`;
+    }
+  }, [params.nome]);
+
   return (
     <main className="relative bg-background text-foreground overflow-x-hidden">
       <SectionNavProposta />
@@ -44,12 +53,16 @@ const PropostaInt = () => {
           </Editable>
           <div className="mt-12 flex items-center gap-4 text-muted-foreground">
             <span className="h-px w-12 bg-primary/40" />
-            <Editable id={`${PX}.capa.validity`} className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80">Validade · 30 dias corridos</Editable>
+            <Editable id={`${PX}.capa.validity`} className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80">
+              Validade · {params.validade}
+            </Editable>
           </div>
         </div>
         <div className="relative z-10 mt-16 flex flex-col md:flex-row md:items-end md:justify-between gap-4 text-muted-foreground">
           <div className="flex items-center gap-3 md:gap-4 flex-wrap">
-            <Editable id={`${PX}.capa.client`} className="font-mono text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-primary/80 break-words">Cliente · [Nome do Cliente]</Editable>
+            <Editable id={`${PX}.capa.client`} className="font-mono text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-primary/80 break-words">
+              Cliente · {params.nome}
+            </Editable>
           </div>
           <Editable id={`${PX}.capa.date`} className="font-mono text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase break-words">São José dos Campos · 2026</Editable>
         </div>
@@ -148,12 +161,12 @@ const PropostaInt = () => {
             <div className="col-span-12 lg:col-span-7 lg:pl-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-0">
                 {[
-                  { id: "cliente", label: "Cliente", value: "[Nome do Cliente]" },
-                  { id: "projeto", label: "Projeto", value: "Arquitetura de Interiores" },
-                  { id: "localizacao", label: "Localização", value: "[Cidade, Estado]" },
-                  { id: "metragem", label: "Metragem estimada", value: "[XXX m²]" },
-                  { id: "objetivo", label: "Objetivo", value: "[Descrição breve do objetivo do cliente]" },
-                  { id: "data", label: "Data", value: "[DD Mês AAAA]" },
+                  { id: "cliente", label: "Cliente", value: params.nome },
+                  { id: "projeto", label: "Projeto", value: params.tipo || "Arquitetura de Interiores" },
+                  { id: "localizacao", label: "Localização", value: `${params.cidade}, ${params.estado}` },
+                  { id: "metragem", label: "Metragem estimada", value: `${params.area} m²` },
+                  { id: "objetivo", label: "Objetivo", value: params.objetivo },
+                  { id: "data", label: "Data", value: params.data },
                 ].map((field) => (
                   <div key={field.id} className="py-6 border-b" style={{ borderColor: "rgba(139, 115, 85, 0.35)" }}>
                     <Editable id={`${PX}.diagnostico.field.${field.id}.label`} className="block mb-3 text-[10px] uppercase tracking-[0.3em]" style={{ color: "#8B7355", fontFamily: '"Courier New", monospace' }}>{field.label}</Editable>
@@ -172,7 +185,7 @@ const PropostaInt = () => {
         </div>
       </section>
 
-      {/* 05 · CASE — CHALÉ JURUVA */}
+      {/* 05 · CASE */}
       <section id="case" className="relative">
         <div className="grid grid-cols-12 min-h-screen">
           <div className="col-span-12 lg:col-span-7 relative min-h-[60vh] lg:min-h-screen">
@@ -378,7 +391,6 @@ const PropostaInt = () => {
         </div>
       </section>
 
-      {/* BAND · BLUEPRINT */}
       <FullBleedBand src={bandBlueprint} alt="Detalhe de prancha técnica" number="Intermezzo · 01" caption="Cada linha no papel é uma decisão que não precisará ser tomada na obra." align="left" height="short" />
 
       {/* 10 · PILARES */}
@@ -547,7 +559,6 @@ const PropostaInt = () => {
         </div>
       </section>
 
-      {/* BAND · INTERIOR */}
       <FullBleedBand src={bandIntermezzo02} alt="Ambiente integrado de estar e jantar com marcenaria sob medida" number="Intermezzo · 02" caption="Marcenaria, iluminação e revestimentos coordenados — cada acabamento decidido em projeto, não no canteiro." align="right" height="tall" objectPosition="35% 65%" heightClassName="h-[60vh] sm:h-[68vh] md:h-[78vh]" edgeFadeBottomClassName="h-44 md:h-64" imgClassName="brightness-[0.92] contrast-[1.06] saturate-[0.95]" />
 
       {/* 13 · INVESTIMENTO */}
@@ -564,8 +575,21 @@ const PropostaInt = () => {
             </Editable>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <PackageCard id="basic" tier="Plano Executivo" tagline="Interiores" price="Sob consulta" priceNote="Sob consulta · conforme escopo" />
-            <PackageCard id="premium" tier="Plano Completo" tagline="Interiores + Especificações" price="Sob consulta" priceNote="Sob consulta · conforme escopo" recommended />
+            <PackageCard
+              id="basic"
+              tier="Plano Executivo"
+              tagline="Interiores"
+              price={params.valor_executivo !== 'Sob consulta' ? `R$ ${Number(params.valor_executivo).toLocaleString('pt-BR')}` : 'Sob consulta'}
+              priceNote={params.valor_executivo !== 'Sob consulta' ? 'Valor baseado no escopo contratado' : 'Sob consulta · conforme escopo'}
+            />
+            <PackageCard
+              id="premium"
+              tier="Plano Completo"
+              tagline="Interiores + Especificações"
+              price={params.valor_completo !== 'Sob consulta' ? `R$ ${Number(params.valor_completo).toLocaleString('pt-BR')}` : 'Sob consulta'}
+              priceNote={params.valor_completo !== 'Sob consulta' ? 'Valor baseado no escopo contratado' : 'Sob consulta · conforme escopo'}
+              recommended
+            />
           </div>
           <ComparisonTable />
           <div className="mt-12 border border-border/60 bg-background max-w-5xl mx-auto">
@@ -692,7 +716,6 @@ const PropostaInt = () => {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-t from-transparent to-primary/40" />
       </section>
 
-      {/* BAND · MATERIAL */}
       <FullBleedBand src={bandMaterial} alt="Detalhe de travertino e madeira nogueira sob luz natural" number="Intermezzo · 03" caption="Travertino, nogueira, luz. A matéria-prima de uma decisão bem tomada." align="left" height="short" />
 
       {/* 16 · PRÓXIMOS PASSOS */}
