@@ -874,7 +874,6 @@ const CaseStat = ({ id, value, label }: { id: string; value: string; label: stri
     <Editable id={`${id}.l`} className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground leading-tight block">{label}</Editable>
   </div>
 );
-
 const Contact = ({ id, label, value }: { id: string; label: string; value: string }) => {
   const valueRef = useRef<HTMLDivElement | null>(null);
   const [breakMode, setBreakMode] = useState<"normal" | "words" | "all">("normal");
@@ -910,13 +909,13 @@ const Contact = ({ id, label, value }: { id: string; label: string; value: strin
 const BenefitCard = ({ t, d, idx, impact }: { t: string; d: string; idx: number; impact?: string }) => (
   <div className="bg-background p-8 md:p-10 group hover:bg-surface/60 transition-colors">
     {impact && (
-      <Editable id={`proposta-arq.benefit.${idx}.impact`} className="font-display block leading-none mb-4">
+      <Editable id={`proposta-com.benefit.${idx}.impact`} className="font-display block leading-none mb-4">
         <span style={{ color: "#8B7355", fontSize: "clamp(2.5rem, 3.6vw, 3.5rem)" }}>{impact}</span>
       </Editable>
     )}
     <div className="gold-line w-8 mb-6 group-hover:w-16 transition-all duration-700" />
-    <Editable as="h3" id={`proposta-arq.benefit.${idx}.t`} className="font-display text-2xl md:text-3xl text-foreground mb-4 leading-tight">{t}</Editable>
-    <Editable id={`proposta-arq.benefit.${idx}.d`} multiline as="p" className="font-display text-foreground/70 leading-relaxed">{d}</Editable>
+    <Editable as="h3" id={`proposta-com.benefit.${idx}.t`} className="font-display text-2xl md:text-3xl text-foreground mb-4 leading-tight">{t}</Editable>
+    <Editable id={`proposta-com.benefit.${idx}.d`} multiline as="p" className="font-display text-foreground/70 leading-relaxed">{d}</Editable>
   </div>
 );
 
@@ -934,8 +933,8 @@ const DifferentialItem = ({ r, t, d }: { r: string; t: string; d: string }) => (
       <span className="font-display text-6xl md:text-7xl text-primary/20 leading-none shrink-0 select-none">{r}</span>
       <span className="h-px flex-1 bg-border group-hover:bg-primary/60 transition-colors duration-700" />
     </div>
-    <Editable as="h3" id={`proposta-arq.diff.${r}.t`} className="font-display text-3xl md:text-4xl text-foreground mb-4">{t}</Editable>
-    <Editable id={`proposta-arq.diff.${r}.d`} multiline as="p" className="font-display text-foreground/70 leading-relaxed max-w-md">{d}</Editable>
+    <Editable as="h3" id={`proposta-com.diff.${r}.t`} className="font-display text-3xl md:text-4xl text-foreground mb-4">{t}</Editable>
+    <Editable id={`proposta-com.diff.${r}.d`} multiline as="p" className="font-display text-foreground/70 leading-relaxed max-w-md">{d}</Editable>
   </div>
 );
 
@@ -951,8 +950,8 @@ const NextStep = ({ n, timing, t, d, index }: { n: string; timing: string; t: st
         <span className={`font-mono text-[10px] uppercase tracking-[0.3em] text-primary inline-flex items-center gap-2 mb-4 ${isLeft ? "md:flex-row-reverse" : ""}`}>
           <span className="w-6 h-px bg-primary/60" />{timing}
         </span>
-        <Editable as="h3" id={`proposta-arq.next.${n}.t`} className="font-display text-3xl md:text-4xl text-foreground mb-3 leading-tight block">{t}</Editable>
-        <Editable id={`proposta-arq.next.${n}.d`} multiline as="p" className="font-display text-foreground/70 leading-relaxed text-lg">{d}</Editable>
+        <Editable as="h3" id={`proposta-com.next.${n}.t`} className="font-display text-3xl md:text-4xl text-foreground mb-3 leading-tight block">{t}</Editable>
+        <Editable id={`proposta-com.next.${n}.d`} multiline as="p" className="font-display text-foreground/70 leading-relaxed text-lg">{d}</Editable>
       </div>
     </div>
   );
@@ -1004,22 +1003,17 @@ const PhaseTimeline = ({ trackId, number, title, duration, phases }: { trackId: 
 
 type ScopeBloco = { id: string; num: string; title: string; note?: string; description?: string; items?: string[]; wide?: boolean; };
 
-const SCOPE_ARQ: ScopeBloco[] = [
-  { id: "caderno-geral", num: "I", title: "Caderno Geral", items: ["Prancha de índice", "Planta de situação, locação e cobertura", "Planta de layout", "Plantas construtivas", "Planta de paginação de piso", "Planta de forro", "Projeto luminotécnico"] },
-  { id: "mapas-instalacoes", num: "II", title: "Mapas de Instalações", note: "em parceria com engenheiros especializados", items: ["Instalações elétricas", "Instalações hidráulicas", "Ar-condicionado", "Pontos de gás", "Revestimentos"] },
-  { id: "detalhes-construtivos", num: "III", title: "Caderno de Detalhes Construtivos", items: ["Detalhamentos gerais", "Representação gráfica por ambiente", "Portas e esquadrias", "Marmoraria", "Marcenaria", "Porcelanataria"] },
-  { id: "memorial", num: "IV", title: "Memorial Descritivo", items: ["Componentes construtivos identificados", "Localizados em planta", "Quantificados por ambiente", "Base para orçamento de obra sem improviso"] },
+
+const SCOPE_COM: ScopeBloco[] = [
+  { id: "caderno-geral-com", num: "I", title: "Caderno Geral Comercial", wide: true, items: ["Capa", "Identidade visual do espaço", "Imagens aprovadas", "Quadros quantitativos e especificações", "Planta baixa de layout", "Planta baixa demolir / construir", "Planta baixa construtiva", "Paginação de piso", "Mapa de revestimentos", "Planta de forro", "Luminotécnico", "Instalações elétricas, hidráulicas e ar-condicionado *"] },
+  { id: "detalhes-com", num: "II", title: "Caderno de Detalhes Construtivos", description: "Graficação de todos os detalhes necessários para execução comercial conforme complexidade." },
+  { id: "ambientes-com", num: "III", title: "Caderno de Ambientes", description: "Especificações por ambiente com localizações de vistas, fluxos e siglas de materiais." },
+  { id: "esquadrias-com", num: "IV", title: "Caderno de Esquadrias", description: "Especificação de esquadrias e serralheria com detalhamento para fabricação." },
+  { id: "marmoraria-com", num: "V", title: "Caderno de Marmoraria", description: "Bancadas, soleiras e elementos em mármore, pedra natural ou materiais técnicos." },
+  { id: "porcelanataria-com", num: "VI", title: "Caderno de Porcelanataria", description: "Paginação, perfis e intervenções em revestimentos cerâmicos por ambiente comercial." },
+  { id: "marcenaria-com", num: "VII", title: "Caderno de Marcenaria", description: "Detalhamento completo de todo mobiliário comercial fabricado sob medida." },
 ];
 
-const SCOPE_INT: ScopeBloco[] = [
-  { id: "caderno-geral-int", num: "I", title: "Caderno Geral", wide: true, items: ["Capa", "Imagens aprovadas", "Quadros quantitativos e especificações", "Planta baixa de layout", "Planta baixa demolir / construir", "Planta baixa construtiva", "Paginação de piso", "Mapa de revestimentos", "Planta de forro", "Luminotécnico", "Instalações elétricas, hidráulicas e ar-condicionado  *"] },
-  { id: "detalhes-int", num: "II", title: "Caderno de Detalhes Construtivos", description: "Graficação de todos os detalhes necessários para execução conforme complexidade do projeto." },
-  { id: "ambientes-int", num: "III", title: "Caderno de Ambientes", description: "Especificações completas por ambiente com localizações de vistas e siglas de materiais." },
-  { id: "esquadrias-int", num: "IV", title: "Caderno de Esquadrias", description: "Especificação e localização de todas as esquadrias novas com detalhamento para fabricação." },
-  { id: "marmoraria-int", num: "V", title: "Caderno de Marmoraria", description: "Bancadas, soleiras, bordas, nichos e elementos em mármore ou pedra natural." },
-  { id: "porcelanataria-int", num: "VI", title: "Caderno de Porcelanataria", description: "Paginação, perfis, fixação e intervenções em revestimentos cerâmicos por ambiente." },
-  { id: "marcenaria-int", num: "VII", title: "Caderno de Marcenaria", wide: false, description: "Detalhamento completo de todo mobiliário fabricado sob medida." },
-];
 
 const ScopeBlocos = ({ data, trackId }: { data: ScopeBloco[]; trackId: string }) => {
   const hasFootnote = data.some((b) => b.items?.some((i) => i.includes("*")) || (b.description?.includes("*")));
@@ -1030,16 +1024,16 @@ const ScopeBlocos = ({ data, trackId }: { data: ScopeBloco[]; trackId: string })
           <article key={bloco.id} className={cn("bg-background p-7 md:p-8 flex flex-col col-span-12", bloco.wide ? "md:col-span-12" : "md:col-span-6")}>
             <div className="flex items-baseline gap-3 mb-5">
               <span className="font-display italic text-2xl text-primary/60">{bloco.num}</span>
-              <Editable as="h4" id={`proposta-arq.scope.${trackId}.${bloco.id}.title`} className="font-display text-xl md:text-[1.4rem] leading-tight text-foreground">{bloco.title}</Editable>
+              <Editable as="h4" id={`proposta-com.scope.${trackId}.${bloco.id}.title`} className="font-display text-xl md:text-[1.4rem] leading-tight text-foreground">{bloco.title}</Editable>
             </div>
-            {bloco.note && <Editable id={`proposta-arq.scope.${trackId}.${bloco.id}.note`} className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary/80 mb-4 -mt-1">{bloco.note}</Editable>}
-            {bloco.description && <Editable as="p" id={`proposta-arq.scope.${trackId}.${bloco.id}.description`} className="font-display italic text-[0.95rem] text-foreground/75 leading-relaxed mt-1">{bloco.description}</Editable>}
+            {bloco.note && <Editable id={`proposta-com.scope.${trackId}.${bloco.id}.note`} className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary/80 mb-4 -mt-1">{bloco.note}</Editable>}
+            {bloco.description && <Editable as="p" id={`proposta-com.scope.${trackId}.${bloco.id}.description`} className="font-display italic text-[0.95rem] text-foreground/75 leading-relaxed mt-1">{bloco.description}</Editable>}
             {bloco.items && (
               <ul className={cn("space-y-2 mt-1", bloco.wide && "md:columns-2 md:gap-x-10 md:space-y-0")}>
                 {bloco.items.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 group/item md:break-inside-avoid md:mb-2">
                     <span className="mt-[0.55rem] h-px w-3 bg-primary/40 flex-shrink-0 group-hover/item:bg-primary group-hover/item:w-5 transition-all duration-300" />
-                    <Editable as="span" id={`proposta-arq.scope.${trackId}.${bloco.id}.item.${i}`} className="font-display text-[0.95rem] text-foreground/80 leading-snug">{item}</Editable>
+                    <Editable as="span" id={`proposta-com.scope.${trackId}.${bloco.id}.item.${i}`} className="font-display text-[0.95rem] text-foreground/80 leading-snug">{item}</Editable>
                   </li>
                 ))}
               </ul>
@@ -1049,7 +1043,7 @@ const ScopeBlocos = ({ data, trackId }: { data: ScopeBloco[]; trackId: string })
       </div>
       {hasFootnote && (
         <div className="mt-6 pl-4 border-l-2 border-primary/40">
-          <Editable as="p" id={`proposta-arq.scope.${trackId}.footnote`} className="font-display italic text-[0.9rem] text-foreground/70 leading-relaxed">
+          <Editable as="p" id={`proposta-com.scope.${trackId}.footnote`} className="font-display italic text-[0.9rem] text-foreground/70 leading-relaxed">
             <span className="font-mono not-italic text-primary mr-1">*</span>
             Desenvolvido em parceria com engenheiros especializados. A NL coordena e valida todos os projetos complementares.
           </Editable>
@@ -1060,44 +1054,38 @@ const ScopeBlocos = ({ data, trackId }: { data: ScopeBloco[]; trackId: string })
 };
 
 const ScopeTabs = () => {
-  const [tab, setTab] = useState("arq");
   return (
-    <Tabs value={tab} onValueChange={setTab} className="w-full">
-      <TabsList className="bg-transparent border-b border-border/60 rounded-none p-0 h-auto w-full justify-start gap-8 mb-8">
-        <TabsTrigger value="arq" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-primary text-muted-foreground rounded-none px-0 pb-4 font-mono text-[11px] uppercase tracking-[0.3em] border-b-2 border-transparent data-[state=active]:border-primary">Arquitetônico</TabsTrigger>
-        <TabsTrigger value="int" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-primary text-muted-foreground rounded-none px-0 pb-4 font-mono text-[11px] uppercase tracking-[0.3em] border-b-2 border-transparent data-[state=active]:border-primary">Interiores</TabsTrigger>
-      </TabsList>
-      <TabsContent value="arq" className="mt-0">
-        <ScopeBlocos data={SCOPE_ARQ} trackId="arq" />
-        <Editable id="proposta-arq.scope.arq.parceria" multiline as="p" className="mt-6 font-display italic text-sm text-foreground/65 leading-relaxed border-l-2 border-primary/40 pl-4">
-          <span className="font-mono not-italic text-primary mr-1">*</span>
-          Desenvolvido em parceria com engenheiros especializados. A NL coordena e valida todos os projetos complementares.
-        </Editable>
-      </TabsContent>
-      <TabsContent value="int" className="mt-0">
-        <ScopeBlocos data={SCOPE_INT} trackId="int" />
-      </TabsContent>
-    </Tabs>
+    <div className="w-full">
+      <div className="bg-transparent border-b border-border/60 rounded-none p-0 h-auto w-full flex justify-start gap-8 mb-8">
+        <div className="text-primary rounded-none px-0 pb-4 font-mono text-[11px] uppercase tracking-[0.3em] border-b-2 border-primary">
+          Interiores Comercial
+        </div>
+      </div>
+      <div className="mt-0">
+        <ScopeBlocos data={SCOPE_COM} trackId="com" />
+      </div>
+    </div>
   );
 };
+
 
 const PackageCard = ({ id, tier, tagline, price, priceNote, cta, ctaHref, recommended }: { id: string; tier: string; tagline: string; price: string; priceNote: string; cta?: string; ctaHref?: string; recommended?: boolean; }) => (
   <div className={`relative flex flex-col p-10 md:p-12 ${recommended ? "border-2 border-primary bg-background" : "border border-border/60 bg-background/60"}`}>
     {recommended && (
       <div className="absolute -top-3 left-10 bg-primary text-primary-foreground px-4 py-1">
-        <Editable id={`proposta-arq.pkg.${id}.badge`} className="font-mono text-[9px] uppercase tracking-[0.3em]">◆ Mais escolhido</Editable>
+        <Editable id={`proposta-com.pkg.${id}.badge`} className="font-mono text-[9px] uppercase tracking-[0.3em]">◆ Mais escolhido</Editable>
       </div>
     )}
     <div className="mb-8">
-      <Editable id={`proposta-arq.pkg.${id}.tier`} className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80 block mb-4">{tier}</Editable>
-      <Editable as="h3" id={`proposta-arq.pkg.${id}.tagline`} multiline className="font-display text-3xl md:text-4xl text-foreground leading-tight mb-6">{tagline}</Editable>
+      <Editable id={`proposta-com.pkg.${id}.tier`} className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80 block mb-4">{tier}</Editable>
+      <Editable as="h3" id={`proposta-com.pkg.${id}.tagline`} multiline className="font-display text-3xl md:text-4xl text-foreground leading-tight mb-6">{tagline}</Editable>
       <div className="gold-line w-12 mb-6" />
-      <Editable id={`proposta-arq.pkg.${id}.price.note`} className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground block mb-1">{priceNote}</Editable>
-      <Editable id={`proposta-arq.pkg.${id}.price`} className={`font-display text-5xl md:text-6xl leading-none block ${recommended ? "text-primary" : "text-foreground"}`}>{price}</Editable>
+      <Editable id={`proposta-com.pkg.${id}.price.note`} className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground block mb-1">{priceNote}</Editable>
+      <Editable id={`proposta-com.pkg.${id}.price`} className={`font-display text-5xl md:text-6xl leading-none block ${recommended ? "text-primary" : "text-foreground"}`}>{price}</Editable>
     </div>
     {cta && ctaHref && (
       <a href={ctaHref} target="_blank" rel="noreferrer" className={`group inline-flex items-center justify-center gap-4 px-8 py-4 font-mono text-xs uppercase tracking-[0.3em] transition-colors duration-500 self-stretch ${recommended ? "bg-primary text-primary-foreground hover:bg-primary-glow" : "border border-foreground/30 text-foreground hover:border-primary hover:text-primary"}`}>
-        <Editable id={`proposta-arq.pkg.${id}.cta`} className="inline-block">{cta}</Editable>
+        <Editable id={`proposta-com.pkg.${id}.cta`} className="inline-block">{cta}</Editable>
         <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>
       </a>
     )}
@@ -1105,35 +1093,29 @@ const PackageCard = ({ id, tier, tagline, price, priceNote, cta, ctaHref, recomm
 );
 
 const COMPARISON_GROUPS: { group: string; rows: { id: string; label: string; basic: string | boolean; premium: string | boolean }[]; }[] = [
-  { group: "Arquitetura", rows: [
-    { id: "proposta-arq.cmp.arq.1", label: "Levantamento & Briefing", basic: true, premium: true },
-    { id: "proposta-arq.cmp.arq.2", label: "Criação do Conceito", basic: true, premium: true },
-    { id: "proposta-arq.cmp.arq.3", label: "Estudo Preliminar com 3D", basic: true, premium: true },
-    { id: "proposta-arq.cmp.arq.4", label: "Projeto Legal & Aprovações", basic: true, premium: true },
-    { id: "proposta-arq.cmp.arq.5", label: "Projeto Executivo Arquitetônico", basic: true, premium: true },
+  { group: "Estratégia & Identidade", rows: [
+    { id: "proposta-com.cmp.est.1", label: "Briefing & Diagnóstico do negócio", basic: true, premium: true },
+    { id: "proposta-com.cmp.est.2", label: "Criação do Conceito Comercial", basic: true, premium: true },
+    { id: "proposta-com.cmp.est.3", label: "Estudo de Fluxo & Setorização", basic: true, premium: true },
+    { id: "proposta-com.cmp.est.4", label: "Identidade Visual do Espaço", basic: false, premium: true },
+  ]},
+  { group: "Visualização & Interiores", rows: [
+    { id: "proposta-com.cmp.int.1", label: "Projeto Executivo de Interiores", basic: true, premium: true },
+    { id: "proposta-com.cmp.int.2", label: "Concepção 3D de Alta Fidelidade", basic: true, premium: true },
+    { id: "proposta-com.cmp.int.3", label: "Caderno de Ambientes", basic: true, premium: true },
+    { id: "proposta-com.cmp.int.4", label: "Caderno de Marcenaria Comercial", basic: true, premium: true },
   ]},
   { group: "Documentação técnica", rows: [
-    { id: "proposta-arq.cmp.doc.1", label: "Caderno Geral completo", basic: true, premium: true },
-    { id: "proposta-arq.cmp.doc.2", label: "Caderno de Detalhes Construtivos", basic: true, premium: true },
-    { id: "proposta-arq.cmp.doc.3", label: "Memorial Descritivo", basic: true, premium: true },
-    { id: "proposta-arq.cmp.doc.4", label: "Mapas de Instalações (em parceria)", basic: true, premium: true },
+    { id: "proposta-com.cmp.doc.1", label: "Caderno de Detalhes Construtivos", basic: true, premium: true },
+    { id: "proposta-com.cmp.doc.2", label: "Memorial Descritivo de Materiais", basic: true, premium: true },
+    { id: "proposta-com.cmp.doc.3", label: "Mapas de Instalações (em parceria)", basic: true, premium: true },
   ]},
-  { group: "Visualização 3D", rows: [
-    { id: "proposta-arq.cmp.vis.1", label: "Concepção 3D de Alta Fidelidade", basic: false, premium: true },
-    { id: "proposta-arq.cmp.vis.2", label: "Vídeo 3D 360°", basic: false, premium: true },
-  ]},
-  { group: "Interiores", rows: [
-    { id: "proposta-arq.cmp.int.1", label: "Projeto Executivo de Interiores", basic: false, premium: true },
-    { id: "proposta-arq.cmp.int.2", label: "Caderno de Ambientes", basic: false, premium: true },
-    { id: "proposta-arq.cmp.int.3", label: "Caderno de Esquadrias", basic: false, premium: true },
-    { id: "proposta-arq.cmp.int.4", label: "Caderno de Marmoraria", basic: false, premium: true },
-    { id: "proposta-arq.cmp.int.5", label: "Caderno de Porcelanataria", basic: false, premium: true },
-    { id: "proposta-arq.cmp.int.6", label: "Caderno de Marcenaria", basic: false, premium: true },
-  ]},
-  { group: "Viabilidade", rows: [
-    { id: "proposta-arq.cmp.viab.1", label: "EVF — Viabilidade Financeira", basic: false, premium: "Opcional" },
+  { group: "Viabilidade & Suporte", rows: [
+    { id: "proposta-com.cmp.via.1", label: "EVF — Viabilidade Financeira", basic: false, premium: "Opcional" },
+    { id: "proposta-com.cmp.via.2", label: "Acompanhamento de Obra", basic: false, premium: "Opcional" },
   ]},
 ];
+
 
 const ComparisonCell = ({ value }: { value: string | boolean }) => {
   if (value === true) return <span className="font-mono text-primary text-base">✓</span>;
@@ -1145,7 +1127,7 @@ const ComparisonTable = () => (
   <div className="mt-20 max-w-6xl mx-auto">
     <div className="text-center mb-10">
       <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80 block mb-3">Comparativo detalhado</span>
-      <Editable as="h3" id="proposta-arq.cmp.title" multiline className="font-display text-3xl md:text-4xl leading-tight text-balance max-w-2xl mx-auto">
+      <Editable as="h3" id="proposta-com.cmp.title" multiline className="font-display text-3xl md:text-4xl leading-tight text-balance max-w-2xl mx-auto">
         O que você recebe em <em className="text-primary not-italic">cada pacote</em>
       </Editable>
     </div>
@@ -1199,13 +1181,13 @@ const ComparisonTable = () => (
         ))}
       </div>
     </div>
-    <Editable id="proposta-arq.cmp.footnote" multiline as="p" className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground text-center mt-6 leading-relaxed">
+    <Editable id="proposta-com.cmp.footnote" multiline as="p" className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground text-center mt-6 leading-relaxed">
       Pacotes podem ser personalizados conforme a complexidade do projeto.
     </Editable>
-    <Editable id="proposta-arq.cmp.footnote2" multiline as="p" className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground text-center mt-3 leading-relaxed">
+    <Editable id="proposta-com.cmp.footnote2" multiline as="p" className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground text-center mt-3 leading-relaxed">
       Itens opcionais são formalizados via aditivo de contrato conforme necessidade do projeto.
     </Editable>
-    <Editable id="proposta-arq.cmp.footnote3" multiline as="p" className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground text-center mt-3 leading-relaxed">
+    <Editable id="proposta-com.cmp.footnote3" multiline as="p" className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground text-center mt-3 leading-relaxed">
       No Plano Completo, cada fornecedor recebe o caderno específico da sua execução — sem margem para improviso.
     </Editable>
   </div>
