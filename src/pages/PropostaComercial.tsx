@@ -868,4 +868,347 @@ const PartnerCard = ({ id, name, role, cau, image }: { id: string; name: string;
   </div>
 );
 
-const CaseSt
+const CaseStat = ({ id, value, label }: { id: string; value: string; label: string }) => (
+  <div>
+    <Editable id={`${id}.v`} className="font-display text-3xl text-primary block mb-1">{value}</Editable>
+    <Editable id={`${id}.l`} className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground leading-tight block">{label}</Editable>
+  </div>
+);
+
+const Contact = ({ id, label, value }: { id: string; label: string; value: string }) => {
+  const valueRef = useRef<HTMLDivElement | null>(null);
+  const [breakMode, setBreakMode] = useState<"normal" | "words" | "all">("normal");
+  useLayoutEffect(() => {
+    const el = valueRef.current;
+    if (!el) return;
+    const measure = () => {
+      el.style.wordBreak = "normal";
+      el.style.overflowWrap = "normal";
+      if (el.scrollWidth <= el.clientWidth + 1) { setBreakMode("normal"); return; }
+      el.style.overflowWrap = "anywhere";
+      el.style.wordBreak = "normal";
+      if (el.scrollWidth <= el.clientWidth + 1) { setBreakMode("words"); return; }
+      setBreakMode("all");
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    window.addEventListener("resize", measure);
+    return () => { ro.disconnect(); window.removeEventListener("resize", measure); };
+  }, [value]);
+  const breakClass = breakMode === "all" ? "break-all" : breakMode === "words" ? "break-words [overflow-wrap:anywhere]" : "";
+  return (
+    <div className="min-w-0">
+      <Editable id={`${id}.lbl`} className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/70 block mb-2">{label}</Editable>
+      <div ref={valueRef} className={`block ${breakClass}`}>
+        <Editable id={`${id}.val`} className="font-display text-base md:text-lg text-foreground/90 block">{value}</Editable>
+      </div>
+    </div>
+  );
+};
+
+const BenefitCard = ({ t, d, idx, impact }: { t: string; d: string; idx: number; impact?: string }) => (
+  <div className="bg-background p-8 md:p-10 group hover:bg-surface/60 transition-colors">
+    {impact && (
+      <Editable id={`proposta-arq.benefit.${idx}.impact`} className="font-display block leading-none mb-4">
+        <span style={{ color: "#8B7355", fontSize: "clamp(2.5rem, 3.6vw, 3.5rem)" }}>{impact}</span>
+      </Editable>
+    )}
+    <div className="gold-line w-8 mb-6 group-hover:w-16 transition-all duration-700" />
+    <Editable as="h3" id={`proposta-arq.benefit.${idx}.t`} className="font-display text-2xl md:text-3xl text-foreground mb-4 leading-tight">{t}</Editable>
+    <Editable id={`proposta-arq.benefit.${idx}.d`} multiline as="p" className="font-display text-foreground/70 leading-relaxed">{d}</Editable>
+  </div>
+);
+
+const PaymentTier = ({ id, label, value, sub }: { id: string; label: string; value: string; sub: string }) => (
+  <div className="px-8 py-8 text-center">
+    <Editable id={`${id}.lbl`} className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/70 block mb-3">{label}</Editable>
+    <Editable id={`${id}.val`} className="font-display text-4xl md:text-5xl text-foreground block mb-2">{value}</Editable>
+    <Editable id={`${id}.sub`} className="font-display italic text-sm text-foreground/60 block">{sub}</Editable>
+  </div>
+);
+
+const DifferentialItem = ({ r, t, d }: { r: string; t: string; d: string }) => (
+  <div className="group">
+    <div className="flex items-baseline gap-6 mb-4">
+      <span className="font-display text-6xl md:text-7xl text-primary/20 leading-none shrink-0 select-none">{r}</span>
+      <span className="h-px flex-1 bg-border group-hover:bg-primary/60 transition-colors duration-700" />
+    </div>
+    <Editable as="h3" id={`proposta-arq.diff.${r}.t`} className="font-display text-3xl md:text-4xl text-foreground mb-4">{t}</Editable>
+    <Editable id={`proposta-arq.diff.${r}.d`} multiline as="p" className="font-display text-foreground/70 leading-relaxed max-w-md">{d}</Editable>
+  </div>
+);
+
+const NextStep = ({ n, timing, t, d, index }: { n: string; timing: string; t: string; d: string; index: number; }) => {
+  const isLeft = index % 2 === 0;
+  return (
+    <div className="relative md:grid md:grid-cols-2 md:gap-16 group">
+      <div className="absolute left-[28px] md:left-1/2 md:-translate-x-1/2 top-2 z-10">
+        <div className="w-3 h-3 rounded-full bg-primary ring-4 ring-background transition-all duration-500 group-hover:scale-125" />
+      </div>
+      <div className={`pl-20 md:pl-0 ${isLeft ? "md:pr-16 md:text-right md:col-start-1" : "md:pl-16 md:col-start-2"}`}>
+        <span className="font-display text-7xl md:text-8xl leading-none block mb-3 select-none" style={{ WebkitTextStroke: "1px hsl(var(--primary) / 0.5)", color: "transparent" }}>{n}</span>
+        <span className={`font-mono text-[10px] uppercase tracking-[0.3em] text-primary inline-flex items-center gap-2 mb-4 ${isLeft ? "md:flex-row-reverse" : ""}`}>
+          <span className="w-6 h-px bg-primary/60" />{timing}
+        </span>
+        <Editable as="h3" id={`proposta-arq.next.${n}.t`} className="font-display text-3xl md:text-4xl text-foreground mb-3 leading-tight block">{t}</Editable>
+        <Editable id={`proposta-arq.next.${n}.d`} multiline as="p" className="font-display text-foreground/70 leading-relaxed text-lg">{d}</Editable>
+      </div>
+    </div>
+  );
+};
+
+const Condition = ({ id, label, value }: { id: string; label: string; value: string }) => (
+  <div className="min-w-0">
+    <Editable id={`${id}.lbl`} className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/70 block mb-2">{label}</Editable>
+    <Editable id={`${id}.val`} multiline as="p" className="font-display text-foreground/80 leading-relaxed break-words">{value}</Editable>
+  </div>
+);
+
+const PhaseTimeline = ({ trackId, number, title, duration, phases }: { trackId: string; number: string; title: string; duration: string; phases: { n: string; t: string; d: string; optional?: boolean }[]; }) => (
+  <div className="group/timeline">
+    <div className="flex flex-wrap items-end justify-between gap-3 mb-10 border-b border-primary/30 pb-5">
+      <div className="flex items-baseline gap-3 md:gap-5 flex-wrap">
+        <Editable id={`${trackId}.num`} className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">{`Trilha ${number}`}</Editable>
+        <Editable as="h3" id={`${trackId}.title`} className="font-display text-2xl md:text-4xl text-foreground leading-tight">{title}</Editable>
+      </div>
+      <Editable id={`${trackId}.dur`} className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground hidden md:block">{duration}</Editable>
+    </div>
+    <div className="relative">
+      <div className="absolute left-0 right-0 top-[26px] h-px bg-border hidden md:block" aria-hidden />
+      <div className="absolute left-0 top-[26px] h-px bg-primary/40 transition-all duration-700 group-hover/timeline:bg-primary hidden md:block" style={{ right: `${100 / phases.length / 2}%` }} aria-hidden />
+      <div className="absolute left-[26px] top-0 bottom-0 w-px bg-border md:hidden" aria-hidden />
+      <ol className="relative grid gap-8 md:gap-6 grid-cols-1" style={{ gridTemplateColumns: `repeat(var(--phase-cols, 1), minmax(0, 1fr))` }} ref={(el) => {
+        if (el) {
+          const update = () => el.style.setProperty('--phase-cols', window.innerWidth >= 768 ? String(phases.length) : '1');
+          update();
+          window.addEventListener('resize', update);
+        }
+      }}>
+        {phases.map((p, i) => (
+          <li key={i} className="relative flex md:flex-col items-start gap-4 md:gap-0 group/step">
+            <div className={`relative z-10 flex items-center justify-center w-[52px] h-[52px] shrink-0 rounded-full bg-background md:mb-5 transition-all duration-500 group-hover/step:scale-110 ${p.optional ? "border border-dashed border-primary/40 group-hover/step:border-primary group-hover/step:bg-background" : "border border-primary/40 group-hover/step:bg-primary group-hover/step:border-primary"}`}>
+              <Editable id={`${trackId}.${i}.n`} className={`font-mono text-[11px] tracking-[0.15em] text-primary transition-colors ${p.optional ? "" : "group-hover/step:text-primary-foreground"}`}>{p.n}</Editable>
+            </div>
+            <div className="flex-1 min-w-0 md:mt-0">
+              {p.optional && <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-primary/70 mb-1 block">Opcional</span>}
+              <Editable as="h4" id={`${trackId}.${i}.t`} className="font-display text-base md:text-lg text-foreground leading-snug mb-2 md:mt-2 pr-2">{p.t}</Editable>
+              <Editable id={`${trackId}.${i}.d`} multiline as="p" className="font-display italic text-[13px] text-foreground/60 leading-relaxed pr-3">{p.d}</Editable>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+);
+
+type ScopeBloco = { id: string; num: string; title: string; note?: string; description?: string; items?: string[]; wide?: boolean; };
+
+const SCOPE_ARQ: ScopeBloco[] = [
+  { id: "caderno-geral", num: "I", title: "Caderno Geral", items: ["Prancha de índice", "Planta de situação, locação e cobertura", "Planta de layout", "Plantas construtivas", "Planta de paginação de piso", "Planta de forro", "Projeto luminotécnico"] },
+  { id: "mapas-instalacoes", num: "II", title: "Mapas de Instalações", note: "em parceria com engenheiros especializados", items: ["Instalações elétricas", "Instalações hidráulicas", "Ar-condicionado", "Pontos de gás", "Revestimentos"] },
+  { id: "detalhes-construtivos", num: "III", title: "Caderno de Detalhes Construtivos", items: ["Detalhamentos gerais", "Representação gráfica por ambiente", "Portas e esquadrias", "Marmoraria", "Marcenaria", "Porcelanataria"] },
+  { id: "memorial", num: "IV", title: "Memorial Descritivo", items: ["Componentes construtivos identificados", "Localizados em planta", "Quantificados por ambiente", "Base para orçamento de obra sem improviso"] },
+];
+
+const SCOPE_INT: ScopeBloco[] = [
+  { id: "caderno-geral-int", num: "I", title: "Caderno Geral", wide: true, items: ["Capa", "Imagens aprovadas", "Quadros quantitativos e especificações", "Planta baixa de layout", "Planta baixa demolir / construir", "Planta baixa construtiva", "Paginação de piso", "Mapa de revestimentos", "Planta de forro", "Luminotécnico", "Instalações elétricas, hidráulicas e ar-condicionado  *"] },
+  { id: "detalhes-int", num: "II", title: "Caderno de Detalhes Construtivos", description: "Graficação de todos os detalhes necessários para execução conforme complexidade do projeto." },
+  { id: "ambientes-int", num: "III", title: "Caderno de Ambientes", description: "Especificações completas por ambiente com localizações de vistas e siglas de materiais." },
+  { id: "esquadrias-int", num: "IV", title: "Caderno de Esquadrias", description: "Especificação e localização de todas as esquadrias novas com detalhamento para fabricação." },
+  { id: "marmoraria-int", num: "V", title: "Caderno de Marmoraria", description: "Bancadas, soleiras, bordas, nichos e elementos em mármore ou pedra natural." },
+  { id: "porcelanataria-int", num: "VI", title: "Caderno de Porcelanataria", description: "Paginação, perfis, fixação e intervenções em revestimentos cerâmicos por ambiente." },
+  { id: "marcenaria-int", num: "VII", title: "Caderno de Marcenaria", wide: false, description: "Detalhamento completo de todo mobiliário fabricado sob medida." },
+];
+
+const ScopeBlocos = ({ data, trackId }: { data: ScopeBloco[]; trackId: string }) => {
+  const hasFootnote = data.some((b) => b.items?.some((i) => i.includes("*")) || (b.description?.includes("*")));
+  return (
+    <div>
+      <div className="grid grid-cols-12 gap-px bg-border border border-border">
+        {data.map((bloco) => (
+          <article key={bloco.id} className={cn("bg-background p-7 md:p-8 flex flex-col col-span-12", bloco.wide ? "md:col-span-12" : "md:col-span-6")}>
+            <div className="flex items-baseline gap-3 mb-5">
+              <span className="font-display italic text-2xl text-primary/60">{bloco.num}</span>
+              <Editable as="h4" id={`proposta-arq.scope.${trackId}.${bloco.id}.title`} className="font-display text-xl md:text-[1.4rem] leading-tight text-foreground">{bloco.title}</Editable>
+            </div>
+            {bloco.note && <Editable id={`proposta-arq.scope.${trackId}.${bloco.id}.note`} className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary/80 mb-4 -mt-1">{bloco.note}</Editable>}
+            {bloco.description && <Editable as="p" id={`proposta-arq.scope.${trackId}.${bloco.id}.description`} className="font-display italic text-[0.95rem] text-foreground/75 leading-relaxed mt-1">{bloco.description}</Editable>}
+            {bloco.items && (
+              <ul className={cn("space-y-2 mt-1", bloco.wide && "md:columns-2 md:gap-x-10 md:space-y-0")}>
+                {bloco.items.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 group/item md:break-inside-avoid md:mb-2">
+                    <span className="mt-[0.55rem] h-px w-3 bg-primary/40 flex-shrink-0 group-hover/item:bg-primary group-hover/item:w-5 transition-all duration-300" />
+                    <Editable as="span" id={`proposta-arq.scope.${trackId}.${bloco.id}.item.${i}`} className="font-display text-[0.95rem] text-foreground/80 leading-snug">{item}</Editable>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </article>
+        ))}
+      </div>
+      {hasFootnote && (
+        <div className="mt-6 pl-4 border-l-2 border-primary/40">
+          <Editable as="p" id={`proposta-arq.scope.${trackId}.footnote`} className="font-display italic text-[0.9rem] text-foreground/70 leading-relaxed">
+            <span className="font-mono not-italic text-primary mr-1">*</span>
+            Desenvolvido em parceria com engenheiros especializados. A NL coordena e valida todos os projetos complementares.
+          </Editable>
+        </div>
+      )}
+    </div>
+  );
+};
+
+const ScopeTabs = () => {
+  const [tab, setTab] = useState("arq");
+  return (
+    <Tabs value={tab} onValueChange={setTab} className="w-full">
+      <TabsList className="bg-transparent border-b border-border/60 rounded-none p-0 h-auto w-full justify-start gap-8 mb-8">
+        <TabsTrigger value="arq" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-primary text-muted-foreground rounded-none px-0 pb-4 font-mono text-[11px] uppercase tracking-[0.3em] border-b-2 border-transparent data-[state=active]:border-primary">Arquitetônico</TabsTrigger>
+        <TabsTrigger value="int" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-primary text-muted-foreground rounded-none px-0 pb-4 font-mono text-[11px] uppercase tracking-[0.3em] border-b-2 border-transparent data-[state=active]:border-primary">Interiores</TabsTrigger>
+      </TabsList>
+      <TabsContent value="arq" className="mt-0">
+        <ScopeBlocos data={SCOPE_ARQ} trackId="arq" />
+        <Editable id="proposta-arq.scope.arq.parceria" multiline as="p" className="mt-6 font-display italic text-sm text-foreground/65 leading-relaxed border-l-2 border-primary/40 pl-4">
+          <span className="font-mono not-italic text-primary mr-1">*</span>
+          Desenvolvido em parceria com engenheiros especializados. A NL coordena e valida todos os projetos complementares.
+        </Editable>
+      </TabsContent>
+      <TabsContent value="int" className="mt-0">
+        <ScopeBlocos data={SCOPE_INT} trackId="int" />
+      </TabsContent>
+    </Tabs>
+  );
+};
+
+const PackageCard = ({ id, tier, tagline, price, priceNote, cta, ctaHref, recommended }: { id: string; tier: string; tagline: string; price: string; priceNote: string; cta?: string; ctaHref?: string; recommended?: boolean; }) => (
+  <div className={`relative flex flex-col p-10 md:p-12 ${recommended ? "border-2 border-primary bg-background" : "border border-border/60 bg-background/60"}`}>
+    {recommended && (
+      <div className="absolute -top-3 left-10 bg-primary text-primary-foreground px-4 py-1">
+        <Editable id={`proposta-arq.pkg.${id}.badge`} className="font-mono text-[9px] uppercase tracking-[0.3em]">◆ Mais escolhido</Editable>
+      </div>
+    )}
+    <div className="mb-8">
+      <Editable id={`proposta-arq.pkg.${id}.tier`} className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80 block mb-4">{tier}</Editable>
+      <Editable as="h3" id={`proposta-arq.pkg.${id}.tagline`} multiline className="font-display text-3xl md:text-4xl text-foreground leading-tight mb-6">{tagline}</Editable>
+      <div className="gold-line w-12 mb-6" />
+      <Editable id={`proposta-arq.pkg.${id}.price.note`} className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground block mb-1">{priceNote}</Editable>
+      <Editable id={`proposta-arq.pkg.${id}.price`} className={`font-display text-5xl md:text-6xl leading-none block ${recommended ? "text-primary" : "text-foreground"}`}>{price}</Editable>
+    </div>
+    {cta && ctaHref && (
+      <a href={ctaHref} target="_blank" rel="noreferrer" className={`group inline-flex items-center justify-center gap-4 px-8 py-4 font-mono text-xs uppercase tracking-[0.3em] transition-colors duration-500 self-stretch ${recommended ? "bg-primary text-primary-foreground hover:bg-primary-glow" : "border border-foreground/30 text-foreground hover:border-primary hover:text-primary"}`}>
+        <Editable id={`proposta-arq.pkg.${id}.cta`} className="inline-block">{cta}</Editable>
+        <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>
+      </a>
+    )}
+  </div>
+);
+
+const COMPARISON_GROUPS: { group: string; rows: { id: string; label: string; basic: string | boolean; premium: string | boolean }[]; }[] = [
+  { group: "Arquitetura", rows: [
+    { id: "proposta-arq.cmp.arq.1", label: "Levantamento & Briefing", basic: true, premium: true },
+    { id: "proposta-arq.cmp.arq.2", label: "Criação do Conceito", basic: true, premium: true },
+    { id: "proposta-arq.cmp.arq.3", label: "Estudo Preliminar com 3D", basic: true, premium: true },
+    { id: "proposta-arq.cmp.arq.4", label: "Projeto Legal & Aprovações", basic: true, premium: true },
+    { id: "proposta-arq.cmp.arq.5", label: "Projeto Executivo Arquitetônico", basic: true, premium: true },
+  ]},
+  { group: "Documentação técnica", rows: [
+    { id: "proposta-arq.cmp.doc.1", label: "Caderno Geral completo", basic: true, premium: true },
+    { id: "proposta-arq.cmp.doc.2", label: "Caderno de Detalhes Construtivos", basic: true, premium: true },
+    { id: "proposta-arq.cmp.doc.3", label: "Memorial Descritivo", basic: true, premium: true },
+    { id: "proposta-arq.cmp.doc.4", label: "Mapas de Instalações (em parceria)", basic: true, premium: true },
+  ]},
+  { group: "Visualização 3D", rows: [
+    { id: "proposta-arq.cmp.vis.1", label: "Concepção 3D de Alta Fidelidade", basic: false, premium: true },
+    { id: "proposta-arq.cmp.vis.2", label: "Vídeo 3D 360°", basic: false, premium: true },
+  ]},
+  { group: "Interiores", rows: [
+    { id: "proposta-arq.cmp.int.1", label: "Projeto Executivo de Interiores", basic: false, premium: true },
+    { id: "proposta-arq.cmp.int.2", label: "Caderno de Ambientes", basic: false, premium: true },
+    { id: "proposta-arq.cmp.int.3", label: "Caderno de Esquadrias", basic: false, premium: true },
+    { id: "proposta-arq.cmp.int.4", label: "Caderno de Marmoraria", basic: false, premium: true },
+    { id: "proposta-arq.cmp.int.5", label: "Caderno de Porcelanataria", basic: false, premium: true },
+    { id: "proposta-arq.cmp.int.6", label: "Caderno de Marcenaria", basic: false, premium: true },
+  ]},
+  { group: "Viabilidade", rows: [
+    { id: "proposta-arq.cmp.viab.1", label: "EVF — Viabilidade Financeira", basic: false, premium: "Opcional" },
+  ]},
+];
+
+const ComparisonCell = ({ value }: { value: string | boolean }) => {
+  if (value === true) return <span className="font-mono text-primary text-base">✓</span>;
+  if (value === false) return <span className="font-mono text-muted-foreground/30 text-base">—</span>;
+  return <span className="font-display text-sm text-foreground/85 leading-snug">{value}</span>;
+};
+
+const ComparisonTable = () => (
+  <div className="mt-20 max-w-6xl mx-auto">
+    <div className="text-center mb-10">
+      <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80 block mb-3">Comparativo detalhado</span>
+      <Editable as="h3" id="proposta-arq.cmp.title" multiline className="font-display text-3xl md:text-4xl leading-tight text-balance max-w-2xl mx-auto">
+        O que você recebe em <em className="text-primary not-italic">cada pacote</em>
+      </Editable>
+    </div>
+    <div className="border border-border/60 bg-background w-full">
+      <div className="w-full">
+        <div className="grid grid-cols-[1.4fr_1fr_1fr] md:grid-cols-[1.6fr_1fr_1fr] border-b border-border/60 bg-surface/40">
+          <div className="px-2 md:px-6 py-4 md:py-5 min-w-0">
+            <span className="font-mono text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-muted-foreground">Entregáveis</span>
+          </div>
+          <div className="px-2 md:px-6 py-4 md:py-5 border-l border-border/60 text-center min-w-0">
+            <span className="font-mono text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-muted-foreground block mb-1">Pacote</span>
+            <span className="font-display text-sm md:text-xl text-foreground">Essencial</span>
+          </div>
+          <div className="px-2 md:px-6 py-4 md:py-5 border-l border-border/60 text-center bg-primary/[0.04] relative min-w-0">
+            <div className="absolute top-0 inset-x-0 h-px bg-primary" />
+            <span className="font-mono text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-primary/80 block mb-1">Recomendado</span>
+            <span className="font-display text-sm md:text-xl text-primary">Completo</span>
+          </div>
+        </div>
+        {COMPARISON_GROUPS.map((g, gi) => (
+          <div key={gi}>
+            <div className="grid grid-cols-[1.4fr_1fr_1fr] md:grid-cols-[1.6fr_1fr_1fr] border-b border-border/40 bg-surface/20">
+              <div className="px-2 md:px-6 py-3 col-span-3">
+                <span className="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-primary/70">
+                  {String(gi + 1).padStart(2, "0")} · {g.group}
+                </span>
+              </div>
+            </div>
+            {g.rows.map((r, ri) => (
+              <div key={r.id} className={`grid grid-cols-[1.4fr_1fr_1fr] md:grid-cols-[1.6fr_1fr_1fr] ${ri === g.rows.length - 1 && gi === COMPARISON_GROUPS.length - 1 ? "" : "border-b border-border/40"}`}>
+                <div className="px-2 md:px-6 py-3 md:py-4 flex items-center min-w-0">
+                  <Editable id={`${r.id}.label`} className="font-display text-[11px] md:text-sm text-foreground/85 leading-snug break-words">{r.label}</Editable>
+                </div>
+                <div className="px-2 md:px-6 py-3 md:py-4 border-l border-border/40 flex items-center justify-center text-center min-w-0">
+                  {typeof r.basic === "string" ? (
+                    <Editable id={`${r.id}.basic`} className="font-display text-[11px] md:text-sm text-foreground/75 leading-snug break-words">{r.basic}</Editable>
+                  ) : (
+                    <ComparisonCell value={r.basic} />
+                  )}
+                </div>
+                <div className="px-2 md:px-6 py-3 md:py-4 border-l border-border/40 flex items-center justify-center text-center bg-primary/[0.025] min-w-0">
+                  {typeof r.premium === "string" ? (
+                    <Editable id={`${r.id}.premium`} className="font-display text-[11px] md:text-sm text-primary leading-snug font-medium break-words">{r.premium}</Editable>
+                  ) : (
+                    <ComparisonCell value={r.premium} />
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+    <Editable id="proposta-arq.cmp.footnote" multiline as="p" className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground text-center mt-6 leading-relaxed">
+      Pacotes podem ser personalizados conforme a complexidade do projeto.
+    </Editable>
+    <Editable id="proposta-arq.cmp.footnote2" multiline as="p" className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground text-center mt-3 leading-relaxed">
+      Itens opcionais são formalizados via aditivo de contrato conforme necessidade do projeto.
+    </Editable>
+    <Editable id="proposta-arq.cmp.footnote3" multiline as="p" className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground text-center mt-3 leading-relaxed">
+      No Plano Completo, cada fornecedor recebe o caderno específico da sua execução — sem margem para improviso.
+    </Editable>
+  </div>
+);
+
+export default PropostaComercial;
