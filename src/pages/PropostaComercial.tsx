@@ -874,7 +874,6 @@ const CaseStat = ({ id, value, label }: { id: string; value: string; label: stri
     <Editable id={`${id}.l`} className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground leading-tight block">{label}</Editable>
   </div>
 );
-
 const Contact = ({ id, label, value }: { id: string; label: string; value: string }) => {
   const valueRef = useRef<HTMLDivElement | null>(null);
   const [breakMode, setBreakMode] = useState<"normal" | "words" | "all">("normal");
@@ -1211,4 +1210,4 @@ const ComparisonTable = () => (
   </div>
 );
 
-export default PropostaComercial;
+export default PropostaArqint;
