@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { clearAllEdits } from "./Editable";
 import { isEditMode } from "@/lib/edit-mode";
+import { useLocation } from "react-router-dom";
 
 const LOGO_PRETA = "/logo-preta.png";
 const LOGO_BRANCA = "/logo-branca.png";
@@ -45,20 +46,16 @@ const SECTIONS_COMMERCIAL = [
   { id: "encerramento", label: "Encerramento" },
 ];
 
-
 const SectionNavProposta = () => {
   const [active, setActive] = useState("capa");
   const [showHelper, setShowHelper] = useState(true);
   const editing = isEditMode();
-  const DARK_SECTIONS = new Set(["capa", "diagnostico", "cronograma", "nota", "encerramento"]);
-  const onDarkSection = DARK_SECTIONS.has(active);
-
-import { useLocation } from "react-router-dom";
-
-// ... inside the component
   const location = useLocation();
   const isCommercial = location.pathname.includes("comercial");
   const SECTIONS = isCommercial ? SECTIONS_COMMERCIAL : SECTIONS_RESIDENTIAL;
+
+  const DARK_SECTIONS = new Set(["capa", "diagnostico", "cronograma", "nota", "encerramento"]);
+  const onDarkSection = DARK_SECTIONS.has(active);
 
   useEffect(() => {
     const obs = new IntersectionObserver(
@@ -79,7 +76,6 @@ import { useLocation } from "react-router-dom";
       clearTimeout(t);
     };
   }, [SECTIONS]);
-
 
   return (
     <>
