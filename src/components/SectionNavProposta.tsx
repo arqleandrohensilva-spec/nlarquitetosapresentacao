@@ -43,8 +43,10 @@ const SECTIONS_COMMERCIAL = [
   { id: "diferenciais", label: "Por que a NL?" },
   { id: "nota", label: "Transparência" },
   { id: "proximos", label: "Início" },
+  { id: "condicoes", label: "Condições" },
   { id: "encerramento", label: "Encerramento" },
 ];
+
 
 const SectionNavProposta = () => {
   const [active, setActive] = useState("capa");
