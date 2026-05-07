@@ -1,5 +1,3 @@
-import { useSearchParams } from 'react-router-dom'
-
 export interface PropostaParams {
   nome: string
   tipo: string
@@ -15,7 +13,7 @@ export interface PropostaParams {
 }
 
 export function usePropostaParams(): PropostaParams {
-  const [searchParams] = useSearchParams()
+  const searchParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : new URLSearchParams();
 
   return {
     nome: searchParams.get('nome') || '[Nome do Cliente]',
