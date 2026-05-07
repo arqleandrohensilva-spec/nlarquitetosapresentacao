@@ -1210,4 +1210,4 @@ const ComparisonTable = () => (
   </div>
 );
 
-export default PropostaArqint;
+export default PropostaComercial;
