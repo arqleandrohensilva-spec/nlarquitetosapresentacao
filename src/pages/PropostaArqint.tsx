@@ -1,4 +1,4 @@
-import { useState, useRef, useLayoutEffect } from "react";
+import { useState, useRef, useLayoutEffect, useEffect } from "react";
 import bandMaterial from "@/assets/band-material.jpg";
 import bandBlueprint from "@/assets/band-blueprint.jpg";
 import bandIntermezzo02 from "@/assets/band-intermezzo-02.jpg";
@@ -17,10 +17,19 @@ import propostaPortFachada from "@/assets/proposta/nomo-ai-6adc.jpg";
 import propostaPortLiving from "@/assets/proposta/nomo-result-2062.jpg";
 import propostaPortLazer from "@/assets/proposta/nomo-result-1759.jpg";
 import propostaPortSuite from "@/assets/proposta/gemini-m7jp.jpg";
+import { usePropostaParams } from "@/hooks/use-proposta-params";
 
 const LOGO_BRANCA = "/logo-branca.png";
 
 const PropostaArqint = () => {
+  const params = usePropostaParams();
+
+  useEffect(() => {
+    if (params.nome !== '[Nome do Cliente]') {
+      document.title = `Proposta NL Arquitetos · ${params.nome}`;
+    }
+  }, [params.nome]);
+
   return (
     <main className="relative bg-background text-foreground overflow-x-hidden">
       <SectionNavProposta />
@@ -53,7 +62,7 @@ const PropostaArqint = () => {
           <div className="mt-12 flex items-center gap-4 text-muted-foreground">
             <span className="h-px w-12 bg-primary/40" />
             <Editable id="proposta-arq.capa.validity" className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80">
-              Validade · 30 dias corridos
+              Validade · {params.validade}
             </Editable>
           </div>
         </div>
@@ -61,7 +70,7 @@ const PropostaArqint = () => {
         <div className="relative z-10 mt-16 flex flex-col md:flex-row md:items-end md:justify-between gap-4 text-muted-foreground">
           <div className="flex items-center gap-3 md:gap-4 flex-wrap">
             <Editable id="proposta-arq.capa.client" className="font-mono text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-primary/80 break-words">
-              Cliente · [Nome do Cliente]
+              Cliente · {params.nome}
             </Editable>
           </div>
           <Editable id="proposta-arq.capa.date" className="font-mono text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase break-words">
@@ -165,12 +174,12 @@ const PropostaArqint = () => {
             <div className="col-span-12 lg:col-span-7 lg:pl-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-0">
                 {[
-                  { id: "cliente", label: "Cliente", value: "[Nome do Cliente]" },
-                  { id: "projeto", label: "Projeto", value: "[Residencial · Comercial · Interiores]" },
-                  { id: "localizacao", label: "Localização", value: "[Cidade, Estado]" },
-                  { id: "metragem", label: "Metragem estimada", value: "[XXX m²]" },
-                  { id: "objetivo", label: "Objetivo", value: "[Descrição breve do objetivo do cliente]" },
-                  { id: "data", label: "Data", value: "[DD Mês AAAA]" },
+                  { id: "cliente", label: "Cliente", value: params.nome },
+                  { id: "projeto", label: "Projeto", value: params.tipo },
+                  { id: "localizacao", label: "Localização", value: `${params.cidade}, ${params.estado}` },
+                  { id: "metragem", label: "Metragem estimada", value: `${params.area} m²` },
+                  { id: "objetivo", label: "Objetivo", value: params.objetivo },
+                  { id: "data", label: "Data", value: params.data },
                 ].map((field) => (
                   <div key={field.id} className="py-6 border-b" style={{ borderColor: "rgba(139, 115, 85, 0.35)" }}>
                     <Editable id={`proposta-arq.diagnostico.field.${field.id}.label`} className="block mb-3 text-[10px] uppercase tracking-[0.3em]" style={{ color: "#8B7355", fontFamily: '"Courier New", monospace' }}>
@@ -427,7 +436,7 @@ const PropostaArqint = () => {
                 <div className="flex-1 border-l border-border pl-5 md:pl-6">
                   <Editable id={`proposta-arq.pilares.${p.id}.kicker`} className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground block mb-2">{p.kicker}</Editable>
                   <Editable as="p" id={`proposta-arq.pilares.${p.id}.body`} multiline className="text-foreground/80 text-[0.9rem] leading-relaxed mb-3">{p.body}</Editable>
-                  <Editable as="p" id={`proposta-arq.pilares.${p.id}.quote`} multiline className="font-display italic text-base md:text-lg text-primary leading-snug">“{p.quote}”</Editable>
+                  <Editable as="p" id={`proposta-arq.pilares.${p.id}.quote`} multiline className="font-display italic text-base md:text-lg text-primary leading-snug">"{p.quote}"</Editable>
                 </div>
               </article>
             ))}
@@ -585,8 +594,21 @@ const PropostaArqint = () => {
             </Editable>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <PackageCard id="basic" tier="Plano Executivo" tagline="Arquitetura" price="Sob consulta" priceNote="Sob consulta · conforme escopo" />
-            <PackageCard id="premium" tier="Plano Completo" tagline="Arquitetura + Interiores" price="Sob consulta" priceNote="Sob consulta · conforme escopo" recommended />
+            <PackageCard
+              id="basic"
+              tier="Plano Executivo"
+              tagline="Arquitetura"
+              price={params.valor_executivo !== 'Sob consulta' ? `R$ ${Number(params.valor_executivo).toLocaleString('pt-BR')}` : 'Sob consulta'}
+              priceNote={params.valor_executivo !== 'Sob consulta' ? 'Valor baseado no escopo contratado' : 'Sob consulta · conforme escopo'}
+            />
+            <PackageCard
+              id="premium"
+              tier="Plano Completo"
+              tagline="Arquitetura + Interiores"
+              price={params.valor_completo !== 'Sob consulta' ? `R$ ${Number(params.valor_completo).toLocaleString('pt-BR')}` : 'Sob consulta'}
+              priceNote={params.valor_completo !== 'Sob consulta' ? 'Valor baseado no escopo contratado' : 'Sob consulta · conforme escopo'}
+              recommended
+            />
           </div>
           <ComparisonTable />
           <div className="mt-12 border border-border/60 bg-background max-w-5xl mx-auto">
