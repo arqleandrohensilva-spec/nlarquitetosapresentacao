@@ -1003,12 +1003,6 @@ const PhaseTimeline = ({ trackId, number, title, duration, phases }: { trackId: 
 
 type ScopeBloco = { id: string; num: string; title: string; note?: string; description?: string; items?: string[]; wide?: boolean; };
 
-const SCOPE_ARQ: ScopeBloco[] = [
-  { id: "caderno-geral", num: "I", title: "Caderno Geral", items: ["Prancha de índice", "Planta de situação, locação e cobertura", "Planta de layout", "Plantas construtivas", "Planta de paginação de piso", "Planta de forro", "Projeto luminotécnico"] },
-  { id: "mapas-instalacoes", num: "II", title: "Mapas de Instalações", note: "em parceria com engenheiros especializados", items: ["Instalações elétricas", "Instalações hidráulicas", "Ar-condicionado", "Pontos de gás", "Revestimentos"] },
-  { id: "detalhes-construtivos", num: "III", title: "Caderno de Detalhes Construtivos", items: ["Detalhamentos gerais", "Representação gráfica por ambiente", "Portas e esquadrias", "Marmoraria", "Marcenaria", "Porcelanataria"] },
-  { id: "memorial", num: "IV", title: "Memorial Descritivo", items: ["Componentes construtivos identificados", "Localizados em planta", "Quantificados por ambiente", "Base para orçamento de obra sem improviso"] },
-];
 
 const SCOPE_COM: ScopeBloco[] = [
   { id: "caderno-geral-com", num: "I", title: "Caderno Geral Comercial", wide: true, items: ["Capa", "Identidade visual do espaço", "Imagens aprovadas", "Quadros quantitativos e especificações", "Planta baixa de layout", "Planta baixa demolir / construir", "Planta baixa construtiva", "Paginação de piso", "Mapa de revestimentos", "Planta de forro", "Luminotécnico", "Instalações elétricas, hidráulicas e ar-condicionado *"] },
