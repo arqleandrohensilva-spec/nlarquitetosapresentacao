@@ -35,6 +35,7 @@ const PropostaComercial = () => {
     <main className="relative bg-background text-foreground overflow-x-hidden">
       <SectionNavProposta />
 
+
       {/* 01 · CAPA */}
       <section id="capa" className="relative min-h-screen flex flex-col justify-end px-6 md:px-16 lg:px-24 py-20">
         <img src={propostaCapa} alt="NL Arquitetos · proposta comercial" className="absolute inset-0 w-full h-full object-cover opacity-90 contrast-110 saturate-125" width={1920} height={1280} />
