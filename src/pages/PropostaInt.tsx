@@ -650,17 +650,17 @@ const PropostaInt = () => {
               <div key={block.id} className="relative p-10 md:p-12 group" style={{ backgroundColor: "#1A1816" }}>
                 <div className="flex items-baseline gap-4 mb-6">
                   <span className="font-display text-5xl md:text-6xl text-primary/30" style={{ WebkitTextStroke: "1px hsl(var(--primary) / 0.4)", color: "transparent" }}>{block.id}</span>
-                  <span className="inline-block text-[11px] leading-none uppercase tracking-[0.3em] text-primary/80" style={{ fontFamily: "'Courier New', monospace", fontWeight: 400 }}>{block.title.toUpperCase()}</span>
+                  <Editable as="h3" id={`${PX}.nota.${block.id}.t`} className="font-display text-2xl md:text-3xl text-foreground leading-tight">{block.title}</Editable>
                 </div>
                 {block.intro && (
-                  <Editable id={`${PX}.nota.${block.id}.intro`} multiline as="p" className="text-sm md:text-base text-muted-foreground leading-relaxed mb-5">{block.intro}</Editable>
+                  <Editable id={`${PX}.nota.${block.id}.intro`} multiline as="p" className="font-display text-foreground/70 leading-relaxed mb-5">{block.intro}</Editable>
                 )}
                 {block.items && block.items.length > 0 && (
                   <ul className="space-y-2.5">
                     {block.items.map((item: string, i: number) => (
-                      <li key={i} className="flex gap-3 text-sm md:text-base text-foreground/85 leading-relaxed">
+                      <li key={i} className="flex gap-3 text-sm md:text-base text-foreground/70 leading-relaxed">
                         <span className="text-primary mt-1.5 text-[8px]">✦</span>
-                        <Editable id={`${PX}.nota.${block.id}.item.${i}`} as="span" className="flex-1">{item}</Editable>
+                        <Editable id={`${PX}.nota.${block.id}.item.${i}`} as="span" className="font-display flex-1">{item}</Editable>
                       </li>
                     ))}
                   </ul>
@@ -669,12 +669,12 @@ const PropostaInt = () => {
                   <div className="space-y-6">
                     {block.groups.map((group: any, gi: number) => (
                       <div key={gi}>
-                        <div className="inline-block text-[11px] leading-none uppercase tracking-[0.3em] text-primary mb-3" style={{ fontFamily: "'Courier New', monospace", fontWeight: 400 }}>{group.label.toUpperCase()}</div>
+                        <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary mb-3">{group.label}</div>
                         <ul className="space-y-2.5">
                           {group.items.map((item: string, i: number) => (
-                            <li key={i} className="flex gap-3 text-sm md:text-base text-foreground/85 leading-relaxed">
+                            <li key={i} className="flex gap-3 text-sm md:text-base text-foreground/70 leading-relaxed">
                               <span className="text-primary mt-1.5 text-[8px]">✦</span>
-                              <Editable id={`${PX}.nota.${block.id}.${gi}.item.${i}`} as="span" className="flex-1">{item}</Editable>
+                              <Editable id={`${PX}.nota.${block.id}.${gi}.item.${i}`} as="span" className="font-display flex-1">{item}</Editable>
                             </li>
                           ))}
                         </ul>
