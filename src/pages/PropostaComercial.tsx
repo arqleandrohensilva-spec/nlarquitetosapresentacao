@@ -1010,15 +1010,16 @@ const SCOPE_ARQ: ScopeBloco[] = [
   { id: "memorial", num: "IV", title: "Memorial Descritivo", items: ["Componentes construtivos identificados", "Localizados em planta", "Quantificados por ambiente", "Base para orçamento de obra sem improviso"] },
 ];
 
-const SCOPE_INT: ScopeBloco[] = [
-  { id: "caderno-geral-int", num: "I", title: "Caderno Geral", wide: true, items: ["Capa", "Imagens aprovadas", "Quadros quantitativos e especificações", "Planta baixa de layout", "Planta baixa demolir / construir", "Planta baixa construtiva", "Paginação de piso", "Mapa de revestimentos", "Planta de forro", "Luminotécnico", "Instalações elétricas, hidráulicas e ar-condicionado  *"] },
-  { id: "detalhes-int", num: "II", title: "Caderno de Detalhes Construtivos", description: "Graficação de todos os detalhes necessários para execução conforme complexidade do projeto." },
-  { id: "ambientes-int", num: "III", title: "Caderno de Ambientes", description: "Especificações completas por ambiente com localizações de vistas e siglas de materiais." },
-  { id: "esquadrias-int", num: "IV", title: "Caderno de Esquadrias", description: "Especificação e localização de todas as esquadrias novas com detalhamento para fabricação." },
-  { id: "marmoraria-int", num: "V", title: "Caderno de Marmoraria", description: "Bancadas, soleiras, bordas, nichos e elementos em mármore ou pedra natural." },
-  { id: "porcelanataria-int", num: "VI", title: "Caderno de Porcelanataria", description: "Paginação, perfis, fixação e intervenções em revestimentos cerâmicos por ambiente." },
-  { id: "marcenaria-int", num: "VII", title: "Caderno de Marcenaria", wide: false, description: "Detalhamento completo de todo mobiliário fabricado sob medida." },
+const SCOPE_COM: ScopeBloco[] = [
+  { id: "caderno-geral-com", num: "I", title: "Caderno Geral Comercial", wide: true, items: ["Capa", "Identidade visual do espaço", "Imagens aprovadas", "Quadros quantitativos e especificações", "Planta baixa de layout", "Planta baixa demolir / construir", "Planta baixa construtiva", "Paginação de piso", "Mapa de revestimentos", "Planta de forro", "Luminotécnico", "Instalações elétricas, hidráulicas e ar-condicionado *"] },
+  { id: "detalhes-com", num: "II", title: "Caderno de Detalhes Construtivos", description: "Graficação de todos os detalhes necessários para execução comercial conforme complexidade." },
+  { id: "ambientes-com", num: "III", title: "Caderno de Ambientes", description: "Especificações por ambiente com localizações de vistas, fluxos e siglas de materiais." },
+  { id: "esquadrias-com", num: "IV", title: "Caderno de Esquadrias", description: "Especificação de esquadrias e serralheria com detalhamento para fabricação." },
+  { id: "marmoraria-com", num: "V", title: "Caderno de Marmoraria", description: "Bancadas, soleiras e elementos em mármore, pedra natural ou materiais técnicos." },
+  { id: "porcelanataria-com", num: "VI", title: "Caderno de Porcelanataria", description: "Paginação, perfis e intervenções em revestimentos cerâmicos por ambiente comercial." },
+  { id: "marcenaria-com", num: "VII", title: "Caderno de Marcenaria", description: "Detalhamento completo de todo mobiliário comercial fabricado sob medida." },
 ];
+
 
 const ScopeBlocos = ({ data, trackId }: { data: ScopeBloco[]; trackId: string }) => {
   const hasFootnote = data.some((b) => b.items?.some((i) => i.includes("*")) || (b.description?.includes("*")));
