@@ -1060,26 +1060,20 @@ const ScopeBlocos = ({ data, trackId }: { data: ScopeBloco[]; trackId: string })
 };
 
 const ScopeTabs = () => {
-  const [tab, setTab] = useState("arq");
   return (
-    <Tabs value={tab} onValueChange={setTab} className="w-full">
-      <TabsList className="bg-transparent border-b border-border/60 rounded-none p-0 h-auto w-full justify-start gap-8 mb-8">
-        <TabsTrigger value="arq" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-primary text-muted-foreground rounded-none px-0 pb-4 font-mono text-[11px] uppercase tracking-[0.3em] border-b-2 border-transparent data-[state=active]:border-primary">Arquitetônico</TabsTrigger>
-        <TabsTrigger value="int" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-primary text-muted-foreground rounded-none px-0 pb-4 font-mono text-[11px] uppercase tracking-[0.3em] border-b-2 border-transparent data-[state=active]:border-primary">Interiores</TabsTrigger>
-      </TabsList>
-      <TabsContent value="arq" className="mt-0">
-        <ScopeBlocos data={SCOPE_ARQ} trackId="arq" />
-        <Editable id="proposta-com.scope.arq.parceria" multiline as="p" className="mt-6 font-display italic text-sm text-foreground/65 leading-relaxed border-l-2 border-primary/40 pl-4">
-          <span className="font-mono not-italic text-primary mr-1">*</span>
-          Desenvolvido em parceria com engenheiros especializados. A NL coordena e valida todos os projetos complementares.
-        </Editable>
-      </TabsContent>
-      <TabsContent value="int" className="mt-0">
-        <ScopeBlocos data={SCOPE_INT} trackId="int" />
-      </TabsContent>
-    </Tabs>
+    <div className="w-full">
+      <div className="bg-transparent border-b border-border/60 rounded-none p-0 h-auto w-full flex justify-start gap-8 mb-8">
+        <div className="text-primary rounded-none px-0 pb-4 font-mono text-[11px] uppercase tracking-[0.3em] border-b-2 border-primary">
+          Interiores Comercial
+        </div>
+      </div>
+      <div className="mt-0">
+        <ScopeBlocos data={SCOPE_COM} trackId="com" />
+      </div>
+    </div>
   );
 };
+
 
 const PackageCard = ({ id, tier, tagline, price, priceNote, cta, ctaHref, recommended }: { id: string; tier: string; tagline: string; price: string; priceNote: string; cta?: string; ctaHref?: string; recommended?: boolean; }) => (
   <div className={`relative flex flex-col p-10 md:p-12 ${recommended ? "border-2 border-primary bg-background" : "border border-border/60 bg-background/60"}`}>
