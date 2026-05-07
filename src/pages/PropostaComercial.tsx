@@ -36,11 +36,15 @@ const PropostaComercial = () => {
       <SectionNavProposta />
 
 
-      <div className="absolute top-20 right-8 md:right-16 lg:right-24 z-50 flex items-center gap-4 bg-background/80 backdrop-blur-md border border-primary/20 px-6 py-3 rounded-full shadow-2xl transition-all hover:border-primary/40 group overflow-hidden" data-pdf-hide>
+      <div className="fixed top-24 right-6 md:right-10 lg:right-12 z-50 flex items-center gap-4 bg-background/60 backdrop-blur-xl border border-primary/20 px-5 py-2.5 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.4)] transition-all hover:border-primary/50 group overflow-hidden" data-pdf-hide>
         <div className="absolute inset-0 bg-primary/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-        <span className="relative font-mono text-[10px] uppercase tracking-[0.2em] text-primary/80">Trilha Comercial</span>
-        <span className="relative w-1.5 h-1.5 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(var(--primary),0.5)]" />
+        <span className="relative font-mono text-[9px] md:text-[10px] uppercase tracking-[0.25em] text-primary/90 font-medium">Trilha Comercial</span>
+        <div className="relative flex items-center justify-center">
+          <span className="absolute w-2 h-2 rounded-full bg-primary/40 animate-ping" />
+          <span className="relative w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_12px_rgba(var(--primary),0.8)]" />
+        </div>
       </div>
+
 
 
       <section id="capa" className="relative min-h-screen flex flex-col justify-end px-6 md:px-16 lg:px-24 py-20">
