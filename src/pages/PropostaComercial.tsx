@@ -1093,35 +1093,29 @@ const PackageCard = ({ id, tier, tagline, price, priceNote, cta, ctaHref, recomm
 );
 
 const COMPARISON_GROUPS: { group: string; rows: { id: string; label: string; basic: string | boolean; premium: string | boolean }[]; }[] = [
-  { group: "Arquitetura", rows: [
-    { id: "proposta-com.cmp.arq.1", label: "Levantamento & Briefing", basic: true, premium: true },
-    { id: "proposta-com.cmp.arq.2", label: "Criação do Conceito", basic: true, premium: true },
-    { id: "proposta-com.cmp.arq.3", label: "Estudo Preliminar com 3D", basic: true, premium: true },
-    { id: "proposta-com.cmp.arq.4", label: "Projeto Legal & Aprovações", basic: true, premium: true },
-    { id: "proposta-com.cmp.arq.5", label: "Projeto Executivo Arquitetônico", basic: true, premium: true },
+  { group: "Estratégia & Identidade", rows: [
+    { id: "proposta-com.cmp.est.1", label: "Briefing & Diagnóstico do negócio", basic: true, premium: true },
+    { id: "proposta-com.cmp.est.2", label: "Criação do Conceito Comercial", basic: true, premium: true },
+    { id: "proposta-com.cmp.est.3", label: "Estudo de Fluxo & Setorização", basic: true, premium: true },
+    { id: "proposta-com.cmp.est.4", label: "Identidade Visual do Espaço", basic: false, premium: true },
+  ]},
+  { group: "Visualização & Interiores", rows: [
+    { id: "proposta-com.cmp.int.1", label: "Projeto Executivo de Interiores", basic: true, premium: true },
+    { id: "proposta-com.cmp.int.2", label: "Concepção 3D de Alta Fidelidade", basic: true, premium: true },
+    { id: "proposta-com.cmp.int.3", label: "Caderno de Ambientes", basic: true, premium: true },
+    { id: "proposta-com.cmp.int.4", label: "Caderno de Marcenaria Comercial", basic: true, premium: true },
   ]},
   { group: "Documentação técnica", rows: [
-    { id: "proposta-com.cmp.doc.1", label: "Caderno Geral completo", basic: true, premium: true },
-    { id: "proposta-com.cmp.doc.2", label: "Caderno de Detalhes Construtivos", basic: true, premium: true },
-    { id: "proposta-com.cmp.doc.3", label: "Memorial Descritivo", basic: true, premium: true },
-    { id: "proposta-com.cmp.doc.4", label: "Mapas de Instalações (em parceria)", basic: true, premium: true },
+    { id: "proposta-com.cmp.doc.1", label: "Caderno de Detalhes Construtivos", basic: true, premium: true },
+    { id: "proposta-com.cmp.doc.2", label: "Memorial Descritivo de Materiais", basic: true, premium: true },
+    { id: "proposta-com.cmp.doc.3", label: "Mapas de Instalações (em parceria)", basic: true, premium: true },
   ]},
-  { group: "Visualização 3D", rows: [
-    { id: "proposta-com.cmp.vis.1", label: "Concepção 3D de Alta Fidelidade", basic: false, premium: true },
-    { id: "proposta-com.cmp.vis.2", label: "Vídeo 3D 360°", basic: false, premium: true },
-  ]},
-  { group: "Interiores", rows: [
-    { id: "proposta-com.cmp.int.1", label: "Projeto Executivo de Interiores", basic: false, premium: true },
-    { id: "proposta-com.cmp.int.2", label: "Caderno de Ambientes", basic: false, premium: true },
-    { id: "proposta-com.cmp.int.3", label: "Caderno de Esquadrias", basic: false, premium: true },
-    { id: "proposta-com.cmp.int.4", label: "Caderno de Marmoraria", basic: false, premium: true },
-    { id: "proposta-com.cmp.int.5", label: "Caderno de Porcelanataria", basic: false, premium: true },
-    { id: "proposta-com.cmp.int.6", label: "Caderno de Marcenaria", basic: false, premium: true },
-  ]},
-  { group: "Viabilidade", rows: [
-    { id: "proposta-com.cmp.viab.1", label: "EVF — Viabilidade Financeira", basic: false, premium: "Opcional" },
+  { group: "Viabilidade & Suporte", rows: [
+    { id: "proposta-com.cmp.via.1", label: "EVF — Viabilidade Financeira", basic: false, premium: "Opcional" },
+    { id: "proposta-com.cmp.via.2", label: "Acompanhamento de Obra", basic: false, premium: "Opcional" },
   ]},
 ];
+
 
 const ComparisonCell = ({ value }: { value: string | boolean }) => {
   if (value === true) return <span className="font-mono text-primary text-base">✓</span>;
