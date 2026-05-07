@@ -47,7 +47,6 @@ const SECTIONS_COMMERCIAL = [
   { id: "encerramento", label: "Encerramento" },
 ];
 
-
 const SectionNavProposta = () => {
   const [active, setActive] = useState("capa");
   const [showHelper, setShowHelper] = useState(true);
@@ -56,7 +55,7 @@ const SectionNavProposta = () => {
   const isCommercial = location.pathname.includes("comercial");
   const SECTIONS = isCommercial ? SECTIONS_COMMERCIAL : SECTIONS_RESIDENTIAL;
 
-  const DARK_SECTIONS = new Set(["capa", "diagnostico", "cronograma", "nota", "encerramento"]);
+  const DARK_SECTIONS = new Set(["capa", "diagnostico", "cronograma", "nota", "encerramento", "condicoes"]);
   const onDarkSection = DARK_SECTIONS.has(active);
 
   useEffect(() => {
@@ -95,6 +94,23 @@ const SectionNavProposta = () => {
             height={40}
           />
         </a>
+        <nav className="pointer-events-auto flex items-center gap-4 md:gap-8 overflow-x-auto no-scrollbar max-w-[60vw] md:max-w-none">
+          {SECTIONS.map((s) => (
+            <a
+              key={s.id}
+              href={`#${s.id}`}
+              className={`font-mono text-[9px] md:text-[10px] uppercase tracking-[0.2em] whitespace-nowrap transition-colors hover:text-primary ${
+                active === s.id
+                  ? "text-primary"
+                  : onDarkSection
+                  ? "text-white/40"
+                  : "text-black/40"
+              }`}
+            >
+              {s.label}
+            </a>
+          ))}
+        </nav>
         {editing && (
           <button
             onClick={() => {
