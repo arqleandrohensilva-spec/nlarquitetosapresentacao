@@ -1007,7 +1007,7 @@ const PhaseTimeline = ({ trackId, number, title, duration, phases }: { trackId: 
   </div>
 );
 
-type ScopeBloco = { id: string; num: string; title: string; note?: string; description?: string; items?: string[]; wide?: boolean; };
+type ScopeBloco = { id: string; num: string; title: string; note?: string; description?: string; items?: string[]; wide?: boolean; columns1?: boolean; hasPlanoCompletoBadge?: boolean; };
 
 
 const SCOPE_COM: ScopeBloco[] = [
