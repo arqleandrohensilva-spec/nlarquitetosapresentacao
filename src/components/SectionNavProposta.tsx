@@ -71,23 +71,7 @@ const SectionNavProposta = () => {
               height={36}
             />
           </a>
-          <nav className="pointer-events-auto flex items-center gap-4 md:gap-8 overflow-x-auto no-scrollbar py-2">
-            {SECTIONS.map((s) => (
-              <a
-                key={s.id}
-                href={`#${s.id}`}
-                className={`font-mono text-[8px] md:text-[10px] uppercase tracking-[0.2em] whitespace-nowrap transition-colors hover:text-primary ${
-                  active === s.id
-                    ? "text-primary"
-                    : onDarkSection
-                    ? "text-white/40"
-                    : "text-black/40"
-                }`}
-              >
-                {s.label}
-              </a>
-            ))}
-          </nav>
+          {/* Navegação oculta conforme solicitado */}
         </div>
         {editing && (
           <button
