@@ -1098,26 +1098,30 @@ const PackageCard = ({ id, tier, tagline, price, priceNote, cta, ctaHref, recomm
 );
 
 const COMPARISON_GROUPS: { group: string; rows: { id: string; label: string; basic: string | boolean; premium: string | boolean }[]; }[] = [
-  { group: "Estratégia & Identidade", rows: [
-    { id: "proposta-com.cmp.est.1", label: "Briefing & Diagnóstico do negócio", basic: true, premium: true },
-    { id: "proposta-com.cmp.est.2", label: "Criação do Conceito Comercial", basic: true, premium: true },
-    { id: "proposta-com.cmp.est.3", label: "Estudo de Fluxo & Setorização", basic: true, premium: true },
-    { id: "proposta-com.cmp.est.4", label: "Identidade Visual do Espaço", basic: false, premium: true },
+  { group: "Estratégia e conceito", rows: [
+    { id: `${PX}.cmp.est.1`, label: "Briefing & Diagnóstico do negócio", basic: true, premium: true },
+    { id: `${PX}.cmp.est.2`, label: "Conceito e identidade — verbal e visual", basic: false, premium: true },
+    { id: `${PX}.cmp.est.3`, label: "Moodboard executivo", basic: false, premium: true },
+    { id: `${PX}.cmp.est.4`, label: "Atmosfera por zona de atendimento", basic: false, premium: true },
+    { id: `${PX}.cmp.est.5`, label: "Concepção 3D de Alta Fidelidade", basic: false, premium: true },
+    { id: `${PX}.cmp.est.6`, label: "Vídeo 3D 360°", basic: false, premium: true },
   ]},
-  { group: "Visualização & Interiores", rows: [
-    { id: "proposta-com.cmp.int.1", label: "Projeto Executivo de Interiores", basic: true, premium: true },
-    { id: "proposta-com.cmp.int.2", label: "Concepção 3D de Alta Fidelidade", basic: true, premium: true },
-    { id: "proposta-com.cmp.int.3", label: "Caderno de Ambientes", basic: true, premium: true },
-    { id: "proposta-com.cmp.int.4", label: "Caderno de Marcenaria Comercial", basic: true, premium: true },
+  { group: "Fluxo e funcionalidade", rows: [
+    { id: `${PX}.cmp.flu.1`, label: "Caderno de Fluxo de Atendimento", basic: true, premium: true },
+    { id: `${PX}.cmp.flu.2`, label: "Setorização funcional completa", basic: true, premium: true },
+    { id: `${PX}.cmp.flu.3`, label: "Capacidade máxima de atendimento", basic: true, premium: true },
   ]},
-  { group: "Documentação técnica", rows: [
-    { id: "proposta-com.cmp.doc.1", label: "Caderno de Detalhes Construtivos", basic: true, premium: true },
-    { id: "proposta-com.cmp.doc.2", label: "Memorial Descritivo de Materiais", basic: true, premium: true },
-    { id: "proposta-com.cmp.doc.3", label: "Mapas de Instalações (em parceria)", basic: true, premium: true },
+  { group: "Cadernos técnicos", rows: [
+    { id: `${PX}.cmp.cad.1`, label: "Caderno Geral + Luminotécnico", basic: true, premium: true },
+    { id: `${PX}.cmp.cad.2`, label: "Caderno de Detalhes Construtivos", basic: true, premium: true },
+    { id: `${PX}.cmp.cad.3`, label: "Caderno de Marcenaria", basic: true, premium: true },
+    { id: `${PX}.cmp.cad.4`, label: "Memorial Descritivo", basic: true, premium: true },
+    { id: `${PX}.cmp.cad.5`, label: "Caderno de Identidade do Espaço", basic: false, premium: true },
   ]},
-  { group: "Viabilidade & Suporte", rows: [
-    { id: "proposta-com.cmp.via.1", label: "EVF — Viabilidade Financeira", basic: false, premium: "Opcional" },
-    { id: "proposta-com.cmp.via.2", label: "Acompanhamento de Obra", basic: false, premium: "Opcional" },
+  { group: "Complementos", rows: [
+    { id: `${PX}.cmp.comp.1`, label: "Curadoria de fornecedores", basic: false, premium: true },
+    { id: `${PX}.cmp.comp.2`, label: "EVF — Viabilidade Financeira", basic: false, premium: "Opcional" },
+    { id: `${PX}.cmp.comp.3`, label: "Acompanhamento de obra", basic: false, premium: "Opcional" },
   ]},
 ];
 
