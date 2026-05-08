@@ -1027,14 +1027,19 @@ const ScopeBlocos = ({ data, trackId }: { data: ScopeBloco[]; trackId: string })
       <div className="grid grid-cols-12 gap-px bg-border border border-border">
         {data.map((bloco) => (
           <article key={bloco.id} className={cn("bg-background p-7 md:p-8 flex flex-col col-span-12", bloco.wide ? "md:col-span-12" : "md:col-span-6")}>
-            <div className="flex items-baseline gap-3 mb-5">
-              <span className="font-display italic text-2xl text-primary/60">{bloco.num}</span>
-              <Editable as="h4" id={`proposta-com.scope.${trackId}.${bloco.id}.title`} className="font-display text-xl md:text-[1.4rem] leading-tight text-foreground">{bloco.title}</Editable>
+            <div className="flex flex-col mb-5">
+              {bloco.hasPlanoCompletoBadge && (
+                <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-primary/80 mb-2">Plano Completo</span>
+              )}
+              <div className="flex items-baseline gap-3">
+                <span className="font-display italic text-2xl text-primary/60">{bloco.num}</span>
+                <Editable as="h4" id={`proposta-com.scope.${trackId}.${bloco.id}.title`} className="font-display text-xl md:text-[1.4rem] leading-tight text-foreground">{bloco.title}</Editable>
+              </div>
             </div>
             {bloco.note && <Editable id={`proposta-com.scope.${trackId}.${bloco.id}.note`} className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary/80 mb-4 -mt-1">{bloco.note}</Editable>}
             {bloco.description && <Editable as="p" id={`proposta-com.scope.${trackId}.${bloco.id}.description`} className="font-display italic text-[0.95rem] text-foreground/75 leading-relaxed mt-1">{bloco.description}</Editable>}
             {bloco.items && (
-              <ul className={cn("space-y-2 mt-1", bloco.wide && "md:columns-2 md:gap-x-10 md:space-y-0")}>
+              <ul className={cn("space-y-2 mt-1", bloco.wide && !bloco.columns1 && "md:columns-2 md:gap-x-10 md:space-y-0", bloco.columns1 && "md:columns-1")}>
                 {bloco.items.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 group/item md:break-inside-avoid md:mb-2">
                     <span className="mt-[0.55rem] h-px w-3 bg-primary/40 flex-shrink-0 group-hover/item:bg-primary group-hover/item:w-5 transition-all duration-300" />
