@@ -1007,13 +1007,13 @@ const PhaseTimeline = ({ trackId, number, title, duration, phases }: { trackId: 
   </div>
 );
 
-type ScopeBloco = { id: string; num: string; title: string; note?: string; description?: string; items?: string[]; wide?: boolean; };
+type ScopeBloco = { id: string; num: string; title: string; note?: string; description?: string; items?: string[]; wide?: boolean; columns1?: boolean; hasPlanoCompletoBadge?: boolean; };
 
 
 const SCOPE_COM: ScopeBloco[] = [
-  { id: "fluxo", num: "I", title: "Caderno de Fluxo de Atendimento", wide: true, items: ["Mapa de jornada do cliente — da entrada à saída", "Setorização funcional: recepção, atendimento, espera, caixa, estoque e staff", "Circulação otimizada — fluxo de clientes separado do fluxo da equipe", "Posicionamento estratégico de equipamentos e mobiliário operacional", "Capacidade máxima de atendimento simultâneo por zona", "Planta baixa de layout com função de cada metro quadrado definida"] },
+  { id: "fluxo", num: "I", title: "Caderno de Fluxo de Atendimento", wide: true, columns1: true, items: ["Mapa de jornada do cliente — da entrada à saída", "Setorização funcional: recepção, atendimento, espera, caixa, estoque e staff", "Circulação otimizada — fluxo de clientes separado do fluxo da equipe", "Posicionamento estratégico de equipamentos e mobiliário operacional", "Capacidade máxima de atendimento simultâneo por zona", "Planta baixa de layout com função de cada metro quadrado definida"] },
   { id: "caderno-geral", num: "II", title: "Caderno Geral", wide: true, items: ["Planta baixa construtiva", "Planta baixa demolir / construir", "Paginação de piso", "Mapa de revestimentos", "Planta de forro", "Luminotécnico", "Instalações elétricas e ar-condicionado *"] },
-  { id: "identidade", num: "III", title: "Caderno de Identidade do Espaço", description: "O documento que conecta cada decisão de projeto à missão do negócio. Exclusivo do Plano Completo.", items: ["Conceito verbal do espaço — define a alma do ambiente em palavras antes do primeiro traço", "Paleta de materiais com justificativa estratégica — cada escolha com o porquê do negócio", "Moodboard executivo — referências visuais que orientam marceneiro, pintor e fornecedores", "Atmosfera por zona — como cada área deve fazer o cliente se sentir", "Diretrizes de iluminação — cenas e intensidades por momento do atendimento"] },
+  { id: "identidade", num: "III", title: "Caderno de Identidade do Espaço", wide: true, hasPlanoCompletoBadge: true, description: "O documento que conecta cada decisão de projeto à missão do negócio. Exclusivo do Plano Completo.", items: ["Conceito verbal do espaço — define a alma do ambiente em palavras antes do primeiro traço", "Paleta de materiais com justificativa estratégica — cada escolha com o porquê do negócio", "Moodboard executivo — referências visuais que orientam marceneiro, pintor e fornecedores", "Atmosfera por zona — como cada área deve fazer o cliente se sentir", "Diretrizes de iluminação — cenas e intensidades por momento do atendimento"] },
   { id: "detalhes", num: "IV", title: "Caderno de Detalhes Construtivos", description: "Graficação de todos os detalhes necessários para execução conforme complexidade do projeto." },
   { id: "marcenaria", num: "V", title: "Caderno de Marcenaria", description: "Detalhamento completo de todo mobiliário fabricado sob medida — balcões, estantes, painéis e mobiliário operacional." },
   { id: "memorial", num: "VI", title: "Memorial Descritivo", description: "Componentes identificados, localizados e quantificados — base para orçamento firme com fornecedores e executores." },
@@ -1027,14 +1027,19 @@ const ScopeBlocos = ({ data, trackId }: { data: ScopeBloco[]; trackId: string })
       <div className="grid grid-cols-12 gap-px bg-border border border-border">
         {data.map((bloco) => (
           <article key={bloco.id} className={cn("bg-background p-7 md:p-8 flex flex-col col-span-12", bloco.wide ? "md:col-span-12" : "md:col-span-6")}>
-            <div className="flex items-baseline gap-3 mb-5">
-              <span className="font-display italic text-2xl text-primary/60">{bloco.num}</span>
-              <Editable as="h4" id={`proposta-com.scope.${trackId}.${bloco.id}.title`} className="font-display text-xl md:text-[1.4rem] leading-tight text-foreground">{bloco.title}</Editable>
+            <div className="flex flex-col mb-5">
+              {bloco.hasPlanoCompletoBadge && (
+                <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-primary/80 mb-2">Plano Completo</span>
+              )}
+              <div className="flex items-baseline gap-3">
+                <span className="font-display italic text-2xl text-primary/60">{bloco.num}</span>
+                <Editable as="h4" id={`proposta-com.scope.${trackId}.${bloco.id}.title`} className="font-display text-xl md:text-[1.4rem] leading-tight text-foreground">{bloco.title}</Editable>
+              </div>
             </div>
             {bloco.note && <Editable id={`proposta-com.scope.${trackId}.${bloco.id}.note`} className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary/80 mb-4 -mt-1">{bloco.note}</Editable>}
             {bloco.description && <Editable as="p" id={`proposta-com.scope.${trackId}.${bloco.id}.description`} className="font-display italic text-[0.95rem] text-foreground/75 leading-relaxed mt-1">{bloco.description}</Editable>}
             {bloco.items && (
-              <ul className={cn("space-y-2 mt-1", bloco.wide && "md:columns-2 md:gap-x-10 md:space-y-0")}>
+              <ul className={cn("space-y-2 mt-1", bloco.wide && !bloco.columns1 && "md:columns-2 md:gap-x-10 md:space-y-0", bloco.columns1 && "md:columns-1")}>
                 {bloco.items.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 group/item md:break-inside-avoid md:mb-2">
                     <span className="mt-[0.55rem] h-px w-3 bg-primary/40 flex-shrink-0 group-hover/item:bg-primary group-hover/item:w-5 transition-all duration-300" />
