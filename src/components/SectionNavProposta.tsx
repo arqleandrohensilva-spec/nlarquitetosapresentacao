@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { clearAllEdits } from "./Editable";
 import { isEditMode } from "@/lib/edit-mode";
-import { useLocation } from "react-router-dom";
+
 
 const LOGO_PRETA = "/logo-preta.png";
 const LOGO_BRANCA = "/logo-branca.png";
