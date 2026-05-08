@@ -1011,13 +1011,12 @@ type ScopeBloco = { id: string; num: string; title: string; note?: string; descr
 
 
 const SCOPE_COM: ScopeBloco[] = [
-  { id: "caderno-geral-com", num: "I", title: "Caderno Geral Comercial", wide: true, items: ["Capa", "Identidade visual do espaço", "Imagens aprovadas", "Quadros quantitativos e especificações", "Planta baixa de layout", "Planta baixa demolir / construir", "Planta baixa construtiva", "Paginação de piso", "Mapa de revestimentos", "Planta de forro", "Luminotécnico", "Instalações elétricas, hidráulicas e ar-condicionado *"] },
-  { id: "detalhes-com", num: "II", title: "Caderno de Detalhes Construtivos", description: "Graficação de todos os detalhes necessários para execução comercial conforme complexidade." },
-  { id: "ambientes-com", num: "III", title: "Caderno de Ambientes", description: "Especificações por ambiente com localizações de vistas, fluxos e siglas de materiais." },
-  { id: "esquadrias-com", num: "IV", title: "Caderno de Esquadrias", description: "Especificação de esquadrias e serralheria com detalhamento para fabricação." },
-  { id: "marmoraria-com", num: "V", title: "Caderno de Marmoraria", description: "Bancadas, soleiras e elementos em mármore, pedra natural ou materiais técnicos." },
-  { id: "porcelanataria-com", num: "VI", title: "Caderno de Porcelanataria", description: "Paginação, perfis e intervenções em revestimentos cerâmicos por ambiente comercial." },
-  { id: "marcenaria-com", num: "VII", title: "Caderno de Marcenaria", description: "Detalhamento completo de todo mobiliário comercial fabricado sob medida." },
+  { id: "fluxo", num: "I", title: "Caderno de Fluxo de Atendimento", wide: true, items: ["Mapa de jornada do cliente — da entrada à saída", "Setorização funcional: recepção, atendimento, espera, caixa, estoque e staff", "Circulação otimizada — fluxo de clientes separado do fluxo da equipe", "Posicionamento estratégico de equipamentos e mobiliário operacional", "Capacidade máxima de atendimento simultâneo por zona", "Planta baixa de layout com função de cada metro quadrado definida"] },
+  { id: "caderno-geral", num: "II", title: "Caderno Geral", wide: true, items: ["Planta baixa construtiva", "Planta baixa demolir / construir", "Paginação de piso", "Mapa de revestimentos", "Planta de forro", "Luminotécnico", "Instalações elétricas e ar-condicionado *"] },
+  { id: "identidade", num: "III", title: "Caderno de Identidade do Espaço", description: "O documento que conecta cada decisão de projeto à missão do negócio. Exclusivo do Plano Completo.", items: ["Conceito verbal do espaço — define a alma do ambiente em palavras antes do primeiro traço", "Paleta de materiais com justificativa estratégica — cada escolha com o porquê do negócio", "Moodboard executivo — referências visuais que orientam marceneiro, pintor e fornecedores", "Atmosfera por zona — como cada área deve fazer o cliente se sentir", "Diretrizes de iluminação — cenas e intensidades por momento do atendimento"] },
+  { id: "detalhes", num: "IV", title: "Caderno de Detalhes Construtivos", description: "Graficação de todos os detalhes necessários para execução conforme complexidade do projeto." },
+  { id: "marcenaria", num: "V", title: "Caderno de Marcenaria", description: "Detalhamento completo de todo mobiliário fabricado sob medida — balcões, estantes, painéis e mobiliário operacional." },
+  { id: "memorial", num: "VI", title: "Memorial Descritivo", description: "Componentes identificados, localizados e quantificados — base para orçamento firme com fornecedores e executores." },
 ];
 
 
