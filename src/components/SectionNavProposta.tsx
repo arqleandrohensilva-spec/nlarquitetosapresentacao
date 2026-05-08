@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { clearAllEdits } from "./Editable";
 import { isEditMode } from "@/lib/edit-mode";
-import { useLocation } from "react-router-dom";
+
 
 const LOGO_PRETA = "/logo-preta.png";
 const LOGO_BRANCA = "/logo-branca.png";
 
-const SECTIONS_RESIDENTIAL = [
+const SECTIONS = [
   { id: "capa", label: "Capa" },
   { id: "manifesto", label: "Carta" },
   { id: "apresentacao", label: "Apresentação" },
@@ -26,34 +26,10 @@ const SECTIONS_RESIDENTIAL = [
   { id: "encerramento", label: "Encerramento" },
 ];
 
-const SECTIONS_COMMERCIAL = [
-  { id: "capa", label: "Capa" },
-  { id: "manifesto", label: "Manifesto" },
-  { id: "apresentacao", label: "NL Arquitetos" },
-  { id: "diagnostico", label: "Diagnóstico" },
-  { id: "conceito", label: "Estratégia" },
-  { id: "case", label: "Projeto Referência" },
-  { id: "portfolio", label: "Portfólio" },
-  { id: "etapas", label: "Etapas" },
-  { id: "escopo", label: "Escopo Comercial" },
-  { id: "pilares", label: "Diferenciais" },
-  { id: "cronograma", label: "Cronograma" },
-  { id: "beneficios", label: "O Retorno" },
-  { id: "investimento", label: "Investimento" },
-  { id: "diferenciais", label: "Por que a NL?" },
-  { id: "nota", label: "Transparência" },
-  { id: "proximos", label: "Início" },
-  { id: "condicoes", label: "Condições" },
-  { id: "encerramento", label: "Encerramento" },
-];
-
 const SectionNavProposta = () => {
   const [active, setActive] = useState("capa");
   const [showHelper, setShowHelper] = useState(true);
   const editing = isEditMode();
-  const location = useLocation();
-  const isCommercial = location.pathname.includes("comercial");
-  const SECTIONS = isCommercial ? SECTIONS_COMMERCIAL : SECTIONS_RESIDENTIAL;
 
   const DARK_SECTIONS = new Set(["capa", "diagnostico", "cronograma", "nota", "encerramento", "condicoes"]);
   const onDarkSection = DARK_SECTIONS.has(active);
