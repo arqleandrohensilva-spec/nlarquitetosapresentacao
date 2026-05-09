@@ -1121,7 +1121,7 @@ const COMPARISON_GROUPS: { group: string; rows: { id: string; label: string; bas
     { id: `${PX}.cmp.cad.2`, label: "Caderno de Detalhes Construtivos", basic: true, premium: true },
     { id: `${PX}.cmp.cad.3`, label: "Caderno de Marcenaria", basic: true, premium: true },
     { id: `${PX}.cmp.cad.4`, label: "Memorial Descritivo", basic: true, premium: true },
-    { id: `${PX}.cmp.cad.5`, label: "Caderno de Identidade do Espaço", basic: false, premium: true },
+    
   ]},
   { group: "Complementos", rows: [
     { id: `${PX}.cmp.comp.1`, label: "Curadoria de fornecedores", basic: false, premium: true },
