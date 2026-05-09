@@ -1124,7 +1124,7 @@ const COMPARISON_GROUPS: { group: string; rows: { id: string; label: string; bas
     
   ]},
   { group: "Complementos", rows: [
-    { id: `${PX}.cmp.comp.1`, label: "Curadoria de fornecedores", basic: false, premium: true },
+    
     { id: `${PX}.cmp.comp.2`, label: "EVF — Viabilidade Financeira", basic: false, premium: "Opcional" },
     { id: `${PX}.cmp.comp.3`, label: "Acompanhamento de obra", basic: false, premium: "Opcional" },
   ]},
