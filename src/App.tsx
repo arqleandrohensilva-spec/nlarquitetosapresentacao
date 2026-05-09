@@ -10,6 +10,7 @@ import PropostaArqint from "./pages/PropostaArqint.tsx";
 import PropostaInt from "./pages/PropostaInt.tsx";
 import PropostaComercial from "./pages/PropostaComercial.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import TestImage from "./pages/TestImage.tsx";
 
 const queryClient = new QueryClient();
 
