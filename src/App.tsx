@@ -27,6 +27,7 @@ const App = () => (
           <Route path="/proposta/arqint" element={<PropostaArqint />} />
           <Route path="/proposta/int" element={<PropostaInt />} />
           <Route path="/proposta/comercial" element={<PropostaComercial />} />
+          <Route path="/test-images" element={<TestImage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
