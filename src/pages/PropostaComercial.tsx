@@ -243,7 +243,7 @@ const PropostaComercial = () => {
       <section id="case" className="relative">
         <div className="grid grid-cols-12 min-h-screen">
           <div className="col-span-12 lg:col-span-7 relative min-h-[60vh] lg:min-h-screen">
-            <img src={propostaCaseCasa} alt="Case comercial · NL Arquitetos" className="absolute inset-0 w-full h-full object-cover" loading="lazy" width={1920} height={1280} />
+            <img src="https://www.dropbox.com/scl/fi/01h024ricdkyg9hmvlolo/nomo-result-1778360736315.png?rlkey=dvkmki1yd2rqxbv6ibjkqe23f&raw=1" alt="Barbearia Cabalera · NL Arquitetos" className="absolute inset-0 w-full h-full object-cover" loading="lazy" width={1920} height={1280} />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-background/40 lg:to-background" />
             <div className="absolute bottom-8 left-8 z-10 flex items-center gap-3">
               <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">Case · 01</span>
@@ -254,14 +254,14 @@ const PropostaComercial = () => {
             <div className="max-w-md">
               <span className="number-marker block mb-4">06 · Projeto referência</span>
               <Editable as="h2" id={`${PX}.case.title`} multiline className="font-display text-5xl md:text-6xl leading-[0.95] mb-2">
-                Espaço que <em className="text-primary not-italic">trabalha pelo negócio.</em>
+                Barbearia Cabalera.
               </Editable>
               <Editable id={`${PX}.case.location`} className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground block mb-10">
-                Projeto comercial · NL Arquitetos
+                Arquitetura comercial · NL Arquitetos
               </Editable>
               <div className="gold-line w-16 mb-8" />
               <Editable id={`${PX}.case.body`} multiline as="p" className="font-display text-base md:text-lg leading-relaxed text-foreground/80 mb-10">
-                O desafio era criar um ambiente que comunicasse identidade antes de qualquer palavra. Materialidade, iluminação e fluxo de atendimento foram decididos em projeto — cada detalhe pensado para reter o cliente e justificar o ticket. O resultado é um espaço que atrai, encanta e faz o cliente voltar.
+                O desafio era criar um ambiente que não fosse apenas uma barbearia, mas um refúgio urbano de experiência. A materialidade bruta, a iluminação cênica e a biofilia foram os pilares para construir um espaço memorável. Cada detalhe foi pensado para aumentar o tempo de permanência e o valor percebido, transformando arquitetura em resultado financeiro direto.
               </Editable>
               <ul className="space-y-3 font-display text-foreground/80 mb-10">
                 {[
