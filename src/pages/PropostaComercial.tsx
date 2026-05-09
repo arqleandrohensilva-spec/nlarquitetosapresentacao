@@ -304,7 +304,7 @@ const PropostaComercial = () => {
             <figure className="col-span-12 md:col-span-5 row-span-2 group">
               <a href={propostaPortFachada} target="_blank" rel="noreferrer" className="block overflow-hidden">
                 <div className="relative aspect-[3/4] overflow-hidden">
-                  <img src={propostaPortFachada} alt="Projeto comercial · NL Arquitetos" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105" loading="lazy" />
+                  <img src="https://www.dropbox.com/scl/fi/5ucn92oobs1f9ly2uf3ee/Gemini_Generated_Image_dueznydueznyduez.png?rlkey=i8bjcbqgocsj6bh57a5o7bupx&raw=1" alt="Projeto comercial · NL Arquitetos" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105" loading="lazy" />
                 </div>
               </a>
               <figcaption className="mt-4 flex items-baseline justify-between">
