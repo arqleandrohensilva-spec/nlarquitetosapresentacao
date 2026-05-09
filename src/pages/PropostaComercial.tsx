@@ -1014,9 +1014,9 @@ const SCOPE_COM: ScopeBloco[] = [
   { id: "fluxo", num: "I", title: "Caderno de Fluxo de Atendimento", wide: true, columns1: true, items: ["Mapa de jornada do cliente — da entrada à saída", "Setorização funcional: recepção, atendimento, espera, caixa, estoque e staff", "Circulação otimizada — fluxo de clientes separado do fluxo da equipe", "Posicionamento estratégico de equipamentos e mobiliário operacional", "Capacidade máxima de atendimento simultâneo por zona", "Planta baixa de layout com função de cada metro quadrado definida"] },
   { id: "caderno-geral", num: "II", title: "Caderno Geral", wide: true, items: ["Planta baixa construtiva", "Planta baixa demolir / construir", "Paginação de piso", "Mapa de revestimentos", "Planta de forro", "Luminotécnico", "Instalações elétricas e ar-condicionado *"] },
   
-  { id: "detalhes", num: "IV", title: "Caderno de Detalhes Construtivos", description: "Graficação de todos os detalhes necessários para execução conforme complexidade do projeto." },
-  { id: "marcenaria", num: "V", title: "Caderno de Marcenaria", description: "Detalhamento completo de todo mobiliário fabricado sob medida — balcões, estantes, painéis e mobiliário operacional." },
-  { id: "memorial", num: "VI", title: "Memorial Descritivo", description: "Componentes identificados, localizados e quantificados — base para orçamento firme com fornecedores e executores." },
+  { id: "detalhes", num: "III", title: "Caderno de Detalhes Construtivos", description: "Graficação de todos os detalhes necessários para execução conforme complexidade do projeto." },
+  { id: "marcenaria", num: "IV", title: "Caderno de Marcenaria", description: "Detalhamento completo de todo mobiliário fabricado sob medida — balcões, estantes, painéis e mobiliário operacional." },
+  { id: "memorial", num: "V", title: "Memorial Descritivo", description: "Componentes identificados, localizados e quantificados — base para orçamento firme com fornecedores e executores." },
 ];
 
 
