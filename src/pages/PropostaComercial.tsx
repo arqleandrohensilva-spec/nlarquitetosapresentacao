@@ -335,9 +335,9 @@ const PropostaComercial = () => {
               </figcaption>
             </figure>
             <figure className="col-span-6 md:col-span-4 group">
-              <a href={propostaPortSuite} target="_blank" rel="noreferrer" className="block overflow-hidden">
+              <a href="https://www.dropbox.com/scl/fi/yrqz07ae3bz4ktd0rzb0s/kingai-interior-56a9f07d-2k.png?rlkey=huib18pcy7b0d76ihm3d72xse&raw=1" target="_blank" rel="noreferrer" className="block overflow-hidden">
                 <div className="relative aspect-[3/4] overflow-hidden">
-                  <img src={propostaPortSuite} alt="Detalhe acabamento · NL Arquitetos" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105" loading="lazy" />
+                  <img src="https://www.dropbox.com/scl/fi/yrqz07ae3bz4ktd0rzb0s/kingai-interior-56a9f07d-2k.png?rlkey=huib18pcy7b0d76ihm3d72xse&raw=1" alt="Detalhe acabamento · NL Arquitetos" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105" loading="lazy" />
                 </div>
               </a>
               <figcaption className="mt-4">
