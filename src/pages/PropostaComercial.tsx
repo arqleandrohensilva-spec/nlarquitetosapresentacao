@@ -324,9 +324,9 @@ const PropostaComercial = () => {
               </figcaption>
             </figure>
             <figure className="col-span-6 md:col-span-3 group">
-              <a href={propostaPortLazer} target="_blank" rel="noreferrer" className="block overflow-hidden">
+              <a href="https://www.dropbox.com/scl/fi/tu93bcv9kxxi0naemt3kq/kingai-interior-625d1904-2k.png?rlkey=agwmjg7a0udal1rqvukpwhpka&raw=1" target="_blank" rel="noreferrer" className="block overflow-hidden">
                 <div className="relative aspect-[3/4] overflow-hidden">
-                  <img src={propostaPortLazer} alt="Detalhe comercial · NL Arquitetos" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105" loading="lazy" />
+                  <img src="https://www.dropbox.com/scl/fi/tu93bcv9kxxi0naemt3kq/kingai-interior-625d1904-2k.png?rlkey=agwmjg7a0udal1rqvukpwhpka&raw=1" alt="Detalhe comercial · NL Arquitetos" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105" loading="lazy" />
                 </div>
               </a>
               <figcaption className="mt-4">
