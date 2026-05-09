@@ -1013,10 +1013,10 @@ type ScopeBloco = { id: string; num: string; title: string; note?: string; descr
 const SCOPE_COM: ScopeBloco[] = [
   { id: "fluxo", num: "I", title: "Caderno de Fluxo de Atendimento", wide: true, columns1: true, items: ["Mapa de jornada do cliente — da entrada à saída", "Setorização funcional: recepção, atendimento, espera, caixa, estoque e staff", "Circulação otimizada — fluxo de clientes separado do fluxo da equipe", "Posicionamento estratégico de equipamentos e mobiliário operacional", "Capacidade máxima de atendimento simultâneo por zona", "Planta baixa de layout com função de cada metro quadrado definida"] },
   { id: "caderno-geral", num: "II", title: "Caderno Geral", wide: true, items: ["Planta baixa construtiva", "Planta baixa demolir / construir", "Paginação de piso", "Mapa de revestimentos", "Planta de forro", "Luminotécnico", "Instalações elétricas e ar-condicionado *"] },
-  { id: "identidade", num: "III", title: "Caderno de Identidade do Espaço", wide: true, hasPlanoCompletoBadge: true, description: "O documento que conecta cada decisão de projeto à missão do negócio. Exclusivo do Plano Completo.", items: ["Conceito verbal do espaço — define a alma do ambiente em palavras antes do primeiro traço", "Paleta de materiais com justificativa estratégica — cada escolha com o porquê do negócio", "Moodboard executivo — referências visuais que orientam marceneiro, pintor e fornecedores", "Atmosfera por zona — como cada área deve fazer o cliente se sentir", "Diretrizes de iluminação — cenas e intensidades por momento do atendimento"] },
-  { id: "detalhes", num: "IV", title: "Caderno de Detalhes Construtivos", description: "Graficação de todos os detalhes necessários para execução conforme complexidade do projeto." },
-  { id: "marcenaria", num: "V", title: "Caderno de Marcenaria", description: "Detalhamento completo de todo mobiliário fabricado sob medida — balcões, estantes, painéis e mobiliário operacional." },
-  { id: "memorial", num: "VI", title: "Memorial Descritivo", description: "Componentes identificados, localizados e quantificados — base para orçamento firme com fornecedores e executores." },
+  
+  { id: "detalhes", num: "III", title: "Caderno de Detalhes Construtivos", description: "Graficação de todos os detalhes necessários para execução conforme complexidade do projeto." },
+  { id: "marcenaria", num: "IV", title: "Caderno de Marcenaria", description: "Detalhamento completo de todo mobiliário fabricado sob medida — balcões, estantes, painéis e mobiliário operacional." },
+  { id: "memorial", num: "V", title: "Memorial Descritivo", description: "Componentes identificados, localizados e quantificados — base para orçamento firme com fornecedores e executores." },
 ];
 
 
@@ -1121,10 +1121,10 @@ const COMPARISON_GROUPS: { group: string; rows: { id: string; label: string; bas
     { id: `${PX}.cmp.cad.2`, label: "Caderno de Detalhes Construtivos", basic: true, premium: true },
     { id: `${PX}.cmp.cad.3`, label: "Caderno de Marcenaria", basic: true, premium: true },
     { id: `${PX}.cmp.cad.4`, label: "Memorial Descritivo", basic: true, premium: true },
-    { id: `${PX}.cmp.cad.5`, label: "Caderno de Identidade do Espaço", basic: false, premium: true },
+    
   ]},
   { group: "Complementos", rows: [
-    { id: `${PX}.cmp.comp.1`, label: "Curadoria de fornecedores", basic: false, premium: true },
+    
     { id: `${PX}.cmp.comp.2`, label: "EVF — Viabilidade Financeira", basic: false, premium: "Opcional" },
     { id: `${PX}.cmp.comp.3`, label: "Acompanhamento de obra", basic: false, premium: "Opcional" },
   ]},
