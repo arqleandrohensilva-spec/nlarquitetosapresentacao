@@ -265,11 +265,11 @@ const PropostaComercial = () => {
               </Editable>
               <ul className="space-y-3 font-display text-foreground/80 mb-10">
                 {[
-                  "Conceito e identidade visual do espaço",
-                  "Fluxo de atendimento e setorização",
-                  "Marcenaria sob medida e detalhamento",
-                  "Projeto luminotécnico e atmosfera",
-                  "Materialidade alinhada à marca",
+                  "Branding espacial e identidade visual",
+                  "Layout focado em bar experience",
+                  "Marcenaria técnica de alta performance",
+                  "Projeto luminotécnico de atmosfera",
+                  "Materiais brutos e biofílicos",
                 ].map((item, i) => (
                   <li key={i} className="flex gap-4 items-baseline border-b border-border/40 pb-3">
                     <span className="font-mono text-[10px] text-primary/70">0{i + 1}</span>
