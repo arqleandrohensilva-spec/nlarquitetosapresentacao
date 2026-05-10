@@ -357,14 +357,14 @@ const PropostaComercial = () => {
               <span className="number-marker">08</span>
               <Editable id={`${PX}.etapas.eyebrow`} className="eyebrow">Etapas · Do briefing à entrega</Editable>
             </div>
-            <Editable id={`${PX}.etapas.tag`} className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground hidden md:block">Seis fases · ~60 dias</Editable>
+            <Editable id={`${PX}.etapas.tag`} className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground hidden md:block">Cinco fases · ~60 dias</Editable>
           </div>
           <div className="grid grid-cols-12 gap-8 mb-16">
             <Editable as="h2" id={`${PX}.etapas.title`} multiline className="col-span-12 lg:col-span-7 font-display text-5xl md:text-6xl lg:text-7xl leading-[1.0] text-balance">
               Do conceito<br /><em className="text-primary not-italic">à abertura.</em>
             </Editable>
             <Editable id={`${PX}.etapas.intro`} multiline as="p" className="col-span-12 lg:col-span-5 lg:pt-4 font-display text-lg text-foreground/70 leading-relaxed">
-              Seis cadernos coordenados em uma única trilha. Cada decisão tomada na ordem certa — para que o seu ponto abra no prazo, sem surpresa de custo.
+              Cinco cadernos coordenados em uma única trilha. Cada decisão tomada na ordem certa — para que o seu ponto abra no prazo, sem surpresa de custo.
             </Editable>
           </div>
           <PhaseTimeline
@@ -391,7 +391,7 @@ const PropostaComercial = () => {
             <span className="number-marker block mb-3">09</span>
             <Editable id={`${PX}.escopo.eyebrow`} className="eyebrow mb-8 inline-block">Escopo técnico · O que entregamos</Editable>
             <Editable as="h2" id={`${PX}.escopo.title`} multiline className="font-display text-5xl md:text-6xl leading-[1.0] mb-10 text-balance">
-              Seis cadernos. <em className="text-primary not-italic">Um só método.</em>
+              Cinco cadernos. <em className="text-primary not-italic">Um só método.</em>
             </Editable>
             <Editable id={`${PX}.escopo.body`} multiline as="p" className="font-display text-lg leading-relaxed text-foreground/75 mb-10">
               Documentação técnica completa para uma obra comercial sem improviso — com cada componente identificado, localizado e quantificado antes de qualquer execução.
