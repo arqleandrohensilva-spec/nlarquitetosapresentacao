@@ -9,6 +9,9 @@ import Pipeline from "./pages/Pipeline.tsx";
 import PropostaArqint from "./pages/PropostaArqint.tsx";
 import PropostaInt from "./pages/PropostaInt.tsx";
 import PropostaComercial from "./pages/PropostaComercial.tsx";
+import Captacao from "./pages/Captacao.tsx";
+import Int from "./pages/Int.tsx";
+import ApresentacaoComercial from "./pages/ApresentacaoComercial.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -26,6 +29,9 @@ const App = () => (
           <Route path="/proposta/arqint" element={<PropostaArqint />} />
           <Route path="/proposta/int" element={<PropostaInt />} />
           <Route path="/proposta/comercial" element={<PropostaComercial />} />
+          <Route path="/apresentacao/arqint" element={<Captacao />} />
+          <Route path="/apresentacao/int" element={<Int />} />
+          <Route path="/apresentacao/comercial" element={<ApresentacaoComercial />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
