@@ -14,7 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      proposta_engajamento: {
+        Row: {
+          criado_em: string
+          dispositivo: string
+          id: string
+          proposta_id: string
+          secao: string
+          tempo_segundos: number
+        }
+        Insert: {
+          criado_em?: string
+          dispositivo: string
+          id?: string
+          proposta_id: string
+          secao: string
+          tempo_segundos?: number
+        }
+        Update: {
+          criado_em?: string
+          dispositivo?: string
+          id?: string
+          proposta_id?: string
+          secao?: string
+          tempo_segundos?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
