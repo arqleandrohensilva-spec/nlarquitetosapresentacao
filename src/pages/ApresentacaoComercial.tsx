@@ -43,8 +43,6 @@ const ApresentacaoComercial = () => {
         className="relative min-h-screen flex flex-col justify-end px-6 md:px-16 lg:px-24 py-20"
       >
         <div className="absolute inset-0 bg-background" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/10 to-background/95" />
-        <div className="absolute inset-0 vignette opacity-70" />
 
         <div className="relative z-10 max-w-4xl fade-up">
           <Editable id="apc.capa.eyebrow" className="eyebrow-editorial text-primary/80 mb-8 inline-block">
@@ -69,8 +67,7 @@ const ApresentacaoComercial = () => {
             multiline
             className="lede-editorial text-foreground/75 max-w-2xl block"
           >
-            Seu cliente decide em três segundos se entra ou não.
-            O espaço decide por ele — antes de qualquer palavra ser dita.
+            Seu cliente decide em três segundos se entra ou não. O espaço decide por ele — antes de qualquer palavra ser dita.
           </Editable>
 
           <div className="mt-12 flex items-center gap-4">
@@ -79,7 +76,7 @@ const ApresentacaoComercial = () => {
               id="apc.capa.tag"
               className="label-meta text-primary/80"
             >
-              Apresentação · Confidencial
+              NL Arquitetos · Comercial
             </Editable>
           </div>
         </div>
