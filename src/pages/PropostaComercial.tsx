@@ -1,7 +1,7 @@
 import { useState, useRef, useLayoutEffect, useEffect } from "react";
 import bandMaterial from "@/assets/band-material.jpg";
 import bandBlueprint from "@/assets/band-blueprint.jpg";
-import bandIntermezzo02 from "@/assets/band-intermezzo-02.jpg";
+
 import Editable from "@/components/Editable";
 import SectionNavProposta from "@/components/SectionNavProposta";
 import PdfExportButtonProposta from "@/components/PdfExportButtonProposta";
