@@ -274,7 +274,7 @@ const ApresentacaoComercial = () => {
                       <span className="font-mono text-[10px] text-primary/70 uppercase tracking-[0.3em]">{item.num}</span>
                       <Editable as="h3" id={`apc.conceito.item${i}.title`} className="font-display text-xl text-foreground leading-tight">{item.title}</Editable>
                     </div>
-                    <Editable id={`apc.conceito.item${i}.body`} multiline as="p" className="font-display text-foreground/70 leading-relaxed">{item.body}</Editable>
+                    <Editable id={`apc.conceito.item${i}.body`} multiline as="p" className="font-display text-sm md:text-base text-foreground/70 leading-relaxed">{item.body}</Editable>
                   </div>
                 ))}
               </div>
@@ -529,7 +529,7 @@ const ApresentacaoComercial = () => {
             <Editable as="h2" id="apc.etapas.title" multiline className="col-span-12 lg:col-span-7 font-display text-5xl md:text-6xl lg:text-7xl leading-[1.0] text-balance">
               Do conceito<br /><em className="text-primary not-italic">à abertura.</em>
             </Editable>
-            <Editable id="apc.etapas.intro" multiline as="p" className="col-span-12 lg:col-span-5 lg:pt-4 font-display text-lg text-foreground/70 leading-relaxed">
+            <Editable id="apc.etapas.intro" multiline as="p" className="col-span-12 lg:col-span-5 lg:pt-4 lede-editorial text-foreground/70 leading-relaxed">
               Seis fases coordenadas em uma única trilha. Cada decisão tomada na ordem certa — para que o seu ponto abra no prazo, sem surpresa de custo.
             </Editable>
           </div>
@@ -560,7 +560,7 @@ const ApresentacaoComercial = () => {
                   {phase.key && <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary/80">Decisão-chave</span>}
                 </div>
                 <Editable as="h4" id={`apc.etapas.${i}.t`} className="font-display text-lg md:text-xl text-foreground leading-snug mb-3">{phase.t}</Editable>
-                <Editable as="p" id={`apc.etapas.${i}.d`} multiline className="text-sm text-foreground/65 leading-relaxed">{phase.d}</Editable>
+                <Editable as="p" id={`apc.etapas.${i}.d`} multiline className="font-display text-sm text-foreground/65 leading-relaxed">{phase.d}</Editable>
               </article>
             ))}
           </div>
