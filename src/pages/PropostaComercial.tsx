@@ -673,7 +673,7 @@ const PropostaComercial = () => {
               { id: "02", title: "Responsabilidade do cliente", intro: "A contratação dos itens abaixo é responsabilidade do cliente:", items: ["Levantamento métrico do imóvel (se não houver planta atualizada)", "ART/RRT dos projetos complementares", "Aprovações junto à prefeitura ou condomínio comercial"] },
               { id: "03", title: "Serviços não inclusos", intro: null as string | null, items: ["Responsabilidade técnica pela execução da obra", "Gestão de obra e contratação de mão de obra", "Compra de materiais e insumos", "Identidade visual da marca (logotipo, comunicação)"] },
               { id: "04", title: "Serviços inclusos", intro: null as string | null, items: [] as string[], groups: [
-                { label: "Plano Executivo", items: ["Orientação na entrega dos cadernos técnicos", "Suporte técnico por 60 dias após entrega"] },
+                { label: "Plano Executivo", items: ["Concepção 3D de Alta Fidelidade", "Orientação na entrega dos cadernos técnicos", "Suporte técnico por 60 dias após entrega"] },
                 { label: "Plano Completo", items: ["Tudo do Executivo", "3 visitas técnicas à obra", "Curadoria de materiais e fornecedores"] },
               ] },
             ].map((block: any) => (
