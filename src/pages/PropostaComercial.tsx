@@ -1,7 +1,7 @@
 import { useState, useRef, useLayoutEffect, useEffect } from "react";
 import bandMaterial from "@/assets/band-material.jpg";
 import bandBlueprint from "@/assets/band-blueprint.jpg";
-import bandIntermezzo02 from "@/assets/band-intermezzo-02.jpg";
+
 import Editable from "@/components/Editable";
 import SectionNavProposta from "@/components/SectionNavProposta";
 import PdfExportButtonProposta from "@/components/PdfExportButtonProposta";
@@ -567,7 +567,7 @@ const PropostaComercial = () => {
         </div>
       </section>
 
-      <FullBleedBand src={bandIntermezzo02} alt="Ambiente comercial com marcenaria sob medida" number="Intermezzo · 02" caption="Marcenaria, iluminação e identidade coordenados — cada detalhe decidido antes da execução." align="right" height="tall" objectPosition="35% 65%" heightClassName="h-[60vh] sm:h-[68vh] md:h-[78vh]" edgeFadeBottomClassName="h-44 md:h-64" imgClassName="brightness-[0.92] contrast-[1.06] saturate-[0.95]" />
+      
 
       {/* 13 · INVESTIMENTO */}
       <section id="investimento" className="relative px-6 md:px-16 lg:px-24 py-32 bg-surface/40">
@@ -722,7 +722,7 @@ const PropostaComercial = () => {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-t from-transparent to-primary/40" />
       </section>
 
-      <FullBleedBand src={bandMaterial} alt="Materialidade e precisão" number="Intermezzo · 03" caption="Travertino, nogueira, luz. A matéria-prima de uma decisão bem tomada." align="left" height="short" />
+      <FullBleedBand src={bandMaterial} alt="Materialidade e precisão" number="Intermezzo · 02" caption="Travertino, nogueira, luz. A matéria-prima de uma decision bem tomada." align="left" height="short" />
 
       {/* 16 · PRÓXIMOS PASSOS */}
       <section id="proximos" className="relative px-6 md:px-16 lg:px-24 py-40 bg-gradient-to-b from-surface/60 via-background to-background overflow-hidden">
