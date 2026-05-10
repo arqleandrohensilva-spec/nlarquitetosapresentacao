@@ -18,12 +18,15 @@ import propostaPortLiving from "@/assets/proposta/nomo-result-2062.jpg";
 import propostaPortLazer from "@/assets/proposta/nomo-result-1759.jpg";
 import propostaPortSuite from "@/assets/proposta/gemini-m7jp.jpg";
 import { usePropostaParams } from "@/hooks/use-proposta-params";
+import { useEngagementTracking } from "@/hooks/use-engagement-tracking";
+
 
 const LOGO_BRANCA = "/logo-branca.png";
 const PX = "proposta-com";
 
 const PropostaComercial = () => {
   const params = usePropostaParams();
+  useEngagementTracking();
 
   useEffect(() => {
     if (params.nome !== '[Nome do Cliente]') {
