@@ -13,6 +13,22 @@ const Sidebar = ({ activeModule, user }: SidebarProps) => {
       items: ["01 · Pipeline"]
     },
     {
+      title: "APRESENTAÇÕES",
+      items: [
+        { label: "ARQ + INT", path: "/apresentacao/arqint" },
+        { label: "INTERIOR", path: "/apresentacao/int" },
+        { label: "COMERCIAL", path: "/apresentacao/comercial" }
+      ]
+    },
+    {
+      title: "PROPOSTAS",
+      items: [
+        { label: "ARQ + INT", path: "/proposta/arqint" },
+        { label: "INTERIOR", path: "/proposta/int" },
+        { label: "COMERCIAL", path: "/proposta/comercial" }
+      ]
+    },
+    {
       title: "FINANCEIRO",
       items: ["02 · Base Financeira", "07 · Fin. Projetos", "12 · Dashboard"],
       disabled: true
@@ -20,11 +36,6 @@ const Sidebar = ({ activeModule, user }: SidebarProps) => {
     {
       title: "PROJETOS",
       items: ["03 · Horas", "06 · Gestão", "10 · Modo Cliente"],
-      disabled: true
-    },
-    {
-      title: "PROPOSTAS",
-      items: ["04 · Tracking", "05 · Biblioteca", "08 · Documentos"],
       disabled: true
     },
     {
