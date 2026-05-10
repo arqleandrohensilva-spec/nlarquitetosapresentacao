@@ -1102,7 +1102,10 @@ const PackageCard = ({ id, tier, tagline, price, priceNote, cta, ctaHref, recomm
   </div>
 );
 
-const COMPARISON_DATA = [
+type ComparisonRow = { id: string; label: string; basic: string | boolean; premium: string | boolean };
+type ComparisonGroup = { group: string; rows: ComparisonRow[] };
+
+const COMPARISON_DATA: ComparisonGroup[] = [
   { 
     group: "Estratégia e conceito", 
     rows: [
