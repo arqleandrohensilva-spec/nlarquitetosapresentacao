@@ -1108,7 +1108,7 @@ const COMPARISON_GROUPS: { group: string; rows: { id: string; label: string; bas
     { id: `${PX}.cmp.est.2`, label: "Conceito e identidade — verbal e visual", basic: false, premium: true },
     { id: `${PX}.cmp.est.3`, label: "Moodboard executivo", basic: false, premium: true },
     { id: `${PX}.cmp.est.4`, label: "Atmosfera por zona de atendimento", basic: false, premium: true },
-    { id: `${PX}.cmp.est.5`, label: "Concepção 3D de Alta Fidelidade", basic: false, premium: true },
+    { id: `${PX}.cmp.est.5`, label: "Concepção 3D de Alta Fidelidade", basic: true, premium: true },
     { id: `${PX}.cmp.est.6`, label: "Vídeo 3D 360°", basic: false, premium: true },
   ]},
   { group: "Fluxo e funcionalidade", rows: [
