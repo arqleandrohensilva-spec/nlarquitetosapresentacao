@@ -1102,34 +1102,46 @@ const PackageCard = ({ id, tier, tagline, price, priceNote, cta, ctaHref, recomm
   </div>
 );
 
-const COMPARISON_GROUPS: { group: string; rows: { id: string; label: string; basic: string | boolean; premium: string | boolean }[]; }[] = [
-  { group: "Estratégia e conceito", rows: [
-    { id: `${PX}.cmp.est.1`, label: "Briefing & Diagnóstico do negócio", basic: true, premium: true },
-    { id: `${PX}.cmp.est.2`, label: "Conceito e identidade — verbal e visual", basic: false, premium: true },
-    { id: `${PX}.cmp.est.3`, label: "Moodboard executivo", basic: false, premium: true },
-    { id: `${PX}.cmp.est.4`, label: "Atmosfera por zona de atendimento", basic: false, premium: true },
-    { id: `${PX}.cmp.est.5`, label: "Concepção 3D de Alta Fidelidade", basic: true, premium: true },
-    { id: `${PX}.cmp.est.6`, label: "Vídeo 3D 360°", basic: false, premium: true },
-  ]},
-  { group: "Fluxo e funcionalidade", rows: [
-    { id: `${PX}.cmp.flu.1`, label: "Caderno de Fluxo de Atendimento", basic: true, premium: true },
-    { id: `${PX}.cmp.flu.2`, label: "Setorização funcional completa", basic: true, premium: true },
-    { id: `${PX}.cmp.flu.3`, label: "Capacidade máxima de atendimento", basic: true, premium: true },
-  ]},
-  { group: "Cadernos técnicos", rows: [
-    { id: `${PX}.cmp.cad.1`, label: "Caderno Geral + Luminotécnico", basic: true, premium: true },
-    { id: `${PX}.cmp.cad.2`, label: "Caderno de Detalhes Construtivos", basic: true, premium: true },
-    { id: `${PX}.cmp.cad.3`, label: "Caderno de Marcenaria", basic: true, premium: true },
-    { id: `${PX}.cmp.cad.4`, label: "Memorial Descritivo", basic: true, premium: true },
-    
-  ]},
-  { group: "Complementos", rows: [
-    
-    { id: `${PX}.cmp.comp.2`, label: "EVF — Viabilidade Financeira", basic: false, premium: "Opcional" },
-    { id: `${PX}.cmp.comp.3`, label: "Acompanhamento de obra", basic: false, premium: "Opcional" },
-  ]},
-];
+type ComparisonRow = { id: string; label: string; basic: string | boolean; premium: string | boolean };
+type ComparisonGroup = { group: string; rows: ComparisonRow[] };
 
+const COMPARISON_DATA: ComparisonGroup[] = [
+  { 
+    group: "Estratégia e conceito", 
+    rows: [
+      { id: "est.1", label: "Briefing & Diagnóstico do negócio", basic: true, premium: true },
+      { id: "est.2", label: "Conceito e identidade — verbal e visual", basic: false, premium: true },
+      { id: "est.3", label: "Moodboard executivo", basic: false, premium: true },
+      { id: "est.4", label: "Atmosfera por zona de atendimento", basic: false, premium: true },
+      { id: "est.5", label: "Concepção 3D de Alta Fidelidade", basic: true, premium: true },
+      { id: "est.6", label: "Vídeo 3D 360°", basic: false, premium: true },
+    ]
+  },
+  { 
+    group: "Fluxo e funcionalidade", 
+    rows: [
+      { id: "flu.1", label: "Caderno de Fluxo de Atendimento", basic: true, premium: true },
+      { id: "flu.2", label: "Setorização funcional completa", basic: true, premium: true },
+      { id: "flu.3", label: "Capacidade máxima de atendimento", basic: true, premium: true },
+    ]
+  },
+  { 
+    group: "Cadernos técnicos", 
+    rows: [
+      { id: "cad.1", label: "Caderno Geral + Luminotécnico", basic: true, premium: true },
+      { id: "cad.2", label: "Caderno de Detalhes Construtivos", basic: true, premium: true },
+      { id: "cad.3", label: "Caderno de Marcenaria", basic: true, premium: true },
+      { id: "cad.4", label: "Memorial Descritivo", basic: true, premium: true },
+    ]
+  },
+  { 
+    group: "Complementos", 
+    rows: [
+      { id: "comp.2", label: "EVF — Viabilidade Financeira", basic: false, premium: "Opcional" },
+      { id: "comp.3", label: "Acompanhamento de obra", basic: false, premium: "Opcional" },
+    ]
+  },
+];
 
 const ComparisonCell = ({ value }: { value: string | boolean }) => {
   if (value === true) return <span className="font-mono text-primary text-base">✓</span>;
@@ -1137,74 +1149,89 @@ const ComparisonCell = ({ value }: { value: string | boolean }) => {
   return <span className="font-display text-sm text-foreground/85 leading-snug">{value}</span>;
 };
 
-const ComparisonTable = () => (
-  <div className="mt-20 max-w-6xl mx-auto">
-    <div className="text-center mb-10">
-      <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80 block mb-3">Comparativo detalhado</span>
-      <Editable as="h3" id="proposta-com.cmp.title" multiline className="font-display text-3xl md:text-4xl leading-tight text-balance max-w-2xl mx-auto">
-        O que você recebe em <em className="text-primary not-italic">cada pacote</em>
-      </Editable>
-    </div>
-    <div className="border border-border/60 bg-background w-full">
-      <div className="w-full">
-        <div className="grid grid-cols-[1.4fr_1fr_1fr] md:grid-cols-[1.6fr_1fr_1fr] border-b border-border/60 bg-surface/40">
-          <div className="px-2 md:px-6 py-4 md:py-5 min-w-0">
-            <span className="font-mono text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-muted-foreground">Entregáveis</span>
+const ComparisonTable = () => {
+  const basicCount = COMPARISON_DATA.flatMap(g => g.rows).filter(r => r.basic === true).length;
+  const premiumCount = COMPARISON_DATA.flatMap(g => g.rows).filter(r => r.premium === true).length;
+
+  return (
+    <div className="mt-20 max-w-6xl mx-auto">
+      <div className="text-center mb-10">
+        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary/80 block mb-3">Comparativo detalhado</span>
+        <Editable as="h3" id="proposta-com.cmp.title" multiline className="font-display text-3xl md:text-4xl leading-tight text-balance max-w-2xl mx-auto">
+          O que você recebe em <em className="text-primary not-italic">cada pacote</em>
+        </Editable>
+        <div className="flex justify-center gap-8 mt-6">
+          <div className="text-center">
+            <span className="block font-display text-2xl text-foreground">{basicCount}</span>
+            <span className="font-mono text-[8px] uppercase tracking-widest text-muted-foreground">Itens Essencial</span>
           </div>
-          <div className="px-2 md:px-6 py-4 md:py-5 border-l border-border/60 text-center min-w-0">
-            <span className="font-mono text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-muted-foreground block mb-1">Pacote</span>
-            <span className="font-display text-sm md:text-xl text-foreground">Essencial</span>
-          </div>
-          <div className="px-2 md:px-6 py-4 md:py-5 border-l border-border/60 text-center bg-primary/[0.04] relative min-w-0">
-            <div className="absolute top-0 inset-x-0 h-px bg-primary" />
-            <span className="font-mono text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-primary/80 block mb-1">Recomendado</span>
-            <span className="font-display text-sm md:text-xl text-primary">Completo</span>
+          <div className="text-center">
+            <span className="block font-display text-2xl text-primary">{premiumCount}</span>
+            <span className="font-mono text-[8px] uppercase tracking-widest text-primary/70">Itens Completo</span>
           </div>
         </div>
-        {COMPARISON_GROUPS.map((g, gi) => (
-          <div key={gi}>
-            <div className="grid grid-cols-[1.4fr_1fr_1fr] md:grid-cols-[1.6fr_1fr_1fr] border-b border-border/40 bg-surface/20">
-              <div className="px-2 md:px-6 py-3 col-span-3">
-                <span className="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-primary/70">
-                  {String(gi + 1).padStart(2, "0")} · {g.group}
-                </span>
-              </div>
-            </div>
-            {g.rows.map((r, ri) => (
-              <div key={r.id} className={`grid grid-cols-[1.4fr_1fr_1fr] md:grid-cols-[1.6fr_1fr_1fr] ${ri === g.rows.length - 1 && gi === COMPARISON_GROUPS.length - 1 ? "" : "border-b border-border/40"}`}>
-                <div className="px-2 md:px-6 py-3 md:py-4 flex items-center min-w-0">
-                  <Editable id={`${r.id}.label`} className="font-display text-[11px] md:text-sm text-foreground/85 leading-snug break-words">{r.label}</Editable>
-                </div>
-                <div className="px-2 md:px-6 py-3 md:py-4 border-l border-border/40 flex items-center justify-center text-center min-w-0">
-                  {typeof r.basic === "string" ? (
-                    <Editable id={`${r.id}.basic`} className="font-display text-[11px] md:text-sm text-foreground/75 leading-snug break-words">{r.basic}</Editable>
-                  ) : (
-                    <ComparisonCell value={r.basic} />
-                  )}
-                </div>
-                <div className="px-2 md:px-6 py-3 md:py-4 border-l border-border/40 flex items-center justify-center text-center bg-primary/[0.025] min-w-0">
-                  {typeof r.premium === "string" ? (
-                    <Editable id={`${r.id}.premium`} className="font-display text-[11px] md:text-sm text-primary leading-snug font-medium break-words">{r.premium}</Editable>
-                  ) : (
-                    <ComparisonCell value={r.premium} />
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
+      <div className="border border-border/60 bg-background w-full">
+        <div className="w-full">
+          <div className="grid grid-cols-[1.4fr_1fr_1fr] md:grid-cols-[1.6fr_1fr_1fr] border-b border-border/60 bg-surface/40">
+            <div className="px-2 md:px-6 py-4 md:py-5 min-w-0">
+              <span className="font-mono text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-muted-foreground">Entregáveis</span>
+            </div>
+            <div className="px-2 md:px-6 py-4 md:py-5 border-l border-border/60 text-center min-w-0">
+              <span className="font-mono text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-muted-foreground block mb-1">Pacote</span>
+              <span className="font-display text-sm md:text-xl text-foreground">Essencial</span>
+            </div>
+            <div className="px-2 md:px-6 py-4 md:py-5 border-l border-border/60 text-center bg-primary/[0.04] relative min-w-0">
+              <div className="absolute top-0 inset-x-0 h-px bg-primary" />
+              <span className="font-mono text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-primary/80 block mb-1">Recomendado</span>
+              <span className="font-display text-sm md:text-xl text-primary">Completo</span>
+            </div>
+          </div>
+          {COMPARISON_DATA.map((g, gi) => (
+            <div key={gi}>
+              <div className="grid grid-cols-[1.4fr_1fr_1fr] md:grid-cols-[1.6fr_1fr_1fr] border-b border-border/40 bg-surface/20">
+                <div className="px-2 md:px-6 py-3 col-span-3">
+                  <span className="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-primary/70">
+                    {String(gi + 1).padStart(2, "0")} · {g.group}
+                  </span>
+                </div>
+              </div>
+              {g.rows.map((r, ri) => (
+                <div key={r.id} className={`grid grid-cols-[1.4fr_1fr_1fr] md:grid-cols-[1.6fr_1fr_1fr] ${ri === g.rows.length - 1 && gi === COMPARISON_DATA.length - 1 ? "" : "border-b border-border/40"}`}>
+                  <div className="px-2 md:px-6 py-3 md:py-4 flex items-center min-w-0">
+                    <Editable id={`${PX}.cmp.${r.id}.label`} className="font-display text-[11px] md:text-sm text-foreground/85 leading-snug break-words">{r.label}</Editable>
+                  </div>
+                  <div className="px-2 md:px-6 py-3 md:py-4 border-l border-border/40 flex items-center justify-center text-center min-w-0">
+                    {typeof r.basic === "string" ? (
+                      <Editable id={`${PX}.cmp.${r.id}.basic`} className="font-display text-[11px] md:text-sm text-foreground/75 leading-snug break-words">{r.basic}</Editable>
+                    ) : (
+                      <ComparisonCell value={r.basic} />
+                    )}
+                  </div>
+                  <div className="px-2 md:px-6 py-3 md:py-4 border-l border-border/40 flex items-center justify-center text-center bg-primary/[0.025] min-w-0">
+                    {typeof r.premium === "string" ? (
+                      <Editable id={`${PX}.cmp.${r.id}.premium`} className="font-display text-[11px] md:text-sm text-primary leading-snug font-medium break-words">{r.premium}</Editable>
+                    ) : (
+                      <ComparisonCell value={r.premium} />
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+      <Editable id="proposta-com.cmp.footnote" multiline as="p" className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground text-center mt-6 leading-relaxed">
+        Pacotes podem ser personalizados conforme a complexidade do projeto.
+      </Editable>
+      <Editable id="proposta-com.cmp.footnote2" multiline as="p" className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground text-center mt-3 leading-relaxed">
+        Itens opcionais são formalizados via aditivo de contrato conforme necessidade do projeto.
+      </Editable>
+      <Editable id="proposta-com.cmp.footnote3" multiline as="p" className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground text-center mt-3 leading-relaxed">
+        No Plano Completo, cada fornecedor recebe o caderno específico da sua execução — sem margem para improviso.
+      </Editable>
     </div>
-    <Editable id="proposta-com.cmp.footnote" multiline as="p" className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground text-center mt-6 leading-relaxed">
-      Pacotes podem ser personalizados conforme a complexidade do projeto.
-    </Editable>
-    <Editable id="proposta-com.cmp.footnote2" multiline as="p" className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground text-center mt-3 leading-relaxed">
-      Itens opcionais são formalizados via aditivo de contrato conforme necessidade do projeto.
-    </Editable>
-    <Editable id="proposta-com.cmp.footnote3" multiline as="p" className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground text-center mt-3 leading-relaxed">
-      No Plano Completo, cada fornecedor recebe o caderno específico da sua execução — sem margem para improviso.
-    </Editable>
-  </div>
-);
+  );
+};
 
 export default PropostaComercial;
