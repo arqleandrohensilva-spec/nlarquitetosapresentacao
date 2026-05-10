@@ -274,7 +274,7 @@ const ApresentacaoComercial = () => {
                       <span className="font-mono text-[10px] text-primary/70 uppercase tracking-[0.3em]">{item.num}</span>
                       <Editable as="h3" id={`apc.conceito.item${i}.title`} className="font-display text-xl text-foreground leading-tight">{item.title}</Editable>
                     </div>
-                    <Editable id={`apc.conceito.item${i}.body`} multiline as="p" className="font-display text-foreground/70 leading-relaxed">{item.body}</Editable>
+                    <Editable id={`apc.conceito.item${i}.body`} multiline as="p" className="font-display text-sm md:text-base text-foreground/70 leading-relaxed">{item.body}</Editable>
                   </div>
                 ))}
               </div>
