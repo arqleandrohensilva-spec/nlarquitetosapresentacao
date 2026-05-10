@@ -42,19 +42,13 @@ const ApresentacaoComercial = () => {
         id="capa"
         className="relative min-h-screen flex flex-col justify-end px-6 md:px-16 lg:px-24 py-20"
       >
-        <img
-          src={IMG_HERO}
-          alt="NL Arquitetos · Barbearia Cabalera · espaço comercial"
-          className="absolute inset-0 w-full h-full object-cover opacity-90 contrast-110 saturate-125"
-          width={1920}
-          height={1280}
-        />
+        <div className="absolute inset-0 bg-background" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/10 to-background/95" />
         <div className="absolute inset-0 vignette opacity-70" />
 
         <div className="relative z-10 max-w-4xl fade-up">
           <Editable id="apc.capa.eyebrow" className="eyebrow-editorial text-primary/80 mb-8 inline-block">
-            Apresentação · Confidencial
+            NL Arquitetos · Comercial
           </Editable>
 
           <Editable
@@ -85,7 +79,7 @@ const ApresentacaoComercial = () => {
               id="apc.capa.tag"
               className="label-meta text-primary/80"
             >
-              NL Arquitetos · Comercial
+              Apresentação · Confidencial
             </Editable>
           </div>
         </div>
