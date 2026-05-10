@@ -1107,38 +1107,30 @@ type ComparisonGroup = { group: string; rows: ComparisonRow[] };
 
 const COMPARISON_DATA: ComparisonGroup[] = [
   { 
-    group: "Estratégia e conceito", 
+    group: "Grupo 01 · Conceito e visualização", 
     rows: [
-      { id: "est.1", label: "Briefing & Diagnóstico do negócio", basic: true, premium: true },
-      { id: "est.2", label: "Conceito e identidade — verbal e visual", basic: false, premium: true },
-      { id: "est.3", label: "Moodboard executivo", basic: false, premium: true },
-      { id: "est.4", label: "Atmosfera por zona de atendimento", basic: false, premium: true },
-      { id: "est.5", label: "Concepção 3D de Alta Fidelidade", basic: true, premium: true },
-      { id: "est.6", label: "Vídeo 3D 360°", basic: false, premium: true },
+      { id: "grp1.1", label: "Briefing & Diagnóstico do negócio", basic: true, premium: true },
+      { id: "grp1.2", label: "Concepção 3D de Alta Fidelidade", basic: true, premium: true },
+      { id: "grp1.3", label: "Vídeo 3D 360°", basic: false, premium: true },
     ]
   },
   { 
-    group: "Fluxo e funcionalidade", 
+    group: "Grupo 02 · Documentação técnica", 
     rows: [
-      { id: "flu.1", label: "Caderno de Fluxo de Atendimento", basic: true, premium: true },
-      { id: "flu.2", label: "Setorização funcional completa", basic: true, premium: true },
-      { id: "flu.3", label: "Capacidade máxima de atendimento", basic: true, premium: true },
+      { id: "grp2.1", label: "Caderno de Fluxo de Atendimento", basic: true, premium: true },
+      { id: "grp2.2", label: "Caderno Geral + Luminotécnico", basic: true, premium: true },
+      { id: "grp2.3", label: "Caderno de Detalhes Construtivos", basic: true, premium: true },
+      { id: "grp2.4", label: "Caderno de Marcenaria", basic: true, premium: true },
+      { id: "grp2.5", label: "Memorial Descritivo", basic: true, premium: true },
+      { id: "grp2.6", label: "Caderno de Ambientes", basic: false, premium: true },
     ]
   },
   { 
-    group: "Cadernos técnicos", 
+    group: "Grupo 03 · Acompanhamento", 
     rows: [
-      { id: "cad.1", label: "Caderno Geral + Luminotécnico", basic: true, premium: true },
-      { id: "cad.2", label: "Caderno de Detalhes Construtivos", basic: true, premium: true },
-      { id: "cad.3", label: "Caderno de Marcenaria", basic: true, premium: true },
-      { id: "cad.4", label: "Memorial Descritivo", basic: true, premium: true },
-    ]
-  },
-  { 
-    group: "Complementos", 
-    rows: [
-      { id: "comp.2", label: "EVF — Viabilidade Financeira", basic: false, premium: "Opcional" },
-      { id: "comp.3", label: "Acompanhamento de obra", basic: false, premium: "Opcional" },
+      { id: "grp3.1", label: "3 visitas técnicas à obra", basic: false, premium: true },
+      { id: "grp3.2", label: "EVF — Viabilidade Financeira", basic: false, premium: "Opcional" },
+      { id: "grp3.3", label: "Acompanhamento de obra", basic: false, premium: "Opcional" },
     ]
   },
 ];
