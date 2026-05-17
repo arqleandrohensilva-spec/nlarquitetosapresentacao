@@ -1,13 +1,6 @@
 import { PropostaParams } from './use-proposta-params-types';
-import { usePropostaContext } from './use-proposta-context';
 
 export function usePropostaParams(): PropostaParams {
-  const context = usePropostaContext();
-  
-  // Se há contexto (rota /p/:tipo/:slug), usa os dados do banco
-  if (context) return context;
-  
-  // Caso contrário, usa query params da URL (rota direta)
   const searchParams = typeof window !== 'undefined' 
     ? new URLSearchParams(window.location.search) 
     : new URLSearchParams();
