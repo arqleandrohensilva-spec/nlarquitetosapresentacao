@@ -1,31 +1,11 @@
-export interface PropostaParams {
-  nome: string
-  tipo: string
-  cidade: string
-  estado: string
-  area: string
-  objetivo: string
-  data: string
-  plano: string
-  valor_executivo: string
-  valor_completo: string
-  validade: string
-}
+import { PropostaParams, usePropostaParams as useUrlParams } from './use-proposta-params';
+import { usePropostaContext } from './use-proposta-context';
 
 export function usePropostaParams(): PropostaParams {
-  const searchParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : new URLSearchParams();
+  const contextData = usePropostaContext();
+  const urlData = useUrlParams();
 
-  return {
-    nome: searchParams.get('nome') || '[Nome do Cliente]',
-    tipo: searchParams.get('tipo') || '[Residencial · Comercial · Interiores]',
-    cidade: searchParams.get('cidade') || '[Cidade]',
-    estado: searchParams.get('estado') || '[Estado]',
-    area: searchParams.get('area') || '[XXX]',
-    objetivo: searchParams.get('objetivo') || '[Descrição breve do objetivo do cliente]',
-    data: searchParams.get('data') || '[DD Mês AAAA]',
-    plano: searchParams.get('plano') || '',
-    valor_executivo: searchParams.get('valor_executivo') || 'Sob consulta',
-    valor_completo: searchParams.get('valor_completo') || 'Sob consulta',
-    validade: searchParams.get('validade') || '30 dias corridos',
-  }
+  // Se houver dados no contexto (vindos do banco de dados), use-os. 
+  // Caso contrário, use os da URL (comportamento original).
+  return contextData || urlData;
 }

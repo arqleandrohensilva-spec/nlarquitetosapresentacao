@@ -4,13 +4,13 @@ import { supabase } from "@/integrations/supabase/client";
 import PropostaArqint from "./PropostaArqint";
 import PropostaInt from "./PropostaInt";
 import PropostaComercial from "./PropostaComercial";
-import { useToast } from "@/components/ui/use-toast";
+import { PropostaProvider } from "@/hooks/use-proposta-context";
+import { PropostaParams } from "@/hooks/use-proposta-params";
 
 const PropostaCliente = () => {
   const { tipo, slug } = useParams();
   const [loading, setLoading] = useState(true);
   const [propostaData, setPropostaData] = useState<any>(null);
-  const { toast } = useToast();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -83,26 +83,28 @@ const PropostaCliente = () => {
     );
   }
 
-  // Mapear dados do banco para os props dos componentes
-  const componentProps = {
+  // Mapear dados do banco para o formato esperado pelo hook
+  const contextValue: PropostaParams = {
     nome: propostaData.nome_cliente || "[Nome do Cliente]",
-    validade: propostaData.validade || "30 dias corridos",
-    // Adicionar outros campos conforme necessário, as propostas usam usePropostaParams
-    // que lê da URL ou de um estado global. 
-    // Como os componentes já usam usePropostaParams, vamos precisar injetar ou adaptar.
+    tipo: propostaData.tipo_negocio || "[Tipo de Negócio]",
+    cidade: propostaData.cidade || "[Cidade]",
+    estado: propostaData.estado || "SP",
+    area: propostaData.area || "[XXX]",
+    objetivo: propostaData.objetivo || "[Descrição breve do objetivo do cliente]",
+    data: new Date(propostaData.criado_em).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' }),
+    plano: "",
+    valor_executivo: propostaData.valor_executivo || 'Sob consulta',
+    valor_completo: propostaData.valor_completo || 'Sob consulta',
+    validade: propostaData.validade || '30 dias corridos',
   };
 
-  // Renderizar o componente correto
-  switch (tipo) {
-    case "arqint":
-      return <PropostaArqint />;
-    case "int":
-      return <PropostaInt />;
-    case "comercial":
-      return <PropostaComercial />;
-    default:
-      return <div>Tipo de proposta inválido.</div>;
-  }
+  return (
+    <PropostaProvider value={contextValue}>
+      {tipo === "arqint" && <PropostaArqint />}
+      {tipo === "int" && <PropostaInt />}
+      {tipo === "comercial" && <PropostaComercial />}
+    </PropostaProvider>
+  );
 };
 
 export default PropostaCliente;
