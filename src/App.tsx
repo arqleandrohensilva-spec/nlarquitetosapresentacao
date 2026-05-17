@@ -13,6 +13,7 @@ import Captacao from "./pages/Captacao.tsx";
 import Int from "./pages/Int.tsx";
 import ApresentacaoComercial from "./pages/ApresentacaoComercial.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import PropostaCliente from "./pages/PropostaCliente.tsx";
 
 const queryClient = new QueryClient();
 
