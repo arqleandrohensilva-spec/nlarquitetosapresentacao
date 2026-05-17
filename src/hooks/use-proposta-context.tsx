@@ -1,5 +1,5 @@
 import { createContext, useContext, ReactNode } from 'react';
-import { PropostaParams } from './use-proposta-params';
+import { PropostaParams } from './use-proposta-params-types';
 
 const PropostaContext = createContext<PropostaParams | null>(null);
 
