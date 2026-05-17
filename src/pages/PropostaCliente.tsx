@@ -5,7 +5,7 @@ import PropostaArqint from "./PropostaArqint";
 import PropostaInt from "./PropostaInt";
 import PropostaComercial from "./PropostaComercial";
 import { PropostaProvider } from "@/hooks/use-proposta-context";
-import { PropostaParams } from "@/hooks/use-proposta-params";
+import { PropostaParams } from "@/hooks/use-proposta-params-types";
 
 const PropostaCliente = () => {
   const { tipo, slug } = useParams();
