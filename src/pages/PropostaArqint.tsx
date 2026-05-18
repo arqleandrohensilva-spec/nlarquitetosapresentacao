@@ -20,7 +20,6 @@ import propostaPortSuite from "@/assets/proposta/gemini-m7jp.jpg";
 import { usePropostaParams } from "@/hooks/use-proposta-params";
 import { useEngagementTracking } from "@/hooks/use-engagement-tracking";
 
-
 const LOGO_BRANCA = "/logo-branca.png";
 
 const PropostaArqint = () => {
