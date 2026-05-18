@@ -1,9 +1,15 @@
 import { PropostaParams } from './use-proposta-params-types';
+import { usePropostaContext } from './use-proposta-context';
 
 export function usePropostaParams(): PropostaParams {
+  const context = usePropostaContext();
   const searchParams = typeof window !== 'undefined' 
     ? new URLSearchParams(window.location.search) 
     : new URLSearchParams();
+
+  if (context) {
+    return context;
+  }
 
   return {
     nome: searchParams.get('nome') || '[Nome do Cliente]',
