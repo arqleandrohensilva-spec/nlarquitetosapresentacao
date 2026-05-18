@@ -20,6 +20,32 @@ import propostaPortSuite from "@/assets/proposta/gemini-m7jp.jpg";
 import { usePropostaParams } from "@/hooks/use-proposta-params";
 import { useEngagementTracking } from "@/hooks/use-engagement-tracking";
 
+const Stat = ({ number, label, id }: { number: string; label: string; id: string }) => (
+  <div className="flex flex-col">
+    <Editable id={`proposta-arq.stat.${id}.num`} className="font-display text-2xl lg:text-3xl text-primary leading-none mb-1">{number}</Editable>
+    <Editable id={`proposta-arq.stat.${id}.label`} className="font-mono text-[8px] lg:text-[10px] uppercase tracking-[0.2em] text-muted-foreground leading-tight">{label}</Editable>
+  </div>
+);
+
+const PartnerCard = ({ id, name, role, cau, image }: { id: string; name: string; role: string; cau: string; image: string }) => (
+  <div className="space-y-4">
+    <div className="aspect-[4/5] grayscale hover:grayscale-0 transition-all duration-700">
+      <img src={image} alt={name} className="w-full h-full object-cover" loading="lazy" width={400} height={500} />
+    </div>
+    <div>
+      <Editable id={`proposta-arq.partner.${id}.name`} className="font-display text-xl text-foreground mb-1">{name}</Editable>
+      <Editable id={`proposta-arq.partner.${id}.role`} className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-1">{role}</Editable>
+      <Editable id={`proposta-arq.partner.${id}.cau`} className="font-mono text-[9px] text-muted-foreground tracking-widest">{cau}</Editable>
+    </div>
+  </div>
+);
+
+const CaseStat = ({ id, value, label }: { id: string; value: string; label: string }) => (
+  <div className="flex flex-col">
+    <Editable id={`${id}.val`} className="font-display text-2xl text-primary leading-none mb-2">{value}</Editable>
+    <Editable id={`${id}.lbl`} className="font-mono text-[9px] uppercase tracking-wider text-muted-foreground leading-tight">{label}</Editable>
+  </div>
+);
 
 const LOGO_BRANCA = "/logo-branca.png";
 
