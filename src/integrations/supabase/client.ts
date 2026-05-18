@@ -1,12 +1,17 @@
 import { createClient } from '@supabase/supabase-js';
 import type { Database } from './types';
 
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || "";
+const SUPABASE_PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || "";
+
+export const isSupabaseConfigured = Boolean(SUPABASE_URL && SUPABASE_PUBLISHABLE_KEY);
+
 export const supabase = createClient<Database>(
-  "https://sjqazidnuqdqadbkawph.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNqcWF6aWRudXFkcWFkYmthd3BoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg0MzI0NjMsImV4cCI6MjA5NDAwODQ2M30.vT_1aEOPjjw_KCKJ0KsAzJG40e07DvFSONICVIBAGHI",
+  SUPABASE_URL || 'https://placeholder.supabase.co', 
+  SUPABASE_PUBLISHABLE_KEY || 'placeholder-key', 
   {
     auth: {
-      storage: localStorage,
+      storage: typeof window !== 'undefined' ? window.localStorage : undefined,
       persistSession: true,
       autoRefreshToken: true,
     }
