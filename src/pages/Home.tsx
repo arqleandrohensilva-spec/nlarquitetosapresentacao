@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-
 const Home = () => {
   return (
     <div className="min-h-screen bg-[#0A0A0A] flex items-center justify-center">
@@ -10,5 +9,4 @@ const Home = () => {
     </div>
   );
 };
-
 export default Home;
