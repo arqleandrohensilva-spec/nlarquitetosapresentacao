@@ -1,11 +1,14 @@
+import { usePropostaContext } from './use-proposta-context';
 import { PropostaParams } from './use-proposta-params-types';
 
 export function usePropostaParams(): PropostaParams {
+  const context = usePropostaContext();
+
   const searchParams = typeof window !== 'undefined'
     ? new URLSearchParams(window.location.search)
     : new URLSearchParams();
 
-  return {
+  const urlParams: PropostaParams = {
     nome: searchParams.get('nome') || '[Nome do Cliente]',
     tipo: searchParams.get('tipo') || '[Residencial · Comercial · Interiores]',
     cidade: searchParams.get('cidade') || '[Cidade]',
@@ -18,4 +21,6 @@ export function usePropostaParams(): PropostaParams {
     valor_completo: searchParams.get('valor_completo') || 'Sob consulta',
     validade: searchParams.get('validade') || '30 dias corridos',
   };
+
+  return context ?? urlParams;
 }
