@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Loader2 } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const ContratoCliente = () => {
   const { slug } = useParams();
@@ -82,9 +83,15 @@ const ContratoCliente = () => {
     );
   }
 
+  const tipoArqInt = contrato.tipo_projeto === 'ARQ+INT' ? '[X]' : '[ ]';
+  const tipoInteriores = contrato.tipo_projeto === 'Interiores' ? '[X]' : '[ ]';
+  const tipoComercial = contrato.tipo_projeto === 'Comercial' ? '[X]' : '[ ]';
+  const planoExecutivo = contrato.plano !== 'Completo' ? '[X]' : '[ ]';
+  const planoCompleto = contrato.plano === 'Completo' ? '[X]' : '[ ]';
+
   return (
-    <div className="bg-[#0A0A0A] min-h-screen text-[#E8E4DF]">
-      <style>{`
+    <div className="bg-[#0A0A0A] min-h-screen text-[#E8E4DF] font-['Cormorant_Garamond']">
+       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
         
         @media print {
@@ -101,251 +108,94 @@ const ContratoCliente = () => {
           h1, h2, h3, h4, span, p, div { color: black !important; }
           .bg-[#0A0A0A] { background: white !important; }
           .text-white { color: black !important; }
-          .border-[#8B7355\\/30] { border-color: #8B7355 !important; }
+          .border-[#8B7355\/30] { border-color: #8B7355 !important; }
         }
-
-        .font-display { font-family: 'Cormorant Garamond', serif; }
-        .font-mono-legal { font-family: 'Courier New', Courier, monospace; }
       `}</style>
 
-      <div data-pdf-hide className="fixed top-6 right-6 z-50 flex gap-3">
-        <button 
-          onClick={() => window.print()} 
-          className="bg-[#8B7355] text-[#0A0A0A] px-6 py-2.5 font-mono-legal text-[10px] uppercase tracking-widest hover:bg-[#8B7355]/80 transition-colors shadow-lg"
-        >
-          BAIXAR PDF
-        </button>
+      <div data-pdf-hide className="fixed top-6 right-6 z-50">
+        <button onClick={() => window.print()} className="bg-[#8B7355] text-[#0A0A0A] px-6 py-2.5 uppercase text-[10px] tracking-widest font-mono">BAIXAR PDF</button>
       </div>
 
-      <div className="contrato-container max-w-[800px] mx-auto overflow-hidden">
-        {/* CAPA */}
-        <section className="min-h-screen flex flex-col justify-between p-16 bg-[#0A0A0A] no-break">
-          <div className="flex justify-between items-start">
-            <img src="/logo-branca.png" className="h-8" />
-            <span className="font-mono-legal text-[10px] text-[#8B7355] uppercase tracking-widest">
-              Instrumento Particular · Confidencial
-            </span>
-          </div>
-          
-          <div>
-            <div className="w-16 h-px bg-[#8B7355] mb-8" />
-            <h1 className="font-display italic text-6xl text-white leading-tight mb-4">
-              Contrato de Prestação<br/>de Serviços Arquitetônicos
-            </h1>
-            <p className="font-mono-legal text-[10px] text-[#8B7355] uppercase tracking-[0.3em] mb-16">
-              A Arquitetura como Decisão
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 gap-8 border-t border-[#8B7355]/30 pt-8">
-            <div>
-              <p className="font-mono-legal text-[9px] text-[#8B7355] uppercase tracking-widest mb-1">Nº DO CONTRATO</p>
-              <p className="font-display text-2xl text-white">NL-{contrato.ano}-{contrato.numero}</p>
-            </div>
-            <div>
-              <p className="font-mono-legal text-[9px] text-[#8B7355] uppercase tracking-widest mb-1">DATA DE ASSINATURA</p>
-              <p className="font-display text-2xl text-white">{contrato.data}</p>
-            </div>
-            <div>
-              <p className="font-mono-legal text-[9px] text-[#8B7355] uppercase tracking-widest mb-1">CONTRATANTE</p>
-              <p className="font-display text-2xl text-white italic">{contrato.nome_cliente}</p>
-            </div>
-            <div>
-              <p className="font-mono-legal text-[9px] text-[#8B7355] uppercase tracking-widest mb-1">VALOR TOTAL</p>
-              <p className="font-display text-2xl text-white">R$ {contrato.valor_total}</p>
-            </div>
-          </div>
-        </section>
-
-        {/* CONTEÚDO JURÍDICO */}
-        <div className="px-16 py-20 space-y-12">
-          
-          {/* CLÁUSULA PRIMEIRA — DAS PARTES */}
-          <div className="no-break space-y-4">
-            <h2 className="font-mono-legal text-[10px] uppercase tracking-[0.2em] text-[#8B7355]">CLÁUSULA PRIMEIRA — DAS PARTES</h2>
-            <p className="text-[#E8E4DF]/80 text-sm leading-relaxed">
-              <span className="text-[#8B7355] uppercase font-bold mr-2">CONTRATANTE:</span>
-              {contrato.nome_cliente}, {contrato.nacionalidade}, {contrato.estado_civil}, {contrato.profissao}, 
-              portador do CPF nº {contrato.cpf_cliente}, residente em {contrato.endereco_cliente}.
-            </p>
-            <p className="text-[#E8E4DF]/80 text-sm leading-relaxed">
-              <span className="text-[#8B7355] uppercase font-bold mr-2">CONTRATADA:</span>
-              NL ARQUITETOS, representada por LEANDRO HENRIQUE DA SILVA, arquiteto e urbanista, CPF 425.437.568-92, CAU A203598-7, e NEANDRO JACQUE GARCIA, arquiteto e urbanista, CAU A203599-5.
-            </p>
-          </div>
-
-          {/* CLÁUSULA SEGUNDA — DO OBJETO */}
-          <div className="no-break space-y-6">
-            <h2 className="font-mono-legal text-[10px] uppercase tracking-[0.2em] text-[#8B7355]">CLÁUSULA SEGUNDA — DO OBJETO</h2>
-            <p className="text-[#E8E4DF]/80 text-sm leading-relaxed">
-              O presente contrato tem por objeto a prestação de serviços profissionais de Arquitetura e Urbanismo pela CONTRATADA ao CONTRATANTE, para o imóvel localizado em <span className="text-[#8B7355]">{contrato.endereco_imovel}</span>, compreendendo as seguintes especificações:
-            </p>
-            
-            <div className="grid grid-cols-1 gap-4 bg-white/5 p-6 border border-[#8B7355]/20">
-              <div className="flex items-center gap-4">
-                <div className="text-[#8B7355] font-mono-legal text-xs">TIPO DE PROJETO:</div>
-                <div className="flex gap-6 text-[10px] font-mono-legal uppercase tracking-wider">
-                  <span>{contrato.tipo_projeto === 'ARQ+INT' ? '[X]' : '[ ]'} PROJETO ARQUITETÔNICO RESIDENCIAL</span>
-                  <span>{contrato.tipo_projeto === 'Comercial' ? '[X]' : '[ ]'} PROJETO ARQUITETÔNICO COMERCIAL</span>
-                  <span>{contrato.tipo_projeto === 'Interiores' ? '[X]' : '[ ]'} PROJETO DE INTERIORES</span>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-4 border-t border-[#8B7355]/10 pt-4">
-                <div className="text-[#8B7355] font-mono-legal text-xs">PLANO CONTRATADO:</div>
-                <div className="flex gap-6 text-[10px] font-mono-legal uppercase tracking-wider">
-                  <span>{contrato.plano !== 'Completo' ? '[X]' : '[ ]'} PLANO EXECUTIVO</span>
-                  <span>{contrato.plano === 'Completo' ? '[X]' : '[ ]'} PLANO COMPLETO</span>
-                </div>
-              </div>
-            </div>
-
-            <p className="text-[#E8E4DF]/80 text-sm leading-relaxed italic">
-              * O projeto será desenvolvido considerando uma área de terreno de <span className="text-[#8B7355]">{contrato.area_terreno}</span> e área construída estimada de <span className="text-[#8B7355]">{contrato.area_construida}</span>.
-            </p>
-          </div>
-
-          {/* CLÁUSULA TERCEIRA — DOS PRAZOS E ETAPAS */}
-          <div className="no-break space-y-6">
-            <h2 className="font-mono-legal text-[10px] uppercase tracking-[0.2em] text-[#8B7355]">CLÁUSULA TERCEIRA — DOS PRAZOS E ETAPAS</h2>
-            <p className="text-[#E8E4DF]/80 text-sm leading-relaxed">
-              O cronograma estimado para a execução dos serviços, condicionado à aprovação tempestiva de cada etapa pelo CONTRATANTE, é de:
-            </p>
-            
-            <div className="grid grid-cols-2 gap-x-12 gap-y-4 font-display">
-              {[
-                { label: 'Levantamento e Conferência', value: `${contrato.prazo_briefing} dias úteis` },
-                { label: 'Briefing e Estudo de Fluxo', value: `${contrato.prazo_briefing} dias úteis` },
-                { label: 'Estudo Preliminar', value: `${contrato.prazo_estudo} dias úteis` },
-                { label: 'Modelagem 3D e Conceito', value: `${contrato.prazo_estudo} dias úteis` },
-                { label: 'Projeto Legal (Aprovação)', value: `${contrato.prazo_legal} dias úteis` },
-                { label: 'Projeto Executivo Técnico', value: `${contrato.prazo_executivo} dias úteis` },
-              ].map((item, i) => (
-                <div key={i} className="flex justify-between border-b border-[#8B7355]/10 pb-2">
-                  <span className="text-white/60 text-sm">{item.label}</span>
-                  <span className="text-[#8B7355] text-sm font-bold">{item.value}</span>
-                </div>
-              ))}
-            </div>
-            
-            <div className="mt-4 p-4 border border-[#8B7355]/40 text-center">
-              <span className="font-mono-legal text-[10px] uppercase tracking-[0.3em] text-[#8B7355]">PRAZO TOTAL ESTIMADO:</span>
-              <span className="ml-4 font-display text-xl text-white italic">{contrato.prazo_semanas} semanas · {contrato.prazo_total_dias} dias úteis</span>
-            </div>
-          </div>
-
-          {/* CLÁUSULA QUARTA — DOS HONORÁRIOS */}
-          <div className="no-break space-y-6">
-            <h2 className="font-mono-legal text-[10px] uppercase tracking-[0.2em] text-[#8B7355]">CLÁUSULA QUARTA — DOS HONORÁRIOS</h2>
-            <p className="text-[#E8E4DF]/80 text-sm leading-relaxed">
-              Pelos serviços ora contratados, o CONTRATANTE pagará à CONTRATADA o valor total de:
-            </p>
-            
-            <div className="bg-[#8B7355]/10 p-8 border-l-2 border-[#8B7355]">
-              <div className="font-display text-3xl text-white mb-2">R$ {contrato.valor_total}</div>
-              <div className="font-mono-legal text-[10px] uppercase tracking-wider text-[#8B7355]">({contrato.valor_total_extenso})</div>
-            </div>
-
-            <div className="space-y-4">
-              <p className="font-display text-lg text-white">Forma de Pagamento (Marcos de Entrega):</p>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center border-b border-[#8B7355]/20 pb-2">
-                  <div className="flex flex-col">
-                    <span className="text-sm text-white/80">Marco 1 (30%) · Assinatura e Briefing</span>
-                    <span className="text-[10px] font-mono-legal text-[#8B7355]">{contrato.marco1_extenso}</span>
-                  </div>
-                  <span className="font-display text-lg text-white">R$ {contrato.marco1_valor}</span>
-                </div>
-                <div className="flex justify-between items-center border-b border-[#8B7355]/20 pb-2">
-                  <div className="flex flex-col">
-                    <span className="text-sm text-white/80">Marco 2 (40%) · Entrega do 3D</span>
-                    <span className="text-[10px] font-mono-legal text-[#8B7355]">{contrato.marco2_extenso}</span>
-                  </div>
-                  <span className="font-display text-lg text-white">R$ {contrato.marco2_valor}</span>
-                </div>
-                <div className="flex justify-between items-center border-b border-[#8B7355]/20 pb-2">
-                  <div className="flex flex-col">
-                    <span className="text-sm text-white/80">Marco 3 (30%) · Projeto Executivo Final</span>
-                    <span className="text-[10px] font-mono-legal text-[#8B7355]">{contrato.marco3_extenso}</span>
-                  </div>
-                  <span className="font-display text-lg text-white">R$ {contrato.marco3_valor}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* CLÁUSULAS ADICIONAIS — PLACEHOLDER */}
-          <div className="space-y-12 opacity-60">
-             <div className="no-break space-y-4">
-                <h2 className="font-mono-legal text-[10px] uppercase tracking-[0.2em] text-[#8B7355]">CLÁUSULA QUINTA À DÉCIMA QUARTA</h2>
-                <p className="text-[#E8E4DF]/80 text-xs italic">
-                  [O conteúdo jurídico completo das cláusulas 5 a 14, abrangendo obrigações das partes, propriedade intelectual, rescisão, foro e demais disposições legais, deve ser inserido conforme o contrato padrão da NL Arquitetos.]
-                </p>
-                <div className="space-y-4">
-                  {[...Array(5)].map((_, i) => (
-                    <div key={i} className="h-4 bg-[#8B7355]/5 w-full rounded" />
-                  ))}
-                </div>
-             </div>
-          </div>
-
-          <div className="page-break" />
-
-          {/* ANEXOS — PLACEHOLDER */}
-          <div className="space-y-12 opacity-60">
-             <div className="no-break space-y-4">
-                <h2 className="font-mono-legal text-[10px] uppercase tracking-[0.2em] text-[#8B7355]">ANEXOS I, II, III E IV</h2>
-                <p className="text-[#E8E4DF]/80 text-xs italic">
-                  [O conteúdo detalhado dos anexos técnicos e cronogramas específicos deve ser inserido aqui.]
-                </p>
-                <div className="space-y-4">
-                  {[...Array(10)].map((_, i) => (
-                    <div key={i} className="h-4 bg-[#8B7355]/5 w-full rounded" />
-                  ))}
-                </div>
-             </div>
-          </div>
-
-          {/* ASSINATURAS */}
-          <div className="no-break pt-20">
-            <h2 className="font-mono-legal text-[10px] uppercase tracking-[0.2em] text-[#8B7355] mb-16 text-center">ASSINATURAS</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-              <div className="space-y-4">
-                <div className="border-b border-white/30 h-10 w-full" />
-                <div className="text-center">
-                  <p className="font-display text-lg text-white italic">{contrato.nome_cliente}</p>
-                  <p className="font-mono-legal text-[9px] text-[#8B7355] uppercase tracking-widest">CPF: {contrato.cpf_cliente}</p>
-                </div>
-              </div>
-              
-              <div className="space-y-8">
-                <div className="space-y-4">
-                  <div className="border-b border-white/30 h-10 w-full" />
-                  <div className="text-center">
-                    <p className="font-display text-lg text-white italic">Leandro Henrique da Silva</p>
-                    <p className="font-mono-legal text-[9px] text-[#8B7355] uppercase tracking-widest">CPF: 425.437.568-92 · CAU A203598-7</p>
-                  </div>
-                </div>
-                
-                <div className="space-y-4 pt-4">
-                  <div className="border-b border-white/30 h-10 w-full" />
-                  <div className="text-center">
-                    <p className="font-display text-lg text-white italic">Neandro Jacque Garcia</p>
-                    <p className="font-mono-legal text-[9px] text-[#8B7355] uppercase tracking-widest">CAU A203599-5</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="mt-20 pt-10 border-t border-[#8B7355]/20 text-center">
-               <p className="font-mono-legal text-[9px] text-[#8B7355] uppercase tracking-widest">
-                 São José dos Campos, {contrato.data}
-               </p>
-            </div>
-          </div>
-
+      <div className="contrato-container max-w-[800px] mx-auto p-12 lg:p-20 bg-white text-black min-h-screen">
+        <div className="mb-12">
+            <h2 className="text-2xl font-bold uppercase mb-4">ARQUITETOS</h2>
+            <h1 className="text-4xl font-bold uppercase mb-2">Contrato de Prestação de Serviços de Arquitetura</h1>
+            <p className="text-sm uppercase tracking-widest text-[#8B7355]">INSTRUMENTO PARTICULAR · A ARQUITETURA COMO DECISÃO</p>
         </div>
+
+        <div className="grid grid-cols-2 gap-y-4 mb-12 text-sm">
+            <div className="font-bold">Nº DO CONTRATO</div> <div>NL-{contrato.ano}-{contrato.numero}</div>
+            <div className="font-bold">CONTRATANTE</div> <div>{contrato.nome_cliente}</div>
+            <div className="font-bold">TIPO DE PROJETO</div> <div>{tipoArqInt} ARQ+INT  {tipoInteriores} INTERIORES  {tipoComercial} COMERCIAL</div>
+            <div className="font-bold">PLANO CONTRATADO</div> <div>{planoExecutivo} EXECUTIVO  {planoCompleto} COMPLETO</div>
+            <div className="font-bold">ENDEREÇO DO IMÓVEL</div> <div>{contrato.endereco_imovel}</div>
+            <div className="font-bold">VALOR TOTAL DOS HONORÁRIOS</div> <div>R$ {contrato.valor_total} ({contrato.valor_total_extenso})</div>
+            <div className="font-bold">PRAZO TOTAL ESTIMADO</div> <div>{contrato.prazo_semanas} semanas a partir da assinatura e entrega dos documentos</div>
+            <div className="font-bold">DATA DE ASSINATURA</div> <div>São José dos Campos, SP | {contrato.data}</div>
+        </div>
+
+        <div className="text-center italic text-[#8B7355] border-t border-b py-6 mb-12">
+            "A NL não projeta para impressionar. Projeta para funcionar — e o resultado impressiona porque cada decisão foi tomada antes de a obra começar."
+        </div>
+
+        <div className="text-[10px] text-center text-gray-500 mb-20">
+            NL Arquitetos · São José dos Campos, SP · Versão 1.0
+        </div>
+
+        <div className="mb-20">
+            <h2 className="text-xl font-bold uppercase mb-6">SUMÁRIO</h2>
+            <p className="text-sm">Instrumento Particular de Contrato de Projeto de Arquitetura</p>
+            <ul className="text-sm space-y-2 mt-4 ml-4">
+                <li>CONTRATO PRINCIPAL</li>
+                <li>Cláusula Primeira — Das Partes Envolvidas no Contrato</li>
+                <li>Cláusula Segunda — Do Objeto</li>
+                <li>Cláusula Terceira — Dos Serviços Ofertados</li>
+                <li>Cláusula Quarta — Do Prazo</li>
+                <li>Cláusula Quinta — Das Alterações</li>
+                <li>Cláusula Sexta — Dos Honorários</li>
+                <li>Cláusula Sétima — Das Obrigações e Responsabilidades do Contratante</li>
+                <li>Cláusula Oitava — Das Obrigações e Responsabilidades dos Contratados</li>
+                <li>Cláusula Nona — Dos Direitos Autorais</li>
+                <li>Cláusula Décima — Da Responsabilidade Técnica</li>
+                <li>Cláusula Décima Primeira — Da Rescisão Contratual</li>
+                <li>Cláusula Décima Segunda — Considerações Finais</li>
+                <li>Cláusula Décima Terceira — Da Limitação de Responsabilidade Civil</li>
+                <li>Cláusula Décima Quarta — Do Foro</li>
+                <li>ASSINATURAS</li>
+                <li>ANEXOS</li>
+            </ul>
+        </div>
+
+        <div className="prose prose-sm max-w-none text-black">
+           <h2 className="font-bold uppercase mb-4">INSTRUMENTO PARTICULAR DE CONTRATO DE PROJETO DE ARQUITETURA</h2>
+           <p>CLÁUSULA PRIMEIRA — DAS PARTES ENVOLVIDAS NO CONTRATO: {contrato.nome_cliente}, {contrato.nacionalidade}, {contrato.estado_civil}, {contrato.profissao}, portador do CPF nº {contrato.cpf_cliente}, residente em {contrato.endereco_cliente}, doravante denominado CONTRATANTE. E NL ARQUITETOS, representada por LEANDRO HENRIQUE DA SILVA e NEANDRO JACQUE GARCIA, doravante denominados CONTRATADOS.</p>
+           <p>CLÁUSULA SEGUNDA — DO OBJETO: O presente contrato tem por objeto a prestação de serviços técnicos profissionais de arquitetura para o imóvel localizado em {contrato.endereco_imovel}.</p>
+           <p>CLÁUSULA TERCEIRA — DOS SERVIÇOS OFERTADOS: Os serviços compreendem o desenvolvimento de projetos conforme especificado nos anexos deste contrato.</p>
+           <p>CLÁUSULA QUARTA — DO PRAZO: O prazo total estimado para a execução dos serviços é de {contrato.prazo_semanas} semanas.</p>
+           <p>CLÁUSULA QUINTA — DAS ALTERAÇÕES: Cada etapa contempla até 02 (duas) revisões, desde que não impliquem mudança substancial do conceito arquitetônico.</p>
+           <p>CLÁUSULA SEXTA — DOS HONORÁRIOS: O valor total dos honorários é de R$ {contrato.valor_total} ({contrato.valor_total_extenso}).</p>
+           <p>CLÁUSULA SÉTIMA — DAS OBRIGAÇÕES DO CONTRATANTE: Fornecer documentos, informações e aprovar etapas dentro dos prazos estabelecidos.</p>
+           <p>CLÁUSULA OITAVA — DAS OBRIGAÇÕES DOS CONTRATADOS: Prestar serviços com diligência, competência e observância às normas técnicas.</p>
+           <p>CLÁUSULA NONA — DOS DIREITOS AUTORAIS: O projeto é obra intelectual protegida pela Lei nº 9.610/1998, pertencendo aos CONTRATADOS.</p>
+           <p>CLÁUSULA DÉCIMA — DA RESPONSABILIDADE TÉCNICA: A responsabilidade técnica restringe-se à elaboração do projeto, não incluindo execução ou gerenciamento de obra.</p>
+           <p>CLÁUSULA DÉCIMA PRIMEIRA — DA RESCISÃO CONTRATUAL: O contrato poderá ser rescindido mediante notificação formal, observadas as condições de quitação proporcional.</p>
+           <p>CLÁUSULA DÉCIMA SEGUNDA — CONSIDERAÇÕES FINAIS: Disposições complementares aplicáveis à execução do contrato.</p>
+           <p>CLÁUSULA DÉCIMA TERCEIRA — DA LIMITAÇÃO DE RESPONSABILIDADE CIVIL: A responsabilidade civil limita-se ao valor dos honorários recebidos.</p>
+           <p>CLÁUSULA DÉCIMA QUARTA — DO FORO: Fica eleito o foro da comarca de São José dos Campos - SP.</p>
+        </div>
+
+        <Tabs defaultValue="anexo1" className="mt-20">
+            <TabsList className="grid grid-cols-4">
+                <TabsTrigger value="anexo1">ANEXO I</TabsTrigger>
+                <TabsTrigger value="anexo2">ANEXO II</TabsTrigger>
+                <TabsTrigger value="anexo3">ANEXO III</TabsTrigger>
+                <TabsTrigger value="anexo4">ANEXO IV</TabsTrigger>
+            </TabsList>
+            <TabsContent value="anexo1" className="p-4 border">Anexo I: Escopo dos Serviços de Projeto — Detalhamento das etapas e entregáveis.</TabsContent>
+            <TabsContent value="anexo2" className="p-4 border">Anexo II: Cronograma de Desenvolvimento do Projeto — Prazos estimados para cada etapa.</TabsContent>
+            <TabsContent value="anexo3" className="p-4 border">Anexo III: Honorários e Forma de Pagamento — Detalhamento financeiro e marcos de pagamento.</TabsContent>
+            <TabsContent value="anexo4" className="p-4 border">Anexo IV: Serviços Adicionais (Opcionais) — Serviços não inclusos no escopo principal.</TabsContent>
+        </Tabs>
       </div>
     </div>
   );
