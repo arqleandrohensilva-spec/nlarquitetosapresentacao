@@ -91,7 +91,7 @@ const PropostaArqint = () => {
       </section>
 
       {/* 02 · MANIFESTO */}
-      <section id="manifesto" className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32">
+      <section id="secao-introducao" className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32">
         <div className="grid grid-cols-12 gap-8 w-full max-w-7xl mx-auto">
           <div className="col-span-12 md:col-span-3">
             <span className="number-marker block mb-2">02</span>
@@ -817,7 +817,7 @@ const PropostaArqint = () => {
       </section>
 
       {/* 17 · ENCERRAMENTO */}
-      <section id="encerramento" className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32 overflow-hidden" style={{ backgroundColor: "#1A1816", color: "#E8E4DF" }}>
+      <section id="secao-contato" className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32 overflow-hidden" style={{ backgroundColor: "#1A1816", color: "#E8E4DF" }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-transparent to-primary/40" />
         <div className="relative max-w-5xl mx-auto w-full">
           <div className="flex justify-center mb-10">
