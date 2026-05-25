@@ -1,11 +1,17 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import { createClient } from "@supabase/supabase-js";
 import PropostaArqint from "./PropostaArqint";
 import PropostaInt from "./PropostaInt";
 import PropostaComercial from "./PropostaComercial";
 import { PropostaProvider } from "@/hooks/use-proposta-context";
 import { PropostaParams } from "@/hooks/use-proposta-params-types";
+
+const nlSupabase = createClient(
+  "https://krzuroijejfozljhchok.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtyenVyb2lqZWpmb3psamhjaG9rIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc5Mjg4MjEsImV4cCI6MjA5MzUwNDgyMX0.mFMFfY8TdviFVzHvfKYUrZENpcT4wdyW-52-CUNqsOo",
+);
 
 const PropostaCliente = () => {
   const { tipo, slug } = useParams();
@@ -27,15 +33,35 @@ const PropostaCliente = () => {
 
         if (data) {
           setPropostaData(data);
-          
-          // Incrementar acessos
+
           await supabase
             .from("propostas_clientes")
-            .update({ 
+            .update({
               acessos: (data.acessos || 0) + 1,
-              ultimo_acesso: new Date().toISOString()
+              ultimo_acesso: new Date().toISOString(),
             })
             .eq("id", data.id);
+
+          try {
+            const { data: propostas } = await nlSupabase
+              .from("proposals")
+              .select("id, link_proposta")
+              .not("link_proposta", "is", null);
+
+            const proposta = propostas?.find((p: any) => {
+              const link = (p.link_proposta || "").toLowerCase();
+              return link.endsWith(`/${slug}`) || link.includes(`/${tipo}/${slug}`);
+            });
+
+            if (proposta?.id) {
+              await nlSupabase.from("proposal_views").insert({
+                proposal_id: proposta.id,
+                viewed_at: new Date().toISOString(),
+              });
+            }
+          } catch (trackErr) {
+            console.error("Erro ao registrar tracking:", trackErr);
+          }
         }
       } catch (err) {
         console.error("Erro ao buscar proposta:", err);
@@ -71,7 +97,7 @@ const PropostaCliente = () => {
             O link acessado pode estar incorreto ou a proposta não está mais disponível.
           </p>
           <div className="pt-8 text-center flex justify-center">
-            <button 
+            <button
               onClick={() => navigate("/")}
               className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary hover:text-primary/70 transition-colors"
             >
@@ -83,7 +109,6 @@ const PropostaCliente = () => {
     );
   }
 
-  // Mapear dados do banco para o formato esperado pelo hook
   const contextValue: PropostaParams = {
     nome: propostaData.nome_cliente || "[Nome do Cliente]",
     tipo: propostaData.tipo_negocio || "[Tipo de Negócio]",
@@ -91,11 +116,15 @@ const PropostaCliente = () => {
     estado: propostaData.estado || "SP",
     area: propostaData.area || "[XXX]",
     objetivo: propostaData.objetivo || "[Descrição breve do objetivo do cliente]",
-    data: new Date(propostaData.criado_em).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' }),
+    data: new Date(propostaData.criado_em).toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
+    }),
     plano: "",
-    valor_executivo: propostaData.valor_executivo || 'Sob consulta',
-    valor_completo: propostaData.valor_completo || 'Sob consulta',
-    validade: propostaData.validade || '30 dias corridos',
+    valor_executivo: propostaData.valor_executivo || "Sob consulta",
+    valor_completo: propostaData.valor_completo || "Sob consulta",
+    validade: propostaData.validade || "30 dias corridos",
   };
 
   return (
