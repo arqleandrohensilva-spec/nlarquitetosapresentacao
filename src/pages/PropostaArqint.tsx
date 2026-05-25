@@ -91,7 +91,7 @@ const PropostaArqint = () => {
       </section>
 
       {/* 02 · MANIFESTO */}
-      <section id="manifesto" className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32">
+      <section id="secao-introducao" className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32">
         <div className="grid grid-cols-12 gap-8 w-full max-w-7xl mx-auto">
           <div className="col-span-12 md:col-span-3">
             <span className="number-marker block mb-2">02</span>
@@ -351,7 +351,7 @@ const PropostaArqint = () => {
       </section>
 
       {/* 08 · ETAPAS */}
-      <section id="etapas" className="relative px-6 md:px-16 lg:px-24 py-28 bg-surface/40">
+      <section id="secao-metodo" className="relative px-6 md:px-16 lg:px-24 py-28 bg-surface/40">
         <div className="max-w-[1400px] mx-auto">
           <div className="flex items-baseline justify-between mb-12 border-b border-border/60 pb-6">
             <div className="flex items-baseline gap-6">
@@ -592,7 +592,7 @@ const PropostaArqint = () => {
       <FullBleedBand src={bandIntermezzo02} alt="Área gourmet externa com pérgola de madeira" number="Intermezzo · 02" caption="Pérgola, cobogó e gourmet integrados — cada elemento decidido em projeto, não no canteiro." align="right" height="tall" objectPosition="35% 65%" heightClassName="h-[60vh] sm:h-[68vh] md:h-[78vh]" edgeFadeBottomClassName="h-44 md:h-64" imgClassName="brightness-[0.92] contrast-[1.06] saturate-[0.95]" />
 
       {/* 13 · INVESTIMENTO */}
-      <section id="investimento" className="relative px-6 md:px-16 lg:px-24 py-32 bg-surface/40">
+      <section id="secao-planos" className="relative px-6 md:px-16 lg:px-24 py-32 bg-surface/40">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <span className="number-marker block mb-4">13 · Investimento</span>
@@ -604,7 +604,7 @@ const PropostaArqint = () => {
               O valor de cada plano é calculado com base no escopo e na complexidade do projeto. Não é preço de tabela — é o custo real de eliminar o improviso antes da obra começar.
             </Editable>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div id="secao-valores" className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <PackageCard
               id="basic"
               tier="Plano Executivo"
@@ -817,7 +817,7 @@ const PropostaArqint = () => {
       </section>
 
       {/* 17 · ENCERRAMENTO */}
-      <section id="encerramento" className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32 overflow-hidden" style={{ backgroundColor: "#1A1816", color: "#E8E4DF" }}>
+      <section id="secao-contato" className="relative min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-32 overflow-hidden" style={{ backgroundColor: "#1A1816", color: "#E8E4DF" }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-transparent to-primary/40" />
         <div className="relative max-w-5xl mx-auto w-full">
           <div className="flex justify-center mb-10">

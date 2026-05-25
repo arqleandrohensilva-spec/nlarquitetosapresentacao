@@ -3,8 +3,9 @@ import { Lead, LeadLog, LeadStage } from '@/types/pipeline';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { X, MessageSquare, Phone, Mail, Calendar, Trash2, ExternalLink } from 'lucide-react';
+import { X, MessageSquare, Phone, Mail, Calendar, Trash2, ExternalLink, Activity } from 'lucide-react';
 import { cn } from "@/lib/utils";
+import ClienteFicha from './ClienteFicha';
 
 interface LeadDetailPanelProps {
   lead?: Lead;
@@ -164,6 +165,15 @@ const LeadDetailPanel = ({ lead, onClose, onUpdate, onDelete, user }: LeadDetail
             >
               Salvar Ação
             </Button>
+          </section>
+
+          {/* Engagement Stats - Etapa 4 de Engajamento */}
+          <section className="bg-white border border-[#E8E4DF] p-6 shadow-sm">
+            <div className="flex items-center gap-2 mb-6">
+              <Activity className="w-3 h-3 text-[#8B7355]" />
+              <h4 className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#8B7355]">Engajamento da Proposta</h4>
+            </div>
+            <ClienteFicha leadName={lead.nome} />
           </section>
 
           {/* Data Grid */}
