@@ -10,6 +10,44 @@ const ContratoCliente = () => {
 
   useEffect(() => {
     const fetchContrato = async () => {
+      if (slug === 'preview' || slug === 'template') {
+        const dadosFicticios = {
+          nome_cliente: 'João da Silva',
+          cpf_cliente: '123.456.789-00',
+          nacionalidade: 'brasileiro',
+          estado_civil: 'casado',
+          profissao: 'engenheiro',
+          endereco_cliente: 'Rua das Flores, 123 — São Paulo, SP',
+          endereco_imovel: 'Rua das Flores, 123 — São Paulo, SP',
+          tipo_projeto: 'ARQ+INT',
+          plano: 'Executivo',
+          area_construida: '300',
+          area_terreno: '500',
+          matricula: '12.345',
+          cartorio: '1º Cartório de Registro de Imóveis',
+          prazo_briefing: '5',
+          prazo_estudo: '15',
+          prazo_legal: '10',
+          prazo_executivo: '30',
+          prazo_semanas: '12',
+          prazo_total_dias: '65',
+          valor_total: '33.687,22',
+          valor_total_extenso: 'trinta e três mil e seiscentos e oitenta e sete reais e vinte e dois centavos',
+          marco1_valor: '10.106,17',
+          marco1_extenso: 'dez mil e cento e seis reais e dezessete centavos',
+          marco2_valor: '13.474,89',
+          marco2_extenso: 'treze mil e quatrocentos e setenta e quatro reais e oitenta e nove centavos',
+          marco3_valor: '10.106,16',
+          marco3_extenso: 'dez mil e cento e seis reais e dezesseis centavos',
+          numero: '001',
+          ano: '2026',
+          data: '25/05/2026'
+        };
+        setContrato(dadosFicticios);
+        setLoading(false);
+        return;
+      }
+
       try {
         const { data, error } = await supabase
           .from('contratos_clientes')
