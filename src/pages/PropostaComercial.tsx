@@ -353,7 +353,7 @@ const PropostaComercial = () => {
       </section>
 
       {/* 08 · ETAPAS */}
-      <section id="etapas" className="relative px-6 md:px-16 lg:px-24 py-28 bg-surface/40">
+      <section id="secao-metodo" className="relative px-6 md:px-16 lg:px-24 py-28 bg-surface/40">
         <div className="max-w-[1400px] mx-auto">
           <div className="flex items-baseline justify-between mb-12 border-b border-border/60 pb-6">
             <div className="flex items-baseline gap-6">
@@ -573,7 +573,7 @@ const PropostaComercial = () => {
       
 
       {/* 13 · INVESTIMENTO */}
-      <section id="investimento" className="relative px-6 md:px-16 lg:px-24 py-32 bg-surface/40">
+      <section id="secao-planos" className="relative px-6 md:px-16 lg:px-24 py-32 bg-surface/40">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <span className="number-marker block mb-4">13 · Investimento</span>
@@ -585,7 +585,7 @@ const PropostaComercial = () => {
               O valor é calculado com base no escopo e na complexidade do espaço. Não é preço de tabela — é o custo real de eliminar o improviso antes de a obra começar.
             </Editable>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div id="secao-valores" className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <PackageCard
               id="basic"
               tier="Plano Executivo"
