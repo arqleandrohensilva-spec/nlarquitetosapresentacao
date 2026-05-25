@@ -14,6 +14,114 @@ export type Database = {
   }
   public: {
     Tables: {
+      contratos_clientes: {
+        Row: {
+          ano: string | null
+          area_construida: string | null
+          area_terreno: string | null
+          cartorio: string | null
+          cpf_cliente: string | null
+          created_at: string | null
+          data: string | null
+          endereco_cliente: string | null
+          endereco_imovel: string | null
+          estado_civil: string | null
+          id: string
+          marco1_extenso: string | null
+          marco1_valor: string | null
+          marco2_extenso: string | null
+          marco2_valor: string | null
+          marco3_extenso: string | null
+          marco3_valor: string | null
+          matricula: string | null
+          nacionalidade: string | null
+          nome_cliente: string | null
+          numero: string | null
+          plano: string | null
+          prazo_briefing: string | null
+          prazo_estudo: string | null
+          prazo_executivo: string | null
+          prazo_legal: string | null
+          prazo_semanas: string | null
+          prazo_total_dias: string | null
+          profissao: string | null
+          slug: string
+          tipo_projeto: string | null
+          valor_total: string | null
+          valor_total_extenso: string | null
+        }
+        Insert: {
+          ano?: string | null
+          area_construida?: string | null
+          area_terreno?: string | null
+          cartorio?: string | null
+          cpf_cliente?: string | null
+          created_at?: string | null
+          data?: string | null
+          endereco_cliente?: string | null
+          endereco_imovel?: string | null
+          estado_civil?: string | null
+          id?: string
+          marco1_extenso?: string | null
+          marco1_valor?: string | null
+          marco2_extenso?: string | null
+          marco2_valor?: string | null
+          marco3_extenso?: string | null
+          marco3_valor?: string | null
+          matricula?: string | null
+          nacionalidade?: string | null
+          nome_cliente?: string | null
+          numero?: string | null
+          plano?: string | null
+          prazo_briefing?: string | null
+          prazo_estudo?: string | null
+          prazo_executivo?: string | null
+          prazo_legal?: string | null
+          prazo_semanas?: string | null
+          prazo_total_dias?: string | null
+          profissao?: string | null
+          slug: string
+          tipo_projeto?: string | null
+          valor_total?: string | null
+          valor_total_extenso?: string | null
+        }
+        Update: {
+          ano?: string | null
+          area_construida?: string | null
+          area_terreno?: string | null
+          cartorio?: string | null
+          cpf_cliente?: string | null
+          created_at?: string | null
+          data?: string | null
+          endereco_cliente?: string | null
+          endereco_imovel?: string | null
+          estado_civil?: string | null
+          id?: string
+          marco1_extenso?: string | null
+          marco1_valor?: string | null
+          marco2_extenso?: string | null
+          marco2_valor?: string | null
+          marco3_extenso?: string | null
+          marco3_valor?: string | null
+          matricula?: string | null
+          nacionalidade?: string | null
+          nome_cliente?: string | null
+          numero?: string | null
+          plano?: string | null
+          prazo_briefing?: string | null
+          prazo_estudo?: string | null
+          prazo_executivo?: string | null
+          prazo_legal?: string | null
+          prazo_semanas?: string | null
+          prazo_total_dias?: string | null
+          profissao?: string | null
+          slug?: string
+          tipo_projeto?: string | null
+          valor_total?: string | null
+          valor_total_extenso?: string | null
+        }
+        Relationships: []
+      }
       proposta_engajamento: {
         Row: {
           criado_em: string

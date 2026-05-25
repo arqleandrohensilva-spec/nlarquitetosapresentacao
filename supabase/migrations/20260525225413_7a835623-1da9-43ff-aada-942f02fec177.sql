@@ -1,0 +1,38 @@
+CREATE TABLE IF NOT EXISTS contratos_clientes (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  slug TEXT NOT NULL UNIQUE,
+  nome_cliente TEXT,
+  cpf_cliente TEXT,
+  nacionalidade TEXT DEFAULT 'brasileiro(a)',
+  estado_civil TEXT,
+  profissao TEXT,
+  endereco_cliente TEXT,
+  endereco_imovel TEXT,
+  tipo_projeto TEXT,
+  plano TEXT DEFAULT 'Executivo',
+  area_construida TEXT,
+  area_terreno TEXT,
+  matricula TEXT,
+  cartorio TEXT,
+  prazo_briefing TEXT DEFAULT '5',
+  prazo_estudo TEXT DEFAULT '15',
+  prazo_legal TEXT DEFAULT '10',
+  prazo_executivo TEXT DEFAULT '30',
+  prazo_semanas TEXT DEFAULT '12',
+  prazo_total_dias TEXT DEFAULT '65',
+  valor_total TEXT,
+  valor_total_extenso TEXT,
+  marco1_valor TEXT,
+  marco1_extenso TEXT,
+  marco2_valor TEXT,
+  marco2_extenso TEXT,
+  marco3_valor TEXT,
+  marco3_extenso TEXT,
+  numero TEXT DEFAULT '001',
+  ano TEXT,
+  data TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Disable Row Level Security as per previous pattern requested by user
+ALTER TABLE contratos_clientes DISABLE ROW LEVEL SECURITY;

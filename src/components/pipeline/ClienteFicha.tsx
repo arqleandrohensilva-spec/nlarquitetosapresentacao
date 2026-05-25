@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { createClient } from "@supabase/supabase-js";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
+import { Button } from "@/components/ui/button";
+import { FileCheck, Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 const nlSupabase = createClient(
   "https://krzuroijejfozljhchok.supabase.co",
@@ -11,9 +15,31 @@ interface ClienteFichaProps {
   leadName: string;
 }
 
+const slugify = (text: string) => {
+  return text
+    .toString()
+    .normalize('NFD')
+    .replace(/[\\u0300-\\u036f]/g, '')
+    .toLowerCase()
+    .trim()
+    .replace(/\\s+/g, '-')
+    .replace(/[^\\w-]+/g, '')
+    .replace(/--+/g, '-');
+};
+
+const valorPorExtenso = (valorStr: string): string => {
+  const valor = parseFloat(valorStr.replace(/[\\sR$.]/g, '').replace(',', '.')) || 0;
+  if (valor === 0) return 'zero reais';
+  
+  // Implementação simplificada para o exemplo, em produção usar biblioteca como 'extenso'
+  return `${valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} reais`;
+};
+
 const ClienteFicha = ({ leadName }: ClienteFichaProps) => {
   const [stats, setStats] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [generatingContract, setGeneratingContract] = useState(false);
+  const [propostaId, setPropostaId] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchStats = async () => {
@@ -26,6 +52,7 @@ const ClienteFicha = ({ leadName }: ClienteFichaProps) => {
 
         if (propostas && propostas.length > 0) {
           const proposalId = propostas[0].id;
+          setPropostaId(proposalId);
 
           // 2. Buscar as visualizações dessa proposta
           const { data: views } = await nlSupabase
@@ -86,6 +113,87 @@ const ClienteFicha = ({ leadName }: ClienteFichaProps) => {
 
   const maxTime = Math.max(...secoesData.map(s => s.time), 1);
 
+  const handleGerarContrato = async () => {
+    try {
+      setGeneratingContract(true);
+      
+      // 1. Buscar dados completos do Lead e Proposta
+      const { data: leadData } = await nlSupabase
+        .from("leads")
+        .select("*")
+        .ilike("nome", `%${leadName}%`)
+        .single();
+
+      if (!leadData) throw new Error("Lead não encontrado");
+
+      const { data: propData } = await nlSupabase
+        .from("proposals")
+        .select("*, calculos_proposta(*)")
+        .eq("id", propostaId)
+        .single();
+
+      if (!propData) throw new Error("Proposta não encontrada");
+
+      const calculo = propData.calculos_proposta?.[0];
+      const valorTotalNum = propData.tipo === 'Completo' ? (calculo?.valor_completo || 0) : (calculo?.valor_executivo || 0);
+      const valorTotal = valorTotalNum.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+      
+      const marco1Val = Math.round(valorTotalNum * 0.3);
+      const marco2Val = Math.round(valorTotalNum * 0.4);
+      const marco3Val = valorTotalNum - marco1Val - marco2Val;
+
+      const ano = new Date().getFullYear();
+      const slug = `${slugify(leadName)}-contrato-${ano}`;
+      const dataHoje = new Date().toLocaleDateString('pt-BR');
+
+      // 2. Salvar no Supabase externo
+      const { error: insertError } = await supabase
+        .from('contratos_clientes')
+        .insert({
+          slug,
+          nome_cliente: leadData.nome,
+          cpf_cliente: leadData.cpf || "[CPF]",
+          nacionalidade: leadData.nacionalidade || "brasileiro(a)",
+          estado_civil: leadData.estado_civil || "[Estado Civil]",
+          profissao: leadData.profissao || "[Profissão]",
+          endereco_cliente: leadData.cidade ? `${leadData.cidade}${leadData.estado ? ` - ${leadData.estado}` : ''}` : "[Endereço Cliente]",
+          endereco_imovel: propData.cidade || "[Endereço Imóvel]",
+          tipo_projeto: propData.tipo || "ARQ+INT",
+          plano: propData.plano || "Executivo",
+          area_construida: propData.area?.toString() || "[Área]",
+          area_terreno: "[Área Terreno]",
+          prazo_briefing: "5",
+          prazo_estudo: "15",
+          prazo_legal: "10",
+          prazo_executivo: "30",
+          prazo_semanas: "12",
+          prazo_total_dias: "65",
+          valor_total: valorTotal,
+          valor_total_extenso: valorPorExtenso(valorTotal),
+          marco1_valor: marco1Val.toLocaleString('pt-BR', { minimumFractionDigits: 2 }),
+          marco1_extenso: valorPorExtenso(marco1Val.toString()),
+          marco2_valor: marco2Val.toLocaleString('pt-BR', { minimumFractionDigits: 2 }),
+          marco2_extenso: valorPorExtenso(marco2Val.toString()),
+          marco3_valor: marco3Val.toLocaleString('pt-BR', { minimumFractionDigits: 2 }),
+          marco3_extenso: valorPorExtenso(marco3Val.toString()),
+          numero: "001",
+          ano: ano.toString(),
+          data: dataHoje
+        });
+
+      if (insertError) throw insertError;
+
+      toast.success("Contrato gerado com sucesso!");
+      window.open(`https://proposta.nl.arq.br/contrato/${slug}`, '_blank');
+
+    } catch (err: any) {
+      console.error("Erro ao gerar contrato:", err);
+      toast.error(`Erro: ${err.message || "Falha ao gerar contrato"}`);
+    } finally {
+      setGeneratingContract(false);
+    }
+  };
+
   return (
     <div className="space-y-6 animate-in fade-in duration-500">
       <div className="flex items-center justify-between">
@@ -122,6 +230,22 @@ const ClienteFicha = ({ leadName }: ClienteFichaProps) => {
             Aguardando análise de navegação...
           </p>
         )}
+      </div>
+
+      <div className="pt-2">
+        <Button 
+          onClick={handleGerarContrato}
+          disabled={generatingContract || !propostaId}
+          variant="outline"
+          className="w-full border-[#8B7355]/30 text-[#8B7355] hover:bg-[#8B7355]/5 text-[10px] font-mono uppercase tracking-widest h-9 rounded-none"
+        >
+          {generatingContract ? (
+            <Loader2 className="w-3 h-3 mr-2 animate-spin" />
+          ) : (
+            <FileCheck className="w-3 h-3 mr-2" />
+          )}
+          Gerar Contrato
+        </Button>
       </div>
     </div>
   );
