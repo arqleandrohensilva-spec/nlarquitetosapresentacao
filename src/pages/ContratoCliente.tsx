@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
-import { Loader2, FileText, Calendar, Wallet, Layers, MapPin, Printer } from 'lucide-react';
+import { Loader2, FileText, Calendar, Wallet, Layers, MapPin, Printer, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const ContratoCliente = () => {
@@ -62,27 +62,21 @@ const ContratoCliente = () => {
   }, [slug]);
 
   if (loading) return (
-    <div className="min-h-screen bg-[#FDFDFD] flex items-center justify-center">
+    <div className="min-h-screen bg-[#0A0A0A] flex items-center justify-center">
       <Loader2 className="w-8 h-8 text-[#8B7355] animate-spin" />
     </div>
   );
 
   if (!contrato) return (
-    <div className="min-h-screen bg-[#FDFDFD] flex items-center justify-center text-[#8B7355] font-mono uppercase tracking-widest text-[10px]">
+    <div className="min-h-screen bg-[#0A0A0A] flex items-center justify-center text-[#8B7355] font-mono uppercase tracking-widest text-[10px]">
       Contrato não encontrado
     </div>
   );
 
-  const tipoArqInt = contrato.tipo_projeto === 'ARQ+INT' ? '▣' : '▢';
-  const tipoInteriores = contrato.tipo_projeto === 'Interiores' ? '▣' : '▢';
-  const tipoComercial = contrato.tipo_projeto === 'Comercial' ? '▣' : '▢';
-  const planoExecutivo = contrato.plano !== 'Completo' ? '▣' : '▢';
-  const planoCompleto = contrato.plano === 'Completo' ? '▣' : '▢';
-
   return (
-    <div className="bg-[#F4F4F4] min-h-screen text-[#1A1A1A] font-sans selection:bg-[#8B7355] selection:text-white">
+    <div className="bg-[#0A0A0A] min-h-screen text-[#E8E4DF] font-sans selection:bg-[#8B7355] selection:text-white pb-20">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
         
         .font-serif { font-family: 'Cormorant Garamond', serif; }
         .font-sans { font-family: 'Inter', sans-serif; }
@@ -90,263 +84,289 @@ const ContratoCliente = () => {
 
         @media print { 
           body { background: white !important; } 
-          .contrato-container { box-shadow: none !important; margin: 0 !important; width: 100% !important; max-width: 100% !important; border: none !important; } 
+          .contrato-container { box-shadow: none !important; margin: 0 !important; width: 100% !important; max-width: 100% !important; border: none !important; background: white !important; color: black !important; } 
           [data-pdf-hide] { display: none !important; }
           .page-break { page-break-before: always; }
           .no-break { page-break-inside: avoid; }
+          .bg-premium-dark { background: white !important; }
+          .text-premium-bronze { color: #8B7355 !important; }
+          .border-premium { border-color: #8B7355 !important; }
+          h1, h2, h3, h4, p, span, b, strong { color: black !important; }
         }
 
-        .border-fine { border: 0.5px solid rgba(0,0,0,0.1); }
-        .grid-technical { background-image: radial-gradient(circle, #D1D1D1 0.5px, transparent 0.5px); background-size: 20px 20px; }
+        .bg-premium-dark { background-color: #0A0A0A; }
+        .text-premium-bronze { color: #8B7355; }
+        .border-premium { border-color: rgba(139, 115, 85, 0.2); }
+        .technical-grid { background-image: radial-gradient(circle, rgba(139, 115, 85, 0.15) 0.5px, transparent 0.5px); background-size: 30px 30px; }
       `}</style>
 
-      {/* Floating Action Bar */}
-      <div data-pdf-hide className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 bg-white/80 backdrop-blur-md p-2 rounded-full border border-black/10 shadow-2xl">
+      {/* Premium Floating Action Bar */}
+      <div data-pdf-hide className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-4 bg-black/40 backdrop-blur-xl p-2 pl-6 rounded-full border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all hover:scale-[1.02]">
+        <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-white/40">NL-2026-CONTRATO</span>
         <button 
           onClick={() => window.print()} 
-          className="flex items-center gap-2 bg-[#1A1A1A] text-white px-6 py-3 rounded-full uppercase text-[10px] font-mono tracking-widest hover:bg-black transition-all"
+          className="flex items-center gap-3 bg-[#8B7355] text-white px-8 py-3.5 rounded-full uppercase text-[10px] font-mono tracking-widest hover:bg-[#A68B6A] transition-all shadow-lg active:scale-95"
         >
-          <Printer size={14} /> Imprimir Contrato
+          <Printer size={14} /> Gerar Documento PDF
         </button>
       </div>
 
-      <div className="contrato-container max-w-[900px] mx-auto bg-white min-h-screen shadow-[0_0_50px_rgba(0,0,0,0.05)] border-x border-black/5 relative overflow-hidden">
+      <div className="contrato-container max-w-[950px] mx-auto bg-premium-dark min-h-screen relative overflow-hidden border-x border-white/5">
         
-        {/* Technical Header */}
-        <div className="technical-grid absolute inset-0 opacity-[0.03] pointer-events-none" />
+        {/* Decorative elements */}
+        <div className="technical-grid absolute inset-0 opacity-40 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#8B7355]/10 blur-[150px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/2" />
         
-        <header className="p-12 lg:p-20 border-b border-black/5 relative">
-          <div className="flex justify-between items-start mb-16">
-            <div className="space-y-1">
-              <h2 className="font-serif text-3xl font-bold tracking-tight">NL ARQUITETOS</h2>
-              <p className="font-mono text-[9px] uppercase tracking-[0.4em] text-[#8B7355]">A Arquitetura como Decisão</p>
+        <header className="p-12 lg:p-24 relative border-b border-premium">
+          <div className="flex justify-between items-start mb-24">
+            <div className="space-y-2">
+              <h2 className="font-serif text-4xl font-bold tracking-tighter">NL<span className="text-premium-bronze">.</span></h2>
+              <p className="font-mono text-[9px] uppercase tracking-[0.5em] text-premium-bronze font-medium">A Arquitetura como Decisão</p>
             </div>
-            <div className="text-right space-y-1">
-              <p className="font-mono text-[9px] uppercase tracking-widest text-black/40">Contrato Nº</p>
-              <p className="font-mono text-xs font-medium">NL-{contrato.ano}-{contrato.numero}</p>
+            <div className="text-right space-y-1 bg-white/5 p-4 border border-white/10 rounded-sm">
+              <p className="font-mono text-[8px] uppercase tracking-[0.2em] text-white/30">Nº de Protocolo</p>
+              <p className="font-mono text-xs text-premium-bronze font-semibold">NL-{contrato.ano}-{contrato.numero}</p>
             </div>
           </div>
 
-          <h1 className="font-serif text-5xl lg:text-6xl font-light mb-4 leading-tight">Instrumento Particular de<br/><span className="italic">Prestação de Serviços.</span></h1>
-          <p className="font-sans text-xs text-black/50 uppercase tracking-[0.2em] max-w-md">Contrato técnico especializado para desenvolvimento de projetos de arquitetura e design de interiores.</p>
+          <div className="max-w-2xl">
+            <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-premium-bronze mb-6 block font-semibold">Instrumento Jurídico Particular</span>
+            <h1 className="font-serif text-6xl lg:text-7xl font-light mb-8 leading-[0.95] text-white">Contrato de<br/><span className="italic font-normal">Serviços Técnicos.</span></h1>
+            <div className="w-20 h-0.5 bg-[#8B7355] mb-8" />
+            <p className="font-sans text-sm text-white/50 leading-relaxed max-w-md">Desenvolvimento de projeto executivo com compatibilização técnica e validação antecipada.</p>
+          </div>
         </header>
 
-        {/* Dashboard de Dados */}
-        <div className="grid grid-cols-1 md:grid-cols-3 border-b border-black/5">
-          <div className="p-8 border-r border-black/5 flex flex-col gap-4">
-            <div className="flex items-center gap-2 text-[#8B7355]">
-              <FileText size={14} />
+        {/* Dashboard Premium */}
+        <div className="grid grid-cols-1 md:grid-cols-4 border-b border-premium">
+          <div className="p-10 border-r border-premium flex flex-col gap-6">
+            <div className="flex items-center gap-3 text-premium-bronze opacity-60">
+              <FileText size={16} />
               <span className="font-mono text-[9px] uppercase tracking-widest font-bold">Contratante</span>
             </div>
             <div>
-              <p className="font-serif text-xl leading-tight">{contrato.nome_cliente}</p>
-              <p className="font-mono text-[10px] text-black/40 mt-1 uppercase tracking-tight">CPF: {contrato.cpf_cliente}</p>
+              <p className="font-serif text-2xl text-white leading-tight mb-2">{contrato.nome_cliente}</p>
+              <p className="font-mono text-[10px] text-white/30 uppercase tracking-tight">CPF: {contrato.cpf_cliente}</p>
             </div>
           </div>
           
-          <div className="p-8 border-r border-black/5 flex flex-col gap-4">
-            <div className="flex items-center gap-2 text-[#8B7355]">
-              <Layers size={14} />
-              <span className="font-mono text-[9px] uppercase tracking-widest font-bold">Escopo</span>
+          <div className="p-10 border-r border-premium flex flex-col gap-6">
+            <div className="flex items-center gap-3 text-premium-bronze opacity-60">
+              <Layers size={16} />
+              <span className="font-mono text-[9px] uppercase tracking-widest font-bold">Natureza</span>
             </div>
-            <div className="space-y-1">
-              <div className="flex items-center gap-3 font-mono text-[10px] uppercase">
-                <span className="text-[#8B7355] text-sm leading-none">{tipoArqInt}</span> Residencial
-              </div>
-              <div className="flex items-center gap-3 font-mono text-[10px] uppercase">
-                <span className="text-[#8B7355] text-sm leading-none">{tipoInteriores}</span> Interiores
-              </div>
-              <div className="flex items-center gap-3 font-mono text-[10px] uppercase">
-                <span className="text-[#8B7355] text-sm leading-none">{tipoComercial}</span> Comercial
+            <div className="space-y-2">
+              <p className="font-sans text-xs text-white/80 uppercase tracking-widest font-medium">Projeto {contrato.tipo_projeto}</p>
+              <div className="px-3 py-1 bg-white/5 border border-white/10 inline-block">
+                <span className="font-mono text-[9px] text-premium-bronze uppercase tracking-widest">Plano {contrato.plano}</span>
               </div>
             </div>
           </div>
 
-          <div className="p-8 flex flex-col gap-4">
-            <div className="flex items-center gap-2 text-[#8B7355]">
-              <Wallet size={14} />
+          <div className="p-10 border-r border-premium flex flex-col gap-6">
+            <div className="flex items-center gap-3 text-premium-bronze opacity-60">
+              <Wallet size={16} />
               <span className="font-mono text-[9px] uppercase tracking-widest font-bold">Investimento</span>
             </div>
             <div>
-              <p className="font-serif text-xl leading-tight">R$ {contrato.valor_total}</p>
-              <p className="font-mono text-[10px] text-black/40 mt-1 uppercase tracking-tight italic">({contrato.valor_total_extenso})</p>
+              <p className="font-serif text-2xl text-white leading-tight mb-1">R$ {contrato.valor_total}</p>
+              <p className="font-mono text-[9px] text-white/30 uppercase tracking-tighter italic leading-snug">Parcelamento via Marcos Técnicos</p>
+            </div>
+          </div>
+
+          <div className="p-10 flex flex-col gap-6 bg-white/[0.02]">
+            <div className="flex items-center gap-3 text-premium-bronze opacity-60">
+              <ShieldCheck size={16} />
+              <span className="font-mono text-[9px] uppercase tracking-widest font-bold">Status</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#8B7355] animate-pulse" />
+              <p className="font-mono text-[10px] text-premium-bronze uppercase tracking-widest font-bold">Aguardando Aceite</p>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 border-b border-black/5">
-          <div className="p-8 border-r border-black/5 flex flex-col gap-4">
-            <div className="flex items-center gap-2 text-[#8B7355]">
-              <MapPin size={14} />
-              <span className="font-mono text-[9px] uppercase tracking-widest font-bold">Local do Imóvel</span>
-            </div>
-            <p className="font-sans text-xs leading-relaxed text-black/70">{contrato.endereco_imovel}</p>
-          </div>
+        {/* Content Section */}
+        <div className="p-12 lg:p-24 space-y-32">
           
-          <div className="p-8 border-r border-black/5 flex flex-col gap-4">
-            <div className="flex items-center gap-2 text-[#8B7355]">
-              <Calendar size={14} />
-              <span className="font-mono text-[9px] uppercase tracking-widest font-bold">Prazo Estimado</span>
-            </div>
-            <p className="font-sans text-xs leading-relaxed text-black/70 font-medium">{contrato.prazo_semanas} semanas de desenvolvimento técnico.</p>
-          </div>
-
-          <div className="p-8 bg-[#8B7355]/[0.02] flex flex-col gap-4 justify-center items-center text-center">
-            <p className="font-serif italic text-lg leading-snug">"A NL não projeta para impressionar. Projeta para funcionar."</p>
-          </div>
-        </div>
-
-        {/* Content Body */}
-        <div className="p-12 lg:p-20 space-y-20">
-          
-          {/* Summary / Sitemap */}
-          <section className="no-break">
-            <h3 className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#8B7355] mb-8 font-bold flex items-center gap-4">
-              <span className="w-8 h-px bg-[#8B7355]/30"></span> Sumário Técnico
-            </h3>
-            <div className="grid grid-cols-2 gap-x-12 gap-y-2 text-[10px] font-mono uppercase text-black/60">
-              <p className="flex justify-between border-b border-black/5 pb-1"><span>01. DAS PARTES</span> <span>03</span></p>
-              <p className="flex justify-between border-b border-black/5 pb-1"><span>02. DO OBJETO</span> <span>04</span></p>
-              <p className="flex justify-between border-b border-black/5 pb-1"><span>03. DOS SERVIÇOS</span> <span>05</span></p>
-              <p className="flex justify-between border-b border-black/5 pb-1"><span>04. DOS PRAZOS</span> <span>07</span></p>
-              <p className="flex justify-between border-b border-black/5 pb-1"><span>05. DAS ALTERAÇÕES</span> <span>09</span></p>
-              <p className="flex justify-between border-b border-black/5 pb-1"><span>06. DOS HONORÁRIOS</span> <span>12</span></p>
-              <p className="flex justify-between border-b border-black/5 pb-1"><span>07. DIREITOS AUTORAIS</span> <span>15</span></p>
-              <p className="flex justify-between border-b border-black/5 pb-1"><span>08. RESP. TÉCNICA</span> <span>18</span></p>
+          {/* Summary Section */}
+          <section className="no-break max-w-2xl">
+            <h3 className="font-serif text-3xl italic text-premium-bronze mb-12">Sumário Executivo</h3>
+            <div className="space-y-4">
+              {[
+                { n: '01', t: 'Identificação das Partes', p: '03' },
+                { n: '02', t: 'Objeto da Prestação de Serviço', p: '04' },
+                { n: '03', t: 'Cronograma e Marcos de Entrega', p: '06' },
+                { n: '04', t: 'Honorários e Condições Financeiras', p: '08' },
+                { n: '05', t: 'Propriedade Intelectual', p: '10' },
+                { n: '06', t: 'Termos de Rescisão', p: '12' },
+              ].map((item) => (
+                <div key={item.n} className="group flex justify-between items-end border-b border-white/5 pb-2 transition-colors hover:border-premium">
+                  <div className="flex items-baseline gap-4">
+                    <span className="font-mono text-[10px] text-premium-bronze">{item.n}</span>
+                    <span className="font-sans text-xs uppercase tracking-widest text-white/60 group-hover:text-white">{item.t}</span>
+                  </div>
+                  <span className="font-mono text-[10px] text-white/20 italic">{item.p}</span>
+                </div>
+              ))}
             </div>
           </section>
 
           <div className="page-break" />
 
-          {/* Legal Text */}
-          <article className="space-y-16">
-            <header className="border-b border-black pb-8 text-center no-break">
-              <p className="font-mono text-[10px] uppercase tracking-[0.5em] mb-4">Corpo Jurídico do Instrumento</p>
-              <h2 className="font-serif text-3xl italic">Cláusulas e Condições Gerais</h2>
-            </header>
+          {/* Legal Document Header */}
+          <header className="text-center no-break py-20 border-y border-premium bg-white/[0.01]">
+            <p className="font-mono text-[10px] uppercase tracking-[1em] text-white/30 mb-8">Cláusulas e Condições</p>
+            <h2 className="font-serif text-5xl font-light text-white">Termos de<br/><span className="italic font-normal">Contratação Técnica.</span></h2>
+          </header>
 
-            <section className="space-y-6 no-break">
-              <div className="flex items-baseline gap-4">
-                <span className="font-mono text-[10px] text-[#8B7355] font-bold">CLÁUSULA 01</span>
-                <h4 className="font-serif text-xl font-bold uppercase tracking-wide border-b border-black/10 flex-1 pb-1">Das Partes Envolvidas</h4>
+          {/* Clauses with Premium Treatment */}
+          <div className="space-y-32">
+            
+            {/* Clause 01 */}
+            <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 no-break">
+              <div className="lg:col-span-4 sticky top-12 self-start">
+                <span className="font-mono text-[10px] font-bold text-premium-bronze uppercase tracking-[0.4em] mb-4 block">Cláusula 01</span>
+                <h4 className="font-serif text-3xl text-white italic">As Partes</h4>
+                <div className="w-12 h-px bg-premium-bronze mt-6 opacity-30" />
               </div>
-              <div className="grid grid-cols-1 gap-8 text-xs leading-relaxed font-sans text-black/80">
-                <div className="p-6 bg-black/[0.01] border border-black/5 rounded-sm">
-                  <p className="font-bold text-black uppercase text-[9px] tracking-widest mb-2 opacity-40 italic">O Contratante</p>
-                  <p><b>{contrato.nome_cliente.toUpperCase()}</b>, {contrato.nacionalidade}, {contrato.estado_civil}, {contrato.profissao}, portador do CPF nº {contrato.cpf_cliente}, residente e domiciliado em {contrato.endereco_cliente}.</p>
+              <div className="lg:col-span-8 space-y-8">
+                <div className="p-8 bg-white/[0.02] border border-white/5 rounded-sm space-y-4">
+                  <p className="font-mono text-[9px] uppercase tracking-widest text-premium-bronze font-bold">O Contratante</p>
+                  <p className="font-sans text-sm leading-relaxed text-white/80"><b>{contrato.nome_cliente.toUpperCase()}</b>, {contrato.nacionalidade}, {contrato.estado_civil}, {contrato.profissao}, titular do CPF nº {contrato.cpf_cliente}, residente em {contrato.endereco_cliente}.</p>
                 </div>
-                <div className="p-6 bg-black/[0.01] border border-black/5 rounded-sm">
-                  <p className="font-bold text-black uppercase text-[9px] tracking-widest mb-2 opacity-40 italic">A Contratada</p>
-                  <p><b>LEANDRO HENRIQUE DA SILVA</b> (CAU A252250-0) e <b>NEANDRO JACQUE GARCIA</b> (CAU A264629-3), arquitetos e urbanistas, atuando sob a denominação fantasia <b>NL ARQUITETOS</b>.</p>
+                <div className="p-8 bg-white/[0.02] border border-white/5 rounded-sm space-y-4">
+                  <p className="font-mono text-[9px] uppercase tracking-widest text-premium-bronze font-bold">A Contratada</p>
+                  <p className="font-sans text-sm leading-relaxed text-white/80"><b>LEANDRO HENRIQUE DA SILVA</b> (CAU A252250-0) e <b>NEANDRO JACQUE GARCIA</b> (CAU A264629-3), arquitetos e urbanistas, sob a denominação fantasia <b>NL ARQUITETOS</b>.</p>
                 </div>
               </div>
             </section>
 
-            <section className="space-y-6 no-break">
-              <div className="flex items-baseline gap-4">
-                <span className="font-mono text-[10px] text-[#8B7355] font-bold">CLÁUSULA 02</span>
-                <h4 className="font-serif text-xl font-bold uppercase tracking-wide border-b border-black/10 flex-1 pb-1">Do Objeto</h4>
+            {/* Clause 02 */}
+            <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 no-break">
+              <div className="lg:col-span-4 sticky top-12 self-start">
+                <span className="font-mono text-[10px] font-bold text-premium-bronze uppercase tracking-[0.4em] mb-4 block">Cláusula 02</span>
+                <h4 className="font-serif text-3xl text-white italic">O Objeto</h4>
+                <div className="w-12 h-px bg-premium-bronze mt-6 opacity-30" />
               </div>
-              <p className="text-xs leading-relaxed text-black/80">2.1 O presente contrato tem por objeto a prestação de serviços técnicos profissionais de arquitetura pelos CONTRATADOS ao CONTRATANTE, compreendendo o desenvolvimento de projetos e/ou serviços relacionados à arquitetura e interiores conforme modalidade indicada na folha de rosto deste instrumento.</p>
-              <p className="text-xs leading-relaxed text-black/80">2.2 O escopo detalhado, entregáveis e especificações técnicas de cada fase de projeto estão minuciosamente descritos no <b>ANEXO I</b>, parte integrante e inseparável deste contrato.</p>
+              <div className="lg:col-span-8 space-y-6 text-sm font-sans text-white/70 leading-relaxed text-justify">
+                <p>2.1 O objeto do presente instrumento é a prestação de serviços intelectuais de arquitetura para o imóvel localizado em <span className="text-white font-medium">{contrato.endereco_imovel}</span>, abrangendo desde a concepção criativa até o detalhamento técnico executivo.</p>
+                <p>2.2 A prestação de serviço é estritamente vinculada ao escopo técnico definido no <b>Anexo I</b>, garantindo a conformidade normativa e a disciplina estética característica da NL Arquitetos.</p>
+              </div>
             </section>
 
-            <section className="space-y-6 no-break">
-              <div className="flex items-baseline gap-4">
-                <span className="font-mono text-[10px] text-[#8B7355] font-bold">CLÁUSULA 03</span>
-                <h4 className="font-serif text-xl font-bold uppercase tracking-wide border-b border-black/10 flex-1 pb-1">Dos Serviços e Prazos</h4>
+            {/* Clause 03 */}
+            <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 no-break">
+              <div className="lg:col-span-4 sticky top-12 self-start">
+                <span className="font-mono text-[10px] font-bold text-premium-bronze uppercase tracking-[0.4em] mb-4 block">Cláusula 03</span>
+                <h4 className="font-serif text-3xl text-white italic">Prazos e Entregas</h4>
+                <div className="w-12 h-px bg-premium-bronze mt-6 opacity-30" />
               </div>
-              <p className="text-xs leading-relaxed text-black/80">3.1 Os serviços técnicos compreendem: Levantamento de dados, elaboração de briefing, estudos preliminares, anteprojeto, projeto legal e projeto executivo técnico com detalhamentos de execução.</p>
-              <p className="text-xs leading-relaxed text-black/80">3.2 O cronograma detalhado de cada entrega e as janelas de aprovação do contratante estão especificadas no <b>ANEXO II</b>. Prazos são estimativos e contados em dias úteis a partir da entrega de documentos essenciais.</p>
+              <div className="lg:col-span-8 space-y-6 text-sm font-sans text-white/70 leading-relaxed">
+                <p>3.1 O desenvolvimento do projeto observará o cronograma estipulado no <b>Anexo II</b>, sendo os prazos contados em dias úteis a partir da entrega de toda a documentação solicitada pelo escritório.</p>
+                <p>3.2 Eventuais revisões solicitadas pelo Contratante fora das janelas de aprovação estipuladas poderão acarretar em ajustes proporcionais no cronograma final de entrega.</p>
+              </div>
             </section>
 
-            <section className="space-y-6 no-break">
-              <div className="flex items-baseline gap-4">
-                <span className="font-mono text-[10px] text-[#8B7355] font-bold">CLÁUSULA 04</span>
-                <h4 className="font-serif text-xl font-bold uppercase tracking-wide border-b border-black/10 flex-1 pb-1">Honorários e Pagamento</h4>
+            {/* Clause 04 */}
+            <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 no-break">
+              <div className="lg:col-span-4 sticky top-12 self-start">
+                <span className="font-mono text-[10px] font-bold text-premium-bronze uppercase tracking-[0.4em] mb-4 block">Cláusula 04</span>
+                <h4 className="font-serif text-3xl text-white italic">Investimento</h4>
+                <div className="w-12 h-px bg-premium-bronze mt-6 opacity-30" />
               </div>
-              <p className="text-xs leading-relaxed text-black/80 italic border-l-2 border-[#8B7355]/30 pl-4 py-1">"O valor pactuado reflete a expertise técnica e a responsabilidade civil assumida pelo escritório sobre as soluções arquitetônicas propostas."</p>
-              <p className="text-xs leading-relaxed text-black/80">4.1 O pagamento será processado em marcos técnicos: 30% na assinatura (Entrada), 40% na aprovação do Anteprojeto e 30% na entrega do Projeto Executivo Final. Detalhamento de valores disponível no <b>ANEXO III</b>.</p>
-            </section>
-
-            <section className="space-y-6 no-break">
-              <div className="flex items-baseline gap-4">
-                <span className="font-mono text-[10px] text-[#8B7355] font-bold">CLÁUSULA 05</span>
-                <h4 className="font-serif text-xl font-bold uppercase tracking-wide border-b border-black/10 flex-1 pb-1">Disposições Finais</h4>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[10px] uppercase font-mono tracking-tight text-black/50">
-                <p>Direitos autorais preservados conforme Lei 9.610/98. Vedada a reprodução parcial ou total para execução em outro local sem prévia anuência.</p>
-                <p>Foro eleito: Comarca de São José dos Campos, SP. O presente contrato constitui título executivo extrajudicial.</p>
+              <div className="lg:col-span-8 space-y-8">
+                <p className="text-sm font-sans text-white/70 leading-relaxed">4.1 Em contrapartida aos serviços prestados, o Contratante pagará o valor total de <span className="text-premium-bronze font-bold">R$ {contrato.valor_total}</span>, conforme a modalidade de marcos técnicos detalhada no <b>Anexo III</b>.</p>
+                <div className="bg-[#8B7355]/5 border-l-4 border-premium p-8 italic font-serif text-lg text-white/90">
+                  "O investimento no projeto executivo é a garantia de previsibilidade financeira e controle absoluto sobre o canteiro de obras."
+                </div>
               </div>
             </section>
 
             {/* Signature Area */}
-            <div className="mt-32 pt-20 border-t border-black/10 no-break">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-                <div className="space-y-4 text-center">
-                  <div className="h-px bg-black w-full"></div>
-                  <p className="font-serif italic text-xl">{contrato.nome_cliente}</p>
-                  <p className="font-mono text-[9px] uppercase tracking-widest opacity-40">Contratante</p>
+            <div className="mt-40 pt-24 border-t border-premium no-break">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-24">
+                <div className="space-y-6 text-center">
+                  <div className="h-px bg-white/20 w-full mb-8"></div>
+                  <p className="font-serif italic text-3xl text-white">{contrato.nome_cliente}</p>
+                  <p className="font-mono text-[9px] uppercase tracking-[0.4em] text-premium-bronze font-bold">Contratante</p>
                 </div>
-                <div className="space-y-16">
-                  <div className="space-y-4 text-center">
-                    <div className="h-px bg-black w-full"></div>
-                    <p className="font-serif italic text-xl">Leandro Henrique da Silva</p>
-                    <p className="font-mono text-[9px] uppercase tracking-widest opacity-40">Arquiteto Responsável</p>
+                <div className="space-y-20">
+                  <div className="space-y-6 text-center">
+                    <div className="h-px bg-white/20 w-full mb-8"></div>
+                    <p className="font-serif italic text-3xl text-white">Leandro Henrique da Silva</p>
+                    <p className="font-mono text-[9px] uppercase tracking-[0.4em] text-premium-bronze font-bold">Arquiteto Responsável</p>
                   </div>
-                  <div className="space-y-4 text-center pt-8">
-                    <div className="h-px bg-black w-full"></div>
-                    <p className="font-serif italic text-xl">Neandro Jacque Garcia</p>
-                    <p className="font-mono text-[9px] uppercase tracking-widest opacity-40">Arquiteto Responsável</p>
+                  <div className="space-y-6 text-center">
+                    <div className="h-px bg-white/20 w-full mb-8"></div>
+                    <p className="font-serif italic text-3xl text-white">Neandro Jacque Garcia</p>
+                    <p className="font-mono text-[9px] uppercase tracking-[0.4em] text-premium-bronze font-bold">Arquiteto Responsável</p>
                   </div>
                 </div>
               </div>
               
-              <div className="mt-20 grid grid-cols-2 gap-20 opacity-30">
-                <div className="border-t border-black pt-2 text-[8px] font-mono uppercase tracking-widest text-center">Testemunha 01</div>
-                <div className="border-t border-black pt-2 text-[8px] font-mono uppercase tracking-widest text-center">Testemunha 02</div>
+              <div className="mt-32 flex justify-center gap-32 opacity-20 no-break">
+                <div className="text-center">
+                  <div className="w-48 h-px bg-white mb-3"></div>
+                  <p className="font-mono text-[8px] uppercase tracking-widest">Testemunha 01</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-48 h-px bg-white mb-3"></div>
+                  <p className="font-mono text-[8px] uppercase tracking-widest">Testemunha 02</p>
+                </div>
               </div>
 
-              <p className="text-center mt-20 font-mono text-[9px] uppercase tracking-[0.3em] text-[#8B7355]">NL Arquitetos  ·  S.J. Campos, SP  ·  {contrato.data}</p>
+              <div className="mt-32 text-center space-y-4">
+                <p className="font-mono text-[10px] uppercase tracking-[0.5em] text-premium-bronze font-bold">São José dos Campos, SP</p>
+                <p className="font-serif italic text-white/30">{contrato.data}</p>
+              </div>
             </div>
-          </article>
+          </div>
 
           <div className="page-break" />
 
-          {/* Anexos Section with New Tabs Styling */}
-          <section className="space-y-12">
-            <header className="no-break text-center space-y-4">
-              <span className="font-mono text-[10px] uppercase tracking-[0.5em] text-[#8B7355]">Documentação Complementar</span>
-              <h2 className="font-serif text-4xl italic">Anexos Técnicos</h2>
+          {/* Anexos with Premium Styling */}
+          <section className="space-y-16">
+            <header className="no-break text-center space-y-6">
+              <div className="inline-block px-4 py-1 border border-premium mb-4">
+                <span className="font-mono text-[9px] uppercase tracking-[0.5em] text-premium-bronze font-bold">Documentação Técnica</span>
+              </div>
+              <h2 className="font-serif text-5xl lg:text-6xl italic text-white">Anexos do<br/><span className="not-italic font-light">Instrumento.</span></h2>
             </header>
 
             <Tabs defaultValue="anexo1" className="w-full">
-              <TabsList className="w-full h-auto bg-black/[0.02] border border-black/5 p-1 flex print:hidden mb-8">
-                <TabsTrigger value="anexo1" className="flex-1 py-4 font-mono text-[9px] uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-[#8B7355] data-[state=active]:shadow-sm">Escopo</TabsTrigger>
-                <TabsTrigger value="anexo2" className="flex-1 py-4 font-mono text-[9px] uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-[#8B7355] data-[state=active]:shadow-sm">Cronograma</TabsTrigger>
-                <TabsTrigger value="anexo3" className="flex-1 py-4 font-mono text-[9px] uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-[#8B7355] data-[state=active]:shadow-sm">Pagamento</TabsTrigger>
-                <TabsTrigger value="anexo4" className="flex-1 py-4 font-mono text-[9px] uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-[#8B7355] data-[state=active]:shadow-sm">Extras</TabsTrigger>
+              <TabsList className="w-full h-auto bg-white/[0.02] border border-premium p-1 flex print:hidden mb-16 rounded-full overflow-hidden">
+                <TabsTrigger value="anexo1" className="flex-1 py-5 font-mono text-[10px] uppercase tracking-widest data-[state=active]:bg-[#8B7355] data-[state=active]:text-white rounded-full transition-all">I. Escopo</TabsTrigger>
+                <TabsTrigger value="anexo2" className="flex-1 py-5 font-mono text-[10px] uppercase tracking-widest data-[state=active]:bg-[#8B7355] data-[state=active]:text-white rounded-full transition-all">II. Prazos</TabsTrigger>
+                <TabsTrigger value="anexo3" className="flex-1 py-5 font-mono text-[10px] uppercase tracking-widest data-[state=active]:bg-[#8B7355] data-[state=active]:text-white rounded-full transition-all">III. Pagamento</TabsTrigger>
+                <TabsTrigger value="anexo4" className="flex-1 py-5 font-mono text-[10px] uppercase tracking-widest data-[state=active]:bg-[#8B7355] data-[state=active]:text-white rounded-full transition-all">IV. Condições</TabsTrigger>
               </TabsList>
 
               <TabsContent value="anexo1" className="print:block print:opacity-100">
-                <div className="p-8 lg:p-12 border border-black/5 rounded-sm bg-black/[0.01] space-y-10">
-                  <h4 className="font-serif text-2xl font-light uppercase border-b border-[#8B7355]/20 pb-4 text-[#8B7355]">ANEXO I — Definição de Escopo</h4>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-xs leading-relaxed text-black/70">
-                    <div className="space-y-4">
-                      <p className="font-mono text-[9px] uppercase font-bold text-black/30">Identificação Técnica</p>
-                      <p><b>Localização:</b> {contrato.endereco_imovel}</p>
-                      <p><b>Área de Terreno:</b> {contrato.area_terreno} m²</p>
-                      <p><b>Área Projetada Estimada:</b> {contrato.area_construida} m²</p>
-                      <p><b>Registro:</b> Matrícula {contrato.matricula} no {contrato.cartorio}</p>
+                <div className="p-12 lg:p-20 border border-premium rounded-sm bg-white/[0.01] space-y-16 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 p-8">
+                    <Layers className="text-premium-bronze opacity-20" size={60} />
+                  </div>
+                  <h4 className="font-serif text-3xl font-light uppercase border-b border-premium pb-6 text-white italic">ANEXO I — Escopo dos Serviços</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-20 text-sm leading-relaxed text-white/60">
+                    <div className="space-y-8">
+                      <div>
+                        <p className="font-mono text-[10px] uppercase font-bold text-premium-bronze mb-4 tracking-widest">Identificação Técnica</p>
+                        <div className="space-y-3 font-sans text-xs">
+                          <p className="flex justify-between border-b border-white/5 pb-2"><span>Imóvel:</span> <span className="text-white">Residencial</span></p>
+                          <p className="flex justify-between border-b border-white/5 pb-2"><span>Área de Terreno:</span> <span className="text-white">{contrato.area_terreno} m²</span></p>
+                          <p className="flex justify-between border-b border-white/5 pb-2"><span>Área Construída:</span> <span className="text-white">{contrato.area_construida} m²</span></p>
+                          <p className="flex justify-between border-b border-white/5 pb-2"><span>Matrícula:</span> <span className="text-white">{contrato.matricula}</span></p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="space-y-4">
-                      <p className="font-mono text-[9px] uppercase font-bold text-black/30">Entregáveis Oferecidos</p>
-                      <ul className="space-y-2 font-sans italic text-[11px]">
-                        <li>• Cadernos Técnicos Executivos (I a IV)</li>
-                        <li>• Mapas de Instalações Coordenados</li>
-                        <li>• Detalhamentos de Marmoraria e Marcenaria</li>
-                        <li>• Memorial Descritivo de Materiais</li>
-                        <li>• Suporte Técnico Pós-Entrega ({contrato.plano === 'Completo' ? '90' : '60'} dias)</li>
+                    <div className="space-y-8">
+                      <p className="font-mono text-[10px] uppercase font-bold text-premium-bronze mb-4 tracking-widest">Entregáveis Oferecidos</p>
+                      <ul className="space-y-4 font-sans text-xs italic">
+                        <li className="flex items-center gap-3"><CheckCircle2 size={12} className="text-premium-bronze" /> Cadernos Técnicos Executivos (I a IV)</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 size={12} className="text-premium-bronze" /> Mapas de Instalações Coordenados</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 size={12} className="text-premium-bronze" /> Detalhamentos de Marmoraria e Marcenaria</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 size={12} className="text-premium-bronze" /> Memorial Descritivo de Materiais</li>
                       </ul>
                     </div>
                   </div>
@@ -354,78 +374,80 @@ const ContratoCliente = () => {
               </TabsContent>
 
               <TabsContent value="anexo2" className="print:block print:opacity-100">
-                <div className="p-8 lg:p-12 border border-black/5 rounded-sm bg-black/[0.01] space-y-10">
-                  <h4 className="font-serif text-2xl font-light uppercase border-b border-[#8B7355]/20 pb-4 text-[#8B7355]">ANEXO II — Prazos e Etapas</h4>
-                  <div className="space-y-4 font-mono text-[10px] uppercase">
+                <div className="p-12 lg:p-20 border border-premium rounded-sm bg-white/[0.01] space-y-16">
+                  <h4 className="font-serif text-3xl font-light uppercase border-b border-premium pb-6 text-white italic">ANEXO II — Cronograma Estimado</h4>
+                  <div className="space-y-6 font-mono text-[11px] uppercase">
                     {[
-                      { l: 'Levantamento & Briefing', d: contrato.prazo_briefing },
-                      { l: 'Estudo Preliminar & Conceito', d: contrato.prazo_estudo },
-                      { l: 'Concepção Tridimensional (3D)', d: contrato.prazo_estudo },
-                      { l: 'Projeto Legal (Aprovações)', d: contrato.prazo_legal },
-                      { l: 'Projeto Executivo Técnico', d: contrato.prazo_executivo },
+                      { l: 'Levantamento & Briefing Estratégico', d: contrato.prazo_briefing },
+                      { l: 'Estudo Preliminar & Conceito Autoral', d: contrato.prazo_estudo },
+                      { l: 'Concepção Tridimensional (Render 3D)', d: contrato.prazo_estudo },
+                      { l: 'Projeto Legal & Aprovações', d: contrato.prazo_legal },
+                      { l: 'Projeto Executivo de Obra', d: contrato.prazo_executivo },
                     ].map((item, i) => (
-                      <div key={i} className="flex justify-between items-center border-b border-black/5 pb-2">
-                        <span className="text-black/40">Fase {i+1} · {item.l}</span>
-                        <span className="font-bold">{item.d} dias úteis</span>
+                      <div key={i} className="flex justify-between items-center border-b border-white/5 pb-3 transition-colors hover:border-premium/40">
+                        <span className="text-white/40">Fase {i+1} · {item.l}</span>
+                        <span className="text-white font-bold">{item.d} dias úteis</span>
                       </div>
                     ))}
-                    <div className="flex justify-between items-center pt-8 text-[#8B7355] text-sm">
-                      <span className="font-bold">Total Estimado de Desenvolvimento</span>
-                      <span className="font-bold text-xl">{contrato.prazo_total_dias} dias úteis</span>
+                    <div className="flex justify-between items-center pt-12 text-premium-bronze">
+                      <span className="font-bold tracking-widest">Tempo Total de Desenvolvimento Técnico</span>
+                      <span className="font-serif italic text-4xl">{contrato.prazo_total_dias} dias</span>
                     </div>
                   </div>
                 </div>
               </TabsContent>
 
               <TabsContent value="anexo3" className="print:block print:opacity-100">
-                <div className="p-8 lg:p-12 border border-black/5 rounded-sm bg-black/[0.01] space-y-10">
-                  <h4 className="font-serif text-2xl font-light uppercase border-b border-[#8B7355]/20 pb-4 text-[#8B7355]">ANEXO III — Detalhamento Financeiro</h4>
-                  <div className="space-y-8">
-                    <div className="flex justify-between items-end">
+                <div className="p-12 lg:p-20 border border-premium rounded-sm bg-white/[0.01] space-y-16">
+                  <h4 className="font-serif text-3xl font-light uppercase border-b border-premium pb-6 text-white italic">ANEXO III — Detalhamento Financeiro</h4>
+                  <div className="space-y-16">
+                    <div className="flex justify-between items-end border-b border-white/5 pb-10">
                       <div>
-                        <p className="font-mono text-[9px] uppercase font-bold text-black/30">Valor Bruto do Instrumento</p>
-                        <p className="font-serif text-4xl text-[#8B7355]">R$ {contrato.valor_total}</p>
+                        <p className="font-mono text-[10px] uppercase font-bold text-premium-bronze mb-4 tracking-widest">Valor Global do Contrato</p>
+                        <p className="font-serif text-6xl text-white">R$ {contrato.valor_total}</p>
                       </div>
-                      <p className="font-mono text-[10px] uppercase text-black/40 italic">Quitação via PIX, Transf. ou Cartão</p>
+                      <div className="text-right text-[10px] font-mono uppercase text-white/30 tracking-widest">
+                        <p>Vencimento: 05 dias após marco</p>
+                        <p>PIX · Transf · Cartão</p>
+                      </div>
                     </div>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                      <div className="p-4 border border-black/5 rounded-sm">
-                        <p className="font-mono text-[9px] font-bold opacity-30 uppercase mb-2">Marco 01 · 30%</p>
-                        <p className="font-sans text-xs font-semibold mb-1 text-black/80">R$ {contrato.marco1_valor}</p>
-                        <p className="text-[9px] font-mono text-black/40 uppercase">Assinatura do Contrato</p>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                      <div className="space-y-4">
+                        <p className="font-mono text-[9px] font-bold text-premium-bronze uppercase tracking-widest">Sinal (30%)</p>
+                        <p className="font-serif text-2xl text-white">R$ {contrato.marco1_valor}</p>
+                        <p className="text-[9px] font-mono text-white/30 uppercase">Na Assinatura</p>
                       </div>
-                      <div className="p-4 border border-black/5 rounded-sm">
-                        <p className="font-mono text-[9px] font-bold opacity-30 uppercase mb-2">Marco 02 · 40%</p>
-                        <p className="font-sans text-xs font-semibold mb-1 text-black/80">R$ {contrato.marco2_valor}</p>
-                        <p className="text-[9px] font-mono text-black/40 uppercase">Aprovação do Anteprojeto</p>
+                      <div className="space-y-4">
+                        <p className="font-mono text-[9px] font-bold text-premium-bronze uppercase tracking-widest">Intermediária (40%)</p>
+                        <p className="font-serif text-2xl text-white">R$ {contrato.marco2_valor}</p>
+                        <p className="text-[9px] font-mono text-white/30 uppercase">Aprovação 3D</p>
                       </div>
-                      <div className="p-4 border border-black/5 rounded-sm">
-                        <p className="font-mono text-[9px] font-bold opacity-30 uppercase mb-2">Marco 03 · 30%</p>
-                        <p className="font-sans text-xs font-semibold mb-1 text-black/80">R$ {contrato.marco3_valor}</p>
-                        <p className="text-[9px] font-mono text-black/40 uppercase">Entrega do Executivo</p>
+                      <div className="space-y-4">
+                        <p className="font-mono text-[9px] font-bold text-premium-bronze uppercase tracking-widest">Final (30%)</p>
+                        <p className="font-serif text-2xl text-white">R$ {contrato.marco3_valor}</p>
+                        <p className="text-[9px] font-mono text-white/30 uppercase">Entrega Executivo</p>
                       </div>
                     </div>
-                    <p className="text-[9px] font-mono uppercase text-black/30 text-center leading-relaxed">Multa de 2% e juros de 1% a.m. para atrasos superiores a 05 dias úteis.</p>
                   </div>
                 </div>
               </TabsContent>
 
               <TabsContent value="anexo4" className="print:block print:opacity-100">
-                <div className="p-8 lg:p-12 border border-black/5 rounded-sm bg-black/[0.01] space-y-10">
-                  <h4 className="font-serif text-2xl font-light uppercase border-b border-[#8B7355]/20 pb-4 text-[#8B7355]">ANEXO IV — Serviços Adicionais</h4>
-                  <div className="space-y-6 text-xs leading-relaxed text-black/70">
-                    <p>Ficam estabelecidos como serviços fora do escopo original base, sujeitos a orçamento suplementar:</p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-sans italic">
-                      <ul className="space-y-2">
-                        <li>• Projetos Estruturais e Fundações</li>
-                        <li>• Projetos Hidrossanitários e Elétricos</li>
-                        <li>• Gerenciamento e Fiscalização de Obra</li>
+                <div className="p-12 lg:p-20 border border-premium rounded-sm bg-white/[0.01] space-y-16">
+                  <h4 className="font-serif text-3xl font-light uppercase border-b border-premium pb-6 text-white italic">ANEXO IV — Condições Suplementares</h4>
+                  <div className="space-y-12 text-sm leading-relaxed text-white/60 font-sans">
+                    <p className="italic">Ficam estabelecidos como serviços fora do escopo original base, sujeitos a orçamentação técnica complementar:</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16 text-xs uppercase tracking-widest font-mono">
+                      <ul className="space-y-4 border-l border-premium/30 pl-6">
+                        <li>• Projetos Estruturais</li>
+                        <li>• Projetos Hidrossanitários</li>
+                        <li>• Gestão de Mão de Obra</li>
                       </ul>
-                      <ul className="space-y-2">
-                        <li>• Estudo de Viabilidade Financeira (EVF)</li>
-                        <li>• Levantamentos Topográficos Especializados</li>
-                        <li>• Visitas Técnicas Extraordinárias</li>
+                      <ul className="space-y-4 border-l border-premium/30 pl-6">
+                        <li>• Estudo Viabilidade (EVF)</li>
+                        <li>• Levantamentos Topográficos</li>
+                        <li>• Visitas Técnicas Extras</li>
                       </ul>
                     </div>
                   </div>
@@ -436,10 +458,14 @@ const ContratoCliente = () => {
         </div>
 
         {/* Footer Technical Line */}
-        <footer className="p-8 border-t border-black/5 bg-black/[0.01] flex justify-between items-center text-[8px] font-mono uppercase tracking-[0.2em] text-black/30">
-          <span>NL Arquitetos  ·  S.J. Campos, SP</span>
-          <span>Contrato NL-{contrato.ano}-{contrato.numero}  ·  v1.0</span>
-          <span>Página 01 / 01</span>
+        <footer className="p-12 border-t border-premium bg-white/[0.02] flex justify-between items-center text-[9px] font-mono uppercase tracking-[0.3em] text-white/20">
+          <div className="flex gap-8">
+            <span>NL Arquitetos  ·  S.J. Campos, SP</span>
+            <span>Versão 2026.01</span>
+          </div>
+          <div className="text-right">
+            <span>Documento NL-PRO-{contrato.ano}-{contrato.numero}</span>
+          </div>
         </footer>
 
       </div>
