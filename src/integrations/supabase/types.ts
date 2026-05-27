@@ -37,6 +37,7 @@ export type Database = {
           nacionalidade: string | null
           nome_cliente: string | null
           numero: string | null
+          pin_hash: string | null
           plano: string | null
           prazo_briefing: string | null
           prazo_estudo: string | null
@@ -72,6 +73,7 @@ export type Database = {
           nacionalidade?: string | null
           nome_cliente?: string | null
           numero?: string | null
+          pin_hash?: string | null
           plano?: string | null
           prazo_briefing?: string | null
           prazo_estudo?: string | null
@@ -107,6 +109,7 @@ export type Database = {
           nacionalidade?: string | null
           nome_cliente?: string | null
           numero?: string | null
+          pin_hash?: string | null
           plano?: string | null
           prazo_briefing?: string | null
           prazo_estudo?: string | null
@@ -208,7 +211,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      increment_proposta_acessos: { Args: { _id: string }; Returns: undefined }
     }
     Enums: {
       [_ in never]: never
