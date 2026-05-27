@@ -303,7 +303,7 @@ const ContratoCliente = () => {
         </div>
         <div
           style={{
-            fontSize: "6.5px",
+            fontSize: "8px",
             color: "#8B7355",
             letterSpacing: "0.3em",
             textTransform: "uppercase",
