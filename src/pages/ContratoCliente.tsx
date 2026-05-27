@@ -254,3 +254,232 @@ const ContratoCliente = () => {
 };
 
 export default ContratoCliente;
+
+{
+  /* SUMÁRIO */
+}
+<div
+  style={{
+    background: "#fff",
+    width: "210mm",
+    minHeight: "297mm",
+    margin: "0 auto",
+    display: "flex",
+    flexDirection: "column",
+    padding: "20mm 22mm 18mm",
+    fontFamily: "'DM Mono',monospace",
+    borderTop: "1px solid #f0ede8",
+  }}
+>
+  {/* Header */}
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "flex-start",
+      paddingBottom: "5mm",
+      borderBottom: "0.3px solid #f0ede8",
+      marginBottom: "7mm",
+    }}
+  >
+    <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+      NL Arquitetos
+    </div>
+    <div style={{ textAlign: "right" }}>
+      <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+        {contrato.numero}
+      </div>
+      <div
+        style={{
+          fontSize: "7px",
+          color: "#8B7355",
+          letterSpacing: "0.2em",
+          textTransform: "uppercase",
+          marginTop: "2px",
+        }}
+      >
+        Sumário
+      </div>
+    </div>
+  </div>
+
+  {/* Título */}
+  <div
+    style={{
+      fontSize: "7px",
+      color: "#8B7355",
+      letterSpacing: "0.35em",
+      textTransform: "uppercase",
+      marginBottom: "2mm",
+    }}
+  >
+    Sumário
+  </div>
+  <div
+    style={{
+      fontFamily: "'Cormorant Garamond',Georgia,serif",
+      fontSize: "16px",
+      fontWeight: 300,
+      fontStyle: "italic",
+      color: "#3A3A3A",
+      marginBottom: "7mm",
+      lineHeight: 1.3,
+    }}
+  >
+    Instrumento Particular de Contrato
+    <br />
+    de Projeto de Arquitetura
+  </div>
+
+  {/* Seção principal */}
+  <div
+    style={{
+      fontSize: "6.5px",
+      color: "#8B7355",
+      letterSpacing: "0.3em",
+      textTransform: "uppercase",
+      marginBottom: "2.5mm",
+      marginTop: "4mm",
+    }}
+  >
+    Contrato Principal
+  </div>
+
+  {[
+    ["Cláusula Primeira", "Das Partes Envolvidas no Contrato"],
+    ["Cláusula Segunda", "Do Objeto"],
+    ["Cláusula Terceira", "Dos Serviços Ofertados"],
+    ["Cláusula Quarta", "Do Prazo"],
+    ["Cláusula Quinta", "Das Alterações"],
+    ["Cláusula Sexta", "Dos Honorários"],
+    ["Cláusula Sétima", "Das Obrigações e Responsabilidades do Contratante"],
+    ["Cláusula Oitava", "Das Obrigações e Responsabilidades dos Contratados"],
+    ["Cláusula Nona", "Dos Direitos Autorais"],
+    ["Cláusula Décima", "Da Responsabilidade Técnica"],
+    ["Cláusula Décima Primeira", "Da Rescisão Contratual"],
+    ["Cláusula Décima Segunda", "Considerações Finais"],
+    ["Cláusula Décima Terceira", "Da Limitação de Responsabilidade Civil"],
+    ["Cláusula Décima Quarta", "Do Foro"],
+  ].map(([num, title], i, arr) => (
+    <div
+      key={num}
+      style={{
+        display: "flex",
+        alignItems: "baseline",
+        padding: "2mm 0",
+        borderBottom: i < arr.length - 1 ? "0.3px solid #f8f6f4" : "none",
+        width: "100%",
+      }}
+    >
+      <div
+        style={{
+          fontSize: "7.5px",
+          color: "#aaa",
+          width: "44mm",
+          minWidth: "44mm",
+          flexShrink: 0,
+          letterSpacing: "0.02em",
+        }}
+      >
+        {num}
+      </div>
+      <div
+        style={{ flex: 1, minWidth: "4mm", borderBottom: "0.5px dotted #e0ddd8", margin: "0 2mm", marginBottom: "1px" }}
+      />
+      <div style={{ fontSize: "7.5px", color: "#3A3A3A", textAlign: "right", width: "80mm", lineHeight: 1.4 }}>
+        {title}
+      </div>
+    </div>
+  ))}
+
+  {/* Assinaturas */}
+  <div style={{ height: "0.3px", background: "#f0ede8", margin: "3mm 0" }} />
+  <div style={{ display: "flex", alignItems: "baseline", padding: "2mm 0", width: "100%" }}>
+    <div
+      style={{
+        fontSize: "7px",
+        color: "#3A3A3A",
+        width: "44mm",
+        minWidth: "44mm",
+        flexShrink: 0,
+        letterSpacing: "0.12em",
+        textTransform: "uppercase",
+        fontWeight: 500,
+      }}
+    >
+      Assinaturas
+    </div>
+    <div style={{ flex: 1, borderBottom: "0.5px dotted #e0ddd8", margin: "0 2mm", marginBottom: "1px" }} />
+    <div style={{ width: "80mm" }} />
+  </div>
+  <div style={{ height: "0.3px", background: "#f0ede8", margin: "3mm 0" }} />
+
+  {/* Anexos */}
+  <div
+    style={{
+      fontSize: "6.5px",
+      color: "#8B7355",
+      letterSpacing: "0.3em",
+      textTransform: "uppercase",
+      marginBottom: "2.5mm",
+      marginTop: "4mm",
+    }}
+  >
+    Anexos
+  </div>
+
+  {[
+    ["Anexo I", "Escopo dos Serviços de Projeto"],
+    ["Anexo II", "Cronograma de Desenvolvimento do Projeto"],
+    ["Anexo III", "Honorários e Forma de Pagamento"],
+    ["Anexo IV", "Serviços Adicionais (Opcionais)"],
+  ].map(([num, title], i, arr) => (
+    <div
+      key={num}
+      style={{
+        display: "flex",
+        alignItems: "baseline",
+        padding: "2mm 0",
+        borderBottom: i < arr.length - 1 ? "0.3px solid #f8f6f4" : "none",
+        width: "100%",
+      }}
+    >
+      <div
+        style={{
+          fontSize: "7.5px",
+          color: "#aaa",
+          width: "44mm",
+          minWidth: "44mm",
+          flexShrink: 0,
+          letterSpacing: "0.02em",
+        }}
+      >
+        {num}
+      </div>
+      <div
+        style={{ flex: 1, minWidth: "4mm", borderBottom: "0.5px dotted #e0ddd8", margin: "0 2mm", marginBottom: "1px" }}
+      />
+      <div style={{ fontSize: "7.5px", color: "#3A3A3A", textAlign: "right", width: "80mm", lineHeight: 1.4 }}>
+        {title}
+      </div>
+    </div>
+  ))}
+
+  {/* Rodapé */}
+  <div
+    style={{
+      marginTop: "auto",
+      paddingTop: "4mm",
+      borderTop: "0.3px solid #f0ede8",
+      display: "flex",
+      justifyContent: "space-between",
+    }}
+  >
+    <div style={{ fontSize: "6.5px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+      NL Arquitetos · São José dos Campos, SP
+    </div>
+    <div style={{ fontSize: "6.5px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+      A Arquitetura como Decisão
+    </div>
+  </div>
+</div>;
