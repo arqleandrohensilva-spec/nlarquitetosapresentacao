@@ -339,7 +339,7 @@ const ContratoCliente = () => {
               width: "100%",
             }}
           >
-            <div style={{ fontSize: "7.5px", color: "#aaa", width: "44mm", minWidth: "44mm", flexShrink: 0 }}>
+            <div style={{ fontSize: "10px", color: "#888", width: "44mm", minWidth: "44mm", flexShrink: 0 }}>
               {num}
             </div>
             <div
