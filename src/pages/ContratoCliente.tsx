@@ -225,7 +225,7 @@ const ContratoCliente = () => {
           >
             "A arquitetura como decisão."
           </div>
-          <div style={{ fontSize: "7px", color: "#ddd", letterSpacing: "0.22em", textTransform: "uppercase" }}>
+          <div style={{ fontSize: "8px", color: "#ddd", letterSpacing: "0.22em", textTransform: "uppercase" }}>
             NL Arquitetos · São José dos Campos, SP
           </div>
         </div>
