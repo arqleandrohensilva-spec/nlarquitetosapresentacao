@@ -146,11 +146,26 @@ const ClienteFicha = ({ leadName }: ClienteFichaProps) => {
       const slug = `${slugify(leadName)}-contrato-${ano}`;
       const dataHoje = new Date().toLocaleDateString('pt-BR');
 
+      // Hash dos últimos 4 dígitos do CPF como PIN de acesso ao contrato
+      const cpfDigits = (leadData.cpf || "").replace(/\D/g, "");
+      const pinSource = cpfDigits.slice(-4);
+      let pinHash: string | null = null;
+      if (pinSource.length === 4) {
+        const hashBuf = await crypto.subtle.digest(
+          "SHA-256",
+          new TextEncoder().encode(pinSource),
+        );
+        pinHash = Array.from(new Uint8Array(hashBuf))
+          .map((b) => b.toString(16).padStart(2, "0"))
+          .join("");
+      }
+
       // 2. Salvar no Supabase externo
       const { error: insertError } = await supabase
         .from('contratos_clientes')
         .insert({
           slug,
+          pin_hash: pinHash,
           nome_cliente: leadData.nome,
           cpf_cliente: leadData.cpf || "[CPF]",
           nacionalidade: leadData.nacionalidade || "brasileiro(a)",
