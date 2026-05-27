@@ -242,7 +242,6 @@ const ContratoCliente = () => {
           flexDirection: "column",
           padding: "20mm 22mm 18mm",
           fontFamily: "'DM Mono',monospace",
-          borderTop: "1px solid #f0ede8",
         }}
       >
         <div
