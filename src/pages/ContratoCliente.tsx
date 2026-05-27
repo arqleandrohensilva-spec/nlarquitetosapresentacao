@@ -74,13 +74,14 @@ const ContratoCliente = () => {
   );
 
   return (
-    <div className="bg-[#0A0A0A] min-h-screen text-[#E8E4DF] font-sans selection:bg-[#8B7355] selection:text-white pb-20">
+    <div className="bg-[#FDFCFB] min-h-screen text-[#3A3A3A] font-sans selection:bg-[#8B7355] selection:text-white pb-20">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
         
         .font-serif { font-family: 'Cormorant Garamond', serif; }
         .font-sans { font-family: 'Inter', sans-serif; }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .font-courier { font-family: 'Courier New', Courier, monospace; }
 
         @media print { 
           body { background: white !important; } 
@@ -88,21 +89,19 @@ const ContratoCliente = () => {
           [data-pdf-hide] { display: none !important; }
           .page-break { page-break-before: always; }
           .no-break { page-break-inside: avoid; }
-          .bg-premium-dark { background: white !important; }
           .text-premium-bronze { color: #8B7355 !important; }
           .border-premium { border-color: #8B7355 !important; }
           h1, h2, h3, h4, p, span, b, strong { color: black !important; }
         }
 
-        .bg-premium-dark { background-color: #0A0A0A; }
         .text-premium-bronze { color: #8B7355; }
+        .text-graphite { color: #3A3A3A; }
         .border-premium { border-color: rgba(139, 115, 85, 0.2); }
-        .technical-grid { background-image: radial-gradient(circle, rgba(139, 115, 85, 0.15) 0.5px, transparent 0.5px); background-size: 30px 30px; }
       `}</style>
 
       {/* Premium Floating Action Bar */}
-      <div data-pdf-hide className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-4 bg-black/40 backdrop-blur-xl p-2 pl-6 rounded-full border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all hover:scale-[1.02]">
-        <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-white/40">NL-2026-CONTRATO</span>
+      <div data-pdf-hide className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-4 bg-white/80 backdrop-blur-xl p-2 pl-6 rounded-full border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all hover:scale-[1.02]">
+        <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/40">NL-2026-CONTRATO</span>
         <button 
           onClick={() => window.print()} 
           className="flex items-center gap-3 bg-[#8B7355] text-white px-8 py-3.5 rounded-full uppercase text-[10px] font-mono tracking-widest hover:bg-[#A68B6A] transition-all shadow-lg active:scale-95"
@@ -111,83 +110,73 @@ const ContratoCliente = () => {
         </button>
       </div>
 
-      <div className="contrato-container max-w-[950px] mx-auto bg-premium-dark min-h-screen relative overflow-hidden border-x border-white/5">
+      <div className="contrato-container max-w-[950px] mx-auto bg-white min-h-screen relative overflow-hidden shadow-2xl my-10 border border-black/5">
         
-        {/* Decorative elements */}
-        <div className="technical-grid absolute inset-0 opacity-40 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#8B7355]/10 blur-[150px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/2" />
-        
-        <header className="p-12 lg:p-24 relative border-b border-premium">
-          <div className="flex justify-between items-start mb-24">
-            <div className="space-y-2">
-              <h2 className="font-serif text-4xl font-bold tracking-tighter">NL<span className="text-premium-bronze">.</span></h2>
-              <p className="font-mono text-[9px] uppercase tracking-[0.5em] text-premium-bronze font-medium">A Arquitetura como Decisão</p>
+        {/* CAPA DO CONTRATO */}
+        <section className="min-h-screen flex flex-col p-12 lg:p-24 relative bg-white page-break">
+          {/* Topo */}
+          <div className="flex justify-between items-start w-full mb-32">
+            <div className="font-serif text-3xl font-bold tracking-tighter text-graphite">
+              NL<span className="text-premium-bronze">.</span>
             </div>
-            <div className="text-right space-y-1 bg-white/5 p-4 border border-white/10 rounded-sm">
-              <p className="font-mono text-[8px] uppercase tracking-[0.2em] text-white/30">Nº de Protocolo</p>
-              <p className="font-mono text-xs text-premium-bronze font-semibold">NL-{contrato.ano}-{contrato.numero}</p>
+            <div className="text-right">
+              <p className="font-courier text-xs uppercase tracking-widest text-premium-bronze font-bold">
+                NL-{contrato.ano}-{contrato.numero}
+              </p>
             </div>
           </div>
 
-          <div className="max-w-2xl">
-            <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-premium-bronze mb-6 block font-semibold">Instrumento Jurídico Particular</span>
-            <h1 className="font-serif text-6xl lg:text-7xl font-light mb-8 leading-[0.95] text-white">Contrato de<br/><span className="italic font-normal">Serviços Técnicos.</span></h1>
-            <div className="w-20 h-0.5 bg-[#8B7355] mb-8" />
-            <p className="font-sans text-sm text-white/50 leading-relaxed max-w-md">Desenvolvimento de projeto executivo com compatibilização técnica e validação antecipada.</p>
-          </div>
-        </header>
+          {/* Centro */}
+          <div className="flex-grow flex flex-col justify-center">
+            <h1 className="font-serif text-6xl lg:text-7xl font-light leading-[1.1] text-graphite mb-12">
+              Contrato de Prestação<br/>
+              <span className="italic">de Serviços Arquitetônicos</span>
+            </h1>
+            
+            <div className="w-full h-px bg-[#8B7355] opacity-30 mb-16" />
 
-        {/* Dashboard Premium */}
-        <div className="grid grid-cols-1 md:grid-cols-4 border-b border-premium">
-          <div className="p-10 border-r border-premium flex flex-col gap-6">
-            <div className="flex items-center gap-3 text-premium-bronze opacity-60">
-              <FileText size={16} />
-              <span className="font-mono text-[9px] uppercase tracking-widest font-bold">Contratante</span>
-            </div>
-            <div>
-              <p className="font-serif text-2xl text-white leading-tight mb-2">{contrato.nome_cliente}</p>
-              <p className="font-mono text-[10px] text-white/30 uppercase tracking-tight">CPF: {contrato.cpf_cliente}</p>
-            </div>
-          </div>
-          
-          <div className="p-10 border-r border-premium flex flex-col gap-6">
-            <div className="flex items-center gap-3 text-premium-bronze opacity-60">
-              <Layers size={16} />
-              <span className="font-mono text-[9px] uppercase tracking-widest font-bold">Natureza</span>
-            </div>
-            <div className="space-y-2">
-              <p className="font-sans text-xs text-white/80 uppercase tracking-widest font-medium">Projeto {contrato.tipo_projeto}</p>
-              <div className="px-3 py-1 bg-white/5 border border-white/10 inline-block">
-                <span className="font-mono text-[9px] text-premium-bronze uppercase tracking-widest">Plano {contrato.plano}</span>
+            {/* Bloco de dados */}
+            <div className="grid grid-cols-2 gap-x-24 gap-y-12 max-w-3xl">
+              <div className="space-y-1">
+                <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-premium-bronze font-bold">CONTRATANTE</p>
+                <p className="font-serif text-xl text-graphite">{contrato.nome_cliente}</p>
+              </div>
+              <div className="space-y-1">
+                <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-premium-bronze font-bold">Nº DO CONTRATO</p>
+                <p className="font-serif text-xl text-graphite">NL-{contrato.ano}-{contrato.numero}</p>
+              </div>
+              
+              <div className="space-y-1">
+                <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-premium-bronze font-bold">DATA</p>
+                <p className="font-serif text-xl text-graphite">{contrato.data}</p>
+              </div>
+              <div className="space-y-1">
+                <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-premium-bronze font-bold">VALOR TOTAL</p>
+                <p className="font-serif text-xl text-graphite">R$ {contrato.valor_total}</p>
+              </div>
+
+              <div className="space-y-1">
+                <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-premium-bronze font-bold">TIPO DE PROJETO</p>
+                <p className="font-serif text-xl text-graphite">{contrato.tipo_projeto}</p>
+              </div>
+              <div className="space-y-1">
+                <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-premium-bronze font-bold">PLANO</p>
+                <p className="font-serif text-xl text-graphite">{contrato.plano}</p>
               </div>
             </div>
           </div>
 
-          <div className="p-10 border-r border-premium flex flex-col gap-6">
-            <div className="flex items-center gap-3 text-premium-bronze opacity-60">
-              <Wallet size={16} />
-              <span className="font-mono text-[9px] uppercase tracking-widest font-bold">Investimento</span>
-            </div>
-            <div>
-              <p className="font-serif text-2xl text-white leading-tight mb-1">R$ {contrato.valor_total}</p>
-              <p className="font-mono text-[9px] text-white/30 uppercase tracking-tighter italic leading-snug">Parcelamento via Marcos Técnicos</p>
-            </div>
+          {/* Rodapé */}
+          <div className="mt-auto pt-12 text-center w-full">
+            <p className="font-courier text-[9px] uppercase tracking-[0.3em] text-premium-bronze/60">
+              NL Arquitetos · São José dos Campos, SP · A Arquitetura como Decisão
+            </p>
           </div>
-
-          <div className="p-10 flex flex-col gap-6 bg-white/[0.02]">
-            <div className="flex items-center gap-3 text-premium-bronze opacity-60">
-              <ShieldCheck size={16} />
-              <span className="font-mono text-[9px] uppercase tracking-widest font-bold">Status</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#8B7355] animate-pulse" />
-              <p className="font-mono text-[10px] text-premium-bronze uppercase tracking-widest font-bold">Aguardando Aceite</p>
-            </div>
-          </div>
-        </div>
+        </section>
 
         {/* Content Section */}
         <div className="p-12 lg:p-24 space-y-32">
+
           
           {/* Summary Section */}
           <section className="no-break max-w-2xl">
