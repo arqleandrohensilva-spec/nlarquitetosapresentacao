@@ -15,44 +15,23 @@ const PREVIEW = {
 const ContratoCliente = () => {
   const { slug } = useParams();
   const [contrato, setContrato] = useState<any>(null);
-  const [loading, setLoading] = useState(false);
-  const [pin, setPin] = useState("");
-  const [pinError, setPinError] = useState<string | null>(null);
-  const [unlocked, setUnlocked] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  // Preview mode bypasses the PIN gate
   useEffect(() => {
     if (slug === "preview") {
       setContrato(PREVIEW);
-      setUnlocked(true);
+      setLoading(false);
+      return;
     }
+    const fetch = async () => {
+      const { data } = await supabase.from("contratos_clientes").select("*").eq("slug", slug).single();
+      setContrato(data);
+      setLoading(false);
+    };
+    fetch();
   }, [slug]);
 
-  const handleUnlock = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!slug) return;
-    setLoading(true);
-    setPinError(null);
-    try {
-      const { data, error } = await supabase.functions.invoke("get-contrato", {
-        body: { slug, pin },
-      });
-      if (error || !data?.contrato) {
-        setPinError(
-          (data && (data as any).error) || "PIN incorreto. Tente novamente.",
-        );
-      } else {
-        setContrato((data as any).contrato);
-        setUnlocked(true);
-      }
-    } catch {
-      setPinError("Não foi possível validar o PIN. Tente novamente.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (!unlocked) {
+  if (loading)
     return (
       <div
         style={{
@@ -61,108 +40,34 @@ const ContratoCliente = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          fontFamily: "'DM Mono',monospace",
-          padding: "24px",
+          fontFamily: "monospace",
+          fontSize: "11px",
+          color: "#bbb",
+          letterSpacing: "0.2em",
         }}
       >
-        <form
-          onSubmit={handleUnlock}
-          style={{
-            width: "100%",
-            maxWidth: "360px",
-            display: "flex",
-            flexDirection: "column",
-            gap: "20px",
-            textAlign: "center",
-          }}
-        >
-          <div style={{ fontSize: "22px", color: "#3A3A3A", letterSpacing: "0.15em" }}>
-            NL<span style={{ color: "#8B7355", marginLeft: "8px" }}>ARQUITETOS</span>
-          </div>
-          <div style={{ width: "32px", height: "1px", background: "#8B7355", margin: "0 auto" }} />
-          <div
-            style={{
-              fontSize: "8px",
-              color: "#8B7355",
-              letterSpacing: "0.3em",
-              textTransform: "uppercase",
-            }}
-          >
-            Acesso ao Contrato
-          </div>
-          <div
-            style={{
-              fontFamily: "'Cormorant Garamond',Georgia,serif",
-              fontSize: "15px",
-              fontStyle: "italic",
-              color: "#777",
-              lineHeight: 1.5,
-            }}
-          >
-            Para sua segurança, informe os 4 últimos dígitos do seu CPF.
-          </div>
-          <input
-            type="text"
-            inputMode="numeric"
-            autoComplete="off"
-            maxLength={8}
-            value={pin}
-            onChange={(e) => setPin(e.target.value.replace(/\D/g, ""))}
-            placeholder="••••"
-            style={{
-              border: "none",
-              borderBottom: "1px solid #d6d2cc",
-              padding: "10px 4px",
-              fontFamily: "'DM Mono',monospace",
-              fontSize: "20px",
-              letterSpacing: "0.6em",
-              textAlign: "center",
-              outline: "none",
-              color: "#3A3A3A",
-              background: "transparent",
-            }}
-            autoFocus
-          />
-          {pinError && (
-            <div style={{ fontSize: "9px", color: "#b94a3a", letterSpacing: "0.15em" }}>
-              {pinError}
-            </div>
-          )}
-          <button
-            type="submit"
-            disabled={loading || pin.length < 4}
-            style={{
-              background: "#3A3A3A",
-              color: "#fff",
-              border: "none",
-              padding: "12px 20px",
-              fontFamily: "'DM Mono',monospace",
-              fontSize: "9px",
-              letterSpacing: "0.3em",
-              textTransform: "uppercase",
-              cursor: loading || pin.length < 4 ? "not-allowed" : "pointer",
-              opacity: loading || pin.length < 4 ? 0.5 : 1,
-            }}
-          >
-            {loading ? "Validando..." : "Acessar Contrato"}
-          </button>
-          <div
-            style={{
-              fontSize: "7px",
-              color: "#ccc",
-              letterSpacing: "0.25em",
-              textTransform: "uppercase",
-              marginTop: "12px",
-            }}
-          >
-            NL Arquitetos · São José dos Campos, SP
-          </div>
-        </form>
+        CARREGANDO...
       </div>
     );
-  }
 
-  if (!contrato) return null;
+  if (!contrato)
+    return (
+      <div
+        style={{
+          background: "#fff",
+          minHeight: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontFamily: "monospace",
+          fontSize: "11px",
+          color: "#bbb",
+          letterSpacing: "0.2em",
+        }}
+      >
+        CONTRATO NÃO ENCONTRADO
+      </div>
+    );
 
   return (
     <>
@@ -211,7 +116,6 @@ const ContratoCliente = () => {
           padding: "0",
         }}
       >
-        {/* Número do contrato */}
         <div style={{ display: "flex", justifyContent: "flex-end", padding: "32px 44px 0" }}>
           <div style={{ textAlign: "right" }}>
             <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
@@ -222,8 +126,6 @@ const ContratoCliente = () => {
             </div>
           </div>
         </div>
-
-        {/* Hero central */}
         <div
           style={{
             flex: 1,
@@ -250,41 +152,26 @@ const ContratoCliente = () => {
             Contrato de Prestação de Serviços Técnicos de Arquitetura
           </div>
           <div style={{ width: "32px", height: "1px", background: "#8B7355", margin: "28px auto" }} />
-          {contrato.subtitulo && (
-            <div
-              style={{
-                fontFamily: "'Cormorant Garamond',Georgia,serif",
-                fontSize: "13px",
-                color: "#999",
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                textAlign: "center",
-                lineHeight: 1.8,
-              }}
-            >
-              Instrumento Particular
-              <br />
-              {contrato.subtitulo}
-            </div>
-          )}
-          {!contrato.subtitulo && (
-            <div
-              style={{
-                fontFamily: "'Cormorant Garamond',Georgia,serif",
-                fontSize: "13px",
-                color: "#999",
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                textAlign: "center",
-                lineHeight: 1.8,
-              }}
-            >
-              Instrumento Particular
-            </div>
-          )}
+          <div
+            style={{
+              fontFamily: "'Cormorant Garamond',Georgia,serif",
+              fontSize: "13px",
+              color: "#999",
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              textAlign: "center",
+              lineHeight: 1.8,
+            }}
+          >
+            Instrumento Particular
+            {contrato.subtitulo ? (
+              <>
+                <br />
+                {contrato.subtitulo}
+              </>
+            ) : null}
+          </div>
         </div>
-
-        {/* Campos */}
         <div style={{ padding: "0 64px", marginTop: "auto" }}>
           {[
             { label: "Contratante", val: contrato.nome_cliente },
@@ -318,8 +205,6 @@ const ContratoCliente = () => {
             </div>
           ))}
         </div>
-
-        {/* Rodapé */}
         <div
           style={{
             padding: "28px 64px 36px",
@@ -345,9 +230,216 @@ const ContratoCliente = () => {
           </div>
         </div>
       </div>
+
+      {/* SUMÁRIO */}
+      <div
+        style={{
+          background: "#fff",
+          width: "210mm",
+          minHeight: "297mm",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          padding: "20mm 22mm 18mm",
+          fontFamily: "'DM Mono',monospace",
+          borderTop: "1px solid #f0ede8",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            paddingBottom: "5mm",
+            borderBottom: "0.3px solid #f0ede8",
+            marginBottom: "7mm",
+          }}
+        >
+          <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+            NL Arquitetos
+          </div>
+          <div style={{ textAlign: "right" }}>
+            <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+              {contrato.numero}
+            </div>
+            <div
+              style={{
+                fontSize: "7px",
+                color: "#8B7355",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                marginTop: "2px",
+              }}
+            >
+              Sumário
+            </div>
+          </div>
+        </div>
+        <div
+          style={{
+            fontSize: "7px",
+            color: "#8B7355",
+            letterSpacing: "0.35em",
+            textTransform: "uppercase",
+            marginBottom: "2mm",
+          }}
+        >
+          Sumário
+        </div>
+        <div
+          style={{
+            fontFamily: "'Cormorant Garamond',Georgia,serif",
+            fontSize: "16px",
+            fontWeight: 300,
+            fontStyle: "italic",
+            color: "#3A3A3A",
+            marginBottom: "7mm",
+            lineHeight: 1.3,
+          }}
+        >
+          Instrumento Particular de Contrato
+          <br />
+          de Projeto de Arquitetura
+        </div>
+        <div
+          style={{
+            fontSize: "6.5px",
+            color: "#8B7355",
+            letterSpacing: "0.3em",
+            textTransform: "uppercase",
+            marginBottom: "2.5mm",
+            marginTop: "4mm",
+          }}
+        >
+          Contrato Principal
+        </div>
+        {[
+          ["Cláusula Primeira", "Das Partes Envolvidas no Contrato"],
+          ["Cláusula Segunda", "Do Objeto"],
+          ["Cláusula Terceira", "Dos Serviços Ofertados"],
+          ["Cláusula Quarta", "Do Prazo"],
+          ["Cláusula Quinta", "Das Alterações"],
+          ["Cláusula Sexta", "Dos Honorários"],
+          ["Cláusula Sétima", "Das Obrigações e Responsabilidades do Contratante"],
+          ["Cláusula Oitava", "Das Obrigações e Responsabilidades dos Contratados"],
+          ["Cláusula Nona", "Dos Direitos Autorais"],
+          ["Cláusula Décima", "Da Responsabilidade Técnica"],
+          ["Cláusula Décima Primeira", "Da Rescisão Contratual"],
+          ["Cláusula Décima Segunda", "Considerações Finais"],
+          ["Cláusula Décima Terceira", "Da Limitação de Responsabilidade Civil"],
+          ["Cláusula Décima Quarta", "Do Foro"],
+        ].map(([num, title], i, arr) => (
+          <div
+            key={num}
+            style={{
+              display: "flex",
+              alignItems: "baseline",
+              padding: "2mm 0",
+              borderBottom: i < arr.length - 1 ? "0.3px solid #f8f6f4" : "none",
+              width: "100%",
+            }}
+          >
+            <div style={{ fontSize: "7.5px", color: "#aaa", width: "44mm", minWidth: "44mm", flexShrink: 0 }}>
+              {num}
+            </div>
+            <div
+              style={{
+                flex: 1,
+                minWidth: "4mm",
+                borderBottom: "0.5px dotted #e0ddd8",
+                margin: "0 2mm",
+                marginBottom: "1px",
+              }}
+            />
+            <div style={{ fontSize: "7.5px", color: "#3A3A3A", textAlign: "right", width: "80mm", lineHeight: 1.4 }}>
+              {title}
+            </div>
+          </div>
+        ))}
+        <div style={{ height: "0.3px", background: "#f0ede8", margin: "3mm 0" }} />
+        <div style={{ display: "flex", alignItems: "baseline", padding: "2mm 0", width: "100%" }}>
+          <div
+            style={{
+              fontSize: "7px",
+              color: "#3A3A3A",
+              width: "44mm",
+              minWidth: "44mm",
+              flexShrink: 0,
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              fontWeight: 500,
+            }}
+          >
+            Assinaturas
+          </div>
+          <div style={{ flex: 1, borderBottom: "0.5px dotted #e0ddd8", margin: "0 2mm", marginBottom: "1px" }} />
+          <div style={{ width: "80mm" }} />
+        </div>
+        <div style={{ height: "0.3px", background: "#f0ede8", margin: "3mm 0" }} />
+        <div
+          style={{
+            fontSize: "6.5px",
+            color: "#8B7355",
+            letterSpacing: "0.3em",
+            textTransform: "uppercase",
+            marginBottom: "2.5mm",
+            marginTop: "4mm",
+          }}
+        >
+          Anexos
+        </div>
+        {[
+          ["Anexo I", "Escopo dos Serviços de Projeto"],
+          ["Anexo II", "Cronograma de Desenvolvimento do Projeto"],
+          ["Anexo III", "Honorários e Forma de Pagamento"],
+          ["Anexo IV", "Serviços Adicionais (Opcionais)"],
+        ].map(([num, title], i, arr) => (
+          <div
+            key={num}
+            style={{
+              display: "flex",
+              alignItems: "baseline",
+              padding: "2mm 0",
+              borderBottom: i < arr.length - 1 ? "0.3px solid #f8f6f4" : "none",
+              width: "100%",
+            }}
+          >
+            <div style={{ fontSize: "7.5px", color: "#aaa", width: "44mm", minWidth: "44mm", flexShrink: 0 }}>
+              {num}
+            </div>
+            <div
+              style={{
+                flex: 1,
+                minWidth: "4mm",
+                borderBottom: "0.5px dotted #e0ddd8",
+                margin: "0 2mm",
+                marginBottom: "1px",
+              }}
+            />
+            <div style={{ fontSize: "7.5px", color: "#3A3A3A", textAlign: "right", width: "80mm", lineHeight: 1.4 }}>
+              {title}
+            </div>
+          </div>
+        ))}
+        <div
+          style={{
+            marginTop: "auto",
+            paddingTop: "4mm",
+            borderTop: "0.3px solid #f0ede8",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div style={{ fontSize: "6.5px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            NL Arquitetos · São José dos Campos, SP
+          </div>
+          <div style={{ fontSize: "6.5px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            A Arquitetura como Decisão
+          </div>
+        </div>
+      </div>
     </>
   );
 };
 
 export default ContratoCliente;
-
