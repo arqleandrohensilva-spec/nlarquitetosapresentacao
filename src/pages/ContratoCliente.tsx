@@ -378,7 +378,7 @@ const ContratoCliente = () => {
         <div style={{ height: "0.3px", background: "#f0ede8", margin: "3mm 0" }} />
         <div
           style={{
-            fontSize: "6.5px",
+            fontSize: "8px",
             color: "#8B7355",
             letterSpacing: "0.3em",
             textTransform: "uppercase",
@@ -404,7 +404,7 @@ const ContratoCliente = () => {
               width: "100%",
             }}
           >
-            <div style={{ fontSize: "7.5px", color: "#aaa", width: "44mm", minWidth: "44mm", flexShrink: 0 }}>
+            <div style={{ fontSize: "10px", color: "#888", width: "44mm", minWidth: "44mm", flexShrink: 0 }}>
               {num}
             </div>
             <div
@@ -416,7 +416,7 @@ const ContratoCliente = () => {
                 marginBottom: "1px",
               }}
             />
-            <div style={{ fontSize: "7.5px", color: "#3A3A3A", textAlign: "right", width: "80mm", lineHeight: 1.4 }}>
+            <div style={{ fontSize: "10px", color: "#3A3A3A", textAlign: "right", width: "80mm", lineHeight: 1.4 }}>
               {title}
             </div>
           </div>
@@ -430,10 +430,10 @@ const ContratoCliente = () => {
             justifyContent: "space-between",
           }}
         >
-          <div style={{ fontSize: "6.5px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+          <div style={{ fontSize: "8px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
             NL Arquitetos · São José dos Campos, SP
           </div>
-          <div style={{ fontSize: "6.5px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+          <div style={{ fontSize: "8px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
             A Arquitetura como Decisão
           </div>
         </div>
