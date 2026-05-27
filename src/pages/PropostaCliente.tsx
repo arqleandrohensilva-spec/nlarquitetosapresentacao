@@ -35,13 +35,7 @@ const PropostaCliente = () => {
         if (data) {
           setPropostaData(data);
 
-          await supabase
-            .from("propostas_clientes")
-            .update({
-              acessos: (data.acessos || 0) + 1,
-              ultimo_acesso: new Date().toISOString(),
-            })
-            .eq("id", data.id);
+          await supabase.rpc("increment_proposta_acessos", { _id: data.id });
 
           try {
             const { data: propostas } = await nlSupabase
