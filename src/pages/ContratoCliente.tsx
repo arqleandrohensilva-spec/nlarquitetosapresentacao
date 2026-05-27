@@ -351,7 +351,7 @@ const ContratoCliente = () => {
                 marginBottom: "1px",
               }}
             />
-            <div style={{ fontSize: "7.5px", color: "#3A3A3A", textAlign: "right", width: "80mm", lineHeight: 1.4 }}>
+            <div style={{ fontSize: "10px", color: "#3A3A3A", textAlign: "right", width: "80mm", lineHeight: 1.4 }}>
               {title}
             </div>
           </div>
