@@ -510,7 +510,7 @@ const ContratoCliente = () => {
             <div
               style={{
                 fontSize: "10px",
-                color: "#8B7355",
+                color: "#888",
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
                 fontWeight: 500,
