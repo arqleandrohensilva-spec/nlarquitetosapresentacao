@@ -1050,7 +1050,7 @@ const ContratoCliente = () => {
           </div>
         </div>
       </div>
-      {/* CLÁUSULAS - PÁGINA 4 */}
+      {/* CLÁUSULAS - PÁGINA 3 */}
       <div
         className="page-break"
         style={{
