@@ -2271,6 +2271,162 @@ const ContratoCliente = () => {
           </div>
         </div>
       </div>
+      {/* CLÁUSULAS - PÁGINA 11 */}
+      <div
+        className="page-break"
+        style={{
+          background: "#fff",
+          width: "210mm",
+          minHeight: "297mm",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          padding: "20mm 22mm 18mm",
+          fontFamily: "'DM Mono',monospace",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            paddingBottom: "5mm",
+            borderBottom: "0.3px solid #f0ede8",
+            marginBottom: "10mm",
+          }}
+        >
+          <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+            NL Arquitetos
+          </div>
+          <div style={{ textAlign: "right" }}>
+            <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+              {contrato.numero}
+            </div>
+            <div
+              style={{
+                fontSize: "7px",
+                color: "#8B7355",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                marginTop: "2px",
+              }}
+            >
+              Contrato Principal
+            </div>
+          </div>
+        </div>
+
+        {/* CLÁUSULA DÉCIMA QUARTA */}
+        <div style={{ marginBottom: "12mm" }}>
+          <div style={{ display: "flex", gap: "4mm", marginBottom: "4mm", alignItems: "baseline" }}>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#888",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Cláusula Décima Quarta
+            </div>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#3A3A3A",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              Do Foro
+            </div>
+          </div>
+
+          <div
+            style={{
+              fontSize: "9px",
+              color: "#555",
+              lineHeight: "1.7",
+              textAlign: "justify",
+              display: "flex",
+              flexDirection: "column",
+              gap: "2.5mm",
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              14.1 Para dirimir quaisquer controvérsias oriundas do presente contrato, as partes elegem o foro da comarca
+              de São José dos Campos - SP, com renúncia expressa a qualquer outro, por mais privilegiado que seja salvo
+              disposição legal em contrário.
+            </p>
+            <p style={{ margin: 0 }}>
+              14.2 As partes, em comum acordo, poderão submeter eventuais conflitos à mediação, conciliação ou
+              arbitragem, em conformidade com a Lei nº 9.307/96 e demais legislações aplicáveis. É condição para o
+              ajuizamento de qualquer medida judicial ou arbitral que as partes busquem, previamente, a resolução dos
+              conflitos por meio de mediação ou conciliação, durante um período mínimo de 30 (trinta) dias, contados a
+              partir da notificação de uma parte à outra sobre a existência do conflito, sob pena de extinção do processo
+              sem resolução do mérito.
+            </p>
+            <p style={{ margin: 0 }}>
+              14.3 O presente contrato constitui título executivo extrajudicial, nos termos da legislação brasileira
+              aplicável.
+            </p>
+          </div>
+        </div>
+
+        {/* ASSINATURAS */}
+        <div style={{ marginTop: "10mm" }}>
+          <p style={{ fontSize: "9px", color: "#555", textAlign: "justify", marginBottom: "15mm" }}>
+            E, por estarem assim justas e contratadas, as partes assinam o presente instrumento em 02 (duas) vias de igual
+            teor e forma, juntamente com duas testemunhas, para que produza seus jurídicos e legais efeitos, obrigando-se
+            as partes, seus herdeiros e sucessores.
+          </p>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20mm", marginTop: "10mm" }}>
+            <div style={{ borderTop: "0.5px solid #3A3A3A", paddingTop: "4mm", textAlign: "center" }}>
+              <div style={{ fontSize: "9px", color: "#3A3A3A", fontWeight: 500 }}>{contrato.nome_cliente}</div>
+              <div style={{ fontSize: "7px", color: "#888", textTransform: "uppercase", marginTop: "2px" }}>
+                Contratante
+              </div>
+            </div>
+            <div style={{ borderTop: "0.5px solid #3A3A3A", paddingTop: "4mm", textAlign: "center" }}>
+              <div style={{ fontSize: "9px", color: "#3A3A3A", fontWeight: 500 }}>NL Arquitetos</div>
+              <div style={{ fontSize: "7px", color: "#888", textTransform: "uppercase", marginTop: "2px" }}>
+                Contratados
+              </div>
+            </div>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20mm", marginTop: "20mm" }}>
+            <div style={{ borderTop: "0.5px solid #ccc", paddingTop: "4mm", textAlign: "center" }}>
+              <div style={{ fontSize: "7px", color: "#888", textTransform: "uppercase" }}>Testemunha 1</div>
+              <div style={{ fontSize: "7px", color: "#ccc", marginTop: "2px" }}>CPF: _________________</div>
+            </div>
+            <div style={{ borderTop: "0.5px solid #ccc", paddingTop: "4mm", textAlign: "center" }}>
+              <div style={{ fontSize: "7px", color: "#888", textTransform: "uppercase" }}>Testemunha 2</div>
+              <div style={{ fontSize: "7px", color: "#ccc", marginTop: "2px" }}>CPF: _________________</div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style={{
+            marginTop: "auto",
+            paddingTop: "4mm",
+            borderTop: "0.3px solid #f0ede8",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div style={{ fontSize: "8px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            NL Arquitetos · São José dos Campos, SP
+          </div>
+          <div style={{ fontSize: "8px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            A Arquitetura como Decisão
+          </div>
+        </div>
+      </div>
     </>
   );
 };
