@@ -887,7 +887,7 @@ const ContratoCliente = () => {
             <p style={{ margin: 0 }}>
               5.5 Solicitações de alteração realizadas durante a etapa de Projeto Executivo, que impactem elementos
               previamente definidos, poderão gerar revisão de prazos e honorários, em razão do retrabalho técnico
-              necessário. Tais serviços adicionais estarão sujeitos à cobrança de honorários, mediante apresentação de
+              necessário. Tais serviços adicionais estarão sujeitas à cobrança de honorários, mediante apresentação de
               proposta formal e aprovação prévia do CONTRATANTE.
             </p>
             <p style={{ margin: 0 }}>
@@ -1134,7 +1134,7 @@ const ContratoCliente = () => {
             </div>
             <div
               style={{
-                fontSize: "7px",
+                fontSize: "8px",
                 color: "#8B7355",
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
@@ -2008,10 +2008,7 @@ const ContratoCliente = () => {
         </div>
       </div>
     </>
-
-
   );
 };
 
 export default ContratoCliente;
-
