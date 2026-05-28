@@ -887,7 +887,7 @@ const ContratoCliente = () => {
             <p style={{ margin: 0 }}>
               5.5 Solicitações de alteração realizadas durante a etapa de Projeto Executivo, que impactem elementos
               previamente definidos, poderão gerar revisão de prazos e honorários, em razão do retrabalho técnico
-              necessário. Tais serviços adicionais estarão sujeitos à cobrança de honorários, mediante apresentação de
+              necessário. Tais serviços adicionais estarão sujeitas à cobrança de honorários, mediante apresentação de
               proposta formal e aprovação prévia do CONTRATANTE.
             </p>
             <p style={{ margin: 0 }}>
@@ -1134,7 +1134,7 @@ const ContratoCliente = () => {
             </div>
             <div
               style={{
-                fontSize: "7px",
+                fontSize: "8px",
                 color: "#8B7355",
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
@@ -1275,8 +1275,9 @@ const ContratoCliente = () => {
                 terceiros sem autorização expressa dos CONTRATADOS.
               </p>
               <p style={{ margin: 0 }}>
-                7.11.2 O descumprimento caracterizará violação de direitos autorais, sujeitando o CONTRATANTE ao pagamento
-                de multa não inferior a 50% do valor total deste contrato, sem prejuízo de perdas e danos.
+                7.11.2 O descumprimento desta obrigação caracterizará violação de direitos autorais, sujeitando o
+                CONTRATANTE ao pagamento de multa não inferior a 50% do valor total deste contrato, sem prejuízo de
+                eventual indenização por perdas e danos e demais sanções legais cabíveis.
               </p>
             </div>
             <p style={{ margin: 0 }}>
@@ -1396,10 +1397,12 @@ const ContratoCliente = () => {
               profissionais reconhecidas no setor.
             </p>
             <p style={{ margin: 0 }}>
-              8.2 Elaborar o projeto arquitetônico em estrita conformidade com o escopo definido no Anexo I, observando
-              rigorosamente os prazos estabelecidos no Anexo II e considerando integralmente as informações, documentos
-              e diretrizes fornecidos pelo CONTRATANTE. O cumprimento das obrigações, incluindo prazos e qualidade, é
-              condicionado ao adimplemento tempestivo e integral das obrigações do CONTRATANTE.
+              8.2 Elaborar o projeto arquitetônico em estrita conformidade com o escopo definido no Anexo I (Escopo dos
+              Serviços), observando rigorosamente os prazos estabelecidos no Anexo II (Cronograma) e considerando
+              integralmente as informações, documentos e diretrizes fornecidos pelo CONTRATANTE. O cumprimento das
+              obrigações dos CONTRATADOS, incluindo prazos e qualidade do projeto, é condicionado ao adimplemento
+              tempestivo e integral das obrigações do CONTRATANTE, notadamente no que se refere ao fornecimento de
+              informações, documentos e obtenção de aprovações, conforme previsto na Cláusula Sétima.
             </p>
             <p style={{ margin: 0 }}>
               8.3 Manter o CONTRATANTE informado sobre o andamento do projeto, apresentando as etapas desenvolvidas para
@@ -1408,38 +1411,54 @@ const ContratoCliente = () => {
             <p style={{ margin: 0 }}>
               8.4 Realizar as alterações e ajustes solicitados pelo CONTRATANTE, desde que tecnicamente viáveis e dentro
               dos limites estabelecidos neste contrato e em seus anexos, especialmente no que se refere à quantidade de
-              revisões e à manutenção do conceito arquitetônico.
+              revisões e à manutenção do conceito arquitetônico previamente aprovado.
             </p>
             <p style={{ margin: 0 }}>
               8.5 Manter sigilo sobre informações e documentos confidenciais do CONTRATANTE aos quais tiver acesso em
-              razão deste contrato.
+              razão deste contrato, comprometendo-se a utilizá-los exclusivamente para a execução dos serviços
+              contratados.
             </p>
             <p style={{ margin: 0 }}>
-              8.6 Emitir o Registro de Responsabilidade Técnica (RRT) referente aos serviços efetivamente prestados.
+              8.6 Emitir o Registro de Responsabilidade Técnica (RRT) referente aos serviços efetivamente prestados, nos
+              termos da legislação aplicável.
             </p>
             <p style={{ margin: 0 }}>
-              8.7 Elaborar o projeto observando a legislação urbanística municipal, o Código de Obras e as normas
-              técnicas pertinentes (ABNT NBR 13532, NBR 9050, entre outras), sempre em conformidade com as diretrizes
-              do CONTRATANTE e em observância ao Art. 25 da Lei nº 14.133/2021.
+              8.7 Elaborar o projeto observando a legislação urbanística municipal aplicável, o Código de Obras do
+              Município e as normas técnicas pertinentes, incluindo, quando aplicável e dentro do escopo definido no Anexo
+              I, as normas da Associação Brasileira de Normas Técnicas – ABNT, tais como: ABNT NBR 13532 – Elaboração de
+              projetos de edificações, ABNT NBR 9050 – Acessibilidade a edificações, mobiliário, espaços e equipamentos
+              urbanos, bem como demais normas técnicas pertinentes ao desenvolvimento do projeto arquitetônico, sempre em
+              conformidade com as informações e diretrizes fornecidas pelo CONTRATANTE, e em observância ao Art. 25 da
+              Lei nº 14.133/2021, que detalha o conteúdo obrigatório do edital, incluindo a observância das normas
+              técnicas.
             </p>
             <p style={{ margin: 0 }}>
               8.8 Quando houver projetos complementares elaborados por terceiros, os CONTRATADOS poderão analisar tais
-              documentos para identificar interferências aparentes.
+              documentos com a finalidade de identificar interferências aparentes com o projeto.
             </p>
             <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888", paddingLeft: "4mm" }}>
-              8.8.1 Essa análise possui caráter não exaustivo e não configura responsabilidade pela compatibilização
-              integral entre todos os projetos técnicos, salvo se contratado especificamente.
+              8.8.1 Essa análise possui caráter não exaustivo e não configura responsabilidade dos CONTRATADOS pela
+              compatibilização integral entre todos os projetos técnicos envolvidos na obra, salvo quando tal serviço for
+              expressamente contratado.
             </p>
             <p style={{ margin: 0 }}>
-              8.9 Os CONTRATADOS poderão utilizar imagens, plantas e fotografias do projeto para fins de portfólio e
-              divulgação, respeitando a LGPD e garantindo o anonimato de informações confidenciais.
-            </p>
-            <p style={{ margin: 0 }}>
-              8.10 A responsabilidade dos CONTRATADOS limita-se à elaboração do projeto.
+              8.9 Os CONTRATADOS poderão utilizar imagens, plantas, renders, fotografias e demais representações do
+              projeto ou da obra para fins de portfólio profissional, divulgação institucional ou material de marketing,
+              desde que respeitadas as disposições da Lei Geral de Proteção de Dados (Lei nº 13.709/2018) e garantido o
+              anonimato de informações confidenciais do CONTRATANTE.
             </p>
             <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888", paddingLeft: "4mm" }}>
-              8.10.1 Eventuais problemas decorrentes da execução da obra, interpretação inadequada ou utilização de
-              materiais divergentes não poderão ser imputados aos CONTRATADOS.
+              8.9.1 Na divulgação, os CONTRATADOS comprometem-se a preservar dados pessoais do CONTRATANTE que permitam
+              sua identificação direta, em conformidade com a Lei Geral de Proteção de Dados – LGPD (Lei nº 13.709/2018).
+            </p>
+            <p style={{ margin: 0 }}>
+              8.10 A responsabilidade dos CONTRATADOS limita-se à elaboração do projeto, nos termos deste contrato.
+            </p>
+            <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888", paddingLeft: "4mm" }}>
+              8.10.1 Eventuais problemas decorrentes da execução da obra, interpretação inadequada do projeto, utilização
+              de materiais divergentes das especificações ou ausência de acompanhamento técnico durante a construção não
+              poderão ser imputados aos CONTRATADOS, conforme disposto nas cláusulas específicas de limitação de
+              responsabilidade deste contrato.
             </p>
           </div>
         </div>
@@ -1547,33 +1566,152 @@ const ContratoCliente = () => {
             }}
           >
             <p style={{ margin: 0 }}>
-              9.1 O Projeto desenvolvido constitui obra intelectual protegida pela Lei nº 9.610/1998 e pela Lei nº
-              12.378/2010, sendo reconhecido como criação dos CONTRATADOS.
+              9.1 O Projeto desenvolvido no âmbito deste contrato constitui obra intelectual protegida pela Lei nº
+              9.610/1998 (Lei de Direitos Autorais) e pela Lei nº 12.378/2010, sendo reconhecido como criação técnica e
+              artística dos CONTRATADOS.
             </p>
             <p style={{ margin: 0 }}>
-              9.2 Os direitos autorais morais e patrimoniais pertencem aos CONTRATADOS.
+              9.2 Os direitos autorais morais e patrimoniais sobre o projeto pertencem aos CONTRATADOS, nos termos da Lei
+              nº 9.610/1998, bem como da Lei nº 12.378/2010, e do art. 80 da Lei nº 13.303/2016, que garante a propriedade
+              intelectual de projetos técnicos.
             </p>
             <p style={{ margin: 0 }}>
-              9.3 O CONTRATANTE adquire o direito de utilizar o projeto exclusivamente para a execução da obra no imóvel
-              especificado, condicionada à quitação integral dos honorários.
+              9.3 O CONTRATANTE, mediante o pagamento integral dos honorários estabelecidos no Anexo III (Honorários e
+              Condições de Pagamento), adquire o direito de utilizar o projeto exclusivamente para a execução da obra no
+              imóvel especificado no Anexo I (Escopo Detalhado dos Serviços), observadas as condições e limitações
+              estabelecidas neste contrato, e desde que respeitados os direitos autorais dos CONTRATADOS, conforme a Lei
+              nº 9.610/1998.
             </p>
             <p style={{ margin: 0 }}>
-              9.4 Sem autorização prévia, o CONTRATANTE não poderá reproduzir o projeto em outro terreno, reutilizá-lo,
-              ceder a terceiros, modificar ou utilizar para fins comerciais.
+              9.4 Sem autorização prévia e expressa dos CONTRATADOS, a qual poderá ser concedida ou negada a critério
+              exclusivo dos CONTRATADOS, mesmo mediante oferta de pagamento de honorários adicionais, e mediante eventual
+              pagamento de honorários adicionais a serem acordados entre as partes, o CONTRATANTE não poderá:
+            </p>
+            <div style={{ paddingLeft: "4mm", display: "flex", flexDirection: "column", gap: "1.5mm" }}>
+              <p style={{ margin: 0 }}>9.4.1 Reproduzir o projeto em outro terreno ou imóvel;</p>
+              <p style={{ margin: 0 }}>9.4.2 Reutilizar total ou parcialmente o projeto em outra obra;</p>
+              <p style={{ margin: 0 }}>
+                9.4.3 Ceder, vender, compartilhar, encaminhar ou disponibilizar o projeto, total ou parcialmente, a
+                terceiros, incluindo construtoras, empreiteiros, engenheiros ou outros profissionais, sem autorização
+                expressa dos CONTRATADOS, sendo o CONTRATANTE responsável solidariamente por qualquer violação de direitos
+                autorais ou uso indevido cometido por tais terceiros que tenham recebido o projeto sem a devida
+                autorização dos CONTRATADOS.
+              </p>
+              <p style={{ margin: 0 }}>9.4.4 Modificar o projeto ou permitir modificações por outros profissionais;</p>
+              <p style={{ margin: 0 }}>9.4.5 Utilizar o projeto para fins comerciais, publicitários ou de incorporação imobiliária.</p>
+            </div>
+            <p style={{ margin: 0 }}>
+              9.5 Qualquer alteração no projeto, seja durante a fase de desenvolvimento ou durante a execução da obra,
+              somente poderá ser realizada mediante autorização expressa e por escrito dos CONTRATADOS.
             </p>
             <p style={{ margin: 0 }}>
-              9.5 Qualquer alteração somente poderá ser realizada mediante autorização expressa e por escrito.
+              9.6 Aos CONTRATADOS é garantido o direito de utilizar imagens, plantas, renders e fotografias do projeto e da
+              obra para fins de divulgação profissional em portfólio, redes sociais, apresentações institucionais ou
+              material de marketing, desde que sejam preservadas a privacidade e os dados pessoais do CONTRATANTE, em
+              conformidade com a Lei nº 13.709/2018 (Lei Geral de Proteção de Dados). Qualquer objeção do CONTRATANTE a
+              esta divulgação deverá ser formalizada por escrito no prazo máximo de 15 (quinze) dias após a assinatura do
+              contrato, devendo ser fundamentada em razões de segurança ou privacidade que não possam ser mitigadas pela
+              anonimização ou ocultação de dados, sob pena de preclusão do direito de objeção, e da consequente
+              autorização tácita para a divulgação nos termos previstos.
             </p>
             <p style={{ margin: 0 }}>
-              9.6 Aos CONTRATADOS é garantido o direito de utilizar imagens para divulgação profissional, respeitando a
-              LGPD.
+              9.7 Considera-se reprodução indevida a utilização total ou parcial do projeto para execução em outro imóvel
+              ou empreendimento sem autorização dos CONTRATADOS.
+            </p>
+            <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888", paddingLeft: "4mm" }}>
+              9.7.1 Considera-se cópia a reprodução do projeto por pessoa física ou jurídica que não possua direitos de
+              uso sobre a obra intelectual.
             </p>
             <p style={{ margin: 0 }}>
-              9.8 Considera-se plágio a reprodução substancial do projeto (partido, organização ou volumetria).
+              9.8 Para fins deste contrato, considera-se plágio a reprodução substancial do projeto arquitetônico ou da
+              obra dele resultante, incluindo pelo menos dois dos seguintes elementos:
+            </p>
+            <div style={{ paddingLeft: "4mm", display: "flex", flexDirection: "column", gap: "1mm" }}>
+              <p style={{ margin: 0 }}>9.8.1 partido arquitetônico ou solução estrutural;</p>
+              <p style={{ margin: 0 }}>9.8.2 organização funcional dos ambientes;</p>
+              <p style={{ margin: 0 }}>9.8.3 volumetrias ou composição espacial interna ou externa.</p>
+            </div>
+            <p style={{ margin: 0 }}>
+              9.9 O plágio poderá ser caracterizado mesmo que sejam alterados materiais, cores, acabamentos ou detalhes
+              construtivos.
             </p>
             <p style={{ margin: 0 }}>
-              9.11 Alterações sem autorização sujeitam o responsável a indenização mínima de 3x o valor do contrato.
+              9.10 A utilização indevida, reprodução, cópia ou plágio do projeto arquitetônico implicará obrigação de
+              indenização aos CONTRATADOS, sem prejuízo das medidas judiciais cabíveis.
             </p>
+            <p style={{ margin: 0 }}>
+              9.11 Alterações realizadas no projeto ou na obra dele resultante sem autorização dos CONTRATADOS
+              caracterizam violação de direitos autorais, nos termos da Lei nº 9.610/1998 (Lei de Direitos Autorais),
+              sujeitando o responsável ao pagamento de indenização mínima equivalente a 3 (três) vezes o valor total dos
+              honorários contratuais, sem prejuízo de outras sanções legais cabíveis.
+            </p>
+            <p style={{ margin: 0 }}>
+              9.12 O projeto somente poderá ser utilizado para execução da obra após a quitação integral dos honorários
+              previstos neste contrato. A utilização do projeto antes da quitação caracteriza uso indevido de obra
+              intelectual.
+            </p>
+          </div>
+        </div>
+
+        <div
+          style={{
+            marginTop: "auto",
+            paddingTop: "4mm",
+            borderTop: "0.3px solid #f0ede8",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div style={{ fontSize: "8px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            NL Arquitetos · São José dos Campos, SP
+          </div>
+          <div style={{ fontSize: "8px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            A Arquitetura como Decisão
+          </div>
+        </div>
+      </div>
+      {/* CLÁUSULAS - PÁGINA 7 */}
+      <div
+        className="page-break"
+        style={{
+          background: "#fff",
+          width: "210mm",
+          minHeight: "297mm",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          padding: "20mm 22mm 18mm",
+          fontFamily: "'DM Mono',monospace",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            paddingBottom: "5mm",
+            borderBottom: "0.3px solid #f0ede8",
+            marginBottom: "10mm",
+          }}
+        >
+          <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+            NL Arquitetos
+          </div>
+          <div style={{ textAlign: "right" }}>
+            <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+              {contrato.numero}
+            </div>
+            <div
+              style={{
+                fontSize: "7px",
+                color: "#8B7355",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                marginTop: "2px",
+              }}
+            >
+              Contrato Principal
+            </div>
           </div>
         </div>
 
@@ -1604,6 +1742,7 @@ const ContratoCliente = () => {
               Da Responsabilidade Técnica
             </div>
           </div>
+
           <div
             style={{
               fontSize: "9px",
@@ -1616,20 +1755,54 @@ const ContratoCliente = () => {
             }}
           >
             <p style={{ margin: 0 }}>
-              10.1 A responsabilidade restringe-se à elaboração do projeto arquitetônico.
+              10.1 A responsabilidade técnica dos CONTRATADOS, no âmbito deste contrato, restringe-se à elaboração do
+              projeto, conforme o escopo definido no Anexo I (Escopo Detalhado dos Serviços), observadas as normas
+              técnicas aplicáveis, a legislação vigente e as diretrizes do contratante.
             </p>
             <p style={{ margin: 0 }}>
-              10.2 A responsabilidade pela execução da obra recai exclusivamente sobre o CONTRATANTE.
+              10.2 A responsabilidade integral pela execução da obra, incluindo a contratação de mão de obra,
+              construtores, fornecedores e outros profissionais necessários à construção, recai exclusivamente sobre o
+              CONTRATANTE.
+            </p>
+            <p style={{ margin: 0, fontStyle: "italic", color: "#333" }}>10.3 Os CONTRATADOS não se responsabilizam por:</p>
+            <div style={{ paddingLeft: "4mm", display: "flex", flexDirection: "column", gap: "1.5mm" }}>
+              <p style={{ margin: 0 }}>
+                10.3.1 A execução da obra, que é de inteira responsabilidade do CONTRATANTE e/ou dos profissionais por ele
+                contratados.
+              </p>
+              <p style={{ margin: 0 }}>
+                10.3.2 A qualidade dos materiais utilizados na obra, que é de inteira responsabilidade do CONTRATANTE e/ou
+                dos fornecedores.
+              </p>
+              <p style={{ margin: 0 }}>
+                10.3.3 O cumprimento dos prazos de execução da obra, que é de inteira responsabilidade do CONTRATANTE e/ou
+                dos profissionais por ele contratados.
+              </p>
+              <p style={{ margin: 0 }}>
+                10.3.4 Eventuais vícios ou defeitos na obra decorrentes de falhas na execução, na qualidade dos materiais
+                ou no cumprimento dos prazos.
+              </p>
+              <p style={{ margin: 0 }}>
+                10.3.5 A compatibilização do projeto arquitetônico com os projetos complementares (estrutural, elétrico,
+                hidrossanitário etc.), que é de inteira responsabilidade do CONTRATANTE e/ou dos profissionais por ele
+                contratados, salvo se expressamente previsto em contrário no Anexo I.
+              </p>
+            </div>
+            <p style={{ margin: 0 }}>
+              10.4 Caso o CONTRATANTE realize alterações no projeto arquitetônico sem a prévia e expressa autorização por
+              escrito dos CONTRATADOS, estes ficarão isentos de qualquer responsabilidade técnica, civil ou legal
+              decorrente dessas modificações, conforme o art. 615 do Código Civil.
             </p>
             <p style={{ margin: 0 }}>
-              10.3 Os CONTRATADOS não se responsabilizam pela execução, qualidade dos materiais, prazos de obra ou
-              compatibilização com complementares (salvo se contratado).
+              10.5 A execução da obra em desacordo com o Projeto aprovado, ou sem observância das orientações técnicas
+              fornecidas, exime os CONTRATADOS de qualquer responsabilidade civil, técnica ou legal sobre eventuais
+              problemas construtivos, estruturais ou funcionais da edificação, desde que comprovada a relação de
+              causalidade entre o descumprimento das orientações e os problemas apresentados.
             </p>
             <p style={{ margin: 0 }}>
-              10.4 Alterações sem autorização isentam os CONTRATADOS de qualquer responsabilidade técnica ou civil.
-            </p>
-            <p style={{ margin: 0 }}>
-              10.6 O contrato não inclui acompanhamento técnico, fiscalização ou gerenciamento de obra.
+              10.6 O presente contrato não inclui serviços de acompanhamento técnico de obra, fiscalização ou
+              gerenciamento de execução, os quais somente poderão ser realizados mediante contratação específica e
+              formalização de contrato adicional.
             </p>
           </div>
         </div>
@@ -1651,8 +1824,7 @@ const ContratoCliente = () => {
           </div>
         </div>
       </div>
-
-      {/* CLÁUSULAS - PÁGINA 7 */}
+      {/* CLÁUSULAS - PÁGINA 8 */}
       <div
         className="page-break"
         style={{
@@ -1724,29 +1896,127 @@ const ContratoCliente = () => {
               Da Rescisão Contratual
             </div>
           </div>
+
           <div
             style={{
               fontSize: "9px",
               color: "#555",
-              lineHeight: "1.6",
+              lineHeight: "1.7",
               textAlign: "justify",
               display: "flex",
               flexDirection: "column",
-              gap: "2mm",
+              gap: "2.5mm",
             }}
           >
             <p style={{ margin: 0 }}>
-              11.1 Por iniciativa do CONTRATANTE: Serão devidos os valores das etapas concluídas e proporcionais às em
-              andamento, acrescidos de multa de 20% sobre o saldo remanescente.
+              O presente contrato poderá ser rescindido por qualquer das partes, mediante notificação formal por escrito,
+              observadas as condições e prazos estabelecidos nesta cláusula, nas demais disposições contratuais
+              aplicáveis e na legislação vigente.
+            </p>
+            <p style={{ margin: 0, fontWeight: 500, color: "#3A3A3A" }}>11.1 RESCISÃO POR INICIATIVA DO CONTRATANTE</p>
+            <div style={{ paddingLeft: "4mm", display: "flex", flexDirection: "column", gap: "1.5mm" }}>
+              <p style={{ margin: 0 }}>11.1.1 Caso o CONTRATANTE opte por rescindir o contrato antes da conclusão total dos serviços:</p>
+              <div style={{ paddingLeft: "4mm", display: "flex", flexDirection: "column", gap: "1mm" }}>
+                <p style={{ margin: 0 }}>I – Os valores pagos até a data da rescisão não serão devolvidos, considerando que correspondem às etapas já executadas.</p>
+                <p style={{ margin: 0 }}>II – O CONTRATANTE deverá quitar o valor proporcional referente às etapas em andamento ou já executadas e ainda não faturadas. O cálculo deste valor proporcional será realizado com base no percentual de conclusão da etapa, conforme avaliação dos CONTRATADOS e/ou marcos de entrega pré-definidos, ou um percentual fixo da etapa, detalhado no Anexo III – Honorários e Condições de Pagamento, a ser acordado entre as partes.</p>
+                <p style={{ margin: 0 }}>III – Será aplicada multa compensatória de 20% sobre o saldo contratual remanescente, a título de compensação pela interrupção dos serviços.</p>
+                <p style={{ margin: 0 }}>IV – Os documentos, plantas, arquivos digitais e demais materiais produzidos pelos CONTRATADOS somente poderão ser utilizados pelo CONTRATANTE após a quitação integral dos valores devidos até a data da rescisão.</p>
+              </div>
+              <p style={{ margin: 0 }}>11.1.2 Após a formalização da rescisão e quitação dos valores pendentes, os CONTRATADOS entregarão ao CONTRATANTE os materiais correspondentes às etapas efetivamente concluídas até a data da rescisão.</p>
+              <p style={{ margin: 0 }}>11.1.3 A partir da comunicação formal de rescisão, os CONTRATADOS poderão suspender imediatamente o desenvolvimento dos serviços.</p>
+              <p style={{ margin: 0 }}>11.1.4 Em caso de rescisão por culpa do CONTRATANTE, este será responsável por reembolsar os CONTRATADOS por todos os custos e despesas comprovadamente incorridos para a cobrança dos valores devidos, incluindo honorários advocatícios extrajudiciais e judiciais, custas judiciais e despesas processuais.</p>
+            </div>
+
+            <p style={{ margin: 0, fontWeight: 500, color: "#3A3A3A" }}>11.2 RESCISÃO POR INICIATIVA DOS CONTRATADOS</p>
+            <div style={{ paddingLeft: "4mm", display: "flex", flexDirection: "column", gap: "1.5mm" }}>
+              <p style={{ margin: 0 }}>11.2.1 Os CONTRATADOS poderão rescindir o presente contrato nos seguintes casos, mediante notificação prévia de 15 (quinze) dias, sem prejuízo de outras causas previstas em lei:</p>
+              <div style={{ paddingLeft: "4mm", display: "flex", flexDirection: "column", gap: "1mm" }}>
+                <p style={{ margin: 0 }}>I – Atraso superior a 30 (trinta) dias no pagamento de qualquer valor previsto neste contrato;</p>
+                <p style={{ margin: 0 }}>II – Descumprimento de obrigações contratuais por parte do CONTRATANTE;</p>
+                <p style={{ margin: 0 }}>III – Impossibilidade técnica ou legal de continuidade do projeto;</p>
+                <p style={{ margin: 0 }}>IV – Falta de fornecimento, pelo CONTRATANTE, de informações, documentos ou definições necessárias ao desenvolvimento do projeto, por prazo superior a 30 (trinta) dias.</p>
+              </div>
+              <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888" }}>
+                Parágrafo 1º – Nesses casos, serão devidos aos CONTRATADOS os valores correspondentes às etapas já executadas ou em andamento até a data da rescisão.
+              </p>
+              <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888" }}>
+                Parágrafo 2º – Os CONTRATADOS poderão suspender imediatamente os serviços em caso de inadimplência ou descumprimento contratual pelo CONTRATANTE, até a regularização da situação.
+              </p>
+              <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888" }}>
+                Parágrafo 3º – A entrega de documentos, plantas, arquivos digitais ou quaisquer materiais produzidos ficarão condicionada à quitação integral dos valores devidos até a data da rescisão.
+              </p>
+              <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888" }}>
+                Parágrafo 4º – A rescisão não afasta a aplicação das cláusulas relativas aos direitos autorais, permanecendo vedada a utilização do projeto sem autorização expressa dos CONTRATADOS.
+              </p>
+            </div>
+            <p style={{ margin: 0 }}>
+              11.3 Na hipótese de rescisão do presente contrato sem a quitação integral dos honorários devidos, fica expressamente vedada ao CONTRATANTE a utilização total ou parcial do projeto arquitetônico desenvolvido pelos CONTRATADOS, sob pena de caracterização de ilícito de violação de direitos autorais e perdas e danos, conforme a Lei nº 9.610/1998.
             </p>
             <p style={{ margin: 0 }}>
-              11.2 Por iniciativa dos CONTRATADOS: Poderá ocorrer em caso de atraso superior a 30 dias no pagamento ou
-              falta de informações por prazo superior a 30 dias, mediante notificação.
+              11.4 Após a rescisão do contrato, os CONTRATADOS não terão qualquer responsabilidade técnica sobre eventuais modificações ou intervenções realizadas no projeto ou na obra. execuções ou utilizações do projeto realizadas sem sua participação.
             </p>
-            <p style={{ margin: 0 }}>
-              11.3 A utilização indevida do projeto após rescisão sem quitação caracteriza violação de direitos
-              autorais.
-            </p>
+          </div>
+        </div>
+
+        <div
+          style={{
+            marginTop: "auto",
+            paddingTop: "4mm",
+            borderTop: "0.3px solid #f0ede8",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div style={{ fontSize: "8px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            NL Arquitetos · São José dos Campos, SP
+          </div>
+          <div style={{ fontSize: "8px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            A Arquitetura como Decisão
+          </div>
+        </div>
+      </div>
+      {/* CLÁUSULAS - PÁGINA 9 */}
+      <div
+        className="page-break"
+        style={{
+          background: "#fff",
+          width: "210mm",
+          minHeight: "297mm",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          padding: "20mm 22mm 18mm",
+          fontFamily: "'DM Mono',monospace",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            paddingBottom: "5mm",
+            borderBottom: "0.3px solid #f0ede8",
+            marginBottom: "10mm",
+          }}
+        >
+          <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+            NL Arquitetos
+          </div>
+          <div style={{ textAlign: "right" }}>
+            <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+              {contrato.numero}
+            </div>
+            <div
+              style={{
+                fontSize: "7px",
+                color: "#8B7355",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                marginTop: "2px",
+              }}
+            >
+              Contrato Principal
+            </div>
           </div>
         </div>
 
@@ -1777,25 +2047,70 @@ const ContratoCliente = () => {
               Considerações Finais
             </div>
           </div>
+
           <div
             style={{
               fontSize: "9px",
               color: "#555",
-              lineHeight: "1.6",
+              lineHeight: "1.7",
               textAlign: "justify",
               display: "flex",
               flexDirection: "column",
-              gap: "2mm",
+              gap: "2.5mm",
             }}
           >
-            <p style={{ margin: 0 }}>
-              12.4 Atendimentos presenciais exigem agendamento prévio de 7 dias úteis, em horário comercial.
+            <p style={{ margin: 0, fontStyle: "italic", color: "#333" }}>
+              Esta cláusula estabelece disposições complementares aplicáveis à execução do presente contrato e aos anexos
+              que o integram.
             </p>
             <p style={{ margin: 0 }}>
-              12.5 Todas as comunicações relevantes devem ser feitas por e-mail ou meio eletrônico formal.
+              12.1 Execução da obra decorrente do projeto objeto deste contrato não está incluída no escopo dos serviços
+              contratados, sendo que eventual contratação de acompanhamento, gerenciamento ou execução da obra deverá ser
+              objeto de contrato específico e independente.
             </p>
             <p style={{ margin: 0 }}>
-              12.6 O CONTRATANTE deve fornecer informações em até 5 dias úteis após solicitação.
+              12.2 Os CONTRATADOS, na qualidade de autor do projeto, ficam isentos de quaisquer responsabilidades técnicas
+              ou legais decorrentes de alterações executadas na obra sem sua prévia ciência e autorização por escrito. É
+              obrigação do CONTRATANTE solicitar e obter tal autorização, por escrito, antes de qualquer alteração, sob
+              pena de responsabilização. Os CONTRATADOS poderão adotar as medidas legais cabíveis para proteção de seus
+              direitos autorais e de sua responsabilidade profissional, incluindo, mas não se limitando a ações de
+              reparação por danos morais e materiais, bem como a aplicação do disposto no art. 619 do Código Civil.
+            </p>
+            <p style={{ margin: 0 }}>
+              12.3 O início dos serviços objeto deste contrato está condicionado à assinatura do presente instrumento e à
+              comprovação do pagamento da primeira parcela ou sinal contratual, devendo o comprovante ser encaminhado aos
+              CONTRATADOS.
+            </p>
+            <p style={{ margin: 0 }}>
+              12.4 Os atendimentos ao CONTRATANTE poderão ocorrer presencialmente, mediante agendamento prévio com
+              antecedência mínima de 7 (sete) dias úteis, dentro do horário comercial, compreendido entre 08h00 às 12h00
+              e 14h00 às 18h00, de segunda a sexta-feira. Adicionalmente, os atendimentos poderão ocorrer de forma
+              virtual (por videoconferência, por exemplo), mantendo a necessidade de agendamento prévio e horário
+              comercial.
+            </p>
+            <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888", paddingLeft: "4mm" }}>
+              12.4.1 Caso seja necessária visita presencial ao local da obra ou deslocamento externo, será aplicada a taxa
+              de visita técnica a ser previamente acordada entre as partes ou conforme tabela de honorários dos
+              CONTRATADOS prevista neste contrato.
+            </p>
+            <p style={{ margin: 0 }}>
+              12.5 Todas as comunicações relevantes relacionadas ao presente contrato, incluindo aprovações de etapas,
+              solicitações de alterações e notificações contratuais, deverão ser realizadas obrigatoriamente por e-mail ou
+              outro meio eletrônico formal, sendo consideradas válidas para fins contratuais.
+            </p>
+            <p style={{ margin: 0 }}>
+              12.6 O CONTRATANTE compromete-se a fornecer todas as informações, documentos e definições necessárias para o
+              desenvolvimento do projeto no prazo máximo de 5 (cinco) dias úteis a contar da solicitação, salvo quando
+              prazos específicos forem definidos em outras cláusulas deste contrato.
+            </p>
+            <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888", paddingLeft: "4mm" }}>
+              12.6.1 Eventuais atrasos decorrentes da não entrega dessas informações poderão impactar diretamente o
+              cronograma do projeto, sem que isso caracterize descumprimento contratual por parte dos CONTRATADOS.
+            </p>
+            <p style={{ margin: 0 }}>
+              12.7 Caso ocorram alterações na legislação urbanística ou nas normas técnicas aplicáveis após a conclusão do
+              projeto, eventuais adequações necessárias poderão ser objeto de aditivo contratual, conforme previsto no
+              Art. 81 da Lei nº 13.303/2016, que estabelece as condições para alteração contratual por adequação técnica.
             </p>
           </div>
         </div>
@@ -1817,8 +2132,7 @@ const ContratoCliente = () => {
           </div>
         </div>
       </div>
-
-      {/* CLÁUSULAS - PÁGINA 8 */}
+      {/* CLÁUSULAS - PÁGINA 10 */}
       <div
         className="page-break"
         style={{
@@ -1887,28 +2201,118 @@ const ContratoCliente = () => {
                 fontWeight: 500,
               }}
             >
-              Da Limitação de Responsabilidade Civil
+              Da Limitação de Responsabilidade Civil do Projeto
             </div>
           </div>
+
           <div
             style={{
               fontSize: "9px",
               color: "#555",
-              lineHeight: "1.6",
+              lineHeight: "1.7",
               textAlign: "justify",
               display: "flex",
               flexDirection: "column",
-              gap: "2mm",
+              gap: "2.5mm",
             }}
           >
             <p style={{ margin: 0 }}>
-              13.1 A responsabilidade limita-se à elaboração do projeto conforme informações fornecidas pelo
-              CONTRATANTE.
+              13.1 A responsabilidade civil dos CONTRATADOS limita-se à elaboração do projeto arquitetônico objeto do
+              presente contrato, estritamente conforme as informações, documentos e diretrizes fornecidas pelo
+              CONTRATANTE, cuja veracidade, precisão e completude são de sua exclusiva responsabilidade. Custos
+              adicionais, atrasos no cronograma ou necessidade de retrabalho decorrentes da imprecisão, omissão,
+              incompletude ou inveracidade das informações, documentos e diretrizes fornecidas pelo CONTRATANTE serão de
+              sua exclusiva responsabilidade, gerando a cobrança de honorários complementares e revisão de prazos para os
+              CONTRATADOS, mediante apresentação de justificativa técnica e planilha de custos.
             </p>
             <p style={{ margin: 0 }}>
-              13.3 A responsabilidade civil, caso configurada, estará limitada ao valor total dos honorários efetivamente
-              recebidos.
+              13.2 Os CONTRATADOS não poderão ser responsabilizados por danos, prejuízos ou consequências decorrentes de
+              modificações, execuções ou utilizações do projeto realizadas sem sua participação ou aprovação formal, bem
+              como por informações incorretas ou omissões nas especificações fornecidas pelo CONTRATANTE.
             </p>
+            <div style={{ paddingLeft: "4mm", display: "flex", flexDirection: "column", gap: "1.5mm" }}>
+              <p style={{ margin: 0 }}>I – Execução da obra realizada por profissionais, empresas ou prestadores de serviço que não possuam vínculo contratual com os CONTRATADOS;</p>
+              <p style={{ margin: 0 }}>II – Utilização de materiais ou técnicas construtivas divergentes das especificações constantes no projeto;</p>
+              <p style={{ margin: 0 }}>III – modificações realizadas no projeto ou durante a execução da obra sem autorização prévia e expressa dos CONTRATADOS;</p>
+              <p style={{ margin: 0 }}>IV – Falhas construtivas, estruturais, elétricas, hidráulicas ou de quaisquer outras instalações decorrentes da execução da obra;</p>
+              <p style={{ margin: 0 }}>V – Informações técnicas incorretas, incompletas ou omissas fornecidas pelo CONTRATANTE ou por terceiros;</p>
+              <p style={{ margin: 0 }}>VI – Descumprimento de normas técnicas, urbanísticas, legais ou regulamentares durante a execução da obra.</p>
+              <p style={{ margin: 0 }}>VII – alterações na legislação urbanística, normas técnicas ou regulamentares que entrem em vigor ou sejam interpretadas de forma diversa após a aprovação final do projeto pelos órgãos competentes ou pelo CONTRATANTE, e que não eram previsíveis no momento da elaboração do projeto.</p>
+              <p style={{ margin: 0 }}>VIII – eventos de força maior ou caso fortuito, incluindo, mas não se limitando a desastres naturais, pandemias, greves, atos de terrorismo ou guerra, que impeçam ou dificultem a execução do projeto ou da obra.</p>
+            </div>
+            <p style={{ margin: 0 }}>
+              13.3 A responsabilidade civil dos CONTRATADOS, caso configurada, estará limitada ao valor total dos
+              honorários efetivamente recebidos em contraprestação ao serviço objeto deste contrato, excluindo-se
+              expressamente a cobertura de indenizações por danos indiretos, lucros cessantes, perdas financeiras ou
+              quaisquer outros prejuízos que possam advir da execução da obra.
+            </p>
+            <p style={{ margin: 0 }}>
+              13.4 Os CONTRATADOS não assumem responsabilidade técnica pela execução da obra, gerenciamento, fiscalização
+              ou acompanhamento da construção, salvo se tais serviços forem contratados de forma expressa por meio de
+              instrumento contratual específico.
+            </p>
+          </div>
+        </div>
+
+        <div
+          style={{
+            marginTop: "auto",
+            paddingTop: "4mm",
+            borderTop: "0.3px solid #f0ede8",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div style={{ fontSize: "8px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            NL Arquitetos · São José dos Campos, SP
+          </div>
+          <div style={{ fontSize: "8px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            A Arquitetura como Decisão
+          </div>
+        </div>
+      </div>
+      {/* CLÁUSULAS - PÁGINA 11 */}
+      <div
+        className="page-break"
+        style={{
+          background: "#fff",
+          width: "210mm",
+          minHeight: "297mm",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          padding: "20mm 22mm 18mm",
+          fontFamily: "'DM Mono',monospace",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            paddingBottom: "5mm",
+            borderBottom: "0.3px solid #f0ede8",
+            marginBottom: "10mm",
+          }}
+        >
+          <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+            NL Arquitetos
+          </div>
+          <div style={{ textAlign: "right" }}>
+            <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+              {contrato.numero}
+            </div>
+            <div
+              style={{
+                fontSize: "7px",
+                color: "#8B7355",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                marginTop: "2px",
+              }}
+            >
+              Contrato Principal
+            </div>
           </div>
         </div>
 
@@ -1939,19 +2343,34 @@ const ContratoCliente = () => {
               Do Foro
             </div>
           </div>
+
           <div
             style={{
               fontSize: "9px",
               color: "#555",
-              lineHeight: "1.6",
+              lineHeight: "1.7",
               textAlign: "justify",
               display: "flex",
               flexDirection: "column",
-              gap: "2mm",
+              gap: "2.5mm",
             }}
           >
             <p style={{ margin: 0 }}>
-              14.1 Fica eleito o foro da comarca de São José dos Campos - SP para dirimir quaisquer controvérsias.
+              14.1 Para dirimir quaisquer controvérsias oriundas do presente contrato, as partes elegem o foro da comarca
+              de São José dos Campos - SP, com renúncia expressa a qualquer outro, por mais privilegiado que seja salvo
+              disposição legal em contrário.
+            </p>
+            <p style={{ margin: 0 }}>
+              14.2 As partes, em comum acordo, poderão submeter eventuais conflitos à mediação, conciliação ou
+              arbitragem, em conformidade com a Lei nº 9.307/96 e demais legislações aplicáveis. É condição para o
+              ajuizamento de qualquer medida judicial ou arbitral que as partes busquem, previamente, a resolução dos
+              conflitos por meio de mediação ou conciliação, durante um período mínimo de 30 (trinta) dias, contados a
+              partir da notificação de uma parte à outra sobre a existência do conflito, sob pena de extinção do processo
+              sem resolução do mérito.
+            </p>
+            <p style={{ margin: 0 }}>
+              14.3 O presente contrato constitui título executivo extrajudicial, nos termos da legislação brasileira
+              aplicável.
             </p>
           </div>
         </div>
@@ -1960,7 +2379,8 @@ const ContratoCliente = () => {
         <div style={{ marginTop: "10mm" }}>
           <p style={{ fontSize: "9px", color: "#555", textAlign: "justify", marginBottom: "15mm" }}>
             E, por estarem assim justas e contratadas, as partes assinam o presente instrumento em 02 (duas) vias de igual
-            teor e forma, juntamente com duas testemunhas.
+            teor e forma, juntamente com duas testemunhas, para que produza seus jurídicos e legais efeitos, obrigando-se
+            as partes, seus herdeiros e sucessores.
           </p>
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20mm", marginTop: "10mm" }}>
@@ -2008,10 +2428,7 @@ const ContratoCliente = () => {
         </div>
       </div>
     </>
-
-
   );
 };
 
 export default ContratoCliente;
-
