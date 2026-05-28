@@ -1824,6 +1824,157 @@ const ContratoCliente = () => {
           </div>
         </div>
       </div>
+      {/* CLÁUSULAS - PÁGINA 8 */}
+      <div
+        className="page-break"
+        style={{
+          background: "#fff",
+          width: "210mm",
+          minHeight: "297mm",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          padding: "20mm 22mm 18mm",
+          fontFamily: "'DM Mono',monospace",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            paddingBottom: "5mm",
+            borderBottom: "0.3px solid #f0ede8",
+            marginBottom: "10mm",
+          }}
+        >
+          <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+            NL Arquitetos
+          </div>
+          <div style={{ textAlign: "right" }}>
+            <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+              {contrato.numero}
+            </div>
+            <div
+              style={{
+                fontSize: "7px",
+                color: "#8B7355",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                marginTop: "2px",
+              }}
+            >
+              Contrato Principal
+            </div>
+          </div>
+        </div>
+
+        {/* CLÁUSULA DÉCIMA PRIMEIRA */}
+        <div style={{ marginBottom: "8mm" }}>
+          <div style={{ display: "flex", gap: "4mm", marginBottom: "4mm", alignItems: "baseline" }}>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#888",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Cláusula Décima Primeira
+            </div>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#3A3A3A",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              Da Rescisão Contratual
+            </div>
+          </div>
+
+          <div
+            style={{
+              fontSize: "9px",
+              color: "#555",
+              lineHeight: "1.7",
+              textAlign: "justify",
+              display: "flex",
+              flexDirection: "column",
+              gap: "2.5mm",
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              O presente contrato poderá ser rescindido por qualquer das partes, mediante notificação formal por escrito,
+              observadas as condições e prazos estabelecidos nesta cláusula, nas demais disposições contratuais
+              aplicáveis e na legislação vigente.
+            </p>
+            <p style={{ margin: 0, fontWeight: 500, color: "#3A3A3A" }}>11.1 RESCISÃO POR INICIATIVA DO CONTRATANTE</p>
+            <div style={{ paddingLeft: "4mm", display: "flex", flexDirection: "column", gap: "1.5mm" }}>
+              <p style={{ margin: 0 }}>11.1.1 Caso o CONTRATANTE opte por rescindir o contrato antes da conclusão total dos serviços:</p>
+              <div style={{ paddingLeft: "4mm", display: "flex", flexDirection: "column", gap: "1mm" }}>
+                <p style={{ margin: 0 }}>I – Os valores pagos até a data da rescisão não serão devolvidos, considerando que correspondem às etapas já executadas.</p>
+                <p style={{ margin: 0 }}>II – O CONTRATANTE deverá quitar o valor proporcional referente às etapas em andamento ou já executadas e ainda não faturadas. O cálculo deste valor proporcional será realizado com base no percentual de conclusão da etapa, conforme avaliação dos CONTRATADOS e/ou marcos de entrega pré-definidos, ou um percentual fixo da etapa, detalhado no Anexo III – Honorários e Condições de Pagamento, a ser acordado entre as partes.</p>
+                <p style={{ margin: 0 }}>III – Será aplicada multa compensatória de 20% sobre o saldo contratual remanescente, a título de compensação pela interrupção dos serviços.</p>
+                <p style={{ margin: 0 }}>IV – Os documentos, plantas, arquivos digitais e demais materiais produzidos pelos CONTRATADOS somente poderão ser utilizados pelo CONTRATANTE após a quitação integral dos valores devidos até a data da rescisão.</p>
+              </div>
+              <p style={{ margin: 0 }}>11.1.2 Após a formalização da rescisão e quitação dos valores pendentes, os CONTRATADOS entregarão ao CONTRATANTE os materiais correspondentes às etapas efetivamente concluídas até a data da rescisão.</p>
+              <p style={{ margin: 0 }}>11.1.3 A partir da comunicação formal de rescisão, os CONTRATADOS poderão suspender imediatamente o desenvolvimento dos serviços.</p>
+              <p style={{ margin: 0 }}>11.1.4 Em caso de rescisão por culpa do CONTRATANTE, este será responsável por reembolsar os CONTRATADOS por todos os custos e despesas comprovadamente incorridos para a cobrança dos valores devidos, incluindo honorários advocatícios extrajudiciais e judiciais, custas judiciais e despesas processuais.</p>
+            </div>
+
+            <p style={{ margin: 0, fontWeight: 500, color: "#3A3A3A" }}>11.2 RESCISÃO POR INICIATIVA DOS CONTRATADOS</p>
+            <div style={{ paddingLeft: "4mm", display: "flex", flexDirection: "column", gap: "1.5mm" }}>
+              <p style={{ margin: 0 }}>11.2.1 Os CONTRATADOS poderão rescindir o presente contrato nos seguintes casos, mediante notificação prévia de 15 (quinze) dias, sem prejuízo de outras causas previstas em lei:</p>
+              <div style={{ paddingLeft: "4mm", display: "flex", flexDirection: "column", gap: "1mm" }}>
+                <p style={{ margin: 0 }}>I – Atraso superior a 30 (trinta) dias no pagamento de qualquer valor previsto neste contrato;</p>
+                <p style={{ margin: 0 }}>II – Descumprimento de obrigações contratuais por parte do CONTRATANTE;</p>
+                <p style={{ margin: 0 }}>III – Impossibilidade técnica ou legal de continuidade do projeto;</p>
+                <p style={{ margin: 0 }}>IV – Falta de fornecimento, pelo CONTRATANTE, de informações, documentos ou definições necessárias ao desenvolvimento do projeto, por prazo superior a 30 (trinta) dias.</p>
+              </div>
+              <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888" }}>
+                Parágrafo 1º – Nesses casos, serão devidos aos CONTRATADOS os valores correspondentes às etapas já executadas ou em andamento até a data da rescisão.
+              </p>
+              <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888" }}>
+                Parágrafo 2º – Os CONTRATADOS poderão suspender imediatamente os serviços em caso de inadimplência ou descumprimento contratual pelo CONTRATANTE, até a regularização da situação.
+              </p>
+              <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888" }}>
+                Parágrafo 3º – A entrega de documentos, plantas, arquivos digitais ou quaisquer materiais produzidos ficarão condicionada à quitação integral dos valores devidos até a data da rescisão.
+              </p>
+              <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888" }}>
+                Parágrafo 4º – A rescisão não afasta a aplicação das cláusulas relativas aos direitos autorais, permanecendo vedada a utilização do projeto sem autorização expressa dos CONTRATADOS.
+              </p>
+            </div>
+            <p style={{ margin: 0 }}>
+              11.3 Na hipótese de rescisão do presente contrato sem a quitação integral dos honorários devidos, fica expressamente vedada ao CONTRATANTE a utilização total ou parcial do projeto arquitetônico desenvolvido pelos CONTRATADOS, sob pena de caracterização de ilícito de violação de direitos autorais e perdas e danos, conforme a Lei nº 9.610/1998.
+            </p>
+            <p style={{ margin: 0 }}>
+              11.4 Após a rescisão do contrato, os CONTRATADOS não terão qualquer responsabilidade técnica sobre eventuais modificações ou intervenções realizadas no projeto ou na obra. execuções ou utilizações do projeto realizadas sem sua participação.
+            </p>
+          </div>
+        </div>
+
+        <div
+          style={{
+            marginTop: "auto",
+            paddingTop: "4mm",
+            borderTop: "0.3px solid #f0ede8",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div style={{ fontSize: "8px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            NL Arquitetos · São José dos Campos, SP
+          </div>
+          <div style={{ fontSize: "8px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            A Arquitetura como Decisão
+          </div>
+        </div>
+      </div>
     </>
   );
 };
