@@ -941,6 +941,165 @@ const ContratoCliente = () => {
           </div>
         </div>
       </div>
+      {/* CLÁUSULAS - PÁGINA 3 */}
+      <div
+        className="page-break"
+        style={{
+          background: "#fff",
+          width: "210mm",
+          minHeight: "297mm",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          padding: "20mm 22mm 18mm",
+          fontFamily: "'DM Mono',monospace",
+        }}
+      >
+        {/* HEADER */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            paddingBottom: "5mm",
+            borderBottom: "0.3px solid #f0ede8",
+            marginBottom: "10mm",
+          }}
+        >
+          <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+            NL Arquitetos
+          </div>
+          <div style={{ textAlign: "right" }}>
+            <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+              {contrato.numero}
+            </div>
+            <div
+              style={{
+                fontSize: "7px",
+                color: "#8B7355",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                marginTop: "2px",
+              }}
+            >
+              Contrato Principal
+            </div>
+          </div>
+        </div>
+
+        {/* CLÁUSULA SEXTA */}
+        <div style={{ marginBottom: "8mm" }}>
+          <div style={{ display: "flex", gap: "4mm", marginBottom: "4mm", alignItems: "baseline" }}>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#888",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Cláusula Sexta
+            </div>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#3A3A3A",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              Dos Honorários
+            </div>
+          </div>
+
+          <div
+            style={{
+              fontSize: "9px",
+              color: "#555",
+              lineHeight: "1.7",
+              textAlign: "justify",
+              display: "flex",
+              flexDirection: "column",
+              gap: "2.5mm",
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              6.1 Em contrapartida aos serviços profissionais de arquitetura prestados em conformidade com este
+              contrato, o CONTRATANTE compromete-se a pagar aos CONTRATADOS os honorários profissionais, bem como a
+              respectiva forma de pagamento, conforme estabelecido no Anexo III – Honorários e Condições de Pagamento,
+              que integra o presente instrumento para todos os fins de direito.
+            </p>
+            <p style={{ margin: 0 }}>
+              6.2 O Anexo III especificará detalhadamente o valor total dos honorários, a forma de pagamento aplicável
+              (incluindo, quando houver, valor de entrada, número e valor das parcelas, datas de vencimento e meios de
+              pagamento aceitos), bem como eventuais condições comerciais acordadas entre as partes.
+            </p>
+            <p style={{ margin: 0 }}>
+              6.3 Salvo disposição expressa em contrário e por escrito, mediante aditivo contratual específico, não
+              estão incluídos nos honorários contratados, sendo de responsabilidade exclusiva do CONTRATANTE sua
+              contratação e pagamento, os seguintes serviços, taxas ou despesas:
+            </p>
+            <div style={{ paddingLeft: "4mm", display: "flex", flexDirection: "column", gap: "1.5mm" }}>
+              <p style={{ margin: 0 }}>
+                6.3.1 Projetos complementares, tais como: Projeto Estrutural (incluindo fundações), elétrico,
+                hidrossanitário, prevenção e combate a incêndio, estudo de impacto de vizinhança, licenças ambientais, ou
+                quaisquer outros projetos técnicos exigidos para execução da obra;
+              </p>
+              <p style={{ margin: 0 }}>
+                6.3.2 Execução da obra, gerenciamento de obra ou responsabilidade técnica pela construção;
+              </p>
+              <p style={{ margin: 0 }}>
+                6.3.3 Taxas, emolumentos e tributos relacionados à aprovação do projeto em órgãos públicos, prefeitura,
+                condomínio, cartório, matrícula de obra no INSS ou quaisquer outros encargos legais;
+              </p>
+              <p style={{ margin: 0 }}>
+                6.3.4 Custos de impressão, plotagem ou reprodução de plantas exigidas para protocolos ou aprovações.
+              </p>
+            </div>
+            <p style={{ margin: 0 }}>
+              6.4 Em caso de atraso no pagamento de qualquer parcela, incidirão as penalidades especificadas no Anexo
+              III.
+            </p>
+            <p style={{ margin: 0 }}>
+              6.5 Caso, durante o desenvolvimento do projeto, ocorram alterações que impactem diretamente o escopo
+              contratado ou os critérios utilizados para cálculo dos honorários – como, por exemplo, alteração
+              significativa da área construída, mudança do programa arquitetônico ou inclusão de novos ambientes – os
+              honorários poderão ser revisados, com base nos critérios de cálculo originalmente utilizados para a
+              precificação do projeto (ex: valor por m² ou percentual sobre o custo estimado da obra) ou, na ausência de
+              critério específico, conforme a tabela de honorários do CAU/BR ou tabela de honorários dos CONTRATADOS,
+              mediante apresentação de nova proposta formal, mediante formalização de aditivo contratual e atualização do
+              Anexo III, com a concordância expressa das partes. Na ausência de concordância expressa do CONTRATANTE com
+              os honorários revisados para alterações significativas de escopo, os CONTRATADOS terão o direito de
+              suspender a execução dos serviços até que a questão seja resolvida ou, alternativamente, rescindir o
+              contrato, sendo devidos os honorários proporcionais aos serviços já executados até o momento da
+              suspensão/rescisão, sem prejuízo de eventual ressarcimento de custos comprovadamente incorridos em razão
+              da rescisão, a ser apurado em regular processo de liquidação, excluindo-se a aplicação de multa
+              compensatória.
+            </p>
+          </div>
+        </div>
+
+        {/* RODAPÉ */}
+        <div
+          style={{
+            marginTop: "auto",
+            paddingTop: "4mm",
+            borderTop: "0.3px solid #f0ede8",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div style={{ fontSize: "8px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            NL Arquitetos · São José dos Campos, SP
+          </div>
+          <div style={{ fontSize: "8px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            A Arquitetura como Decisão
+          </div>
+        </div>
+      </div>
     </>
 
 
