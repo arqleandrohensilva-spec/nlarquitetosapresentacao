@@ -2132,6 +2132,145 @@ const ContratoCliente = () => {
           </div>
         </div>
       </div>
+      {/* CLÁUSULAS - PÁGINA 10 */}
+      <div
+        className="page-break"
+        style={{
+          background: "#fff",
+          width: "210mm",
+          minHeight: "297mm",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          padding: "20mm 22mm 18mm",
+          fontFamily: "'DM Mono',monospace",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            paddingBottom: "5mm",
+            borderBottom: "0.3px solid #f0ede8",
+            marginBottom: "10mm",
+          }}
+        >
+          <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+            NL Arquitetos
+          </div>
+          <div style={{ textAlign: "right" }}>
+            <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+              {contrato.numero}
+            </div>
+            <div
+              style={{
+                fontSize: "7px",
+                color: "#8B7355",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                marginTop: "2px",
+              }}
+            >
+              Contrato Principal
+            </div>
+          </div>
+        </div>
+
+        {/* CLÁUSULA DÉCIMA TERCEIRA */}
+        <div style={{ marginBottom: "8mm" }}>
+          <div style={{ display: "flex", gap: "4mm", marginBottom: "4mm", alignItems: "baseline" }}>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#888",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Cláusula Décima Terceira
+            </div>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#3A3A3A",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              Da Limitação de Responsabilidade Civil do Projeto
+            </div>
+          </div>
+
+          <div
+            style={{
+              fontSize: "9px",
+              color: "#555",
+              lineHeight: "1.7",
+              textAlign: "justify",
+              display: "flex",
+              flexDirection: "column",
+              gap: "2.5mm",
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              13.1 A responsabilidade civil dos CONTRATADOS limita-se à elaboração do projeto arquitetônico objeto do
+              presente contrato, estritamente conforme as informações, documentos e diretrizes fornecidas pelo
+              CONTRATANTE, cuja veracidade, precisão e completude são de sua exclusiva responsabilidade. Custos
+              adicionais, atrasos no cronograma ou necessidade de retrabalho decorrentes da imprecisão, omissão,
+              incompletude ou inveracidade das informações, documentos e diretrizes fornecidas pelo CONTRATANTE serão de
+              sua exclusiva responsabilidade, gerando a cobrança de honorários complementares e revisão de prazos para os
+              CONTRATADOS, mediante apresentação de justificativa técnica e planilha de custos.
+            </p>
+            <p style={{ margin: 0 }}>
+              13.2 Os CONTRATADOS não poderão ser responsabilizados por danos, prejuízos ou consequências decorrentes de
+              modificações, execuções ou utilizações do projeto realizadas sem sua participação ou aprovação formal, bem
+              como por informações incorretas ou omissões nas especificações fornecidas pelo CONTRATANTE.
+            </p>
+            <div style={{ paddingLeft: "4mm", display: "flex", flexDirection: "column", gap: "1.5mm" }}>
+              <p style={{ margin: 0 }}>I – Execução da obra realizada por profissionais, empresas ou prestadores de serviço que não possuam vínculo contratual com os CONTRATADOS;</p>
+              <p style={{ margin: 0 }}>II – Utilização de materiais ou técnicas construtivas divergentes das especificações constantes no projeto;</p>
+              <p style={{ margin: 0 }}>III – modificações realizadas no projeto ou durante a execução da obra sem autorização prévia e expressa dos CONTRATADOS;</p>
+              <p style={{ margin: 0 }}>IV – Falhas construtivas, estruturais, elétricas, hidráulicas ou de quaisquer outras instalações decorrentes da execução da obra;</p>
+              <p style={{ margin: 0 }}>V – Informações técnicas incorretas, incompletas ou omissas fornecidas pelo CONTRATANTE ou por terceiros;</p>
+              <p style={{ margin: 0 }}>VI – Descumprimento de normas técnicas, urbanísticas, legais ou regulamentares durante a execução da obra.</p>
+              <p style={{ margin: 0 }}>VII – alterações na legislação urbanística, normas técnicas ou regulamentares que entrem em vigor ou sejam interpretadas de forma diversa após a aprovação final do projeto pelos órgãos competentes ou pelo CONTRATANTE, e que não eram previsíveis no momento da elaboração do projeto.</p>
+              <p style={{ margin: 0 }}>VIII – eventos de força maior ou caso fortuito, incluindo, mas não se limitando a desastres naturais, pandemias, greves, atos de terrorismo ou guerra, que impeçam ou dificultem a execução do projeto ou da obra.</p>
+            </div>
+            <p style={{ margin: 0 }}>
+              13.3 A responsabilidade civil dos CONTRATADOS, caso configurada, estará limitada ao valor total dos
+              honorários efetivamente recebidos em contraprestação ao serviço objeto deste contrato, excluindo-se
+              expressamente a cobertura de indenizações por danos indiretos, lucros cessantes, perdas financeiras ou
+              quaisquer outros prejuízos que possam advir da execução da obra.
+            </p>
+            <p style={{ margin: 0 }}>
+              13.4 Os CONTRATADOS não assumem responsabilidade técnica pela execução da obra, gerenciamento, fiscalização
+              ou acompanhamento da construção, salvo se tais serviços forem contratados de forma expressa por meio de
+              instrumento contratual específico.
+            </p>
+          </div>
+        </div>
+
+        <div
+          style={{
+            marginTop: "auto",
+            paddingTop: "4mm",
+            borderTop: "0.3px solid #f0ede8",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div style={{ fontSize: "8px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            NL Arquitetos · São José dos Campos, SP
+          </div>
+          <div style={{ fontSize: "8px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            A Arquitetura como Decisão
+          </div>
+        </div>
+      </div>
     </>
   );
 };
