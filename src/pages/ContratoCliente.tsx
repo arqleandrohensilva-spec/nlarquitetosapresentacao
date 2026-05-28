@@ -1481,7 +1481,196 @@ const ContratoCliente = () => {
         </div>
       </div>
 
-    </>
+      {/* CLÁUSULAS - PÁGINA 6 */}
+      <div
+        className="page-break"
+        style={{
+          background: "#fff",
+          width: "210mm",
+          minHeight: "297mm",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          padding: "20mm 22mm 18mm",
+          fontFamily: "'DM Mono',monospace",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            paddingBottom: "5mm",
+            borderBottom: "0.3px solid #f0ede8",
+            marginBottom: "10mm",
+          }}
+        >
+          <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+            NL Arquitetos
+          </div>
+          <div style={{ textAlign: "right" }}>
+            <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+              {contrato.numero}
+            </div>
+            <div
+              style={{
+                fontSize: "7px",
+                color: "#8B7355",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                marginTop: "2px",
+              }}
+            >
+              Contrato Principal
+            </div>
+          </div>
+        </div>
+
+        {/* CLÁUSULA NONA */}
+        <div style={{ marginBottom: "8mm" }}>
+          <div style={{ display: "flex", gap: "4mm", marginBottom: "4mm", alignItems: "baseline" }}>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#888",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Cláusula Nona
+            </div>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#3A3A3A",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              Dos Direitos Autorais
+            </div>
+          </div>
+
+          <div
+            style={{
+              fontSize: "9px",
+              color: "#555",
+              lineHeight: "1.7",
+              textAlign: "justify",
+              display: "flex",
+              flexDirection: "column",
+              gap: "2.5mm",
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              9.1 O Projeto desenvolvido no âmbito deste contrato constitui obra intelectual protegida pela Lei nº
+              9.610/1998 (Lei de Direitos Autorais) e pela Lei nº 12.378/2010, sendo reconhecido como criação técnica e
+              artística dos CONTRATADOS.
+            </p>
+            <p style={{ margin: 0 }}>
+              9.2 Os direitos autorais morais e patrimoniais sobre o projeto pertencem aos CONTRATADOS, nos termos da Lei
+              nº 9.610/1998, bem como da Lei nº 12.378/2010, e do art. 80 da Lei nº 13.303/2016, que garante a propriedade
+              intelectual de projetos técnicos.
+            </p>
+            <p style={{ margin: 0 }}>
+              9.3 O CONTRATANTE, mediante o pagamento integral dos honorários estabelecidos no Anexo III (Honorários e
+              Condições de Pagamento), adquire o direito de utilizar o projeto exclusivamente para a execução da obra no
+              imóvel especificado no Anexo I (Escopo Detalhado dos Serviços), observadas as condições e limitações
+              estabelecidas neste contrato, e desde que respeitados os direitos autorais dos CONTRATADOS, conforme a Lei
+              nº 9.610/1998.
+            </p>
+            <p style={{ margin: 0 }}>
+              9.4 Sem autorização prévia e expressa dos CONTRATADOS, a qual poderá ser concedida ou negada a critério
+              exclusivo dos CONTRATADOS, mesmo mediante oferta de pagamento de honorários adicionais, e mediante eventual
+              pagamento de honorários adicionais a serem acordados entre as partes, o CONTRATANTE não poderá:
+            </p>
+            <div style={{ paddingLeft: "4mm", display: "flex", flexDirection: "column", gap: "1.5mm" }}>
+              <p style={{ margin: 0 }}>9.4.1 Reproduzir o projeto em outro terreno ou imóvel;</p>
+              <p style={{ margin: 0 }}>9.4.2 Reutilizar total ou parcialmente o projeto em outra obra;</p>
+              <p style={{ margin: 0 }}>
+                9.4.3 Ceder, vender, compartilhar, encaminhar ou disponibilizar o projeto, total ou parcialmente, a
+                terceiros, incluindo construtoras, empreiteiros, engenheiros ou outros profissionais, sem autorização
+                expressa dos CONTRATADOS, sendo o CONTRATANTE responsável solidariamente por qualquer violação de direitos
+                autorais ou uso indevido cometido por tais terceiros que tenham recebido o projeto sem a devida
+                autorização dos CONTRATADOS.
+              </p>
+              <p style={{ margin: 0 }}>9.4.4 Modificar o projeto ou permitir modificações por outros profissionais;</p>
+              <p style={{ margin: 0 }}>9.4.5 Utilizar o projeto para fins comerciais, publicitários ou de incorporação imobiliária.</p>
+            </div>
+            <p style={{ margin: 0 }}>
+              9.5 Qualquer alteração no projeto, seja durante a fase de desenvolvimento ou durante a execução da obra,
+              somente poderá ser realizada mediante autorização expressa e por escrito dos CONTRATADOS.
+            </p>
+            <p style={{ margin: 0 }}>
+              9.6 Aos CONTRATADOS é garantido o direito de utilizar imagens, plantas, renders e fotografias do projeto e da
+              obra para fins de divulgação profissional em portfólio, redes sociais, apresentações institucionais ou
+              material de marketing, desde que sejam preservadas a privacidade e os dados pessoais do CONTRATANTE, em
+              conformidade com a Lei nº 13.709/2018 (Lei Geral de Proteção de Dados). Qualquer objeção do CONTRATANTE a
+              esta divulgação deverá ser formalizada por escrito no prazo máximo de 15 (quinze) dias após a assinatura do
+              contrato, devendo ser fundamentada em razões de segurança ou privacidade que não possam ser mitigadas pela
+              anonimização ou ocultação de dados, sob pena de preclusão do direito de objeção, e da consequente
+              autorização tácita para a divulgação nos termos previstos.
+            </p>
+            <p style={{ margin: 0 }}>
+              9.7 Considera-se reprodução indevida a utilização total ou parcial do projeto para execução em outro imóvel
+              ou empreendimento sem autorização dos CONTRATADOS.
+            </p>
+            <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888", paddingLeft: "4mm" }}>
+              9.7.1 Considera-se cópia a reprodução do projeto por pessoa física ou jurídica que não possua direitos de
+              uso sobre a obra intelectual.
+            </p>
+            <p style={{ margin: 0 }}>
+              9.8 Para fins deste contrato, considera-se plágio a reprodução substancial do projeto arquitetônico ou da
+              obra dele resultante, incluindo pelo menos dois dos seguintes elementos:
+            </p>
+            <div style={{ paddingLeft: "4mm", display: "flex", flexDirection: "column", gap: "1mm" }}>
+              <p style={{ margin: 0 }}>9.8.1 partido arquitetônico ou solução estrutural;</p>
+              <p style={{ margin: 0 }}>9.8.2 organização funcional dos ambientes;</p>
+              <p style={{ margin: 0 }}>9.8.3 volumetrias ou composição espacial interna ou externa.</p>
+            </div>
+            <p style={{ margin: 0 }}>
+              9.9 O plágio poderá ser caracterizado mesmo que sejam alterados materiais, cores, acabamentos ou detalhes
+              construtivos.
+            </p>
+            <p style={{ margin: 0 }}>
+              9.10 A utilização indevida, reprodução, cópia ou plágio do projeto arquitetônico implicará obrigação de
+              indenização aos CONTRATADOS, sem prejuízo das medidas judiciais cabíveis.
+            </p>
+            <p style={{ margin: 0 }}>
+              9.11 Alterações realizadas no projeto ou na obra dele resultante sem autorização dos CONTRATADOS
+              caracterizam violação de direitos autorais, nos termos da Lei nº 9.610/1998 (Lei de Direitos Autorais),
+              sujeitando o responsável ao pagamento de indenização mínima equivalente a 3 (três) vezes o valor total dos
+              honorários contratuais, sem prejuízo de outras sanções legais cabíveis.
+            </p>
+            <p style={{ margin: 0 }}>
+              9.12 O projeto somente poderá ser utilizado para execução da obra após a quitação integral dos honorários
+              previstos neste contrato. A utilização do projeto antes da quitação caracteriza uso indevido de obra
+              intelectual.
+            </p>
+          </div>
+        </div>
+
+        <div
+          style={{
+            marginTop: "auto",
+            paddingTop: "4mm",
+            borderTop: "0.3px solid #f0ede8",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div style={{ fontSize: "8px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            NL Arquitetos · São José dos Campos, SP
+          </div>
+          <div style={{ fontSize: "8px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            A Arquitetura como Decisão
+          </div>
+        </div>
+      </div>
+
   );
 };
 
