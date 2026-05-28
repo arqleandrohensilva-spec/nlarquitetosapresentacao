@@ -1670,6 +1670,160 @@ const ContratoCliente = () => {
           </div>
         </div>
       </div>
+      {/* CLÁUSULAS - PÁGINA 7 */}
+      <div
+        className="page-break"
+        style={{
+          background: "#fff",
+          width: "210mm",
+          minHeight: "297mm",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          padding: "20mm 22mm 18mm",
+          fontFamily: "'DM Mono',monospace",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            paddingBottom: "5mm",
+            borderBottom: "0.3px solid #f0ede8",
+            marginBottom: "10mm",
+          }}
+        >
+          <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+            NL Arquitetos
+          </div>
+          <div style={{ textAlign: "right" }}>
+            <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+              {contrato.numero}
+            </div>
+            <div
+              style={{
+                fontSize: "7px",
+                color: "#8B7355",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                marginTop: "2px",
+              }}
+            >
+              Contrato Principal
+            </div>
+          </div>
+        </div>
+
+        {/* CLÁUSULA DÉCIMA */}
+        <div style={{ marginBottom: "8mm" }}>
+          <div style={{ display: "flex", gap: "4mm", marginBottom: "4mm", alignItems: "baseline" }}>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#888",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Cláusula Décima
+            </div>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#3A3A3A",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              Da Responsabilidade Técnica
+            </div>
+          </div>
+
+          <div
+            style={{
+              fontSize: "9px",
+              color: "#555",
+              lineHeight: "1.7",
+              textAlign: "justify",
+              display: "flex",
+              flexDirection: "column",
+              gap: "2.5mm",
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              10.1 A responsabilidade técnica dos CONTRATADOS, no âmbito deste contrato, restringe-se à elaboração do
+              projeto, conforme o escopo definido no Anexo I (Escopo Detalhado dos Serviços), observadas as normas
+              técnicas aplicáveis, a legislação vigente e as diretrizes do contratante.
+            </p>
+            <p style={{ margin: 0 }}>
+              10.2 A responsabilidade integral pela execução da obra, incluindo a contratação de mão de obra,
+              construtores, fornecedores e outros profissionais necessários à construção, recai exclusivamente sobre o
+              CONTRATANTE.
+            </p>
+            <p style={{ margin: 0, fontStyle: "italic", color: "#333" }}>10.3 Os CONTRATADOS não se responsabilizam por:</p>
+            <div style={{ paddingLeft: "4mm", display: "flex", flexDirection: "column", gap: "1.5mm" }}>
+              <p style={{ margin: 0 }}>
+                10.3.1 A execução da obra, que é de inteira responsabilidade do CONTRATANTE e/ou dos profissionais por ele
+                contratados.
+              </p>
+              <p style={{ margin: 0 }}>
+                10.3.2 A qualidade dos materiais utilizados na obra, que é de inteira responsabilidade do CONTRATANTE e/ou
+                dos fornecedores.
+              </p>
+              <p style={{ margin: 0 }}>
+                10.3.3 O cumprimento dos prazos de execução da obra, que é de inteira responsabilidade do CONTRATANTE e/ou
+                dos profissionais por ele contratados.
+              </p>
+              <p style={{ margin: 0 }}>
+                10.3.4 Eventuais vícios ou defeitos na obra decorrentes de falhas na execução, na qualidade dos materiais
+                ou no cumprimento dos prazos.
+              </p>
+              <p style={{ margin: 0 }}>
+                10.3.5 A compatibilização do projeto arquitetônico com os projetos complementares (estrutural, elétrico,
+                hidrossanitário etc.), que é de inteira responsabilidade do CONTRATANTE e/ou dos profissionais por ele
+                contratados, salvo se expressamente previsto em contrário no Anexo I.
+              </p>
+            </div>
+            <p style={{ margin: 0 }}>
+              10.4 Caso o CONTRATANTE realize alterações no projeto arquitetônico sem a prévia e expressa autorização por
+              escrito dos CONTRATADOS, estes ficarão isentos de qualquer responsabilidade técnica, civil ou legal
+              decorrente dessas modificações, conforme o art. 615 do Código Civil.
+            </p>
+            <p style={{ margin: 0 }}>
+              10.5 A execução da obra em desacordo com o Projeto aprovado, ou sem observância das orientações técnicas
+              fornecidas, exime os CONTRATADOS de qualquer responsabilidade civil, técnica ou legal sobre eventuais
+              problemas construtivos, estruturais ou funcionais da edificação, desde que comprovada a relação de
+              causalidade entre o descumprimento das orientações e os problemas apresentados.
+            </p>
+            <p style={{ margin: 0 }}>
+              10.6 O presente contrato não inclui serviços de acompanhamento técnico de obra, fiscalização ou
+              gerenciamento de execução, os quais somente poderão ser realizados mediante contratação específica e
+              formalização de contrato adicional.
+            </p>
+          </div>
+        </div>
+
+        <div
+          style={{
+            marginTop: "auto",
+            paddingTop: "4mm",
+            borderTop: "0.3px solid #f0ede8",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div style={{ fontSize: "8px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            NL Arquitetos · São José dos Campos, SP
+          </div>
+          <div style={{ fontSize: "8px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            A Arquitetura como Decisão
+          </div>
+        </div>
+      </div>
     </>
   );
 };
