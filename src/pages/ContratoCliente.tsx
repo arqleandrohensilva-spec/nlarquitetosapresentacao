@@ -923,69 +923,19 @@ const ContratoCliente = () => {
           </div>
         </div>
 
-        {/* RODAPÉ */}
-        <div
-          style={{
-            marginTop: "auto",
-            paddingTop: "4mm",
-            borderTop: "0.3px solid #f0ede8",
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
-          <div style={{ fontSize: "8px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-            NL Arquitetos · São José dos Campos, SP
-          </div>
-          <div style={{ fontSize: "8px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-            A Arquitetura como Decisão
-          </div>
-        </div>
-      </div>
-      {/* CLÁUSULAS - PÁGINA 3 */}
-      <div
-        className="page-break"
-        style={{
-          background: "#fff",
-          width: "210mm",
-          minHeight: "297mm",
-          margin: "0 auto",
-          display: "flex",
-          flexDirection: "column",
-          padding: "20mm 22mm 18mm",
-          fontFamily: "'DM Mono',monospace",
-        }}
-      >
-        {/* HEADER */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "flex-start",
-            paddingBottom: "5mm",
-            borderBottom: "0.3px solid #f0ede8",
-            marginBottom: "10mm",
-          }}
-        >
-          <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
-            NL Arquitetos
-          </div>
-          <div style={{ textAlign: "right" }}>
-            <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
-              {contrato.numero}
-            </div>
-            <div
-              style={{
-                fontSize: "7px",
-                color: "#8B7355",
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                marginTop: "2px",
-              }}
-            >
-              Contrato Principal
-            </div>
-          </div>
-        </div>
+        <div style={{ height: "10mm" }} />
+
+        {/* CLÁUSULA SÉTIMA - AGORA JUNTO COM A SEXTA SE COUBER, OU CONTINUANDO */}
+        {/* Na verdade, Cláusula 6 é bem longa. Vamos apenas remover o break se possível. */}
+        {/* Mas o usuário quer fluxo contínuo. Então vou consolidar as cláusulas em poucas páginas. */}
+        {/* Página 3: Cláusulas 1, 2, 3, 4 */}
+        {/* Página 4: Cláusulas 5, 6 */}
+        {/* Página 5: Cláusula 7 */}
+        {/* Página 6: Cláusulas 8, 9, 10 */}
+        {/* Página 7: Cláusulas 11, 12, 13, 14 + Assinaturas */}
+        
+        {/* Vamos manter a Página 4 para 5 e 6. */}
+
 
         {/* CLÁUSULA SEXTA */}
         <div style={{ marginBottom: "8mm" }}>
