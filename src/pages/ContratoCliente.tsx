@@ -760,7 +760,189 @@ const ContratoCliente = () => {
           </div>
         </div>
       </div>
+      {/* CLÁUSULAS - PÁGINA 2 */}
+      <div
+        className="page-break"
+        style={{
+          background: "#fff",
+          width: "210mm",
+          minHeight: "297mm",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          padding: "20mm 22mm 18mm",
+          fontFamily: "'DM Mono',monospace",
+        }}
+      >
+        {/* HEADER */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            paddingBottom: "5mm",
+            borderBottom: "0.3px solid #f0ede8",
+            marginBottom: "10mm",
+          }}
+        >
+          <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+            NL Arquitetos
+          </div>
+          <div style={{ textAlign: "right" }}>
+            <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+              {contrato.numero}
+            </div>
+            <div
+              style={{
+                fontSize: "7px",
+                color: "#8B7355",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                marginTop: "2px",
+              }}
+            >
+              Contrato Principal
+            </div>
+          </div>
+        </div>
+
+        {/* CLÁUSULA QUINTA */}
+        <div style={{ marginBottom: "8mm" }}>
+          <div style={{ display: "flex", gap: "4mm", marginBottom: "4mm", alignItems: "baseline" }}>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#888",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Cláusula Quinta
+            </div>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#3A3A3A",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              Das Alterações
+            </div>
+          </div>
+
+          <div
+            style={{
+              fontSize: "9px",
+              color: "#555",
+              lineHeight: "1.7",
+              textAlign: "justify",
+              display: "flex",
+              flexDirection: "column",
+              gap: "2mm",
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              5.1 Cada etapa do projeto apresentada pelos CONTRATADOS contempla até 02 (duas) revisões, desde que as
+              alterações solicitadas estejam relacionadas à proposta inicialmente desenvolvida e não impliquem mudança
+              substancial do conceito arquitetônico previamente aprovado.
+            </p>
+            <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888", paddingLeft: "4mm" }}>
+              Parágrafo único – A caracterização de mudança substancial do conceito arquitetônico será avaliada pelos
+              CONTRATADOS, de forma justificada e documentada, com base em sua expertise técnica, nas normas aplicáveis
+              e nos documentos de briefing e estudo preliminar aprovados.
+            </p>
+            <p style={{ margin: 0 }}>
+              5.2 As solicitações de ajustes deverão ser realizadas pelo CONTRATANTE dentro do prazo de análise
+              estabelecido neste contrato ou nos Anexos correspondentes, após a apresentação de cada etapa do projeto.
+            </p>
+            <p style={{ margin: 0 }}>
+              5.2.1 A ausência de manifestação do CONTRATANTE dentro do prazo de análise estabelecido, conforme ANEXO II
+              – Cronograma de Desenvolvimento do Projeto, implicará na aprovação tácita da etapa apresentada, para fins de
+              continuidade do desenvolvimento do projeto, sem prejuízo da aplicação das demais disposições contratuais
+              relativas a alterações posteriores.
+            </p>
+            <p style={{ margin: 0 }}>
+              5.3 Caso o CONTRATANTE solicite mais de 02 (duas) rodadas de revisão em uma mesma etapa, ou alterações que
+              impliquem mudanças significativas no conceito arquitetônico previamente aprovado, devidamente justificado e
+              comprovado pelos CONTRATADOS, tais modificações serão consideradas serviços adicionais, cobradas por hora
+              técnica conforme tabela de honorários praticada pelos CONTRATADOS, estando sujeitas à redefinição de prazos.
+            </p>
+            <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888", paddingLeft: "4mm" }}>
+              Parágrafo único – A execução desses serviços adicionais dependerá da apresentação de proposta formal pelos
+              CONTRATADOS, contendo a descrição do escopo, novos prazos e honorários correspondentes, bem como da
+              aprovação expressa do CONTRATANTE.
+            </p>
+            <p style={{ margin: 0 }}>
+              5.4 Alterações solicitadas após a aprovação formal de uma etapa serão consideradas serviços adicionais,
+              sujeitas à análise de viabilidade técnica pelos CONTRATADOS, revisão de prazos e cobrança de honorários
+              complementares. A aprovação formal de cada etapa do projeto pelo CONTRATANTE deverá ocorrer por meio de
+              comunicação escrita (e-mail com confirmação de leitura, plataforma de gestão de projetos ou termo de
+              aprovação assinado), dentro do prazo estabelecido, e implicará a concordância com as soluções
+              apresentadas, encerrando a fase correspondente.
+            </p>
+            <p style={{ margin: 0 }}>
+              5.5 Solicitações de alteração realizadas durante a etapa de Projeto Executivo, que impactem elementos
+              previamente definidos, poderão gerar revisão de prazos e honorários, em razão do retrabalho técnico
+              necessário. Tais serviços adicionais estarão sujeitos à cobrança de honorários, mediante apresentação de
+              proposta formal e aprovação prévia do CONTRATANTE.
+            </p>
+            <p style={{ margin: 0 }}>
+              5.6 Alterações decorrentes de exigências técnicas de órgãos públicos, prefeitura ou normas condominiais
+              serão realizadas sem custo adicional ao CONTRATANTE, desde que não impliquem mudança substancial do
+              conceito arquitetônico previamente aprovado.
+            </p>
+            <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888", paddingLeft: "4mm" }}>
+              Parágrafo único – Caso tais exigências demandem alterações significativas no projeto ou revisão do conceito
+              arquitetônico, os prazos serão ajustados e estarão sujeitos à honorários adicionais, mediante apresentação
+              de novo orçamento e aprovação pelo CONTRATANTE.
+            </p>
+            <p style={{ margin: 0 }}>
+              5.7 Quaisquer alterações solicitadas pelo CONTRATANTE após o início da execução da obra e que não decorram
+              de vícios construtivos ou falhas de projeto imputáveis aos CONTRATADOS não fazem parte do escopo deste
+              contrato, podendo ser realizadas mediante contratação adicional de serviços de revisão de projeto, com
+              orçamento específico e aprovação prévia do CONTRATANTE.
+            </p>
+            <p style={{ margin: 0 }}>
+              5.8 Após a aprovação do Projeto Executivo, o projeto será considerado tecnicamente finalizado, não estando
+              incluídas revisões ou modificações posteriores no escopo deste contrato, salvo por acordo expresso entre as
+              partes e mediante aditivo contratual que defina o escopo e os honorários adicionais.
+            </p>
+            <p style={{ margin: 0 }}>
+              5.9 Os valores referentes a serviços adicionais serão definidos conforme tabela de honorários praticada pelos
+              CONTRATADOS ou conforme referência da tabela de honorários do CAU/BR, mediante prévia comunicação e
+              aprovação do CONTRATANTE.
+            </p>
+            <p style={{ margin: 0 }}>
+              5.10 A aprovação de cada etapa do projeto pelo CONTRATANTE caracteriza a concordância com as soluções
+              apresentadas, encerrando-se a fase correspondente.
+            </p>
+          </div>
+        </div>
+
+        {/* RODAPÉ */}
+        <div
+          style={{
+            marginTop: "auto",
+            paddingTop: "4mm",
+            borderTop: "0.3px solid #f0ede8",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div style={{ fontSize: "8px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            NL Arquitetos · São José dos Campos, SP
+          </div>
+          <div style={{ fontSize: "8px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            A Arquitetura como Decisão
+          </div>
+        </div>
+      </div>
     </>
+
 
   );
 };
