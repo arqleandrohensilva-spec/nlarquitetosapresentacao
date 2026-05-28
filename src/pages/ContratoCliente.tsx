@@ -1975,6 +1975,163 @@ const ContratoCliente = () => {
           </div>
         </div>
       </div>
+      {/* CLÁUSULAS - PÁGINA 9 */}
+      <div
+        className="page-break"
+        style={{
+          background: "#fff",
+          width: "210mm",
+          minHeight: "297mm",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          padding: "20mm 22mm 18mm",
+          fontFamily: "'DM Mono',monospace",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            paddingBottom: "5mm",
+            borderBottom: "0.3px solid #f0ede8",
+            marginBottom: "10mm",
+          }}
+        >
+          <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+            NL Arquitetos
+          </div>
+          <div style={{ textAlign: "right" }}>
+            <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+              {contrato.numero}
+            </div>
+            <div
+              style={{
+                fontSize: "7px",
+                color: "#8B7355",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                marginTop: "2px",
+              }}
+            >
+              Contrato Principal
+            </div>
+          </div>
+        </div>
+
+        {/* CLÁUSULA DÉCIMA SEGUNDA */}
+        <div style={{ marginBottom: "8mm" }}>
+          <div style={{ display: "flex", gap: "4mm", marginBottom: "4mm", alignItems: "baseline" }}>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#888",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Cláusula Décima Segunda
+            </div>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#3A3A3A",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              Considerações Finais
+            </div>
+          </div>
+
+          <div
+            style={{
+              fontSize: "9px",
+              color: "#555",
+              lineHeight: "1.7",
+              textAlign: "justify",
+              display: "flex",
+              flexDirection: "column",
+              gap: "2.5mm",
+            }}
+          >
+            <p style={{ margin: 0, fontStyle: "italic", color: "#333" }}>
+              Esta cláusula estabelece disposições complementares aplicáveis à execução do presente contrato e aos anexos
+              que o integram.
+            </p>
+            <p style={{ margin: 0 }}>
+              12.1 Execução da obra decorrente do projeto objeto deste contrato não está incluída no escopo dos serviços
+              contratados, sendo que eventual contratação de acompanhamento, gerenciamento ou execução da obra deverá ser
+              objeto de contrato específico e independente.
+            </p>
+            <p style={{ margin: 0 }}>
+              12.2 Os CONTRATADOS, na qualidade de autor do projeto, ficam isentos de quaisquer responsabilidades técnicas
+              ou legais decorrentes de alterações executadas na obra sem sua prévia ciência e autorização por escrito. É
+              obrigação do CONTRATANTE solicitar e obter tal autorização, por escrito, antes de qualquer alteração, sob
+              pena de responsabilização. Os CONTRATADOS poderão adotar as medidas legais cabíveis para proteção de seus
+              direitos autorais e de sua responsabilidade profissional, incluindo, mas não se limitando a ações de
+              reparação por danos morais e materiais, bem como a aplicação do disposto no art. 619 do Código Civil.
+            </p>
+            <p style={{ margin: 0 }}>
+              12.3 O início dos serviços objeto deste contrato está condicionado à assinatura do presente instrumento e à
+              comprovação do pagamento da primeira parcela ou sinal contratual, devendo o comprovante ser encaminhado aos
+              CONTRATADOS.
+            </p>
+            <p style={{ margin: 0 }}>
+              12.4 Os atendimentos ao CONTRATANTE poderão ocorrer presencialmente, mediante agendamento prévio com
+              antecedência mínima de 7 (sete) dias úteis, dentro do horário comercial, compreendido entre 08h00 às 12h00
+              e 14h00 às 18h00, de segunda a sexta-feira. Adicionalmente, os atendimentos poderão ocorrer de forma
+              virtual (por videoconferência, por exemplo), mantendo a necessidade de agendamento prévio e horário
+              comercial.
+            </p>
+            <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888", paddingLeft: "4mm" }}>
+              12.4.1 Caso seja necessária visita presencial ao local da obra ou deslocamento externo, será aplicada a taxa
+              de visita técnica a ser previamente acordada entre as partes ou conforme tabela de honorários dos
+              CONTRATADOS prevista neste contrato.
+            </p>
+            <p style={{ margin: 0 }}>
+              12.5 Todas as comunicações relevantes relacionadas ao presente contrato, incluindo aprovações de etapas,
+              solicitações de alterações e notificações contratuais, deverão ser realizadas obrigatoriamente por e-mail ou
+              outro meio eletrônico formal, sendo consideradas válidas para fins contratuais.
+            </p>
+            <p style={{ margin: 0 }}>
+              12.6 O CONTRATANTE compromete-se a fornecer todas as informações, documentos e definições necessárias para o
+              desenvolvimento do projeto no prazo máximo de 5 (cinco) dias úteis a contar da solicitação, salvo quando
+              prazos específicos forem definidos em outras cláusulas deste contrato.
+            </p>
+            <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888", paddingLeft: "4mm" }}>
+              12.6.1 Eventuais atrasos decorrentes da não entrega dessas informações poderão impactar diretamente o
+              cronograma do projeto, sem que isso caracterize descumprimento contratual por parte dos CONTRATADOS.
+            </p>
+            <p style={{ margin: 0 }}>
+              12.7 Caso ocorram alterações na legislação urbanística ou nas normas técnicas aplicáveis após a conclusão do
+              projeto, eventuais adequações necessárias poderão ser objeto de aditivo contratual, conforme previsto no
+              Art. 81 da Lei nº 13.303/2016, que estabelece as condições para alteração contratual por adequação técnica.
+            </p>
+          </div>
+        </div>
+
+        <div
+          style={{
+            marginTop: "auto",
+            paddingTop: "4mm",
+            borderTop: "0.3px solid #f0ede8",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div style={{ fontSize: "8px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            NL Arquitetos · São José dos Campos, SP
+          </div>
+          <div style={{ fontSize: "8px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            A Arquitetura como Decisão
+          </div>
+        </div>
+      </div>
     </>
   );
 };
