@@ -1100,6 +1100,211 @@ const ContratoCliente = () => {
           </div>
         </div>
       </div>
+      {/* CLÁUSULAS - PÁGINA 4 */}
+      <div
+        className="page-break"
+        style={{
+          background: "#fff",
+          width: "210mm",
+          minHeight: "297mm",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          padding: "20mm 22mm 18mm",
+          fontFamily: "'DM Mono',monospace",
+        }}
+      >
+        {/* HEADER */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            paddingBottom: "5mm",
+            borderBottom: "0.3px solid #f0ede8",
+            marginBottom: "10mm",
+          }}
+        >
+          <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+            NL Arquitetos
+          </div>
+          <div style={{ textAlign: "right" }}>
+            <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+              {contrato.numero}
+            </div>
+            <div
+              style={{
+                fontSize: "7px",
+                color: "#8B7355",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                marginTop: "2px",
+              }}
+            >
+              Contrato Principal
+            </div>
+          </div>
+        </div>
+
+        {/* CLÁUSULA SÉTIMA */}
+        <div style={{ marginBottom: "8mm" }}>
+          <div style={{ display: "flex", gap: "4mm", marginBottom: "4mm", alignItems: "baseline" }}>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#888",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Cláusula Sétima
+            </div>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#3A3A3A",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              Das Obrigações e Responsabilidades do Contratante
+            </div>
+          </div>
+
+          <div
+            style={{
+              fontSize: "9px",
+              color: "#555",
+              lineHeight: "1.7",
+              textAlign: "justify",
+              display: "flex",
+              flexDirection: "column",
+              gap: "2.5mm",
+            }}
+          >
+            <p style={{ margin: 0, fontStyle: "italic", color: "#333", marginBottom: "1mm" }}>
+              Compete ao CONTRATANTE, para o correto desenvolvimento dos serviços contratados:
+            </p>
+            <p style={{ margin: 0 }}>
+              7.1 Fornecer aos CONTRATADOS, de forma completa, verdadeira e tempestiva, todos os documentos, informações
+              e dados necessários ao desenvolvimento do projeto, conforme especificado no Anexo I (Escopo dos Serviços) e
+              eventuais solicitações técnicas adicionais realizadas pelos CONTRATADOS.
+            </p>
+            <p style={{ margin: 0 }}>
+              7.2 Analisar e aprovar as etapas do projeto apresentadas pelos CONTRATADOS dentro dos prazos estabelecidos
+              no Anexo II (Cronograma), comunicando eventuais solicitações de ajustes de forma clara e objetiva.
+            </p>
+            <p style={{ margin: 0 }}>
+              7.3 Colaborar ativamente durante o processo de desenvolvimento do projeto, respondendo às solicitações dos
+              CONTRATADOS dentro dos prazos estipulados.
+            </p>
+            <div style={{ paddingLeft: "4mm", display: "flex", flexDirection: "column", gap: "1.5mm" }}>
+              <p style={{ margin: 0 }}>
+                7.3.1 A ausência de manifestação ou atraso na aprovação das etapas pelo CONTRATANTE poderá suspender os
+                prazos contratuais dos CONTRATADOS, bem como gerar revisão do cronograma.
+              </p>
+              <p style={{ margin: 0 }}>
+                7.3.2 Caso solicitações tardias de alteração impliquem retrabalho técnico em etapas já aprovadas ou
+                concluídas, os CONTRATADOS poderão cobrar honorários adicionais, conforme previsto neste contrato.
+              </p>
+            </div>
+            <p style={{ margin: 0 }}>
+              7.4 Efetuar o pagamento dos honorários profissionais na forma, prazos e condições estabelecidas no Anexo
+              III (Honorários e Condições de Pagamento).
+            </p>
+            <p style={{ margin: 0 }}>
+              7.5 Obter todas as licenças, alvarás e aprovações necessárias junto aos órgãos públicos, condomínio ou
+              demais instituições competentes para a execução da obra, arcando com todos os custos, taxas e emolumentos
+              correspondentes, responsabilizando-se por apresentar os projetos complementares, quando exigidos.
+            </p>
+            <p style={{ margin: 0 }}>
+              7.6 Contratar, obrigatoriamente, os profissionais responsáveis pelos projetos complementares indispensáveis
+              à execução da obra, tais como:
+            </p>
+            <div
+              style={{
+                paddingLeft: "4mm",
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: "1.5mm",
+                fontSize: "8.5px",
+                color: "#666",
+              }}
+            >
+              <div>7.6.1 Projeto estrutural;</div>
+              <div>7.6.2 Projetos elétrico;</div>
+              <div>7.6.3 Projetos hidrossanitário;</div>
+              <div>7.6.4 Projetos de fundação;</div>
+              <div>7.6.5 Projetos prevenção e combate a incêndio;</div>
+              <div>7.6.6 Entre outros necessários.</div>
+            </div>
+            <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888", paddingLeft: "4mm" }}>
+              7.6.7 A contratação e coordenação dos projetos complementares são de responsabilidade do CONTRATANTE, salvo
+              se tais serviços forem expressamente contratados junto aos CONTRATADOS por meio de instrumento específico.
+            </p>
+            <p style={{ margin: 0 }}>
+              7.7 Contratar empresa construtora, empreiteiros ou profissionais responsáveis pela execução da obra.
+            </p>
+            <p style={{ margin: 0 }}>
+              7.8 O CONTRATANTE compromete-se a cumprir todas as obrigações previstas neste contrato e seus anexos, bem
+              como a agir com boa-fé e colaboração para o bom desenvolvimento dos serviços. A executar a obra em
+              conformidade com o projeto elaborado pelos CONTRATADOS, sendo vedadas alterações sem a prévia autorização
+              técnica e formal dos autores do projeto, sob pena de responsabilização, nos termos do art. 615 do Código
+              Civil.
+            </p>
+            <p style={{ margin: 0 }}>
+              7.9 Qualquer alteração realizada na obra sem a prévia autorização dos CONTRATADOS isentará estes de
+              qualquer responsabilidade técnica, civil ou legal decorrente das modificações realizadas, conforme previsto
+              no art. 615 do Código Civil.
+            </p>
+            <p style={{ margin: 0 }}>
+              7.10 Caso o CONTRATANTE deseje realizar alterações no projeto durante a execução da obra, deverá comunicar
+              formalmente os CONTRATADOS para análise técnica e eventual atualização do projeto, podendo tal serviço ser
+              objeto de contratação adicional.
+            </p>
+            <p style={{ margin: 0 }}>
+              7.11 O projeto arquitetônico constitui obra intelectual protegida pela Lei nº 9.610/1998 e pela Lei nº
+              12.378/2010.
+            </p>
+            <div style={{ paddingLeft: "4mm", display: "flex", flexDirection: "column", gap: "1.5mm" }}>
+              <p style={{ margin: 0 }}>
+                7.11.1 O CONTRATANTE compromete-se a não reproduzir, alterar, adaptar ou permitir a execução do projeto por
+                terceiros sem autorização expressa dos CONTRATADOS.
+              </p>
+              <p style={{ margin: 0 }}>
+                7.11.2 O descumprimento caracterizará violação de direitos autorais, sujeitando o CONTRATANTE ao pagamento
+                de multa não inferior a 50% do valor total deste contrato, sem prejuízo de perdas e danos.
+              </p>
+            </div>
+            <p style={{ margin: 0 }}>
+              7.12 Quando houver identificação do autor do projeto por meio de placa de obra, material de divulgação ou
+              qualquer outro meio, o CONTRATANTE compromete-se a não remover tal identificação sem autorização prévia dos
+              CONTRATADOS.
+            </p>
+          </div>
+        </div>
+
+        {/* RODAPÉ */}
+        <div
+          style={{
+            marginTop: "auto",
+            paddingTop: "4mm",
+            borderTop: "0.3px solid #f0ede8",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div style={{ fontSize: "8px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            NL Arquitetos · São José dos Campos, SP
+          </div>
+          <div style={{ fontSize: "8px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            A Arquitetura como Decisão
+          </div>
+        </div>
+      </div>
     </>
 
 
