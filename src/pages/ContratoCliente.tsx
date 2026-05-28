@@ -1275,8 +1275,9 @@ const ContratoCliente = () => {
                 terceiros sem autorização expressa dos CONTRATADOS.
               </p>
               <p style={{ margin: 0 }}>
-                7.11.2 O descumprimento caracterizará violação de direitos autorais, sujeitando o CONTRATANTE ao pagamento
-                de multa não inferior a 50% do valor total deste contrato, sem prejuízo de perdas e danos.
+                7.11.2 O descumprimento desta obrigação caracterizará violação de direitos autorais, sujeitando o
+                CONTRATANTE ao pagamento de multa não inferior a 50% do valor total deste contrato, sem prejuízo de
+                eventual indenização por perdas e danos e demais sanções legais cabíveis.
               </p>
             </div>
             <p style={{ margin: 0 }}>
