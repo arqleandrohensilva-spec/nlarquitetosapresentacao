@@ -684,6 +684,64 @@ const ContratoCliente = () => {
           </div>
         </div>
 
+        {/* CLÁUSULA QUARTA */}
+        <div style={{ marginBottom: "8mm" }}>
+          <div style={{ display: "flex", gap: "4mm", marginBottom: "4mm", alignItems: "baseline" }}>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#888",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Cláusula Quarta
+            </div>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#3A3A3A",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              Do Prazo
+            </div>
+          </div>
+
+          <div
+            style={{
+              fontSize: "9px",
+              color: "#555",
+              lineHeight: "1.8",
+              textAlign: "justify",
+              display: "flex",
+              flexDirection: "column",
+              gap: "2mm",
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              4.1 Os prazos para execução dos serviços objeto deste contrato serão definidos nos Anexos correspondentes,
+              nos quais constará o cronograma estimado de desenvolvimento das etapas do projeto.
+            </p>
+            <p style={{ margin: 0 }}>
+              4.2 Os prazos estabelecidos possuem caráter estimativo e poderão sofrer ajustes a serem determinados e
+              comunicados formalmente pelos CONTRATADOS ao CONTRATANTE, com a devida justificativa, em razão de fatores
+              como: revisões solicitadas pelo CONTRATANTE, atraso no fornecimento de informações ou documentos
+              necessários ao desenvolvimento do projeto, exigências de órgãos públicos, necessidade de adequações
+              técnicas, superveniência de fatos imprevisíveis ou quaisquer outras circunstâncias que impactem o
+              andamento regular dos serviços.
+            </p>
+            <p style={{ margin: 0 }}>
+              4.3 Eventuais atrasos decorrentes de fatores alheios à atuação dos CONTRATADOS não caracterizarão
+              inadimplemento contratual.
+            </p>
+          </div>
+        </div>
+
         {/* RODAPÉ */}
         <div
           style={{
