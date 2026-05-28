@@ -1305,6 +1305,708 @@ const ContratoCliente = () => {
           </div>
         </div>
       </div>
+      {/* CLÁUSULAS - PÁGINA 5 */}
+      <div
+        className="page-break"
+        style={{
+          background: "#fff",
+          width: "210mm",
+          minHeight: "297mm",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          padding: "20mm 22mm 18mm",
+          fontFamily: "'DM Mono',monospace",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            paddingBottom: "5mm",
+            borderBottom: "0.3px solid #f0ede8",
+            marginBottom: "10mm",
+          }}
+        >
+          <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+            NL Arquitetos
+          </div>
+          <div style={{ textAlign: "right" }}>
+            <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+              {contrato.numero}
+            </div>
+            <div
+              style={{
+                fontSize: "7px",
+                color: "#8B7355",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                marginTop: "2px",
+              }}
+            >
+              Contrato Principal
+            </div>
+          </div>
+        </div>
+
+        {/* CLÁUSULA OITAVA */}
+        <div style={{ marginBottom: "8mm" }}>
+          <div style={{ display: "flex", gap: "4mm", marginBottom: "4mm", alignItems: "baseline" }}>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#888",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Cláusula Oitava
+            </div>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#3A3A3A",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              Das Obrigações e Responsabilidades dos Contratados
+            </div>
+          </div>
+
+          <div
+            style={{
+              fontSize: "9px",
+              color: "#555",
+              lineHeight: "1.7",
+              textAlign: "justify",
+              display: "flex",
+              flexDirection: "column",
+              gap: "2.5mm",
+            }}
+          >
+            <p style={{ margin: 0, fontStyle: "italic", color: "#333", marginBottom: "1mm" }}>Compete aos CONTRATADOS:</p>
+            <p style={{ margin: 0 }}>
+              8.1 Prestar os serviços profissionais de arquitetura com diligência, competência e observância às normas
+              técnicas aplicáveis, à legislação vigente ao Código de Ética e Disciplina do CAU/BR às boas práticas
+              profissionais reconhecidas no setor.
+            </p>
+            <p style={{ margin: 0 }}>
+              8.2 Elaborar o projeto arquitetônico em estrita conformidade com o escopo definido no Anexo I, observando
+              rigorosamente os prazos estabelecidos no Anexo II e considerando integralmente as informações, documentos
+              e diretrizes fornecidos pelo CONTRATANTE. O cumprimento das obrigações, incluindo prazos e qualidade, é
+              condicionado ao adimplemento tempestivo e integral das obrigações do CONTRATANTE.
+            </p>
+            <p style={{ margin: 0 }}>
+              8.3 Manter o CONTRATANTE informado sobre o andamento do projeto, apresentando as etapas desenvolvidas para
+              análise e aprovação dentro dos prazos previstos.
+            </p>
+            <p style={{ margin: 0 }}>
+              8.4 Realizar as alterações e ajustes solicitados pelo CONTRATANTE, desde que tecnicamente viáveis e dentro
+              dos limites estabelecidos neste contrato e em seus anexos, especialmente no que se refere à quantidade de
+              revisões e à manutenção do conceito arquitetônico.
+            </p>
+            <p style={{ margin: 0 }}>
+              8.5 Manter sigilo sobre informações e documentos confidenciais do CONTRATANTE aos quais tiver acesso em
+              razão deste contrato.
+            </p>
+            <p style={{ margin: 0 }}>
+              8.6 Emitir o Registro de Responsabilidade Técnica (RRT) referente aos serviços efetivamente prestados.
+            </p>
+            <p style={{ margin: 0 }}>
+              8.7 Elaborar o projeto observando a legislação urbanística municipal, o Código de Obras e as normas
+              técnicas pertinentes (ABNT NBR 13532, NBR 9050, entre outras), sempre em conformidade com as diretrizes
+              do CONTRATANTE e em observância ao Art. 25 da Lei nº 14.133/2021.
+            </p>
+            <p style={{ margin: 0 }}>
+              8.8 Quando houver projetos complementares elaborados por terceiros, os CONTRATADOS poderão analisar tais
+              documentos para identificar interferências aparentes.
+            </p>
+            <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888", paddingLeft: "4mm" }}>
+              8.8.1 Essa análise possui caráter não exaustivo e não configura responsabilidade pela compatibilização
+              integral entre todos os projetos técnicos, salvo se contratado especificamente.
+            </p>
+            <p style={{ margin: 0 }}>
+              8.9 Os CONTRATADOS poderão utilizar imagens, plantas e fotografias do projeto para fins de portfólio e
+              divulgação, respeitando a LGPD e garantindo o anonimato de informações confidenciais.
+            </p>
+            <p style={{ margin: 0 }}>
+              8.10 A responsabilidade dos CONTRATADOS limita-se à elaboração do projeto.
+            </p>
+            <p style={{ margin: 0, fontSize: "8.5px", fontStyle: "italic", color: "#888", paddingLeft: "4mm" }}>
+              8.10.1 Eventuais problemas decorrentes da execução da obra, interpretação inadequada ou utilização de
+              materiais divergentes não poderão ser imputados aos CONTRATADOS.
+            </p>
+          </div>
+        </div>
+
+        <div
+          style={{
+            marginTop: "auto",
+            paddingTop: "4mm",
+            borderTop: "0.3px solid #f0ede8",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div style={{ fontSize: "8px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            NL Arquitetos · São José dos Campos, SP
+          </div>
+          <div style={{ fontSize: "8px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            A Arquitetura como Decisão
+          </div>
+        </div>
+      </div>
+
+      {/* CLÁUSULAS - PÁGINA 6 */}
+      <div
+        className="page-break"
+        style={{
+          background: "#fff",
+          width: "210mm",
+          minHeight: "297mm",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          padding: "20mm 22mm 18mm",
+          fontFamily: "'DM Mono',monospace",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            paddingBottom: "5mm",
+            borderBottom: "0.3px solid #f0ede8",
+            marginBottom: "10mm",
+          }}
+        >
+          <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+            NL Arquitetos
+          </div>
+          <div style={{ textAlign: "right" }}>
+            <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+              {contrato.numero}
+            </div>
+            <div
+              style={{
+                fontSize: "7px",
+                color: "#8B7355",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                marginTop: "2px",
+              }}
+            >
+              Contrato Principal
+            </div>
+          </div>
+        </div>
+
+        {/* CLÁUSULA NONA */}
+        <div style={{ marginBottom: "8mm" }}>
+          <div style={{ display: "flex", gap: "4mm", marginBottom: "4mm", alignItems: "baseline" }}>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#888",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Cláusula Nona
+            </div>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#3A3A3A",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              Dos Direitos Autorais
+            </div>
+          </div>
+
+          <div
+            style={{
+              fontSize: "9px",
+              color: "#555",
+              lineHeight: "1.7",
+              textAlign: "justify",
+              display: "flex",
+              flexDirection: "column",
+              gap: "2.5mm",
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              9.1 O Projeto desenvolvido constitui obra intelectual protegida pela Lei nº 9.610/1998 e pela Lei nº
+              12.378/2010, sendo reconhecido como criação dos CONTRATADOS.
+            </p>
+            <p style={{ margin: 0 }}>
+              9.2 Os direitos autorais morais e patrimoniais pertencem aos CONTRATADOS.
+            </p>
+            <p style={{ margin: 0 }}>
+              9.3 O CONTRATANTE adquire o direito de utilizar o projeto exclusivamente para a execução da obra no imóvel
+              especificado, condicionada à quitação integral dos honorários.
+            </p>
+            <p style={{ margin: 0 }}>
+              9.4 Sem autorização prévia, o CONTRATANTE não poderá reproduzir o projeto em outro terreno, reutilizá-lo,
+              ceder a terceiros, modificar ou utilizar para fins comerciais.
+            </p>
+            <p style={{ margin: 0 }}>
+              9.5 Qualquer alteração somente poderá ser realizada mediante autorização expressa e por escrito.
+            </p>
+            <p style={{ margin: 0 }}>
+              9.6 Aos CONTRATADOS é garantido o direito de utilizar imagens para divulgação profissional, respeitando a
+              LGPD.
+            </p>
+            <p style={{ margin: 0 }}>
+              9.8 Considera-se plágio a reprodução substancial do projeto (partido, organização ou volumetria).
+            </p>
+            <p style={{ margin: 0 }}>
+              9.11 Alterações sem autorização sujeitam o responsável a indenização mínima de 3x o valor do contrato.
+            </p>
+          </div>
+        </div>
+
+        {/* CLÁUSULA DÉCIMA */}
+        <div style={{ marginBottom: "8mm" }}>
+          <div style={{ display: "flex", gap: "4mm", marginBottom: "4mm", alignItems: "baseline" }}>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#888",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Cláusula Décima
+            </div>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#3A3A3A",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              Da Responsabilidade Técnica
+            </div>
+          </div>
+          <div
+            style={{
+              fontSize: "9px",
+              color: "#555",
+              lineHeight: "1.7",
+              textAlign: "justify",
+              display: "flex",
+              flexDirection: "column",
+              gap: "2.5mm",
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              10.1 A responsabilidade restringe-se à elaboração do projeto arquitetônico.
+            </p>
+            <p style={{ margin: 0 }}>
+              10.2 A responsabilidade pela execução da obra recai exclusivamente sobre o CONTRATANTE.
+            </p>
+            <p style={{ margin: 0 }}>
+              10.3 Os CONTRATADOS não se responsabilizam pela execução, qualidade dos materiais, prazos de obra ou
+              compatibilização com complementares (salvo se contratado).
+            </p>
+            <p style={{ margin: 0 }}>
+              10.4 Alterações sem autorização isentam os CONTRATADOS de qualquer responsabilidade técnica ou civil.
+            </p>
+            <p style={{ margin: 0 }}>
+              10.6 O contrato não inclui acompanhamento técnico, fiscalização ou gerenciamento de obra.
+            </p>
+          </div>
+        </div>
+
+        <div
+          style={{
+            marginTop: "auto",
+            paddingTop: "4mm",
+            borderTop: "0.3px solid #f0ede8",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div style={{ fontSize: "8px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            NL Arquitetos · São José dos Campos, SP
+          </div>
+          <div style={{ fontSize: "8px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            A Arquitetura como Decisão
+          </div>
+        </div>
+      </div>
+
+      {/* CLÁUSULAS - PÁGINA 7 */}
+      <div
+        className="page-break"
+        style={{
+          background: "#fff",
+          width: "210mm",
+          minHeight: "297mm",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          padding: "20mm 22mm 18mm",
+          fontFamily: "'DM Mono',monospace",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            paddingBottom: "5mm",
+            borderBottom: "0.3px solid #f0ede8",
+            marginBottom: "10mm",
+          }}
+        >
+          <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+            NL Arquitetos
+          </div>
+          <div style={{ textAlign: "right" }}>
+            <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+              {contrato.numero}
+            </div>
+            <div
+              style={{
+                fontSize: "7px",
+                color: "#8B7355",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                marginTop: "2px",
+              }}
+            >
+              Contrato Principal
+            </div>
+          </div>
+        </div>
+
+        {/* CLÁUSULA DÉCIMA PRIMEIRA */}
+        <div style={{ marginBottom: "8mm" }}>
+          <div style={{ display: "flex", gap: "4mm", marginBottom: "4mm", alignItems: "baseline" }}>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#888",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Cláusula Décima Primeira
+            </div>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#3A3A3A",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              Da Rescisão Contratual
+            </div>
+          </div>
+          <div
+            style={{
+              fontSize: "9px",
+              color: "#555",
+              lineHeight: "1.6",
+              textAlign: "justify",
+              display: "flex",
+              flexDirection: "column",
+              gap: "2mm",
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              11.1 Por iniciativa do CONTRATANTE: Serão devidos os valores das etapas concluídas e proporcionais às em
+              andamento, acrescidos de multa de 20% sobre o saldo remanescente.
+            </p>
+            <p style={{ margin: 0 }}>
+              11.2 Por iniciativa dos CONTRATADOS: Poderá ocorrer em caso de atraso superior a 30 dias no pagamento ou
+              falta de informações por prazo superior a 30 dias, mediante notificação.
+            </p>
+            <p style={{ margin: 0 }}>
+              11.3 A utilização indevida do projeto após rescisão sem quitação caracteriza violação de direitos
+              autorais.
+            </p>
+          </div>
+        </div>
+
+        {/* CLÁUSULA DÉCIMA SEGUNDA */}
+        <div style={{ marginBottom: "8mm" }}>
+          <div style={{ display: "flex", gap: "4mm", marginBottom: "4mm", alignItems: "baseline" }}>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#888",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Cláusula Décima Segunda
+            </div>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#3A3A3A",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              Considerações Finais
+            </div>
+          </div>
+          <div
+            style={{
+              fontSize: "9px",
+              color: "#555",
+              lineHeight: "1.6",
+              textAlign: "justify",
+              display: "flex",
+              flexDirection: "column",
+              gap: "2mm",
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              12.4 Atendimentos presenciais exigem agendamento prévio de 7 dias úteis, em horário comercial.
+            </p>
+            <p style={{ margin: 0 }}>
+              12.5 Todas as comunicações relevantes devem ser feitas por e-mail ou meio eletrônico formal.
+            </p>
+            <p style={{ margin: 0 }}>
+              12.6 O CONTRATANTE deve fornecer informações em até 5 dias úteis após solicitação.
+            </p>
+          </div>
+        </div>
+
+        <div
+          style={{
+            marginTop: "auto",
+            paddingTop: "4mm",
+            borderTop: "0.3px solid #f0ede8",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div style={{ fontSize: "8px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            NL Arquitetos · São José dos Campos, SP
+          </div>
+          <div style={{ fontSize: "8px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            A Arquitetura como Decisão
+          </div>
+        </div>
+      </div>
+
+      {/* CLÁUSULAS - PÁGINA 8 */}
+      <div
+        className="page-break"
+        style={{
+          background: "#fff",
+          width: "210mm",
+          minHeight: "297mm",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          padding: "20mm 22mm 18mm",
+          fontFamily: "'DM Mono',monospace",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            paddingBottom: "5mm",
+            borderBottom: "0.3px solid #f0ede8",
+            marginBottom: "10mm",
+          }}
+        >
+          <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+            NL Arquitetos
+          </div>
+          <div style={{ textAlign: "right" }}>
+            <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+              {contrato.numero}
+            </div>
+            <div
+              style={{
+                fontSize: "7px",
+                color: "#8B7355",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                marginTop: "2px",
+              }}
+            >
+              Contrato Principal
+            </div>
+          </div>
+        </div>
+
+        {/* CLÁUSULA DÉCIMA TERCEIRA */}
+        <div style={{ marginBottom: "8mm" }}>
+          <div style={{ display: "flex", gap: "4mm", marginBottom: "4mm", alignItems: "baseline" }}>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#888",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Cláusula Décima Terceira
+            </div>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#3A3A3A",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              Da Limitação de Responsabilidade Civil
+            </div>
+          </div>
+          <div
+            style={{
+              fontSize: "9px",
+              color: "#555",
+              lineHeight: "1.6",
+              textAlign: "justify",
+              display: "flex",
+              flexDirection: "column",
+              gap: "2mm",
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              13.1 A responsabilidade limita-se à elaboração do projeto conforme informações fornecidas pelo
+              CONTRATANTE.
+            </p>
+            <p style={{ margin: 0 }}>
+              13.3 A responsabilidade civil, caso configurada, estará limitada ao valor total dos honorários efetivamente
+              recebidos.
+            </p>
+          </div>
+        </div>
+
+        {/* CLÁUSULA DÉCIMA QUARTA */}
+        <div style={{ marginBottom: "12mm" }}>
+          <div style={{ display: "flex", gap: "4mm", marginBottom: "4mm", alignItems: "baseline" }}>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#888",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Cláusula Décima Quarta
+            </div>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#3A3A3A",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              Do Foro
+            </div>
+          </div>
+          <div
+            style={{
+              fontSize: "9px",
+              color: "#555",
+              lineHeight: "1.6",
+              textAlign: "justify",
+              display: "flex",
+              flexDirection: "column",
+              gap: "2mm",
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              14.1 Fica eleito o foro da comarca de São José dos Campos - SP para dirimir quaisquer controvérsias.
+            </p>
+          </div>
+        </div>
+
+        {/* ASSINATURAS */}
+        <div style={{ marginTop: "10mm" }}>
+          <p style={{ fontSize: "9px", color: "#555", textAlign: "justify", marginBottom: "15mm" }}>
+            E, por estarem assim justas e contratadas, as partes assinam o presente instrumento em 02 (duas) vias de igual
+            teor e forma, juntamente com duas testemunhas.
+          </p>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20mm", marginTop: "10mm" }}>
+            <div style={{ borderTop: "0.5px solid #3A3A3A", paddingTop: "4mm", textAlign: "center" }}>
+              <div style={{ fontSize: "9px", color: "#3A3A3A", fontWeight: 500 }}>{contrato.nome_cliente}</div>
+              <div style={{ fontSize: "7px", color: "#888", textTransform: "uppercase", marginTop: "2px" }}>
+                Contratante
+              </div>
+            </div>
+            <div style={{ borderTop: "0.5px solid #3A3A3A", paddingTop: "4mm", textAlign: "center" }}>
+              <div style={{ fontSize: "9px", color: "#3A3A3A", fontWeight: 500 }}>NL Arquitetos</div>
+              <div style={{ fontSize: "7px", color: "#888", textTransform: "uppercase", marginTop: "2px" }}>
+                Contratados
+              </div>
+            </div>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20mm", marginTop: "20mm" }}>
+            <div style={{ borderTop: "0.5px solid #ccc", paddingTop: "4mm", textAlign: "center" }}>
+              <div style={{ fontSize: "7px", color: "#888", textTransform: "uppercase" }}>Testemunha 1</div>
+              <div style={{ fontSize: "7px", color: "#ccc", marginTop: "2px" }}>CPF: _________________</div>
+            </div>
+            <div style={{ borderTop: "0.5px solid #ccc", paddingTop: "4mm", textAlign: "center" }}>
+              <div style={{ fontSize: "7px", color: "#888", textTransform: "uppercase" }}>Testemunha 2</div>
+              <div style={{ fontSize: "7px", color: "#ccc", marginTop: "2px" }}>CPF: _________________</div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style={{
+            marginTop: "auto",
+            paddingTop: "4mm",
+            borderTop: "0.3px solid #f0ede8",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div style={{ fontSize: "8px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            NL Arquitetos · São José dos Campos, SP
+          </div>
+          <div style={{ fontSize: "8px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            A Arquitetura como Decisão
+          </div>
+        </div>
+      </div>
     </>
 
 
