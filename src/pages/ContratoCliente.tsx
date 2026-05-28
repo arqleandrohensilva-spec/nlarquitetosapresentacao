@@ -570,6 +570,119 @@ const ContratoCliente = () => {
             </p>
           </div>
         </div>
+        {/* CLÁUSULA SEGUNDA */}
+        <div style={{ marginBottom: "8mm" }}>
+          <div style={{ display: "flex", gap: "4mm", marginBottom: "4mm", alignItems: "baseline" }}>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#888",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Cláusula Segunda
+            </div>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#3A3A3A",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              Do Objeto
+            </div>
+          </div>
+
+          <div
+            style={{
+              fontSize: "9px",
+              color: "#555",
+              lineHeight: "1.8",
+              textAlign: "justify",
+              display: "flex",
+              flexDirection: "column",
+              gap: "2mm",
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              2.1 O presente contrato tem por objeto a prestação de serviços técnicos profissionais de arquitetura pelos
+              CONTRATADOS ao CONTRATANTE, compreendendo o desenvolvimento de projetos e/ou serviços relacionados à
+              arquitetura e interiores.
+            </p>
+            <p style={{ margin: 0 }}>
+              2.2 O escopo específico dos serviços, as etapas de desenvolvimento, os prazos, os honorários, a forma de
+              pagamento e as demais condições particulares de cada projeto serão detalhadas nos Anexos deste contrato,
+              que o integram para todos os efeitos legais, com a mesma validade e eficácia jurídica.
+            </p>
+          </div>
+        </div>
+
+        {/* CLÁUSULA TERCEIRA */}
+        <div style={{ marginBottom: "8mm" }}>
+          <div style={{ display: "flex", gap: "4mm", marginBottom: "4mm", alignItems: "baseline" }}>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#888",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Cláusula Terceira
+            </div>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#3A3A3A",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              Dos Serviços Ofertados
+            </div>
+          </div>
+
+          <div
+            style={{
+              fontSize: "9px",
+              color: "#555",
+              lineHeight: "1.8",
+              textAlign: "justify",
+              display: "flex",
+              flexDirection: "column",
+              gap: "2mm",
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              3.1 Os serviços técnicos de arquitetura que poderão ser prestados pelos CONTRATADOS ao CONTRATANTE
+              compreendem, de forma exemplificativa e não limitativa, atividades como: levantamento de dados e
+              informações técnicas, elaboração de briefing e definição do programa de necessidades, desenvolvimento de
+              estudos preliminares, anteprojeto, projeto legal para aprovação junto aos órgãos competentes, projeto
+              executivo, compatibilização de projetos complementares, gerenciamento de projetos (se expressamente
+              contratado) e demais atividades técnicas relacionadas ao desenvolvimento de projetos de arquitetura e/ou
+              interiores, sendo que a definição específica do escopo dos serviços contratados, etapas de desenvolvimento
+              e entregáveis será detalhada nos Anexos deste contrato, conforme Cláusula 3.2.
+            </p>
+            <p style={{ margin: 0 }}>
+              3.2 A definição específica do escopo dos serviços, etapas de desenvolvimento, entregáveis e demais
+              condições aplicáveis a cada projeto contratado será estabelecida nos Anexos deste contrato, que passam a
+              integrá-lo para todos os fins de direito.
+            </p>
+            <p style={{ margin: 0 }}>
+              3.3 Os serviços previstos nesta cláusula referem-se exclusivamente às atividades de desenvolvimento de
+              projeto, não incluindo execução, gerenciamento ou acompanhamento de obra, salvo quando expressamente
+              contratado.
+            </p>
+          </div>
+        </div>
 
         {/* RODAPÉ */}
         <div
