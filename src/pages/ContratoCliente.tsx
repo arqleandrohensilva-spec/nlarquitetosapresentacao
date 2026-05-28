@@ -1670,7 +1670,7 @@ const ContratoCliente = () => {
           </div>
         </div>
       </div>
-
+    </>
   );
 };
 
