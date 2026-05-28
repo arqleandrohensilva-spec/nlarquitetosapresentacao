@@ -441,7 +441,156 @@ const ContratoCliente = () => {
           </div>
         </div>
       </div>
+
+      {/* CLÁUSULAS - PÁGINA 1 */}
+      <div
+        className="page-break"
+        style={{
+          background: "#fff",
+          width: "210mm",
+          minHeight: "297mm",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          padding: "20mm 22mm 18mm",
+          fontFamily: "'DM Mono',monospace",
+        }}
+      >
+        {/* HEADER */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            paddingBottom: "5mm",
+            borderBottom: "0.3px solid #f0ede8",
+            marginBottom: "10mm",
+          }}
+        >
+          <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+            NL Arquitetos
+          </div>
+          <div style={{ textAlign: "right" }}>
+            <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+              {contrato.numero}
+            </div>
+            <div
+              style={{
+                fontSize: "7px",
+                color: "#8B7355",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                marginTop: "2px",
+              }}
+            >
+              Contrato Principal
+            </div>
+          </div>
+        </div>
+
+        {/* TÍTULO DO CONTRATO */}
+        <div
+          style={{
+            fontFamily: "'Cormorant Garamond',Georgia,serif",
+            fontSize: "14px",
+            color: "#3A3A3A",
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
+            textAlign: "center",
+            marginBottom: "12mm",
+            fontWeight: 400,
+          }}
+        >
+          Instrumento Particular de Contrato de Projeto de Arquitetura
+        </div>
+
+        {/* CLÁUSULA PRIMEIRA */}
+        <div style={{ marginBottom: "8mm" }}>
+          <div style={{ display: "flex", gap: "4mm", marginBottom: "4mm", alignItems: "baseline" }}>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#8B7355",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Cláusula Primeira
+            </div>
+            <div
+              style={{
+                fontSize: "10px",
+                color: "#3A3A3A",
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                fontWeight: 500,
+              }}
+            >
+              Das Partes Envolvidas no Contrato
+            </div>
+          </div>
+
+          <div
+            style={{
+              fontSize: "9px",
+              color: "#555",
+              lineHeight: "1.8",
+              textAlign: "justify",
+              display: "flex",
+              flexDirection: "column",
+              gap: "4mm",
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              <span style={{ color: "#8B7355", fontWeight: 500 }}>CONTRATANTE</span> {contrato.nome_cliente},{" "}
+              {contrato.nacionalidade}, {contrato.estado_civil}, {contrato.profissao}, portador do CPF nº{" "}
+              {contrato.cpf_cliente}, residente e domiciliado em {contrato.endereco_cliente}, doravante denominado
+              simplesmente CONTRATANTE.
+            </p>
+
+            <p style={{ margin: 0 }}>
+              <span style={{ color: "#8B7355", fontWeight: 500 }}>CONTRATADOS</span> Leandro Henrique da Silva,
+              brasileiro, arquiteto e urbanista, inscrito no CAU nº A252250-0 portador do CPF nº 425.437.568-92 e
+              Neandro Jacque Garcia, brasileiro, arquiteto e urbanista, inscrito no CAU nº A264629-3 portador do CPF nº
+              382.857.218-92 atuando sob a denominação fantasia NL Arquitetura e Interiores doravante denominados
+              conjuntamente CONTRATADOS.
+            </p>
+
+            <p style={{ margin: 0 }}>
+              As partes, devidamente qualificadas, resolvem celebrar o presente Contrato de Prestação de Serviços de
+              Arquitetura, o qual se regerá pela legislação brasileira aplicável, notadamente, quando aplicável, pelo
+              Código de Defesa do Consumidor, pela Lei Federal nº 12.378/2010 (que regulamenta o exercício da Arquitetura
+              e Urbanismo), pelas Resoluções nº 21 (Atribuições Profissionais) e nº 64 (Tabela de Honorários) do CAU/BR,
+              pela Lei Federal nº 9.610/1998, que dispõe sobre direitos autorais, e, subsidiariamente, pelas disposições
+              do Código Civil concernentes à prestação de serviços. O presente instrumento será interpretado e executado
+              em conformidade com as referidas legislações, sendo as cláusulas aqui previstas aplicáveis naquilo que não
+              contrariar as disposições legais cogentes, tendo as partes entre si justo e contratado o que segue.
+            </p>
+          </div>
+        </div>
+
+        {/* RODAPÉ */}
+        <div
+          style={{
+            marginTop: "auto",
+            paddingTop: "4mm",
+            borderTop: "0.3px solid #f0ede8",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div style={{ fontSize: "8px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            NL Arquitetos · São José dos Campos, SP
+          </div>
+          <div style={{ fontSize: "8px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            A Arquitetura como Decisão
+          </div>
+        </div>
+      </div>
     </>
+
   );
 };
 
