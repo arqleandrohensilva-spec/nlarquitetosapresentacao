@@ -761,15 +761,29 @@ const ContratoCliente = () => {
             <p>3.4 Após a apresentação de cada etapa do projeto, o CONTRATANTE disporá de prazo de até 05 (cinco) dias úteis para análise, aprovação ou solicitação de ajustes.
               <br />3.4.1 As solicitações de ajustes deverão ser apresentadas de forma clara e consolidada, preferencialmente em uma única manifestação.
               <br />3.4.2 Caso não haja manifestação do CONTRATANTE dentro do prazo estabelecido, a etapa apresentada poderá ser considerada tacitamente aprovada para fins de continuidade do desenvolvimento do projeto.
-              <br />3.4.3 Estão incluídas neste contrato até 02 (duas) rodadas de ajustes por etapa do projeto, desde que não impliquem alteração substancial do conceito arquitetônico previamente aprovado.
-              <br />3.4.3.1 Quaisquer solicitações de ajustes ou alterações em etapas consideradas tacitamente aprovadas, conforme 3.4.2, serão tratadas como serviços adicionais.
-              <br />3.4.4 Caso o CONTRATANTE solicite alterações que impliquem retorno a etapas do projeto já concluídas e previamente aprovadas, os CONTRATADOS poderão reavaliar prazos e honorários.</p>
+              <br />3.4.3 Estão incluídas neste contrato até 02 (duas) rodadas de ajustes por etapa do projeto, desde que não impliquem alteração substancial do conceito arquitetônico previamente aprovado. Alterações adicionais ou modificações que demandem retrabalho significativo poderão ser consideradas serviços adicionais, sujeitas à revisão de prazo e honorários.
+              <br />3.4.3.1 Quaisquer solicitações de ajustes ou alterações em etapas consideradas tacitamente aprovadas, conforme 3.4.2, serão tratadas como serviços adicionais, sujeitas à revisão de prazos e honorários, independentemente de implicarem ou não em alteração substancial do conceito arquitetônico previamente aprovado.
+              <br />3.4.4 Caso o CONTRATANTE solicite alterações que impliquem retorno a etapas do projeto já concluídas e previamente aprovadas, os CONTRATADOS poderão reavaliar:
+              <br />3.4.4.1 os prazos de desenvolvimento do projeto;
+              <br />3.4.4.2 o cronograma inicialmente estabelecido;
+              <br />3.4.4.3 os honorários profissionais, caso o retrabalho implique atividades não previstas no escopo original.
+              <br />3.4.5 Sempre que houver retorno a etapas anteriores do projeto, os ajustes de prazo e eventuais revisões de honorários serão previamente comunicados ao CONTRATANTE para aprovação.</p>
 
-            <p>3.5 Caso o projeto permaneça sem manifestação ou retorno do CONTRATANTE por período superior a 30 (trinta) dias corridos consecutivos, os CONTRATADOS poderão suspender temporariamente o desenvolvimento dos serviços.</p>
-            <p>3.6 Os prazos de análise, exigências e aprovação do projeto pelos órgãos públicos competentes ou pela administração de condomínio não integram o prazo de desenvolvimento do projeto estabelecido neste anexo.</p>
+            <p>3.5 Caso o projeto permaneça sem manifestação ou retorno do CONTRATANTE por período superior a 30 (trinta) dias corridos consecutivos, e após notificação formal ao CONTRATANTE, os CONTRATADOS poderão suspender temporariamente o desenvolvimento dos serviços.
+              <br />3.5.1 Nessa hipótese, o cronograma inicialmente estabelecido poderá ser revisto ou reprogramado, de acordo com a disponibilidade da agenda dos CONTRATADOS.</p>
+            <p>3.6 Os prazos de análise, exigências e aprovação do projeto pelos órgãos públicos competentes ou pela administração de condomínio não integram o prazo de desenvolvimento do projeto estabelecido neste anexo, por dependerem exclusivamente dos procedimentos administrativos dessas instituições.</p>
 
             <p><strong style={{ color: "#8B7355" }}>4.0 CONTRATAÇÃO CONJUNTA DE MODALIDADES DE PROJETO</strong></p>
-            <p>4.1 Quando o CONTRATANTE optar pela contratação conjunta de mais de uma modalidade de projeto, o cronograma poderá sofrer acréscimo proporcional de prazo.</p>
+            <p>4.1 Quando o CONTRATANTE optar pela contratação conjunta de mais de uma modalidade de projeto, tais como Projeto de Arquitetura Residencial e Projeto de Arquitetura de Interiores, o cronograma de desenvolvimento poderá sofrer acréscimo proporcional de prazo, considerando o aumento do escopo técnico e da complexidade das atividades a serem executadas.
+              <br />4.2 Nesses casos, as etapas referentes ao Projeto de Arquitetura de Interiores poderão ser desenvolvidas de forma complementar ou subsequente às etapas do Projeto de Arquitetura, respeitando a sequência lógica de desenvolvimento do projeto.
+              <br />4.3 O prazo total estimado do cronograma poderá ser ajustado pelos CONTRATADOS de acordo com:
+              <br />4.3.1 a área total do projeto;
+              <br />4.3.2 a quantidade de ambientes contemplados no projeto de interiores;
+              <br />4.3.3 o nível de detalhamento técnico solicitado;
+              <br />4.3.4 a complexidade das soluções arquitetônicas e construtivas.
+              <br />4.4 O novo prazo estimado será informado ao CONTRATANTE pelos CONTRATADOS no início do desenvolvimento do projeto ou no momento da contratação adicional da modalidade de interiores.
+              <br />4.5 Nos casos de contratação conjunta de Projeto de Arquitetura e Projeto de Interiores, o desenvolvimento do projeto de interiores terá início após a definição e aprovação da configuração arquitetônica básica da edificação, incluindo layout geral, dimensões dos ambientes e posicionamento dos elementos construtivos principais.</p>
+
           </div>
         </div>
 
