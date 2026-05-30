@@ -762,11 +762,20 @@ const ContratoCliente = () => {
             <p>4.8 Durante o desenvolvimento das etapas de estudo preliminar e anteprojeto, estão incluídas até 02 (duas) rodadas de ajustes ou revisões solicitadas pelo CONTRATANTE. Solicitações adicionais que impliquem alterações substanciais no projeto poderão ser consideradas serviços adicionais, sujeitos à revisão de prazo e honorários.</p>
 
           </div>
+          
+          {/* FOOTER TÉCNICO */}
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 7 de 10</div>
+          </div>
         </div>
 
         {/* ANEXO II — CRONOGRAMA DE DESENVOLVIMENTO */}
-        <div className="nova-pagina" style={{ paddingTop: "20mm" }}>
+        <div className="page-content">
           <h2 className="annex-title">ANEXO II — CRONOGRAMA DE DESENVOLVIMENTO DO PROJETO</h2>
+
           <div className="clause-body">
             <p style={{ fontStyle: "italic" }}>Integra o Contrato de Prestação de Serviços de Arquitetura — NL Arquitetos</p>
             <p>1.1 O presente Anexo, rubricado e assinado pelas partes, integra de forma indissociável o Contrato de Prestação de Serviços de Arquitetura celebrado entre CONTRATANTE e CONTRATADOS, tendo por finalidade estabelecer o cronograma estimado para o desenvolvimento das etapas do projeto arquitetônico objeto do contrato.</p>
