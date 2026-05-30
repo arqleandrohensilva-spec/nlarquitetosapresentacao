@@ -406,9 +406,20 @@ const ContratoCliente = () => {
             <p>6.5 Caso, durante o desenvolvimento do projeto, ocorram alterações que impactem diretamente o escopo contratado ou os critérios utilizados para cálculo dos honorários – como, por exemplo, alteração significativa da área construída, mudança do programa arquitetônico ou inclusão de novos ambientes – os honorários poderão ser revisados, com base nos critérios de cálculo originalmente utilizados para a precificação do projeto (ex: valor por m² ou percentual sobre o custo estimado da obra) ou, na ausência de critério específico, conforme a tabela de honorários do CAU/BR ou tabela de honorários dos CONTRATADOS, mediante apresentação de nova proposta formal, mediante formalização de aditivo contratual e atualização do Anexo III, com a concordância expressa das partes. Na ausência de concordância expressa do CONTRATANTE com os honorários revisados para alterações significativas de escopo, os CONTRATADOS terão o direito de suspender a execução dos serviços até que a questão seja resolvida ou, alternativamente, rescindir o contrato, sendo devidos os honorários proporcionais aos serviços já executados até o momento da suspensão/rescisão, sem prejuízo de eventual ressarcimento de custos comprovadamente incorridos em razão da rescisão, a ser apurado em regular processo de liquidação, excluindo-se a aplicação de multa compensatória.</p>
           </div>
 
+          {/* FOOTER TÉCNICO */}
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 2 de 12</div>
+          </div>
+        </div>
+
+        <div className="page-content">
           <div className="clause-title">CLÁUSULA SÉTIMA — DAS OBRIGAÇÕES E RESPONSABILIDADES DO CONTRATANTE</div>
           <div className="clause-body">
             <p>Compete ao CONTRATANTE, para o correto desenvolvimento dos serviços contratados:</p>
+
             <p>7.1 Fornecer aos CONTRATADOS, de forma completa, verdadeira e tempestiva, todos os documentos, informações e dados necessários ao desenvolvimento do projeto, conforme especificado no Anexo I (Escopo dos Serviços) e eventuais solicitações técnicas adicionais realizadas pelos CONTRATADOS.</p>
             <p>7.2 Analisar e aprovar as etapas do projeto apresentadas pelos CONTRATADOS dentro dos prazos estabelecidos no Anexo II (Cronograma), comunicando eventuais solicitações de ajustes de forma clara e objetiva.</p>
             <p>7.3 Colaborar ativamente durante o processo de desenvolvimento do projeto, respondendo às solicitações dos CONTRATADOS dentro dos prazos estipulados.</p>
