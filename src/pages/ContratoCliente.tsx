@@ -592,7 +592,27 @@ const ContratoCliente = () => {
               <li>Detalhamentos de esquadrias</li>
               <li>Elevações e Cortes da casa</li>
             </ul>
-            <p style={{ fontSize: "9px" }}>¹ as plantas de mapa de instalações elétricas, hidráulicas, de ar-condicionado e luminotécnica, não dimensionam e nem projetam as tubulações e fiações. Tais dimensionamentos deverão ser indicados em projeto complementar não incluso nesta proposta.</p>
+            <p><strong>4.2.7 Visitas De Acompanhamento</strong></p>
+            <p>4.2.7.1 No decorrer do desenvolvimento do projeto arquitetônico, os CONTRATADOS poderão orientar tecnicamente o CONTRATANTE na escolha de materiais e elementos construtivos previstos, como revestimentos, esquadrias, acabamentos e outros itens relevantes para a arquitetura da edificação. Esta orientação consiste em sugestões de tipologias e características gerais dos materiais, não incluindo pesquisa exaustiva de fornecedores, cotações detalhadas ou elaboração de memoriais descritivos extensos, salvo se contratado como serviço adicional.</p>
+            <p>4.2.7.2 Essa orientação tem como objetivo auxiliar o CONTRATANTE na correta interpretação das especificações indicadas no projeto, garantindo coerência técnica, estética e funcional durante a execução da obra.</p>
+            <p>4.2.7.3 As visitas em lojas e showrooms para curadoria de materiais e acabamentos estão incluídas conforme o plano contratado: no Plano Completo, estão incluídas visitas em lojas para curadoria conjunta de materiais, acabamentos e mobiliário, conforme quantidade definida no Anexo I por tipo de projeto. No Plano Executivo, visitas adicionais em lojas podem ser contratadas como serviço adicional, conforme Anexo IV. As visitas deverão ser previamente agendadas, conforme disponibilidade das partes.</p>
+            <p>4.2.7.4 Caso o CONTRATANTE solicite acompanhamentos adicionais, estes poderão ser realizados mediante contratação e remuneração à parte, conforme valores praticados pelo escritório.</p>
+            
+            <p>4.3 A aplicação das etapas descritas na cláusula 4.2 ocorrerá conforme a modalidade de projeto contratada, conforme indicado a seguir.</p>
+            
+            <p><strong>4.3.1 Nos casos de contratação de Projeto de Arquitetura Residencial, poderão ser aplicadas as seguintes etapas:</strong><br />
+            • Levantamento de dados • Briefing e programa de necessidades • Estudo preliminar • Concepção tridimensional (3D), quando aplicável • Projeto legal para aprovação nos órgãos competentes • Projeto executivo de arquitetura • Orientação para seleção de materiais, (conforme detalhado no item 4.2.7.1)</p>
+            
+            <p><strong>4.3.2 Nos casos de contratação de Projeto de Arquitetura Comercial, poderão ser aplicadas as seguintes etapas:</strong><br />
+            • Levantamento de dados • Briefing e programa de necessidades • Estudo preliminar • Concepção tridimensional (3D), quando aplicável • Projeto legal para aprovação nos órgãos competentes • Projeto executivo de arquitetura • Orientação para seleção de materiais, (conforme detalhado no item 4.2.7.1)</p>
+            
+            <p><strong>4.3.3 Nos casos de contratação de Projeto de Arquitetura de Interiores, poderão ser aplicadas as seguintes etapas:</strong><br />
+            • Levantamento de dados do imóvel • Briefing e programa de necessidades • Estudo preliminar de layout • Concepção tridimensional (3D), quando aplicável • Anteprojeto de interiores • Projeto executivo de interiores • Orientação para seleção de materiais.</p>
+            
+            <p>4.3.3.1 Nos projetos de interiores não se aplica a etapa de Projeto Legal, salvo quando houver intervenções que exijam aprovação junto a órgãos públicos ou condomínio.</p>
+            
+            <p><strong>4.3.4 CADERNOS TÉCNICOS ENTREGUES POR MODALIDADE</strong><br />
+            Os cadernos técnicos entregues ao final do projeto variam conforme a modalidade contratada (Arquitetura+Interiores, Interiores ou Comercial) e o plano selecionado (Executivo ou Completo), conforme detalhado abaixo.</p>
             
             <p><strong style={{ color: "#8B7355" }}>4.0 ESCOPO DOS SERVIÇOS</strong></p>
             <p>4.1 Os serviços técnicos a serem prestados pelos CONTRATADOS compreendem o desenvolvimento do projeto arquitetônico conforme a modalidade assinalada na Cláusula 2.0 – Identificação do Projeto, observadas as etapas descritas neste item.</p>
