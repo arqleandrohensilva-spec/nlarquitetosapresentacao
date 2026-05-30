@@ -2030,7 +2030,7 @@ const ContratoCliente = () => {
         </div>
 
         {/* ASSINATURAS */}
-        <div style={{ marginTop: "10mm" }}>
+        <div className="nova-pagina" style={{ marginTop: "10mm" }}>
           <p style={{ fontSize: "9px", color: "#555", textAlign: "justify", marginBottom: "15mm" }}>
             E, por estarem assim justas e contratadas, as partes assinam o presente instrumento em 02 (duas) vias de igual
             teor e forma, juntamente com duas testemunhas, para que produza seus jurídicos e legais efeitos, obrigando-se
