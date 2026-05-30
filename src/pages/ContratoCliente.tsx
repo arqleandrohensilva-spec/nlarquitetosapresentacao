@@ -1052,7 +1052,6 @@ const ContratoCliente = () => {
             <div>Rubrica: __________/__________</div>
             <div>Pág. 12 de 12</div>
           </div>
-          </div>
         </div>
       </div>
     </div>
@@ -1060,6 +1059,7 @@ const ContratoCliente = () => {
 };
 
 export default ContratoCliente;
+
 
 
 
