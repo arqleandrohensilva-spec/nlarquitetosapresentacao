@@ -173,16 +173,65 @@ const ContratoCliente = () => {
 
   return (
     <div style={{ background: "#000", minHeight: "100vh" }}>
+      <div data-pdf-hide style={{ position: "fixed", top: 16, right: 16, zIndex: 50 }}>
+
+
+
+        <button 
+          onClick={() => window.print()} 
+          style={{ 
+            background: "#8B7355", 
+            color: "#fff", 
+            border: "none", 
+            padding: "8px 20px", 
+            fontFamily: "'DM Mono',monospace", 
+            fontSize: "9px", 
+            letterSpacing: "0.2em", 
+            textTransform: "uppercase", 
+            cursor: "pointer" 
+          }}
+        >
+          ↓ BAIXAR PDF
+        </button>
+      </div>
+
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap');
         
         @media print {
-          body { margin: 0; background: #000 !important; }
+          body { margin: 0; background: #fff !important; color: #000 !important; }
+          .contrato-container { 
+            width: 210mm !important; 
+            margin: 0 !important; 
+            padding: 0 !important;
+            background: #fff !important;
+            color: #000 !important;
+          }
+          .page-content {
+            padding: 20mm 22mm !important;
+            height: 297mm;
+            box-sizing: border-box;
+            position: relative;
+            background: #fff !important;
+            color: #000 !important;
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+          }
+          .clause-body, .clause-body p, .clause-body ul, .clause-body li {
+            color: #333 !important;
+          }
           * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
           [data-pdf-hide] { display: none !important; }
           @page { size: A4; margin: 0; }
-          .nova-pagina { page-break-before: always; }
           .no-break { page-break-inside: avoid; }
+          .footer-tech {
+            position: absolute;
+            bottom: 20mm;
+            left: 22mm;
+            right: 22mm;
+            color: #666 !important;
+          }
         }
 
         .contrato-container {
@@ -191,7 +240,15 @@ const ContratoCliente = () => {
           margin: 0 auto;
           color: #fff;
           font-family: 'DM Mono', monospace;
+        }
+
+        .page-content {
           padding: 20mm 22mm;
+          min-height: 297mm;
+          box-sizing: border-box;
+          position: relative;
+          display: flex;
+          flex-direction: column;
         }
 
         .clause-title, .annex-title {
@@ -234,34 +291,19 @@ const ContratoCliente = () => {
           justify-content: space-between;
           border-top: 0.5px solid #222;
           padding-top: 15px;
-          margin-top: 60px;
+          margin-top: auto;
           text-transform: uppercase;
           letter-spacing: 0.1em;
+          width: 100%;
         }
       `}</style>
 
-      <div data-pdf-hide style={{ position: "fixed", top: 16, right: 16, zIndex: 50 }}>
-        <button 
-          onClick={() => window.print()} 
-          style={{ 
-            background: "#8B7355", 
-            color: "#fff", 
-            border: "none", 
-            padding: "8px 20px", 
-            fontFamily: "'DM Mono',monospace", 
-            fontSize: "9px", 
-            letterSpacing: "0.2em", 
-            textTransform: "uppercase", 
-            cursor: "pointer" 
-          }}
-        >
-          ↓ BAIXAR PDF
-        </button>
-      </div>
-
       <div className="contrato-container">
-        {/* CAPA */}
-        <div style={{ minHeight: "250mm", display: "flex", flexDirection: "column" }}>
+        <div className="page-content">
+          {/* CAPA */}
+          <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+
+
           <div style={{ marginBottom: "60px" }}>
             <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "120px", color: "#1a1a1a", lineHeight: "0.8" }}>NL</div>
             <div style={{ fontSize: "12px", letterSpacing: "1.2em", color: "#8B7355", textTransform: "uppercase" }}>ARQUITETOS</div>
@@ -272,7 +314,7 @@ const ContratoCliente = () => {
             <div style={{ fontSize: "8px", color: "#444", letterSpacing: "0.3em", textTransform: "uppercase", marginTop: "10px" }}>INSTRUMENTO PARTICULAR · A ARQUITETURA COMO DECISÃO</div>
           </div>
 
-          <div>
+          <div style={{ flex: 1 }}>
             <Row label="Nº DO CONTRATO" value={c.numero} />
             <Row label="CONTRATANTE" value={c.nome_cliente} />
             <Row label="TIPO DE PROJETO" value={c.tipo_projeto} />
@@ -281,22 +323,33 @@ const ContratoCliente = () => {
             <Row label="VALOR TOTAL DOS HONORÁRIOS" value={`R$ ${c.valor_total} (${c.valor_total_extenso})`} />
             <Row label="PRAZO TOTAL ESTIMADO" value={`${c.prazo_semanas} semanas a partir da assinatura e entrega dos documentos`} />
             <Row label="DATA DE ASSINATURA" value={`São José dos Campos, SP | ${c.data}`} />
+
+            <div style={{ marginTop: "40px", borderLeft: "2px solid #8B7355", paddingLeft: "20px" }}>
+              <p style={{ fontStyle: "italic", fontSize: "11px", color: "#666", lineHeight: "1.6" }}>
+                "A NL não projeta para impressionar. Projeta para funcionar — e o resultado impressiona porque cada decisão foi tomada antes de a obra começar."
+              </p>
+            </div>
           </div>
 
-          <div style={{ marginTop: "auto", borderLeft: "2px solid #8B7355", paddingLeft: "20px", marginBottom: "60px" }}>
-            <p style={{ fontStyle: "italic", fontSize: "11px", color: "#666", lineHeight: "1.6" }}>
-              "A NL não projeta para impressionar. Projeta para funcionar — e o resultado impressiona porque cada decisão foi tomada antes de a obra começar."
-            </p>
-          </div>
-
-          <div style={{ fontSize: "8px", color: "#333", letterSpacing: "0.2em", textTransform: "uppercase", display: "flex", gap: "20px" }}>
+          <div style={{ fontSize: "8px", color: "#333", letterSpacing: "0.2em", textTransform: "uppercase", display: "flex", gap: "20px", marginTop: "40px" }}>
             <span>NL Arquitetos</span><span>·</span><span>São José dos Campos, SP</span><span>·</span><span>Versão 1.0</span>
           </div>
+
+          {/* FOOTER TÉCNICO */}
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 1 de 10</div>
+          </div>
+
         </div>
 
         {/* CLÁUSULAS COMPLETAS */}
-        <div className="nova-pagina" style={{ paddingTop: "20mm" }}>
+        <div className="page-content">
           <div className="clause-title">CLÁUSULA PRIMEIRA — DAS PARTES ENVOLVIDAS NO CONTRATO</div>
+
+
           <div className="clause-body">
             <p><strong style={{ color: "#8B7355" }}>CONTRATANTE:</strong> {c.nome_cliente}, {c.nacionalidade || "brasileiro"}, {c.estado_civil || "casado"}, {c.profissao || "Engenheiro"}, portador do CPF nº {c.cpf_cliente}, residente e domiciliado em {c.endereco_cliente}, doravante denominado simplesmente CONTRATANTE.</p>
             <p><strong style={{ color: "#8B7355" }}>CONTRATADOS:</strong> Leandro Henrique da Silva, brasileiro, arquiteto e urbanista, inscrito no CAU nº A252250-0, portador do CPF nº 425.437.568-92 e Neandro Jacque Garcia, brasileiro, arquiteto e urbanista, inscrito no CAU nº A264629-3, portador do CPF nº 382.857.218-92, atuando sob a denominação fantasia NL Arquitetura e Interiores, doravante denominados conjuntamente CONTRATADOS.</p>
@@ -356,9 +409,20 @@ const ContratoCliente = () => {
             <p>6.5 Caso, durante o desenvolvimento do projeto, ocorram alterações que impactem diretamente o escopo contratado ou os critérios utilizados para cálculo dos honorários – como, por exemplo, alteração significativa da área construída, mudança do programa arquitetônico ou inclusão de novos ambientes – os honorários poderão ser revisados, com base nos critérios de cálculo originalmente utilizados para a precificação do projeto (ex: valor por m² ou percentual sobre o custo estimado da obra) ou, na ausência de critério específico, conforme a tabela de honorários do CAU/BR ou tabela de honorários dos CONTRATADOS, mediante apresentação de nova proposta formal, mediante formalização de aditivo contratual e atualização do Anexo III, com a concordância expressa das partes. Na ausência de concordância expressa do CONTRATANTE com os honorários revisados para alterações significativas de escopo, os CONTRATADOS terão o direito de suspender a execução dos serviços até que a questão seja resolvida ou, alternativamente, rescindir o contrato, sendo devidos os honorários proporcionais aos serviços já executados até o momento da suspensão/rescisão, sem prejuízo de eventual ressarcimento de custos comprovadamente incorridos em razão da rescisão, a ser apurado em regular processo de liquidação, excluindo-se a aplicação de multa compensatória.</p>
           </div>
 
+          {/* FOOTER TÉCNICO */}
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 2 de 12</div>
+          </div>
+        </div>
+
+        <div className="page-content">
           <div className="clause-title">CLÁUSULA SÉTIMA — DAS OBRIGAÇÕES E RESPONSABILIDADES DO CONTRATANTE</div>
           <div className="clause-body">
             <p>Compete ao CONTRATANTE, para o correto desenvolvimento dos serviços contratados:</p>
+
             <p>7.1 Fornecer aos CONTRATADOS, de forma completa, verdadeira e tempestiva, todos os documentos, informações e dados necessários ao desenvolvimento do projeto, conforme especificado no Anexo I (Escopo dos Serviços) e eventuais solicitações técnicas adicionais realizadas pelos CONTRATADOS.</p>
             <p>7.2 Analisar e aprovar as etapas do projeto apresentadas pelos CONTRATADOS dentro dos prazos estabelecidos no Anexo II (Cronograma), comunicando eventuais solicitações de ajustes de forma clara e objetiva.</p>
             <p>7.3 Colaborar ativamente durante o processo de desenvolvimento do projeto, respondendo às solicitações dos CONTRATADOS dentro dos prazos estipulados.</p>
@@ -386,9 +450,20 @@ const ContratoCliente = () => {
             <p>7.12 Quando houver identificação do autor do projeto por meio de placa de obra, material de divulgação ou qualquer outro meio, o CONTRATANTE compromete-se a não remover tal identificação sem autorização prévia dos CONTRATADOS.</p>
           </div>
 
+          {/* FOOTER TÉCNICO */}
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 3 de 12</div>
+          </div>
+        </div>
+
+        <div className="page-content">
           <div className="clause-title">CLÁUSULA OITAVA — DAS OBRIGAÇÕES E RESPONSABILIDADES DOS CONTRATADOS</div>
           <div className="clause-body">
             <p>Compete aos CONTRATADOS:</p>
+
             <p>8.1 Prestar os serviços profissionais de arquitetura com diligência, competência e observância às normas técnicas aplicáveis, à legislação vigente ao Código de Ética e Disciplina do CAU/BR às boas práticas profissionais reconhecidas no setor.</p>
             <p>8.2 Elaborar o projeto arquitetônico em estrita conformidade com o escopo definido no Anexo I (Escopo dos Serviços), observando rigorosamente os prazos estabelecidos no Anexo II (Cronograma) e considerando integralmente as informações, documentos e diretrizes fornecidos pelo CONTRATANTE. O cumprimento das obrigações dos CONTRATADOS, incluindo prazos e qualidade do projeto, é condicionado ao adimplemento tempestivo e integral das obrigações do CONTRATANTE, notadamente no que se refere ao fornecimento de informações, documentos e obtenção de aprovações, conforme previsto na Cláusula Sétima.</p>
             <p>8.3 Manter o CONTRATANTE informado sobre o andamento do projeto, apresentando as etapas desenvolvidas para análise e aprovação dentro dos prazos previstos.</p>
@@ -443,9 +518,20 @@ const ContratoCliente = () => {
             <p>10.6 O presente contrato não inclui serviços de acompanhamento técnico de obra, fiscalização ou gerenciamento de execução, os quais somente poderão ser realizados mediante contratação específica e formalização de contrato adicional.</p>
           </div>
 
+          {/* FOOTER TÉCNICO */}
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 4 de 12</div>
+          </div>
+        </div>
+
+        <div className="page-content">
           <div className="clause-title">CLÁUSULA DÉCIMA PRIMEIRA — DA RESCISÃO CONTRATUAL</div>
           <div className="clause-body">
             <p>O presente contrato poderá ser rescindido por qualquer das partes, mediante notificação formal por escrito, observadas as condições e prazos estabelecidos nesta cláusula, nas demais disposições contratuais aplicáveis e na legislação vigente.</p>
+
             <p><strong style={{ color: "#8B7355" }}>11.1 RESCISÃO POR INICIATIVA DO CONTRATANTE</strong></p>
             <p>11.1.1 Caso o CONTRATANTE opte por rescindir o contrato antes da conclusão total dos serviços:
               <br />I – Os valores pagos até a data da rescisão não serão devolvidos, considerando que correspondem às etapas já executadas.
@@ -495,17 +581,38 @@ const ContratoCliente = () => {
             <p>13.4 Os CONTRATADOS não assumem responsabilidade técnica pela execução da obra, gerenciamento, fiscalização ou acompanhamento da construção, salvo se tais serviços forem contratados de forma expressa por meio de instrumento contratual específico.</p>
           </div>
 
-          <div className="clause-title">CLÁUSULA DÉCIMA QUARTA — DO FORO</div>
-          <div className="clause-body">
-            <p>14.1 Para dirimir quaisquer controvérsias oriundas do presente contrato, as partes elegem o foro da comarca de São José dos Campos - SP, com renúncia expressa a qualquer outro, por mais privilegiado que seja salvo disposição legal em contrário.</p>
-            <p>14.2 As partes, em comum acordo, poderão submeter eventuais conflitos à mediação, conciliação ou arbitragem, em conformidade com a Lei nº 9.307/96 e demais legislações aplicáveis. É condição para o ajuizamento de qualquer medida judicial ou arbitral que as partes busquem, previamente, a resolução dos conflitos por meio de mediação ou conciliação, durante um período mínimo de 30 (trinta) dias, contados a partir da notificação de uma parte à outra sobre a existência do conflito, sob pena de extinção do processo sem resolução do mérito.</p>
-            <p>14.3 O presente contrato constitui título executivo extrajudicial, nos termos da legislação brasileira aplicável.</p>
+          {/* FOOTER TÉCNICO */}
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 5 de 12</div>
           </div>
         </div>
 
+        <div className="page-content">
+          <div className="clause-title">CLÁUSULA DÉCIMA QUARTA — DO FORO</div>
+          <div className="clause-body">
+            <p>14.1 Para dirimir quaisquer controvérsias oriundas do presente contrato, as partes elegem o foro da comarca de São José dos Campos - SP, com renúncia expressa a qualquer outro, por mais privilegiado que seja salvo disposição legal em contrário.</p>
+
+            <p>14.2 As partes, em comum acordo, poderão submeter eventuais conflitos à mediação, conciliação ou arbitragem, em conformidade com a Lei nº 9.307/96 e demais legislações aplicáveis. É condição para o ajuizamento de qualquer medida judicial ou arbitral que as partes busquem, previamente, a resolução dos conflitos por meio de mediação ou conciliação, durante um período mínimo de 30 (trinta) dias, contados a partir da notificação de uma parte à outra sobre a existência do conflito, sob pena de extinção do processo sem resolução do mérito.</p>
+            <p>14.3 O presente contrato constitui título executivo extrajudicial, nos termos da legislação brasileira aplicável.</p>
+          </div>
+          
+          {/* FOOTER TÉCNICO */}
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 6 de 12</div>
+          </div>
+        </div>
+
+
         {/* ASSINATURAS */}
-        <div className="nova-pagina" style={{ paddingTop: "20mm" }}>
+        <div className="page-content">
           <h2 className="annex-title">Assinaturas</h2>
+
           <div className="clause-body">
             <p>E, por estarem assim justas e contratadas, as partes assinam o presente instrumento em 02 (duas) vias de igual teor e forma, juntamente com duas testemunhas, para que produza seus jurídicos e legais efeitos, obrigando-se as partes, seus herdeiros e sucessores.</p>
           </div>
@@ -530,11 +637,21 @@ const ContratoCliente = () => {
           <div style={{ textAlign: "center", marginTop: "40px", fontSize: "10px", color: "#666" }}>
             São José dos Campos – SP, {c.data}
           </div>
+
+          {/* FOOTER TÉCNICO */}
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 7 de 12</div>
+          </div>
         </div>
 
+
         {/* ANEXO I — ESCOPO DOS SERVIÇOS DE PROJETO */}
-        <div className="nova-pagina" style={{ paddingTop: "20mm" }}>
+        <div className="page-content">
           <h2 className="annex-title">ANEXO I — ESCOPO DOS SERVIÇOS DE PROJETO</h2>
+
           <div className="clause-body">
             <p style={{ fontStyle: "italic" }}>Integra o Contrato de Prestação de Serviços de Arquitetura — NL Arquitetos</p>
             <p>1.1 O presente Anexo, rubricado e assinado pelas partes, integra de forma indissociável o Contrato de Prestação de Serviços de Arquitetura celebrado entre CONTRATANTE e os CONTRATADOS, tendo por finalidade a definição e delimitação do escopo dos serviços técnicos especializados a serem executados, em conformidade com as disposições estabelecidas no instrumento contratual principal.</p>
@@ -704,11 +821,21 @@ const ContratoCliente = () => {
             <p>4.8 Durante o desenvolvimento das etapas de estudo preliminar e anteprojeto, estão incluídas até 02 (duas) rodadas de ajustes ou revisões solicitadas pelo CONTRATANTE. Solicitações adicionais que impliquem alterações substanciais no projeto poderão ser consideradas serviços adicionais, sujeitos à revisão de prazo e honorários.</p>
 
           </div>
+          
+          {/* FOOTER TÉCNICO */}
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 10 de 12</div>
+          </div>
         </div>
 
+
         {/* ANEXO II — CRONOGRAMA DE DESENVOLVIMENTO */}
-        <div className="nova-pagina" style={{ paddingTop: "20mm" }}>
+        <div className="page-content">
           <h2 className="annex-title">ANEXO II — CRONOGRAMA DE DESENVOLVIMENTO DO PROJETO</h2>
+
           <div className="clause-body">
             <p style={{ fontStyle: "italic" }}>Integra o Contrato de Prestação de Serviços de Arquitetura — NL Arquitetos</p>
             <p>1.1 O presente Anexo, rubricado e assinado pelas partes, integra de forma indissociável o Contrato de Prestação de Serviços de Arquitetura celebrado entre CONTRATANTE e CONTRATADOS, tendo por finalidade estabelecer o cronograma estimado para o desenvolvimento das etapas do projeto arquitetônico objeto do contrato.</p>
@@ -785,11 +912,21 @@ const ContratoCliente = () => {
               <br />4.5 Nos casos de contratação conjunta de Projeto de Arquitetura e Projeto de Interiores, o desenvolvimento do projeto de interiores terá início após a definição e aprovação da configuração arquitetônica básica da edificação, incluindo layout geral, dimensões dos ambientes e posicionamento dos elementos construtivos principais.</p>
 
           </div>
+
+          {/* FOOTER TÉCNICO */}
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 11 de 12</div>
+          </div>
         </div>
 
+
         {/* ANEXO III — HONORÁRIOS E FORMA DE PAGAMENTO */}
-        <div className="nova-pagina" style={{ paddingTop: "20mm" }}>
+        <div className="page-content">
           <h2 className="annex-title">ANEXO III — HONORÁRIOS E FORMA DE PAGAMENTO</h2>
+
           <div className="clause-body">
             <p style={{ fontStyle: "italic" }}>Integra o Contrato de Prestação de Serviços de Arquitetura — NL Arquitetos</p>
             <p>1.1 O presente Anexo, rubricado e assinado pelas partes, integra de forma indissociável o Contrato de Prestação de Serviços de Arquitetura celebrado entre CONTRATANTE e CONTRATADOS, tendo por finalidade estabelecer os honorários profissionais e as condições de pagamento referentes aos serviços objeto do contrato.</p>
@@ -837,11 +974,20 @@ const ContratoCliente = () => {
               <br />6.1.5 deslocamentos extraordinários não previstos no escopo.</p>
 
           </div>
+
+          {/* FOOTER TÉCNICO */}
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 9 de 10</div>
+          </div>
         </div>
 
         {/* ANEXO IV — SERVIÇOS ADICIONAIS (OPCIONAIS) */}
-        <div className="nova-pagina" style={{ paddingTop: "20mm" }}>
+        <div className="page-content">
           <h2 className="annex-title">ANEXO IV — SERVIÇOS ADICIONAIS (OPCIONAIS)</h2>
+
           <div className="clause-body">
             <p style={{ fontStyle: "italic" }}>Integra o Contrato de Prestação de Serviços de Arquitetura — NL Arquitetos</p>
             <p>1.1 O presente Anexo integra o Contrato de Prestação de Serviços de Arquitetura firmado entre CONTRATANTE e CONTRATADOS.</p>
@@ -898,15 +1044,14 @@ const ContratoCliente = () => {
               <br />4.3.3 aceite formal por e-mail ou WhatsApp, desde que contenha manifestação inequívoca de concordância.</p>
             <p>4.4 A execução de serviços adicionais poderá implicar revisão dos prazos de desenvolvimento do projeto, conforme disponibilidade técnica dos CONTRATADOS.</p>
           </div>
-        </div>
 
-
-        {/* FOOTER TÉCNICO */}
-        <div className="footer-tech">
-          <div>NL Arquitetos</div>
-          <div>NL-2026-{c.numero.split('-').pop()}</div>
-          <div>Rubrica: __________/__________</div>
-          <div>Pág. 1 de 26</div>
+          {/* FOOTER TÉCNICO */}
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 12 de 12</div>
+          </div>
         </div>
       </div>
     </div>
@@ -914,3 +1059,10 @@ const ContratoCliente = () => {
 };
 
 export default ContratoCliente;
+
+
+
+
+
+
+
