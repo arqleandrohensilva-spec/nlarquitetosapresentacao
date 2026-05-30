@@ -1555,21 +1555,16 @@ const ContratoCliente = () => {
             A Arquitetura como Decisão
           </div>
         </div>
-      </div>
-      {/* CLÁUSULAS - PÁGINA 5 */}
-      <div
-        className="page-break"
-        style={{
-          background: "#fff",
-          width: "210mm",
-          minHeight: "297mm",
-          margin: "0 auto",
-          display: "flex",
-          flexDirection: "column",
-          padding: "20mm 22mm 18mm",
-          fontFamily: "'DM Mono',monospace",
-        }}
-      >
+
+        {/* CLÁUSULAS - PÁGINA 5 */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            padding: "0",
+            fontFamily: "'DM Mono',monospace",
+          }}
+        >
         <div
           style={{
             display: "flex",
