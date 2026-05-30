@@ -631,24 +631,6 @@ const ContratoCliente = () => {
             <p><strong>4.3.4 CADERNOS TÉCNICOS ENTREGUES POR MODALIDADE</strong><br />
             Os cadernos técnicos entregues ao final do projeto variam conforme a modalidade contratada (Arquitetura+Interiores, Interiores ou Comercial) e o plano selecionado (Executivo ou Completo), conforme detalhado abaixo.</p>
             
-            <p><strong style={{ color: "#8B7355" }}>4.0 ESCOPO DOS SERVIÇOS</strong></p>
-            <p>4.1 Os serviços técnicos a serem prestados pelos CONTRATADOS compreendem o desenvolvimento do projeto arquitetônico conforme a modalidade assinalada na Cláusula 2.0 – Identificação do Projeto, observadas as etapas descritas neste item.</p>
-            <p>4.2 As etapas abaixo descrevem as atividades técnicas que poderão compor o desenvolvimento do projeto, conforme a natureza e modalidade do serviço contratado.</p>
-            
-            <p><strong>4.2.1 Levantamento de dados</strong></p>
-            <p>4.2.1.1 Levantamento técnico do imóvel ou terreno - Verificação dos documentos disponíveis do terreno ou da edificação existente, como matrícula, escritura, levantamento planialtimétrico, projetos anteriores ou “as built”, quando houver, com o objetivo de identificar informações relevantes para o desenvolvimento do projeto.</p>
-            <p>4.2.1.2 Análise documental e condicionantes legais - Levantamento e análise da documentação técnica e legal necessária ao desenvolvimento do projeto, incluindo normas aplicáveis, projetos existentes, documentos do imóvel e demais informações relevantes. Os CONTRATADOS não se responsabilizam pela veracidade, completude ou precisão das informações e documentos fornecidos pelo CONTRATANTE, sendo a responsabilidade por eventuais prejuízos ou atrasos decorrentes de dados incorretos ou incompletos do CONTRATANTE. A análise realizada pelos CONTRATADOS possui caráter meramente informativo, não substituindo levantamentos técnicos especializados, tais como levantamento topográfico, cadastral ou sondagem de solo.</p>
-            <p>4.2.1.3 Análise da legislação municipal - Estudo da legislação urbanística municipal vigente aplicável ao imóvel, incluindo parâmetros de uso e ocupação do solo, recuos obrigatórios, Taxa de Ocupação (TO) e Coeficiente de Aproveitamento (CA) e demais condicionantes legais que possam influenciar o desenvolvimento do projeto.</p>
-            
-            <p><strong>4.2.2 Briefing e Programa de Necessidades</strong></p>
-            <p>4.2.2.1 Reunião Inicial com o CONTRATANTE - Realização de reunião para compreensão dos objetivos, expectativas e diretrizes iniciais do projeto.</p>
-            <p>4.2.2.2 Definição do programa de necessidades - Levantamento e definição dos ambientes, funções, dimensões aproximadas e demais requisitos necessários para o adequado desenvolvimento do projeto arquitetônico.</p>
-            <p>4.2.2.3 Análise de referências arquitetônicas - Avaliação de referências estéticas, funcionais e conceituais apresentadas pelo CONTRATANTE ou sugeridas pelos CONTRATADOS, com o objetivo de alinhar a linguagem arquitetônica e o conceito do projeto.</p>
-            
-            <p><strong>4.2.3 Estudo Preliminar</strong></p>
-            <p>4.2.3.1 Visita Técnica ao local - Realização de visita técnica ao terreno ou imóvel para reconhecimento das condições físicas do local, análise do entorno, acessos e demais características que possam influenciar o desenvolvimento do projeto.</p>
-            <p>4.2.3.2 Planta baixa com Layout Preliminar - Elaboração de planta baixa com proposta inicial de organização espacial e distribuição dos ambientes, considerando o programa de necessidades definido junto ao CONTRATANTE.</p>
-            <p>4.2.3.3 Estudo de Insolação - Análise da orientação solar do terreno ou da edificação, com o objetivo de orientar a implantação e o posicionamento dos ambientes de forma a favorecer o conforto térmico e a eficiência da edificação.</p>
           </div>
         </div>
 
