@@ -719,7 +719,7 @@ const ContratoCliente = () => {
               <br />1.3.3 exigências técnicas ou legais identificadas ao longo do desenvolvimento do projeto;
               <br />1.3.4 exigências formuladas por órgãos públicos ou administração de condomínio;
               <br />1.3.5 fatores externos alheios ao controle dos CONTRATADOS.</p>
-            
+
             <p><strong style={{ color: "#8B7355" }}>2.0 INÍCIO DO CRONOGRAMA</strong></p>
             <p>2.1 O cronograma de desenvolvimento do projeto terá início após o atendimento das seguintes condições:
               <br />2.1.1 assinatura do contrato pelas partes;
@@ -753,6 +753,7 @@ const ContratoCliente = () => {
             <p><strong>3.1.6 Projeto Executivo de Arquitetura</strong><br />
             Elaboração do conjunto completo de desenhos técnicos destinados à correta compreensão arquitetônica e orientação da execução da obra, conforme definido no ANEXO I – Escopo dos Serviços de Projeto.<br />
             Prazo estimado: {c.prazo_executivo} dias úteis.</p>
+
 
             <p>3.2 Consideradas as etapas descritas neste cronograma, o prazo total estimado para desenvolvimento do projeto arquitetônico é de aproximadamente: <strong>{c.prazo_total_dias} dias úteis</strong></p>
             
