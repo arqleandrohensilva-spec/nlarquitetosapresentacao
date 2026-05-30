@@ -579,11 +579,20 @@ const ContratoCliente = () => {
           <div style={{ textAlign: "center", marginTop: "40px", fontSize: "10px", color: "#666" }}>
             São José dos Campos – SP, {c.data}
           </div>
+
+          {/* FOOTER TÉCNICO */}
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 3 de 10</div>
+          </div>
         </div>
 
         {/* ANEXO I — ESCOPO DOS SERVIÇOS DE PROJETO */}
-        <div className="nova-pagina" style={{ paddingTop: "20mm" }}>
+        <div className="page-content">
           <h2 className="annex-title">ANEXO I — ESCOPO DOS SERVIÇOS DE PROJETO</h2>
+
           <div className="clause-body">
             <p style={{ fontStyle: "italic" }}>Integra o Contrato de Prestação de Serviços de Arquitetura — NL Arquitetos</p>
             <p>1.1 O presente Anexo, rubricado e assinado pelas partes, integra de forma indissociável o Contrato de Prestação de Serviços de Arquitetura celebrado entre CONTRATANTE e os CONTRATADOS, tendo por finalidade a definição e delimitação do escopo dos serviços técnicos especializados a serem executados, em conformidade com as disposições estabelecidas no instrumento contratual principal.</p>
