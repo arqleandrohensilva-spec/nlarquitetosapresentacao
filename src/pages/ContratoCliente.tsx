@@ -474,4 +474,13 @@ export default function ContratoCliente() {
           <div style={{ fontFamily: "'Cormorant Garamond',Georgia,serif", fontSize: "18px", fontWeight: 300, fontStyle: "italic", color: "#3A3A3A", marginBottom: "4mm" }}>Cronograma de Desenvolvimento do Projeto</div>
           <div style={{ fontSize: "8px", color: "#aaa", marginBottom: "8mm", fontStyle: "italic" }}>Integra o Contrato de Prestação de Serviços de Arquitetura — NL Arquitetos</div>
           <div style={S.body}>
-            <p style={S.p}>1.1 O presente Anexo integra de forma indissociável o Contrato de Prestação de Serviços de Arquitetura celebrado entre CONTRATANTE e CONTRATADOS, tendo por finalidade estabelecer o cronograma estimado para o desenvolvimento das etapas do
+            <p style={S.p}>1.1 O presente Anexo integra de forma indissociável o Contrato de Prestação de Serviços de Arquitetura celebrado entre CONTRATANTE e CONTRATADOS, tendo por finalidade estabelecer o cronograma estimado para o desenvolvimento das etapas do projeto contratado.</p>
+          </div>
+          <Footer />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ContratoCliente;
