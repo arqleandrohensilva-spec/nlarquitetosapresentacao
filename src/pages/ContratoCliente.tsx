@@ -745,7 +745,18 @@ const ContratoCliente = () => {
             • Levantamento de dados do imóvel • Briefing e programa de necessidades • Estudo preliminar de layout • Concepção tridimensional (3D), quando aplicável • Anteprojeto de interiores • Projeto executivo de interiores • Orientação para seleção de materiais.</p>
             
             <p>4.3.3.1 Nos projetos de interiores não se aplica a etapa de Projeto Legal, salvo quando houver intervenções que exijam aprovação junto a órgãos públicos ou condomínio.</p>
-            
+          </div>
+
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 8 de 12</div>
+          </div>
+        </div>
+
+        <div className="page-content">
+          <div className="clause-body">
             <p><strong>4.3.4 CADERNOS TÉCNICOS ENTREGUES POR MODALIDADE</strong><br />
             Os cadernos técnicos entregues ao final do projeto variam conforme a modalidade contratada (Arquitetura+Interiores, Interiores ou Comercial) e o plano selecionado (Executivo ou Completo), conforme detalhado abaixo.</p>
 
