@@ -177,12 +177,39 @@ const ContratoCliente = () => {
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap');
         
         @media print {
-          body { margin: 0; background: #000 !important; }
+          body { margin: 0; background: #fff !important; color: #000 !important; }
+          .contrato-container { 
+            width: 210mm !important; 
+            margin: 0 !important; 
+            padding: 0 !important;
+            background: #fff !important;
+            color: #000 !important;
+          }
+          .page-content {
+            padding: 20mm 22mm !important;
+            height: 297mm;
+            box-sizing: border-box;
+            position: relative;
+            background: #fff !important;
+            color: #000 !important;
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+          }
+          .clause-body, .clause-body p, .clause-body ul, .clause-body li {
+            color: #333 !important;
+          }
           * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
           [data-pdf-hide] { display: none !important; }
           @page { size: A4; margin: 0; }
-          .nova-pagina { page-break-before: always; }
           .no-break { page-break-inside: avoid; }
+          .footer-tech {
+            position: absolute;
+            bottom: 20mm;
+            left: 22mm;
+            right: 22mm;
+            color: #666 !important;
+          }
         }
 
         .contrato-container {
@@ -191,7 +218,15 @@ const ContratoCliente = () => {
           margin: 0 auto;
           color: #fff;
           font-family: 'DM Mono', monospace;
+        }
+
+        .page-content {
           padding: 20mm 22mm;
+          min-height: 297mm;
+          box-sizing: border-box;
+          position: relative;
+          display: flex;
+          flex-direction: column;
         }
 
         .clause-title, .annex-title {
@@ -234,10 +269,12 @@ const ContratoCliente = () => {
           justify-content: space-between;
           border-top: 0.5px solid #222;
           padding-top: 15px;
-          margin-top: 60px;
+          margin-top: auto;
           text-transform: uppercase;
           letter-spacing: 0.1em;
+          width: 100%;
         }
+
       `}</style>
 
       <div data-pdf-hide style={{ position: "fixed", top: 16, right: 16, zIndex: 50 }}>
