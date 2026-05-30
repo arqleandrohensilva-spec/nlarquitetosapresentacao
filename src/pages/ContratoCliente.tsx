@@ -1236,14 +1236,7 @@ const ContratoCliente = () => {
         </div>
 
         {/* CLÁUSULAS - PÁGINA 4 */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            padding: "0",
-            fontFamily: "'DM Mono',monospace",
-          }}
-        >
+        <div>
         <div
           style={{
             display: "flex",
