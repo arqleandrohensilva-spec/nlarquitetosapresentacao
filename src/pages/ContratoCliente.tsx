@@ -112,11 +112,19 @@ const ContratoCliente = () => {
         matricula: "12.345",
         cartorio: "1º Cartório de SJC",
         prazo_semanas: "12",
+        prazo_briefing: "05",
+        prazo_estudo: "10",
+        prazo_legal: "15",
+        prazo_executivo: "20",
+        prazo_total_dias: "60",
         valor_total: "33.687,22",
         valor_total_extenso: "trinta e três mil, seiscentos e oitenta e sete reais e vinte e dois centavos",
         marco1_valor: "10.106,17",
+        marco1_extenso: "dez mil, cento e seis reais e dezessete centavos",
         marco2_valor: "13.474,89",
-        marco3_valor: "10.106,16"
+        marco2_extenso: "treze mil, quatrocentos e setenta e quatro reais e oitenta e nove centavos",
+        marco3_valor: "10.106,16",
+        marco3_extenso: "dez mil, cento e seis reais e dezesseis centavos"
       });
       setValidated(true);
       setLoading(false);
