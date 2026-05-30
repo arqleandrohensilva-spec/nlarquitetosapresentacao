@@ -2055,7 +2055,6 @@ const ContratoCliente = () => {
               <div style={{ fontSize: "7px", color: "#888", textTransform: "uppercase" }}>Testemunha 2</div>
               <div style={{ fontSize: "7px", color: "#ccc", marginTop: "2px" }}>CPF: _________________</div>
             </div>
-          </div>
         </div>
       </div>
     </>
