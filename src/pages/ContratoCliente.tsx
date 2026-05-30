@@ -174,6 +174,7 @@ const ContratoCliente = () => {
   return (
     <div style={{ background: "#000", minHeight: "100vh" }}>
 
+
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap');
         
