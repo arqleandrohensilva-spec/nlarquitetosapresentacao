@@ -422,12 +422,25 @@ const ContratoCliente = () => {
             <p>9.7 Considera-se reprodução indevida a utilização total ou parcial do projeto para execução em outro imóvel ou empreendimento sem autorização dos CONTRATADOS.</p>
             <p>9.8 Para fins deste contrato, considera-se plágio a reprodução substancial do projeto arquitetônico... mesmo que sejam alterados materiais, cores, acabamentos ou detalhes construtivos.</p>
             <p>9.10 A utilização indevida, reprodução, cópia ou plágio do projeto arquitetônico implicará obrigação de indenização aos CONTRATADOS, sem prejuízo das medidas judiciais cabíveis.</p>
+            <p>9.11 Alterações realizadas no projeto ou na obra dele resultante sem autorização dos CONTRATADOS caracterizam violação de direitos autorais, nos termos da Lei nº 9.610/1998 (Lei de Direitos Autorais), sujeitando o responsável ao pagamento de indenização mínima equivalente a 3 (três) vezes o valor total dos honorários contratuais, sem prejuízo de outras sanções legais cabíveis.</p>
+            <p>9.12 O projeto somente poderá ser utilizado para execução da obra após a quitação integral dos honorários previstos neste contrato. A utilização do projeto antes da quitação caracteriza uso indevido de obra intelectual.</p>
           </div>
 
           <div className="clause-title">CLÁUSULA DÉCIMA — DA RESPONSABILIDADE TÉCNICA</div>
           <div className="clause-body">
-            <p>10.1 Restringe-se à elaboração do projeto conforme o escopo definido no Anexo I.</p>
-            <p>10.3 Os CONTRATADOS não se responsabilizam por: execução da obra, qualidade dos materiais ou vícios construtivos decorrentes de falhas na execução.</p>
+            <p>10.1 A responsabilidade técnica dos CONTRATADOS, no âmbito deste contrato, restringe-se à elaboração do projeto, conforme o escopo definido no Anexo I (Escopo Detalhado dos Serviços), observadas as normas técnicas aplicáveis, a legislação vigente e as diretrizes do contratante.</p>
+            <p>10.2 A responsabilidade integral pela execução da obra, incluindo a contratação de mão de obra, construtores, fornecedores e outros profissionais necessários à construção, recai exclusivamente sobre o CONTRATANTE.</p>
+            <p>10.3 Os CONTRATADOS não se responsabiliza por:</p>
+            <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
+              <li>10.3.1 A execução da obra, que é de inteira responsabilidade do CONTRATANTE e/ou dos profissionais por ele contratados.</li>
+              <li>10.3.2 A qualidade dos materiais utilizados na obra, que é de inteira responsabilidade do CONTRATANTE e/ou dos fornecedores.</li>
+              <li>10.3.3 O cumprimento dos prazos de execução da obra, que é de inteira responsabilidade do CONTRATANTE e/ou dos profissionais por ele contratados.</li>
+              <li>10.3.4 Eventuais vícios ou defeitos na obra decorrentes de falhas na execução, na qualidade dos materiais ou no cumprimento dos prazos.</li>
+              <li>10.3.5 A compatibilização do projeto arquitetônico com os projetos complementares (estrutural, elétrico, hidrossanitário etc.), que é de inteira responsabilidade do CONTRATANTE e/ou dos profissionais por ele contratados, salvo se expressamente previsto em contrário no Anexo I.</li>
+            </ul>
+            <p>10.4 Caso o CONTRATANTE realize alterações no projeto arquitetônico sem a prévia e expressa autorização por escrito dos CONTRATADOS, estes ficarão isentos de qualquer responsabilidade técnica, civil ou legal decorrente dessas modificações, conforme o art. 615 do Código Civil.</p>
+            <p>10.5 A execução da obra em desacordo com o Projeto aprovado, ou sem observância das orientações técnicas fornecidas, exime os CONTRATADOS de qualquer responsabilidade civil, técnica ou legal sobre eventuais problemas construtivos, estruturais ou funcionais da edificação, desde que comprovada a relação de causalidade entre o descumprimento das orientações e os problemas apresentados.</p>
+            <p>10.6 O presente contrato não inclui serviços de acompanhamento técnico de obra, fiscalização ou gerenciamento de execução, os quais somente poderão ser realizados mediante contratação específica e formalização de contrato adicional.</p>
           </div>
 
           <div className="clause-title">CLÁUSULA DÉCIMA PRIMEIRA — DA RESCISÃO CONTRATUAL</div>
