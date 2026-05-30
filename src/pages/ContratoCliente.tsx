@@ -447,9 +447,20 @@ const ContratoCliente = () => {
             <p>7.12 Quando houver identificação do autor do projeto por meio de placa de obra, material de divulgação ou qualquer outro meio, o CONTRATANTE compromete-se a não remover tal identificação sem autorização prévia dos CONTRATADOS.</p>
           </div>
 
+          {/* FOOTER TÉCNICO */}
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 3 de 12</div>
+          </div>
+        </div>
+
+        <div className="page-content">
           <div className="clause-title">CLÁUSULA OITAVA — DAS OBRIGAÇÕES E RESPONSABILIDADES DOS CONTRATADOS</div>
           <div className="clause-body">
             <p>Compete aos CONTRATADOS:</p>
+
             <p>8.1 Prestar os serviços profissionais de arquitetura com diligência, competência e observância às normas técnicas aplicáveis, à legislação vigente ao Código de Ética e Disciplina do CAU/BR às boas práticas profissionais reconhecidas no setor.</p>
             <p>8.2 Elaborar o projeto arquitetônico em estrita conformidade com o escopo definido no Anexo I (Escopo dos Serviços), observando rigorosamente os prazos estabelecidos no Anexo II (Cronograma) e considerando integralmente as informações, documentos e diretrizes fornecidos pelo CONTRATANTE. O cumprimento das obrigações dos CONTRATADOS, incluindo prazos e qualidade do projeto, é condicionado ao adimplemento tempestivo e integral das obrigações do CONTRATANTE, notadamente no que se refere ao fornecimento de informações, documentos e obtenção de aprovações, conforme previsto na Cláusula Sétima.</p>
             <p>8.3 Manter o CONTRATANTE informado sobre o andamento do projeto, apresentando as etapas desenvolvidas para análise e aprovação dentro dos prazos previstos.</p>
