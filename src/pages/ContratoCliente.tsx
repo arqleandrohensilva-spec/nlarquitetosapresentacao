@@ -138,7 +138,7 @@ const ContratoCliente = () => {
             minHeight: "250mm",
             padding: "0",
           }}
-        >
+        </div>
         <div style={{ display: "flex", justifyContent: "flex-end", padding: "32px 44px 0" }}>
           <div style={{ textAlign: "right" }}>
             <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
