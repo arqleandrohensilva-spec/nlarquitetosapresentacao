@@ -678,7 +678,31 @@ const ContratoCliente = () => {
             Vídeo 3D 360°: apresentação imersiva do projeto antes da execução<br />
             3 visitas técnicas à obra com emissão de relatório por visita<br />
             Curadoria de materiais e fornecedores</p>
+
+            <p><strong>4.3.5 DOS PLANOS DE SERVIÇO — EXECUTIVO E COMPLETO</strong><br />
+            Os serviços são oferecidos em dois planos, sendo o plano contratado identificado no campo de assinatura deste contrato:<br />
+            <strong>PLANO EXECUTIVO:</strong> Compreende todas as etapas de desenvolvimento do projeto até a entrega dos cadernos técnicos executivos, conforme escopo da modalidade contratada descrito nos itens 4.3.1 a 4.3.3. Inclui orientação na entrega dos cadernos técnicos e suporte técnico por 90 (noventa) dias após a entrega para projetos de Arquitetura+Interiores e Interiores, e 60 (sessenta) dias para projetos Comerciais. O suporte consiste em esclarecimento de dúvidas técnicas relacionadas ao projeto entregue, via e-mail ou WhatsApp, em dias úteis.<br />
+            <strong>PLANO COMPLETO:</strong> Inclui tudo do Plano Executivo, acrescido de: (i) visitas técnicas à obra — 04 (quatro) visitas para projetos de Arquitetura+Interiores e Interiores, e 03 (três) visitas para projetos Comerciais — com emissão de relatório técnico por visita; e (ii) visitas em lojas e showrooms para curadoria conjunta de materiais, acabamentos e mobiliário. As visitas deverão ser previamente agendadas, conforme disponibilidade das partes, e realizadas durante a execução da obra.<br />
+            Plano contratado: {'{'}plano_executivo{'}'} {'{'}plano_completo{'}'}</p>
+
+            <p>4.4 Os serviços não inclusos no escopo, salvo quando expressamente previsto no presente contrato ou em seus anexos, não fazem parte do escopo dos serviços prestados pelos CONTRATADOS:<br />
+            4.4.1 Elaboração de projetos complementares, tais como:<br />
+            – projeto estrutural – projeto elétrico – projeto hidrossanitário – projeto de prevenção e combate a incêndio – projeto de climatização ou ar-condicionado – projeto luminotécnico técnico – projeto de automação residencial ou comercial<br />
+            4.4.2 Levantamentos técnicos especializados, incluindo:<br />
+            – levantamento topográfico ou planialtimétrico – sondagem do solo – laudos técnicos ou perícias de engenharia<br />
+            4.4.3 Gerenciamento, fiscalização ou execução da obra;<br />
+            4.4.4 Acompanhamento técnico contínuo da obra, salvo quando expressamente contratado;<br />
+            4.4.5 Taxas, emolumentos ou custos administrativos relacionados à aprovação do projeto junto a órgãos públicos, concessionárias ou condomínios;<br />
+            4.4.6 Impressão, plotagem ou reprodução física de projetos.</p>
+
+            <p>4.5 Caso o CONTRATANTE tenha interesse na contratação de quaisquer dos serviços acima mencionados, estes poderão ser prestados pelos CONTRATADOS ou por profissionais por eles indicados, mediante contratação adicional e remuneração específica, conforme os termos estabelecidos neste contrato e seus anexos.</p>
             
+            <p>4.6 A relação de serviços adicionais que poderão ser eventualmente contratados encontra-se descrita no ANEXO IV – SERVIÇOS ADICIONAIS (OPCIONAIS), o qual integra o presente contrato para todos os efeitos.</p>
+            
+            <p>4.7 A contratação de quaisquer serviços adicionais dependerá de aprovação expressa e por escrito do CONTRATANTE, formalizada por meio de aditivo contratual ou termo de aceite específico, podendo implicar revisão de honorários, prazos e condições de execução, conforme negociação prévia entre as partes.</p>
+            
+            <p>4.8 Durante o desenvolvimento das etapas de estudo preliminar e anteprojeto, estão incluídas até 02 (duas) rodadas de ajustes ou revisões solicitadas pelo CONTRATANTE. Solicitações adicionais que impliquem alterações substanciais no projeto poderão ser consideradas serviços adicionais, sujeitos à revisão de prazo e honorários.</p>
+
           </div>
         </div>
 
