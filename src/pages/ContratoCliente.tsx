@@ -175,6 +175,7 @@ const ContratoCliente = () => {
     <div style={{ background: "#000", minHeight: "100vh" }}>
       <div data-pdf-hide style={{ position: "fixed", top: 16, right: 16, zIndex: 50 }}>
 
+
         <button 
           onClick={() => window.print()} 
           style={{ 
