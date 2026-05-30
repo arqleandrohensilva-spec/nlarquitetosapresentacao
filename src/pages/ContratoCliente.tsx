@@ -1047,13 +1047,14 @@ const ContratoCliente = () => {
             <div>NL Arquitetos</div>
             <div>NL-2026-{c.numero.split('-').pop()}</div>
             <div>Rubrica: __________/__________</div>
-            <div>Pág. 10 de 10</div>
+            <div>Pág. 12 de 12</div>
           </div>
         </div>
       </div>
     </div>
   );
 };
+
 
 
 export default ContratoCliente;
