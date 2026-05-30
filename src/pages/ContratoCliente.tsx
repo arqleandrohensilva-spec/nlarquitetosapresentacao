@@ -537,8 +537,39 @@ const ContratoCliente = () => {
           <h2 className="annex-title">ANEXO I — ESCOPO DOS SERVIÇOS DE PROJETO</h2>
           <div className="clause-body">
             <p style={{ fontStyle: "italic" }}>Integra o Contrato de Prestação de Serviços de Arquitetura — NL Arquitetos</p>
-            <p>1.1 O presente Anexo integra de forma indissociável o Contrato de Prestação de Serviços de Arquitetura celebrado entre as partes, tendo por finalidade a definição do escopo técnico a ser executado.</p>
-            <p>1.2 O escopo detalhado segue as diretrizes da NL Arquitetos para o plano {c.plano}.</p>
+            <p>1.1 O presente Anexo, rubricado e assinado pelas partes, integra de forma indissociável o Contrato de Prestação de Serviços de Arquitetura celebrado entre CONTRATANTE e os CONTRATADOS, tendo por finalidade a definição e delimitação do escopo dos serviços técnicos especializados a serem executados, em conformidade com as disposições estabelecidas no instrumento contratual principal.</p>
+            <p>1.2 A delimitação dos serviços objeto deste contrato será realizada por meio da seleção das modalidades de projeto indicadas a seguir, podendo o CONTRATANTE optar pela contratação de uma ou mais modalidades, conforme suas necessidades.</p>
+            
+            <p><strong style={{ color: "#8B7355" }}>2.0 IDENTIFICAÇÃO DO PROJETO</strong></p>
+            <p>Em relação aos serviços técnicos especializados objeto do presente contrato, concernentes ao desenvolvimento de projetos, as partes, em comum acordo, assinalam a seguinte modalidade a ser executada pelos CONTRATADOS:</p>
+            
+            <p><strong>2.1 [ {c.tipo_projeto === 'ARQ' || c.tipo_projeto === 'ARQ+INT' ? 'X' : ' '} ] PROJETO DE ARQUITETURA RESIDENCIAL</strong><br />
+            Elaboração e desenvolvimento integral do projeto arquitetônico destinado à construção de edificação para fins de uso exclusivamente residencial, em conformidade com as normas técnicas aplicáveis e a legislação urbanística vigente.</p>
+            
+            <p><strong>2.2 [ {c.tipo_projeto === 'COM' ? 'X' : ' '} ] PROJETO DE ARQUITETURA COMERCIAL</strong><br />
+            Elaboração de projeto arquitetônico abrangente, destinado à construção, reforma ou adaptação de edificações ou espaços físicos, com a finalidade precípua de abrigar atividades de natureza comercial ou de prestação de serviços, em estrita conformidade com as normas técnicas e legais aplicáveis.</p>
+            
+            <p><strong>2.3 [ {c.tipo_projeto === 'INT' || c.tipo_projeto === 'ARQ+INT' ? 'X' : ' '} ] PROJETO DE ARQUITETURA DE INTERIORES</strong><br />
+            Elaboração de projeto de arquitetura de interiores, compreendendo a concepção, planejamento e desenvolvimento de soluções técnicas e estéticas destinadas à organização, funcionalidade e ambientação dos espaços internos.</p>
+
+            <p><strong style={{ color: "#8B7355" }}>3.0 IDENTIFICAÇÃO DO IMOVEL</strong></p>
+            <p>3.1 O projeto objeto do presente contrato refere-se ao imóvel localizado em: <br /><strong>{c.endereco_imovel}</strong></p>
+            
+            <p>3.1.1 Tipo de Imóvel<br />
+            [ ] Terreno<br />
+            [ ] Residência Existente<br />
+            [ ] Apartamento<br />
+            [ ] Sala Comercial<br />
+            [ X ] Outro: {c.tipo_projeto}</p>
+
+            <p>3.2 Quando se tratar de projeto arquitetônico para construção, o imóvel possui área aproximada de {c.area_terreno} m² de terreno, com previsão estimada de {c.area_construida} m² de área construída, podendo esta sofrer ajustes ao longo do desenvolvimento do projeto, conforme necessidades técnicas, legais ou programáticas identificadas durante o processo de concepção.</p>
+            <p>3.3 Quando se tratar de projeto de reforma, adaptação ou arquitetura de interiores, a área aproximada objeto de intervenção corresponde a {c.area_construida} m², referente aos ambientes indicados pelo CONTRATANTE.</p>
+            <p>3.4 O desenvolvimento do projeto será realizado com base nas informações, documentos e medidas fornecidos pelo CONTRATANTE ou por profissionais por ele indicados, incluindo, mas não se limitando a levantamento cadastral, levantamento topográfico ou documentação técnica do imóvel. Os CONTRATADOS não se responsabilizam por eventuais divergências, inconsistências ou imprecisões contidas nesses documentos, sendo do CONTRATANTE a responsabilidade por sua correção e veracidade.</p>
+            
+            <p>3.5 Matrícula do Imóvel (quando aplicável)<br />
+            Matrícula nº: {c.matricula} Cartório: {c.cartorio}</p>
+            
+            <p>3.6 O projeto arquitetônico desenvolvido pelos CONTRATADOS está vinculado exclusivamente ao imóvel identificado neste anexo, sendo vedada sua utilização em outro terreno, unidade imobiliária ou empreendimento sem autorização expressa dos CONTRATADOS.</p>
           </div>
         </div>
 
