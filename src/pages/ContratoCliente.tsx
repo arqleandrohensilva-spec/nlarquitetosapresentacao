@@ -563,7 +563,31 @@ const ContratoCliente = () => {
             [ X ] Outro: {c.tipo_projeto}</p>
 
             <p>3.2 Quando se tratar de projeto arquitetônico para construção, o imóvel possui área aproximada de {c.area_terreno} m² de terreno, com previsão estimada de {c.area_construida} m² de área construída, podendo esta sofrer ajustes ao longo do desenvolvimento do projeto, conforme necessidades técnicas, legais ou programáticas identificadas durante o processo de concepção.</p>
-            <p>3.3 Quando se tratar de projeto de reforma, adaptação ou arquitetura de interiores, a área aproximada objeto de intervenção corresponde a {c.area_construida} m², referente aos ambientes indicados pelo CONTRATANTE.</p>
+            <p><strong>4.2.4 Concepção Tridimensional (3D)</strong></p>
+            <p>4.2.4.1 Imagens renderizadas das fachadas principais da edificação, em quantidade a ser definida em conjunto com o CONTRATANTE - Elaboração de imagens realistas em perspectiva tridimensional das fachadas principais da edificação, incluindo vistas frontal e posterior, com o objetivo de facilitar a visualização do conceito arquitetônico proposto.</p>
+            <p>4.2.4.2 Vídeo de apresentação 3D - Produção de vídeo de apresentação do modelo tridimensional do projeto, permitindo melhor compreensão dos volumes, proporções e características arquitetônicas da edificação.</p>
+            
+            <p><strong>4.2.5 Projeto Legal</strong></p>
+            <p>4.2.5.1 Elaboração da documentação para aprovação - Desenvolvimento e entrega do conjunto de desenhos técnicos e documentos necessários para submissão e aprovação do projeto arquitetônico junto aos órgãos públicos competentes e, quando aplicável, junto ao condomínio.</p>
+            <p>4.2.5.2 Atendimento às exigências dos órgãos responsáveis - Estão contempladas nesta etapa as eventuais adequações e ajustes solicitados pelos órgãos de análise durante o processo de aprovação do projeto. Caso as exigências dos órgãos de análise impliquem em alterações substanciais no conceito arquitetônico previamente aprovado ou demandem retrabalho significativo que extrapole o escopo original, os CONTRATADOS poderão reavaliar o escopo e os honorários, conforme previsto na Cláusula Quinta, item 5.6, e Cláusula Sexta, item 6.6.1, se aplicável.</p>
+            <p>4.2.5.3 Acompanhamento do processo de aprovação - Realização do acompanhamento do processo de aprovação junto aos órgãos competentes, com verificações periódicas e contato com periodicidade mínima quinzenal, até a conclusão da análise do projeto. O acompanhamento consiste na verificação do status e comunicação com os órgãos competentes, não garantindo prazos de resposta ou aprovação que são de responsabilidade exclusiva dos órgãos públicos.</p>
+            <p>4.2.5.4 Protocolização do projeto nos órgãos competentes - Submissão e condução do processo de aprovação do projeto arquitetônico perante os órgãos responsáveis, conforme exigências da legislação vigente e normas aplicáveis.</p>
+            
+            <p><strong>4.2.6 Projeto Executivo De Arquitetura</strong></p>
+            <p>4.2.6.1 O Projeto Executivo corresponde à etapa final de desenvolvimento do projeto arquitetônico, necessárias para compreensão arquitetônica e orientação da execução da obra. A apresentação desta etapa será realizada por meio dos seguintes documentos técnicos:</p>
+            <ul>
+              <li>Planta de layout</li>
+              <li>Planta construtiva</li>
+              <li>Planta paginação de piso</li>
+              <li>Planta luminotécnica ¹</li>
+              <li>Planta de teto</li>
+              <li>Indicação de pontos elétricos e luminotécnicos ¹</li>
+              <li>Indicação de pontos de ar-condicionado¹</li>
+              <li>Planta de cobertura com indicação de caixas d’águas, seus acessos e fechamentos, caso existam.</li>
+              <li>Detalhamentos de esquadrias</li>
+              <li>Elevações e Cortes da casa</li>
+            </ul>
+            <p style={{ fontSize: "9px" }}>¹ as plantas de mapa de instalações elétricas, hidráulicas, de ar-condicionado e luminotécnica, não dimensionam e nem projetam as tubulações e fiações. Tais dimensionamentos deverão ser indicados em projeto complementar não incluso nesta proposta.</p>
             <p>3.4 O desenvolvimento do projeto será realizado com base nas informações, documentos e medidas fornecidos pelo CONTRATANTE ou por profissionais por ele indicados, incluindo, mas não se limitando a levantamento cadastral, levantamento topográfico ou documentação técnica do imóvel. Os CONTRATADOS não se responsabilizam por eventuais divergências, inconsistências ou imprecisões contidas nesses documentos, sendo do CONTRATANTE a responsabilidade por sua correção e veracidade.</p>
             
             <p>3.5 Matrícula do Imóvel (quando aplicável)<br />
