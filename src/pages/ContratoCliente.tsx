@@ -254,7 +254,6 @@ const ContratoCliente = () => {
             </div>
           </div>
 
-          {/* CLÁUSULA TERCEIRA */}
           <div style={{ marginBottom: "8mm" }}>
             <div style={{ display: "flex", gap: "4mm", marginBottom: "4mm", alignItems: "baseline" }}>
               <div style={{ fontSize: "10px", color: "#888", textTransform: "uppercase", fontWeight: 500 }}>Cláusula Terceira</div>
@@ -263,11 +262,6 @@ const ContratoCliente = () => {
             <div style={{ fontSize: "9px", color: "#555", lineHeight: "1.7", textAlign: "justify" }}>
               3.1 Os serviços técnicos de arquitetura que poderão ser prestados pelos CONTRATADOS ao CONTRATANTE compreendem...
             </div>
-          </div>
-
-          {/* ... Restaurar o resto do conteúdo das cláusulas aqui conforme as mensagens anteriores ... */}
-          <div style={{ fontSize: "9px", color: "#888", fontStyle: "italic", margin: "20px 0" }}>
-            [O conteúdo completo das cláusulas 4-14 está sendo restaurado...]
           </div>
         </div>
 
