@@ -845,19 +845,61 @@ const ContratoCliente = () => {
           <div className="clause-body">
             <p style={{ fontStyle: "italic" }}>Integra o Contrato de Prestação de Serviços de Arquitetura — NL Arquitetos</p>
             <p>1.1 O presente Anexo integra o Contrato de Prestação de Serviços de Arquitetura firmado entre CONTRATANTE e CONTRATADOS.</p>
-            <p>1.2 Os serviços descritos neste Anexo não fazem parte do escopo original do projeto.</p>
+            <p>1.2 Os serviços descritos neste Anexo não fazem parte do escopo original do projeto, definido no ANEXO I – Escopo dos Serviços, sendo considerados serviços adicionais, passíveis de contratação específica.</p>
+            <p>1.3 A execução de qualquer serviço adicional dependerá de solicitação do CONTRATANTE e aprovação prévia dos CONTRATADOS, com definição de honorários e prazos.</p>
+            <p>1.4 A contratação de serviços adicionais poderá implicar revisão do cronograma de desenvolvimento do projeto, conforme disponibilidade de agenda dos CONTRATADOS.</p>
             
             <p><strong style={{ color: "#8B7355" }}>2.0 SITUAÇÕES QUE CONFIGUREM SERVIÇOS ADICIONAIS</strong></p>
-            <p>2.1 PROJETOS COMPLEMENTARES: Estrutural, elétrico, hidrossanitário, climatização, prevenção e combate a incêndio, luminotécnico, paisagismo, marcenaria sob medida.</p>
-            <p>2.2 ESTUDO DE VIABILIDADE FINANCEIRA DO PROJETO: Na fase inicial do desenvolvimento do projeto, os CONTRATADOS poderão realizar análise preliminar de viabilidade de custo de construção.</p>
+            <p>2.1 PROJETOS COMPLEMENTARES<br />
+            Os seguintes projetos técnicos poderão ser necessários para o pleno desenvolvimento e execução da obra, sendo normalmente elaborados por profissionais ou empresas especializadas:
+              <br />2.1.1 Projeto estrutural.
+              <br />2.1.2 Projeto elétrico.
+              <br />2.1.3 Projeto hidrossanitário.
+              <br />2.1.4 Projeto de climatização.
+              <br />2.1.5 Projeto de prevenção e combate a incêndio.
+              <br />2.1.6 Projeto luminotécnico.
+              <br />2.1.7 Projeto de paisagismo.
+              <br />2.1.8 Projeto de interiores detalhado. (a depender do escopo do Anexo I)
+              <br />2.1.9 Projeto de marcenaria sob medida (a depender do escopo do Anexo I)
+              <br />2.1.10 Salvo disposição expressa em contrário no contrato principal, os projetos complementares acima não estão incluídos nos honorários do projeto arquitetônico, podendo ser contratados separadamente pelo CONTRATANTE.</p>
+            
+            <p>2.2 ESTUDO DE VIABILIDADE FINANCEIRA DO PROJETO
+              <br />2.2.1 Na fase inicial do desenvolvimento do projeto, os CONTRATADOS poderão realizar análise preliminar de viabilidade, considerando parâmetros gerais de custo de construção.
+              <br />2.2.2 Essa análise tem caráter estimativo e orientativo, não constituindo orçamento executivo de obra.
+              <br />2.2.3 O objetivo do estudo é verificar se o conceito inicial do projeto está compatível com a capacidade de investimento estimada do CONTRATANTE, permitindo eventuais ajustes antes do desenvolvimento das etapas seguintes.
+              <br />2.2.3.1 Os CONTRATADOS poderão propor substituição de materiais, acabamentos ou soluções construtivas, desde que tais alterações:
+              <br />I – Não modifiquem substancialmente o conceito arquitetônico do projeto;
+              <br />II – Não alterem o programa de necessidades previamente aprovado;
+              <br />III – Não impliquem reformulação integral do projeto.</p>
+            
+            <p>2.3 Ajustes pontuais destinados à adequação de custo da obra poderão ser realizados dentro da etapa em desenvolvimento, sem caracterizar serviço adicional.
+              <br />2.3.1 Entende-se por 'ajustes pontuais' pequenas modificações que não alterem o conceito arquitetônico, o programa de necessidades ou a área construída significativamente. Contudo, caso tais ajustes demandem retrabalho em etapas já desenvolvidas, poderão ser cobrados honorários adicionais, mediante proposta formal e aprovação do CONTRATANTE.</p>
+            <p>2.4 Caso as alterações solicitadas impliquem modificação significativa do projeto, poderão ser consideradas serviços adicionais, mediante comunicação prévia e justificada dos CONTRATADOS ao CONTRATANTE, detalhando o impacto das alterações e a necessidade de contratação como serviço adicional. A decisão final sobre a contratação do serviço adicional caberá ao CONTRATANTE.</p>
             
             <p><strong style={{ color: "#8B7355" }}>3.0 SERVIÇOS DE APOIO</strong></p>
-            <p>3.1 Consultoria na escolha de materiais, seleção de fornecedores, análise técnica de orçamentos e acompanhamento de etapas específicas da execução.</p>
+            <p>3.1 Durante o desenvolvimento do projeto ou nas etapas posteriores, o CONTRATANTE poderá solicitar aos CONTRATADOS apoio técnico em decisões relacionadas à obra, aos materiais, aos sistemas construtivos ou à execução do projeto.</p>
+            <p>3.2 Entre os serviços que poderão ser contratados ao longo do processo, destacam-se:
+              <br />3.2.1 Consultoria na escolha de materiais e acabamentos.
+              <br />3.2.2 Apoio técnico na seleção de fornecedores e prestadores de serviço.
+              <br />3.2.3 Análise técnica de orçamentos de obra.
+              <br />3.2.4 Apoio na compatibilização entre decisões de obra e o projeto arquitetônico.
+              <br />3.2.5 Consultoria durante etapas específicas da execução da obra.</p>
+            <p>3.3 Tais serviços poderão ser contratados a qualquer momento durante o desenvolvimento do projeto ou da obra, mediante acordo entre as partes quanto aos honorários e às condições de execução.</p>
+            <p>3.4 A contratação desses serviços tem como objetivo auxiliar o CONTRATANTE na tomada de decisões técnicas, contribuindo para melhor qualidade da obra e maior fidelidade ao projeto desenvolvido.</p>
+            <p>3.5 Os CONTRATADOS poderão apresentar ao CONTRATANTE sugestões de serviços técnicos complementares que possam contribuir para a qualidade, eficiência ou viabilidade da obra.</p>
             
             <p><strong style={{ color: "#8B7355" }}>4.0 HONORÁRIOS DOS SERVIÇOS ADICIONAIS</strong></p>
-            <p>4.1 Os honorários referentes aos serviços adicionais serão definidos caso a caso, considerando a complexidade da solicitação e tempo técnico necessário.</p>
+            <p>4.1 Os honorários referentes aos serviços adicionais serão definidos caso a caso, considerando a complexidade da solicitação, o tempo técnico necessário e o impacto no cronograma do projeto.
+              <br />4.1.1 A proposta formal para serviços adicionais deverá detalhar o escopo, os honorários, a forma de pagamento e os prazos de execução, os quais deverão ser expressamente aprovados pelo CONTRATANTE antes do início dos trabalhos.</p>
+            <p>4.2 A execução de serviços adicionais somente terá início após aprovação expressa do CONTRATANTE, incluindo concordância com os honorários correspondentes.</p>
+            <p>4.3 A contratação de serviços adicionais deverá ser formalizada, preferencialmente, por meio de:
+              <br />4.3.1 termo aditivo ao contrato;
+              <br />4.3.2 proposta complementar aprovada por escrito;
+              <br />4.3.3 aceite formal por e-mail ou WhatsApp, desde que contenha manifestação inequívoca de concordância.</p>
+            <p>4.4 A execução de serviços adicionais poderá implicar revisão dos prazos de desenvolvimento do projeto, conforme disponibilidade técnica dos CONTRATADOS.</p>
           </div>
         </div>
+
 
         {/* FOOTER TÉCNICO */}
         <div className="footer-tech">
