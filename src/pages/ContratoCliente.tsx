@@ -541,11 +541,20 @@ const ContratoCliente = () => {
             <p>14.2 As partes, em comum acordo, poderão submeter eventuais conflitos à mediação, conciliação ou arbitragem, em conformidade com a Lei nº 9.307/96 e demais legislações aplicáveis. É condição para o ajuizamento de qualquer medida judicial ou arbitral que as partes busquem, previamente, a resolução dos conflitos por meio de mediação ou conciliação, durante um período mínimo de 30 (trinta) dias, contados a partir da notificação de uma parte à outra sobre a existência do conflito, sob pena de extinção do processo sem resolução do mérito.</p>
             <p>14.3 O presente contrato constitui título executivo extrajudicial, nos termos da legislação brasileira aplicável.</p>
           </div>
+          
+          {/* FOOTER TÉCNICO */}
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 2 de 10</div>
+          </div>
         </div>
 
         {/* ASSINATURAS */}
-        <div className="nova-pagina" style={{ paddingTop: "20mm" }}>
+        <div className="page-content">
           <h2 className="annex-title">Assinaturas</h2>
+
           <div className="clause-body">
             <p>E, por estarem assim justas e contratadas, as partes assinam o presente instrumento em 02 (duas) vias de igual teor e forma, juntamente com duas testemunhas, para que produza seus jurídicos e legais efeitos, obrigando-se as partes, seus herdeiros e sucessores.</p>
           </div>
