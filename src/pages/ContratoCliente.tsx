@@ -983,19 +983,19 @@ const ContratoCliente = () => {
               <br />4.3.3 aceite formal por e-mail ou WhatsApp, desde que contenha manifestação inequívoca de concordância.</p>
             <p>4.4 A execução de serviços adicionais poderá implicar revisão dos prazos de desenvolvimento do projeto, conforme disponibilidade técnica dos CONTRATADOS.</p>
           </div>
-        </div>
 
-
-        {/* FOOTER TÉCNICO */}
-        <div className="footer-tech">
-          <div>NL Arquitetos</div>
-          <div>NL-2026-{c.numero.split('-').pop()}</div>
-          <div>Rubrica: __________/__________</div>
-          <div>Pág. 1 de 26</div>
+          {/* FOOTER TÉCNICO */}
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 10 de 10</div>
+          </div>
         </div>
       </div>
     </div>
   );
 };
+
 
 export default ContratoCliente;
