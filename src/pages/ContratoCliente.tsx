@@ -852,11 +852,20 @@ const ContratoCliente = () => {
               <br />4.5 Nos casos de contratação conjunta de Projeto de Arquitetura e Projeto de Interiores, o desenvolvimento do projeto de interiores terá início após a definição e aprovação da configuração arquitetônica básica da edificação, incluindo layout geral, dimensões dos ambientes e posicionamento dos elementos construtivos principais.</p>
 
           </div>
+
+          {/* FOOTER TÉCNICO */}
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 8 de 10</div>
+          </div>
         </div>
 
         {/* ANEXO III — HONORÁRIOS E FORMA DE PAGAMENTO */}
-        <div className="nova-pagina" style={{ paddingTop: "20mm" }}>
+        <div className="page-content">
           <h2 className="annex-title">ANEXO III — HONORÁRIOS E FORMA DE PAGAMENTO</h2>
+
           <div className="clause-body">
             <p style={{ fontStyle: "italic" }}>Integra o Contrato de Prestação de Serviços de Arquitetura — NL Arquitetos</p>
             <p>1.1 O presente Anexo, rubricado e assinado pelas partes, integra de forma indissociável o Contrato de Prestação de Serviços de Arquitetura celebrado entre CONTRATANTE e CONTRATADOS, tendo por finalidade estabelecer os honorários profissionais e as condições de pagamento referentes aos serviços objeto do contrato.</p>
