@@ -2109,27 +2109,5 @@ const ContratoCliente = () => {
     </>
   );
 };
-        </div>
-
-        <div
-          style={{
-            marginTop: "auto",
-            paddingTop: "4mm",
-            borderTop: "0.3px solid #f0ede8",
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
-          <div style={{ fontSize: "8px", color: "#ccc", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-            NL Arquitetos · São José dos Campos, SP
-          </div>
-          <div style={{ fontSize: "8px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-            A Arquitetura como Decisão
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
 
 export default ContratoCliente;
