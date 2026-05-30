@@ -458,7 +458,6 @@ const ContratoCliente = () => {
         </div>
 
         {/* CLÁUSULAS - PÁGINA 1 */}
-        <div>
         {/* HEADER */}
         <div
           style={{
