@@ -578,9 +578,20 @@ const ContratoCliente = () => {
             <p>13.4 Os CONTRATADOS não assumem responsabilidade técnica pela execução da obra, gerenciamento, fiscalização ou acompanhamento da construção, salvo se tais serviços forem contratados de forma expressa por meio de instrumento contratual específico.</p>
           </div>
 
+          {/* FOOTER TÉCNICO */}
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 5 de 12</div>
+          </div>
+        </div>
+
+        <div className="page-content">
           <div className="clause-title">CLÁUSULA DÉCIMA QUARTA — DO FORO</div>
           <div className="clause-body">
             <p>14.1 Para dirimir quaisquer controvérsias oriundas do presente contrato, as partes elegem o foro da comarca de São José dos Campos - SP, com renúncia expressa a qualquer outro, por mais privilegiado que seja salvo disposição legal em contrário.</p>
+
             <p>14.2 As partes, em comum acordo, poderão submeter eventuais conflitos à mediação, conciliação ou arbitragem, em conformidade com a Lei nº 9.307/96 e demais legislações aplicáveis. É condição para o ajuizamento de qualquer medida judicial ou arbitral que as partes busquem, previamente, a resolução dos conflitos por meio de mediação ou conciliação, durante um período mínimo de 30 (trinta) dias, contados a partir da notificação de uma parte à outra sobre a existência do conflito, sob pena de extinção do processo sem resolução do mérito.</p>
             <p>14.3 O presente contrato constitui título executivo extrajudicial, nos termos da legislação brasileira aplicável.</p>
           </div>
