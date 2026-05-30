@@ -182,6 +182,7 @@ const ContratoCliente = () => {
           [data-pdf-hide] { display: none !important; }
           @page { size: A4; margin: 0; }
           .nova-pagina { page-break-before: always; }
+          .no-break { page-break-inside: avoid; }
         }
 
         .contrato-container {
@@ -415,20 +416,21 @@ const ContratoCliente = () => {
           </div>
         </div>
 
-        {/* ANEXO I — JÁ EXISTENTE NO CÓDIGO MAS REFORMULADO */}
+        {/* ANEXO I — ESCOPO DOS SERVIÇOS DE PROJETO */}
         <div className="nova-pagina" style={{ paddingTop: "20mm" }}>
-          <h2 className="annex-title">Anexo I — Escopo dos Serviços de Projeto</h2>
+          <h2 className="annex-title">ANEXO I — ESCOPO DOS SERVIÇOS DE PROJETO</h2>
           <div className="clause-body">
+            <p style={{ fontStyle: "italic" }}>Integra o Contrato de Prestação de Serviços de Arquitetura — NL Arquitetos</p>
             <p>1.1 O presente Anexo integra de forma indissociável o Contrato de Prestação de Serviços de Arquitetura celebrado entre as partes, tendo por finalidade a definição do escopo técnico a ser executado.</p>
-            <p>1.2 O escopo detalhado de cada etapa (Estudo Preliminar, Concepção Tridimensional, Projeto Legal e Projeto Executivo) segue as diretrizes da NL Arquitetos para o plano {c.plano}.</p>
+            <p>1.2 O escopo detalhado segue as diretrizes da NL Arquitetos para o plano {c.plano}.</p>
           </div>
         </div>
 
-        {/* ANEXO II */}
+        {/* ANEXO II — CRONOGRAMA DE DESENVOLVIMENTO */}
         <div className="nova-pagina" style={{ paddingTop: "20mm" }}>
-          <h2 className="annex-title">Anexo II — Cronograma de Desenvolvimento do Projeto</h2>
+          <h2 className="annex-title">ANEXO II — CRONOGRAMA DE DESENVOLVIMENTO DO PROJETO</h2>
           <div className="clause-body">
-            <p>Integra o Contrato de Prestação de Serviços de Arquitetura — NL Arquitetos</p>
+            <p style={{ fontStyle: "italic" }}>Integra o Contrato de Prestação de Serviços de Arquitetura — NL Arquitetos</p>
             <p>1.1 O presente Anexo, rubricado e assinado pelas partes, integra de forma indissociável o Contrato de Prestação de Serviços de Arquitetura celebrado entre CONTRATANTE e CONTRATADOS, tendo por finalidade estabelecer o cronograma estimado para o desenvolvimento das etapas do projeto arquitetônico objeto do contrato.</p>
             <p>1.2 O cronograma aqui estabelecido possui caráter estimativo, podendo ser ajustado mediante comunicação prévia e justificativa detalhada, em razão de fatores técnicos, operacionais ou administrativos que venham a surgir durante o desenvolvimento do projeto.</p>
             <p>1.3 Os prazos previstos neste cronograma consideram condições normais de desenvolvimento do projeto e poderão sofrer alterações em decorrência de:
@@ -472,54 +474,68 @@ const ContratoCliente = () => {
             Elaboração do conjunto completo de desenhos técnicos destinados à correta compreensão arquitetônica e orientação da execução da obra, conforme definido no ANEXO I – Escopo dos Serviços de Projeto.<br />
             Prazo estimado: {c.prazo_executivo} dias úteis.</p>
 
-            <p>3.2 Consideradas as etapas descritas neste cronograma, o prazo total estimado para desenvolvimento do projeto arquitetônico é de aproximadamente: {c.prazo_total_dias} dias úteis</p>
+            <p>3.2 Consideradas as etapas descritas neste cronograma, o prazo total estimado para desenvolvimento do projeto arquitetônico é de aproximadamente: <strong>{c.prazo_total_dias} dias úteis</strong></p>
             
             <p>3.3 O prazo total poderá ser ajustado caso ocorram revisões significativas do projeto, alterações solicitadas pelo CONTRATANTE ou outras situações previstas neste contrato.</p>
-            <p>3.4 Após a apresentação de cada etapa do projeto, o CONTRATANTE disporá de prazo de até 05 (cinco) dias úteis para análise, aprovação ou solicitação de ajustes.</p>
-            <p>3.5 Caso o projeto permaneça sem manifestação ou retorno do CONTRATANTE por período superior a 30 (trinta) dias corridos consecutivos, e após notificação formal ao CONTRATANTE, os CONTRATADOS poderão suspender temporariamente o desenvolvimento dos serviços.</p>
+            <p>3.4 Após a apresentação de cada etapa do projeto, o CONTRATANTE disporá de prazo de até 05 (cinco) dias úteis para análise, aprovação ou solicitação de ajustes.
+              <br />3.4.1 As solicitações de ajustes deverão ser apresentadas de forma clara e consolidada, preferencialmente em uma única manifestação.
+              <br />3.4.2 Caso não haja manifestação do CONTRATANTE dentro do prazo estabelecido, a etapa apresentada poderá ser considerada tacitamente aprovada para fins de continuidade do desenvolvimento do projeto.
+              <br />3.4.3 Estão incluídas neste contrato até 02 (duas) rodadas de ajustes por etapa do projeto, desde que não impliquem alteração substancial do conceito arquitetônico previamente aprovado.
+              <br />3.4.3.1 Quaisquer solicitações de ajustes ou alterações em etapas consideradas tacitamente aprovadas, conforme 3.4.2, serão tratadas como serviços adicionais.
+              <br />3.4.4 Caso o CONTRATANTE solicite alterações que impliquem retorno a etapas do projeto já concluídas e previamente aprovadas, os CONTRATADOS poderão reavaliar prazos e honorários.</p>
+
+            <p>3.5 Caso o projeto permaneça sem manifestação ou retorno do CONTRATANTE por período superior a 30 (trinta) dias corridos consecutivos, os CONTRATADOS poderão suspender temporariamente o desenvolvimento dos serviços.</p>
+            <p>3.6 Os prazos de análise, exigências e aprovação do projeto pelos órgãos públicos competentes ou pela administração de condomínio não integram o prazo de desenvolvimento do projeto estabelecido neste anexo.</p>
+
+            <p><strong style={{ color: "#8B7355" }}>4.0 CONTRATAÇÃO CONJUNTA DE MODALIDADES DE PROJETO</strong></p>
+            <p>4.1 Quando o CONTRATANTE optar pela contratação conjunta de mais de uma modalidade de projeto, o cronograma poderá sofrer acréscimo proporcional de prazo.</p>
           </div>
         </div>
 
-        {/* ANEXO III */}
+        {/* ANEXO III — HONORÁRIOS E FORMA DE PAGAMENTO */}
         <div className="nova-pagina" style={{ paddingTop: "20mm" }}>
-          <h2 className="annex-title">Anexo III — Honorários e Forma de Pagamento</h2>
+          <h2 className="annex-title">ANEXO III — HONORÁRIOS E FORMA DE PAGAMENTO</h2>
           <div className="clause-body">
-            <p>Integra o Contrato de Prestação de Serviços de Arquitetura — NL Arquitetos</p>
+            <p style={{ fontStyle: "italic" }}>Integra o Contrato de Prestação de Serviços de Arquitetura — NL Arquitetos</p>
             <p>1.1 O presente Anexo, rubricado e assinado pelas partes, integra de forma indissociável o Contrato de Prestação de Serviços de Arquitetura celebrado entre CONTRATANTE e CONTRATADOS, tendo por finalidade estabelecer os honorários profissionais e as condições de pagamento referentes aos serviços objeto do contrato.</p>
             
             <p><strong style={{ color: "#8B7355" }}>2.0 VALORES DOS HONORÁRIOS</strong></p>
-            <p>2.1 Pelos serviços profissionais descritos no contrato e em seus anexos, o CONTRATANTE pagará aos CONTRATADOS o valor total de: R$ {c.valor_total} ({c.valor_total_extenso}).</p>
+            <p>2.1 Pelos serviços profissionais descritos no contrato e em seus anexos, o CONTRATANTE pagará aos CONTRATADOS o valor total de: <strong>R$ {c.valor_total} ({c.valor_total_extenso})</strong>.</p>
             
             <p><strong style={{ color: "#8B7355" }}>3.0 FORMA DE PAGAMENTO</strong></p>
             <p>3.1 O pagamento dos honorários será realizado da seguinte forma: Os honorários serão pagos em 03 (três) marcos vinculados ao avanço do projeto, aplicáveis aos dois planos (Executivo e Completo):</p>
             <p>
-              <strong>Marco 1 — Entrada:</strong> 30% (trinta por cento) na assinatura do contrato. Valor: R$ {c.marco1_valor} ({c.marco1_extenso}).<br />
-              <strong>Marco 2 — Anteprojeto aprovado:</strong> 40% (quarenta por cento) na aprovação formal do anteprojeto pelo CONTRATANTE. Valor: R$ {c.marco2_valor} ({c.marco2_extenso}).<br />
-              <strong>Marco 3 — Entrega do executivo:</strong> 30% (trinta por cento) na entrega dos cadernos técnicos executivos. Valor: R$ {c.marco3_valor} ({c.marco3_extenso}).
+              <strong>Marco 1 — Entrada:</strong> 30% na assinatura do contrato. Valor: R$ {c.marco1_valor} ({c.marco1_extenso}).<br />
+              <strong>Marco 2 — Anteprojeto aprovado:</strong> 40% na aprovação formal do anteprojeto pelo CONTRATANTE. Valor: R$ {c.marco2_valor} ({c.marco2_extenso}).<br />
+              <strong>Marco 3 — Entrega do executivo:</strong> 30% na entrega dos cadernos técnicos executivos. Valor: R$ {c.marco3_valor} ({c.marco3_extenso}).
             </p>
             
-            <p>3.3 O cronograma de pagamentos está atrelado aos marcos técnicos de desenvolvimento do projeto — anteprojeto aprovado e entrega do executivo — conforme definido na Cláusula 6.2 e no item 3.1 deste Anexo.</p>
-            <p>4.1 Em caso de atraso no pagamento de qualquer parcela, incidirão sobre o valor devido multa de 2% e juros de 1% ao mês.</p>
+            <p>3.3 O cronograma de pagamentos está atrelado aos marcos técnicos de desenvolvimento do projeto — anteprojeto aprovado e entrega do executivo.</p>
+
+            <p><strong style={{ color: "#8B7355" }}>4.0 ATRASO NO PAGAMENTO</strong></p>
+            <p>4.1 Em caso de atraso, incidirão multa de 2% e juros de 1% ao mês.</p>
+            <p>4.4 Em caso de rescisão, serão devidos aos CONTRATADOS os valores correspondentes às parcelas já vencidas, bem como os honorários proporcionais às etapas efetivamente desenvolvidas.</p>
+            <p>4.5 Os valores pagos a título de honorários profissionais não são reembolsáveis.</p>
           </div>
         </div>
 
-        {/* ANEXO IV */}
+        {/* ANEXO IV — SERVIÇOS ADICIONAIS (OPCIONAIS) */}
         <div className="nova-pagina" style={{ paddingTop: "20mm" }}>
-          <h2 className="annex-title">Anexo IV — Serviços Adicionais (Opcionais)</h2>
+          <h2 className="annex-title">ANEXO IV — SERVIÇOS ADICIONAIS (OPCIONAIS)</h2>
           <div className="clause-body">
-            <p>Integra o Contrato de Prestação de Serviços de Arquitetura — NL Arquitetos</p>
+            <p style={{ fontStyle: "italic" }}>Integra o Contrato de Prestação de Serviços de Arquitetura — NL Arquitetos</p>
             <p>1.1 O presente Anexo integra o Contrato de Prestação de Serviços de Arquitetura firmado entre CONTRATANTE e CONTRATADOS.</p>
-            <p>1.2 Os serviços descritos neste Anexo não fazem parte do escopo original do projeto, definido no ANEXO I – Escopo dos Serviços, sendo considerados serviços adicionais, passíveis de contratação específica.</p>
+            <p>1.2 Os serviços descritos neste Anexo não fazem parte do escopo original do projeto.</p>
             
             <p><strong style={{ color: "#8B7355" }}>2.0 SITUAÇÕES QUE CONFIGUREM SERVIÇOS ADICIONAIS</strong></p>
-            <p>2.1 PROJETOS COMPLEMENTARES: Projetos estrutural, elétrico, hidrossanitário, climatização, prevenção e combate a incêndio, luminotécnico, paisagismo, interiores detalhado, marcenaria sob medida.</p>
-            <p>2.2 ESTUDO DE VIABILIDADE FINANCEIRA DO PROJETO: Análise preliminar de viabilidade, considerando parâmetros gerais de custo de construção.</p>
+            <p>2.1 PROJETOS COMPLEMENTARES: Estrutural, elétrico, hidrossanitário, climatização, prevenção e combate a incêndio, luminotécnico, paisagismo, marcenaria sob medida.</p>
+            <p>2.2 ESTUDO DE VIABILIDADE FINANCEIRA DO PROJETO: Na fase inicial do desenvolvimento do projeto, os CONTRATADOS poderão realizar análise preliminar de viabilidade de custo de construção.</p>
             
             <p><strong style={{ color: "#8B7355" }}>3.0 SERVIÇOS DE APOIO</strong></p>
-            <p>3.1 Durante o desenvolvimento do projeto ou nas etapas posteriores, o CONTRATANTE poderá solicitar aos CONTRATADOS apoio técnico em decisões relacionadas à obra, aos materiais, aos sistemas construtivos ou à execução do projeto.</p>
+            <p>3.1 Consultoria na escolha de materiais, seleção de fornecedores, análise técnica de orçamentos e acompanhamento de etapas específicas da execução.</p>
             
             <p><strong style={{ color: "#8B7355" }}>4.0 HONORÁRIOS DOS SERVIÇOS ADICIONAIS</strong></p>
-            <p>4.1 Os honorários referentes aos serviços adicionais serão definidos caso a caso, considerando a complexidade da solicitação, o tempo técnico necessário e o impacto no cronograma do projeto.</p>
+            <p>4.1 Os honorários referentes aos serviços adicionais serão definidos caso a caso, considerando a complexidade da solicitação e tempo técnico necessário.</p>
           </div>
         </div>
 
