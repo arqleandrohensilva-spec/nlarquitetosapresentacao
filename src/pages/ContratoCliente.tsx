@@ -406,9 +406,22 @@ const ContratoCliente = () => {
 
           <div className="clause-title">CLÁUSULA NONA — DOS DIREITOS AUTORAIS</div>
           <div className="clause-body">
-            <p>9.1 O projeto constitui obra intelectual protegida pela Lei nº 9.610/1998 e pela Lei nº 12.378/2010.</p>
-            <p>9.3 O CONTRATANTE adquire o direito de utilizar o projeto exclusivamente para a execução da obra no imóvel especificado, após a quitação integral dos honorários.</p>
-            <p>9.4 Sem autorização prévia e expressa, o CONTRATANTE não poderá: reproduzir o projeto em outro terreno, reutilizá-lo em outra obra ou cedê-lo a terceiros.</p>
+            <p>9.1 O Projeto desenvolvido no âmbito deste contrato constitui obra intelectual protegida pela Lei nº 9.610/1998 (Lei de Direitos Autorais) e pela Lei nº 12.378/2010, sendo reconhecido como criação técnica e artística dos CONTRATADOS.</p>
+            <p>9.2 Os direitos autorais morais e patrimoniais sobre o projeto pertencem aos CONTRATADOS, nos termos da Lei nº 9.610/1998, bem como da Lei nº 12.378/2010, e do art. 80 da Lei nº 13.303/2016, que garante a propriedade intelectual de projetos técnicos.</p>
+            <p>9.3 O CONTRATANTE, mediante o pagamento integral dos honorários estabelecidos no Anexo III (Honorários e Condições de Pagamento), adquire o direito de utilizar o projeto exclusivamente para a execução da obra no imóvel especificado no Anexo I (Escopo Detalhado dos Serviços), observadas as condições e limitações estabelecidas neste contrato, e desde que respeitados os direitos autorais dos CONTRATADOS, conforme a Lei nº 9.610/1998.</p>
+            <p>9.4 Sem autorização prévia e expressa dos CONTRATADOS, a qual poderá ser concedida ou negada a critério exclusivo dos CONTRATADOS, o CONTRATANTE não poderá:</p>
+            <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
+              <li>9.4.1 Reproduzir o projeto em outro terreno ou imóvel;</li>
+              <li>9.4.2 Reutilizar total ou parcialmente o projeto em outra obra;</li>
+              <li>9.4.3 Ceder, vender, compartilhar, encaminhar ou disponibilizar o projeto, total ou parcialmente, a terceiros... sendo o CONTRATANTE responsável solidariamente por qualquer violação.</li>
+              <li>9.4.4 Modificar o projeto ou permitir modificações por outros profissionais;</li>
+              <li>9.4.5 Utilizar o projeto para fins comerciais, publicitários ou de incorporação imobiliária.</li>
+            </ul>
+            <p>9.5 Qualquer alteração no projeto, seja durante a fase de desenvolvimento ou durante a execução da obra, somente poderá ser realizada mediante autorização expressa e por escrito dos CONTRATADOS.</p>
+            <p>9.6 Aos CONTRATADOS é garantido o direito de utilizar imagens, plantas, renders e fotografias do projeto e da obra para fins de divulgação profissional em portfólio... em conformidade com a LGPD.</p>
+            <p>9.7 Considera-se reprodução indevida a utilização total ou parcial do projeto para execução em outro imóvel ou empreendimento sem autorização dos CONTRATADOS.</p>
+            <p>9.8 Para fins deste contrato, considera-se plágio a reprodução substancial do projeto arquitetônico... mesmo que sejam alterados materiais, cores, acabamentos ou detalhes construtivos.</p>
+            <p>9.10 A utilização indevida, reprodução, cópia ou plágio do projeto arquitetônico implicará obrigação de indenização aos CONTRATADOS, sem prejuízo das medidas judiciais cabíveis.</p>
           </div>
 
           <div className="clause-title">CLÁUSULA DÉCIMA — DA RESPONSABILIDADE TÉCNICA</div>
