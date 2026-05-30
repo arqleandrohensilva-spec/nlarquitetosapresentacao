@@ -311,7 +311,7 @@ const ContratoCliente = () => {
             <div style={{ fontSize: "8px", color: "#444", letterSpacing: "0.3em", textTransform: "uppercase", marginTop: "10px" }}>INSTRUMENTO PARTICULAR · A ARQUITETURA COMO DECISÃO</div>
           </div>
 
-          <div>
+          <div style={{ flex: 1 }}>
             <Row label="Nº DO CONTRATO" value={c.numero} />
             <Row label="CONTRATANTE" value={c.nome_cliente} />
             <Row label="TIPO DE PROJETO" value={c.tipo_projeto} />
@@ -320,17 +320,26 @@ const ContratoCliente = () => {
             <Row label="VALOR TOTAL DOS HONORÁRIOS" value={`R$ ${c.valor_total} (${c.valor_total_extenso})`} />
             <Row label="PRAZO TOTAL ESTIMADO" value={`${c.prazo_semanas} semanas a partir da assinatura e entrega dos documentos`} />
             <Row label="DATA DE ASSINATURA" value={`São José dos Campos, SP | ${c.data}`} />
+
+            <div style={{ marginTop: "40px", borderLeft: "2px solid #8B7355", paddingLeft: "20px" }}>
+              <p style={{ fontStyle: "italic", fontSize: "11px", color: "#666", lineHeight: "1.6" }}>
+                "A NL não projeta para impressionar. Projeta para funcionar — e o resultado impressiona porque cada decisão foi tomada antes de a obra começar."
+              </p>
+            </div>
           </div>
 
-          <div style={{ marginTop: "auto", borderLeft: "2px solid #8B7355", paddingLeft: "20px", marginBottom: "60px" }}>
-            <p style={{ fontStyle: "italic", fontSize: "11px", color: "#666", lineHeight: "1.6" }}>
-              "A NL não projeta para impressionar. Projeta para funcionar — e o resultado impressiona porque cada decisão foi tomada antes de a obra começar."
-            </p>
-          </div>
-
-          <div style={{ fontSize: "8px", color: "#333", letterSpacing: "0.2em", textTransform: "uppercase", display: "flex", gap: "20px" }}>
+          <div style={{ fontSize: "8px", color: "#333", letterSpacing: "0.2em", textTransform: "uppercase", display: "flex", gap: "20px", marginTop: "40px" }}>
             <span>NL Arquitetos</span><span>·</span><span>São José dos Campos, SP</span><span>·</span><span>Versão 1.0</span>
           </div>
+
+          {/* FOOTER TÉCNICO */}
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 1 de 10</div>
+          </div>
+
         </div>
 
         {/* CLÁUSULAS COMPLETAS */}
