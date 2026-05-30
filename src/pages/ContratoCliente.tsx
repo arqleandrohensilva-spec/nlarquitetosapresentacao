@@ -296,10 +296,10 @@ const ContratoCliente = () => {
       `}</style>
 
       <div className="contrato-container">
-
         <div className="page-content">
           {/* CAPA */}
-          <div style={{ minHeight: "250mm", display: "flex", flexDirection: "column" }}>
+          <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+
 
           <div style={{ marginBottom: "60px" }}>
             <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "120px", color: "#1a1a1a", lineHeight: "0.8" }}>NL</div>
