@@ -793,24 +793,49 @@ const ContratoCliente = () => {
           <div className="clause-body">
             <p style={{ fontStyle: "italic" }}>Integra o Contrato de Prestação de Serviços de Arquitetura — NL Arquitetos</p>
             <p>1.1 O presente Anexo, rubricado e assinado pelas partes, integra de forma indissociável o Contrato de Prestação de Serviços de Arquitetura celebrado entre CONTRATANTE e CONTRATADOS, tendo por finalidade estabelecer os honorários profissionais e as condições de pagamento referentes aos serviços objeto do contrato.</p>
-            
+            <p>1.2 Os honorários profissionais aqui definidos correspondem exclusivamente aos serviços descritos no ANEXO I – Escopo dos Serviços de Projeto, não incluindo serviços adicionais, os quais poderão ser contratados separadamente conforme previsto no contrato e no ANEXO IV – Serviços Adicionais (Opcionais).</p>
+
             <p><strong style={{ color: "#8B7355" }}>2.0 VALORES DOS HONORÁRIOS</strong></p>
             <p>2.1 Pelos serviços profissionais descritos no contrato e em seus anexos, o CONTRATANTE pagará aos CONTRATADOS o valor total de: <strong>R$ {c.valor_total} ({c.valor_total_extenso})</strong>.</p>
-            
+            <p>2.2 O valor dos honorários foi definido considerando: a complexidade do projeto, o tempo estimado para a sua execução, e os custos indiretos relacionados à prestação dos serviços.
+              <br />2.2.1 a área aproximada do projeto;
+              <br />2.2.2 a complexidade técnica do projeto;
+              <br />2.2.3 a modalidade de projeto contratada;
+              <br />2.2.4 o nível de detalhamento técnico previsto no escopo.</p>
+
             <p><strong style={{ color: "#8B7355" }}>3.0 FORMA DE PAGAMENTO</strong></p>
             <p>3.1 O pagamento dos honorários será realizado da seguinte forma: Os honorários serão pagos em 03 (três) marcos vinculados ao avanço do projeto, aplicáveis aos dois planos (Executivo e Completo):</p>
-            <p>
-              <strong>Marco 1 — Entrada:</strong> 30% na assinatura do contrato. Valor: R$ {c.marco1_valor} ({c.marco1_extenso}).<br />
-              <strong>Marco 2 — Anteprojeto aprovado:</strong> 40% na aprovação formal do anteprojeto pelo CONTRATANTE. Valor: R$ {c.marco2_valor} ({c.marco2_extenso}).<br />
-              <strong>Marco 3 — Entrega do executivo:</strong> 30% na entrega dos cadernos técnicos executivos. Valor: R$ {c.marco3_valor} ({c.marco3_extenso}).
-            </p>
+            <p>3.2 <strong>Marco 1 — Entrada:</strong> 30% (trinta por cento) na assinatura do contrato. Valor: <strong>R$ {c.marco1_valor} ({c.marco1_extenso})</strong>.<br />
+            <strong>Marco 2 — Anteprojeto aprovado:</strong> 40% (quarenta por cento) na aprovação formal do anteprojeto pelo CONTRATANTE. Valor: <strong>R$ {c.marco2_valor} ({c.marco2_extenso})</strong>.<br />
+            <strong>Marco 3 — Entrega do executivo:</strong> 30% (trinta por cento) na entrega dos cadernos técnicos executivos. Valor: <strong>R$ {c.marco3_valor} ({c.marco3_extenso})</strong>.</p>
             
-            <p>3.3 O cronograma de pagamentos está atrelado aos marcos técnicos de desenvolvimento do projeto — anteprojeto aprovado e entrega do executivo.</p>
+            <p>3.3 O cronograma de pagamentos está atrelado aos marcos técnicos de desenvolvimento do projeto — anteprojeto aprovado e entrega do executivo — conforme definido na Cláusula 6.2 e no item 3.1 deste Anexo. Os CONTRATADOS poderão suspender os serviços mediante notificação prévia de 5 (cinco) dias úteis em caso de atraso do CONTRATANTE que impacte o cronograma técnico, sem que isso configure inadimplemento dos CONTRATADOS.</p>
+            <p>3.4 Os valores devidos deverão ser pagos até a data do marco correspondente, mediante transferência bancária, PIX ou cartão de crédito/débito. Boleto bancário disponível sob demanda. Esta proposta tem validade de 30 (trinta) dias corridos a partir da data de assinatura. Após esse prazo, os valores poderão ser revisados pelos CONTRATADOS.
+              <br />3.4.1 Os dados bancários para pagamento serão informados pelos CONTRATADOS ao CONTRATANTE.</p>
 
             <p><strong style={{ color: "#8B7355" }}>4.0 ATRASO NO PAGAMENTO</strong></p>
-            <p>4.1 Em caso de atraso, incidirão multa de 2% e juros de 1% ao mês.</p>
-            <p>4.4 Em caso de rescisão, serão devidos aos CONTRATADOS os valores correspondentes às parcelas já vencidas, bem como os honorários proporcionais às etapas efetivamente desenvolvidas.</p>
-            <p>4.5 Os valores pagos a título de honorários profissionais não são reembolsáveis.</p>
+            <p>4.1 Em caso de atraso no pagamento de qualquer parcela, incidirão sobre o valor devido:
+              <br />4.1.1 multa de 2% (dois por cento) sobre o valor da parcela;
+              <br />4.1.2 juros de 1% (um por cento) ao mês, calculados proporcionalmente aos dias de atraso.</p>
+            <p>4.2 O atraso superior a 10 (dez) dias no pagamento de qualquer parcela acarretará a suspensão temporária do desenvolvimento dos serviços, até a regularização do pagamento.</p>
+            <p>4.3 A suspensão dos serviços por inadimplência do CONTRATANTE implicará revisão automática do cronograma de desenvolvimento do projeto, conforme disponibilidade de agenda dos CONTRATADOS.</p>
+            <p>4.4 Em caso de rescisão do presente contrato após o início da execução dos serviços, por iniciativa de qualquer das partes, serão devidos aos CONTRATADOS os valores correspondentes às parcelas já vencidas, bem como os honorários proporcionais às etapas do projeto efetivamente desenvolvidas até a data da rescisão. A proporcionalidade dos honorários será determinada com base no percentual de conclusão técnica dos serviços, considerando os marcos de desenvolvimento estabelecidos no Anexo II ou, na ausência de definição expressa, mediante avaliação técnica realizada pelos CONTRATADOS, devidamente justificada e documentada, não se limitando ao valor das parcelas eventualmente já pagas. Na hipótese de discordância do CONTRATANTE quanto à avaliação técnica apresentada, poderá ser solicitada a realização de avaliação por terceiro independente e tecnicamente habilitado, sendo os custos dessa avaliação suportados pela parte que a solicitar.</p>
+            <p>4.5 Os valores pagos a título de honorários profissionais não são reembolsáveis, considerando a natureza técnica e intelectual dos serviços prestados.</p>
+            <p>4.6 Caso o cancelamento ocorra após a conclusão de determinada etapa do projeto, o valor correspondente à etapa será considerado integralmente devido.</p>
+            <p>4.7 Considera-se realizado o pagamento somente após a efetiva compensação do valor na conta bancária indicada pelos CONTRATADOS.</p>
+
+            <p><strong style={{ color: "#8B7355" }}>5.0 SERVIÇOS ADICIONAIS</strong></p>
+            <p>5.1 Serviços não previstos no escopo original poderão ser contratados mediante aprovação prévia e formal do CONTRATANTE, com a devida formalização por meio de termo aditivo, contendo a definição específica de honorários, prazos e eventuais impactos no cronograma geral do projeto.</p>
+            <p>5.2 A contratação de serviços adicionais poderá implicar revisão do cronograma do projeto, conforme previsto no ANEXO II – Cronograma de Desenvolvimento do Projeto, devendo a nova versão do cronograma ser formalmente aprovada por ambas as partes por meio de aditivo contratual.</p>
+
+            <p><strong style={{ color: "#8B7355" }}>6.0 DESPESAS NÃO INCLUSAS</strong></p>
+            <p>6.1 Não estão incluídos nos honorários profissionais previstos neste contrato, sendo de responsabilidade exclusiva do CONTRATANTE:
+              <br />6.1.1 taxas de aprovação em órgãos públicos;
+              <br />6.1.2 emolumentos cartoriais;
+              <br />6.1.3 taxas de condomínio ou administração;
+              <br />6.1.4 custos de impressão, plotagem ou reprodução física de projetos;
+              <br />6.1.5 deslocamentos extraordinários não previstos no escopo.</p>
+
           </div>
         </div>
 
