@@ -304,6 +304,7 @@ const ContratoCliente = () => {
           <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
 
 
+
           <div style={{ marginBottom: "60px" }}>
             <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "120px", color: "#1a1a1a", lineHeight: "0.8" }}>NL</div>
             <div style={{ fontSize: "12px", letterSpacing: "1.2em", color: "#8B7355", textTransform: "uppercase" }}>ARQUITETOS</div>
