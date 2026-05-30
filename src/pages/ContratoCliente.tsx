@@ -1755,7 +1755,6 @@ const ContratoCliente = () => {
         </div>
 
         {/* CLÁUSULAS - PÁGINA 6 */}
-        {/* CLÁUSULAS - PÁGINA 6 */}
         <div
           style={{
             display: "flex",
