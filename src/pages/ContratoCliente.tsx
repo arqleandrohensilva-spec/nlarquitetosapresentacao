@@ -593,10 +593,6 @@ const ContratoCliente = () => {
               <li>Elevações e Cortes da casa</li>
             </ul>
             <p style={{ fontSize: "9px" }}>¹ as plantas de mapa de instalações elétricas, hidráulicas, de ar-condicionado e luminotécnica, não dimensionam e nem projetam as tubulações e fiações. Tais dimensionamentos deverão ser indicados em projeto complementar não incluso nesta proposta.</p>
-            <p>3.4 O desenvolvimento do projeto será realizado com base nas informações, documentos e medidas fornecidos pelo CONTRATANTE ou por profissionais por ele indicados, incluindo, mas não se limitando a levantamento cadastral, levantamento topográfico ou documentação técnica do imóvel. Os CONTRATADOS não se responsabilizam por eventuais divergências, inconsistências ou imprecisões contidas nesses documentos, sendo do CONTRATANTE a responsabilidade por sua correção e veracidade.</p>
-            
-            <p>3.5 Matrícula do Imóvel (quando aplicável)<br />
-            Matrícula nº: {c.matricula} Cartório: {c.cartorio}</p>
             
             <p><strong style={{ color: "#8B7355" }}>4.0 ESCOPO DOS SERVIÇOS</strong></p>
             <p>4.1 Os serviços técnicos a serem prestados pelos CONTRATADOS compreendem o desenvolvimento do projeto arquitetônico conforme a modalidade assinalada na Cláusula 2.0 – Identificação do Projeto, observadas as etapas descritas neste item.</p>
