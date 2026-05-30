@@ -297,6 +297,8 @@ const ContratoCliente = () => {
       </div>
 
       <div className="contrato-container">
+        <div className="page-content">
+
         {/* CAPA */}
         <div style={{ minHeight: "250mm", display: "flex", flexDirection: "column" }}>
           <div style={{ marginBottom: "60px" }}>
