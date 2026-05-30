@@ -440,6 +440,7 @@ const ContratoCliente = () => {
             </div>
           </div>
         ))}
+        <div
           style={{
             marginTop: "auto",
             paddingTop: "4mm",
@@ -454,7 +455,6 @@ const ContratoCliente = () => {
           <div style={{ fontSize: "8px", color: "#8B7355", letterSpacing: "0.15em", textTransform: "uppercase" }}>
             A Arquitetura como Decisão
           </div>
-        </div>
         </div>
 
         {/* CLÁUSULAS - PÁGINA 1 */}
