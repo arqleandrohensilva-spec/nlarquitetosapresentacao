@@ -341,13 +341,13 @@ const ContratoCliente = () => {
             <div>NL Arquitetos</div>
             <div>NL-2026-{c.numero.split('-').pop()}</div>
             <div>Rubrica: __________/__________</div>
-            <div>Pág. 1 de 10</div>
+            <div>Pág. 1 de 12</div>
           </div>
-
         </div>
+      </div>
 
-        {/* CLÁUSULAS COMPLETAS */}
-        <div className="page-content">
+      {/* CLÁUSULAS COMPLETAS */}
+      <div className="page-content">
           <div className="clause-title">CLÁUSULA PRIMEIRA — DAS PARTES ENVOLVIDAS NO CONTRATO</div>
 
 
