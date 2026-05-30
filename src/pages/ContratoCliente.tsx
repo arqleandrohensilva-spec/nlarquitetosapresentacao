@@ -173,6 +173,27 @@ const ContratoCliente = () => {
 
   return (
     <div style={{ background: "#000", minHeight: "100vh" }}>
+      <div data-pdf-hide style={{ position: "fixed", top: 16, right: 16, zIndex: 50 }}>
+        <button 
+          onClick={() => window.print()} 
+          style={{ 
+            background: "#8B7355", 
+            color: "#fff", 
+            border: "none", 
+            padding: "8px 20px", 
+            fontFamily: "'DM Mono',monospace", 
+            fontSize: "9px", 
+            letterSpacing: "0.2em", 
+            textTransform: "uppercase", 
+            cursor: "pointer" 
+          }}
+        >
+          ↓ BAIXAR PDF
+        </button>
+      </div>
+
+      <div className="contrato-container">
+
 
 
 
