@@ -630,6 +630,54 @@ const ContratoCliente = () => {
             
             <p><strong>4.3.4 CADERNOS TÉCNICOS ENTREGUES POR MODALIDADE</strong><br />
             Os cadernos técnicos entregues ao final do projeto variam conforme a modalidade contratada (Arquitetura+Interiores, Interiores ou Comercial) e o plano selecionado (Executivo ou Completo), conforme detalhado abaixo.</p>
+
+            <p><strong>4.3.4.1 — ARQUITETURA + INTERIORES</strong><br />
+            <strong>Cadernos de Arquitetura (Planos Executivo e Completo):</strong><br />
+            Caderno I — Caderno Geral: índice, situação, layout, planta construtiva, paginação de piso, forro, luminotécnico<br />
+            Caderno II — Mapas de Instalações (em parceria com engenheiros especializados): elétrico, hidráulico, ar-condicionado, gás, revestimentos<br />
+            Caderno III — Detalhes Construtivos: detalhamentos gerais, representação por ambiente, esquadrias, marmoraria, marcenaria, porcelanataria<br />
+            Caderno IV — Memorial Descritivo: componentes construtivos identificados, localizados e quantificados por ambiente</p>
+            
+            <p><strong>Cadernos de Interiores (exclusivo Plano Completo):</strong><br />
+            Caderno I — Caderno Geral: capa, imagens aprovadas, quadros quantitativos, layout, demolir/construir, construtiva, paginação, revestimentos, forro, luminotécnico, instalações<br />
+            Caderno II — Caderno de Detalhes Construtivos: graficação de todos os detalhes necessários para execução<br />
+            Caderno III — Caderno de Ambientes: especificações completas por ambiente com localizações de vistas e siglas de materiais<br />
+            Caderno IV — Caderno de Esquadrias: especificação e localização de todas as esquadrias novas com detalhamento para fabricação<br />
+            Caderno V — Caderno de Marmoraria: bancadas, soleiras, bordas, nichos e elementos em pedra natural<br />
+            Caderno VI — Caderno de Porcelanataria: paginação, perfis, fixação e intervenções em revestimentos cerâmicos por ambiente<br />
+            Caderno VII — Caderno de Marcenaria: detalhamento completo de todo mobiliário fabricado sob medida</p>
+            
+            <p><strong>Visualização 3D (exclusivo Plano Completo):</strong><br />
+            Concepção 3D de Alta Fidelidade: imagens renderizadas dos principais ambientes<br />
+            Vídeo 3D 360°: apresentação imersiva do projeto antes da obra</p>
+
+            <p><strong>4.3.4.2 — APENAS INTERIORES</strong><br />
+            <strong>Plano Executivo:</strong><br />
+            Caderno I — Caderno Geral: capa, imagens aprovadas, quadros quantitativos, layout, demolir/construir, construtiva, paginação, revestimentos, forro, luminotécnico, instalações<br />
+            Caderno II — Caderno de Detalhes Construtivos: graficação de todos os detalhes necessários para execução<br />
+            Caderno VII — Caderno de Marcenaria: detalhamento completo de todo mobiliário fabricado sob medida</p>
+            
+            <p><strong>Plano Completo (inclui Executivo +):</strong><br />
+            Caderno III — Caderno de Ambientes: especificações completas por ambiente com localizações de vistas e siglas de materiais<br />
+            Caderno IV — Caderno de Esquadrias: especificação e localização de todas as esquadrias novas com detalhamento para fabricação<br />
+            Caderno V — Caderno de Marmoraria: bancadas, soleiras, bordas, nichos e elementos em pedra natural<br />
+            Caderno VI — Caderno de Porcelanataria: paginação, perfis, fixação e intervenções em revestimentos cerâmicos por ambiente<br />
+            Concepção 3D de Alta Fidelidade + Vídeo 3D 360°</p>
+
+            <p><strong>4.3.4.3 — COMERCIAL</strong><br />
+            <strong>Planos Executivo e Completo:</strong><br />
+            Caderno I — Caderno de Fluxo de Atendimento: mapa de jornada do cliente, setorização funcional, circulação otimizada, posicionamento estratégico de equipamentos, capacidade máxima de atendimento, planta baixa de layout<br />
+            Caderno II — Caderno Geral + Luminotécnico: construtiva, demolir/construir, paginação de piso, mapa de revestimentos, forro, luminotécnico, instalações elétricas e ar-condicionado<br />
+            Caderno III — Caderno de Detalhes Construtivos: graficação de todos os detalhes necessários para execução<br />
+            Caderno IV — Caderno de Marcenaria: detalhamento completo de todo mobiliário fabricado sob medida — balcões, estantes, painéis e mobiliário operacional<br />
+            Caderno V — Memorial Descritivo: componentes identificados, localizados e quantificados — base para orçamento firme com fornecedores<br />
+            Concepção 3D de Alta Fidelidade (ambos os planos)</p>
+            
+            <p><strong>Exclusivo Plano Completo:</strong><br />
+            Caderno de Ambientes: especificações completas por ambiente<br />
+            Vídeo 3D 360°: apresentação imersiva do projeto antes da execução<br />
+            3 visitas técnicas à obra com emissão de relatório por visita<br />
+            Curadoria de materiais e fornecedores</p>
             
           </div>
         </div>
