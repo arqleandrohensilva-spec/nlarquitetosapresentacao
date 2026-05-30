@@ -563,6 +563,11 @@ const ContratoCliente = () => {
             [ X ] Outro: {c.tipo_projeto}</p>
 
             <p>3.2 Quando se tratar de projeto arquitetônico para construção, o imóvel possui área aproximada de {c.area_terreno} m² de terreno, com previsão estimada de {c.area_construida} m² de área construída, podendo esta sofrer ajustes ao longo do desenvolvimento do projeto, conforme necessidades técnicas, legais ou programáticas identificadas durante o processo de concepção.</p>
+            
+            <p>3.4 O desenvolvimento do projeto será realizado com base nas informações, documentos e medidas fornecidos pelo CONTRATANTE ou por profissionais por ele indicados, incluindo, mas não se limitando a levantamento cadastral, levantamento topográfico ou documentação técnica do imóvel. Os CONTRATADOS não se responsabilizam por eventuais divergências, inconsistências ou imprecisões contidas nesses documentos, sendo do CONTRATANTE a responsabilidade por sua correção e veracidade.</p>
+            
+            <p>3.5 Matrícula do Imóvel (quando aplicável)<br />
+            Matrícula nº: {c.matricula} Cartório: {c.cartorio}</p>
             <p><strong>4.2.4 Concepção Tridimensional (3D)</strong></p>
             <p>4.2.4.1 Imagens renderizadas das fachadas principais da edificação, em quantidade a ser definida em conjunto com o CONTRATANTE - Elaboração de imagens realistas em perspectiva tridimensional das fachadas principais da edificação, incluindo vistas frontal e posterior, com o objetivo de facilitar a visualização do conceito arquitetônico proposto.</p>
             <p>4.2.4.2 Vídeo de apresentação 3D - Produção de vídeo de apresentação do modelo tridimensional do projeto, permitindo melhor compreensão dos volumes, proporções e características arquitetônicas da edificação.</p>
