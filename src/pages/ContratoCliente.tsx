@@ -139,13 +139,6 @@ const ContratoCliente = () => {
             padding: "0",
           }}
         >
-          margin: "0 auto",
-          display: "flex",
-          flexDirection: "column",
-          fontFamily: "'DM Mono',monospace",
-          padding: "0",
-        }}
-      >
         <div style={{ display: "flex", justifyContent: "flex-end", padding: "32px 44px 0" }}>
           <div style={{ textAlign: "right" }}>
             <div style={{ fontSize: "7px", color: "#bbb", letterSpacing: "0.2em", textTransform: "uppercase" }}>
