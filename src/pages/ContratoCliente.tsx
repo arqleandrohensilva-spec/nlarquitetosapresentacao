@@ -915,9 +915,10 @@ const ContratoCliente = () => {
             <div>NL Arquitetos</div>
             <div>NL-2026-{c.numero.split('-').pop()}</div>
             <div>Rubrica: __________/__________</div>
-            <div>Pág. 8 de 10</div>
+            <div>Pág. 11 de 12</div>
           </div>
         </div>
+
 
         {/* ANEXO III — HONORÁRIOS E FORMA DE PAGAMENTO */}
         <div className="page-content">
