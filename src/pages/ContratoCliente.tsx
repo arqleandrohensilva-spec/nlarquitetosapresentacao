@@ -486,12 +486,20 @@ const ContratoCliente = () => {
               <li>II – Utilização de materiais ou técnicas construtivas divergentes das especificações constantes no projeto;</li>
               <li>III – modificações realizadas no projeto ou durante a execução da obra sem autorização prévia e expressa dos CONTRATADOS;</li>
               <li>IV – Falhas construtivas, estruturais, elétricas, hidráulicas ou de quaisquer outras instalações decorrentes da execução da obra;</li>
+              <li>V – Informações técnicas incorretas, incompletas ou omissas fornecidas pelo CONTRATANTE ou por terceiros;</li>
+              <li>VI – Descumprimento de normas técnicas, urbanísticas, legais ou regulamentares durante a execução da obra.</li>
+              <li>VII – alterações na legislação urbanística, normas técnicas ou regulamentares que entrem em vigor ou sejam interpretadas de forma diversa após a aprovação final do projeto pelos órgãos competentes ou pelo CONTRATANTE, e que não eram previsíveis no momento da elaboração do projeto.</li>
+              <li>VIII – eventos de força maior ou caso fortuito, incluindo, mas não se limitando a desastres naturais, pandemias, greves, atos de terrorismo ou guerra, que impeçam ou dificultem a execução do projeto ou da obra.</li>
             </ul>
+            <p>13.3 A responsabilidade civil dos CONTRATADOS, caso configurada, estará limitada ao valor total dos honorários efetivamente recebidos em contraprestação ao serviço objeto deste contrato, excluindo-se expressamente a cobertura de indenizações por danos indiretos, lucros cessantes, perdas financeiras ou quaisquer outros prejuízos que possam advir da execução da obra.</p>
+            <p>13.4 Os CONTRATADOS não assumem responsabilidade técnica pela execução da obra, gerenciamento, fiscalização ou acompanhamento da construção, salvo se tais serviços forem contratados de forma expressa por meio de instrumento contratual específico.</p>
           </div>
 
           <div className="clause-title">CLÁUSULA DÉCIMA QUARTA — DO FORO</div>
           <div className="clause-body">
-            <p>14.1 As partes elegem o foro da comarca de São José dos Campos - SP para dirimir quaisquer controvérsias.</p>
+            <p>14.1 Para dirimir quaisquer controvérsias oriundas do presente contrato, as partes elegem o foro da comarca de São José dos Campos - SP, com renúncia expressa a qualquer outro, por mais privilegiado que seja salvo disposição legal em contrário.</p>
+            <p>14.2 As partes, em comum acordo, poderão submeter eventuais conflitos à mediação, conciliação ou arbitragem, em conformidade com a Lei nº 9.307/96 e demais legislações aplicáveis. É condição para o ajuizamento de qualquer medida judicial ou arbitral que as partes busquem, previamente, a resolução dos conflitos por meio de mediação ou conciliação, durante um período mínimo de 30 (trinta) dias, contados a partir da notificação de uma parte à outra sobre a existência do conflito, sob pena de extinção do processo sem resolução do mérito.</p>
+            <p>14.3 O presente contrato constitui título executivo extrajudicial, nos termos da legislação brasileira aplicável.</p>
           </div>
         </div>
 
@@ -499,7 +507,7 @@ const ContratoCliente = () => {
         <div className="nova-pagina" style={{ paddingTop: "20mm" }}>
           <h2 className="annex-title">Assinaturas</h2>
           <div className="clause-body">
-            <p>E, por estarem assim justas e contratadas, as partes assinam o presente instrumento em 02 (duas) vias de igual teor e forma, juntamente com duas testemunhas, para que produza seus jurídicos e legais efeitos.</p>
+            <p>E, por estarem assim justas e contratadas, as partes assinam o presente instrumento em 02 (duas) vias de igual teor e forma, juntamente com duas testemunhas, para que produza seus jurídicos e legais efeitos, obrigando-se as partes, seus herdeiros e sucessores.</p>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px", marginTop: "60px" }}>
             <div style={{ borderTop: "1px solid #333", paddingTop: "10px", textAlign: "center" }}>
