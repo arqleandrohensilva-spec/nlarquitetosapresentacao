@@ -440,7 +440,6 @@ const ContratoCliente = () => {
             </div>
           </div>
         ))}
-        <div
           style={{
             marginTop: "auto",
             paddingTop: "4mm",
