@@ -445,14 +445,28 @@ const ContratoCliente = () => {
 
           <div className="clause-title">CLÁUSULA DÉCIMA PRIMEIRA — DA RESCISÃO CONTRATUAL</div>
           <div className="clause-body">
-            <p>11.1 Em caso de rescisão pelo CONTRATANTE antes da conclusão, será aplicada multa compensatória de 20% sobre o saldo contratual remanescente.</p>
-            <p>11.2 Os CONTRATADOS poderão rescindir o contrato em caso de atraso superior a 30 dias no pagamento ou descumprimento de obrigações contratuais.</p>
+            <p>O presente contrato poderá ser rescindido por qualquer das partes, mediante notificação formal por escrito, observadas as condições e prazos estabelecidos nesta cláusula, nas demais disposições contratuais aplicáveis e na legislação vigente.</p>
+            <p><strong style={{ color: "#8B7355" }}>11.1 RESCISÃO POR INICIATIVA DO CONTRATANTE</strong></p>
+            <p>11.1.1 Caso o CONTRATANTE opte por rescindir o contrato antes da conclusão total dos serviços:
+              <br />I – Os valores pagos até a data da rescisão não serão devolvidos, considerando que correspondem às etapas já executadas.
+              <br />II – O CONTRATANTE deverá quitar o valor proporcional referente às etapas em andamento ou já executadas e ainda não faturadas.
+              <br />III – Será aplicada multa compensatória de 20% sobre o saldo contratual remanescente, a título de compensação pela interrupção dos serviços.
+              <br />IV – Os documentos e materiais produzidos somente poderão ser utilizados após a quitação integral.</p>
+            
+            <p><strong style={{ color: "#8B7355" }}>11.2 RESCISÃO POR INICIATIVA DOS CONTRATADOS</strong></p>
+            <p>11.2.1 Os CONTRATADOS poderão rescindir o presente contrato nos seguintes casos, mediante notificação prévia de 15 (quinze) dias:
+              <br />I – Atraso superior a 30 (trinta) dias no pagamento;
+              <br />II – Descumprimento de obrigações contratuais por parte do CONTRATANTE;
+              <br />III – Impossibilidade técnica ou legal de continuidade do projeto;
+              <br />IV – Falta de fornecimento de informações por prazo superior a 30 (trinta) dias.</p>
+            <p>11.3 Na hipótese de rescisão sem a quitação integral, fica expressamente vedada ao CONTRATANTE a utilização total ou parcial do projeto arquitetônico, sob pena de violação de direitos autorais.</p>
+            <p>11.4 Após a rescisão, os CONTRATADOS não terão qualquer responsabilidade técnica sobre modificações ou utilizações do projeto realizadas sem sua participação.</p>
           </div>
 
           <div className="clause-title">CLÁUSULA DÉCIMA SEGUNDA — CONSIDERAÇÕES FINAIS</div>
           <div className="clause-body">
-            <p>12.3 O início dos serviços está condicionado à assinatura do instrumento e ao pagamento da primeira parcela.</p>
-            <p>12.5 Todas as comunicações relevantes deverão ser realizadas por e-mail ou outro meio eletrônico formal.</p>
+            <p>Esta cláusula estabelece disposições complementares aplicáveis à execução do presente contrato e aos anexos que o integram.</p>
+            <p>12.1 Execução da obra decorrente do projeto objeto deste contrato não está incluída no escopo dos serviços contratados, sendo que eventual contratação de acompanhamento deverá ser objeto de contrato específico.</p>
           </div>
 
           <div className="clause-title">CLÁUSULA DÉCIMA TERCEIRA — LIMITAÇÃO DE RESPONSABILIDADE</div>
