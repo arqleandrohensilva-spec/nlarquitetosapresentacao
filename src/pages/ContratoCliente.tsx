@@ -118,12 +118,27 @@ const ContratoCliente = () => {
         </button>
       </div>
 
-      {/* CAPA */}
       <div
+        className="contrato-container"
         style={{
-          background: "#fff",
+          background: "#ffffff",
           width: "210mm",
-          minHeight: "297mm",
+          margin: "0 auto",
+          fontFamily: "'DM Mono', monospace",
+          padding: "20mm 22mm",
+          color: "#3A3A3A",
+          boxShadow: "0 0 10px rgba(0,0,0,0.05)",
+        }}
+      >
+        {/* CAPA */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            minHeight: "250mm",
+            padding: "0",
+          }}
+        >
           margin: "0 auto",
           display: "flex",
           flexDirection: "column",
