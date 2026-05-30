@@ -481,6 +481,4 @@ export default function ContratoCliente() {
       </div>
     </div>
   );
-};
-
-export default ContratoCliente;
+}
