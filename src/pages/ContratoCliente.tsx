@@ -78,12 +78,23 @@ const ContratoCliente = () => {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap');
         @media print {
+          html, body { background: #ffffff !important; margin: 0; padding: 0; }
           * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
           [data-pdf-hide] { display: none !important; }
-          .page-break { page-break-before: always; }
-          .no-break { page-break-inside: avoid; }
           @page { size: A4; margin: 0; }
-          body { margin: 0; }
+          
+          .nova-pagina { page-break-before: always; }
+          .no-break { page-break-inside: avoid; }
+          h2, h3 { page-break-after: avoid; }
+          p { orphans: 3; widows: 3; }
+          
+          /* Reset container for print */
+          .contrato-container { 
+            width: 100% !important; 
+            margin: 0 !important; 
+            padding: 20mm 22mm !important;
+            box-shadow: none !important;
+          }
         }
       `}</style>
 
