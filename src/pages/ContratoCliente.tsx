@@ -252,7 +252,6 @@ const ContratoCliente = () => {
             NL Arquitetos · São José dos Campos, SP
           </div>
         </div>
-        </div>
 
         {/* SUMÁRIO */}
         <div
