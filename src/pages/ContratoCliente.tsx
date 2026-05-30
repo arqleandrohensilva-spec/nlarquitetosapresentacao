@@ -466,12 +466,27 @@ const ContratoCliente = () => {
           <div className="clause-title">CLÁUSULA DÉCIMA SEGUNDA — CONSIDERAÇÕES FINAIS</div>
           <div className="clause-body">
             <p>Esta cláusula estabelece disposições complementares aplicáveis à execução do presente contrato e aos anexos que o integram.</p>
-            <p>12.1 Execução da obra decorrente do projeto objeto deste contrato não está incluída no escopo dos serviços contratados, sendo que eventual contratação de acompanhamento deverá ser objeto de contrato específico.</p>
+            <p>12.1 Execução da obra decorrente do projeto objeto deste contrato não está incluída no escopo dos serviços contratados, sendo que eventual contratação de acompanhamento, gerenciamento ou execução da obra deverá ser objeto de contrato específico e independente.</p>
+            <p>12.2 Os CONTRATADOS, na qualidade de autor do projeto, ficam isentos de quaisquer responsabilidades técnicas ou legais decorrentes de alterações executadas na obra sem sua prévia ciência e autorização por escrito. É obrigação do CONTRATANTE solicitar e obter tal autorização, por escrito, antes de qualquer alteração, sob pena de responsabilização. Os CONTRATADOS poderão adotar as medidas legais cabíveis para proteção de seus direitos autorais e de sua responsabilidade profissional, incluindo, mas não se limitando a ações de reparação por danos morais e materiais, bem como a aplicação do disposto no art. 619 do Código Civil.</p>
+            <p>12.3 O início dos serviços objeto deste contrato está condicionado à assinatura do presente instrumento e à comprovação do pagamento da primeira parcela ou sinal contratual, devendo o comprovante ser encaminhado aos CONTRATADOS.</p>
+            <p>12.4 Os atendimentos ao CONTRATANTE poderão ocorrer presencialmente, mediante agendamento prévio com antecedência mínima de 7 (sete) dias úteis, dentro do horário comercial, compreendido entre 08h00 às 12h00 e 14h00 às 18h00, de segunda a sexta-feira. Adicionalmente, os atendimentos poderão ocorrer de forma virtual (por videoconferência, por exemplo), mantendo a necessidade de agendamento prévio e horário comercial.</p>
+            <p>12.4.1 Caso seja necessária visita presencial ao local da obra ou deslocamento externo, será aplicada a taxa de visita técnica a ser previamente acordada entre as partes ou conforme tabela de honorários dos CONTRATADOS prevista neste contrato.</p>
+            <p>12.5 Todas as comunicações relevantes relacionadas ao presente contrato, incluindo aprovações de etapas, solicitações de alterações e notificações contratuais, deverão ser realizadas obrigatoriamente por e-mail ou outro meio eletrônico formal, sendo consideradas válidas para fins contratuais.</p>
+            <p>12.6 O CONTRATANTE compromete-se a fornecer todas as informações, documentos e definições necessárias para o desenvolvimento do projeto no prazo máximo de 5 (cinco) dias úteis a contar da solicitação, salvo quando prazos específicos forem definidos em outras cláusulas deste contrato.</p>
+            <p>12.6.1 Eventuais atrasos decorrentes da não entrega dessas informações poderão impactar diretamente o cronograma do projeto, sem que isso caracterize descumprimento contratual por parte dos CONTRATADOS.</p>
+            <p>12.7 Caso ocorram alterações na legislação urbanística ou nas normas técnicas aplicáveis após a conclusão do projeto, eventuais adequações necessárias poderão ser objeto de aditivo contratual, conforme previsto no Art. 81 da Lei nº 13.303/2016, que estabelece as condições para alteração contratual por adequação técnica.</p>
           </div>
 
-          <div className="clause-title">CLÁUSULA DÉCIMA TERCEIRA — LIMITAÇÃO DE RESPONSABILIDADE</div>
+          <div className="clause-title">CLÁUSULA DÉCIMA TERCEIRA — DA LIMITAÇÃO DE RESPONSABILIDADE CIVIL DO PROJETO</div>
           <div className="clause-body">
-            <p>13.3 A responsabilidade civil dos CONTRATADOS, caso configurada, estará limitada ao valor total dos honorários efetivamente recebidos.</p>
+            <p>13.1 A responsabilidade civil dos CONTRATADOS limita-se à elaboração do projeto arquitetônico objeto do presente contrato, estritamente conforme as informações, documentos e diretrizes fornecidas pelo CONTRATANTE, cuja veracidade, precisão e completude são de sua exclusiva responsabilidade. Custos adicionais, atrasos no cronograma ou necessidade de retrabalho decorrentes da imprecisão, omissão, incompletude ou inveracidade das informações, documentos e diretrizes fornecidas pelo CONTRATANTE serão de sua exclusiva responsabilidade, gerando a cobrança de honorários complementares e revisão de prazos para os CONTRATADOS, mediante apresentação de justificativa técnica e planilha de custos.</p>
+            <p>13.2 Os CONTRATADOS não poderão ser responsabilizados por danos, prejuízos ou consequências decorrentes de modificações, execuções ou utilizações do projeto realizadas sem sua participação ou aprovação formal, bem como por informações incorretas ou omissões nas especificações fornecidas pelo CONTRATANTE.</p>
+            <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
+              <li>I – Execução da obra realizada por profissionais, empresas ou prestadores de serviço que não possuam vínculo contratual com os CONTRATADOS;</li>
+              <li>II – Utilização de materiais ou técnicas construtivas divergentes das especificações constantes no projeto;</li>
+              <li>III – modificações realizadas no projeto ou durante a execução da obra sem autorização prévia e expressa dos CONTRATADOS;</li>
+              <li>IV – Falhas construtivas, estruturais, elétricas, hidráulicas ou de quaisquer outras instalações decorrentes da execução da obra;</li>
+            </ul>
           </div>
 
           <div className="clause-title">CLÁUSULA DÉCIMA QUARTA — DO FORO</div>
