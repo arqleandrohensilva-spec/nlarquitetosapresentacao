@@ -515,9 +515,20 @@ const ContratoCliente = () => {
             <p>10.6 O presente contrato não inclui serviços de acompanhamento técnico de obra, fiscalização ou gerenciamento de execução, os quais somente poderão ser realizados mediante contratação específica e formalização de contrato adicional.</p>
           </div>
 
+          {/* FOOTER TÉCNICO */}
+          <div className="footer-tech">
+            <div>NL Arquitetos</div>
+            <div>NL-2026-{c.numero.split('-').pop()}</div>
+            <div>Rubrica: __________/__________</div>
+            <div>Pág. 4 de 12</div>
+          </div>
+        </div>
+
+        <div className="page-content">
           <div className="clause-title">CLÁUSULA DÉCIMA PRIMEIRA — DA RESCISÃO CONTRATUAL</div>
           <div className="clause-body">
             <p>O presente contrato poderá ser rescindido por qualquer das partes, mediante notificação formal por escrito, observadas as condições e prazos estabelecidos nesta cláusula, nas demais disposições contratuais aplicáveis e na legislação vigente.</p>
+
             <p><strong style={{ color: "#8B7355" }}>11.1 RESCISÃO POR INICIATIVA DO CONTRATANTE</strong></p>
             <p>11.1.1 Caso o CONTRATANTE opte por rescindir o contrato antes da conclusão total dos serviços:
               <br />I – Os valores pagos até a data da rescisão não serão devolvidos, considerando que correspondem às etapas já executadas.
