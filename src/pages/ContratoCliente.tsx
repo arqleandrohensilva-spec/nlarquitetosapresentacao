@@ -192,11 +192,6 @@ const ContratoCliente = () => {
         </button>
       </div>
 
-      <div className="contrato-container">
-
-
-
-
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap');
         
@@ -298,29 +293,10 @@ const ContratoCliente = () => {
           letter-spacing: 0.1em;
           width: 100%;
         }
-
       `}</style>
 
-      <div data-pdf-hide style={{ position: "fixed", top: 16, right: 16, zIndex: 50 }}>
-        <button 
-          onClick={() => window.print()} 
-          style={{ 
-            background: "#8B7355", 
-            color: "#fff", 
-            border: "none", 
-            padding: "8px 20px", 
-            fontFamily: "'DM Mono',monospace", 
-            fontSize: "9px", 
-            letterSpacing: "0.2em", 
-            textTransform: "uppercase", 
-            cursor: "pointer" 
-          }}
-        >
-          ↓ BAIXAR PDF
-        </button>
-      </div>
-
       <div className="contrato-container">
+
         <div className="page-content">
           {/* CAPA */}
           <div style={{ minHeight: "250mm", display: "flex", flexDirection: "column" }}>
