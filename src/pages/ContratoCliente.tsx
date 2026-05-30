@@ -356,12 +356,33 @@ const ContratoCliente = () => {
             <p>6.5 Caso, durante o desenvolvimento do projeto, ocorram alterações que impactem diretamente o escopo contratado ou os critérios utilizados para cálculo dos honorários – como, por exemplo, alteração significativa da área construída, mudança do programa arquitetônico ou inclusão de novos ambientes – os honorários poderão ser revisados, com base nos critérios de cálculo originalmente utilizados para a precificação do projeto (ex: valor por m² ou percentual sobre o custo estimado da obra) ou, na ausência de critério específico, conforme a tabela de honorários do CAU/BR ou tabela de honorários dos CONTRATADOS, mediante apresentação de nova proposta formal, mediante formalização de aditivo contratual e atualização do Anexo III, com a concordância expressa das partes. Na ausência de concordância expressa do CONTRATANTE com os honorários revisados para alterações significativas de escopo, os CONTRATADOS terão o direito de suspender a execução dos serviços até que a questão seja resolvida ou, alternativamente, rescindir o contrato, sendo devidos os honorários proporcionais aos serviços já executados até o momento da suspensão/rescisão, sem prejuízo de eventual ressarcimento de custos comprovadamente incorridos em razão da rescisão, a ser apurado em regular processo de liquidação, excluindo-se a aplicação de multa compensatória.</p>
           </div>
 
-          <div className="clause-title">CLÁUSULA SÉTIMA — DAS OBRIGAÇÕES DO CONTRATANTE</div>
+          <div className="clause-title">CLÁUSULA SÉTIMA — DAS OBRIGAÇÕES E RESPONSABILIDADES DO CONTRATANTE</div>
           <div className="clause-body">
-            <p>7.1 Fornecer de forma completa e tempestiva todos os documentos e informações necessários ao desenvolvimento do projeto.</p>
-            <p>7.2 Analisar e aprovar as etapas do projeto apresentadas dentro dos prazos estabelecidos no Anexo II.</p>
-            <p>7.6 Contratar obrigatoriamente os profissionais responsáveis pelos projetos complementares (estrutural, elétrico, hidrossanitário, etc).</p>
-            <p>7.8 Executar a obra em conformidade com o projeto elaborado, sendo vedadas alterações sem a prévia autorização técnica dos autores do projeto.</p>
+            <p>Compete ao CONTRATANTE, para o correto desenvolvimento dos serviços contratados:</p>
+            <p>7.1 Fornecer aos CONTRATADOS, de forma completa, verdadeira e tempestiva, todos os documentos, informações e dados necessários ao desenvolvimento do projeto, conforme especificado no Anexo I (Escopo dos Serviços) e eventuais solicitações técnicas adicionais realizadas pelos CONTRATADOS.</p>
+            <p>7.2 Analisar e aprovar as etapas do projeto apresentadas pelos CONTRATADOS dentro dos prazos estabelecidos no Anexo II (Cronograma), comunicando eventuais solicitações de ajustes de forma clara e objetiva.</p>
+            <p>7.3 Colaborar ativamente durante o processo de desenvolvimento do projeto, respondendo às solicitações dos CONTRATADOS dentro dos prazos estipulados.</p>
+            <p>7.3.1 A ausência de manifestação ou atraso na aprovação das etapas pelo CONTRATANTE poderá suspender os prazos contratuais dos CONTRATADOS, bem como gerar revisão do cronograma.</p>
+            <p>7.3.2 Caso solicitações tardias de alteração impliquem retrabalho técnico em etapas já aprovadas ou concluídas, os CONTRATADOS poderão cobrar honorários adicionais, conforme previsto neste contrato.</p>
+            <p>7.4 Efetuar o pagamento dos honorários profissionais na forma, prazos e condições estabelecidas no Anexo III (Honorários e Condições de Pagamento).</p>
+            <p>7.5 Obter todas as licenças, alvarás e aprovações necessárias junto aos órgãos públicos, condomínio ou demais instituições competentes para a execução da obra, arcando com todos os custos, taxas e emolumentos correspondentes, responsabilizando-se por apresentar os projetos complementares, quando exigidos.</p>
+            <p>7.6 Contratar, obrigatoriamente, os profissionais responsáveis pelos projetos complementares indispensáveis à execução da obra, tais como:</p>
+            <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
+              <li>7.6.1 Projeto estrutural;</li>
+              <li>7.6.2 Projetos elétrico;</li>
+              <li>7.6.3 Projetos hidrossanitário;</li>
+              <li>7.6.4 Projetos de fundação;</li>
+              <li>7.6.5 Projetos prevenção e combate a incêndio;</li>
+              <li>7.6.6 Entre outros que se façam necessários para execução da obra.</li>
+            </ul>
+            <p>7.6.7 A contratação e coordenação dos projetos complementares são de responsabilidade do CONTRATANTE, salvo se tais serviços forem expressamente contratados junto aos CONTRATADOS por meio de instrumento específico.</p>
+            <p>7.7 Contratar empresa construtora, empreiteiros ou profissionais responsáveis pela execução da obra.</p>
+            <p>7.8 O CONTRATANTE compromete-se a cumprir todas as obrigações previstas neste contrato e seus anexos, bem como a agir com boa-fé e colaboração para o bom desenvolvimento dos serviços. A executar a obra em conformidade com o projeto elaborado pelos CONTRATADOS, sendo vedadas alterações sem a prévia autorização técnica e formal dos autores do projeto, sob pena de responsabilização, nos termos do art. 615 do Código Civil.</p>
+            <p>7.9 Qualquer alteração realizada na obra sem a prévia autorização dos CONTRATADOS isentará estes de qualquer responsabilidade técnica, civil ou legal decorrente das modificações realizadas, conforme previsto no art. 615 do Código Civil.</p>
+            <p>7.10 Caso o CONTRATANTE deseje realizar alterações no projeto durante a execução da obra, deverá comunicar formalmente os CONTRATADOS para análise técnica e eventual atualização do projeto, podendo tal serviço ser objeto de contratação adicional.</p>
+            <p>7.11 O projeto arquitetônico constitui obra intelectual protegida pela Lei nº 9.610/1998 (Lei de Direitos Autorais) e pela Lei nº 12.378/2010, que regulamenta o exercício da Arquitetura e Urbanismo no Brasil.</p>
+            <p>7.11.1 O CONTRATANTE compromete-se a não reproduzir, alterar, adaptar ou permitir a execução do projeto por terceiros sem autorização expressa dos CONTRATADOS.</p>
+            <p>7.11.2 O descumprimento desta obrigação caracterizará violação de direitos autorais, sujeitando o CONTRATANTE ao pagamento de multa não inferior a 50% do valor total deste contrato, sem prejuízo de eventual indenização por perdas e danos e demais sanções legais cabíveis.</p>
           </div>
 
           <div className="clause-title">CLÁUSULA OITAVA — DAS OBRIGAÇÕES DOS CONTRATADOS</div>
