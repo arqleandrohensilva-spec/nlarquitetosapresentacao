@@ -252,21 +252,19 @@ const ContratoCliente = () => {
             NL Arquitetos · São José dos Campos, SP
           </div>
         </div>
-      </div>
+        </div>
 
-      {/* SUMÁRIO */}
-      <div
-        style={{
-          background: "#fff",
-          width: "210mm",
-          minHeight: "297mm",
-          margin: "0 auto",
-          display: "flex",
-          flexDirection: "column",
-          padding: "20mm 22mm 18mm",
-          fontFamily: "'DM Mono',monospace",
-        }}
-      >
+        {/* SUMÁRIO */}
+        <div
+          className="nova-pagina"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            padding: "0",
+            fontFamily: "'DM Mono',monospace",
+            minHeight: "250mm",
+          }}
+        >
         <div
           style={{
             display: "flex",
