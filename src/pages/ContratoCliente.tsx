@@ -383,13 +383,25 @@ const ContratoCliente = () => {
             <p>7.11 O projeto arquitetônico constitui obra intelectual protegida pela Lei nº 9.610/1998 (Lei de Direitos Autorais) e pela Lei nº 12.378/2010, que regulamenta o exercício da Arquitetura e Urbanismo no Brasil.</p>
             <p>7.11.1 O CONTRATANTE compromete-se a não reproduzir, alterar, adaptar ou permitir a execução do projeto por terceiros sem autorização expressa dos CONTRATADOS.</p>
             <p>7.11.2 O descumprimento desta obrigação caracterizará violação de direitos autorais, sujeitando o CONTRATANTE ao pagamento de multa não inferior a 50% do valor total deste contrato, sem prejuízo de eventual indenização por perdas e danos e demais sanções legais cabíveis.</p>
+            <p>7.12 Quando houver identificação do autor do projeto por meio de placa de obra, material de divulgação ou qualquer outro meio, o CONTRATANTE compromete-se a não remover tal identificação sem autorização prévia dos CONTRATADOS.</p>
           </div>
 
-          <div className="clause-title">CLÁUSULA OITAVA — DAS OBRIGAÇÕES DOS CONTRATADOS</div>
+          <div className="clause-title">CLÁUSULA OITAVA — DAS OBRIGAÇÕES E RESPONSABILIDADES DOS CONTRATADOS</div>
           <div className="clause-body">
-            <p>8.1 Prestar os serviços profissionais com diligência, competência e observância às normas técnicas aplicáveis e ao Código de Ética do CAU/BR.</p>
-            <p>8.2 Elaborar o projeto arquitetônico em estrita conformidade com o escopo definido no Anexo I.</p>
-            <p>8.6 Emitir o Registro de Responsabilidade Técnica (RRT) referente aos serviços efetivamente prestados.</p>
+            <p>Compete aos CONTRATADOS:</p>
+            <p>8.1 Prestar os serviços profissionais de arquitetura com diligência, competência e observância às normas técnicas aplicáveis, à legislação vigente ao Código de Ética e Disciplina do CAU/BR às boas práticas profissionais reconhecidas no setor.</p>
+            <p>8.2 Elaborar o projeto arquitetônico em estrita conformidade com o escopo definido no Anexo I (Escopo dos Serviços), observando rigorosamente os prazos estabelecidos no Anexo II (Cronograma) e considerando integralmente as informações, documentos e diretrizes fornecidos pelo CONTRATANTE. O cumprimento das obrigações dos CONTRATADOS, incluindo prazos e qualidade do projeto, é condicionado ao adimplemento tempestivo e integral das obrigações do CONTRATANTE, notadamente no que se refere ao fornecimento de informações, documentos e obtenção de aprovações, conforme previsto na Cláusula Sétima.</p>
+            <p>8.3 Manter o CONTRATANTE informado sobre o andamento do projeto, apresentando as etapas desenvolvidas para análise e aprovação dentro dos prazos previstos.</p>
+            <p>8.4 Realizar as alterações e ajustes solicitados pelo CONTRATANTE, desde que tecnicamente viáveis e dentro dos limites estabelecidos neste contrato e em seus anexos, especialmente no que se refere à quantidade de revisões e à manutenção do conceito arquitetônico previamente aprovado.</p>
+            <p>8.5 Manter sigilo sobre informações e documentos confidenciais do CONTRATANTE aos quais tiver acesso em razão deste contrato, comprometendo-se a utilizá-los exclusivamente para a execução dos serviços contratados.</p>
+            <p>8.6 Emitir o Registro de Responsabilidade Técnica (RRT) referente aos serviços efetivamente prestados, nos termos da legislação aplicável.</p>
+            <p>8.7 Elaborar o projeto observando a legislação urbanística municipal aplicável, o Código de Obras do Município e as normas técnicas pertinentes, incluindo, quando aplicável e dentro do escopo definido no Anexo I, as normas da Associação Brasileira de Normas Técnicas – ABNT, tais como: ABNT NBR 13532 – Elaboração de projetos de edificações, ABNT NBR 9050 – Acessibilidade a edificações, mobiliário, espaços e equipamentos urbanos, bem como demais normas técnicas pertinentes ao desenvolvimento do projeto arquitetônico, sempre em conformidade com as informações e diretrizes fornecidas pelo CONTRATANTE, e em observância ao Art. 25 da Lei nº 14.133/2021, que detalha o conteúdo obrigatório do edital, incluindo a observância das normas técnicas.</p>
+            <p>8.8 Quando houver projetos complementares elaborados por terceiros, os CONTRATADOS poderão analisar tais documentos com a finalidade de identificar interferências aparentes com o projeto.</p>
+            <p>8.8.1 Essa análise possui caráter não exaustivo e não configura responsabilidade dos CONTRATADOS pela compatibilização integral entre todos os projetos técnicos envolvidos na obra, salvo quando tal serviço for expressamente contratado.</p>
+            <p>8.9 Os CONTRATADOS poderão utilizar imagens, plantas, renders, fotografias e demais representações do projeto ou da obra para fins de portfólio profissional, divulgação institucional ou material de marketing, desde que respeitadas as disposições da Lei Geral de Proteção de Dados (Lei nº 13.709/2018) e garantido o anonimato de informações confidenciais do CONTRATANTE.</p>
+            <p>8.9.1 Na divulgação, os CONTRATADOS comprometem-se a preservar dados pessoais do CONTRATANTE que permitam sua identificação direta, em conformidade com a Lei Geral de Proteção de Dados – LGPD (Lei nº 13.709/2018).</p>
+            <p>8.10 A responsabilidade dos CONTRATADOS limita-se à elaboração do projeto, nos termos deste contrato.</p>
+            <p>8.10.1 Eventuais problemas decorrentes da execução da obra, interpretação inadequada do projeto, utilização de materiais divergentes das especificações ou ausência de acompanhamento técnico durante a construção não poderão ser imputados aos CONTRATADOS, conforme disposto nas cláusulas específicas de limitação de responsabilidade deste contrato.</p>
           </div>
 
           <div className="clause-title">CLÁUSULA NONA — DOS DIREITOS AUTORAIS</div>
