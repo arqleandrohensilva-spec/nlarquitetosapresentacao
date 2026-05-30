@@ -334,8 +334,9 @@ const ContratoCliente = () => {
         </div>
 
         {/* CLÁUSULAS COMPLETAS */}
-        <div className="nova-pagina" style={{ paddingTop: "20mm" }}>
+        <div className="page-content">
           <div className="clause-title">CLÁUSULA PRIMEIRA — DAS PARTES ENVOLVIDAS NO CONTRATO</div>
+
           <div className="clause-body">
             <p><strong style={{ color: "#8B7355" }}>CONTRATANTE:</strong> {c.nome_cliente}, {c.nacionalidade || "brasileiro"}, {c.estado_civil || "casado"}, {c.profissao || "Engenheiro"}, portador do CPF nº {c.cpf_cliente}, residente e domiciliado em {c.endereco_cliente}, doravante denominado simplesmente CONTRATANTE.</p>
             <p><strong style={{ color: "#8B7355" }}>CONTRATADOS:</strong> Leandro Henrique da Silva, brasileiro, arquiteto e urbanista, inscrito no CAU nº A252250-0, portador do CPF nº 425.437.568-92 e Neandro Jacque Garcia, brasileiro, arquiteto e urbanista, inscrito no CAU nº A264629-3, portador do CPF nº 382.857.218-92, atuando sob a denominação fantasia NL Arquitetura e Interiores, doravante denominados conjuntamente CONTRATADOS.</p>
