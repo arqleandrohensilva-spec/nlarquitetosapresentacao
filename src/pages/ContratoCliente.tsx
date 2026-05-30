@@ -193,7 +193,7 @@ const ContratoCliente = () => {
           padding: 20mm 22mm;
         }
 
-        .clause-title {
+        .clause-title, .annex-title {
           font-family: 'Cormorant Garamond', serif;
           font-size: 14px;
           color: #8B7355;
@@ -215,6 +215,15 @@ const ContratoCliente = () => {
 
         .clause-body p {
           margin-bottom: 15px;
+        }
+
+        .clause-body ul {
+          margin-bottom: 15px;
+          padding-left: 20px;
+        }
+
+        .clause-body li {
+          margin-bottom: 8px;
         }
 
         .footer-tech {
